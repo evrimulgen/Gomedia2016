@@ -1,0 +1,42 @@
+unit RepairFixFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ClientDMUnit, StdCtrls, Buttons, DBCtrls, Menus, cxControls,
+  cxContainer, cxEdit, cxTextEdit, cxDBEdit, cxGraphics, cxLookAndFeels,
+  cxLookAndFeelPainters;
+
+type
+  TRepairFixForm = class(TForm)
+    Label2: TLabel;
+    Label3: TLabel;
+    BitBtnOK: TBitBtn;
+    BitBtn2: TBitBtn;
+    Label1: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    DBEditRepairId: TcxDBTextEdit;
+    DBEditRepairCustNbr: TcxDBTextEdit;
+    DBEditRepairDateIn: TcxDBTextEdit;
+    DBEditRepaiRPrice: TcxDBTextEdit;
+    cxDBTextEdit1: TcxDBTextEdit;
+    DBEditRepairSerial: TcxDBTextEdit;
+    DBEditRepairProblem: TcxDBTextEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  RepairFixForm: TRepairFixForm;
+
+implementation
+
+{$R *.dfm}
+
+end.

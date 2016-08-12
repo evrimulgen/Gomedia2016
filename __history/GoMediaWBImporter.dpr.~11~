@@ -1,0 +1,28 @@
+program GoMediaWBImporter;
+
+uses
+  Forms,
+  WBImporterUnit in 'formsunits\WBImporterUnit.pas' {FormWBImporterMain},
+  ClientDMunit in 'formsunits\ClientDMunit.pas' {RemoteDB: TDataModule},
+  ReconcileFRMUnit in 'formsunits\ReconcileFRMUnit.pas' {ReconcileErrorForm},
+  DavidUtilsunit in 'units\DavidUtilsunit.pas',
+  GlobalsUnit in 'units\GlobalsUnit.pas',
+  Threadsunit in 'units\Threadsunit.pas',
+  WinbooksExport in 'units\WinbooksExport.pas',
+  CashRegistryFRMUnit in 'formsunits\CashRegistryFRMUnit.pas' {FormCashRegister},
+  WinbooksOfficeApi_TLB in 'units\WinbooksOfficeApi_TLB.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+
+  DBHOSTNAME:='sql.smartoys.be';
+  DBUSER:='gomedia';
+  DBNAME:='c_smartoys';
+  DBPWD:='DhQKR79Lyce56vtB';
+  Application.CreateForm(TFormWBImporterMain, FormWBImporterMain);
+  Application.CreateForm(TFormCashRegister, FormCashRegister);
+  Application.Run;
+end.

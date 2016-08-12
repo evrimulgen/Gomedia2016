@@ -1,0 +1,817 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'WB Import'
+  ClientHeight = 549
+  ClientWidth = 814
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ButtonImport: TButton
+    Left = 143
+    Top = 8
+    Width = 266
+    Height = 145
+    Caption = 'Importer les op'#233'rations'
+    TabOrder = 0
+    OnClick = ButtonImportClick
+  end
+  object StatusLine: TdxStatusBar
+    Left = 0
+    Top = 529
+    Width = 814
+    Height = 20
+    Panels = <
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+      end>
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+  end
+  object EditLogin: TEdit
+    Left = 16
+    Top = 8
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = 'Login'
+  end
+  object EditPass: TEdit
+    Left = 16
+    Top = 48
+    Width = 121
+    Height = 21
+    TabOrder = 3
+    Text = 'Password'
+  end
+  object EditDossier: TEdit
+    Left = 16
+    Top = 88
+    Width = 121
+    Height = 21
+    TabOrder = 4
+    Text = 'Dossier'
+  end
+  object EditBookyear: TEdit
+    Left = 16
+    Top = 132
+    Width = 121
+    Height = 21
+    TabOrder = 5
+    Text = 'Bookyear (Ex. XXXX)'
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 304
+    Width = 814
+    Height = 225
+    Align = alBottom
+    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 632
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 7
+    OnClick = Button1Click
+  end
+  object DataSource1: TDataSource
+    DataSet = ACT
+    Left = 400
+    Top = 216
+  end
+  object ACT: TVKDBFNTX
+    SetDeleted = False
+    FastPostRecord = False
+    LookupOptions = []
+    TrimInLocate = False
+    TrimCType = False
+    StorageType = pstFile
+    DBFFileName = 'c:\SMART_ACT.dbf'
+    AccessMode.AccessMode = 16
+    AccessMode.OpenRead = True
+    AccessMode.OpenWrite = False
+    AccessMode.OpenReadWrite = False
+    AccessMode.ShareExclusive = True
+    AccessMode.ShareDenyWrite = False
+    AccessMode.ShareDenyNone = False
+    Crypt.Active = False
+    Crypt.CryptMethod = cmNone
+    BufferSize = 4096
+    WaitBusyRes = 3000
+    CreateNow = False
+    DbfVersion = xBaseIII
+    LobBlockSize = 512
+    LockProtocol = lpNone
+    LobLockProtocol = lpNone
+    FoxTableFlag.TableFlag = 1
+    FoxTableFlag.HasGotIndex = True
+    FoxTableFlag.HasGotMemo = False
+    FoxTableFlag.ItIsDatabase = False
+    Left = 264
+    Top = 216
+    IndexData = <
+      item
+        BagName = 'TVKDBFIndexBag0'
+        Active = True
+        Collation.CollationType = cltNone
+        Collation.CustomCollatingSequence = 
+          '0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24' +
+          ';25;26;27;28;29;30;31;32;33;34;35;36;37;38;39;40;41;42;43;44;45;' +
+          '46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63;64;65;66;6' +
+          '7;68;69;70;71;72;73;74;75;76;77;78;79;80;81;82;83;84;85;86;87;88' +
+          ';89;90;91;92;93;94;95;96;97;98;99;100;101;102;103;104;105;106;10' +
+          '7;108;109;110;111;112;113;114;115;116;117;118;119;120;121;122;12' +
+          '3;124;125;126;127;128;129;130;131;132;133;134;135;136;137;138;13' +
+          '9;140;141;142;143;144;145;146;147;148;149;150;151;152;153;154;15' +
+          '5;156;157;158;159;160;161;162;163;164;165;166;167;168;169;170;17' +
+          '1;172;173;174;175;176;177;178;179;180;181;182;183;184;185;186;18' +
+          '7;188;189;190;191;192;193;194;195;196;197;198;199;200;201;202;20' +
+          '3;204;205;206;207;208;209;210;211;212;213;214;215;216;217;218;21' +
+          '9;220;221;222;223;224;225;226;227;228;229;230;231;232;233;234;23' +
+          '5;236;237;238;239;240;241;242;243;244;245;246;247;248;249;250;25' +
+          '1;252;253;254;255;'
+        Unique = False
+        Desc = False
+        Temp = False
+        NTXRange.Active = False
+        CreateNow = False
+        DeleteKeyStyle = dksClipper
+        LimitPages.LimitPagesType = lbtAuto
+        LimitPages.LimitBuffers = 0
+        LimitPages.PagesPerBuffer = 4
+        OuterSorterProperties.SortItemPerInnerSorter = -32
+        OuterSorterProperties.BufferSize = 65536
+      end>
+    DBFFieldDefs = <
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DOCTYPE'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DBKCODE'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 6
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DBKTYPE'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DOCNUMBER'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 8
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DOCORDER'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 3
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'OPCODE'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 5
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ACCOUNTGL'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 8
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ACCOUNTRP'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 10
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'BOOKYEAR'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'PERIOD'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 2
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DATE'
+        field_type = 'D'
+        extend_type = dbftUndefined
+        len = 8
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DATEDOC'
+        field_type = 'D'
+        extend_type = dbftUndefined
+        len = 8
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DUEDATE'
+        field_type = 'D'
+        extend_type = dbftUndefined
+        len = 8
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'COMMENT'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 40
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'COMMENTEXT'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 35
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'AMOUNT'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 17
+        dec = 3
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'AMOUNTEUR'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 17
+        dec = 3
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'VATBASE'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 17
+        dec = 3
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'VATCODE'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 6
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'CURRAMOUNT'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 17
+        dec = 3
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'CURRCODE'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 3
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'CUREURBASE'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 17
+        dec = 3
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'VATTAX'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 17
+        dec = 3
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'VATIMPUT'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 6
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'CURRATE'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 12
+        dec = 5
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'REMINDLEV'
+        field_type = 'N'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'MATCHNO'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 8
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'OLDDATE'
+        field_type = 'D'
+        extend_type = dbftUndefined
+        len = 8
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ISMATCHED'
+        field_type = 'L'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ISLOCKED'
+        field_type = 'L'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ISIMPORTED'
+        field_type = 'L'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ISPOSITIVE'
+        field_type = 'L'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ISTEMP'
+        field_type = 'L'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'MEMOTYPE'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'ISDOC'
+        field_type = 'L'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DOCSTATUS'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 1
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'DICFROM'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 16
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end
+      item
+        FieldFlag.FieldFlag = 0
+        FieldFlag.System = False
+        FieldFlag.CanStoreNull = False
+        FieldFlag.BinaryColumn = False
+        FieldFlag.AutoIncrement = False
+        Name = 'CODAKEY'
+        field_type = 'C'
+        extend_type = dbftUndefined
+        len = 3
+        dec = 0
+        NextAutoInc = 0
+        NativeNextAutoInc = 1
+        NativeStepAutoInc = 1
+        Tag = 0
+      end>
+    DBFIndexDefs = <
+      item
+        Name = 'TVKDBFIndexBag0'
+        StorageType = pstFile
+        Orders = <
+          item
+            Name = 'TVKDBFIndexBag0'
+            KeyTranslate = False
+            Unique = False
+            Desc = False
+            Temp = False
+            LimitPages.LimitPagesType = lbtAuto
+            LimitPages.LimitBuffers = 0
+            LimitPages.PagesPerBuffer = 4
+            OuterSorterProperties.SortItemPerInnerSorter = -32
+            OuterSorterProperties.BufferSize = 65536
+            Collation.CollationType = cltNone
+            Collation.CustomCollatingSequence = 
+              '0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24' +
+              ';25;26;27;28;29;30;31;32;33;34;35;36;37;38;39;40;41;42;43;44;45;' +
+              '46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63;64;65;66;6' +
+              '7;68;69;70;71;72;73;74;75;76;77;78;79;80;81;82;83;84;85;86;87;88' +
+              ';89;90;91;92;93;94;95;96;97;98;99;100;101;102;103;104;105;106;10' +
+              '7;108;109;110;111;112;113;114;115;116;117;118;119;120;121;122;12' +
+              '3;124;125;126;127;128;129;130;131;132;133;134;135;136;137;138;13' +
+              '9;140;141;142;143;144;145;146;147;148;149;150;151;152;153;154;15' +
+              '5;156;157;158;159;160;161;162;163;164;165;166;167;168;169;170;17' +
+              '1;172;173;174;175;176;177;178;179;180;181;182;183;184;185;186;18' +
+              '7;188;189;190;191;192;193;194;195;196;197;198;199;200;201;202;20' +
+              '3;204;205;206;207;208;209;210;211;212;213;214;215;216;217;218;21' +
+              '9;220;221;222;223;224;225;226;227;228;229;230;231;232;233;234;23' +
+              '5;236;237;238;239;240;241;242;243;244;245;246;247;248;249;250;25' +
+              '1;252;253;254;255;'
+          end>
+      end>
+  end
+end

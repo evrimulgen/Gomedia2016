@@ -1,0 +1,163 @@
+object FormProductSaleHistory: TFormProductSaleHistory
+  Left = 192
+  Top = 175
+  Caption = 'Historique des Ventes'
+  ClientHeight = 544
+  ClientWidth = 795
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelTop: TPanel
+    Left = 0
+    Top = 0
+    Width = 795
+    Height = 49
+    Align = alTop
+    TabOrder = 0
+    object BitBtnPrintTicket: TBitBtn
+      Left = 24
+      Top = 13
+      Width = 75
+      Height = 25
+      Caption = 'Ticket'
+      TabOrder = 0
+      OnClick = BitBtnPrintTicketClick
+    end
+    object BitBtnFindCustomer: TBitBtn
+      Left = 120
+      Top = 13
+      Width = 75
+      Height = 25
+      Caption = 'Client ?'
+      TabOrder = 1
+      OnClick = BitBtnFindCustomerClick
+    end
+    object CheckBoxForce: TCheckBox
+      Left = 224
+      Top = 17
+      Width = 97
+      Height = 17
+      Caption = 'Forcer date'
+      TabOrder = 2
+    end
+    object DateTimePickerDate: TDateTimePicker
+      Left = 327
+      Top = 13
+      Width = 186
+      Height = 21
+      Date = 40664.688593148140000000
+      Time = 40664.688593148140000000
+      TabOrder = 3
+    end
+  end
+  object PanelGrid: TPanel
+    Left = 0
+    Top = 49
+    Width = 795
+    Height = 250
+    Align = alClient
+    TabOrder = 1
+    object cxGrid1: TcxGrid
+      Left = 1
+      Top = 1
+      Width = 793
+      Height = 248
+      Align = alClient
+      TabOrder = 0
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        NavigatorButtons.ConfirmDelete = False
+        DataController.DataSource = RemoteDB.Items_SoldSRC
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        OptionsCustomize.DataRowSizing = True
+        OptionsData.Deleting = False
+        OptionsData.DeletingConfirmation = False
+        OptionsData.Editing = False
+        OptionsData.Inserting = False
+        OptionsSelection.CellSelect = False
+        OptionsView.ColumnAutoWidth = True
+        OptionsView.Footer = True
+        OptionsView.GroupByBox = False
+        object cxGrid1DBTableView1items_sold_id: TcxGridDBColumn
+          Caption = 'ID'
+          DataBinding.FieldName = 'items_sold_id'
+        end
+        object cxGrid1DBTableView1items_sold_sales_id: TcxGridDBColumn
+          Caption = 'ID Vente'
+          DataBinding.FieldName = 'items_sold_sales_id'
+        end
+        object cxGrid1DBTableView1items_sold_model: TcxGridDBColumn
+          Caption = 'Mod'#232'le'
+          DataBinding.FieldName = 'items_sold_model'
+        end
+        object cxGrid1DBTableView1items_sold_name: TcxGridDBColumn
+          Caption = 'Decription'
+          DataBinding.FieldName = 'items_sold_name'
+        end
+        object cxGrid1DBTableView1items_sold_quantity: TcxGridDBColumn
+          Caption = 'Quantit'#233
+          DataBinding.FieldName = 'items_sold_quantity'
+        end
+        object cxGrid1DBTableView1items_sold_price_gross: TcxGridDBColumn
+          Caption = 'Prix Gros'
+          DataBinding.FieldName = 'items_sold_price_gross'
+        end
+        object cxGrid1DBTableView1items_sold_price_catalog: TcxGridDBColumn
+          Caption = 'Prix Cat'
+          DataBinding.FieldName = 'items_sold_price_catalog'
+        end
+        object cxGrid1DBTableView1items_sold_price_stock: TcxGridDBColumn
+          Caption = 'Prix Vente'
+          DataBinding.FieldName = 'items_sold_price_stock'
+        end
+        object cxGrid1DBTableView1items_sold_owner_id: TcxGridDBColumn
+          Caption = 'ID Prop.'
+          DataBinding.FieldName = 'items_sold_owner_id'
+        end
+        object cxGrid1DBTableView1items_sold_supplier_id: TcxGridDBColumn
+          Caption = 'ID Fourn.'
+          DataBinding.FieldName = 'items_sold_supplier_id'
+        end
+        object cxGrid1DBTableView1items_sold_date_in: TcxGridDBColumn
+          Caption = 'Date entr'#233'e'
+          DataBinding.FieldName = 'items_sold_date_in'
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object PanelBottom: TPanel
+    Left = 0
+    Top = 299
+    Width = 795
+    Height = 245
+    Align = alBottom
+    TabOrder = 2
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 793
+      Height = 243
+      Align = alClient
+      DataSource = RemoteDB.QuerySRC
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
+      TitleFont.Style = []
+    end
+  end
+end

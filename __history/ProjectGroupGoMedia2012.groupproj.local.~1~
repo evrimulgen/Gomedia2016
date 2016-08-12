@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/04/28 12:52:43.953.groupproj,C:\Users\Administrator\Documents\RAD Studio\Projects\ProjectGroup1.groupproj=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\ProjectGroup1.groupproj</Transaction>
+    <Transaction>2012/04/28 12:52:56.259.groupproj,C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\ProjectGroup1.groupproj=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\ProjectGroupGoMedia2012.groupproj</Transaction>
+  </Transactions>
+	<Default.Personality>
+		<Projects ActiveProject="GoMedia2012.exe"/>
+	</Default.Personality>
+</BorlandProject>

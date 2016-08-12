@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/04/06 21:28:14.884.dproj,C:\Users\Administrator\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Administrator\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2012/04/28 13:11:45.026.dproj,C:\Users\Administrator\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\GoMediaWBImporter.dproj</Transaction>
+    <Transaction>2012/04/28 13:12:17.010.pas,C:\Users\Administrator\Documents\RAD Studio\Projects\Unit2.pas=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\formsunits\WBImporterUnit.pas</Transaction>
+    <Transaction>2012/04/28 13:12:17.010.dfm,C:\Users\Administrator\Documents\RAD Studio\Projects\Unit2.dfm=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\formsunits\WBImporterUnit.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,255 @@
+unit DebugFRMunit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, DBCtrls, Grids, DBGrids, ComCtrls, Buttons,
+  ToolWin, JvToolBar, JvComponent, JvCaptionPanel, BaseGrid, AdvGrid,
+  DBAdvGrd, JvExExtCtrls, JvExComCtrls, cxStyles, cxCustomData, cxGraphics,
+  cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData, cxGridLevel, cxClasses,
+  cxControls, cxGridCustomView, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxGrid, dxPSGlbl, dxPSUtl, dxPSEngn, dxPrnPg, dxBkgnd,
+  dxWrap, dxPrnDev, dxPSCompsProvider, dxPSFillPatterns, dxPSEdgePatterns,
+  dxBar, dxPSCore, dxPrnDlg, dxPScxCommon, dxPScxGrid6Lnk, JvExtComponent,
+  cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore, dxSkinBlack, dxSkinBlue,
+  dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky,
+  dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven, dxSkinSharp, dxSkinSilver,
+  dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008, dxSkinsDefaultPainters,
+  dxSkinValentine, dxSkinXmas2008Blue, dxSkinscxPCPainter, dxPSPDFExportCore,
+  dxPSPDFExport, cxDrawTextUtils, dxPSPrVwStd, dxPSPrVwAdv, dxPSPrVwRibbon,
+  dxPScxEditorProducers, dxPScxExtEditorProducers, dxPScxPageControlProducer,
+  dxSkinsdxBarPainter, dxBarSkinnedCustForm, dxSkinsdxRibbonPainter;
+
+type
+  TDebug = class(TForm)
+    DBNavigator3: TDBNavigator;
+    DBGrid3: TDBGrid;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    DBNavigator4: TDBNavigator;
+    DBGrid4: TDBGrid;
+    JvToolBar1: TJvToolBar;
+    EditFilter: TEdit;
+    SpeedButton1: TSpeedButton;
+    Button3: TButton;
+    TabSheet4: TTabSheet;
+    DBNavigator8: TDBNavigator;
+    JvToolBar2: TJvToolBar;
+    DBGrid8: TDBGrid;
+    TabSheet5: TTabSheet;
+    JvToolBar3: TJvToolBar;
+    Edit2: TEdit;
+    SpeedButton3: TSpeedButton;
+    Button4: TButton;
+    customers: TTabSheet;
+    DBGrid5: TDBGrid;
+    DBNavigator5: TDBNavigator;
+    DBNavigator7: TDBNavigator;
+    DBGrid7: TDBGrid;
+    Dacal: TTabSheet;
+    DBNavigator9: TDBNavigator;
+    DBGrid9: TDBGrid;
+    RentTransaction: TTabSheet;
+    DBNavigator10: TDBNavigator;
+    DBGrid10: TDBGrid;
+    Invoices: TTabSheet;
+    DBNavigator11: TDBNavigator;
+    DBGrid11: TDBGrid;
+    DBNavigator12: TDBNavigator;
+    DBGrid12: TDBGrid;
+    Button8: TButton;
+    Taxes: TTabSheet;
+    JvCaptionPanelCustomersPurchase: TJvCaptionPanel;
+    DBGrid13: TDBGrid;
+    JvCaptionPanel1: TJvCaptionPanel;
+    DBGrid14: TDBGrid;
+    JvCaptionPanel2: TJvCaptionPanel;
+    DBGrid15: TDBGrid;
+    TabSheet6: TTabSheet;
+    DBNavigator13: TDBNavigator;
+    DBGrid2: TDBGrid;
+    TabSheet7: TTabSheet;
+    DBNavigator14: TDBNavigator;
+    JvToolBar4: TJvToolBar;
+    Button2: TButton;
+    Edit3: TEdit;
+    Button9: TButton;
+    TabSheet8: TTabSheet;
+    DBNavigator6: TDBNavigator;
+    DBGrid6: TDBGrid;
+    TabSheet9: TTabSheet;
+    DBGrid18: TDBGrid;
+    DBNavigator15: TDBNavigator;
+    TabSheet10: TTabSheet;
+    DBNavigator16: TDBNavigator;
+    DBGrid19: TDBGrid;
+    Panel1: TPanel;
+    Button6: TButton;
+    TabSheet11: TTabSheet;
+    DBGrid20: TDBGrid;
+    cxGridDebugRefundsDBTableView1: TcxGridDBTableView;
+    cxGridDebugRefundsLevel1: TcxGridLevel;
+    cxGridDebugRefunds: TcxGrid;
+    dxComponentPrinter: TdxComponentPrinter;
+    dxPrintDialog1: TdxPrintDialog;
+    dxComponentPrinterLink1: TdxGridReportLink;
+    cxGridDebugRefundsDBTableView1expenses_id: TcxGridDBColumn;
+    cxGridDebugRefundsDBTableView1expenses_shop_id: TcxGridDBColumn;
+    cxGridDebugRefundsDBTableView1expenses_date_time: TcxGridDBColumn;
+    cxGridDebugRefundsDBTableView1expenses_amount: TcxGridDBColumn;
+    cxGridDebugRefundsDBTableView1expenses_description: TcxGridDBColumn;
+    cxGridDebugRefundsDBTableView1expenses_date_time_display: TcxGridDBColumn;
+    TabSheet12: TTabSheet;
+    DBGrid16: TDBGrid;
+    DBGrid21: TDBGrid;
+    DBNavigator17: TDBNavigator;
+    TabSheet13: TTabSheet;
+    Panel3: TPanel;
+    DBNavigatorSales: TDBNavigator;
+    DBGridSales: TDBGrid;
+    Button1: TButton;
+    Label1: TLabel;
+    Start: TEdit;
+    Target: TEdit;
+    ToolButton1: TToolButton;
+    PanelItems: TPanel;
+    PanelSales: TPanel;
+    DBNavigatoritems: TDBNavigator;
+    DBGridItems: TDBGrid;
+    IsStart: TEdit;
+    IsTarget: TEdit;
+    SOffset: TEdit;
+    Button5: TButton;
+    Panel4: TPanel;
+    EditDacalSearch: TEdit;
+    ButtonDacalSearch: TButton;
+    Panel5: TPanel;
+    procedure ButtonDacalSearchClick(Sender: TObject);
+    procedure ToolButton1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure dxBarButtonPrintTableClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Debug: TDebug;
+
+implementation
+
+uses ClientDMunit;
+{$R *.dfm}
+
+procedure TDebug.BitBtn2Click(Sender: TObject);
+begin
+  RemoteDB.SetProductsToSuppliersStock;
+end;
+
+procedure TDebug.Button1Click(Sender: TObject);
+begin
+ RemoteDB.SetItemstoSales
+end;
+
+procedure TDebug.Button2Click(Sender: TObject);
+begin
+RemoteDB.FreeItemsTo;
+end;
+
+procedure TDebug.SpeedButton1Click(Sender: TObject);
+begin
+ RemoteDB.Repair.Filter:=EditFilter.Text;
+ RemoteDB.Repair.Filtered:=True;
+end;
+
+procedure TDebug.Button3Click(Sender: TObject);
+begin
+ RemoteDB.FreeRepairTo;
+end;
+
+procedure TDebug.Button6Click(Sender: TObject);
+begin
+ RemotedB.netshop_stock.First;
+ While not RemoteDB.netshop_stock.Eof do begin
+   if RemoteDB.Products.FindKey([RemoteDB.netshop_stock.FieldByName('product_model').AsString])then begin
+
+   end else begin
+    ShowMessage('Product Not Found');
+   end;
+  RemoteDB.netshop_stock.Next;
+ end;
+end;
+
+procedure TDebug.SpeedButton3Click(Sender: TObject);
+begin
+ RemoteDB.Products.IndexFieldNames:=Edit2.Text;
+end;
+
+procedure TDebug.ToolButton1Click(Sender: TObject);
+var offset:integer;
+begin
+ offset:=StrToInt(Target.Text)-StrToInt(Start.Text);
+ SOffset.Text:=IntToStr(Offset);
+ RemoteDB.netshop_sales.Filter:='(sales_id >= '+Start.Text+') and (sales_id < '+Target.Text+')';
+ RemoteDB.netshop_sales.Filtered:=True;
+ RemoteDB.netshop_sales.First;
+ while not RemoteDB.netshop_sales.eof do begin
+   RemoteDB.netshop_sales.Edit;
+   RemoteDB.netshop_sales.FieldByName('sales_id').Value:=RemoteDB.netshop_sales.FieldByName('sales_id').Value+offset;
+   RemoteDB.netshop_sales.Post;
+ end;
+ RemoteDB.netshop_sales.Filtered:=False;
+
+end;
+
+procedure TDebug.Button8Click(Sender: TObject);
+begin
+ RemoteDB.SetInvoicesItemsToInvoices;
+end;
+
+procedure TDebug.Button9Click(Sender: TObject);
+begin
+ RemoteDB.netshop_sales.Locate('sales_id',Edit3.Text,[]);
+end;
+
+procedure TDebug.ButtonDacalSearchClick(Sender: TObject);
+begin
+ RemoteDB.Caroussel.Locate('model',EditDacalSearch.Text,[locaseinsensitive]);
+end;
+
+procedure TDebug.dxBarButtonPrintTableClick(Sender: TObject);
+begin
+ DxComponentPrinter.Print(true,nil,nil);
+end;
+
+procedure TDebug.Button5Click(Sender: TObject);
+begin
+ RemoteDB.netshop_items_sold.Filter:='(items_sold_id >= '+isStart.Text+') and (items_sold_id <= '+isTarget.Text+')';
+ RemoteDB.netshop_items_sold.Filtered:=True;
+ RemoteDB.netshop_items_sold.First;
+ while not RemoteDB.netshop_items_sold.eof do begin
+  RemoteDB.netshop_items_sold.Edit;
+  RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').Value:=RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').Value+StrToInt(SOffset.Text);
+  RemoteDB.netshop_items_sold.Post;
+  RemoteDB.netshop_items_sold.Next;
+ end;
+ RemoteDB.netshop_items_sold.Filtered:=False;
+end;
+
+end.

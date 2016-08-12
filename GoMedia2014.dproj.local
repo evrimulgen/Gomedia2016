@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.435,=C:\Dropbox\RAD Studio\Projects\GoMedia2014\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.232,C:\Dropbox\RAD Studio\Projects\GoMedia2014\Unit1.pas=C:\Dropbox\RAD Studio\Projects\GoMedia2014\units\DLLsucdapi.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.708,C:\Dropbox\RAD Studio\Projects\GoMedia2014\units\DllImp.pas=C:\Dropbox\RAD Studio\Projects\GoMedia2014\units\DllImpOldDacal.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,293 @@
+<template
+dim itemscount
+dim cashsum
+dim bctsum
+dim visasum
+dim protonsum
+dim vouchersum
+dim valuenew
+dim valuesh
+dim valuehard
+dim refundssum
+
+cashsum = 0
+bctsum = 0
+visasum = 0
+protonsum = 0
+vouchersum = 0
+valuenew=0
+valuesh=0
+valuehard=0
+refundssum=0
+
+set dsitems = this.items_sold
+set dssales = this.sales 
+set dsshops = this.shops
+set dsrefunds= this.refunds
+/>
+<HTML>
+<HEAD>
+<TITLE>Feuille de caisse du <template= this.todaysdate /></TITLE> <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<table border="0" width="100%" cellspacing="1" cellpadding="2">
+<tr>
+<td width="50%">
+<IMG SRC="c:/netshop/html/images/logo_mini.gif" WIDTH="100" HEIGHT="57">
+</td>
+<td class="smalltext" width="50%">
+Magasin : <template= dsshops.fieldvalues("shops_name") /><br>
+Date : <template= this.todaysdate />
+</td>
+</tr>
+</table>
+<br>
+
+<table valign="middle" border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr valign="middle" ><td valign="middle"  class="infoboxheading">
+<center><big>Tableau des ventes</big></center>
+</td></tr>
+</table>
+
+<!-- Première ligne du tableau header -->
+
+
+<table border="0" width="100%" cellspacing="1" cellpadding="0" class="infoBox">
+<tr class="infoBoxContents">
+<td class="pageHeading">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr>
+<td class="footer" align="Left" width="50%"> Article </td>
+<td class="footer" align="right" width="10%"> Cash </td>
+<td class="footer" align="right" width="10%"> BCT </td>
+<td class="footer" align="right" width="10%"> Prot </td>
+<td class="footer" align="right" width="10%"> Visa </td>
+<td class="footer" align="right" width="10%"> Bon </td>
+</tr> 
+</table>
+</td>
+</tr>
+</table>
+
+<table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+<tr class="infoBoxContents">
+<td class="pageHeading">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+
+<template 
+dssales.first
+even = false
+do while not dssales.EOF 
+itemscount=0
+if even = false then even = true else even = false end if
+
+
+dsitems.first
+do while not dsitems.EOF
+itemscount= itemscount + 1
+dsitems.next()
+loop
+
+dsitems.first
+pass = 0
+do while not dsitems.EOF
+pass = pass + 1
+if dsitems.FieldValues("items_sold_owner_id") = dsshops.fieldValues("shops_id") then
+ valuenew=valuenew+dsitems.FieldValues("items_sold_price_stock")
+else
+ valuesh=valuesh+dsitems.FieldValues("items_sold_price_stock")
+end if
+/>
+
+
+<template
+ if even = true then
+/>
+<tr class="productListing-odd" >
+<template 
+end if
+/>
+
+<template
+ if even = false then
+/>
+<tr class="productListing-even" >
+<template 
+end if
+/>
+
+<td align="left" width="50%" class="smalltext" > <template = dsitems.FieldValues("items_sold_name") /></td>
+
+<template
+if pass = 1 then
+cashsum=cashsum+dssales.FieldValues("sales_paid_cash")
+bctsum=bctsum+dssales.FieldValues("sales_paid_bct")
+protonsum=protonsum+dssales.FieldValues("sales_paid_proton")
+visasum=visasum+dssales.FieldValues("sales_paid_visa")
+vouchersum=vouchersum+dssales.FieldValues("sales_paid_voucher")
+/>
+
+<td class="smalltext" align="right" width="10%" rowspan="<template =itemscount />"> <template = dssales.FieldValues("sales_paid_cash") /> </td>
+<td class="smalltext" align="right" width="10%" rowspan="<template =itemscount />"> <template = dssales.FieldValues("sales_paid_bct") /> </td>
+<td class="smalltext" align="right" width="10%" rowspan="<template =itemscount />"> <template = dssales.FieldValues("sales_paid_proton") /> </td>
+<td class="smalltext" align="right" width="10%" rowspan="<template =itemscount />"> <template = dssales.FieldValues("sales_paid_visa") /> </td>
+<td class="smalltext" align="right" width="10%" rowspan="<template =itemscount />"> <template = dssales.FieldValues("sales_paid_voucher") /> </td>
+</tr>
+
+<template 
+end if
+dsitems.next()
+loop
+/>
+ 
+<template 
+dssales.Next()  
+loop 
+generalsum=cashsum+bctsum+protonsum+visasum+vouchersum 
+/> 
+
+
+<!-- Dernière ligne du tableau totaux -->
+
+
+</table> 
+</td>
+</tr>
+</table>
+
+<table border="0" width="100%" cellspacing="1" cellpadding="0" class="infoBox">
+<tr class="infoBoxContents">
+<td class="pageHeading">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr>
+<td class="footer" align="left" width="50%" > Total : <template = generalsum /> - Neuf : <template = valuenew /> - Occasion : <template = valuesh /></td>
+<td class="footer" align="right" width="10%" > <template = cashsum /> </td>
+<td class="footer" align="right" width="10%" > <template = bctsum /> </td>
+<td class="footer" align="right" width="10%" > <template = protonsum /> </td>
+<td class="footer" align="right" width="10%" > <template = visasum /> </td>
+<td class="footer" align="right" width="10%" > <template = vouchersum /> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr valign="top"><td width="49%"> <!-- Moitié de l'écran -->
+
+<!-- Titre -->
+<table valign="middle" border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr valign="middle" ><td valign="middle"  class="infoboxheading">
+<center><big>Remboursements</big></center>
+</td></tr>
+</table>
+
+<!-- Première ligne du tableau header -->
+<table border="0" width="100%" cellspacing="1" cellpadding="0" class="infoBox">
+<tr class="infoBoxContents">
+ <td class="pageHeading">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+   <tr>
+    <td class="footer" align="Left" width="34%"> Nature </td>
+    <td class="footer" align="right" width="33%"> Client </td>
+    <td class="footer" align="right" width="33%"> Montant </td>
+   </tr> 
+  </table> <!-- Fin du titre -->
+ </td>
+</tr>
+</table>
+
+<!-- Lignes du tableau -->
+<table border="0" width="100%" cellspacing="1" cellpadding="2" class="infoBox">
+<tr class="infoBoxContents">
+<td class="pageHeading">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+
+<template 
+dsrefunds.first
+even = false
+do while not dsrefunds.eof 
+if even = false then even = true else even = false end if
+/>
+
+
+<template
+ if even = true then
+/>
+
+<tr class="productListing-odd" >
+
+<template 
+end if
+/>
+
+<template
+ if even = false then
+/>
+
+<tr class="productListing-even" >
+
+<template 
+end if
+/>
+
+<td class="smalltext" align="left"  width="34%" > <template = dsrefunds.FieldValues("refunds_nature") /></td>
+<td class="smalltext" align="right" width="33%" > <template = dsrefunds.FieldValues("refunds_customer_nbr") /> </td>
+<td class="smalltext" align="right" width="33%" > <template = dsrefunds.FieldValues("refunds_amount") /> </td>
+</tr>
+
+
+<template 
+refundssum=refundssum+dsrefunds.FieldValues("refunds_amount")
+dsrefunds.Next()  
+loop 
+/> 
+</table>
+</table>
+
+<table border="0" width="100%" cellspacing="1" cellpadding="0" class="infoBox">
+<tr class="infoBoxContents">
+<td class="pageHeading">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr>
+<td class="footer" align="left" width="34%" > Total</td>
+<td class="footer" align="right" width="33%" ></td>
+<td class="footer" align="right" width="33%" > <template = refundssum /> </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+</td> <!-- Fin 1 Moitié de l'écran -->
+<td width="2%"></td>
+<td width="49%"> <!-- 2 Moitié de l'écran -->
+<!-- Titre -->
+<table valign="middle" border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr valign="middle" ><td valign="middle"  class="infoboxheading">
+<center><big>Remboursements</big></center>
+</td></tr>
+</table>
+
+<!-- Première ligne du tableau header -->
+<table border="0" width="100%" cellspacing="1" cellpadding="0" class="infoBox">
+<tr class="infoBoxContents">
+<td class="pageHeading">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr>
+<td class="footer" align="Left" width="34%"> Client </td>
+<td class="footer" align="right" width="33%"> Montant </td>
+<td class="footer" align="right" width="33%"> Nature </td>
+</tr> 
+</table> <!-- Fin du titre -->
+</td></tr>
+</table>
+
+</BODY>
+</HTML>

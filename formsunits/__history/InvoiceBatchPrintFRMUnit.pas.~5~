@@ -1,0 +1,99 @@
+
+unit InvoiceBatchPrintFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, JvProgressBar, StdCtrls, JvDateTimePicker,RpRenderHTML, RpRender, RpRenderPDF, RpBase, RpFiler, RpRenderCanvas,
+  RpRenderPrinter, RpRenderPreview, RpSystem, RpRave, RpDefine, RpCon, RpConDS,
+  Buttons, JvExComCtrls;
+
+type
+  TInvoiceBatchPrintForm = class(TForm)
+    DateStart: TJvDateTimePicker;
+    DateEnd: TJvDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    Progress: TJvProgressBar;
+    BitBtnPrintPrev: TBitBtn;
+    BitBtnPrint: TBitBtn;
+    procedure ButtonPrintClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  InvoiceBatchPrintForm: TInvoiceBatchPrintForm;
+
+implementation
+
+uses clientdmunit,DavidUtilsunit,MainFrmUnit,ReportModuleUnit,printers,GlobalsUnit;
+
+{$R *.dfm}
+
+procedure TInvoiceBatchPrintForm.ButtonPrintClick(Sender: TObject);
+var TicketToPrint:TTicketJob;
+    BoxName:String;
+    LastRate,Base,Tax:Real;
+    Pindex:integer;
+    LinkToCust:Boolean;
+
+begin
+ try
+  LinkToCust:=False;
+  Pindex:=Printer.Printers.IndexOf((Mainform.Parameter['PrintersRapportPrinter']));
+  RemoteDB.Invoices.Filter:='(invoices_date_time >= '+ floattostr(Trunc(DateStart.Date)) +') and (invoices_date_time <='+floattostr(Trunc(DateEnd.Date)+1)+')';
+  RemoteDB.Invoices.Filtered:=True;
+  if RemoteDB.Invoices.MasterSource=RemoteDB.CustomersSRC then begin
+    RemoteDB.FreeInvoicesToCustomers;
+    LinkToCust:=True;
+  end;
+  Progress.Min:=0;
+  Progress.Max:=RemoteDB.Invoices.RecordCount;
+  RemoteDB.Invoices.First;
+  While not RemoteDB.Invoices.Eof do begin
+   RemoteDB.Customers.Locate('customers_nbr',RemoteDB.Invoicesinvoices_customer_id.Value,[]);
+   RemoteDB.SetAddress_bookToCustomers;
+   RemoteDB.SetInvoicesItemsToInvoices;
+   Progress.Position:=Progress.Position+1;
+   begin
+
+ ChDir( ExtractFilePath(ParamStr(0)) );
+ RemoteDB.Shops.FindKey([CONNECTEDSHOP]);
+ ReportModule.RvProject.Open;
+ ReportModule.RvProject.SelectReport('ReportInvoice',true);
+ ReportModule.RvProject.SetParam('URL',WEBURL);
+ ReportModule.RvSystem.DefaultDest := rdPrinter;
+// ReportModule.RvSystem.DoNativeOutput := true;
+ if sender=bitbtnPrintPrev then ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+ if sender=bitbtnPrint then ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+
+ //  ReportModule.RvSystem.Execute;
+ ReportModule.RvSystem.SystemPreview.FormState:=wsMaximized;
+ ReportModule.RvProject.Execute;
+ ReportModule.RvProject.Close;
+   end;
+   RemoteDB.Invoices.Next;
+  end;
+ finally
+  //RemoteDB.Invoices.Filter:='';
+  //RemoteDB.Invoices.Filtered:=False;
+  if LinkToCust then begin
+   RemoteDB.SetInvoicesToCustomers;
+  end;
+  Self.ModalResult:=MrOk;
+ end;
+end;
+
+procedure TInvoiceBatchPrintForm.FormShow(Sender: TObject);
+begin
+ DateStart.Date:=Now;
+ DateEnd.Date:=Now;
+ Progress.Position:=0;
+end;
+
+end.

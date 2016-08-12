@@ -1,0 +1,1503 @@
+object MainForm: TMainForm
+  Left = 210
+  Top = 184
+  Width = 1156
+  Height = 678
+  Caption = 'JonaMedia Account Creator'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label27: TLabel
+    Left = 532
+    Top = 180
+    Width = 48
+    Height = 13
+    Caption = 'Dimanche'
+  end
+  object PanelCustomerData: TPanel
+    Left = 0
+    Top = 26
+    Width = 1148
+    Height = 263
+    Align = alTop
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 12
+      Top = 12
+      Width = 54
+      Height = 13
+      Caption = 'Login client'
+    end
+    object Label2: TLabel
+      Left = 12
+      Top = 40
+      Width = 51
+      Height = 13
+      Caption = 'Pass client'
+    end
+    object Label7: TLabel
+      Left = 12
+      Top = 68
+      Width = 50
+      Height = 13
+      Caption = 'URL client'
+    end
+    object Label8: TLabel
+      Left = 12
+      Top = 96
+      Width = 40
+      Height = 13
+      Caption = 'ID Client'
+    end
+    object Label9: TLabel
+      Left = 12
+      Top = 124
+      Width = 52
+      Height = 13
+      Caption = 'ID Groupe '
+    end
+    object Label3: TLabel
+      Left = 12
+      Top = 152
+      Width = 40
+      Height = 13
+      Caption = 'DB Host'
+    end
+    object Label4: TLabel
+      Left = 12
+      Top = 180
+      Width = 46
+      Height = 13
+      Caption = 'DB Name'
+    end
+    object Label5: TLabel
+      Left = 12
+      Top = 208
+      Width = 44
+      Height = 13
+      Caption = 'DB Login'
+    end
+    object Label6: TLabel
+      Left = 12
+      Top = 238
+      Width = 41
+      Height = 13
+      Caption = 'DB Pass'
+    end
+    object Label10: TLabel
+      Left = 228
+      Top = 12
+      Width = 25
+      Height = 13
+      Caption = 'Nom '
+    end
+    object Label11: TLabel
+      Left = 228
+      Top = 40
+      Width = 21
+      Height = 13
+      Caption = 'Titre'
+    end
+    object Label12: TLabel
+      Left = 228
+      Top = 68
+      Width = 38
+      Height = 13
+      Caption = 'Adresse'
+    end
+    object Label13: TLabel
+      Left = 228
+      Top = 96
+      Width = 45
+      Height = 13
+      Caption = 'CP + Ville'
+    end
+    object Label14: TLabel
+      Left = 228
+      Top = 124
+      Width = 28
+      Height = 13
+      Caption = 'Email '
+    end
+    object Label15: TLabel
+      Left = 228
+      Top = 152
+      Width = 32
+      Height = 13
+      Caption = 'G'#233'rant'
+    end
+    object Label16: TLabel
+      Left = 228
+      Top = 180
+      Width = 37
+      Height = 13
+      Caption = 'Url Plan'
+    end
+    object Label17: TLabel
+      Left = 228
+      Top = 208
+      Width = 43
+      Height = 13
+      Caption = 'Url Logo '
+    end
+    object Label18: TLabel
+      Left = 228
+      Top = 236
+      Width = 44
+      Height = 13
+      Caption = 'Url Photo'
+    end
+    object Label19: TLabel
+      Left = 532
+      Top = 12
+      Width = 26
+      Height = 13
+      Caption = 'Lundi'
+    end
+    object Label20: TLabel
+      Left = 532
+      Top = 40
+      Width = 26
+      Height = 13
+      Caption = 'Mardi'
+    end
+    object Label21: TLabel
+      Left = 532
+      Top = 68
+      Width = 41
+      Height = 13
+      Caption = 'Mercredi'
+    end
+    object Label22: TLabel
+      Left = 532
+      Top = 96
+      Width = 25
+      Height = 13
+      Caption = 'Jeudi'
+    end
+    object Label23: TLabel
+      Left = 532
+      Top = 124
+      Width = 42
+      Height = 13
+      Caption = 'Vendredi'
+    end
+    object Label24: TLabel
+      Left = 532
+      Top = 152
+      Width = 35
+      Height = 13
+      Caption = 'Samedi'
+    end
+    object Label25: TLabel
+      Left = 532
+      Top = 180
+      Width = 48
+      Height = 13
+      Caption = 'Dimanche'
+    end
+    object Label26: TLabel
+      Left = 532
+      Top = 208
+      Width = 23
+      Height = 13
+      Caption = 'Pays'
+    end
+    object Label28: TLabel
+      Left = 532
+      Top = 236
+      Width = 34
+      Height = 13
+      Caption = 'R'#233'gion'
+    end
+    object EditCustUrl: TdxEdit
+      Left = 76
+      Top = 64
+      Width = 121
+      TabOrder = 0
+      Alignment = taRightJustify
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object EditCustID: TdxMaskEdit
+      Left = 76
+      Top = 92
+      Width = 121
+      TabOrder = 1
+      Alignment = taRightJustify
+      EditMask = '####'
+      IgnoreMaskBlank = False
+      StyleController = dxEditStyleController1
+      Text = '0000'
+      StoredValues = 5
+    end
+    object EditCustGroupID: TdxMaskEdit
+      Left = 76
+      Top = 120
+      Width = 121
+      TabOrder = 2
+      Alignment = taRightJustify
+      EditMask = '####'
+      IgnoreMaskBlank = False
+      StyleController = dxEditStyleController1
+      Text = '0000'
+      StoredValues = 5
+    end
+    object EditDBHost: TdxEdit
+      Left = 76
+      Top = 148
+      Width = 121
+      TabOrder = 3
+      Alignment = taRightJustify
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object EditDBName: TdxEdit
+      Left = 76
+      Top = 176
+      Width = 121
+      TabOrder = 4
+      Alignment = taRightJustify
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object EditDBLogin: TdxEdit
+      Left = 76
+      Top = 204
+      Width = 121
+      TabOrder = 5
+      Alignment = taRightJustify
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object EditDBPass: TdxEdit
+      Left = 76
+      Top = 230
+      Width = 121
+      TabOrder = 6
+      Alignment = taRightJustify
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxLookupEdit1: TdxLookupEdit
+      Left = 596
+      Top = 204
+      Width = 101
+      TabOrder = 7
+      StyleController = dxEditStyleController1
+      LookupKeyValue = Null
+    end
+    object dxLookupEdit2: TdxLookupEdit
+      Left = 596
+      Top = 232
+      Width = 101
+      TabOrder = 8
+      StyleController = dxEditStyleController1
+      LookupKeyValue = Null
+    end
+    object dxDBEditName: TdxDBEdit
+      Left = 292
+      Top = 7
+      Width = 225
+      TabOrder = 9
+      Alignment = taRightJustify
+      DataField = 'requests_shop_name'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEditTitle: TdxDBEdit
+      Left = 292
+      Top = 35
+      Width = 225
+      TabOrder = 10
+      Alignment = taRightJustify
+      DataField = 'requests_shop_title'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEditStreet: TdxDBEdit
+      Left = 292
+      Top = 63
+      Width = 225
+      TabOrder = 11
+      Alignment = taRightJustify
+      DataField = 'requests_street_address'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEditEmail: TdxDBEdit
+      Left = 292
+      Top = 119
+      Width = 225
+      TabOrder = 12
+      Alignment = taRightJustify
+      DataField = 'requests_shop_email'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEditmanager: TdxDBEdit
+      Left = 292
+      Top = 147
+      Width = 225
+      TabOrder = 13
+      Alignment = taRightJustify
+      DataField = 'requests_shop_manager'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit6: TdxDBEdit
+      Left = 292
+      Top = 175
+      Width = 225
+      TabOrder = 14
+      Alignment = taRightJustify
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit7: TdxDBEdit
+      Left = 292
+      Top = 203
+      Width = 225
+      TabOrder = 15
+      Alignment = taRightJustify
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit8: TdxDBEdit
+      Left = 292
+      Top = 231
+      Width = 225
+      TabOrder = 16
+      Alignment = taRightJustify
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEditpost_code: TdxDBEdit
+      Left = 292
+      Top = 91
+      Width = 77
+      TabOrder = 17
+      Alignment = taRightJustify
+      DataField = 'requests_post_code'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEditcity: TdxDBEdit
+      Left = 368
+      Top = 91
+      Width = 149
+      TabOrder = 18
+      Alignment = taRightJustify
+      DataField = 'requests_city'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit1: TdxDBEdit
+      Left = 596
+      Top = 175
+      Width = 101
+      TabOrder = 19
+      Alignment = taRightJustify
+      DataField = 'requests_schedule_sunday'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object EditCustPass: TdxDBEdit
+      Left = 76
+      Top = 36
+      Width = 121
+      TabOrder = 20
+      Alignment = taRightJustify
+      DataField = 'requests_password'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object EditCustLogin: TdxDBEdit
+      Left = 76
+      Top = 8
+      Width = 121
+      TabOrder = 21
+      Alignment = taRightJustify
+      DataField = 'requests_login'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit4: TdxDBEdit
+      Left = 596
+      Top = 63
+      Width = 101
+      TabOrder = 22
+      Alignment = taRightJustify
+      DataField = 'requests_schedule_wednesday'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit5: TdxDBEdit
+      Left = 596
+      Top = 91
+      Width = 101
+      TabOrder = 23
+      Alignment = taRightJustify
+      DataField = 'requests_schedule_thursday'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit9: TdxDBEdit
+      Left = 596
+      Top = 119
+      Width = 101
+      TabOrder = 24
+      Alignment = taRightJustify
+      DataField = 'requests_schedule_friday'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit10: TdxDBEdit
+      Left = 596
+      Top = 147
+      Width = 101
+      TabOrder = 25
+      Alignment = taRightJustify
+      DataField = 'requests_schedule_saturday'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit11: TdxDBEdit
+      Left = 596
+      Top = 35
+      Width = 101
+      TabOrder = 26
+      Alignment = taRightJustify
+      DataField = 'requests_schedule_tuesday'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+    object dxDBEdit12: TdxDBEdit
+      Left = 596
+      Top = 7
+      Width = 101
+      TabOrder = 27
+      Alignment = taRightJustify
+      DataField = 'requests_schedule_monday'
+      DataSource = DataSourceRequests
+      StyleController = dxEditStyleController1
+      StoredValues = 1
+    end
+  end
+  object PanelDbGrid: TPanel
+    Left = 0
+    Top = 289
+    Width = 1148
+    Height = 362
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    Caption = 'PanelDbGrid'
+    TabOrder = 5
+    object PageControlGrids: TPageControl
+      Left = 2
+      Top = 2
+      Width = 1144
+      Height = 358
+      ActivePage = TabSheetShops
+      Align = alClient
+      HotTrack = True
+      MultiLine = True
+      Style = tsFlatButtons
+      TabOrder = 0
+      OnChange = PageControlGridsChange
+      object TabSheetUsers: TTabSheet
+        Caption = 'Utilisateurs'
+        object DBGrid1: TDBGrid
+          Left = 0
+          Top = 0
+          Width = 1136
+          Height = 327
+          Align = alClient
+          Ctl3D = False
+          DataSource = DSUsers
+          Options = [dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+          ParentCtl3D = False
+          ReadOnly = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'MS Sans Serif'
+          TitleFont.Style = []
+        end
+      end
+      object TabSheetShops: TTabSheet
+        Caption = 'Magasins'
+        ImageIndex = 1
+        object DBGrid2: TDBGrid
+          Left = 0
+          Top = 0
+          Width = 1136
+          Height = 327
+          Align = alClient
+          Ctl3D = False
+          DataSource = DSShops
+          Options = [dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+          ParentCtl3D = False
+          ReadOnly = True
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'MS Sans Serif'
+          TitleFont.Style = []
+        end
+      end
+    end
+  end
+  object ZConnectionUsers: TZConnection
+    Protocol = 'mysql-3.23'
+    HostName = 'smartoys.be'
+    Port = 0
+    Database = 'catalog'
+    User = 'smartb'
+    Password = 'sonnetx'
+    AutoCommit = True
+    ReadOnly = False
+    TransactIsolationLevel = tiNone
+    Connected = True
+    Left = 1108
+    Top = 4
+  end
+  object ZQueryTable: TZQuery
+    Connection = ZConnectionUsers
+    RequestLive = True
+    UpdateObject = ZUpdateSQL
+    CachedUpdates = False
+    SQL.Strings = (
+      'select * from Users')
+    ParamCheck = True
+    Params = <>
+    ShowRecordTypes = [utModified, utInserted, utUnmodified]
+    Left = 1108
+    Top = 36
+    object ZQueryTablefield1: TIntegerField
+      DisplayWidth = 5
+      FieldName = 'field1'
+      Required = True
+    end
+    object ZQueryTablefield2: TStringField
+      DisplayWidth = 15
+      FieldName = 'field2'
+      Size = 120
+    end
+    object ZQueryTablefield3: TStringField
+      DisplayWidth = 20
+      FieldName = 'field3'
+      Size = 120
+    end
+    object ZQueryTablefield4: TStringField
+      DisplayWidth = 20
+      FieldName = 'field4'
+      Size = 120
+    end
+    object ZQueryTablefield5: TStringField
+      DisplayWidth = 20
+      FieldName = 'field5'
+      Size = 120
+    end
+    object ZQueryTablefield6: TStringField
+      DisplayWidth = 20
+      FieldName = 'field6'
+      Size = 120
+    end
+    object ZQueryTablefield7: TStringField
+      DisplayWidth = 20
+      FieldName = 'field7'
+      Size = 120
+    end
+    object ZQueryTablefield8: TStringField
+      DisplayWidth = 20
+      FieldName = 'field8'
+      Size = 120
+    end
+    object ZQueryTablefield9: TStringField
+      DisplayWidth = 20
+      FieldName = 'field9'
+      Size = 120
+    end
+    object ZQueryTablefield10: TStringField
+      DisplayWidth = 20
+      FieldName = 'field10'
+      Size = 120
+    end
+  end
+  object ZUpdateSQL: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM Users WHERE field1=:FIELD1')
+    InsertSQL.Strings = (
+      'INSERT INTO Users'
+      
+        '(field1,field2,field3,field4,field5,field6,Field7,Field8,Field9,' +
+        'Field10) '
+      'VALUES'
+      
+        '(:field1,:field2,:field3,:field4,:field5,:field6,:Field7,:Field8' +
+        ',:Field9,:Field10) ')
+    ModifySQL.Strings = (
+      
+        'UPDATE Users SET field1=:FIELD1,field2=:FIELD2,field3=:FIELD3,fi' +
+        'eld4=:FIELD4,'
+      
+        'field5=:FIELD5,field6=:FIELD6,field7=:FIELD7,field8=:FIELD8,fiel' +
+        'd9=:FIELD9,field10=:FIELD10')
+    Left = 1108
+    Top = 68
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'FIELD1'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD2'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD3'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD4'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD5'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD6'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD7'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD8'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD9'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftUnknown
+        Name = 'FIELD10'
+        ParamType = ptUnknown
+      end>
+  end
+  object DSUsers: TDataSource
+    DataSet = ZQueryTable
+    Left = 1108
+    Top = 104
+  end
+  object dxEditStyleController1: TdxEditStyleController
+    Edges = []
+    Shadow = True
+    Left = 1072
+    Top = 8
+  end
+  object Servers: TClientDataSet
+    Active = True
+    Aggregates = <>
+    FileName = 'servers.cds'
+    FieldDefs = <
+      item
+        Name = 'ServersName'
+        DataType = ftString
+        Size = 32
+      end
+      item
+        Name = 'ServersDBHost'
+        DataType = ftString
+        Size = 32
+      end
+      item
+        Name = 'ServersDBName'
+        DataType = ftString
+        Size = 32
+      end
+      item
+        Name = 'ServersDBUser'
+        DataType = ftString
+        Size = 32
+      end
+      item
+        Name = 'ServersDBPass'
+        DataType = ftString
+        Size = 32
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 1108
+    Top = 140
+    Data = {
+      B10100009619E0BD01000000180000000500040000000300000005010B536572
+      766572734E616D6501004900000001000557494454480200020020000D536572
+      766572734442486F737401004900000001000557494454480200020020000D53
+      65727665727344424E616D650100490000000100055749445448020002002000
+      0D53657276657273444255736572010049000000010005574944544802000200
+      20000D5365727665727344425061737301004900000001000557494454480200
+      0200200001000A4348414E47455F4C4F47040082000C00000001000000000000
+      0004000000020000000000000004000000030000000100000008000000040000
+      000200000008000000050000094A6F6E614D656469610E65782D70657269656E
+      63652E6368096A6F6E61736F6674310673746565766505646176696405A2020B
+      736D6172746F79732E62650C00000B4A6F6E614D6564696120310E65782D7065
+      7269656E63652E6368096A6F6E61736F66743106737465657665056461766964
+      0C00000B4A6F6E614D6564696120320E65782D70657269656E63652E6368096A
+      6F6E61736F66743206737465657665056461766964}
+    object ServersServersName: TStringField
+      DisplayWidth = 20
+      FieldName = 'ServersName'
+      Size = 32
+    end
+    object ServersServersDBHost: TStringField
+      FieldName = 'ServersDBHost'
+      Size = 32
+    end
+    object ServersServersDBName: TStringField
+      FieldName = 'ServersDBName'
+      Size = 32
+    end
+    object ServersServersDBUser: TStringField
+      FieldName = 'ServersDBUser'
+      Size = 32
+    end
+    object ServersServersDBPass: TStringField
+      FieldName = 'ServersDBPass'
+      Size = 32
+    end
+  end
+  object DataSourceServers: TDataSource
+    DataSet = Servers
+    Left = 1108
+    Top = 176
+  end
+  object ImageList: TImageList
+    Left = 1108
+    Top = 208
+    Bitmap = {
+      494C010103000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000001000000001002000000000000010
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000008080000080
+      8000000000000000000000000000000000000000000000000000C0C0C000C0C0
+      C000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000008080
+      800000000000000000008080800000000000000000000000000000000000FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000008080000080
+      8000000000000000000000000000000000000000000000000000C0C0C000C0C0
+      C000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000808080000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00000000000000000000000000000000000000000000000000008080000080
+      8000000000000000000000000000000000000000000000000000C0C0C000C0C0
+      C000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000008080800000FFFF0000FFFF000080800000808000000000008080
+      800000000000000000000000000000000000000000000000000000000000FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000008080000080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000080808000FFFFFF0000FFFF000080800000FFFF0000808000008080000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00000000000000000000000000000000000000000000000000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00008080800000FFFF0000FFFF0000FFFF000080800000808000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000008080000080
+      8000000000000000000000000000000000000000000000000000000000000000
+      0000008080000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000FFFF0000000000000000008080
+      80008080800000FFFF0000FFFF000080800000FFFF0000808000008080000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00000000000000000000000000000000000000000000000000008080000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000080808000FFFFFF00000000008080
+      800000FFFF0000FFFF0000800000808080000000000000808000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000008080000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000FFFF008080
+      8000FFFFFF00FFFFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00000000000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FF
+      FF00000000000000000000000000000000000000000000000000008080000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000808080008080800080808000FFFF
+      FF0000FFFF0000FFFF0000FFFF00FFFFFF0000FFFF0000FFFF0000FFFF000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF0000000000000000000000
+      0000000000000000000000000000000000000000000000000000008080000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000000000000080800000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000FFFF00FFFFFF008080800000FF
+      FF00FFFFFF008080800000FFFF0000FFFF00FFFFFF0000FFFF00808080000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00FFFFFF0000FFFF00FFFFFF0000FFFF00FFFFFF0000000000FFFFFF000000
+      0000000000000000000000000000000000000000000000000000008080000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000008080800000FFFF008080
+      800000FFFF00000000008080800000FFFF008080800080808000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF0000FFFF00FFFFFF0000FFFF00FFFFFF0000FFFF0000000000000000000000
+      0000000000000000000000000000000000000000000000000000008080000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000008080800000FFFF00000000008080
+      8000FFFFFF000000000000000000808080000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000FFFF0000000000000000008080
+      800000FFFF000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000100000000100010000000000800000000000000000000000
+      000000000000000000000000FFFFFF00FFF7FFFFFFFF0000FFDBFFFFC0010000
+      FFE1C00780010000FFE1C00780010000FC1DC00780010000F80EC00780010000
+      F00EC00780010000F001C00780010000600FC00780010000200FC00780010000
+      C00FC00780010000000FC00780010000001FC00F80010000843FC01F80050000
+      26FFC03F8001000067FFFFFFFFFF000000000000000000000000000000000000
+      000000000000}
+  end
+  object ActionManager1: TActionManager
+    ActionBars = <
+      item
+        Items = <
+          item
+            Action = ActionClear
+            Caption = '&Nouvelle Fiche'
+            ImageIndex = 1
+          end
+          item
+            Action = ActionCreateAccount
+            Caption = '&Cr'#233'er compte'
+            ImageIndex = 2
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Action = ActionManageServers
+            Caption = '&Gestion serveurs'
+            ImageIndex = 0
+          end>
+      end
+      item
+      end>
+    Images = ImageList
+    Left = 1108
+    Top = 240
+    StyleName = 'XP Style'
+    object ActionClear: TAction
+      Caption = 'Nouvelle Fiche'
+      ImageIndex = 1
+      OnExecute = ActionClearExecute
+    end
+    object ActionCreateAccount: TAction
+      Caption = 'Cr'#233'er compte'
+      ImageIndex = 2
+      OnExecute = ActionCreateAccountExecute
+    end
+    object ActionManageServers: TAction
+      Caption = 'Gestion serveurs'
+      ImageIndex = 0
+      OnExecute = ActionManageServersExecute
+    end
+  end
+  object dxBarManager1: TdxBarManager
+    AllowReset = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Bars = <
+      item
+        AllowClose = False
+        AllowCustomizing = False
+        AllowQuickCustomizing = False
+        AllowReset = False
+        Caption = 'Main'
+        DockedDockingStyle = dsTop
+        DockedLeft = 0
+        DockedTop = 0
+        DockingStyle = dsTop
+        FloatLeft = 464
+        FloatTop = 357
+        FloatClientWidth = 23
+        FloatClientHeight = 22
+        IsMainMenu = True
+        ItemLinks = <
+          item
+            Item = dxBarButtonClear
+            Visible = True
+          end
+          item
+            BeginGroup = True
+            Item = serverlookup
+            Visible = True
+          end
+          item
+            BeginGroup = True
+            Item = dxBarDBNavFirst1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavPrev1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavNext1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavLast1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavInsert1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavDelete1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavEdit1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavCancel1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavPost1
+            Visible = True
+          end
+          item
+            Item = dxBarDBNavRefresh1
+            Visible = True
+          end
+          item
+            BeginGroup = True
+            Item = dxBarButton1
+            Visible = True
+          end
+          item
+            BeginGroup = True
+            Item = dxBarButtonCreateAccount
+            Visible = True
+          end>
+        MultiLine = True
+        Name = 'Main'
+        NotDocking = [dsNone, dsLeft, dsTop, dsRight, dsBottom]
+        OneOnRow = True
+        Row = 0
+        UseOwnFont = False
+        Visible = True
+        WholeRow = True
+      end>
+    CanCustomize = False
+    Categories.Strings = (
+      'Usersmanagement'
+      'DB Navigator')
+    Categories.ItemsVisibles = (
+      2
+      2)
+    Categories.Visibles = (
+      True
+      True)
+    FlatCloseButton = True
+    Images = ImageList
+    MenuAnimations = maUnfold
+    PopupMenuLinks = <>
+    UseSystemFont = True
+    Left = 1072
+    Top = 208
+    DockControlHeights = (
+      0
+      0
+      26
+      0)
+    object dxBarButtonClear: TdxBarButton
+      Action = ActionClear
+      Category = 0
+      PaintStyle = psCaptionGlyph
+    end
+    object dxBarButtonCreateAccount: TdxBarButton
+      Action = ActionCreateAccount
+      Category = 0
+      PaintStyle = psCaptionGlyph
+    end
+    object dxBarButtonGenerateData: TdxBarButton
+      Caption = 'Ins'#233'rer les donn'#233'es du serveur'
+      Category = 0
+      Hint = 'Ins'#233'rer les donn'#233'es du serveur'
+      Visible = ivAlways
+      ImageIndex = 0
+      PaintStyle = psCaptionGlyph
+    end
+    object serverlookup: TdxBarLookupCombo
+      Caption = 'Choix du serveur'
+      Category = 0
+      Hint = 'Choix du serveur'
+      Visible = ivAlways
+      OnChange = serverlookupChange
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDD
+        DDDD000000000000000D0FFFF0FFFFFFFF0D0F77F0F777777F0D0CCCC0CCCCCC
+        CC0D0C77C0C777777C0D0CCCC0CCCCCCCC0D0F77F0F777777F0D0FFFF0FFFFFF
+        FF0D0F77F0F777777F0D0FFFF0FFFFFFFF0D000000000000000D0FFFCCCCFFF0
+        DDDD0F777777FFF0DDDD0FFFCCCCFFF0DDDD000000000000DDDD}
+      ShowCaption = True
+      Width = 100
+      KeyField = 'ServersName'
+      ListField = 'ServersName'
+      ListSource = DataSourceServers
+      RowCount = 5
+    end
+    object dxBarButton1: TdxBarButton
+      Action = ActionManageServers
+      Category = 0
+      PaintStyle = psCaptionGlyph
+    end
+    object dxBarDBNavFirst1: TdxBarDBNavButton
+      Caption = 'First'
+      Category = 1
+      Enabled = False
+      Hint = 'First'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777777777777
+        7777777087777778077777708777780007777770877800000777777088000000
+        0777777087780000077777708777780007777770877777780777777777777777
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnFirst
+    end
+    object dxBarDBNavPrev1: TdxBarDBNavButton
+      Caption = 'Prior'
+      Category = 1
+      Enabled = False
+      Hint = 'Prior'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777777777777
+        7777777777777780777777777777800077777777778000007777777780000000
+        7777777777800000777777777777800077777777777777807777777777777777
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnPrior
+    end
+    object dxBarDBNavNext1: TdxBarDBNavButton
+      Caption = 'Next'
+      Category = 1
+      Hint = 'Next'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777777777777
+        7777777708777777777777770008777777777777000008777777777700000008
+        7777777700000877777777770008777777777777087777777777777777777777
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnNext
+    end
+    object dxBarDBNavLast1: TdxBarDBNavButton
+      Caption = 'Last'
+      Category = 1
+      Hint = 'Last'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777777777777
+        7777777087777778077777700087777807777770000087780777777000000088
+        0777777000008778077777700087777807777770877777780777777777777777
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnLast
+    end
+    object dxBarDBNavInsert1: TdxBarDBNavButton
+      Caption = 'Insert'
+      Category = 1
+      Enabled = False
+      Hint = 'Insert'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777777000777
+        7777777777000777777777777700077777777770000000007777777000000000
+        7777777000000000777777777700077777777777770007777777777777000777
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnInsert
+    end
+    object dxBarDBNavDelete1: TdxBarDBNavButton
+      Caption = 'Delete'
+      Category = 1
+      Enabled = False
+      Hint = 'Delete'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777777777777
+        7777777777777777777777777777777777777770000000000777777000000000
+        0777777000000000077777777777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnDelete
+    end
+    object dxBarDBNavEdit1: TdxBarDBNavButton
+      Caption = 'Edit'
+      Category = 1
+      Enabled = False
+      Hint = 'Edit'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777777777777
+        7777777777777777777777700000000007777777000000007777777770000007
+        7777777777000077777777777770077777777777777777777777777777777777
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnEdit
+    end
+    object dxBarDBNavCancel1: TdxBarDBNavButton
+      Caption = 'Cancel'
+      Category = 1
+      Enabled = False
+      Hint = 'Cancel'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777007777700
+        7777777000777000777777770007000777777777700000777777777777000777
+        7777777770000077777777770007000777777770007770007777777007777700
+        7777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnCancel
+    end
+    object dxBarDBNavPost1: TdxBarDBNavButton
+      Caption = 'Post'
+      Category = 1
+      Enabled = False
+      Hint = 'Post'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777777777777777777770777777
+        7777777700077777777777700000777777777700070007777777770077700077
+        7777777777770007777777777777700077777777777777000777777777777770
+        0777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnPost
+    end
+    object dxBarDBNavRefresh1: TdxBarDBNavButton
+      Caption = 'Refresh'
+      Category = 1
+      Hint = 'Refresh'
+      Visible = ivAlways
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777777777777777777777777777777777777778087777777777780087777
+        7777777700877777777777780877777777777770077777777777777007770000
+        0777777008777800077777780087800007777777000000080777777778000877
+        0777777777777777777777777777777777777777777777777777}
+      BarDBNavigator = dxBarDBNavigator1
+      NavButton = dxbnRefresh
+    end
+  end
+  object ZConnectionData: TZConnection
+    Protocol = 'mysql-3.23'
+    Port = 0
+    User = 'hello'
+    AutoCommit = True
+    ReadOnly = False
+    TransactIsolationLevel = tiNone
+    Connected = False
+    Left = 1036
+    Top = 6
+  end
+  object ZShops: TZQuery
+    Connection = ZConnectionData
+    RequestLive = True
+    UpdateObject = ZUpdateShops
+    CachedUpdates = False
+    SQL.Strings = (
+      'select * from shops')
+    ParamCheck = True
+    Params = <>
+    ShowRecordTypes = [utModified, utInserted, utUnmodified]
+    Left = 1036
+    Top = 38
+  end
+  object ZUpdateShops: TZUpdateSQL
+    Left = 1036
+    Top = 70
+  end
+  object ZCustomers: TZQuery
+    Connection = ZConnectionData
+    RequestLive = True
+    CachedUpdates = False
+    SQL.Strings = (
+      'select * from customers where customers_nbr <10000')
+    ParamCheck = True
+    Params = <>
+    ShowRecordTypes = [utModified, utInserted, utUnmodified]
+    Left = 1004
+    Top = 38
+  end
+  object DSShops: TDataSource
+    DataSet = ZShops
+    Left = 1036
+    Top = 102
+  end
+  object DataSource3: TDataSource
+    Left = 1004
+    Top = 102
+  end
+  object dxBarDBNavigator1: TdxBarDBNavigator
+    BarManager = dxBarManager1
+    CategoryName = 'DB Navigator'
+    ConfirmDelete = False
+    DataSource = DataSourceRequests
+    DBCheckLinks = <>
+    VisibleButtons = [dxbnFirst, dxbnPrior, dxbnNext, dxbnLast, dxbnInsert, dxbnDelete, dxbnEdit, dxbnPost, dxbnCancel, dxbnRefresh]
+    Left = 1072
+    Top = 242
+  end
+  object ZQueryRequests: TZQuery
+    Connection = ZConnectionUsers
+    RequestLive = True
+    UpdateObject = ZUpdateSQLRequests
+    CachedUpdates = False
+    Active = True
+    SQL.Strings = (
+      'select * from requests')
+    ParamCheck = True
+    Params = <>
+    ShowRecordTypes = [utModified, utInserted, utUnmodified]
+    Left = 1076
+    Top = 38
+    object ZQueryRequestsrequests_id: TIntegerField
+      FieldName = 'requests_id'
+      Required = True
+    end
+    object ZQueryRequestsrequests_shop_name: TStringField
+      FieldName = 'requests_shop_name'
+      Size = 32
+    end
+    object ZQueryRequestsrequests_shop_title: TStringField
+      FieldName = 'requests_shop_title'
+      Size = 32
+    end
+    object ZQueryRequestsrequests_shop_email: TStringField
+      FieldName = 'requests_shop_email'
+      Size = 96
+    end
+    object ZQueryRequestsrequests_shop_manager: TStringField
+      FieldName = 'requests_shop_manager'
+      Size = 32
+    end
+    object ZQueryRequestsrequests_street_address: TStringField
+      FieldName = 'requests_street_address'
+      Size = 64
+    end
+    object ZQueryRequestsrequests_post_code: TStringField
+      FieldName = 'requests_post_code'
+      Size = 8
+    end
+    object ZQueryRequestsrequests_city: TStringField
+      FieldName = 'requests_city'
+      Size = 32
+    end
+    object ZQueryRequestsrequests_country_id: TIntegerField
+      FieldName = 'requests_country_id'
+    end
+    object ZQueryRequestsrequests_zone_id: TIntegerField
+      FieldName = 'requests_zone_id'
+    end
+    object ZQueryRequestsrequests_schedule_monday: TStringField
+      FieldName = 'requests_schedule_monday'
+    end
+    object ZQueryRequestsrequests_schedule_tuesday: TStringField
+      FieldName = 'requests_schedule_tuesday'
+    end
+    object ZQueryRequestsrequests_schedule_wednesday: TStringField
+      FieldName = 'requests_schedule_wednesday'
+    end
+    object ZQueryRequestsrequests_schedule_thursday: TStringField
+      FieldName = 'requests_schedule_thursday'
+    end
+    object ZQueryRequestsrequests_schedule_friday: TStringField
+      FieldName = 'requests_schedule_friday'
+    end
+    object ZQueryRequestsrequests_schedule_saturday: TStringField
+      FieldName = 'requests_schedule_saturday'
+    end
+    object ZQueryRequestsrequests_schedule_sunday: TStringField
+      FieldName = 'requests_schedule_sunday'
+    end
+    object ZQueryRequestsrequests_telephone: TStringField
+      FieldName = 'requests_telephone'
+      Size = 32
+    end
+    object ZQueryRequestsrequests_fax: TStringField
+      FieldName = 'requests_fax'
+      Size = 32
+    end
+    object ZQueryRequestsrequests_login: TStringField
+      FieldName = 'requests_login'
+      Size = 12
+    end
+    object ZQueryRequestsrequests_password: TStringField
+      FieldName = 'requests_password'
+      Size = 40
+    end
+  end
+  object ZUpdateSQLRequests: TZUpdateSQL
+    Left = 1076
+    Top = 70
+  end
+  object DataSourceRequests: TDataSource
+    DataSet = ZQueryRequests
+    Left = 1076
+    Top = 102
+  end
+end

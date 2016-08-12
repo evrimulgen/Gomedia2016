@@ -1,0 +1,389 @@
+unit PrepareOdrerFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, JvWizard, JvWizardRouteMapNodes, JvExControls, JvComponent,
+  ComCtrls, dxtree, dxdbtree, Buttons, ExtCtrls, StdCtrls, AdvPageControl,
+  JvLookOut, Grids, BaseGrid, AdvGrid, Math, DBAdvGrd, Mask, JvExMask,
+  JvSpin;
+
+type
+  TFormPrepareOrderWizard = class(TForm)
+    JvWizardPrepareOrder: TJvWizard;
+    JvWizardRouteMapNodes1: TJvWizardRouteMapNodes;
+    JvWizardIPSelectSupplier: TJvWizardInteriorPage;
+    JvWizardIPSelectFilters: TJvWizardInteriorPage;
+    PanelManufacturersSelection: TPanel;
+    ListBoxAvailableManufacturers: TListBox;
+    ListBoxSelectedManufacturers: TListBox;
+    PanelButtonsCat: TPanel;
+    SBAddAll: TSpeedButton;
+    SBRemoveAll: TSpeedButton;
+    SBRemoveSelected: TSpeedButton;
+    SBAddSelected: TSpeedButton;
+    ComboBoxSuppliers: TComboBox;
+    SBSaveSupplierProfile: TSpeedButton;
+    AdminStockCatTree: TdxDBTreeView;
+    JvWizardIPShowGrid: TJvWizardInteriorPage;
+    PanelAdminStockGrid: TPanel;
+    PanelAdminStockButtons: TPanel;
+    JvExpressButtonAdminOrderSave: TJvExpressButton;
+    JvExpressButtonOrderSheet: TJvExpressButton;
+    JvExpressButtonAdminOrderPrint: TJvExpressButton;
+    CheckBoxOnlyEmpty: TCheckBox;
+    CheckBoxSkipDiscontinued: TCheckBox;
+    StringGridAdminOrder: TAdvStringGrid;
+    CheckBoxShowStock: TCheckBox;
+    CheckBoxShowSalesRecords: TCheckBox;
+    JvSpinEditSalesRecordsWeeks: TJvSpinEdit;
+    JVEBDicontinued: TJvExpressButton;
+    procedure SBAddSelectedClick(Sender: TObject);
+    procedure SBAddAllClick(Sender: TObject);
+    procedure SBRemoveSelectedClick(Sender: TObject);
+    procedure SBRemoveAllClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure SBSaveSupplierProfileClick(Sender: TObject);
+    procedure ComboBoxSuppliersChange(Sender: TObject);
+    procedure JvExpressButtonOrderSheetClick(Sender: TObject);
+    procedure CheckBoxShowSalesRecordsClick(Sender: TObject);
+    procedure JvWizardIPShowGridPage(Sender: TObject);
+    procedure StringGridAdminOrderCellValidate(Sender: TObject; ACol,
+      ARow: Integer; var Value: String; var Valid: Boolean);
+    procedure JVEBDicontinuedClick(Sender: TObject);
+    procedure JvExpressButtonAdminOrderPrintClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPrepareOrderWizard: TFormPrepareOrderWizard;
+
+implementation
+
+uses ClientDMunit, GlobalsUnit, DavidUtilsUnit, Printers, MainFRMunit;
+
+{$R *.dfm}
+
+procedure TFormPrepareOrderWizard.SBAddSelectedClick(Sender: TObject);
+var
+ i:integer;
+begin
+ for i:=0 to ListBoxAvailableManufacturers.Items.Count-1 do begin
+   if ((ListBoxSelectedManufacturers.Items.IndexOf(ListBoxAvailableManufacturers.Items[i])=-1)) then begin
+    ListBoxSelectedManufacturers.Items.Add(ListBoxAvailableManufacturers.Items[i])
+   end
+ end;
+end;
+
+procedure TFormPrepareOrderWizard.SBAddAllClick(Sender: TObject);
+var i:integer;
+begin
+ for i:=0 to ListBoxAvailableManufacturers.Items.Count-1 do begin
+   if  (ListBoxAvailableManufacturers.Selected[i] and  (ListBoxSelectedManufacturers.Items.IndexOf(ListBoxAvailableManufacturers.Items[i])=-1)) then begin
+    ListBoxSelectedManufacturers.Items.Add(ListBoxAvailableManufacturers.Items[i])
+   end
+ end;
+end;
+
+procedure TFormPrepareOrderWizard.SBRemoveSelectedClick(Sender: TObject);
+begin
+ ListBoxSelectedManufacturers.DeleteSelected;
+end;
+
+procedure TFormPrepareOrderWizard.SBRemoveAllClick(Sender: TObject);
+begin
+ ListBoxSelectedManufacturers.Clear;
+end;
+
+procedure TFormPrepareOrderWizard.FormCreate(Sender: TObject);
+var   Count,StdGridWidth:Integer;
+begin
+    // Creation Listbox des Fabriquants
+   RemoteDB.Manufacturers.First;
+   while not RemoteDB.Manufacturers.Eof do begin
+    ListBoxAvailableManufacturers.AddItem(RemoteDB.Manufacturersmanufacturers_name.AsString,nil);
+    RemoteDB.Manufacturers.Next;
+   end;
+
+   RemoteDB.Suppliers.First;
+   While not RemoteDB.Suppliers.Eof do
+   begin
+    ComboboxSuppliers.items.Add(RemoteDB.SuppliersSuppliers_Name.Text);
+    RemoteDb.Suppliers.Next;
+   end;
+
+
+
+end;
+
+procedure TFormPrepareOrderWizard.SBSaveSupplierProfileClick(
+  Sender: TObject);
+var i:integer;
+begin
+ if ComboboxSuppliers.ItemIndex=-1 then begin
+  ShowMessage('Veuillez selectionner un fournisseur');
+  Exit;
+ end else begin
+   // Clearing the manufacturers for the selected supplier
+   RemoteDB.Suppliers.Locate('suppliers_name',ComboboxSuppliers.Items[ComboboxSuppliers.ItemIndex],[]);
+   RemoteDB.Man2Sup.Filter:='suppliers_id = '+QuotedStr(remoteDB.SuppliersSuppliers_id.Text);
+   RemoteDB.Man2Sup.Filtered:=True;
+   RemoteDB.Man2Sup.First;
+   While Not RemoteDB.Man2Sup.Eof do begin
+    RemoteDB.Man2Sup.Delete;
+   end;
+   RemoteDB.Man2Sup.Filtered:=True;
+
+   // Populating the manufacturers for the supplier
+   for i:=0 to ListBoxSelectedManufacturers.Items.Count-1 do begin
+    if not RemoteDB.Manufacturers.Locate('manufacturers_name',ListBoxSelectedManufacturers.Items[i],[]) then begin
+      ShowMessage('Erreur editeur non trouve');
+      Exit;
+    end else begin
+      RemoteDB.Man2Sup.Append;
+      RemoteDB.Man2Supmanufactrers_id.Value:=RemoteDB.Manufacturersmanufacturers_id.Value;
+      RemoteDB.Man2Supsuppliers_id.Value:=RemoteDB.SuppliersSuppliers_id.Value;
+      RemoteDB.Man2Sup.Post;
+    end;
+   end;
+
+ end;
+end;
+
+procedure TFormPrepareOrderWizard.ComboBoxSuppliersChange(Sender: TObject);
+begin
+ ListBoxSelectedManufacturers.Clear;
+ RemoteDB.Suppliers.Locate('suppliers_name',ComboboxSuppliers.Items[ComboboxSuppliers.ItemIndex],[]);
+ RemoteDB.Man2Sup.Filter:='suppliers_id = '+QuotedStr(remoteDB.SuppliersSuppliers_id.Text);
+ RemoteDB.Man2Sup.Filtered:=True;
+ RemoteDB.Man2Sup.First;
+ While not RemoteDB.Man2Sup.Eof do begin
+  RemoteDB.Manufacturers.Locate('manufacturers_id',RemoteDB.Man2Supmanufactrers_id.Text,[]);
+  ListBoxSelectedManufacturers.Items.Add(RemoteDB.Manufacturersmanufacturers_name.Text);
+  RemoteDB.Man2Sup.Next;
+ end;
+ RemoteDB.Man2Sup.Filtered:=False;
+
+end;
+
+procedure TFormPrepareOrderWizard.JvExpressButtonOrderSheetClick(
+  Sender: TObject);
+var nestedcat:catarray;
+    Rx,i:integer;
+    QN,QO:integer;
+    name:string;
+begin
+ RemoteDB.Products.DisableControls;
+ Screen.Cursor:=crHourGlass;
+ StringGridAdminOrder.RowCount:=2;
+ RemoteDB.Products.First;
+ NestedCat:=RemoteDB.getchildcategories(RemoteDB.Categoriescategories_id.Value);
+ try
+
+ for i:= low(nestedcat) to high(nestedcat) do begin
+
+  RemoteDB.Products.Filter:='(categories_id = '+inttostr(nestedcat[i])+' )';
+  if CheckBoxSkipDiscontinued.Checked then RemoteDB.Products.Filter:=RemoteDB.Products.Filter+' and (products_isobsolete = '+QuotedStr('False')+')';
+  RemoteDB.Products.Filtered:=True;
+  RemoteDB.Products.First;
+  While not RemoteDB.Products.Eof do begin
+   name:=RemoteDB.Productsproducts_name.Text;
+   RemoteDB.Manufacturers.Locate('manufacturers_id',RemoteDB.Productsmanufacturers_id.Value,[]);
+   if ListBoxSelectedManufacturers.Items.IndexOf(RemoteDB.Manufacturersmanufacturers_name.AsString)<>-1 then begin
+     QN:=RemoteDB.GetStockNew(RemoteDB.Productsproducts_model.Value);
+     QO:=RemoteDB.GetStockOcc(RemoteDB.Productsproducts_model.Value);
+     if (CheckBoxOnlyEmpty.Checked and (QN+QO=0) or not(CheckBoxOnlyEmpty.Checked)) then
+
+     with StringGridAdminOrder do begin
+      Rx:=0;
+      Cells[Rx,RowCount-1]:='<a href"http://'+WEBURL+'/catalog/product_info.php/products_id/'+RemoteDB.Productsproducts_model.Text+'">'+RemoteDB.Productsproducts_model.AsString+'</a>';
+      Rx:=Rx+1;
+      Cells[Rx,RowCount-1]:=RemoteDB.Productsproducts_name.Value;
+      Rx:=Rx+1;
+      if CheckBoxShowStock.Checked then begin
+        Cells[Rx,RowCount-1]:=inttostr(QN);
+        Rx:=Rx+1;
+        Cells[Rx,RowCount-1]:=inttostr(QO);
+        Rx:=Rx+1;
+        Cells[Rx,RowCount-1]:=inttostr(strtoint(Cells[Rx-1,RowCount-1])+strtoint(Cells[Rx-2,RowCount-1]));
+        Rx:=Rx+1;
+      end;
+      if CheckBoxShowsalesRecords.Checked then begin
+       Cells[Rx,RowCount-1]:=inttostr(RemoteDB.GetSold(RemoteDB.Productsproducts_model.Value,Round(JVSpinEditSalesRecordsWeeks.Value*7)).X);
+       Rx:=Rx+1;
+       Cells[Rx,RowCount-1]:=inttostr(RemoteDB.GetSold(RemoteDB.Productsproducts_model.Value,Round(JVSpinEditSalesRecordsWeeks.Value*7)).Y);
+       Rx:=Rx+1;
+       Cells[Rx,RowCount-1]:=inttostr(strtoint(Cells[Rx-1,RowCount-1])+strtoint(Cells[Rx-2,RowCount-1]));
+       Rx:=Rx+1;
+      end;
+
+      //      Addbutton(7,Rowcount-1,10,10);
+      RowCount:=RowCount+1;
+    end;
+   end;
+   Application.ProcessMessages;
+   RemoteDB.Products.Next;
+
+  end;
+  RemoteDB.Products.Filter:='';
+  RemoteDB.Products.Filtered:=False;
+ end;
+ finally
+  RemoteDB.Products.Filter:='';
+  RemoteDB.Products.Filtered:=False;
+  RemoteDB.Products.EnableControls;
+  Screen.Cursor:=crDefault;
+ end;
+ AdminStockCatTree.FullCollapse;
+end;
+
+procedure TFormPrepareOrderWizard.CheckBoxShowSalesRecordsClick(
+  Sender: TObject);
+begin
+ if CheckboxShowSalesRecords.Checked then JvSpinEditSalesRecordsWeeks.Enabled:=True
+ else JvSpinEditSalesRecordsWeeks.Enabled:=False;
+end;
+
+procedure TFormPrepareOrderWizard.JvWizardIPShowGridPage(Sender: TObject);
+var Rx,RTot,StdGridWidth,WidthTot,ColCount,count:Integer;
+begin
+ RTot:=3;
+ if CheckBoxShowsalesRecords.Checked then begin
+  RTot:=RTot+3;
+ end;
+ if CheckBoxShowStock.Checked then begin
+  RTot:=RTot+3;
+ end;
+   /// ADMINORDER    ;
+  StdGridWidth:=50;
+  with StringGridAdminOrder do begin
+   Clear;
+   RowCount:=2;
+   ColCount:=RTot;
+   Rx:=0;
+   WidthTot:=0;
+
+   Cells[Rx,0]:='Ean';
+   ColWidths[Rx]:=90;
+   WidthTot:=WidthTot+ColWidths[Rx];
+   Rx:=Rx+1;
+
+   Cells[Rx,0]:='Produit';
+   SortByColumn(Rx);
+   Rx:=Rx+1;
+   WidthTot:=WidthTot+0;
+ if CheckBoxShowStock.Checked then begin
+   Cells[Rx,0]:='S. Neuf';
+   ColWidths[Rx]:=40;
+   WidthTot:=WidthTot+ColWidths[Rx];
+   Rx:=Rx+1;
+
+   Cells[Rx,0]:='S. Occ.';
+   ColWidths[Rx]:=40;
+   WidthTot:=WidthTot+ColWidths[Rx];
+   Rx:=Rx+1;
+
+   Cells[Rx,0]:='Stock';
+   ColWidths[Rx]:=40;
+   WidthTot:=WidthTot+ColWidths[Rx];
+   Rx:=Rx+1;
+
+ end;
+ if CheckBoxShowsalesRecords.Checked then begin
+   Cells[Rx,0]:='V. Neuf';
+   ColWidths[Rx]:=40;
+   WidthTot:=WidthTot+ColWidths[Rx];
+   Rx:=Rx+1;
+
+   Cells[Rx,0]:='V. Occ.';
+   ColWidths[Rx]:=40;
+   WidthTot:=WidthTot+ColWidths[Rx];
+   Rx:=Rx+1;
+
+   Cells[Rx,0]:='Ventes';
+   ColWidths[Rx]:=40;
+   WidthTot:=WidthTot+ColWidths[Rx];
+   Rx:=Rx+1;
+ end;
+
+ Cells[Rx,0]:='Q';
+ Rx:=Rx+1;
+ WidthTot:=WidthTot+0;
+ ColWidths[1]:=Max(ClientWidth-85-WidthTot,150);
+
+end;
+
+end;
+
+procedure TFormPrepareOrderWizard.StringGridAdminOrderCellValidate(
+  Sender: TObject; ACol, ARow: Integer; var Value: String;
+  var Valid: Boolean);
+var Key:String;
+begin
+ if Acol=1 then begin
+ Key:=StripHTML(StringGridAdminOrder.Cells[0,ARow]);
+  if RemoteDB.Products.Locate('products_model',Key,[]) then begin
+   RemoteDB.Products.Edit;
+   RemoteDB.Productsproducts_name.Value:=StringGridAdminOrder.Cells[ACol,ARow];
+   RemoteDB.Products.Post;
+  end;
+ end;
+
+end;
+
+procedure TFormPrepareOrderWizard.JVEBDicontinuedClick(Sender: TObject);
+Var PM:string;
+begin
+ PM:=StripHTML(StringGridAdminOrder.Cells[0,StringGridAdminOrder.Selection.Top]);
+ if Not RemoteDB.Products.Locate('products_model',PM,[])then begin
+  ShowMessage('Produit introuvable');
+  exit;
+ end else begin
+  // Remove Line From Grid
+    StringGridAdminOrder.RemoveRows(StringGridAdminOrder.Selection.Top,1);
+  // Move To Archive + Obsolete
+   RemoteDB.Products.Edit;
+   RemoteDB.Productsproducts_isobsolete.Value:='True';
+   RemoteDB.Products.Post;
+   RemoteDB.MoveToArchives(PM);
+ end;
+end;
+
+procedure TFormPrepareOrderWizard.JvExpressButtonAdminOrderPrintClick(
+  Sender: TObject);
+var APrintDialog:TPrintDialog;
+    TicketToPrint:TTicketJob;
+begin
+ APrintDialog:=TPrintDialog.Create(self);
+ try
+   if StrToBool(Mainform.Parameter['PrintersRapportEnabled']) then begin
+    Printer.PrinterIndex:=Printer.Printers.IndexOf(Mainform.Parameter['PrintersRapportPrinter']);
+    if StrToBool(Mainform.Parameter['PrintersRapportDialog']) then begin
+     if APrintDialog.Execute then begin
+       TicketToPrint:=TTicketJob.Create;
+       try
+        TicketToPrint.Printer:=(MainForm.Parameter['PrintersRapportPrinter']);
+        TicketToPrint.Logo:=PrintLogo;
+        TicketToPrint.Url:=WEBURL;
+        TicketToPrint.ShopData:=ShopDataList;
+        TicketToPrint.Print(StringGridAdminOrder);
+       finally
+        TicketToPrint.Free;
+       end;
+     end
+    end else begin
+     StringGridAdminOrder.Print;
+    end;
+   end else begin
+    ShowMessage('Imprimante a rapports non activee');
+   end;
+ finally
+  APrintDialog.Free;
+ end;
+end;
+
+end.

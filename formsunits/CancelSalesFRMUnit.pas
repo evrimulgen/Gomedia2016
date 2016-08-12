@@ -1,0 +1,127 @@
+unit CancelSalesFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, cxControls, cxContainer, cxEdit, cxTextEdit,
+  cxDBEdit, cxMaskEdit, cxSpinEdit, Spin, ComCtrls, cxCurrencyEdit, math;
+
+type
+  TCancelSalesForm = class(TForm)
+    BitBtnOk: TBitBtn;
+    BitBtnCancel: TBitBtn;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    UpDown1: TUpDown;
+    EditQmax: TcxMaskEdit;
+    cxDBTextEdit1: TcxDBTextEdit;
+    cxDBMaskEdit1: TcxDBMaskEdit;
+    procedure BitBtnOkClick(Sender: TObject);
+    procedure UpDown1Click(Sender: TObject; Button: TUDBtnType);
+    procedure BitBtnCancelClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  CancelSalesForm: TCancelSalesForm;
+
+implementation
+
+uses ClientDMUnit,MainFRMUnit,GlobalsUnit;
+
+{$R *.dfm}
+
+procedure TCancelSalesForm.BitBtnOkClick(Sender: TObject);
+var
+ StockSP,Items_soldSP,CustomersSP,RefundsSP,Items_RefundedSP:integer;
+begin
+ StockSP:=RemoteDB.Stock.SavePoint;
+ Items_SoldSP:=RemoteDB.Items_Sold.SavePoint;
+ CustomersSP:=RemoteDB.Customers.SavePoint;
+ RefundsSP:=RemoteDB.Refunds.SavePoint;
+ Items_RefundedSP:=RemoteDB.Items_Refunded.SavePoint;
+ try
+  // Ajout du refund et du Item_refunded
+  RemoteDB.Refunds.Append;
+  RemoteDB.Refunds.FieldByName('refunds_amount').Value:=-RemoteDB.Items_Sold.FieldbyName('items_sold_price_stock').Value*StrToInt(EditQmax.Text);
+  RemoteDB.Refunds.FieldByName('refunds_nature').Value:='Retour';
+  RemoteDB.Refunds.FieldByName('refunds_customer_nbr').Value:=RemoteDB.CustomersCustomers_nbr.Value;
+  RemoteDB.Refunds.FieldByName('refunds_items_id').Value:=RemoteDB.Items_Sold.FieldbyName('items_sold_id').Value;
+  RemoteDB.Refunds.Post;
+
+  RemoteDB.Items_Refunded.Append;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_refunds_shop_id').Value:=RemoteDB.Refunds.FieldByName('refunds_shop_id').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_refunds_id').Value:=RemoteDB.Refunds.FieldByName('refunds_id').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_model').Value:=RemoteDB.Items_sold.FieldByName('items_sold_model').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_name').Value:=RemoteDB.Items_sold.FieldByName('items_sold_name').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_quantity').Value:=StrToInt(EditQmax.Text);
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_price_gross').Value:=RemoteDB.Items_sold.FieldByName('items_sold_price_gross').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_price_catalog').Value:=RemoteDB.Items_sold.FieldByName('items_sold_price_catalog').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_price_stock').Value:=RemoteDB.Items_sold.FieldByName('items_sold_price_stock').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_owner_id').Value:=RemoteDB.Items_sold.FieldByName('items_sold_owner_id').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_supplier_id').Value:=RemoteDB.Items_sold.FieldByName('items_sold_supplier_id').Value;
+  RemoteDB.Items_Refunded.FieldByName('items_refunded_date_in').Value:=RemoteDB.Items_sold.FieldByName('items_sold_date_in').Value;
+  RemoteDB.Items_Refunded.Post;
+
+  RemoteDB.Items_Sold.Edit;
+  RemoteDB.Items_Sold.FieldByName('items_refunded').Value:=RemoteDB.Items_Sold.FieldByName('items_refunded').Value+StrToInt(EditQmax.Text);
+  RemoteDB.Items_Sold.Post;
+
+
+  RemoteDB.FreeStockTo;
+  RemoteDB.Stock.Filtered:=False;
+   RemoteDB.Stock.Append;
+   RemoteDB.Stock.Fieldbyname('product_model').Value:=RemoteDB.Items_Sold.FieldByName('items_sold_model').Value;
+   RemoteDB.Stock.Fieldbyname('product_name').Value:=RemoteDB.Items_Sold.FieldByName('items_sold_name').Value;
+   RemoteDB.Stock.Fieldbyname('product_quantity').Value:=StrToInt(EditQmax.Text);
+   RemoteDB.Stock.Fieldbyname('product_price_gross').Value:=RemoteDB.Items_Sold.FieldByName('items_sold_price_gross').Value;
+   RemoteDB.Stock.Fieldbyname('product_price_stock').Value:=RemoteDB.Items_Sold.FieldByName('items_sold_price_stock').Value;
+   RemoteDB.Stock.Fieldbyname('product_owner_id').Value:=RemoteDB.Items_Sold.FieldByName('items_sold_owner_id').Value;
+   RemoteDB.Stock.Fieldbyname('product_supplier_id').Value:=RemoteDB.Items_Sold.FieldByName('items_sold_supplier_id').Value;
+   RemoteDB.Stock.Fieldbyname('product_date_in').Value:=RemoteDB.Items_Sold.FieldByName('items_sold_date_in').Value;
+   RemoteDB.Stock.Post;
+  RemoteDb.Stock.Filtered:=True;
+
+
+  if RemoteDB.Salessales_customer_id.Value <> CONNECTEDSHOP then begin
+   if (StrToInt(Mainform.Parameter['LoyaltyAccPoints'])) > 0 then begin
+    RemoteDB.Customers.Edit;
+    RemoteDB.Customers.FieldByName('customers_points').AsInteger:=RemoteDB.Customers.FieldByName('customers_points').AsInteger-Round((StrToInt(Mainform.Parameter['LoyaltyAccPoints']))*((RemoteDB.Items_sold.FieldByName('items_sold_price_stock').AsInteger) div (StrToInt(Mainform.Parameter['LoyaltyAccThresold']))));
+    RemoteDB.customers.Post;
+   end;
+  end;
+
+ except
+  RemoteDB.Stock.SavePoint:=StockSP;
+  RemoteDB.Items_Sold.SavePoint:=Items_SoldSP;
+  RemoteDB.Customers.SavePoint:=CustomersSP;
+  RemoteDB.Refunds.SavePoint:=RefundsSP;
+  RemoteDB.Items_Refunded.SavePoint:=Items_RefundedSP;
+  ShowMessage('Erreur durant le remboursement');
+ end;
+ Self.ModalResult:=mrok
+end;
+
+procedure TCancelSalesForm.UpDown1Click(Sender: TObject;
+  Button: TUDBtnType);
+begin
+ if Button=btNext then  begin
+  EditQmax.Text:=inttostr(min(StrtoInt(EditQmax.Text)+1,RemoteDB.Items_Solditems_sold_quantity.AsInteger));
+ end;
+ if Button=btPrev then  begin
+  EditQmax.Text:=inttostr(max(StrtoInt(EditQmax.Text)-1,1));
+ end;
+
+end;
+
+procedure TCancelSalesForm.BitBtnCancelClick(Sender: TObject);
+begin
+ Self.ModalResult:=mrcancel
+end;
+
+end.

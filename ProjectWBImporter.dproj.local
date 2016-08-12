@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2010/07/05 20:04:54.971.pas,C:\Users\Developper\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\Developper\Documents\RAD Studio\Projects\WBImporter\UnitMain.pas</Transaction>
+    <Transaction>2010/07/05 20:04:54.971.dfm,C:\Users\Developper\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\Developper\Documents\RAD Studio\Projects\WBImporter\UnitMain.dfm</Transaction>
+    <Transaction>2010/07/05 20:05:04.926.dproj,C:\Users\Developper\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Developper\Documents\RAD Studio\Projects\WBImporter\ProjectWBImporter.dproj</Transaction>
+    <Transaction>2012/02/03 10:23:16.970.pas,C:\Users\Administrator\Documents\RAD Studio\Projects\Gomedia2011ML\units\WinbooksExport.pas=</Transaction>
+    <Transaction>2012/04/28 12:54:50.346.pas,C:\Users\Administrator\Documents\RAD Studio\Projects\Gomedia2011ML\units\WinbooksOfficeApi_TLB.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

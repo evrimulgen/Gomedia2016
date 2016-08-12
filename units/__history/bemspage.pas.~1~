@@ -1,0 +1,182 @@
+unit bemspage;
+
+interface
+
+uses
+
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
+  IdHTTP, OleCtrls, SHDocVw, StdCtrls, StrUtils, IdAntiFreezeBase,
+  IdAntiFreeze, Jpeg, ExtCtrls, IdCookieManager,FMTBcd, DB, DBClient,
+  DBCtrls, Mask, Davidutilsunit;
+
+type
+  TBemsPage = class (TObject)
+  private
+    BBCat: string;
+    BPAvailable: string;
+    BPBemsTitle: string;
+    BPEAN: string;
+    BPEditor: string;
+    BPID: Integer;
+    BPImageBigPath: string;
+    BPImageBig: TJPEGImage;
+    BPImageSSPath: string;
+    BPKind: string;
+    BPLang: string;
+    BPName: string;
+    BPPicNameRoot: string;
+    BPPictureUrl: string;
+    BPGrossPrice : string;
+    BPPrice: string;
+    BPRef: string;
+    BPReference: string;
+    BPReleaseDate: string;
+    BPSource: string;
+    BPUrl: string;
+    function ExtractFromHtml(StartStr,EndStr:string): string;
+  public
+    constructor create(Url:string);
+    function ProcessData:boolean;
+    function RemoveTags(Source:string):string;
+    property available: string read BPAvailable;
+    property BemsName: string read BPBemsTitle;
+    property BigPic: TJPegImage read BPImageBig;
+    property Ean: string read BPEAN;
+    property Editor: string read BPEditor;
+    property Kind: string read BPKind;
+    property price: string read BPPrice;
+    property GrossPrice: string read BPGrossPrice;
+    property Ref: string read BPRef;
+    property ImgBigPath:string read BPImageBigPath;
+    property ImgSSPath:string read BPImageSSPath;
+    property ReleaseDate: string read BPReleaseDate;
+    property source: string read BPSource;
+  end;
+
+
+
+implementation
+
+{ TBemsPage }
+
+{
+********************************** TBemsPage ***********************************
+}
+constructor TBemsPage.create(Url:string);
+begin
+  BPSource:=URL;
+//  showmessage(URL);
+  BPImageBig:=TJPegImage.Create;
+  inherited create;
+end;
+
+function TBemsPage.ExtractFromHtml(StartStr,EndStr:string): string;
+var
+  StartPos, EndPos, TestPos, i: Integer;
+  EndSubStr: string;
+begin
+  StartPos:=Pos(StartStr,BPSource);
+  EndSubStr:=RightStr(BPSource,Length(BPSource)-StartPos);
+  EndPos:=Pos(EndStr,EndSubStr);
+  EndPos:=StartPos+EndPos;
+//  ShowMessage(BPSource);
+  if ((StartPos=0) or (endpos=0)) then begin
+  end else begin
+   for i:=StartPos+length(StartStr) to EndPos-1 do begin
+   Result:=Result+BPSource[i];
+  end;
+  end;
+end;
+
+function TBemsPage.ProcessData:boolean;
+var
+  imagestream: TStringSTream;
+  jpg: TJPEGIMAGE;
+  AIdHTTP: TidHttp;
+  i: Integer;
+begin
+  application.ProcessMessages;
+  if Ansipos('<br><font face='+chr(39)+'verdana,arial'+chr(39)+' Color='+chr(39)+'#006600'+chr(39)+'><b>Lecture impossible 175.htm</b></font><br>',BPSource) > 1 then begin
+   result:=False;
+   exit;
+  end;
+  if Ansipos('</table></form><b><font color='+chr(39)+'#FC6823'+chr(39)+'>&nbsp;Pas de commentaires</b></font><font face='+chr(39)+'tahoma,arial,verdana'+chr(39)+'><br><img src='+chr(39)+'arrow_orange.gif'+chr(39)+' width='+chr(39)+'4'+chr(39)+' height='+chr(39)+'8'+chr(39)+' alt='+chr(39)+''+chr(39)+' border='+chr(39)+'0'+chr(39)+'>&nbsp;<a href='+chr(39)+'shopreviewadd.asp?id=',BPSource) > 1 then begin
+   result:=False;
+   exit;
+  end;
+  BPEditor:=Trim(ExtractFromHtml('Editeur:<STRONG> ','</STRONG>'));
+  BPEditor:=self.RemoveTags(BPeditor);
+  BPKind:=Trim(ExtractFromHtml('Genre: <STRONG>','</STRONG>'));
+  BPEan:=Trim(ExtractFromHtml('mode=ean-13"><BR>','</DIV></TD>'));
+  BPPrice:=Trim(ExtractFromHtml('Prix public constaté:<STRONG> ','€</STRONG>'));
+  BPGrossPrice:=Trim(ExtractFromHtml('Prix&nbsp;:&nbsp;€ ','</FONT>'));
+  if BPGrossPrice <>'' then BPGrossPrice:=FloatToStr(Round(Strtofloat(ConvertToPoint(BPGrossPrice))*100*0.9)/100);
+  BPReleaseDate:=Trim(ExtractFromHtml('Date de sortie:<STRONG>','</STRONG>'));
+  BPAvailable:=Trim(ExtractFromHtml('Disponible:','</STRONG>'));
+  BPAvailable:=Self.RemoveTags(BPAvailable);
+  BPRef:=Trim(ExtractFromHtml('Référence: <STRONG>','</STRONG>'));
+  BPBemsTitle:=Trim(ExtractFromHtml('<FONT face="Geneva, Arial, Helvetica, sans-serif" size=2><STRONG>&nbsp;','&nbsp;</STRONG>'));
+  BPPictureUrl:='http://rmjv.net/im/'+BPRef+'big.jpg';
+
+  if BPEAN<>'' then begin
+   BPEAN:=InttoStr(StrtoInt64(BPEAN));
+   BPPicNameRoot:=BPEAN
+  end else BPPicNameRoot:=BPRef;
+
+  //BPImageBig:=nil;
+  imagestream := TStringStream.Create('');
+  jpg := TJPEGIMAGE.Create;
+  AidHttp:=TidHttp.Create(nil);
+   /// Main Pic
+  try
+  AidHttp.Get(BPPictureUrl,imagestream);
+  imagestream.Seek(0,sofrombeginning);  {go to the beginning of the stream}
+  jpg.LoadFromStream(imagestream);  {this will load the stream into the JPEG object}
+  BPImageBigPath:='images/products/'+BPPicNameRoot+'.JPG';
+  jpg.SaveToFile(BPImageBigPath);
+  BPImageBig.LoadFromStream(imagestream);  {Finally load the jpeg .. :)  }
+  except
+  // on EidhttpProtocolException do
+  // ShowMessage('An error occured while loading the jpeg from the NET');
+  end;
+  jpg.Free;
+  imagestream.Free;
+   //ScreenShots
+  BPImageSSPath:='images/products/screens/'+BPPicNameRoot+'SS';
+  for i:=1 to 4 do begin
+   imagestream := TStringStream.Create('');
+   jpg := TJPEGIMAGE.Create;
+   try
+   aidHttp.Get('http://rmjv.net/im/'+BPRef+'s'+inttostr(i)+'.jpg',imagestream);
+
+   imagestream.Seek(0,sofrombeginning);  {go to the beginning of the stream}
+   jpg.LoadFromStream(imagestream);  {this will load the stream into the JPEG object}
+   jpg.SaveToFile(BPImageSSPath+inttostr(i)+'.JPG');
+   except
+  //  on EidhttpProtocolException do
+  // ShowMessage('An error occured while loading the jpeg from the NET');
+   end;
+   jpg.Free;
+   imagestream.Free;
+  end;
+  Aidhttp.free;
+  Result:=True;
+
+end;
+
+function TBemsPage.RemoveTags(Source: string): string;
+var i:integer;
+    copy:boolean;
+begin
+result:='';
+copy:=True;
+for i:=1 to length(source) do begin
+ if source[i]='<'then copy:=false;
+ if source[i]='>' then copy:=true;
+
+ if copy and (source[i]<>'>') then result:=result+source[i];
+end;
+
+end;
+end.

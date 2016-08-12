@@ -1,0 +1,63 @@
+unit CustomerDisplayFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls, ExtCtrls, ImgList, JpegList, Jpeg;
+
+type
+  TFormCustomerDisplay = class(TForm)
+    JpegListAdvert: TJPEGImageList;
+    PanelAdvert: TPanel;
+    ImageAdvert: TImage;
+    PanelCustomerData: TPanel;
+    TimerAdvert: TTimer;
+    PanelCustomerSale: TPanel;
+    ImageBackgroundSale: TImage;
+    LabelTotalText: TLabel;
+    ImageBackgroundStat: TImage;
+    LabelCustomerName: TLabel;
+    LabelCustomerVoucher: TLabel;
+    LabelCustomerSold: TLabel;
+    LabelCustomerOrder: TLabel;
+    LabelCustomerBought: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure TimerAdvertTimer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCustomerDisplay: TFormCustomerDisplay;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormCustomerDisplay.FormCreate(Sender: TObject);
+begin
+ JPegListAdvert:=TJPEGImageList.Create;
+end;
+
+procedure TFormCustomerDisplay.FormDestroy(Sender: TObject);
+begin
+ JPegListAdvert.Free;
+end;
+
+procedure TFormCustomerDisplay.TimerAdvertTimer(Sender: TObject);
+var i:integer;
+    aJpeg:TJpegImage;
+begin
+ if JpegListAdvert.Count>0 then begin
+  aJpeg:=TJpegImage.Create;
+  i:=Random(JpegListAdvert.Count);
+  ImageAdvert.Picture.BitMap.Assign((JpegListAdvert.Items[i]));
+  aJpeg.Free;
+ end;
+end;
+
+end.

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.380,=C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\units\QExport4DBF.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.063,=C:\Dropbox\RAD Studio\Projects\GoMedia2014\units\COPTRLib_TLB.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.968,=C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ExitLibFRMUnit.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.737,C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\units\QExport4DBF.pas=C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\units\QExport4DBFPATCH.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.332,=C:\Dropbox\RAD Studio\Projects\GoMedia2014\units\DLLsucdapi.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.506,C:\Dropbox\RAD Studio\Projects\GoMedia2014\units\QExport4DBF.pas=C:\Dropbox\RAD Studio\Projects\GoMedia2014\units\QExport4DBFPATCH.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.pas,C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\units\WinbooksOfficeApi_TLB.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.dproj,C:\Users\Administrator\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Administrator\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.469,=C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\units\Threadsunit.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.089,C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\units\Threadsunit.pas=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.dproj,C:\Users\Administrator\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\GoMediaWBImporter.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.dfm,C:\Users\Administrator\Documents\RAD Studio\Projects\Unit2.dfm=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\formsunits\WBImporterUnit.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.pas,C:\Users\Administrator\Documents\RAD Studio\Projects\Unit2.pas=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\formsunits\WBImporterUnit.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.pas,C:\Users\Administrator\Documents\RAD Studio\7.0\Imports\WinbooksOfficeApi_TLB.pas=C:\Users\Administrator\Documents\RAD Studio\Projects\Gomeida2012\units\WinbooksOfficeApi_TLB.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,23 @@
+unit ServerModule;
+
+interface
+
+uses
+  SysUtils, Classes, DSServer;
+
+type
+  TDSServerModule1 = class(TDSServerModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DSServerModule1: TDSServerModule1;
+
+implementation
+
+{$R *.dfm}
+
+end.

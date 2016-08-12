@@ -1,0 +1,178 @@
+unit ExitLibFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, ExtCtrls, JvLabel,
+  JvExStdCtrls, JvHtControls, JvExControls, JvComponent,
+  JvSegmentedLEDDisplay,dllimp, JvGIF;
+
+type
+  TFormExitLibrary = class(TForm)
+    BtMain: TBitBtn;
+    BitBtnCancel: TBitBtn;
+    MessageLabel: TJvHTLabel;
+    Image1: TImage;
+    LedSlot: TJvSegmentedLEDDisplay;
+    Label1: TLabel;
+    LedMachine: TJvSegmentedLEDDisplay;
+    procedure FormShow(Sender: TObject);
+    procedure BtMainClick(Sender: TObject);
+    procedure BitBtnCancelClick(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+  private
+    FEOwner: string;
+    FEModel: string;
+    procedure CreateParams(var Params: TCreateParams); override;
+    { Private declarations }
+  public
+    { Public declarations }
+  published
+    function Enter(owner, model: string):TModalResult;
+  end;
+
+var
+  FormExitLibrary: TFormExitLibrary;
+  Next_id,Machine,slot:integer;
+
+
+
+implementation
+uses Mainfrmunit,ClientDmUnit,ThreadsUnit;
+
+
+{$R *.dfm}
+
+procedure TFormExitLibrary.CreateParams(var Params: TCreateParams);
+begin
+  inherited CreateParams(Params);
+  with Params do begin
+    ExStyle := ExStyle or WS_EX_APPWINDOW;
+    WndParent := GetDesktopwindow;
+  end;
+end;
+
+
+procedure TFormExitLibrary.FormShow(Sender: TObject);
+var USBCDMoveOpen:TUSBCDMoveOpen;
+i:integer;
+Machinetext:string;
+
+begin
+ MessageLabel.Caption:='';
+ BtMain.Enabled:=True;
+ Next_ID:=-1;
+
+ Machine:=RemoteDB.Caroussel.fieldbyName('machine_id').Value;
+ Slot:=RemoteDB.Caroussel.fieldbyName('slot_id').Value;
+ if RemoteDB.Caroussel.fieldbyName('nextid').Value  <> -1 then Begin
+  Next_Id:=RemoteDB.Caroussel.fieldbyName('nextid').Value ;
+  BTMain.Caption:='CD Suivant';
+ end;
+
+ MachineText:='';
+ for i :=5 downto length(inttostr(machine)) do begin
+  MachineText := MachineText + '0';
+ end;
+ ledMachine.Text:=MachineText+IntToStr(machine);
+
+ // Update Leds
+
+  if length(floattostr(slot))=1 then
+  begin
+   ledslot.Text:='00'+floattostr(slot);
+  end;
+  if length(floattostr(slot))=2 then
+  begin
+   ledslot.Text:='0'+floattostr(slot);
+  end;
+  if length(floattostr(slot))=3 then
+  begin
+   ledslot.Text:=floattostr(slot);
+  end;
+
+ if USBCDGetStatus(Machine)=DEVICE_COMMANDOK then begin
+  USBCDMoveOpen:=TUSBCDMoveOpen.Create(Machine,Slot);
+  USBCDMoveOpen.Execute;
+ end else begin
+  MessageLabel.Caption:='CD Library pleines ou indisponibles';
+  BtMain.Enabled:=False;
+ end;
+end;
+
+procedure TFormExitLibrary.BtMainClick(Sender: TObject);
+var USBCDMoveOpen:TUSBCDMoveOpen;
+begin
+
+  RemoteDB.Caroussel.Delete;
+
+  if Next_id=-1 then begin
+   USBCDGetCDDown(Machine);
+   ModalResult:=Mrok;
+  end else begin
+   ModalResult:=MRnone;
+  USBCDGetCDDown(Machine);
+
+  if RemoteDB.Caroussel.Locate('id',Next_id,[]) then begin
+
+   Machine:=RemoteDB.Caroussel.fieldbyName('machine_id').Value;
+   Slot:=RemoteDB.Caroussel.fieldbyName('slot_id').Value;
+
+   if RemoteDB.Caroussel.fieldbyName('nextid').Value  <> -1 then Begin
+    Next_id:=RemoteDB.Caroussel.fieldbyName('nextid').Value;
+    BTMain.Caption:='CD Suivant';
+   end else begin
+    Next_id:=-1;
+    BTMain.Caption:='OK';
+   end;
+
+
+   if USBCDGetStatus(Machine)<>DEVICE_COMMANDOK  then begin
+    MessageLabel.Caption:='CD Library pleines ou indisponibles';
+    BtMain.Enabled:=False;
+    exit;
+   end else begin
+    USBCDMoveOpen:=TUSBCDMoveOpen.Create(Machine,Slot);
+    if length(floattostr(slot))=1 then
+    begin
+     ledslot.Text:='00'+floattostr(slot);
+    end;
+    if length(floattostr(slot))=2 then
+    begin
+     ledslot.Text:='0'+floattostr(slot);
+    end;
+    if length(floattostr(slot))=3 then
+    begin
+     ledslot.Text:=floattostr(slot);
+    end;
+    USBCDMoveOpen.Execute;
+   end;
+
+
+
+  end else begin
+   messagedlg('Produit non trouvé',mtwarning,[mbok],0);
+  end;
+ end;
+end;
+
+procedure TFormExitLibrary.BitBtnCancelClick(Sender: TObject);
+begin
+ ModalResult:=MrCancel;
+end;
+
+function TFormExitLibrary.Enter(owner, model: string):TModalResult;
+begin
+ FEOwner:=Owner;
+ FEModel:=Model;
+ Result:=Self.ShowModal;
+end;
+
+procedure TFormExitLibrary.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
+begin
+// if ((Sender<>btmain) or (sender<>bitbtncancel)) then CanClose:=False;
+end;
+
+end.

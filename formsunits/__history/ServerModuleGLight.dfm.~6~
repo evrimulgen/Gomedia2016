@@ -1,0 +1,47 @@
+object DSServerModuleRFIDPanel: TDSServerModuleRFIDPanel
+  Left = 0
+  Top = 0
+  ClientHeight = 200
+  ClientWidth = 283
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = DSServerModuleCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CDSAlerts: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 40
+    Top = 16
+  end
+  object CDSCustomers: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 120
+    Top = 16
+  end
+  object CDSItems_Sold: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 40
+    Top = 88
+  end
+  object CDSStock: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 128
+    Top = 88
+  end
+  object DPCustomers: TDataSetProvider
+    DataSet = CDSCustomers
+    ResolveToDataSet = True
+    Options = [poAutoRefresh, poPropogateChanges, poUseQuoteChar]
+    Left = 192
+    Top = 24
+  end
+end

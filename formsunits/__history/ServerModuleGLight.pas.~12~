@@ -1,0 +1,73 @@
+unit ServerModuleGLight;
+
+interface
+
+uses
+  DBXJSON, DBXJSONReflect, SysUtils, Classes, DSServer, DB, DBClient,GlobalsUnit, FTPConn,
+  Provider;
+
+type
+  TDSServerModuleRFIDPanel = class(TDSServerModule)
+    CDSAlerts: TClientDataSet;
+    CDSCustomers: TClientDataSet;
+    CDSItems_Sold: TClientDataSet;
+    CDSStock: TClientDataSet;
+    DPCustomers: TDataSetProvider;
+    procedure DSServerModuleCreate(Sender: TObject);
+  private
+    function getFTPConn():TFTPConn;
+  public
+    function GetJSONFTPConn: TJSONValue;
+    function echo(s:string):string;
+    function echo2(s:string):string;
+  end;
+
+ var
+  DSServerModuleRFIDPanel: TDSServerModuleRFIDPanel;
+
+implementation
+
+uses ClientDMUnit;
+
+{$R *.dfm}
+
+{ TDSServerModule1 }
+
+procedure TDSServerModuleRFIDPanel.DSServerModuleCreate(Sender: TObject);
+begin
+ CDSAlerts.CloneCursor(RemoteDB.Alerts,True);
+ CDSCustomers.CloneCursor(RemoteDB.Customers,True);
+ CDSStock.CloneCursor(RemoteDB.Stock,True);
+ CDSItems_Sold.CloneCursor(RemoteDB.Items_Sold,True);
+
+end;
+
+function TDSServerModuleRFIDPanel.echo(s: string): string;
+begin
+ CDSCustomers.Locate('customers_firstname',s,[locaseinsensitive]);
+ Result := 'Returned data is '+CDSCustomers.FieldByName('customers_lastname').AsString;
+end;
+
+function TDSServerModuleRFIDPanel.echo2(s: string): string;
+begin
+ CDSCustomers.Locate('customers_firstname',s,[locaseinsensitive]);
+ Result := 'Returned data is '+CDSCustomers.FieldByName('customers_email_address').AsString;
+end;
+
+
+function TDSServerModuleRFIDPanel.GetFTPConn(): TFTPConn;
+	begin
+	  Result := TFTPConn.Create(FTPHOST,FTPDIR,FTPUSER,FTPPWD);
+end;
+
+// public
+function TDSServerModuleRFIDPanel.GetJSONFTPConn(): TJSONValue;
+	var
+	  myFTPConn: TFTPConn;
+	begin
+	  myFTPConn := GetFTPConn;
+	  Result := FTPConnToJSON(myFTPConn);
+	  myFTPConn.Free;
+end;
+
+end.

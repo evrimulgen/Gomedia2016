@@ -1,0 +1,1070 @@
+object FormGLightMain: TFormGLightMain
+  Left = 0
+  Top = 0
+  Caption = 'Gomedia light'
+  ClientHeight = 486
+  ClientWidth = 783
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PhidgetRFID: TPhidgetRFID
+    Left = 232
+    Top = 104
+    Width = 32
+    Height = 32
+    OnAttach = PhidgetRFIDAttach
+    OnTag = PhidgetRFIDTag
+    OnTagLost = PhidgetRFIDTagLost
+    OnOutputChange = PhidgetRFIDOutputChange
+    ControlData = {00080000}
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 72
+    Width = 783
+    Height = 414
+    ActivePage = TabSheet1
+    Align = alBottom
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      ExplicitLeft = 0
+      ExplicitTop = 32
+      object Label1: TLabel
+        Left = 3
+        Top = 11
+        Width = 36
+        Height = 13
+        Caption = 'Pr'#233'nom'
+      end
+      object Label2: TLabel
+        Left = 3
+        Top = 38
+        Width = 21
+        Height = 13
+        Caption = 'Nom'
+      end
+      object Label3: TLabel
+        Left = 3
+        Top = 65
+        Width = 24
+        Height = 13
+        Caption = 'Email'
+      end
+      object DBAdvGrid1: TDBAdvGrid
+        Left = 0
+        Top = 89
+        Width = 775
+        Height = 297
+        Cursor = crDefault
+        Align = alBottom
+        ColCount = 29
+        RowCount = 101
+        FixedRows = 1
+        ScrollBars = ssBoth
+        TabOrder = 0
+        ActiveCellFont.Charset = DEFAULT_CHARSET
+        ActiveCellFont.Color = clWindowText
+        ActiveCellFont.Height = -11
+        ActiveCellFont.Name = 'Tahoma'
+        ActiveCellFont.Style = [fsBold]
+        ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
+        ControlLook.DropDownHeader.Font.Color = clWindowText
+        ControlLook.DropDownHeader.Font.Height = -11
+        ControlLook.DropDownHeader.Font.Name = 'Tahoma'
+        ControlLook.DropDownHeader.Font.Style = []
+        ControlLook.DropDownHeader.Visible = True
+        ControlLook.DropDownHeader.Buttons = <>
+        ControlLook.DropDownFooter.Font.Charset = DEFAULT_CHARSET
+        ControlLook.DropDownFooter.Font.Color = clWindowText
+        ControlLook.DropDownFooter.Font.Height = -11
+        ControlLook.DropDownFooter.Font.Name = 'Tahoma'
+        ControlLook.DropDownFooter.Font.Style = []
+        ControlLook.DropDownFooter.Visible = True
+        ControlLook.DropDownFooter.Buttons = <>
+        Filter = <>
+        FilterDropDown.Font.Charset = DEFAULT_CHARSET
+        FilterDropDown.Font.Color = clWindowText
+        FilterDropDown.Font.Height = -11
+        FilterDropDown.Font.Name = 'Tahoma'
+        FilterDropDown.Font.Style = []
+        FilterDropDownClear = '(All)'
+        FixedColWidth = 20
+        FixedRowHeight = 22
+        FixedFont.Charset = DEFAULT_CHARSET
+        FixedFont.Color = clWindowText
+        FixedFont.Height = -11
+        FixedFont.Name = 'Tahoma'
+        FixedFont.Style = [fsBold]
+        FloatFormat = '%.2f'
+        PrintSettings.DateFormat = 'dd/mm/yyyy'
+        PrintSettings.Font.Charset = DEFAULT_CHARSET
+        PrintSettings.Font.Color = clWindowText
+        PrintSettings.Font.Height = -11
+        PrintSettings.Font.Name = 'Tahoma'
+        PrintSettings.Font.Style = []
+        PrintSettings.FixedFont.Charset = DEFAULT_CHARSET
+        PrintSettings.FixedFont.Color = clWindowText
+        PrintSettings.FixedFont.Height = -11
+        PrintSettings.FixedFont.Name = 'Tahoma'
+        PrintSettings.FixedFont.Style = []
+        PrintSettings.HeaderFont.Charset = DEFAULT_CHARSET
+        PrintSettings.HeaderFont.Color = clWindowText
+        PrintSettings.HeaderFont.Height = -11
+        PrintSettings.HeaderFont.Name = 'Tahoma'
+        PrintSettings.HeaderFont.Style = []
+        PrintSettings.FooterFont.Charset = DEFAULT_CHARSET
+        PrintSettings.FooterFont.Color = clWindowText
+        PrintSettings.FooterFont.Height = -11
+        PrintSettings.FooterFont.Name = 'Tahoma'
+        PrintSettings.FooterFont.Style = []
+        PrintSettings.PageNumSep = '/'
+        ScrollWidth = 16
+        SearchFooter.FindNextCaption = 'Find &next'
+        SearchFooter.FindPrevCaption = 'Find &previous'
+        SearchFooter.Font.Charset = DEFAULT_CHARSET
+        SearchFooter.Font.Color = clWindowText
+        SearchFooter.Font.Height = -11
+        SearchFooter.Font.Name = 'Tahoma'
+        SearchFooter.Font.Style = []
+        SearchFooter.HighLightCaption = 'Highlight'
+        SearchFooter.HintClose = 'Close'
+        SearchFooter.HintFindNext = 'Find next occurence'
+        SearchFooter.HintFindPrev = 'Find previous occurence'
+        SearchFooter.HintHighlight = 'Highlight occurences'
+        SearchFooter.MatchCaseCaption = 'Match case'
+        Version = '2.1.12.7'
+        AutoCreateColumns = True
+        AutoRemoveColumns = True
+        Columns = <
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 20
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 32
+            FieldName = 'customers_bank_account'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Alignment = taRightJustify
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_credit'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_date_added'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Alignment = taRightJustify
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_default_address_id'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 10
+            FieldName = 'customers_defltpost'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_dob'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 96
+            FieldName = 'customers_email_address'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 32
+            FieldName = 'customers_fax'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 32
+            FieldName = 'customers_firstname'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 1
+            FieldName = 'customers_gender'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 5
+            FieldName = 'customers_htprice'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Alignment = taRightJustify
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_id'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 16
+            FieldName = 'customers_identity'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 5
+            FieldName = 'customers_issupplier'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 5
+            FieldName = 'customers_isTVA'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Alignment = taRightJustify
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_language_id'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 32
+            FieldName = 'customers_lastname'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_memo'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Alignment = taRightJustify
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_nbr'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 1
+            FieldName = 'customers_newsletter'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 40
+            FieldName = 'customers_password'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 5
+            FieldName = 'customers_paycode'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Alignment = taRightJustify
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_points'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 5
+            FieldName = 'customers_rent_enabled'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 32
+            FieldName = 'customers_telephone'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 32
+            FieldName = 'customers_TVA'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Alignment = taRightJustify
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            FieldName = 'customers_shop_id'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end
+          item
+            Borders = []
+            BorderPen.Color = clSilver
+            CheckFalse = 'N'
+            CheckTrue = 'Y'
+            Color = clWindow
+            EditLength = 32
+            FieldName = 'customers_rfid'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            HeaderFont.Charset = DEFAULT_CHARSET
+            HeaderFont.Color = clWindowText
+            HeaderFont.Height = -11
+            HeaderFont.Name = 'Tahoma'
+            HeaderFont.Style = []
+            PrintBorders = [cbTop, cbLeft, cbRight, cbBottom]
+            PrintFont.Charset = DEFAULT_CHARSET
+            PrintFont.Color = clWindowText
+            PrintFont.Height = -11
+            PrintFont.Name = 'Tahoma'
+            PrintFont.Style = []
+            Width = 64
+          end>
+        DataSource = DSCustomers
+        InvalidPicture.Data = {
+          055449636F6E0000010001002020100000000000A80800001600000028000000
+          2000000040000000010010000000000000080000000000000000000000000000
+          00000000000000000000000000000000000000000000000000000000B5563146
+          EF3DAD35AD35EF3D3146B5560000000000000000000000000000000000000000
+          00000000000000000000000000000000000000000000B556EF41945218637B6F
+          BD77FF7FFF7FBD777B6F18639452EF41B5560000000000000000000000000000
+          000000000000000000000000000000000000D65A3146F75EBD777B77D66E3166
+          6B59E654A5502959CE61946A5A77BD77F75E3146D65A00000000000000000000
+          00000000000000000000000000000000524AF75EBD771773CF618450424C4250
+          215421542158215C215C425842504A5DB56EBD77F75E524A0000000000000000
+          0000000000000000000000000000524A396B39770859424C424C214C214C2150
+          215021582158215C2160216021644264425429593977396B524A000000000000
+          00000000000000000000000031467B6FB56E8450424C214C214C214C214C2150
+          2154215421582158215C216021642164216442688454D66E7B6F524A00000000
+          00000000000000000000524A396BB56E6350424C214C2148214C214C214C2150
+          21502154215821580060006021642164216C216C42686354B56E396B524A0000
+          0000000000000000D65AF75E39778450424C214C214C214C2148214C214C2150
+          2154215421542158215C215C0060215C00602164216C426884543977F75EB556
+          00000000000000003146BD7708594250214C214C214CC650F766E74C214C2150
+          21502150215421582158215CA560B572296100602164216442640859BD77524A
+          000000000000B556F75E736A635021502150214CC650F75E9C6FBD77E74C214C
+          215021542154215421588458396FFF7FDE7B085D215C2164216442541773F75E
+          B55600000000EF419C7308594254215021508450F766396718639C73BD77E74C
+          214C215021542154A554186BBD6FBD77FF7FBD77A5600060006021603166BD77
+          10420000000094525A73E7584254215021544254B5667B67396739639C73DE77
+          0851214C21508454D65E7B675A6F9C73DE775A7763600060215C216084545A77
+          94520000B556F75E1773E758C6582158215021544254D6665A67396718639C73
+          BD77E7508450B55A396318635A677B6F3977845C2158215C215C215C2154946A
+          1863B55631465A6F736AE75CE75CA55C2154215421506354D66A5A6739673963
+          9C73BD77B55A185FF75E18633967186BA558215421582158215C21582158CE61
+          7B6F3146EF3DBD77EF61E75CE75CE75C845C2158215421546354D66A7B673967
+          1863396318631863F75E185FF766A55821542154215821582154215821582955
+          BD77EF3DAD35FF7F8C61C660C660A560E75CA55C4258215421546354B56A5A67
+          396B3967186318631863D66AA55821502154215421502154215421502154C650
+          FF7FAD35AD35FF7F6B5DE764E764C660C660C660E75C845C21582154295D396B
+          396B396B39671863DE776B59214C21542150215021502150215021542150A550
+          FF7FAD35EF3DBD770F66E764E764E764E764E760C660E7606358296139779C6F
+          7B6B396B396B39679C73DE7B0851214C21502150215021502150215021500859
+          BD77EF3D31467B6F736A2965E768E764E764E764E760A55C6B659C77DE779C73
+          7B6F9C6F7B6B396739639C73DE7BE750214C215021502150215021504250AD61
+          7B6F3146B556186317734A65086DE7680865E764A5606B69BD7FFF7FDE77BD77
+          DE775A73F76A7B6B5A6739679C73DE7BE750214C21502150215021506350736A
+          1863B556000094527B77AD65086D086D086DC6648C6DDE7FFF7FFF7FFF7FFF7F
+          9C772965295D17737B6F396B396BBD6FDE7BE750214C21502150424CA5545A73
+          945200000000EF41BD77B56E8C6D086DE7684B6DDE7FFF7FFF7FFF7FFF7FBD7F
+          6B69A55CA55C296138739C6F7B6B396B9C77DE7B29598454A554A5546B5DBD77
+          EF4100000000B556F75E3973EF6D296D086D4B6DBD7FFF7FFF7FFF7FBD7F6B69
+          A560E764E764A560296138739C6F396B7B6B396F295D8454C654C654946A175F
+          B5560000000000003146BD77526AEF712971086D6B71BD7FFF7FBD7F6B69C664
+          086D0865E760E764A56029653873BD6F5A734A61A558C658C6584A5DBD773146
+          0000000000000000D65AF75E3977316E8C712971086D8C75D67A8C75E768086D
+          0865086D086508650865A660296573726B65A55CE75CE75CE7583977F75ED65A
+          00000000000000000000524A396BD67273728C7149710871076D086D296D296D
+          296D086D0865086D08650865E760C660C660E760E75C0859B56E396B524A0000
+          000000000000000000000000524A9C73D6729472CF714B6D497129712971296D
+          296D2969296929690865296908650865E764295D085DB56E9C73524A00000000
+          00000000000000000000000000003146396B5A77B57273768C754B6D49712971
+          2971296D4A69296D29692969296929652961316A39775A6B3146000000000000
+          00000000000000000000000000000000524AF75E9C771873B5727376AD716B71
+          4B6D4B6D29714A694A654A656B65946A38739C77F75E524A0000000000000000
+          000000000000000000000000000000000000B55A524AF762BD775A771873956E
+          316E116AEF65316A7372F8727B77BD77F75E3146D65A00000000000000000000
+          00000000000000000000000000000000000000000000B55610429452F7627B6F
+          BD77FF7FFF7FBD777B6F18639452EF41B5560000000000000000000000000000
+          00000000000000000000000000000000000000000000000000000000B5563146
+          EF3DAD35AD35EF3D524AB5560000000000000000000000000000000000000000
+          00000000FFF00FFFFF8001FFFE00007FFC00003FF800001FF000000FE0000007
+          C0000003C0000003800000018000000180000001000000000000000000000000
+          0000000000000000000000000000000000000000800000018000000180000001
+          C0000003C0000003E0000007F000000FF800001FFC00003FFE00007FFF8001FF
+          FFF00FFF}
+        ShowUnicode = False
+        ExplicitLeft = 32
+        ExplicitTop = 153
+        ColWidths = (
+          20
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64
+          64)
+      end
+    end
+  end
+  object EditCustomerFilterFirstName: TEdit
+    Left = 49
+    Top = 104
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
+  object EditCustomerFilterLastName: TEdit
+    Left = 49
+    Top = 131
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+  object EditCustomerFilterEmail: TEdit
+    Left = 49
+    Top = 158
+    Width = 121
+    Height = 21
+    TabOrder = 4
+  end
+  object BitBtnCustomersFilter: TBitBtn
+    Left = 189
+    Top = 154
+    Width = 75
+    Height = 25
+    Caption = 'Filter'
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
+    TabOrder = 5
+    OnClick = BitBtnCustomersFilterClick
+  end
+  object MainConnection: TSQLConnection
+    ConnectionName = 'DataSnapCONNECTION'
+    DriverName = 'DataSnap'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=DataSnap')
+    Connected = True
+    Left = 216
+    Top = 24
+  end
+  object DSCustomers: TDataSource
+    DataSet = Customers
+    Left = 488
+    Top = 32
+  end
+  object Customers: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DPCustomers'
+    RemoteServer = DSProviderConnection
+    AfterPost = CustomersAfterPost
+    Left = 408
+    Top = 32
+  end
+  object DSProviderConnection: TDSProviderConnection
+    ServerClassName = 'TDSServerModuleRFIDPanel'
+    Connected = True
+    SQLConnection = MainConnection
+    Left = 600
+    Top = 16
+  end
+end

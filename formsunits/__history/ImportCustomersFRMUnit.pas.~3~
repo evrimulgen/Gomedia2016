@@ -1,0 +1,38 @@
+unit ImportCustomersFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids, BaseGrid, AdvGrid;
+
+type
+  TFormImportCustomer = class(TForm)
+    AdvStringGrid1: TAdvStringGrid;
+    OpenDialog: TOpenDialog;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormImportCustomer: TFormImportCustomer;
+
+implementation
+
+uses ClientDMUnit;
+
+{$R *.dfm}
+
+procedure TFormImportCustomer.Button1Click(Sender: TObject);
+begin
+ if OpenDialog.Execute then begin
+   AdvStringGrid1.LoadFromXLS(OpenDialog.FileName);
+ end;
+
+end;
+
+end.

@@ -1,0 +1,100 @@
+object FormCheckLib: TFormCheckLib
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  ClientHeight = 354
+  ClientWidth = 479
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 8
+    Top = 96
+    Width = 320
+    Height = 253
+    AutoSize = True
+    IncrementalDisplay = True
+    Stretch = True
+    Transparent = True
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 464
+    Height = 55
+    Caption = 'V'#233'rif. librairie'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -49
+    Font.Name = 'Courier New'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object LedSlot: TJvSegmentedLEDDisplay
+    Left = 372
+    Top = 94
+    Width = 100
+    Height = 40
+    DigitClassName = 'TJv7SegmentedLEDDigit'
+    DigitHeight = 40
+    Digits = <
+      item
+        UseDP = False
+        UseColon = scuNone
+      end
+      item
+        UseDP = False
+        UseColon = scuNone
+      end
+      item
+        UseDP = False
+        UseColon = scuNone
+      end>
+    DigitSpacing = 5
+    DigitWidth = 30
+    SegmentLitColor = clLime
+    SegmentSpacing = 4
+    SegmentThickness = 4
+    SegmentUnlitColor = clMenuBar
+    Text = '123'
+  end
+  object MessageLabel: TJvHTLabel
+    Left = 8
+    Top = 74
+    Width = 466
+    Height = 14
+    AutoSize = False
+    Caption = '<center>MessageLabel</center>'
+    Transparent = False
+  end
+  object BtMain: TBitBtn
+    Left = 370
+    Top = 293
+    Width = 101
+    Height = 53
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 0
+    OnClick = BtMainClick
+  end
+  object BitBtnError: TBitBtn
+    Left = 371
+    Top = 152
+    Width = 101
+    Height = 53
+    Caption = 'Erreur'
+    ModalResult = 1
+    TabOrder = 1
+    OnClick = BitBtnErrorClick
+  end
+end

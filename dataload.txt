@@ -1,0 +1,2 @@
+Trying to load the DB
+DB successfuly loaded

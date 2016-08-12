@@ -1,0 +1,17 @@
+program ProjectWBImporter;
+
+uses
+  Forms,
+  UnitMain in 'UnitMain.pas' {FormMain},
+  WinbooksOfficeApi_TLB in 'units\WinbooksOfficeApi_TLB.pas',
+  ClientDMunit in 'formsunits\ClientDMunit.pas' {RemoteDB: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TRemoteDB, RemoteDB);
+  Application.CreateForm(TFormMain, FormMain);
+  Application.Run;
+end.

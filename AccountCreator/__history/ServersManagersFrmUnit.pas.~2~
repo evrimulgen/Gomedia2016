@@ -1,0 +1,25 @@
+unit ServersManagersFrmUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, ExtCtrls, AccountCreatorMainFrmUnit;
+
+type
+  TFormManageServers = class(TForm)
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormManageServers: TFormManageServers;
+
+implementation
+
+{$R *.dfm}
+
+end.

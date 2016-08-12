@@ -1,0 +1,224 @@
+object StockCheckForm: TStockCheckForm
+  Left = 442
+  Top = 332
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Etat stock'
+  ClientHeight = 471
+  ClientWidth = 687
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object JvCaptionPanel1: TJvCaptionPanel
+    Left = 0
+    Top = 222
+    Width = 687
+    Height = 181
+    Align = alTop
+    AutoDrag = False
+    Buttons = [capHelp]
+    Caption = 'Stock location'
+    CaptionPosition = dpTop
+    CaptionFont.Charset = DEFAULT_CHARSET
+    CaptionFont.Color = clWhite
+    CaptionFont.Height = -12
+    CaptionFont.Name = 'Arial'
+    CaptionFont.Style = []
+    FlatButtons = True
+    OutlookLook = False
+    TabOrder = 0
+    object cxGrid2: TcxGrid
+      Left = 1
+      Top = 22
+      Width = 679
+      Height = 152
+      Align = alClient
+      TabOrder = 0
+      object cxGridDBTableView1: TcxGridDBTableView
+        NavigatorButtons.ConfirmDelete = False
+        DataController.DataSource = RemoteDB.RentStockSRC
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        OptionsCustomize.ColumnFiltering = False
+        OptionsCustomize.ColumnGrouping = False
+        OptionsCustomize.ColumnHidingOnGrouping = False
+        OptionsCustomize.ColumnHorzSizing = False
+        OptionsCustomize.ColumnMoving = False
+        OptionsCustomize.ColumnSorting = False
+        OptionsData.Deleting = False
+        OptionsSelection.CellSelect = False
+        OptionsView.ColumnAutoWidth = True
+        OptionsView.GroupByBox = False
+        OptionsView.Header = False
+        object cxGridDBTableView1rent_stock_condition: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_condition'
+        end
+        object cxGridDBTableView1rent_stock_count: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_count'
+        end
+        object cxGridDBTableView1rent_stock_state: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_state'
+        end
+        object cxGridDBTableView1rent_stock_date_added: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_date_added'
+        end
+        object cxGridDBTableView1rent_stock_last_rent: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_last_rent'
+        end
+        object cxGridDBTableView1rent_stock_location: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_location'
+        end
+        object cxGridDBTableView1rent_stock_name: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_name'
+        end
+        object cxGridDBTableView1rent_stock_product_model: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_product_model'
+        end
+        object cxGridDBTableView1rent_stock_last_rent_disp: TcxGridDBColumn
+          DataBinding.FieldName = 'rent_stock_last_rent_disp'
+        end
+      end
+      object cxGridLevel1: TcxGridLevel
+        GridView = cxGridDBTableView1
+      end
+    end
+  end
+  object BitBtn1: TBitBtn
+    Left = 306
+    Top = 432
+    Width = 75
+    Height = 25
+    DoubleBuffered = True
+    Kind = bkOK
+    ParentDoubleBuffered = False
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 181
+    Width = 687
+    Height = 41
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 2
+    object SpeedButtonToRent: TSpeedButton
+      Left = 312
+      Top = 10
+      Width = 24
+      Height = 24
+      Glyph.Data = {
+        66010000424D6601000000000000760000002800000014000000140000000100
+        040000000000F000000000000000000000001000000010000000000000000000
+        BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777700007777777777777777777700007777777777777777777700007777
+        77777FC777777777000077777777FCCC7777777700007777777FCCCCC7777777
+        0000777777FCCCCCCC777777000077777FCCCCCCCCC7777700007777FCCCCCCC
+        CCCC77770000777FCCCCCCCCCCCCC77700007777777FCCCCC777777700007777
+        777FCCCCC777777700007777777FCCCCC777777700007777777FCCCCC7777777
+        00007777777FCCCCC777777700007777777FCCCCC777777700007777777FCCCC
+        C777777700007777777777777777777700007777777777777777777700007777
+        77777777777777770000}
+      OnClick = SpeedButtonToRentClick
+    end
+    object SpeedButtonToSales: TSpeedButton
+      Left = 352
+      Top = 10
+      Width = 24
+      Height = 24
+      Glyph.Data = {
+        66010000424D6601000000000000760000002800000014000000140000000100
+        040000000000F000000000000000000000001000000010000000000000000000
+        BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        7777777700007777777777777777777700007777777777777777777700007777
+        777FCCCCC777777700007777777FCCCCC777777700007777777FCCCCC7777777
+        00007777777FCCCCC777777700007777777FCCCCC777777700007777777FCCCC
+        C777777700007777777FCCCCC77777770000777FCCCCCCCCCCCCC77700007777
+        FCCCCCCCCCCC7777000077777FCCCCCCCCC777770000777777FCCCCCCC777777
+        00007777777FCCCCC7777777000077777777FCCC777777770000777777777FC7
+        7777777700007777777777777777777700007777777777777777777700007777
+        77777777777777770000}
+    end
+  end
+  object JvCaptionPanelCustomersDeposit: TJvCaptionPanel
+    Left = 0
+    Top = 0
+    Width = 687
+    Height = 181
+    Align = alTop
+    AutoDrag = False
+    Buttons = [capHelp]
+    Caption = 'Stock vente'
+    CaptionPosition = dpTop
+    CaptionFont.Charset = DEFAULT_CHARSET
+    CaptionFont.Color = clWhite
+    CaptionFont.Height = -12
+    CaptionFont.Name = 'Arial'
+    CaptionFont.Style = []
+    FlatButtons = True
+    OutlookLook = False
+    TabOrder = 3
+    object cxGrid1: TcxGrid
+      Left = 1
+      Top = 22
+      Width = 679
+      Height = 152
+      Align = alClient
+      TabOrder = 0
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        NavigatorButtons.ConfirmDelete = False
+        DataController.DataSource = RemoteDB.StockSRC
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        OptionsCustomize.ColumnFiltering = False
+        OptionsCustomize.ColumnGrouping = False
+        OptionsCustomize.ColumnHidingOnGrouping = False
+        OptionsCustomize.ColumnHorzSizing = False
+        OptionsCustomize.ColumnMoving = False
+        OptionsCustomize.ColumnSorting = False
+        OptionsData.Deleting = False
+        OptionsSelection.CellSelect = False
+        OptionsView.ColumnAutoWidth = True
+        OptionsView.GroupByBox = False
+        OptionsView.Header = False
+        object cxGrid1DBTableView1product_quantity: TcxGridDBColumn
+          DataBinding.FieldName = 'product_quantity'
+        end
+        object cxGrid1DBTableView1product_model: TcxGridDBColumn
+          DataBinding.FieldName = 'product_model'
+        end
+        object cxGrid1DBTableView1product_name: TcxGridDBColumn
+          DataBinding.FieldName = 'product_name'
+        end
+        object cxGrid1DBTableView1product_owner_id: TcxGridDBColumn
+          DataBinding.FieldName = 'product_owner_id'
+        end
+        object cxGrid1DBTableView1product_price_stock: TcxGridDBColumn
+          DataBinding.FieldName = 'product_price_stock'
+        end
+        object cxGrid1DBTableView1product_supplier_id: TcxGridDBColumn
+          DataBinding.FieldName = 'product_supplier_id'
+        end
+        object cxGrid1DBTableView1product_price_gross: TcxGridDBColumn
+          DataBinding.FieldName = 'product_price_gross'
+        end
+        object cxGrid1DBTableView1product_date_in_display: TcxGridDBColumn
+          DataBinding.FieldName = 'product_date_in_display'
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+end

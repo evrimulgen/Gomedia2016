@@ -1,0 +1,42 @@
+unit DialogChangeEANFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, JvComponent, JvLookOut, ExtCtrls, FnpNumericEdit,
+  ImgList,Davidutilsunit, JvEdit, JvExStdCtrls, JvExControls, cxControls,
+  cxContainer, cxEdit, cxTextEdit, cxCurrencyEdit, Buttons, cxDBEdit;
+
+type
+  TAddFundForm = class(TForm)
+    ImageListSmallImages: TImageList;
+    Label2: TLabel;
+    cxTextEdit1: TcxTextEdit;
+    cxDBTextEdit1: TcxDBTextEdit;
+    Label1: TLabel;
+    BitBtnOk: TBitBtn;
+    BitBtnCancel: TBitBtn;
+    procedure JvExpressButton12Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  AddFundForm: TAddFundForm;
+
+implementation
+
+{$R *.dfm}
+
+uses clientDMUnit,MainFRMUnit,GlobalsUnit;
+
+procedure TAddFundForm.JvExpressButton12Click(Sender: TObject);
+begin
+ FnpAmount.Value:=0;
+ Edit1.Text;
+end;
+
+end.

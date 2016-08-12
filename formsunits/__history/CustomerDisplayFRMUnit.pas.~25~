@@ -1,0 +1,95 @@
+unit CustomerDisplayFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls, ExtCtrls, ImgList, JpegList, Jpeg, GlobalsUnit;
+
+type
+  TFormCustomerDisplay = class(TForm)
+    PanelAdvert: TPanel;
+    ImageAdvert: TImage;
+    PanelCustomerData: TPanel;
+    TimerAdvert: TTimer;
+    PanelCustomerSale: TPanel;
+    ImageBackgroundSale: TImage;
+    LabelTotalText: TLabel;
+    ImageBackgroundStat: TImage;
+    LabelCustomerName: TLabel;
+    LabelCustomerVoucher: TLabel;
+    LabelCustomerSold: TLabel;
+    LabelCustomerOrder: TLabel;
+    LabelCustomerBought: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure TimerAdvertTimer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    JpegListAdvert: TJPEGImageList;
+    procedure RefreshContent;
+    { Public declarations }
+  end;
+
+var
+  FormCustomerDisplay: TFormCustomerDisplay;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormCustomerDisplay.FormCreate(Sender: TObject);
+begin
+  if GlobalsUnit.CompanyName <> 'SMARTOYS' then ImageBackgroundSale.Visible:=False;
+  JpegListAdvert := TJPEGImageList.Create;
+end;
+
+procedure TFormCustomerDisplay.FormDestroy(Sender: TObject);
+begin
+  JpegListAdvert.Free;
+end;
+
+procedure TFormCustomerDisplay.RefreshContent;
+var
+  TempItem: TTreeNode;
+  LS: TStringList;
+  i, r: integer;
+  DirInfo: TSearchRec;
+  Dest, DestExt: string;
+  source: string;
+  aJpegImage: TJpegImage;
+begin
+  self.JpegListAdvert.Clear;
+  r := FindFirst((ExtractFilePath(ParamStr(0))) + 'posbank\*.jpg', FaAnyfile, DirInfo);
+  while r = 0 do
+  begin
+    if ((DirInfo.Attr and FaDirectory <> FaDirectory) and (DirInfo.Attr and FaVolumeId <> FaVolumeId)) then
+      Dest  := (ExtractFilePath(ParamStr(0))) + 'posbank\' + DirInfo.Name;
+    DestExt := ExtractFileExt(Dest);
+    if DestExt = '.jpg' then
+    begin
+      aJpegImage := TJpegImage.Create;
+      aJpegImage.LoadFromFile(Dest);
+      self.JpegListAdvert.Add(aJpegImage);
+    end;
+    r := FindNext(DirInfo);
+  end;
+  SysUtils.FindClose(DirInfo);
+end;
+
+procedure TFormCustomerDisplay.TimerAdvertTimer(Sender: TObject);
+var
+  i: integer;
+  aJpeg: TJpegImage;
+begin
+  if JpegListAdvert.Count > 0 then
+  begin
+    aJpeg := TJpegImage.Create;
+    i     := Random(JpegListAdvert.Count);
+    ImageAdvert.Picture.BitMap.Assign((JpegListAdvert.Items[i]));
+    aJpeg.Free;
+  end;
+end;
+
+end.

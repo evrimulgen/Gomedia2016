@@ -1,0 +1,68 @@
+//
+// Created by the DataSnap proxy generator.
+//
+
+unit ClientFunctions;
+
+interface
+
+uses DBXCommon, DBXJSON, Classes, SysUtils, DB, SqlExpr, DBXDBReaders;
+
+type
+  TDSServerModuleThinClientClient = class
+  private
+    FDBXConnection: TDBXConnection;
+    FInstanceOwner: Boolean;
+    FechoCommand: TDBXCommand;
+  public
+    constructor Create(ADBXConnection: TDBXConnection); overload;
+    constructor Create(ADBXConnection: TDBXConnection; AInstanceOwner: Boolean); overload;
+    destructor Destroy; override;
+    function echo(s: string): string;
+  end;
+
+implementation
+
+function TDSServerModuleThinClientClient.echo(s: string): string;
+begin
+  if FechoCommand = nil then
+  begin
+    FechoCommand := FDBXConnection.CreateCommand;
+    FechoCommand.CommandType := TDBXCommandTypes.DSServerMethod;
+    FechoCommand.Text := 'TDSServerModuleThinClient.echo';
+    FechoCommand.Prepare;
+  end;
+  FechoCommand.Parameters[0].Value.SetWideString(s);
+  FechoCommand.ExecuteUpdate;
+  Result := FechoCommand.Parameters[1].Value.GetWideString;
+end;
+
+
+constructor TDSServerModuleThinClientClient.Create(ADBXConnection: TDBXConnection);
+begin
+  inherited Create;
+  if ADBXConnection = nil then
+    raise EInvalidOperation.Create('Connection cannot be nil.  Make sure the connection has been opened.');
+  FDBXConnection := ADBXConnection;
+  FInstanceOwner := True;
+end;
+
+
+constructor TDSServerModuleThinClientClient.Create(ADBXConnection: TDBXConnection; AInstanceOwner: Boolean);
+begin
+  inherited Create;
+  if ADBXConnection = nil then
+    raise EInvalidOperation.Create('Connection cannot be nil.  Make sure the connection has been opened.');
+  FDBXConnection := ADBXConnection;
+  FInstanceOwner := AInstanceOwner;
+end;
+
+
+destructor TDSServerModuleThinClientClient.Destroy;
+begin
+  FreeAndNil(FechoCommand);
+  inherited;
+end;
+
+end.
+

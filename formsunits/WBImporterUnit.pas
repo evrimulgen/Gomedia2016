@@ -1,0 +1,894 @@
+unit WBImporterUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, DB, VKDBFDataSet, StdCtrls, DBClient, Provider,
+  dateutils,
+  WideStrings, FMTBcd, SqlExpr, clientDMUnit, ComCtrls, cxGraphics,
+  cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit,
+  dxSkinsCore, cxTextEdit, cxMaskEdit, cxDropDownEdit,
+   cxProgressBar, dxStatusBar, OleCtrls, ComObj,
+  WinbooksOfficeApi_TLB, DBXMySQL,
+  paramtreeview, MidasLib, DavidUtilsunit, DbxDevartMySql;
+
+type
+  TFormWBImporterMain = class(TForm)
+    WBACT: TVKDBFNTX;
+    DataSource1: TDataSource;
+    DataSetProvider1: TDataSetProvider;
+    ACT: TClientDataSet;
+    ACTDOCTYPE: TStringField;
+    ACTDBKCODE: TStringField;
+    ACTDBKTYPE: TStringField;
+    ACTDOCNUMBER: TStringField;
+    ACTDOCORDER: TStringField;
+    ACTOPCODE: TStringField;
+    ACTACCOUNTGL: TStringField;
+    ACTACCOUNTRP: TStringField;
+    ACTBOOKYEAR: TStringField;
+    ACTPERIOD: TStringField;
+    ACTDATE: TDateField;
+    ACTDATEDOC: TDateField;
+    ACTDUEDATE: TDateField;
+    ACTCOMMENT: TStringField;
+    ACTCOMMENTEXT: TStringField;
+    ACTAMOUNT: TFloatField;
+    ACTAMOUNTEUR: TFloatField;
+    ACTVATBASE: TFloatField;
+    ACTVATCODE: TStringField;
+    ACTCURRAMOUNT: TFloatField;
+    ACTCURRCODE: TStringField;
+    ACTCUREURBASE: TFloatField;
+    ACTVATTAX: TFloatField;
+    ACTVATIMPUT: TStringField;
+    ACTCURRATE: TFloatField;
+    ACTREMINDLEV: TIntegerField;
+    ACTMATCHNO: TStringField;
+    ACTOLDDATE: TDateField;
+    ACTISMATCHED: TBooleanField;
+    ACTISLOCKED: TBooleanField;
+    ACTISIMPORTED: TBooleanField;
+    ACTISPOSITIVE: TBooleanField;
+    ACTISTEMP: TBooleanField;
+    ACTMEMOTYPE: TStringField;
+    ACTISDOC: TBooleanField;
+    ACTDOCSTATUS: TStringField;
+    ACTDICFROM: TStringField;
+    ACTCODAKEY: TStringField;
+    SQLDataSetShops: TSQLDataSet;
+    DPShops: TDataSetProvider;
+    CDSShops: TClientDataSet;
+    CDSShopsshops_id: TIntegerField;
+    CDSShopsshops_name: TStringField;
+    CDSShopsshops_customers_id: TIntegerField;
+    CDSShopsshops_title: TStringField;
+    CDSShopsshops_adress_one: TStringField;
+    CDSShopsshops_postcode: TStringField;
+    CDSShopsshops_adress_two: TStringField;
+    CDSShopsshops_phone: TStringField;
+    CDSShopsshops_map_url: TMemoField;
+    CDSShopsshops_schedule_1: TStringField;
+    CDSShopsshops_schedule_2: TStringField;
+    CDSShopsshops_schedule_3: TStringField;
+    CDSShopsshops_schedule_4: TStringField;
+    CDSShopsshops_schedule_5: TStringField;
+    CDSShopsshops_schedule_6: TStringField;
+    CDSShopsshops_schedule_7: TStringField;
+    CDSShopsshops_manager_name: TStringField;
+    CDSShopsshops_manager_email: TStringField;
+    CDSShopsshops_picture_url: TStringField;
+    CDSShopsshops_zone_id: TIntegerField;
+    CDSShopsshops_country_id: TIntegerField;
+    CDSShopsshops_logo_url: TStringField;
+    CDSShopsshops_group_id: TIntegerField;
+    CDSShopsshops_details: TMemoField;
+    CDSShopsshops_TVA: TStringField;
+    CDSShopsshops_registry: TStringField;
+    CDSShopsshops_bank: TStringField;
+    CDSShopsshops_sort_order: TIntegerField;
+    CDSShopsshops_visible: TIntegerField;
+    CDSShopsshops_cld_id: TStringField;
+    CDSShopslat: TSingleField;
+    CDSShopslng: TSingleField;
+    CDSShopsshops_region: TIntegerField;
+    CDSShopsshops_voip_nbr: TIntegerField;
+    CDSShopsshops_wb_custacc: TStringField;
+    CDSShopsshops_wb_cashbook: TStringField;
+    CDSShopsshops_wb_bctacc: TIntegerField;
+    CDSShopsshops_wb_invbook: TStringField;
+    CDSShopsshops_wb_cashacc: TIntegerField;
+    CDSShopsshops_language_id: TIntegerField;
+    DSShops: TDataSource;
+    ACTDOCSORT: TIntegerField;
+    VKDBFNTXACT: TVKDBFNTX;
+    DataSource2: TDataSource;
+    FileOpenDialog: TFileOpenDialog;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label1: TLabel;
+    Label2: TLabel;
+    LabelNew21: TLabel;
+    LabelNew6: TLabel;
+    LabelSH0: TLabel;
+    LabelNew0: TLabel;
+    LabelSH21: TLabel;
+    LabelDeposit: TLabel;
+    ButtonImportSelected: TButton;
+    DBGrid2: TDBGrid;
+    StartDate: TMonthCalendar;
+    EndDate: TMonthCalendar;
+    ComboBoxSelectPeriod: TComboBox;
+    ComboBoxPeriod: TcxComboBox;
+    ButtonImportAllFromSelected: TButton;
+    ButtonImport: TButton;
+    ButtonOpenTMPACT: TButton;
+    ButtonDBFVCO: TButton;
+    TabSheet2: TTabSheet;
+    ParamTree: TParamTreeview;
+    TabSheet3: TTabSheet;
+    DBGrid3: TDBGrid;
+    EditDP21: TEdit;
+    EditSH21: TEdit;
+    EditSH0: TEdit;
+    EditNew0: TEdit;
+    EditNew6: TEdit;
+    EditNew21: TEdit;
+    SQLConnection1: TSQLConnection;
+    ProgressBar: TProgressBar;
+    LabelStatus: TLabel;
+    procedure ButtonImportSelectedClick(Sender: TObject);
+    procedure ComboBoxSelectPeriodSelect(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure ButtonImportAllFromSelectedClick(Sender: TObject);
+    procedure ACTCalcFields(DataSet: TDataSet);
+    procedure ButtonImportClick(Sender: TObject);
+    procedure ButtonOpenTMPACTClick(Sender: TObject);
+    procedure ButtonDBFVCOClick(Sender: TObject);
+  private
+    procedure CreateACT(RemoteDB: TRemoteDB; DocNbr: string; WithVCO : boolean);
+    procedure WBExecute;
+    function GetParameter(Name: String): string;
+    procedure SetParameter(Name: String; const Value: string);
+    procedure Import(All: boolean);
+    procedure CreateDBF(WithVCO: boolean);
+    { Private declarations }
+  public
+    { Public declarations }
+    property Parameter[Name: String]: string read GetParameter
+      write SetParameter; default;
+
+  end;
+
+const
+  ParamRegPath = 'software\gopos\wbimport\params';
+
+var
+  FormWBImporterMain: TFormWBImporterMain;
+  Period: string;
+
+implementation
+
+uses GlobalsUnit, WinbooksExport, CashRegistryFRMUnit, Registry, StrUtils;
+
+{$R *.dfm}
+
+function TFormWBImporterMain.GetParameter(Name: String): string;
+var
+  TmpStr: String;
+begin
+  TmpStr := Trim(self.ParamTree.Parameter[Name]);
+  Result := TmpStr;
+  if TmpStr = 'Oui' then
+    Result := 'TRUE';
+  if TmpStr = 'Non' then
+    Result := 'FALSE';
+end;
+
+procedure TFormWBImporterMain.SetParameter(Name: String; const Value: string);
+var
+  TmpStr: String;
+begin
+  self.ParamTree.Parameter[Name] := Value;
+end;
+
+procedure TFormWBImporterMain.ACTCalcFields(DataSet: TDataSet);
+begin
+  DataSet.FieldByName('DOCSORT').AsString:=Trim(DataSet.FieldByName('DOCNUMBER').AsString);
+end;
+
+procedure TFormWBImporterMain.ButtonImportClick(Sender: TObject);
+begin
+ WBExecute;
+end;
+
+procedure TFormWBImporterMain.ButtonDBFVCOClick(Sender: TObject);
+begin
+   CreateDBF(True);
+end;
+
+procedure TFormWBImporterMain.CreateDBF(WithVCO: boolean);
+var
+  Period: Variant;
+  aRemoteDB: TRemoteDB;
+  i,j, nbr: Integer;
+  ExportACTDB: TACTDBCASH;
+  DayCashierSummary: TDayCashierSummary;
+  AFormCashRegister: TFormCashRegister;
+  Accu: Double;
+  DocNbr: string;
+
+
+begin
+  // CDSShops.First;  // Start From the selected shop in the list
+  // While not CDSShops.eof do
+  begin
+    ButtonImport.Enabled:=false;
+    aRemoteDB := TRemoteDB.Create(nil);
+    aRemoteDB.DBLocalCache := False;
+
+    try
+
+    WBACT.Filter := 'BOOKYEAR="'+ self.Parameter['BOOKYEARCODE'] +'" and DBKCODE=' +
+      QuotedStr(Trim(CDSShopsshops_wb_cashbook.AsString + '*'));
+    WBACT.Filtered := True;
+    ACT.Open;
+    ACT.First;
+    DocNbr:='0';
+    While not ACT.Eof do begin
+      if StrToInt(Trim(ACT.fieldByName('DOCNUMBER').AsString)) > StrtoInt(DocNbr) then begin
+          DocNbr:= Trim(ACT.fieldByName('DOCNUMBER').AsString)
+    end;
+      ACT.Next;
+    end;
+    ACT.Last;
+    ACT.Close;
+    WBACT.Close;
+
+    ConnectedShop := CDSShopsshops_id.AsInteger;
+
+    DocNbr := InputBox('Dernier document de la séquence de caisse : ', 'Dernier document', DocNbr);
+
+    // if MessageDlg( 'Dernier document de caisse : ' + DocNbr, mtWarning, [mbOK,mbCANCEL], 0)=mrOk then begin
+     aRemoteDB.LoadDB;
+     if DocNbr = '' then DocNbr := '0';
+        CreateACT(aRemoteDB, IntToStr(StrToInt(DocNbr) + 1), WithVCO);
+        // WBExecute;
+    // End;
+    finally
+      aRemoteDB.Free;
+      ButtonImport.Enabled:=true;
+    end;
+
+    // CDSShops.Next;
+
+  end;
+
+end;
+
+
+procedure TFormWBImporterMain.ButtonImportAllFromSelectedClick(Sender: TObject);
+var
+  Period: Variant;
+  aRemoteDB: TRemoteDB;
+  i,j, nbr: Integer;
+  ExportACTDB: TACTDBCASH;
+  DayCashierSummary: TDayCashierSummary;
+  AFormCashRegister: TFormCashRegister;
+  Accu: Double;
+  DocNbr: string;
+
+
+begin
+  // Start From the selected shop in the list
+  While not CDSShops.eof do
+  begin
+    aRemoteDB := TRemoteDB.Create(self);
+    aRemoteDB.DBLocalCache := False;
+
+    WBACT.Filter := 'BOOKYEAR="B" and DBKCODE=' +
+      QuotedStr(Trim(CDSShopsshops_wb_cashbook.AsString + '*'));
+
+    WBACT.Filtered := True;
+    // WBACT.Indexes.CreateIndex('DOCNUMBER');
+
+    ACT.Open;
+
+    ConnectedShop := CDSShopsshops_id.AsInteger;
+    aRemoteDB.LoadDB;
+
+    if MessageDlg(ACTDOCNUMBER.AsString, mtWarning, [mbOK,mbCANCEL], 0)=mrOk then begin
+    DocNbr := Trim(ACTDOCNUMBER.AsString);
+    if DocNbr = '' then DocNbr := '0';
+     CreateACT(aRemoteDB, IntToStr(StrToInt(DocNbr) + 1),true);
+    End;
+
+    ACT.Close;
+    WBACT.Close;
+
+
+    aRemoteDB.Free;
+    aRemoteDB:=nil;
+
+    CDSShops.Next;
+
+  end;
+
+end;
+
+procedure TFormWBImporterMain.ButtonImportSelectedClick(Sender: TObject);
+begin
+ CreateDBF(False);
+end;
+
+procedure TFormWBImporterMain.ButtonOpenTMPACTClick(Sender: TObject);
+var
+  openDialog : TOpenDialog;    // Open dialog variable
+  i : Integer;
+begin
+  VKDBFNTXACT.Close();
+// Create the open dialog object - assign to our open dialog variable
+  openDialog := TOpenDialog.Create(self);
+
+  // Set up the starting directory to be the current one
+  openDialog.InitialDir := GetCurrentDir;
+
+
+  // Display the open file dialog
+  if not openDialog.Execute
+  then ShowMessage('Open file was cancelled')
+  else
+  begin
+          VKDBFNTXACT.DBFFileName := openDialog.FileName;
+  end;
+
+  // Free up the dialog
+  openDialog.Free;
+  VKDBFNTXACT.Open;
+end;
+
+procedure TFormWBImporterMain.ComboBoxSelectPeriodSelect(Sender: TObject);
+var
+  workYear, startmonth, i: Integer;
+  tmpdate: tDateTime;
+begin
+  if ComboBoxSelectPeriod.ItemIndex = 0 then
+  begin
+    StartDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 32) + 1;
+    EndDate.Date := EndOfTheMonth(Now);
+  end;
+  if ComboBoxSelectPeriod.ItemIndex = 1 then
+  begin
+    StartDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 63) + 1;
+    EndDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 32);
+  end;
+  if ComboBoxSelectPeriod.ItemIndex = 2 then
+  begin
+    i := MonthofTheYear(Now) Div 3;
+    if MonthofTheYear(Now) Mod 3 = 0 then
+      i := i - 1;
+    if TryEncodeDate(yearof(Now), i * 3 + 1, 1, tmpdate) then
+      StartDate.Date := tmpdate;
+    if TryEncodeDate(yearof(Now), i * 3 + 3, 1, tmpdate) then
+    begin
+      EndDate.Date := EndOfTheMonth(tmpdate);
+    end;
+  end;
+  if ComboBoxSelectPeriod.ItemIndex = 3 then
+  begin
+    i := MonthofTheYear(Now) Div 3;
+    if MonthofTheYear(Now) Mod 3 = 0 then
+      i := i - 1;
+    if i = 0 then
+    begin
+      workYear := yearof(Now) - 1;
+      startmonth := 10;
+    end
+    else
+    begin
+      workYear := yearof(Now);
+      startmonth := i * 3 - 2
+    end;
+    if TryEncodeDate(workYear, startmonth, 1, tmpdate) then
+      StartDate.Date := tmpdate;
+    if TryEncodeDate(workYear, startmonth + 2, 1, tmpdate) then
+    begin
+      EndDate.Date := EndOfTheMonth(tmpdate);
+    end;
+  end;
+
+end;
+
+procedure TFormWBImporterMain.CreateACT(RemoteDB: TRemoteDB; DocNbr: string; withVCO : boolean);
+Var
+  i, j, nbr: Integer;
+  ExportACTDB: TACTDBCASH;
+  DayCashierSummary: TDayCashierSummary;
+  AFormCashRegister: TFormCashRegister;
+  Accu,TotS21,TotS6,TotS0,TotI21,TotI6,TotI0,TotDP,TotSH,TotSHval,TotVoucher,
+    TotRefunds,TotReturns,TotPurchased,S21,S6,S0,SDP,SSH,T0,T6,T21,TDP,TSH,SUPTOT: Double;
+
+begin
+  RemoteDB.SetItemsTosales;
+  RemoteDB.SetAddress_bookToCustomers;
+
+  RemoteDB.FreeStockto;
+  RemoteDB.freesalesto;
+  RemoteDB.FreeRefundsTo;
+  RemoteDB.FreeRentTo;
+  RemoteDB.FreeInvoicesItems;
+  RemoteDB.FreeInvoicesToCustomers;
+  RemoteDB.FreeAlertsTo;
+
+  RemoteDB.Products.IndexName := 'ProductsIXModel';
+  RemoteDB.Products.Filter := '';
+  RemoteDB.Products.Filtered := False;
+
+  ProgressBar.Visible := True;
+  ProgressBar.Position := 0;
+
+  AFormCashRegister := TFormCashRegister.Create(self);
+  ExportACTDB := TACTDBCASH.Create(CDSShopsshops_wb_custacc.AsString,
+    CDSShopsshops_wb_cashbook.AsString, CDSShopsshops_wb_cashacc.AsString,
+    CDSShopsshops_wb_bctacc.AsString, CDSShopsshops_wb_invbook.AsString,
+    ComboBoxPeriod.Text, RemoteDB);
+  Accu := 0;
+  j := 0;
+  nbr := StrToInt(DocNbr);
+  try
+    for i := Trunc(StartDate.Date) to Trunc(EndDate.Date) do
+    begin
+      DayCashierSummary := RemoteDB.CalcDayCahsierSummary(i, i);
+      if DayCashierSummary.Open then  begin
+        Accu := Accu + DayCashierSummary.TotalPay;
+        AFormCashRegister.CashData.Append;
+        AFormCashRegister.CashData.FieldByName('Nbr').Value :=
+          AFormCashRegister.CashData.FieldByName('Nbr').Value + 1;
+        AFormCashRegister.CashData.FieldByName('Date').Value := i;
+        AFormCashRegister.CashData.FieldByName('NEW-0').Value :=
+          DayCashierSummary.New0;
+        AFormCashRegister.CashData.FieldByName('NEW-6').Value :=
+          DayCashierSummary.New6;
+        AFormCashRegister.CashData.FieldByName('NEW-21').Value :=
+          DayCashierSummary.New21;
+        AFormCashRegister.CashData.FieldByName('New').Value :=
+          DayCashierSummary.New + DayCashierSummary.NoMargin;
+        AFormCashRegister.CashData.FieldByName('SH').Value :=
+          DayCashierSummary.SH;
+        AFormCashRegister.CashData.FieldByName('Depot').Value :=
+          DayCashierSummary.SHDeposit;
+        AFormCashRegister.CashData.FieldByName('Rachat').Value :=
+          DayCashierSummary.SHBought;
+        AFormCashRegister.CashData.FieldByName('CostOfBought').Value :=
+          DayCashierSummary.SHCostOfBought;
+        AFormCashRegister.CashData.FieldByName('Serv').Value :=
+          DayCashierSummary.Service;
+        AFormCashRegister.CashData.FieldByName('Returns').Value :=
+          DayCashierSummary.Returns;
+        AFormCashRegister.CashData.FieldByName('Total').Value :=
+          DayCashierSummary.TotalNature;
+        AFormCashRegister.CashData.FieldByName('Cash').Value :=
+          DayCashierSummary.Cash;
+        AFormCashRegister.CashData.FieldByName('Bct').Value :=
+          DayCashierSummary.BCT;
+        AFormCashRegister.CashData.FieldByName('Visa').Value :=
+          DayCashierSummary.Visa;
+        AFormCashRegister.CashData.FieldByName('Proton').Value :=
+          DayCashierSummary.Proton;
+        AFormCashRegister.CashData.FieldByName('Voucher').Value :=
+          DayCashierSummary.Voucher;
+        AFormCashRegister.CashData.FieldByName('Refunds').Value :=
+          DayCashierSummary.Refunds;
+        AFormCashRegister.CashData.FieldByName('Purchased').Value :=
+                DayCashierSummary.Purchased;
+        AFormCashRegister.CashData.FieldByName('TotalPay').Value :=
+          DayCashierSummary.TotalPay;
+        AFormCashRegister.CashData.FieldByName('CaisseTot').Value := Accu;
+        AFormCashRegister.CashData.FieldByName('Expenses').Value :=
+          DayCashierSummary.Expenses;
+        AFormCashRegister.CashData.FieldByName('ExpensesDesc').Value :=
+          DayCashierSummary.ExpensesDesc;
+        AFormCashRegister.CashData.FieldByName('INV-21').Value :=
+          DayCashierSummary.Invoice21;
+        AFormCashRegister.CashData.FieldByName('INV-6').Value :=
+          DayCashierSummary.Invoice6;
+        AFormCashRegister.CashData.FieldByName('INV-0').Value :=
+          DayCashierSummary.Invoice0;
+        AFormCashRegister.CashData.Post;
+
+        ExportACTDB.AddDaySales(nbr, i, DayCashierSummary);
+        ExportACTDB.AddDayInvoices(i);
+        nbr := nbr + 1;
+      end;
+      j := j + 1;
+      ProgressBar.Position := round(100 * j /
+        (round(EndDate.Date - StartDate.Date)));
+      Application.ProcessMessages;
+    end;
+    // All the data is in the CashData
+    AFormCashRegister.CashData.First();
+    While not AFormCashRegister.CashData.Eof do begin
+        TotS21:=TotS21+AFormCashRegister.CashData.FieldByName('NEW-21').Value;
+        TotS6:=TotS6+AFormCashRegister.CashData.FieldByName('NEW-6').Value;
+        TotS0:=TotS0+AFormCashRegister.CashData.FieldByName('NEW-0').Value;
+        TotI21:=TotI21+AFormCashRegister.CashData.FieldByName('INV-21').Value;
+        TotI6:=TotI6+AFormCashRegister.CashData.FieldByName('INV-6').Value;
+        TotI0:=TotI0+AFormCashRegister.CashData.FieldByName('INV-0').Value;
+        TotDP:=TotDP+AFormCashRegister.CashData.FieldByName('Depot').Value;
+        TotSH:=TotSH+AFormCashRegister.CashData.FieldByName('Rachat').Value;
+        TotSHval:=TotSHval+AFormCashRegister.CashData.FieldByName('CostOfBought').Value;
+        TotVoucher:=TotVoucher+AFormCashRegister.CashData.FieldByName('Voucher').Value;
+        TotRefunds:=TotRefunds+AFormCashRegister.CashData.FieldByName('Refunds').Value;
+        TotReturns:=TotReturns+AFormCashRegister.CashData.FieldByName('Returns').Value;
+        TotPurchased:=TotPurchased+AFormCashRegister.CashData.FieldByName('Purchased').Value;
+       AFormCashRegister.CashData.Next;
+    end;
+
+    // Compute totals
+
+    ExportACTDB.InvoiceData.EmptyDataSet();
+
+    S21:=Round((TotS21-TotI21)/1.21*100)/100;
+    T21:= (TotS21-TotI21) - S21;
+    ExportACTDB.InvoiceData.Append();
+    ExportACTDB.InvoiceData.FieldByName('Rate').Value:=21;
+    ExportACTDB.InvoiceData.FieldByName('base').Value:=S21;
+    ExportACTDB.InvoiceData.FieldByName('tax').Value:=T21;
+    ExportACTDB.InvoiceData.FieldByName('account').Value:='700'+ AddLeadingZeroes(CDSShopsshops_wb_custacc.AsInteger,3);
+    ExportACTDB.InvoiceData.Post();
+    ExportACTDB.Base21:=ExportACTDB.Base21+S21;
+    ExportACTDB.Tax21:=ExportACTDB.Tax21+T21;
+
+    S6:=Round((TotS6-TotI6)/1.06*100)/100;
+    T6 := (TotS6-TotI6) - S6;
+    ExportACTDB.InvoiceData.Append();
+    ExportACTDB.InvoiceData.FieldByName('Rate').Value:=6;
+    ExportACTDB.InvoiceData.FieldByName('base').Value:=S6;
+    ExportACTDB.InvoiceData.FieldByName('tax').Value:=T6;
+    ExportACTDB.InvoiceData.FieldByName('account').Value:='700'+ AddLeadingZeroes(CDSShopsshops_wb_custacc.AsInteger,3);
+    ExportACTDB.InvoiceData.Post();
+    ExportACTDB.Base6:=ExportACTDB.Base6+S6;
+    ExportACTDB.Tax6:=ExportACTDB.Tax6+T6;
+
+    S0:=Round((TotS0-TotI0)/1.00*100)/100;
+    T0 := (TotS0-TotI0) - S0;
+    ExportACTDB.InvoiceData.Append();
+    ExportACTDB.InvoiceData.FieldByName('Rate').Value:=0;
+    ExportACTDB.InvoiceData.FieldByName('base').Value:=S0;
+    ExportACTDB.InvoiceData.FieldByName('tax').Value:=T0;
+    ExportACTDB.InvoiceData.FieldByName('account').Value:='700'+ AddLeadingZeroes(CDSShopsshops_wb_custacc.AsInteger,3);
+    ExportACTDB.InvoiceData.Post();
+    ExportACTDB.Base0:=ExportACTDB.Base0+S0;
+
+    // Dépot
+    SDP := Round((TotDP + TotReturns - TotVoucher - TotRefunds)/1.21*100)/100;
+    TDP := (TotDP + TotReturns - TotVoucher - TotRefunds)-SDP;
+    ExportACTDB.InvoiceData.Append();
+    ExportACTDB.InvoiceData.FieldByName('Rate').Value:=21;
+    ExportACTDB.InvoiceData.FieldByName('base').Value:=SDP;
+    ExportACTDB.InvoiceData.FieldByName('tax').Value:=TDP;
+    ExportACTDB.InvoiceData.FieldByName('account').Value:='7001'+ AddLeadingZeroes(CDSShopsshops_wb_custacc.AsInteger,2);
+    ExportACTDB.InvoiceData.Post();
+    ExportACTDB.Base21:=ExportACTDB.Base21+SDP;
+    ExportACTDB.Tax21:=ExportACTDB.Tax21+TDP;
+
+    // Rachats
+    SSH := Round((TotSH-TotSHval)/1.21*100)/100;
+    TSH := (TotSH-TotSHval)-SSH;
+    ExportACTDB.InvoiceData.Append();
+    ExportACTDB.InvoiceData.FieldByName('Rate').Value:=21;
+    ExportACTDB.InvoiceData.FieldByName('base').Value:=SSH;
+    ExportACTDB.InvoiceData.FieldByName('tax').Value:=TSH;
+    ExportACTDB.InvoiceData.FieldByName('account').Value:='7002'+ AddLeadingZeroes(CDSShopsshops_wb_custacc.AsInteger,2);
+    ExportACTDB.InvoiceData.Post();
+    ExportACTDB.InvoiceData.Append();
+    ExportACTDB.InvoiceData.FieldByName('Rate').Value:=0;
+    ExportACTDB.InvoiceData.FieldByName('base').Value:=TotSHval;
+    ExportACTDB.InvoiceData.FieldByName('tax').Value:=0;
+    ExportACTDB.InvoiceData.FieldByName('account').Value:='7002'+ AddLeadingZeroes(CDSShopsshops_wb_custacc.AsInteger,2);
+    ExportACTDB.InvoiceData.Post();
+    ExportACTDB.Base0:=ExportACTDB.Base0+TotSHval;
+    ExportACTDB.Base21:=ExportACTDB.Base21+SSH;
+    ExportACTDB.Tax21:=ExportACTDB.Tax21+TSH;
+
+    WBACT.Filter := 'BOOKYEAR="'+ self.Parameter['BOOKYEARCODE'] +'" and DBKCODE="VCO   "';
+    WBACT.Filtered := True;
+    ACT.Open;
+    ACT.First;
+    DocNbr:='0';
+    While not ACT.Eof do begin
+      if StrToInt(Trim(ACT.fieldByName('DOCNUMBER').AsString)) > StrtoInt(DocNbr) then begin
+          DocNbr:= Trim(ACT.fieldByName('DOCNUMBER').AsString)
+    end;
+      ACT.Next;
+    end;
+    ACT.Last;
+    ACT.Close;
+    WBACT.Close;
+
+    EditDP21.Text := FloatToStrf(SDP,ffCurrency,8,2);
+    EditSH21.Text := FloatToStrf(SSH,ffCurrency,8,2);
+    EditSH0.Text := FloatToStrf(TotSHval,ffCurrency,8,2);
+    EditNew0.Text := FloatToStrf(S0,ffCurrency,8,2);
+    EditNew6.Text := FloatToStrf(S6,ffCurrency,8,2);
+    EditNew21.Text := FloatToStrf(S21,ffCurrency,8,2);
+
+    if (withVCO) then begin
+      DocNbr := (InputBox('Veuillez entrer le N° de VCO', 'Numéro de séquence', (DocNbr)));
+      SUPTOT:=TSH+SSH+TotSHval+TDP+SDP+T0+S0+T6+S6+T21+S21;
+      if   StrToInt(DocNbr) > 0 then
+      ExportACTDB.WriteVCOInvoice(StrToInt(DocNbr)+1,SUPTOT,CDSShopsshops_wb_custacc.AsString,'Ventes comptoir '+CDSShopsshops_wb_custacc.AsString);
+    end;
+
+    ExportACTDB.SaveToDbf;
+    AFormCashRegister.saveGrid(CDSShopsshops_wb_cashbook.AsString);
+  finally
+    ExportACTDB.Free;
+    AFormCashRegister.Free;
+    ProgressBar.Visible := False;
+    RemoteDB.FreeAddress_booktoCustomers;
+  end;
+
+end;
+
+procedure TFormWBImporterMain.WBExecute;
+var
+  AWB, BWB: Variant;
+  WBSTR1, WBSTR2, WBSTR3: WideString;
+  Result: WordBool;
+  ErrMsg: string;
+  j:integer;
+begin
+
+  AWB := CreateOleObject('WinbooksOfficeApi.WinbooksObject');
+  try
+    LabelStatus.Caption := 'Initialisation Winbooks';
+    j := AWB.init;
+
+    if j <> 0 then
+    begin
+      ErrMsg := ('Initialisation de Winbooks impossible. Erreur #' + inttostr(j)
+        + AWB.LastErrorMessage);
+      MessageDlg(ErrMsg, mtWarning, [mbOK], 0);
+      LabelStatus.Caption := ErrMsg;
+
+      // exit;
+    end;
+
+    WBSTR1 := self.Parameter['WBLogin'];
+    WBSTR2 := self.Parameter['WBPass'];
+    WBSTR3 := self.Parameter['WBLang'];
+
+    LabelStatus.Caption := 'Login Winbooks ' + WBSTR1 + ' ' + WBSTR2 +
+      ' ' + WBSTR3;
+    if AWB.Login(WBSTR1, WBSTR2, WBSTR3) <> 0 then
+    begin
+      ErrMsg := ('Impossible de se connecter à Winbooks avec la login "' +
+        WBSTR1 + '" et le môt de passe "' + WBSTR2 + '". Erreur #' +
+        AWB.LastErrorMessage);
+      MessageDlg(ErrMsg, mtWarning, [mbOK], 0);
+      LabelStatus.Caption := ErrMsg;
+      // exit;
+    end;
+
+    WBSTR1 := self.Parameter['WBDossier'];
+    LabelStatus.Caption := 'Ouverture dossier Winbooks ' + WBSTR1;
+    if AWB.OpenDossier(WBSTR1) <> 0 then
+    begin
+      ErrMsg := ('Impossible de rentrer dans le dossier "' + WBSTR1 +
+        '". Erreur #' + AWB.LastErrorMessage);
+      LabelStatus.Caption := ErrMsg;
+      MessageDlg(ErrMsg, mtWarning, [mbOK], 0);
+      // exit;
+    end;
+
+    WBSTR1 := self.Parameter['WBBookYear'];
+    LabelStatus.Caption := 'Ouverture exercice Winbooks ' + WBSTR1;
+    Application.ProcessMessages;
+    if AWB.OpenBookYear(WBSTR1) <> 0 then
+    begin
+      ErrMsg := ('Impossible de trouver la période "' + WBSTR1 +
+        '" dans le dossier. Erreur #' + AWB.LastErrorMessage);
+      MessageDlg(ErrMsg, mtWarning, [mbOK], 0);
+      // exit;
+    end;
+
+    LabelStatus.Caption := 'Verification DB Winbooks';
+    Application.ProcessMessages;
+    if AWB.Import.FileFormat('DBF') = False then
+    begin
+      ShowMessage(AWB.LastErrorMessage);
+      // exit;
+    end;
+
+    LabelStatus.Caption := 'Ouverture répertoire export';
+    Application.ProcessMessages;
+    if AWB.Import.Directory(ExtractFilePath(ParamStr(0)) + 'export') = False
+    then
+    begin
+      ShowMessage(AWB.LastErrorMessage);
+      // exit;
+    end;
+
+    AWB.Import.Linkformat := wbWinbooks;
+
+    LabelStatus.Caption := 'Création backup données export';
+    Application.ProcessMessages;
+    if AWB.Import.Backup(ExtractFilePath(ParamStr(0)) + 'export/backup') = False
+    then
+    begin
+      ShowMessage(AWB.LastErrorMessage);
+    end;
+
+    LabelStatus.Caption := 'Valeurs par défaut et traitement des erreurs';
+    Application.ProcessMessages;
+    if AWB.Import.SetDefaultPeriod(AWB.Param.PeriodInternalCode('01/01/2009')) = False
+    then
+    begin
+      ShowMessage(AWB.LastErrorMessage);
+      // exit;
+    end;
+
+    // Traitement des erreurs
+    begin
+      // Compte manquant -> fiche blanche
+      AWB.Import.ErrorCodes.Item('ACC_MISS').SetResolution := wbBlankRecord;
+      // Memo changé : remplacer par le mémo importé
+      AWB.Import.ErrorCodes.Item('MEM_DIFF').SetResolution := wbReplace;
+      // Fiche modifiée : prendre le contenu de la fiche importée
+      AWB.Import.ErrorCodes.Item('ACC_MOD').SetResolution := wbReplace;
+      // Rupture dans la numérotation : le signaler : on laisse à WbToResolve
+      AWB.Import.ErrorCodes.Item('SEQ_RUPT').SetResolution := wbAccept;
+      // Un document existe déjà dans le dossier cible : remplacer
+      AWB.Import.ErrorCodes.Item('DOC_NUM').SetResolution := wbReplace;
+      // Le libellé d'un code table a changé : remplacer par le libellé importé
+      AWB.Import.ErrorCodes.Item('TAB_MOD').SetResolution := wbReplace;
+      // Il y a un taux de change différent pour cette devise : prendre le taux importé
+      AWB.Import.ErrorCodes.Item('CUR_ERR').SetResolution := wbReplace;
+      // Le fichier d'importation contient des écritures rigoureusement identiques au dossier cible : continuer
+      AWB.Import.ErrorCodes.Item('SAM_FIL').SetResolution := wbAccept;
+      // écriture avec date hors-période : accepter
+      AWB.Import.ErrorCodes.Item('OUT_DAT').SetResolution := wbAccept;
+    end;
+
+
+
+    // On lance la procédure de test
+
+    LabelStatus.Caption := 'Début procédure de test Winbooks';
+    Application.ProcessMessages;
+    if Not(AWB.Import.Test) then
+    begin
+      ShowMessage('Erreur lors de la procedure de test. Erreur #' +
+        AWB.LastErrorMessage);
+      // exit;
+    end;
+    LabelStatus.Caption := 'Traitement Warnings';
+    Application.ProcessMessages;
+    for j := 1 To AWB.Import.Warnings.Count do
+    begin
+      if AWB.Import.Warnings.Item(j).GetResolution = 0 then
+      begin
+        ShowMessage('Toutes les alertes ne sont pas corrigés (' +
+          AWB.Import.Warnings.Item(j).Code + ')');
+      end;
+    end;
+    LabelStatus.Caption := 'Traitement fatal errors';
+    Application.ProcessMessages;
+    if AWB.Import.FatalErrors.Count > 0 then
+    begin
+      ShowMessage('Erreurs fatales dans les fichiers d' + chr(39) +
+        'importation. Impossible de poursuivre !');
+      // exit;
+    end;
+    LabelStatus.Caption := 'Resolution warnings';
+    Application.ProcessMessages;
+    if AWB.Import.Warnings.Count > 0 then
+    begin
+      if MessageDlg('Erreurs de type warning dans les fichiers d' + chr(39) +
+        'importation. Voulez-vous continuer ?', mtWarning, [mbOK, mbCancel], 0)
+        = mrcancel then
+        // exit;
+    end;
+
+    LabelStatus.Caption := 'Début exportation';
+    Application.ProcessMessages;
+    if AWB.Import.Execute = 0 then
+    begin
+      ShowMessage('Importation réalisée avec succès');
+      AWB.CloseDossier
+    end
+    else
+      ShowMessage(AWB.LastErrorMessage);
+      LabelStatus.Caption := '';
+  finally
+       AWB.CloseDossier;
+       AWB := Unassigned;
+  end;
+end;
+
+procedure TFormWBImporterMain.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
+var
+  ParamReg: TRegistry;
+  i: Integer;
+begin
+  ParamReg := TRegistry.Create;
+  try
+    ParamReg.RootKey := HKEY_CURRENT_USER;
+    ParamReg.OpenKey(ParamRegPath, True);
+    for i := 0 to ParamTree.ParamRefCount - 1 do
+    begin
+      ParamReg.WriteString(ParamTree.ParamRefs[i],
+        ParamTree.Parameter[ParamTree.ParamRefs[i]]);
+    end;
+  finally
+    ParamReg.CloseKey;
+    ParamReg.Free;
+  end;
+end;
+
+procedure TFormWBImporterMain.FormCreate(Sender: TObject);
+var
+  ParamReg: TRegistry;
+  ParamErr: String;
+  i: Integer;
+begin
+  ParamErr := '';
+  ParamReg := TRegistry.Create;
+  ParamReg.RootKey := HKEY_CURRENT_USER;
+  ParamReg.OpenKey(ParamRegPath, True);
+  for i := 0 to ParamTree.ParamRefCount - 1 do
+  begin
+    if not ParamReg.ValueExists(ParamTree.ParamRefs[i]) then
+    begin
+      if ParamErr = '' then
+        ParamErr := ParamTree.ParamRefs[i] + ', '
+      else
+        ParamErr := ParamErr + ParamTree.ParamRefs[i] + ', ';
+    end;
+    if ParamReg.ReadString(ParamTree.ParamRefs[i]) <> '' then
+    begin
+      ParamTree.Parameter[ParamTree.ParamRefs[i]] :=
+        ParamReg.ReadString(ParamTree.ParamRefs[i]);
+    end;
+  end;
+  ParamReg.CloseKey;
+  ParamReg.Free;
+
+  if ParamErr <> '' then
+  begin
+    ParamErr := LeftStr(ParamErr, Length(ParamErr) - 2);
+    ShowMessage
+      ('Donnees de configuration non coherentes veuillez aller dans la partie configuration du programme. Erreurs : '
+      + ParamErr);
+  end;
+
+  CopyFile(PChar(self.Parameter['ACTPATH']), PChar('c:\tmp\ACT.dbf'), false);
+  WBACT.DBFFileName := 'c:\tmp\ACT.dbf' ;
+
+  CDSShops.Open;
+
+end;
+
+procedure TFormWBImporterMain.FormShow(Sender: TObject);
+var
+  year,month,day:word;
+begin
+  StartDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 63) + 1;
+  EndDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 32);
+  DecodeDate(now,year,month,day);
+  ComboBoxPeriod.ItemIndex := (month-5);
+end;
+
+procedure TFormWBImporterMain.Import(All:boolean);
+begin
+
+end;
+
+end.

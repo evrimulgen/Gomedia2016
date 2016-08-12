@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{37F3707C-ECD7-49D3-923C-757ED627AA33}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="GoMedia2012.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="GoMediaWBImporter.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="GoMedia2012">
+			<MSBuild Projects="GoMedia2012.dproj"/>
+		</Target>
+		<Target Name="GoMedia2012:Clean">
+			<MSBuild Targets="Clean" Projects="GoMedia2012.dproj"/>
+		</Target>
+		<Target Name="GoMedia2012:Make">
+			<MSBuild Targets="Make" Projects="GoMedia2012.dproj"/>
+		</Target>
+		<Target Name="GoMediaWBImporter">
+			<MSBuild Projects="GoMediaWBImporter.dproj"/>
+		</Target>
+		<Target Name="GoMediaWBImporter:Clean">
+			<MSBuild Targets="Clean" Projects="GoMediaWBImporter.dproj"/>
+		</Target>
+		<Target Name="GoMediaWBImporter:Make">
+			<MSBuild Targets="Make" Projects="GoMediaWBImporter.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="GoMedia2012;GoMediaWBImporter"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="GoMedia2012:Clean;GoMediaWBImporter:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="GoMedia2012:Make;GoMediaWBImporter:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

@@ -1,0 +1,85 @@
+unit ImportCustomersFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids, BaseGrid, AdvGrid, StrUtils;
+
+type
+  TFormImportCustomer = class(TForm)
+    CustGrid: TAdvStringGrid;
+    OpenDialog: TOpenDialog;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormImportCustomer: TFormImportCustomer;
+
+implementation
+
+uses ClientDMUnit, DavidUtilsUnit;
+
+{$R *.dfm}
+
+procedure TFormImportCustomer.Button1Click(Sender: TObject);
+var i,j,l:integer;
+    email,FName,LName, Name,PCode,Phone,GPhone,FPhone, Street:String;
+    Last:Boolean;
+begin
+ if OpenDialog.Execute then begin
+   CustGrid.LoadFromXLS(OpenDialog.FileName);
+ end;
+ for I := 0 to CustGrid.RowCount - 1 do begin
+  FName:='';
+  LName:='';
+  GPhone:='';
+  FPhone:='';
+  Name:=Trim(CustGrid.Cells[2,i]);
+  Street:=CustGrid.Cells[3,i];
+  PCode:=ClearPhoneNBR(CustGrid.Cells[4,i]);
+  Phone:=ClearPhoneNBR(CustGrid.Cells[5,i]);
+  Email:=CustGrid.Cells[6,i];
+
+  Name:=RemovePunct(Name);
+  l:=Length(Name);
+  Last:=False;
+
+  for j := l downto 1 do begin
+    if Last then LName:=LName+Name[j] else FName:=FName+Name[j];
+    if Name[j]=' ' then  Last:=True;
+  end;
+  LName:=Trim(InvertStr(LName));
+  FName:=Trim(InvertStr(Fname));
+  if leftstr(Phone,2)='02' then begin
+   FPhone:='+32';
+   for j :=2 To Length(Phone) do FPhone:=FPhone+Phone[j];
+  end else begin
+    if leftstr(Phone,3)='048' then begin
+       GPhone:='+32';
+       for j :=2 To Length(Phone) do GPhone:=GPhone+Phone[j];
+    end;
+    if leftstr(Phone,3)='049' then begin
+       GPhone:='+32';
+       for j :=2 To Length(Phone) do GPhone:=GPhone+Phone[j];
+    end;
+    if leftstr(Phone,3)='047' then begin
+       GPhone:='+32';
+       for j :=2 To Length(Phone) do GPhone:=GPhone+Phone[j];
+    end;
+  end;
+
+
+  ShowMessage (FName+' - '+LName+' - '+PCode+' - '+GPhone+' - '+FPhone) ;
+ end;
+
+
+
+end;
+
+end.

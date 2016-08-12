@@ -1,0 +1,138 @@
+unit DialogAddFundFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, JvComponent, JvLookOut, ExtCtrls, FnpNumericEdit,
+  ImgList,Davidutilsunit, JvEdit, JvExStdCtrls, JvExControls, cxControls,
+  cxContainer, cxEdit, cxTextEdit, cxCurrencyEdit;
+
+type
+  TAddFundForm = class(TForm)
+    Label1: TLabel;
+    ButtonAdd: TButton;
+    Panel1: TPanel;
+    JvExpressButton12: TJvExpressButton;
+    ImageListSmallImages: TImageList;
+    ButtonCancel: TButton;
+    Label2: TLabel;         
+    Edit1: TJvEdit;
+    FpnAmount: TcxCurrencyEdit;
+    procedure JvExpressButton12Click(Sender: TObject);
+    procedure ButtonAddClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  AddFundForm: TAddFundForm;
+
+implementation
+
+{$R *.dfm}
+
+uses clientDMUnit,MainFRMUnit,GlobalsUnit;
+
+procedure TAddFundForm.JvExpressButton12Click(Sender: TObject);
+begin
+ FnpAmount.Value:=0;
+ Edit1.Text;
+end;
+
+procedure TAddFundForm.ButtonAddClick(Sender: TObject);
+Var TicketToPrint:TTicketJob;
+    Data:WideString;
+    Num,LineSpacing,i:integer;
+begin
+  if Length(Edit1.Text)<8 then begin
+   Messagedlg('Veuillez complèter la raison',mtwarning,[mbok],0);
+   Exit;
+  end;
+  try
+   RemoteDB.Customers.DisableControls;
+   RemoteDB.Refunds.DisableControls;
+  ///
+  /// Ticket
+  ///
+   if Not (Mainform.Parameter['PrintersTicketEnabled']='TRUE') then if Messagedlg('Imprimante à tickets non activée ! Voulez-vous continuer ?',mtwarning,[mbyes,mbno],0) = mrNo then Exit;
+   if (Mainform.Parameter['PrintersTicketEnabled']='TRUE') then begin
+     if (Mainform.Parameter['PrintersTicketOpos']='FALSE') then begin
+       TicketToPrint:=TTicketJob.Create(self);
+       try
+        TicketToPrint.Printer:=(Mainform.Parameter['PrintersTicketPrinter']);
+        TicketToPrint.Logo:=PrintLogo;
+        TicketToPrint.Url:=WEBURL;
+        TicketToPrint.ShopData:=ShopDataList;
+
+        if (Mainform.Parameter['PrintersTicketContinuous']='TRUE') then TicketToPrint.Model:=TmContinuous;
+
+        TicketToPrint.AddFinancialLine('Ajout :',FnpAmount.Value);
+
+        TicketToPrint.AddCustomerLine('Client # :',RemoteDB.CustomersCustomers_nbr.Text);
+        TicketToPrint.AddCustomerLine('Nom :',RemoteDB.CustomersCustomers_firstname.Text);
+        TicketToPrint.AddCustomerLine('Ancien bon :',RemoteDB.CustomersCustomers_credit.Text);
+        TicketToPrint.AddCustomerLine('Nouveau bon :',floattostrf((RemoteDB.CustomersCustomers_credit.AsFloat+FnpAmount.Value),fffixed,7,2));
+
+        TicketToPrint.Print;
+       finally
+        TicketToPrint.Free;
+       end;
+     end;
+     if (Mainform.Parameter['PrintersTicketOpos']='TRUE') then begin
+         Data:='-2';
+         Num:=3;
+         LineSpacing:=PosPrinter.RecLineSpacing;
+         PosPrinter.DirectIO(111,Num,Data);
+         PosPrinter.RecLineHeight:=14;
+         PosPrinter.PrintNormal(2,chr(10)+chr(13));
+         PosPrinter.PrintNormal(2,chr(27)+'!'+chr(57)+chr(27)+'|cA'+'Ajout Bon'+chr(13));
+         PosPrinter.PrintNormal(2,'__________________________________________'+chr(10)+chr(13));
+
+         PosPrinter.PrintNormal(2,chr(27)+'a'+chr(0)+'Client # : '+RemoteDB.CustomersCustomers_nbr.Text+''+chr(10)+chr(13));
+         PosPrinter.PrintNormal(2,chr(27)+'a'+chr(0)+'Nom : '+RemoteDB.CustomersCustomers_LastName.Text+''+chr(10)+chr(13));
+         PosPrinter.PrintNormal(2,chr(27)+'a'+chr(0)+'Ancin bon : '+RemoteDB.CustomersCustomers_credit.Text+''+chr(10)+chr(13));
+         PosPrinter.PrintNormal(2,chr(27)+'a'+chr(0)+'Nouveau bon : '+floattostrf((RemoteDB.CustomersCustomers_credit.AsFloat+FnpAmount.Value),fffixed,7,2)+''+chr(10)+chr(13));
+         PosPrinter.PrintNormal(2,chr(13)+chr(10));
+         PosPrinter.PrintNormal(2,chr(27)+'|cA'+Formatdatetime('"Le" DD MMMM YYYY "à" hh:mm',Now)+''+chr(10)+chr(13));
+         PosPrinter.PrintNormal(2,chr(27)+'!'+chr(57)+chr(27)+'|cA'+'WWW.SMARTOYS.BE'+chr(13));
+         Randomize;
+         i:=Trunc(Random(RemoteDB.Tips.Recordcount));
+         RemoteDB.Tips.First;
+         if not RemoteDB.Tips.Eof then begin
+          while i<> 0  do
+          begin
+           RemoteDB.Tips.Next;
+           i:=i-1;
+          end;
+          PosPrinter.PrintNormal(2,chr(13)+chr(10){+chr(13)+chr(10)+chr(13)+chr(10)});
+          PosPrinter.PrintNormal(2,chr(27)+'|cA'+RemoteDB.TipsTipsText.AsString+chr(10)+chr(13));
+         end;
+         PosPrinter.PrintNormal(2,chr(13)+chr(10)+chr(13)+chr(10)+chr(13)+chr(10));
+         PosPrinter.PrintNormal(2,chr(13)+chr(10)+chr(13)+chr(10)+chr(13)+chr(10));
+         PosPrinter.CutPaper(70);
+     end;
+   end; // Fin Ticket
+
+   ///
+   /// Modification de la DB
+   ///
+   RemoteDB.Customers.Edit;
+   RemoteDB.CustomersCustomers_credit.AsFloat:=RemoteDB.CustomersCustomers_credit.AsFloat+FnpAmount.Value;
+   RemoteDB.Customers.Post;
+   RemoteDB.Refunds.Append;
+   RemoteDB.Refunds.FieldByName('refunds_amount').Value:=FnpAmount.Value;
+   RemoteDB.Refunds.FieldByName('refunds_nature').AsString:='Ajout : '+Edit1.Text;
+   RemoteDB.Refunds.FieldByName('refunds_customer_nbr').Value:=RemoteDB.CustomersCustomers_nbr.Value;
+   RemoteDB.Refunds.Post;
+   finally
+   RemoteDB.Customers.EnableControls;
+   RemoteDB.Refunds.EnableControls;
+   end;
+   Self.ModalResult:=MrOk;
+ end;
+
+
+end.

@@ -1,0 +1,116 @@
+object FormEnterLibrary: TFormEnterLibrary
+  Left = 1240
+  Top = 468
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Entr'#233'e librairie'
+  ClientHeight = 354
+  ClientWidth = 474
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 8
+    Top = 93
+    Width = 320
+    Height = 253
+    AutoSize = True
+    IncrementalDisplay = True
+    Stretch = True
+    Transparent = True
+  end
+  object LedSlot: TJvSegmentedLEDDisplay
+    Left = 366
+    Top = 93
+    Width = 100
+    Height = 40
+    DigitClassName = 'TJv7SegmentedLEDDigit'
+    DigitHeight = 40
+    Digits = <
+      item
+        UseDP = False
+        UseColon = scuNone
+      end
+      item
+        UseDP = False
+        UseColon = scuNone
+      end
+      item
+        UseDP = False
+        UseColon = scuNone
+      end>
+    DigitSpacing = 5
+    DigitWidth = 30
+    SegmentLitColor = clLime
+    SegmentSpacing = 4
+    SegmentThickness = 4
+    SegmentUnlitColor = clMenuBar
+    Text = '123'
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 464
+    Height = 55
+    Caption = 'Entr'#233'e librairie'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -49
+    Font.Name = 'Courier New'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Messagelabel: TJvHTLabel
+    Left = 8
+    Top = 66
+    Width = 466
+    Height = 14
+    AutoSize = False
+    Caption = '<center>MessageLabel</center>'
+    Transparent = False
+  end
+  object BitBtnNextCD: TBitBtn
+    Left = 365
+    Top = 158
+    Width = 101
+    Height = 53
+    Caption = 'NextCD'
+    DoubleBuffered = True
+    Enabled = False
+    ParentDoubleBuffered = False
+    TabOrder = 0
+    OnClick = BitBtnNextCDClick
+  end
+  object BitBtnOk: TBitBtn
+    Left = 365
+    Top = 234
+    Width = 101
+    Height = 53
+    Caption = 'OK'
+    DoubleBuffered = True
+    Enabled = False
+    ParentDoubleBuffered = False
+    TabOrder = 1
+    OnClick = BitBtnOkClick
+  end
+  object BitBtnCancel: TBitBtn
+    Left = 365
+    Top = 293
+    Width = 101
+    Height = 53
+    Caption = 'Annuller'
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
+    TabOrder = 2
+    OnClick = BitBtnCancelClick
+  end
+end

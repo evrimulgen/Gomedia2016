@@ -1,0 +1,49 @@
+unit ServerModule;
+
+interface
+
+uses
+  SysUtils, Classes, DSServer, DB, DBClient;
+
+type
+  TDSServerModuleRFIDPanel = class(TDSServerModule)
+    CDSAlerts: TClientDataSet;
+    CDSCustomers: TClientDataSet;
+    CDSItems_Sold: TClientDataSet;
+    CDSStock: TClientDataSet;
+    procedure DSServerModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function echo(s:string):string;
+  end;
+
+// var
+  // DSServerModule1: TDSServerModule1;
+
+implementation
+
+uses ClientDMUnit;
+
+{$R *.dfm}
+
+{ TDSServerModule1 }
+
+procedure TDSServerModuleRFIDPanel.DSServerModuleCreate(Sender: TObject);
+begin
+ CDSAlerts.CloneCursor(RemoteDB.Alerts,True);
+ CDSCustomers.CloneCursor(RemoteDB.Customers,True);
+ CDSStock.CloneCursor(RemoteDB.Stock,True);
+ CDSItems_Sold.CloneCursor(RemoteDB.Items_Sold,True);
+
+end;
+
+function TDSServerModuleRFIDPanel.echo(s: string): string;
+begin
+ CDSCustomers.Locate('customers_firstname',s,[locaseinsensitive]);
+ Result := 'Returned data is '+CDSCustomers.FieldByName('customers_lastname').AsString;
+
+end;
+
+end.

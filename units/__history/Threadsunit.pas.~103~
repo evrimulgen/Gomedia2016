@@ -1,0 +1,705 @@
+unit Threadsunit;
+
+interface
+
+uses
+  Classes, Sysutils, DBClient, MConnect, DLLsucdapi,
+  SConnect, Provider, FMTBcd, SqlExpr, ExtCtrls, windows, StrUtils,
+  Dialogs,
+  HTTPApp, DavidutilsUnit,
+
+  IdExplicitTLSClientServerBase, IdFTP, IdIOHandler, IdIOHandlerSocket,
+  IdIOHandlerStack, IdSSL,
+  IdSSLOpenSSL, IdTCPConnection, IdTCPClient, IdBaseComponent,
+  IdRawBase,
+  IdIcmpClient, IdAttachmentFile, idHttp, idURI,
+  IdFTPCommon,
+  IdFTPListParseUnix,
+  IdSMTP, IdMessage, IdSMTPBase,
+  IDReplySMTP;
+
+type
+
+  TSendSms = class(TThread)
+  private
+    _login: string;
+    _pass: string;
+    _url: string;
+    _uid: string;
+    _model: string;
+    _provider: string;
+    _smssrc: string;
+    _from : string;
+    _SmsMessage: TSmsMessage;
+    plainData: TStringList; // this is the unencoded data
+    HTTP: TidHTTP; // going to need the HTTP object
+    SSLIO: TIdSSLIOHandlerSocketOpenSSL; // going to need the SSL object
+    response: TStringList; // this will catch the response from the server
+    procedure ConvertCRLFToSpace;
+    function ExtractTag(const Tag, Text: string): string;
+  protected
+  public
+    constructor Create(login, pass, url, uid, Provider, smssrc: string);
+    procedure Execute; override;
+    procedure UpdateMessage;
+    procedure GetMessage;
+  end;
+
+  TUSBCDMoveOpen = class(TThread)
+  private
+    Tid: integer;
+    TIndex: integer;
+  protected
+  public
+    constructor Create(Id, Index: integer);
+    procedure Execute; override;
+    procedure WriteToLog;
+  end;
+
+  TFtpUp = class(TThread)
+  private
+    SrcFile: string;
+    DestFile: string;
+    FtpUpHost: string;
+    FtpUpLogin: string;
+    FtpUpPass: string;
+    FtpUpDir: string;
+    procedure UploadFinished;
+  protected
+    procedure Execute; override;
+  public
+    constructor Create(Filetoupload, Destination: string)overload;
+    constructor Create(Filetoupload, Destination, Host, login, pass: string)overload;
+  end;
+
+  TExecSQL = class(TThread)
+  private
+    SQLConnection: TSQLConnection;
+    SQLDataset: TSQLDataSet;
+    SqlVelocity: TStringList;
+  protected
+    procedure Execute; override;
+  public
+    constructor Create();
+    procedure AddSql(sql: string);
+  end;
+
+  TestInetConnection = class(TThread)
+  private
+    ReplyReceived: Boolean;
+    ConnectionPresent: Boolean;
+    LastPing: integer;
+    TCIP: string;
+    Icmp: TidIcmpClient;
+    procedure UpdateLed;
+    procedure ICMPReply(ASender: TComponent; const ReplyStatus: TReplyStatus);
+  protected
+  public
+    constructor Create(Hostname: string);
+    procedure Execute; override;
+  end;
+
+  TNotifyServer = class(TThread)
+  private
+    AidHTTP: TidHTTP;
+    URI: TidURI;
+    aStream: TMemoryStream;
+    Params: TStringStream;
+    DestURL, AParam1, AParam2, AAction: string;
+  protected
+  public
+    constructor Create(Action, Param1, Param2, url: string);
+    procedure Execute(); override;
+  end;
+
+  TSmartSendemail = class(TThread)
+  private
+    AIdSSLIOHandlerSocketOpenSSL: TIdSSLIOHandlerSocketOpenSSL;
+    AIdSMTPMain: TidSMTP;
+    AIdMessage: TidMessage;
+    AAttachement: string;
+    Error: string;
+    procedure SyncError;
+  protected
+  public
+    constructor Create(Sender, Reply, Recipient, Subject, Attachement: string; Body: TStrings);
+    procedure Execute(); override;
+  end;
+
+implementation
+
+uses
+  GlobalsUnit, CLIENTDMUnit;
+
+constructor TUSBCDMoveOpen.Create(Id, Index: integer);
+begin
+  FreeOnTerminate := True;
+  inherited Create(True);
+  Tid      := Id;
+  TIndex   := index;
+  Priority := Tpidle;
+  Resume;
+end;
+
+procedure TUSBCDMoveOpen.Execute;
+var
+  Status: integer;
+  Waiting: Boolean;
+begin
+  try
+
+    // GETStatus
+    Waiting := True;
+    while Waiting and not terminated do
+    begin
+      InitUSBCDLibrary();
+      Status := USBCDGetStatus(Tid);
+      if Status = DEVICE_UNKNOWERROR then
+      begin
+        Waiting := False;
+        exit;
+      end;
+      if Status = DEVICE_BUSY then
+      begin
+        Waiting := True;
+        Sleep(10);
+      end;
+      if Status = DEVICE_COMMANDOK then
+      begin
+        Waiting := False;
+      end;
+    end;
+
+    // Close
+    Waiting := True;
+    while Waiting and not terminated do
+    begin
+      Status := USBCDGetCDDown(Tid);
+      if Status = DEVICE_UNKNOWERROR then
+      begin
+        Waiting := False;
+        exit;
+      end;
+      if Status = DEVICE_BUSY then
+      begin
+        Waiting := True;
+        Sleep(10);
+      end;
+      if Status = DEVICE_COMMANDOK then
+      begin
+        Waiting := False;
+      end;
+    end;
+
+    // Reset
+    //
+    //Waiting := True;
+    //while Waiting and not terminated do
+    //begin
+    //  Status := USBCDReset(Tid);
+    //  if Status = DEVICE_UNKNOWERROR then
+    //  begin
+    //    Waiting := False;
+    //    exit;
+    //  end;
+    //  if Status = DEVICE_BUSY then
+    //  begin
+    //    Waiting := True;
+    //    Sleep(10);
+    //  end;
+    //  if Status = DEVICE_COMMANDOK then
+    //  begin
+    //    Waiting := False;
+    //  end;
+    //end;
+
+
+    // MoveTo
+    Waiting := True;
+    while Waiting and not terminated do
+    begin
+      Status := USBCDMoveTo(Tid, TIndex);
+      if Status = DEVICE_UNKNOWERROR then
+      begin
+        Waiting := False;
+        exit;
+      end;
+      if Status = DEVICE_BUSY then
+      begin
+        Waiting := True;
+        Sleep(10);
+      end;
+      if Status = DEVICE_COMMANDOK then
+      begin
+        Waiting := False;
+      end;
+    end;
+
+    sleep(200);
+
+
+    //Waiting := True;
+    //while Waiting and not terminated do
+    //begin
+    //  Status := USBCDMoveTo(Tid, TIndex);
+    //  if Status = DEVICE_UNKNOWERROR then
+    //  begin
+    //    Waiting := False;
+    //    exit;
+    //  end;
+    //  if Status = DEVICE_BUSY then
+    //  begin
+    //    Waiting := True;
+    //    Sleep(10);
+    //  end;
+    //  if Status = DEVICE_COMMANDOK then
+    //  begin
+    //    Waiting := False;
+    //  end;
+    //end;
+
+  except
+    { do something with exceptions }
+  end;
+
+end;
+
+procedure TUSBCDMoveOpen.WriteToLog;
+begin
+
+end;
+
+constructor TestInetConnection.Create(Hostname: string);
+begin
+  TCIP                := Hostname;
+  Icmp                := TidIcmpClient.Create(nil);
+  Icmp.OnReply        := ICMPReply;
+  Icmp.ReceiveTimeout := 4000;
+  Icmp.Host           := TCIP;
+  FreeOnTerminate     := True;
+  inherited Create(True);
+  Resume;
+end;
+
+procedure TestInetConnection.Execute;
+begin
+  while not terminated do
+  begin
+    Sleep(16000);
+    LastPing      := 0;
+    ReplyReceived := False;
+    try
+      if detection_connexion then
+        try
+          Icmp.Ping;
+        except
+          //
+        end;
+    except
+    end;
+    while not ReplyReceived do
+      Sleep(1000);
+  end;
+end;
+
+procedure TestInetConnection.ICMPReply(ASender: TComponent; const ReplyStatus: TReplyStatus);
+begin
+  LastPing := 0;
+  LastPing := ReplyStatus.MsRoundTripTime;
+  if (LastPing >= 1) then
+    ConnectionPresent := True
+  else
+    ConnectionPresent := False;
+  ReplyReceived       := True;
+  Synchronize(UpdateLed);
+end;
+
+procedure TestInetConnection.UpdateLed;
+begin
+  // Send the connection state to the Global StatusWeb Variable
+  if ConnectionPresent then
+  begin
+    StatusDBServ := LastPing;
+    StatusWeb    := LastPing;
+  end else begin
+    StatusDBServ := 0;
+    StatusWeb    := 0;
+  end;
+end;
+
+{ FtpUp }
+
+constructor TFtpUp.Create(Filetoupload, Destination: string);
+begin
+  inherited Create(True);
+  FreeOnTerminate := False;
+  DestFile        := Destination;
+  SrcFile         := Filetoupload;
+  Self.FtpUpHost  := FTPHost;
+  Self.FtpUpLogin := FTPUser;
+  Self.FtpUpPass  := FTPPwd;
+  Self.FtpUpDir   := FTPDir;
+  Resume;
+end;
+
+constructor TFtpUp.Create(Filetoupload, Destination, Host, login, pass: string);
+begin
+  inherited Create(True);
+  FreeOnTerminate := False;
+  DestFile        := Destination;
+  SrcFile         := Filetoupload;
+  Self.FtpUpHost  := Host;
+  Self.FtpUpLogin := login;
+  Self.FtpUpPass  := pass;
+  Self.FtpUpDir   := '';
+  Resume;
+end;
+
+procedure TFtpUp.Execute;
+var
+  FtpComponent: TIdFtp;
+begin
+  Priority                  := tpNormal;
+  FtpComponent              := TIdFtp.Create(nil);
+  FtpComponent.Passive      := True;
+  FtpComponent.TransferType := ftBinary;
+  FtpComponent.Host         := Self.FtpUpHost;
+  FtpComponent.Username     := Self.FtpUpLogin;
+  FtpComponent.Password     := Self.FtpUpPass;
+  FtpComponent.Connect;
+  if Self.FtpUpDir <> '' then
+    FtpComponent.changedir(Self.FtpUpDir);
+  if (FtpComponent.Size(DestFile) > 0) then
+    FtpComponent.Delete(DestFile);
+  FtpComponent.Put(SrcFile, DestFile, False);
+  Sleep(1000);
+  FtpComponent.disconnect;
+  FtpComponent.Free;
+  Synchronize(UploadFinished);
+end;
+
+procedure TFtpUp.UploadFinished;
+var
+  Mssg: string;
+begin
+  Mssg := 'Image uploadée : ' + DestFile;
+  // MainForm.Notilog(Mssg);
+end;
+
+function InternetGetConnectedState(lpdwFlags: LPDWORD; dwReserved: DWORD): BOOL;
+var
+  WininetDLL: THandle;
+  Wininet_InternetGetConnectedState: function(lpdwFlags: LPDWORD; dwReserved: DWORD): BOOL; stdcall;
+begin
+  Result     := True;
+  WininetDLL := LoadLibrary('WININET.DLL');
+  if WininetDLL > 0 then
+  begin
+    @Wininet_InternetGetConnectedState := GetProcAddress(WininetDLL, 'InternetGetConnectedState');
+    if Assigned(Wininet_InternetGetConnectedState) then
+    begin
+      Result := Wininet_InternetGetConnectedState(lpdwFlags, dwReserved);
+    end;
+    FreeLibrary(WininetDLL);
+  end;
+end;
+
+{ TNotifyServer }
+
+constructor TNotifyServer.Create(Action, Param1, Param2, url: string);
+begin
+  FreeOnTerminate := True;
+  aStream         := TMemoryStream.Create;
+  Params          := TStringStream.Create('');
+  DestURL         := url;
+  AParam1         := Param1;
+  AParam2         := Param2;
+  AAction         := Action;
+  URI             := TidURI.Create(DestURL);
+  AidHTTP         := TidHTTP.Create(nil);
+  inherited Create(True);
+  Resume;
+end;
+
+procedure TNotifyServer.Execute;
+begin
+  Priority                    := TPLower;
+  AidHTTP.Request.ContentType := 'application/x-www-form-urlencoded';
+  Params.WriteString(URI.ParamsEncode(URI.ParamsEncode('operation=' + AAction + '&')));
+  Params.WriteString(URI.ParamsEncode('param=' + AParam1 + '&'));
+  Params.WriteString(URI.ParamsEncode('param2=' + AParam2));
+  AidHTTP.Post(DestURL, Params, aStream);
+end;
+
+{ TExecSQL }
+
+procedure TExecSQL.AddSql(sql: string);
+begin
+  SqlVelocity.Add(sql);
+end;
+
+constructor TExecSQL.Create();
+begin
+  inherited Create(True);
+  FreeOnTerminate          := True;
+  SqlVelocity              := TStringList.Create;
+  SQLConnection            := RemoteDB.SQLConnection.CloneConnection;
+  SQLDataset               := TSQLDataSet.Create(nil);
+  SQLDataset.SQLConnection := SQLConnection;
+end;
+
+procedure TExecSQL.Execute;
+var
+  i: integer;
+begin
+  inherited;
+  SQLConnection.Open;
+  for i := 0 to SqlVelocity.Count - 1 do
+  begin
+    SQLDataset.CommandText := SqlVelocity.Strings[i];
+    // ShowMessage(RemoteDB.SQLUpdateProductsVelocity.CommandText);
+    SQLDataset.ExecSQL(False);
+  end;
+  SQLDataset.Close;
+  SQLConnection.Close;
+  SQLDataset.Free;
+end;
+
+{ TSendSms }
+
+procedure TSendSms.ConvertCRLFToSpace;
+begin
+
+end;
+
+constructor TSendSms.Create(login, pass, url, uid, Provider, smssrc, from: string);
+begin
+  HTTP            := TidHTTP.Create(nil);
+  SSLIO           := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
+  plainData       := TStringList.Create;
+  response        := TStringList.Create;
+  _login          := login;
+  _pass           := pass;
+  _url            := url;
+  _uid            := uid;
+  _smssrc         := smssrc;
+  _provider       := Provider;
+  _from           := from;
+  FreeOnTerminate := True;
+  inherited Create(True);
+  Resume;
+end;
+
+procedure TSendSms.Execute;
+var
+  QueryString: widestring;
+  GetData: TStringStream;
+  PostFields: TStringList;
+  SentStatus: string;
+  concat: integer;
+begin
+  inherited;
+  Priority                := Tpidle;
+  SSLIO.SSLOptions.Method := sslvSSLv3; // set the SSL mode
+  HTTP.ReadTimeout        := 100000;
+  // depending on size of upload, you may need to adjust these
+  HTTP.ConnectTimeout := 10000;
+  HTTP.IOHandler      := SSLIO;
+  // assign the SSL handler to the HTTP IO Handler or you won't be able to interact with SSL servers
+  HTTP.Request.ContentType := 'text/html';
+  // I'm doing XML, set the content type appropriate to your data type. If you used the multi-part, you probably don't need this
+  HTTP.HTTPOptions := []; // no options
+  PostFields       := TStringList.Create;
+
+  while not terminated do
+  begin
+
+    Synchronize(GetMessage);
+    if _SmsMessage.Status = 0 then
+    begin
+      if _provider = 'Clickatel' then
+      begin
+        concat := Length(_SmsMessage.TextMessage);
+        if concat > 159 then
+        begin
+          concat      := Length(_SmsMessage.TextMessage) div 153;
+          concat      := concat + 1;
+          QueryString := (Format('user=%s&password=%s&api_id=%s&to=%s&concat=%s&text=%s', [_login, _pass, _uid, _SmsMessage.Phone, IntToStr(concat),
+            HTTPEncode((_SmsMessage.TextMessage))]));
+        end else begin
+          QueryString := (Format('user=%s&password=%s&api_id=%s&to=%s&text=%s', [_login, _pass, _uid, _SmsMessage.Phone,
+            HTTPEncode((_SmsMessage.TextMessage))]));
+        end;
+        _url := 'https://api.clickatell.com/http/sendmsg';
+      end;
+      if _provider = 'OVH' then
+      begin
+        // https://www.ovh.com/cgi-bin/sms/http2sms.cgi?smsAccount=sms-xxxx-1&login=monUserSms&password=leMotDePasse&from=0033612345678&to=0033665432100,003369876543&contentType=text/xml&message=Hello World.
+        QueryString := (Format('smsAccount=%s&login=%s&password=%s&from=&to=%s&&contentType=%s&message=%s', [_uid, _login, _pass, _from, _SmsMessage.Phone, 'text/xml',
+        HTTPEncode((_SmsMessage.TextMessage))]));
+        _url := 'https://www.ovh.com/cgi-bin/sms/http2sms.cgi';
+      end;
+      if _provider = 'Betamax' then
+      begin
+        QueryString := (Format('username=%s&password=%s&from=%s&to=%s&text=%s', [_login, _pass, HTTPEncode(_smssrc), HTTPEncode(_SmsMessage.Phone),
+          HTTPEncode(_SmsMessage.TextMessage)]));
+        // PostFields.Add('username='+_login);
+        // PostFields.Add('password='+_pass);
+        // PostFields.Add('from='+_smssrc);
+        // PostFields.Add('to='+_SmsMessage.Phone);
+        // PostFields.Add('text='+HTTPEncode((_SmsMessage.TextMessage)));
+      end;
+
+      try
+        ConvertCRLFToSpace;
+        // clean up the CR/LFs so the data doesn't get funky (you may not need this)
+        response.Text := HTTP.Get(_url + '?' + QueryString);
+        // response.text:=HTTP.POST(_url,PostFields);
+        if _provider = 'Clickatel' then
+        begin
+          if LeftStr(response.Text, 3) = 'ID:' then
+            SentStatus := '1'
+          else
+          begin
+            SentStatus := '0';
+          end;
+        end;
+        if _provider = 'Betamax' then begin
+          SentStatus := ExtractTag('result', response.Text);
+        end;
+        _SmsMessage.response := response.Text;
+        if SentStatus = '1' then
+          _SmsMessage.Status := 1
+        else
+          _SmsMessage.Status := -1;
+        Synchronize(UpdateMessage);
+        Sleep(500);
+
+      except
+        on EIdOSSLCouldNotLoadSSLLibrary do
+          // if we have an SSL problem, this is going to be when it shows
+          ShowMessage('An error occurred loading the SSL ' +
+            // provide a little clue although, as I mentioned yesterday, you may need to change the SSL loader to get good error messages
+            'libraries. Please make sure you ' + 'have installed the OpenSSL ' + 'libraries from http://www.' + 'openssl.org/related/binaries.html.');
+        on EIdHTTPProtocolexception do
+          // Everything went fine but the response is crap
+      end;
+      PostFields.Clear;
+    end else begin
+      Sleep(500);
+    end;
+
+  end;
+  PostFields.Free;
+end;
+
+function TSendSms.ExtractTag(const Tag, Text: string): string;
+var
+  StartPos1, StartPos2, EndPos: integer;
+  i: integer;
+begin
+  Result    := '';
+  StartPos1 := Pos('<' + Tag, Text);
+  EndPos    := Pos('</' + Tag + '>', Text);
+  StartPos2 := 0;
+  for i     := StartPos1 + Length(Tag) + 1 to EndPos do
+    if Text[i] = '>' then
+    begin
+      StartPos2 := i + 1;
+      break;
+    end;
+
+  if (StartPos2 > 0) and (EndPos > StartPos2) then
+    Result := Copy(Text, StartPos2, EndPos - StartPos2);
+end;
+
+procedure TSendSms.GetMessage;
+
+begin
+  _SmsMessage := RemoteDB.GetSmsMessage;
+end;
+
+procedure TSendSms.UpdateMessage;
+begin
+  RemoteDB.UpdateSmsMessage(_SmsMessage);
+end;
+
+{ TSendemail }
+
+constructor TSmartSendemail.Create(Sender, Reply, Recipient, Subject, Attachement: string; Body: TStrings);
+begin
+
+  AIdSSLIOHandlerSocketOpenSSL                 := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
+  AIdSSLIOHandlerSocketOpenSSL.Destination     := 'mail.smartoys.be:465';
+  AIdSSLIOHandlerSocketOpenSSL.Host            := 'mail.smartoys.be';
+  AIdSSLIOHandlerSocketOpenSSL.Port            := 465;
+  AIdSSLIOHandlerSocketOpenSSL.SSLOptions.Mode := sslmUnassigned;
+
+  AIdMessage          := TidMessage.Create(nil);
+  AIdMessage.Date     := Date;
+  AIdMessage.Priority := mpNormal;
+
+  AIdMessage.From.Name   := Sender;
+  AIdMessage.Sender.Name := Sender;
+
+  AIdMessage.From.Text   := Reply;
+  AIdMessage.Sender.Text := Reply;
+
+  AIdMessage.Recipients.EMailAddresses := Recipient;
+
+  AIdMessage.Subject := Subject;
+  AIdMessage.Body    := Body;
+  AAttachement       := Attachement;
+  if FileExists(AAttachement) then
+  begin
+    TIdAttachmentFile.Create(AIdMessage.MessageParts, AAttachement);
+  end;
+
+  AIdSMTPMain           := TidSMTP.Create(nil);
+  AIdSMTPMain.IOHandler := AIdSSLIOHandlerSocketOpenSSL;
+  AIdSMTPMain.Username  := 'Gomedia';
+  AIdSMTPMain.Password  := 'sAQach6b';
+  AIdSMTPMain.UseTLS    := utUseImplicitTLS;
+  AIdSMTPMain.Port      := 465;
+  AIdSMTPMain.MailAgent := 'Gomedia';
+  AIdSMTPMain.Host      := 'mail.smartoys.be';
+
+  FreeOnTerminate := True;
+  inherited Create(True);
+
+  Resume;
+end;
+
+procedure TSmartSendemail.Execute; // code à executer par le thread
+begin
+  if detection_connexion = True then
+  begin
+    if not AIdSMTPMain.Connected then
+      AIdSMTPMain.Connect;
+    try
+
+      AIdSMTPMain.Send(AIdMessage);
+    except
+      on E: EIdSMTPReplyError do
+      begin
+        Error := E.Message;
+        Synchronize(SyncError);
+      end;
+    end;
+
+    AIdSMTPMain.disconnect;
+
+  end else begin
+    ShowMessage('Pas de connection internet : envoi email impossible');
+  end;
+end;
+
+procedure TSmartSendemail.SyncError;
+var
+  Mssg: string;
+begin
+  Mssg := 'Erreur email : ' + Error;
+  // MainForm.Notilog(Mssg);
+end;
+
+end.

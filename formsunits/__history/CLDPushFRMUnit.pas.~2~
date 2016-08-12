@@ -1,0 +1,92 @@
+unit CLDPushFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, dxPSGlbl, dxPSUtl, dxPSEngn, dxPrnPg, dxBkgnd, dxWrap, dxPrnDev,
+  dxPSCompsProvider, dxPSFillPatterns, dxPSEdgePatterns, cxStyles, cxCustomData,
+  cxGraphics, cxFilter, cxData, cxDataStorage, cxEdit, DB, cxDBData,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, dxmdaset,
+  cxGridLevel, cxClasses, cxControls, cxGridCustomView, cxGrid, dxPSCore,
+  dxPSDBBasedXplorer, dxPgsDlg, dxPrnDlg, dxPScxCommon, dxBar,
+  cxGridExportLink, SHDocVw, dxPScxGrid6Lnk;
+
+type
+  TCLDPushForm = class(TForm)
+    dxBarManager: TdxBarManager;
+    dxBarButtonPrint: TdxBarButton;
+    dxBarButtonSave: TdxBarButton;
+    dxBarGroup1: TdxBarGroup;
+    dxComponentPrinter: TdxComponentPrinter;
+    dxComponentPrinterLink1: TdxGridReportLink;
+    dxPageSetupDialog: TdxPageSetupDialog;
+    dxPrintDialog: TdxPrintDialog;
+    dxPrintStyleManager: TdxPrintStyleManager;
+    dxPSDBBasedExplorer1: TdxPSDBBasedExplorer;
+    dxPSEngineController: TdxPSEngineController;
+    Grid: TcxGrid;
+    Gridview: TcxGridDBTableView;
+    GridLevel1: TcxGridLevel;
+    SaveDialog: TSaveDialog;
+    TableData: TdxMemData;
+    TableDataEAN: TStringField;
+    TableDataNom: TStringField;
+    TableDataRootCategoryName: TStringField;
+    TableDataQuantity: TIntegerField;
+    TableDataConfirmBO: TBooleanField;
+    Source: TDataSource;
+    GridviewRecId: TcxGridDBColumn;
+    GridviewEAN: TcxGridDBColumn;
+    GridviewName: TcxGridDBColumn;
+    GridviewRootCategoryName: TcxGridDBColumn;
+    GridviewQuantity: TcxGridDBColumn;
+    GridviewConfirmBO: TcxGridDBColumn;
+    dxBarButton1: TdxBarButton;
+    TableDataGroupAvailable: TIntegerField;
+    TableDataAvailable: TIntegerField;
+    GridviewGroupAvailable: TcxGridDBColumn;
+    GridviewAvailable: TcxGridDBColumn;
+    procedure dxBarButton1Click(Sender: TObject);
+    procedure dxBarButtonSaveClick(Sender: TObject);
+    procedure dxBarButtonPrintClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  CLDPushForm: TCLDPushForm;
+
+implementation
+
+uses MainFRMUnit;
+
+{$R *.dfm}
+
+procedure TCLDPushForm.dxBarButton1Click(Sender: TObject);
+begin
+ TableData.First;
+ while not TableData.Eof do begin
+  MainForm.WebbrowserCLDAddItem(TableData.FieldByName('EAN').AsString);
+  TableData.Next;
+ end;
+end;
+
+procedure TCLDPushForm.dxBarButtonPrintClick(Sender: TObject);
+begin
+ dxComponentPrinter.Print(true,nil);
+end;
+
+procedure TCLDPushForm.dxBarButtonSaveClick(Sender: TObject);
+var Filename:String;
+begin
+     FileName:='Order'+'.xls';
+     SaveDialog.FileName:=FileName;
+     if SaveDialog.Execute then begin
+      ExportGridToExcel(SaveDialog.FileName,Grid,True,True,True);
+     end;
+end;
+
+end.

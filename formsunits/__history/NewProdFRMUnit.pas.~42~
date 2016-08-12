@@ -1,0 +1,401 @@
+unit NewProdFRMunit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, DBCtrls, DBCGrids, Buttons, Mask, DB, ComCtrls, Jpeg,
+  AcquireImage, ExtCtrls, janfx, MainFRMunit, ExtDlgs,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, IdFTP, variants,
+  dxdbtrel,Threadsunit, cxControls, cxContainer, cxEdit, cxTextEdit, cxMaskEdit,
+  cxDropDownEdit, cxCalendar, cxDBEdit, pngimage, AdvPageControl,dxStatusBar,
+  cxGraphics, cxLookupEdit, cxDBLookupEdit, cxDBLookupComboBox, JvExControls,
+  JvDBLookupTreeView, cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore,
+  dxSkinBlack, dxSkinBlue, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom,
+  dxSkinDarkSide, dxSkinFoggy, dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven,
+  dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
+  dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue, AdvMemo,
+  DBAdvMemo;
+
+type
+  TNewproductform = class(TForm)
+    OpenProductPictureDialog: TOpenPictureDialog;
+    GroupBox1: TGroupBox;
+    PanelRightColumn: TPanel;
+    GroupBoxProductImage: TGroupBox;
+    Shape1: TShape;
+    ThumbImg: TImage;
+    SBtnProductImageOpen: TSpeedButton;
+    SbtnProductImageSave: TSpeedButton;
+    SBtnproductimagerotate: TSpeedButton;
+    SBtnProductImageScan: TSpeedButton;
+    SbtnProductImageUpload: TSpeedButton;
+    GroupBox2: TGroupBox;
+    LabelId: TLabel;
+    LabelManufacturer: TLabel;
+    LabelModel: TLabel;
+    LabelTax: TLabel;
+    LabelPrice: TLabel;
+    LabelWeight: TLabel;
+    LabelDate: TLabel;
+    DBEditWeight: TDBEdit;
+    DBEditEan: TDBEdit;
+    DBLookupComboBoxManufacturer: TDBLookupComboBox;
+    DBEditModel: TDBEdit;
+    DBLookupComboBoxTax: TDBLookupComboBox;
+    DBEditPrice: TDBEdit;
+    DBEditDate: TDBEdit;
+    DBCheckBoxStockManaged: TDBCheckBox;
+    DBCheckBoxLoyanltyy: TDBCheckBox;
+    PanelFreeSpaceRightColumn: TPanel;
+    LabelCategory: TLabel;
+    Label1: TLabel;
+    Label16: TLabel;
+    Button1: TButton;
+    DBEdit1: TDBEdit;
+    cxDBDateAvailable: TcxDBDateEdit;
+    DBCheckBox1: TDBCheckBox;
+
+    NewPrice: TcxMaskEdit;
+    BitBtnCloseOK: TBitBtn;
+    BitBtnCloseCancel: TBitBtn;
+    Label2: TLabel;
+    SBTBC: TSpeedButton;
+    DBCheckBox2: TDBCheckBox;
+    JvDBLookupTreeViewCombo: TJvDBLookupTreeViewCombo;
+    PageControlProductsDescription: TPageControl;
+    TabSheetProDescFR: TTabSheet;
+    LabelProductDescription: TLabel;
+    LabelProdcutsName: TLabel;
+    LabelProductTitleExtend: TLabel;
+    LabelProductsBonus: TLabel;
+    DBEditProductsName: TDBEdit;
+    DBEditProductNameExt: TDBEdit;
+    DBMemoBonus: TDBMemo;
+    DBMemoProductsDescrition: TDBAdvMemo;
+    TabSheetProDescNL: TTabSheet;
+    Label7: TLabel;
+    Label17: TLabel;
+    Label31: TLabel;
+    Label32: TLabel;
+    DBMemo1: TDBMemo;
+    DBAdvMemo1: TDBAdvMemo;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEditImageName: TDBEdit;
+    DBLookupComboBoxProductsWarranty: TDBLookupComboBox;
+    Label23: TLabel;
+    procedure SBTBCClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure BitBtnCloseOKClick(Sender: TObject);
+    procedure SBtnProductImageOpenClick(Sender: TObject);
+    procedure SBtnProductImageScanClick(Sender: TObject);
+    procedure SBtnproductimagerotateClick(Sender: TObject);
+    procedure SbtnProductImageSaveClick(Sender: TObject);
+    procedure SbtnProductImageUploadClick(Sender: TObject);
+    procedure BitBtnCloseCancelClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure cxDBDateAvailableExit(Sender: TObject);
+
+  private
+    { Private declarations }
+    NProductImage : TBitmap;
+    procedure ImageUpSave(Upload:Boolean);
+    procedure CreateParams(var Params: TCreateParams); override;
+
+  public
+    { Public declarations }
+    property ProductImage:TBitmap read NProductImage write NProductImage;
+  end;
+
+var
+  Newproductform: TNewproductform;
+  TmpBmp:TBitmap;
+  Ratio:Double;
+  NewHeight:Integer;
+  Rectangle:Trect;
+
+
+implementation
+
+uses ClientDMunit, GlobalsUnit;
+
+{$R *.DFM}
+procedure TNewproductform.FormCreate(Sender: TObject);
+begin
+ TmpBmp:=Tbitmap.Create;
+ NProductImage:=Tbitmap.Create;
+ NProductImage.TransparentColor:=clFuchsia;
+ NProductImage.Transparent:=True;
+ NProductImage.TransparentMode:=tmFixed;
+ ThumbImg.Width:=0;ThumbImg.Height:=0;
+ ThumbImg.Width:=120;ThumbImg.Height:=120;
+end;
+
+procedure TNewproductform.FormDestroy(Sender: TObject);
+begin
+ TmpBmp.Free;
+ NProductImage.Free;
+ Thumbimg.Picture.Graphic := nil;
+end;
+
+
+
+procedure TNewproductform.SBTBCClick(Sender: TObject);
+begin
+ RemoteDB.Productsproducts_ispreview.Value:='True';
+ RemoteDB.Productsproducts_date_available.AsDateTime:=StrToDate('01/01/3000');
+end;
+
+procedure TNewproductform.SBtnProductImageOpenClick(Sender: TObject);
+var LoadPicture:Tpicture;
+    BackGround:Longint;
+begin
+
+ if RemoteDB.Products.FieldByName('products_model').Value='' then begin
+  messagedlg('Modèle du produit non valide',mtwarning,[mbok],0);
+  exit;
+ end;
+
+ if OpenProductPictureDialog.execute then begin
+  LoadPicture:=Tpicture.Create;
+  try
+   LoadPicture.LoadFromFile(OpenProductPictureDialog.Filename);
+   Self.NProductImage.Assign(LoadPicture.Graphic);
+  finally
+   LoadPicture.Free;
+  end;
+  if ((MainForm.Parameter['ImageResize']='TRUE')) then begin
+   IdentToColor(MainForm.Parameter['ImageBackColor'],BackGround);
+   JanFx.SquareFrame(Self.NProductImage,BackGround,120);
+  end;
+  ThumbImg.Picture.Assign(Self.NProductImage);
+  RemoteDB.Products.FieldByName('products_image').asstring:='products/'+RemoteDB.Products.FieldbyName('Products_model').asstring+'.'+ansiuppercase(MainForm.Parameter['ImageFileType']);
+end;
+
+end;
+
+procedure TNewproductform.SBtnProductImageScanClick(Sender: TObject);
+var
+  flag: boolean;
+  s: string;
+  BackGround:Longint;
+  AcquireImg:TAcquireImage;
+begin
+ if RemoteDB.Products.FieldByName('products_model').Value='' then begin
+  messagedlg('Modèle du produit non valide',mtwarning,[mbok],0);
+  exit;
+ end;
+
+ AcquireImg:=TAcquireImage.Create(self);
+ try
+      flag:=false;
+      if AcquireImg.loadTwainModule then begin
+        try
+          AcquireImg.openSourceManager;
+          s:=AcquireImg.GetSource(false);
+          AcquireImg.selectSource(s);
+          AcquireImg.openSource;
+          AcquireImg.acquirebmp(Self.NProductImage);
+          flag:=true;
+        finally
+          AcquireImg.closeTwainSession;
+          AcquireImg.unloadTwainModule;
+        end;
+      end
+      else showMessage('Erreur TWAIN');
+
+      if flag then begin
+       if ((MainForm.Parameter['ImageResize']='TRUE')) then begin
+        IdentToColor(MainForm.Parameter['ImageBackColor'],BackGround);
+        SquareFrame(Self.NProductImage,BackGround,120);
+       end;
+       ThumbImg.Picture.Assign(Self.NProductImage);
+       RemoteDB.Products.FieldByName('products_image').asstring:='products/'+RemoteDB.Products.FieldbyName('Products_model').asstring+'.'+ansiuppercase(MainForm.Parameter['ImageFileType']);
+      end;
+ finally
+      AcquireImg.Free;
+ end;
+end;
+
+procedure TNewproductform.CreateParams(var Params: TCreateParams);
+begin
+  inherited CreateParams(Params);
+  with Params do begin
+    ExStyle := ExStyle or WS_EX_APPWINDOW;
+    WndParent := GetDesktopwindow;
+  end;
+end;
+
+procedure TNewproductform.SBtnproductimagerotateClick(Sender: TObject);
+begin
+ TmpBmp.Width:=0;TmpBmp.Height:=0;
+ TmpBmp.Width:=Self.NProductImage.Width;
+ TmpBmp.Height:=Self.NProductImage.Height;
+ JanFx.Turn(Self.NProductImage,TmpBmp);
+ Self.NProductImage.Assign(TmpBmp);
+ ThumbImg.Picture.Assign(Self.NProductImage);
+end;
+
+procedure TNewproductform.SbtnProductImageSaveClick(Sender: TObject);
+begin
+ ImageUpsave(false);
+end;
+
+procedure TNewproductform.SbtnProductImageUploadClick(Sender: TObject);
+Begin
+ ImageUpsave(true);
+end;
+
+procedure TNewproductform.BitBtnCloseOKClick(Sender: TObject);
+Var RootCat:Integer;
+begin
+ if RemoteDB.Products.FieldByName('products_model').asstring='' then begin
+  messagedlg('Modèle du produit non valide',mtwarning,[mbok],0);
+  exit;
+ end;
+ if (RemoteDB.CDSProDescFR.FieldByName('products_name').asstring='') and (RemoteDB.CDSProDescNL.FieldByName('products_name').asstring='') then begin
+  messagedlg('Nom du produit invalide',mtwarning,[mbok],0);
+  exit;
+ end;
+ if RemoteDB.ProductsCategories_id.Value=Unassigned then begin
+  messagedlg('Catégorie du produit invalide',mtwarning,[mbok],0);
+  exit;
+ end;
+ // Check Categories
+ RootCat:=RemoteDB.GetRootCategory(RemoteDB.Productscategories_id.AsInteger);
+ RemoteDB.Categories.Locate('categories_id',RemoteDB.Productscategories_id.AsInteger,[locaseinsensitive]);
+ if RemoteDB.Categories.FieldByName('parent_id').Value=0 then begin
+    Showmessage('Vous ne pouvez pas insérer de produits dans une catégorie principale, veuillez choisir une sous catégorie');
+    exit;
+ end;
+
+ if UserLevel=0 then begin
+   if RootCat <>116 then begin
+    Showmessage('Vous ne disposez pas des droits nécessaires pour insérer des produits hors de la catégorie Archives');
+    exit;
+   end;
+ end;
+
+ if (RemoteDB.ProductsCategories_id.Value=206) or  (RemoteDB.ProductsCategories_id.Value=274)  then begin
+  if RemoteDB.Productsproducts_weight.AsFloat<=150  then
+  if messagedlg('Poids non adapté pour la catégorie, voulez-vous continuer ?',mtwarning,[mbok,mbcancel],0) = mrCancel then
+  exit;
+ end;
+
+ if RemoteDB.Productsmanufacturers_id.Value=Unassigned then begin
+  messagedlg('Fabricant du produit invalide',mtwarning,[mbok],0);
+  exit;
+ end;
+ if RemoteDB.Productsproducts_price_allin.AsFloat=0 then begin
+  if messagedlg('Prix du produit non confirmé ?',mtwarning,[mbok,mbcancel],0) = mrCancel then
+  exit;
+ end;
+
+
+
+ if (RemoteDB.Products.FieldByName('products_image').asstring<>'products/default.gif') Then Begin
+  SbtnProductImageUploadClick(BitBtnCloseOK);
+ end else begin
+  RemoteDB.Productsproducts_status.Value:=0;
+ end;
+
+  if remoteDB.Products.State<>dsBrowse then RemoteDB.Products.Post;
+
+ Self.ModalResult:=Mrok;
+end;
+
+procedure TNewproductform.BitBtnCloseCancelClick(Sender: TObject);
+begin
+ Thumbimg.Picture.Graphic := nil;
+ Self.ModalResult:=MrCancel
+end;
+
+procedure TNewproductform.Button1Click(Sender: TObject);
+begin
+RemoteDB.SetProductPrice(StrToFloat(NewPrice.Text));
+end;
+
+procedure TNewproductform.ImageUpSave(Upload: Boolean);
+Var
+    SavePng:TpngImage;
+    SaveJPG:TJpegImage;
+    SrcFile,DestFile:widestring;
+
+begin
+ if RemoteDB.Products.FieldByName('products_model').Value='' then begin
+  messagedlg('Modèle du produit non valide',mtwarning,[mbok],0);
+  exit;
+ end;
+
+ if ThumbImg.Picture.Bitmap.Empty then begin
+  messagedlg('Image non valide',mtwarning,[mbok],0);
+  exit;
+ end;
+
+ if RemoteDB.Products.State<>dsBrowse then RemoteDB.Products.Post;
+
+
+  // Save Image According to the format
+
+  if MainForm.Parameter['ImageFileType']='JPG' then begin
+   SaveJPG:=TJpegImage.Create;
+   try
+    SaveJPG.CompressionQuality:=80;
+    SaveJPG.Transparent:=True;
+    SaveJPG.Assign(Self.NProductImage);
+    SaveJPG.Compress;
+    SaveJPG.SaveToFile(ExtractFilePath(ParamStr(0))+'/images/'+RemoteDB.ProductsProducts_image.Value);
+   finally
+    SaveJPG.Free;
+   end;
+  end;
+
+
+
+  if MainForm.Parameter['ImageFileType']='PNG' then begin
+   SavePng:=TPngImage.Create;
+   try
+    SavePng.CompressionLevel:=9;
+    SavePng.Transparent:=True;
+    SavePng.TransparentColor:=clWhite;
+    SavePng.Assign(Self.NProductImage);
+    SavePng.SaveToFile(ExtractFilePath(ParamStr(0))+'/images/'+RemoteDB.ProductsProducts_image.Value);
+   finally
+    SavePng.Free;
+   end;
+  end;
+
+  // Upload Image
+  if Upload then if TdxStatusBarStateIndicatorPanelStyle(Mainform.StatusLine.Panels.Items[1].PanelStyle).Indicators.Items[0].IndicatorType=sitGreen then begin;
+
+    srcFile:=(ExtractFilePath(ParamStr(0)))+'images\'+RemoteDB.Products.FieldByName('products_image').asstring;
+    destFile:=RemoteDB.Products.FieldByName('products_image').asstring;
+
+    //RemoteDB.IdFTP.host:=FTPHost;
+    //RemoteDB.IdFTP.UserName:=FTPUser;
+    //RemoteDB.IdFTP.PassWord:=FTPPwd;
+    //RemoteDB.IdFTP.Connect;
+    //if FTPDir<>'' then RemoteDB.IdFTP.changedir(FTPDir);
+    //RemoteDB.IdFTP.Put(srcFile,DestFile);
+    //RemoteDB.IdFTP.Disconnect
+    FtpImgUp:=TFtpUp.Create(srcFile,DestFile);
+
+  end else messagedlg('Impossible de joindre le site',mtwarning,[mbok],0);
+
+end;
+
+procedure TNewproductform.cxDBDateAvailableExit(Sender: TObject);
+begin
+ if cxDBDateAvailable.Date > Trunc(RemoteDB.Productsproducts_date_added.AsDateTime) then begin
+  RemoteDB.Productsproducts_ispreview.AsString:='True';
+  RemoteDB.Productsproducts_street_block.AsString:='True';
+ end;
+
+end;
+
+end.

@@ -1,0 +1,88 @@
+unit CheckLibFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Db, DBTables, StdCtrls, Buttons, ExtCtrls, Menus,
+  ComCtrls, DBCtrls, Mask, OleCtrls, DBCGrids, DBClient, MConnect,
+  SConnect, Provider, DBXpress, FMTBcd, SqlExpr, variants,
+  Mxstore, MXDB, JvComponent, Midaslib,
+  IdBaseComponent, IdComponent, IdRawBase,
+  IdRawClient, IdIcmpClient,StrUtils, lbcipher, lbutils, WSDLIntf ,
+  JvBaseDlg, JvProgressDialog, JvProgressComponent, JvComponentBase,
+  JvExStdCtrls, JvHtControls, JvExControls, JvSegmentedLEDDisplay,dllimp, JvGIF;
+
+type
+  TFormCheckLib = class(TForm)
+    Label1: TLabel;
+    LedSlot: TJvSegmentedLEDDisplay;
+    MessageLabel: TJvHTLabel;
+    BtMain: TBitBtn;
+    BitBtnError: TBitBtn;
+    Image2: TImage;
+    procedure BtMainClick(Sender: TObject);
+    procedure BitBtnErrorClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    Procedure Cycle;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormCheckLib: TFormCheckLib;
+  CloneDS: TClientDataSet;
+
+implementation
+
+uses ClientDMunit, ThreadsUnit;
+
+{$R *.dfm}
+
+procedure TFormCheckLib.BitBtnErrorClick(Sender: TObject);
+begin
+ CloneDS.Delete;
+ Self.Cycle
+end;
+
+procedure TFormCheckLib.BtMainClick(Sender: TObject);
+begin
+ CloneDS.Next;
+ Self.Cycle;
+end;
+
+procedure TFormCheckLib.Cycle;
+var USBCDMoveOpen:TUSBCDMoveOpen;
+begin
+   if not CloneDS.Eof then begin
+   RemoteDB.Products.Locate('products_model',CloneDS.FieldByName('model').AsString,[locaseinsensitive]);
+   USBCDMoveOpen:=TUSBCDMoveOpen.Create(CloneDS.FieldByName('machine_id').Value,CloneDS.FieldByName('slot_id').Value);
+   MessageLabel.Caption:='Le CD '+RemoteDB.Productsproducts_name.AsString+' est-il dans le caroussel ?';
+  end else begin
+   self.Close;
+  end;
+end;
+
+procedure TFormCheckLib.FormCreate(Sender: TObject);
+begin
+ CloneDS:=TClientDataSet.Create(nil);
+ CloneDS.CloneCursor(RemoteDB.Caroussel, True);
+ CloneDS.IndexFieldNames:='machine_id;slot_id';
+ CloneDS.First;
+end;
+
+procedure TFormCheckLib.FormDestroy(Sender: TObject);
+begin
+ CloneDS.Free;
+end;
+
+procedure TFormCheckLib.FormShow(Sender: TObject);
+begin
+ Self.Cycle;
+end;
+
+end.

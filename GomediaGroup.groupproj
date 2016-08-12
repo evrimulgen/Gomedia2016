@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{82108A98-BFAF-4906-A5C1-14BA500B26AC}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="GoMedia.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="GoMediaClient.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="GoMedia">
+			<MSBuild Projects="GoMedia.dproj"/>
+		</Target>
+		<Target Name="GoMedia:Clean">
+			<MSBuild Targets="Clean" Projects="GoMedia.dproj"/>
+		</Target>
+		<Target Name="GoMedia:Make">
+			<MSBuild Targets="Make" Projects="GoMedia.dproj"/>
+		</Target>
+		<Target Name="GoMediaClient">
+			<MSBuild Projects="GoMediaClient.dproj"/>
+		</Target>
+		<Target Name="GoMediaClient:Clean">
+			<MSBuild Targets="Clean" Projects="GoMediaClient.dproj"/>
+		</Target>
+		<Target Name="GoMediaClient:Make">
+			<MSBuild Targets="Make" Projects="GoMediaClient.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="GoMedia;GoMediaClient"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="GoMedia:Clean;GoMediaClient:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="GoMedia:Make;GoMediaClient:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

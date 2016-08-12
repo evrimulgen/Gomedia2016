@@ -1,0 +1,397 @@
+unit TransferSuggestFRMUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxStyles, cxCustomData, cxGraphics, cxFilter, cxData, cxDataStorage,
+  cxEdit, DB, cxDBData, dxPrnDev, dxPSGlbl, dxPSUtl, dxPSEngn, dxPrnPg, dxBkgnd,
+  dxWrap, dxPSCompsProvider, dxPSFillPatterns, dxPSEdgePatterns, dxPSCore,
+  dxPSDBBasedXplorer, dxPgsDlg, dxPScxCommon, dxPrnDlg, dxBar,
+  cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxClasses, cxControls, cxGridCustomView, cxGrid, ClientDMUnit, FMTBcd,
+  Provider, DBClient, SqlExpr, cxGridExportLink, dxBarExtItems, ComCtrls,
+  cxLookAndFeels, cxLookAndFeelPainters, dxSkinsCore,
+  dxPSPDFExportCore, dxPSPDFExport, cxDrawTextUtils, dxPSPrVwStd, dxPSPrVwAdv,
+  dxPSPrVwRibbon, dxPScxEditorProducers, dxPScxExtEditorProducers,
+  dxPScxPageControlProducer, Menus,
+  cxNavigator, dxPScxGridLnk, dxPScxGridLayoutViewLnk;
+
+type
+  TTransferSuggest = class(TForm)
+    dxBarManager: TdxBarManager;
+    dxBarButtonPrint: TdxBarButton;
+    dxBarButton2: TdxBarButton;
+    dxBarGroup1: TdxBarGroup;
+    dxPrintDialog: TdxPrintDialog;
+    dxComponentPrinter: TdxComponentPrinter;
+    dxComponentPrinterLink1: TdxGridReportLink;
+    dxPrintStyleManager: TdxPrintStyleManager;
+    dxPageSetupDialog: TdxPageSetupDialog;
+    dxPSDBBasedExplorer1: TdxPSDBBasedExplorer;
+    dxPSEngineController: TdxPSEngineController;
+    SaveDialog: TSaveDialog;
+    StockExt: TClientDataSet;
+    DPStockExt: TDataSetProvider;
+    CDSSuggest: TClientDataSet;
+    StringField1: TStringField;
+    StringField2: TStringField;
+    IntegerField4: TIntegerField;
+    DSStockTransfer: TDataSource;
+    StockSummed: TClientDataSet;
+    StringField4: TStringField;
+    StringField5: TStringField;
+    BCDField3: TBCDField;
+    IntegerField8: TIntegerField;
+    IntegerField9: TIntegerField;
+    IntegerField10: TIntegerField;
+    StockSummedproduct_quantity_total: TFloatField;
+    CDSSuggestproduct_quantity_used: TIntegerField;
+    CDSSuggestproduct_category_name: TStringField;
+    dxBarButtonCompute: TdxBarButton;
+    PageControl: TPageControl;
+    TabSheetSuggest: TTabSheet;
+    cxGridSuggest: TcxGrid;
+    cxGridDBTableViewTransfer: TcxGridDBTableView;
+    cxGridDBTableViewTransferproduct_model: TcxGridDBColumn;
+    cxGridDBTableViewTransferproduct_name: TcxGridDBColumn;
+    cxGridDBTableViewTransferproduct_quantity_new: TcxGridDBColumn;
+    cxGridDBTableViewTransferproduct_quantity_used: TcxGridDBColumn;
+    cxGridDBTableViewTransferproduct_category_name: TcxGridDBColumn;
+    cxGridLevel7: TcxGridLevel;
+    TabSheetRequest: TTabSheet;
+    cxGridRequest: TcxGrid;
+    cxGridDBTableView1: TcxGridDBTableView;
+    cxGridDBColumn1: TcxGridDBColumn;
+    cxGridDBColumn2: TcxGridDBColumn;
+    cxGridDBColumn3: TcxGridDBColumn;
+    cxGridDBColumn4: TcxGridDBColumn;
+    cxGridDBColumn5: TcxGridDBColumn;
+    cxGridLevel1: TcxGridLevel;
+    CDSRequest: TClientDataSet;
+    StringField3: TStringField;
+    StringField6: TStringField;
+    IntegerField1: TIntegerField;
+    IntegerField2: TIntegerField;
+    StringField7: TStringField;
+    DSRequest: TDataSource;
+    StockExtid: TIntegerField;
+    StockExtproduct_model: TStringField;
+    StockExtproduct_name: TStringField;
+    StockExtproduct_owner_id: TIntegerField;
+    StockExtproduct_price_stock: TFMTBCDField;
+    StockExtproduct_location: TIntegerField;
+    StockExtproduct_quantity: TIntegerField;
+    StockExtproduct_supplier_id: TIntegerField;
+    StockExtproduct_date_in: TStringField;
+    StockExtproduct_price_gross: TFMTBCDField;
+    StockExtproduct_isdefect: TIntegerField;
+    PopupMenu: TPopupMenu;
+    CopyModel: TMenuItem;
+    procedure cxGridDBTableView1KeyPress(Sender: TObject; var Key: Char);
+    procedure cxGridDBTableViewTransferKeyPress(Sender: TObject; var Key: Char);
+    procedure FormShow(Sender: TObject);
+    procedure dxBarButton2Click(Sender: TObject);
+    procedure dxBarButtonPrintClick(Sender: TObject);
+    procedure StockSummedCalcFields(DataSet: TDataSet);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure cxGridDBTableViewTransferDblClick(Sender: TObject);
+    procedure CopyModelClick(Sender: TObject);
+
+  private
+    { Private declarations }
+    procedure Compute;
+  public
+    Direction: string;
+    Empty: Boolean;
+    TargetShop: Integer;
+    { Public declarations }
+  end;
+
+var
+  TransferSuggest: TTransferSuggest;
+
+implementation
+
+uses MainFRMUnit, GlobalsUnit, ShellApi, Clipbrd;
+
+{$R *.dfm}
+
+procedure TTransferSuggest.CopyModelClick(Sender: TObject);
+begin
+  ClipBoard.AsText := CDSSuggest.FieldByName('product_model').AsString;
+end;
+
+procedure TTransferSuggest.cxGridDBTableView1KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = chr(46) then
+  begin
+    CDSRequest.Delete;
+  end;
+end;
+
+procedure TTransferSuggest.cxGridDBTableViewTransferDblClick(Sender: TObject);
+var
+  url: string;
+begin
+  url := 'http://www.smartoys.be/catalog/product_info.php?products_id=' + CDSSuggest.FieldByName('product_model').AsString;
+  ShellExecute(self.WindowHandle, 'open', PChar(url), nil, nil, SW_SHOWNORMAL);
+end;
+
+procedure TTransferSuggest.cxGridDBTableViewTransferKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = chr(13) then
+  begin
+    CDSRequest.Append;
+    CDSRequest.FieldByName('product_model').Value        := CDSSuggest.FieldByName('product_model').Value;
+    CDSRequest.FieldByName('product_name').Value         := CDSSuggest.FieldByName('product_name').Value;
+    CDSRequest.FieldByName('product_quantity_new').Value := 1;
+    // CDSSuggest.FieldByName('product_quantity_new').Value;
+    CDSRequest.FieldByName('product_quantity_used').Value := 1;
+    // CDSSuggest.FieldByName('product_quantity_used').Value;
+    CDSRequest.FieldByName('product_category_name').Value := CDSSuggest.FieldByName('product_category_name').Value;
+    CDSRequest.Post;
+  end;
+
+  if Key = chr(46) then
+  begin
+    CDSSuggest.Delete;
+  end;
+
+end;
+
+procedure TTransferSuggest.dxBarButton2Click(Sender: TObject);
+var
+  Filename: string;
+begin
+  if PageControl.ActivePage = TabSheetSuggest then
+  begin
+    Filename                 := 'TransferSuggest' + '.xls';
+    self.SaveDialog.Filename := Filename;
+    if self.SaveDialog.Execute then
+    begin
+      ExportGridToExcel(self.SaveDialog.Filename, cxGridSuggest, True, True, True);
+    end;
+  end;
+  if PageControl.ActivePage = TabSheetRequest then
+  begin
+    Filename                 := 'TransferRequest' + '.xls';
+    self.SaveDialog.Filename := Filename;
+    if self.SaveDialog.Execute then
+    begin
+      ExportGridToExcel(self.SaveDialog.Filename, cxGridRequest, True, True, True);
+    end;
+  end;
+end;
+
+procedure TTransferSuggest.dxBarButtonPrintClick(Sender: TObject);
+begin
+  if PageControl.ActivePage = TabSheetRequest then
+    dxComponentPrinterLink1.Component := cxGridRequest;
+  if PageControl.ActivePage = TabSheetSuggest then
+    dxComponentPrinterLink1.Component := cxGridSuggest;
+  dxComponentPrinter.Print(True, nil);
+end;
+
+procedure TTransferSuggest.Compute;
+var
+  threshold: Integer;
+  ProductsClone, StockClone: TClientDataSet;
+  aSqlDataset: TSqlDataset;
+begin
+
+  aSqlDataset               := TSqlDataset.Create(self);
+  aSqlDataset.SQLConnection := RemoteDB.SQLConnection;
+  aSqlDataset.CommandType   := ctQuery;
+  aSqlDataset.CommandText   := 'select * from netshop_stock where product_location = ' + IntToStr(self.TargetShop);
+
+  DPStockExt.DataSet := aSqlDataset;
+  StockExt.Open;
+
+  CDSSuggest.CreateDataSet;
+  CDSSuggest.Active := True;
+  StockSummed.CreateDataSet;
+  StockSummed.Active := True;
+  Application.ProcessMessages;
+  if Empty then
+    threshold := 0
+  else
+    threshold := 1;
+
+  if Direction = 'out' then
+  begin
+    RemoteDB.netshop_stock.DisableControls;
+    RemoteDB.netshop_stock.Filter   := 'product_owner_id = ' + IntToStr(CONNECTEDSHOP);
+    RemoteDB.netshop_stock.Filtered := True;
+    RemoteDB.netshop_stock.First;
+    try
+      // Populate the Stock Summed Table
+      while not RemoteDB.netshop_stock.Eof do
+      begin
+        if StockSummed.Locate('product_model', RemoteDB.netshop_stock.FieldByName('product_model').Value, [locaseinsensitive]) then
+        begin
+          if RemoteDB.netshop_stock.FieldByName('product_supplier_id').Value > 99999 then
+          begin
+            StockSummed.Edit;
+            StockSummed.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value +
+              RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
+            StockSummed.Post;
+          end else begin
+            StockSummed.Edit;
+            StockSummed.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value +
+              RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
+            StockSummed.Post;
+          end;
+          if RemoteDB.netshop_stock.FieldByName('product_price_stock').Value < StockSummed.FieldByName('product_price_min').Value then
+          begin
+            StockSummed.Edit;
+            StockSummed.FieldByName('product_price_min').Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').Value;
+            StockSummed.Post;
+          end;
+
+        end else begin
+          StockSummed.Append;
+          StockSummed.FieldByName('product_model').Value := RemoteDB.netshop_stock.FieldByName('product_model').Value;
+          StockSummed.FieldByName('product_name').Value  := RemoteDB.netshop_stock.FieldByName('product_name').Value;
+          StockSummed.FieldByName('product_price_min').Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').Value;
+          StockSummed.FieldByName('product_location').Value := RemoteDB.netshop_stock.FieldByName('product_location').Value;
+          if RemoteDB.netshop_stock.FieldByName('product_supplier_id').Value > 99999 then
+          begin
+            StockSummed.FieldByName('product_quantity_new').Value := 0;
+            StockSummed.FieldByName('product_quantity_used').Value := RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
+          end else begin
+            StockSummed.FieldByName('product_quantity_used').Value := 0;
+            StockSummed.FieldByName('product_quantity_new').Value := RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
+          end;
+          StockSummed.Post;
+        end;
+        RemoteDB.netshop_stock.Next;
+      end;
+
+      // Compute Transfer
+      StockSummed.First;
+      while not StockSummed.Eof do
+      begin
+        if StockSummed.FieldByName('product_quantity_total').Value > threshold then
+          if not StockExt.Locate('product_model', StockSummed.FieldByName('product_model').Value, [locaseinsensitive]) then
+          begin
+            CDSSuggest.Append;
+            CDSSuggest.FieldByName('product_model').Value := StockSummed.FieldByName('product_model').Value;
+            CDSSuggest.FieldByName('product_name').Value  := StockSummed.FieldByName('product_name').Value;
+            RemoteDB.Products.FindKey([StockSummed.FieldByName('product_model').Value]);
+            CDSSuggest.FieldByName('product_category_name').Value := RemoteDB.Productsproducts_root_category_name.AsString;
+            CDSSuggest.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value;
+            CDSSuggest.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value;
+            CDSSuggest.Post;
+          end;
+        StockSummed.Next;
+      end;
+      StockExt.Filtered := False;
+
+    finally
+      RemoteDB.netshop_stock.EnableControls;
+      RemoteDB.netshop_stock.Filtered := False;
+      RemoteDB.netshop_stock.Filter   := '';
+      RemoteDB.SQLConnection.Close;
+    end;
+  end;
+
+  if Direction = 'in' then
+  begin
+    StockExt.DisableControls;
+    StockExt.Filter   := 'product_owner_id = ' + RemoteDB.AllShops.FieldByName('shops_id').AsString;
+    StockExt.Filtered := True;
+    StockExt.First;
+    try
+      // Populate the Stock Summed Table
+      while not StockExt.Eof do
+      begin
+        if StockSummed.Locate('product_model', StockExtproduct_model.Value, [locaseinsensitive]) then
+        begin
+          if StockExt.FieldByName('product_supplier_id').Value > 99999 then
+          begin
+            StockSummed.Edit;
+            StockSummed.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value +
+              StockExt.FieldByName('product_quantity').Value;
+            StockSummed.Post;
+          end else begin
+            StockSummed.Edit;
+            StockSummed.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value +
+              StockExt.FieldByName('product_quantity').Value;
+            StockSummed.Post;
+          end;
+          if RemoteDB.netshop_stock.FieldByName('product_price_stock').Value < StockSummed.FieldByName('product_price_min').Value then
+          begin
+            StockSummed.Edit;
+            StockSummed.FieldByName('product_price_min').Value := StockExt.FieldByName('product_price_stock').Value;
+            StockSummed.Post;
+          end;
+
+        end else begin
+          StockSummed.Append;
+          StockSummed.FieldByName('product_model').Value := StockExt.FieldByName('product_model').Value;
+          StockSummed.FieldByName('product_name').Value  := StockExt.FieldByName('product_name').Value;
+          StockSummed.FieldByName('product_price_min').Value := StockExt.FieldByName('product_price_stock').Value;
+          StockSummed.FieldByName('product_location').Value := StockExt.FieldByName('product_location').Value;
+          if StockExt.FieldByName('product_supplier_id').Value > 99999 then
+          begin
+            StockSummed.FieldByName('product_quantity_new').Value := 0;
+            StockSummed.FieldByName('product_quantity_used').Value := StockExt.FieldByName('product_quantity').Value;
+          end else begin
+            StockSummed.FieldByName('product_quantity_used').Value := 0;
+            StockSummed.FieldByName('product_quantity_new').Value := StockExt.FieldByName('product_quantity').Value;
+          end;
+          StockSummed.Post;
+        end;
+        StockExt.Next;
+      end;
+
+      // Compute Transfer
+      StockSummed.First;
+      while not StockSummed.Eof do
+      begin
+        if StockSummed.FieldByName('product_quantity_total').Value > threshold then
+          if not RemoteDB.netshop_stock.Locate('product_model', StockSummed.FieldByName('product_model').Value, [locaseinsensitive]) then
+          begin
+            CDSSuggest.Append;
+            CDSSuggest.FieldByName('product_model').Value := StockSummed.FieldByName('product_model').Value;
+            CDSSuggest.FieldByName('product_name').Value  := StockSummed.FieldByName('product_name').Value;
+            RemoteDB.Products.FindKey([StockSummed.FieldByName('product_model').Value]);
+            CDSSuggest.FieldByName('product_category_name').Value := RemoteDB.Productsproducts_root_category_name.AsString;
+            CDSSuggest.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value;
+            CDSSuggest.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value;
+            CDSSuggest.Post;
+          end;
+        StockSummed.Next;
+      end;
+      RemoteDB.netshop_stock.Filtered := False;
+
+    finally
+      StockExt.EnableControls;
+      StockExt.Filtered := False;
+      StockExt.Filter   := '';
+      RemoteDB.SQLConnection.Close;
+    end;
+  end;
+
+end;
+
+procedure TTransferSuggest.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  // Action:=TBasicAction(caFree);
+end;
+
+procedure TTransferSuggest.FormShow(Sender: TObject);
+begin
+  CDSRequest.CreateDataSet;
+  CDSRequest.Open;
+  self.PageControl.ActivePage := TabSheetSuggest;
+  Compute;
+end;
+
+procedure TTransferSuggest.StockSummedCalcFields(DataSet: TDataSet);
+begin
+  DataSet.FieldByName('product_quantity_total').Value := DataSet.FieldByName('product_quantity_new').Value + DataSet.FieldByName('product_quantity_used').Value;
+end;
+
+end.

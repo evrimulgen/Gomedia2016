@@ -1,0 +1,118 @@
+program GoMedia2015;
+
+
+{$R 'GoMedia2015Resource.res' 'GoMedia2015Resource.rc'}
+{$R *.dres}
+
+uses
+  Dialogs,
+  Forms,
+  controls,
+  DavidUtilsunit in 'units\DavidUtilsunit.pas',
+  ClientDMunit in 'formsunits\ClientDMunit.pas' {RemoteDB: TDataModule},
+  SaleExecFRMunit in 'formsunits\SaleExecFRMunit.pas' {FormProcessSale},
+  StockCheckFrmUnit in 'formsunits\StockCheckFrmUnit.pas' {StockCheckForm},
+  ChangePriceFRMUnit in 'formsunits\ChangePriceFRMUnit.pas' {ChangePriceForm},
+  DebugFRMUnit in 'formsunits\DebugFRMUnit.pas' {Debug},
+  ReportModuleUnit in 'formsunits\ReportModuleUnit.pas' {ReportModule: TDataModule},
+  NewProdFRMUnit in 'formsunits\NewProdFRMUnit.pas' {Newproductform},
+  LoginFRMUnit in 'formsunits\LoginFRMUnit.pas' {LoginForm},
+  RepairNewFRMUnit in 'formsunits\RepairNewFRMUnit.pas' {RepairNewForm},
+  RepairFixFRMUnit in 'formsunits\RepairFixFRMUnit.pas' {RepairFixForm},
+  RepairReturnFRMUnit in 'formsunits\RepairReturnFRMUnit.pas' {RepairReturnForm},
+  DialogChangeEANFRMUnit in 'formsunits\DialogChangeEANFRMUnit.pas' {ChangeEANForm},
+  DialogRefundFRMUnit in 'formsunits\DialogRefundFRMUnit.pas' {RefundForm},
+  DialogCancelSalesFRMUnit in 'formsunits\DialogCancelSalesFRMUnit.pas' {CancelSalesForm},
+  Threadsunit in 'units\Threadsunit.pas',
+  EnterLibFRMUnit in 'formsunits\EnterLibFRMUnit.pas' {FormEnterLibrary},
+  ExitLibFRMUnit in 'formsunits\ExitLibFRMUnit.pas' {FormExitLibrary},
+  RentProcessFRMUnit in 'formsunits\RentProcessFRMUnit.pas' {FormProcessRent},
+  SalesCorrectFRMUnit in 'formsunits\SalesCorrectFRMUnit.pas' {SalesCorrectForm},
+  InvoiceBatchPrintFRMUnit in 'formsunits\InvoiceBatchPrintFRMUnit.pas' {InvoiceBatchPrintForm},
+  dtFormSetup in 'formsunits\dtFormSetup.pas' {dtSetupForm},
+  CancelInvoiceItemFRMUnit in 'formsunits\CancelInvoiceItemFRMUnit.pas' {InvoicesCancelItemForm},
+  CashRegistryFRMUnit in 'formsunits\CashRegistryFRMUnit.pas' {FormCashRegister},
+  RpFormStatus in 'formsunits\RpFormStatus.pas' {RPStatusForm},
+  SMS_COMAPILib_TLB in 'units\SMS_COMAPILib_TLB.pas',
+  GlobalsUnit in 'units\GlobalsUnit.pas',
+  WinbooksExport in 'units\WinbooksExport.pas',
+  ExportWinbooksFRMUnit in 'formsunits\ExportWinbooksFRMUnit.pas' {FormExportWinbooks},
+  CheckPrevious in 'units\CheckPrevious.pas',
+  ProductSalesHistoryUnit in 'formsunits\ProductSalesHistoryUnit.pas' {FormProductSaleHistory},
+  ChangeInvoiceFRMUnit in 'formsunits\ChangeInvoiceFRMUnit.pas' {FormChangeInvoice},
+  DialogSearchCustFRMUnit in 'formsunits\DialogSearchCustFRMUnit.Pas' {FormSelectCust},
+  DacalEmptyUnsoldFRMUnit in 'formsunits\DacalEmptyUnsoldFRMUnit.pas' {FormDacalEmptyUnsold},
+  OrderCheckFRMUnit in 'formsunits\OrderCheckFRMUnit.pas' {OrderCheckForm},
+  TransferRequestFRMUnit in 'formsunits\TransferRequestFRMUnit.pas' {TransferRequestFrom},
+  DialogSmsSendFRMUnit in 'formsunits\DialogSmsSendFRMUnit.pas' {DlgSmsSend},
+  CashFRMUnit in 'formsunits\CashFRMUnit.pas' {FormCashClose},
+  ReorderFRMUnit in 'formsunits\ReorderFRMUnit.pas' {ReorderForm},
+  DialogAddFundFRMUnit in 'formsunits\DialogAddFundFRMUnit.pas' {AddFundForm},
+  RpFormPreviewCustom in 'formsunits\RpFormPreviewCustom.pas' {DavPreviewForm},
+  DialogRentExtend in 'formsunits\DialogRentExtend.pas' {FormRentExtend},
+  UnitFRMDacalSearch in 'formsunits\UnitFRMDacalSearch.pas' {FormDacalSearch},
+  WinbooksOfficeApi_TLB in 'units\WinbooksOfficeApi_TLB.pas',
+  CustomerDisplayFRMUnit in 'formsunits\CustomerDisplayFRMUnit.pas' {FormCustomerDisplay},
+  jpeglist in 'units\jpeglist.pas',
+  Phidget21COM_TLB in 'units\Phidget21COM_TLB.pas',
+  UnitFormLog in 'formsunits\UnitFormLog.pas' {FormLog},
+  ServerModuleGLight in 'formsunits\ServerModuleGLight.pas' {DSServerModuleRFIDPanel: TDSServerModule},
+  FTPConn in 'units\FTPConn.pas',
+  QExport4DBF in 'units\QExport4DBF.pas',
+  TransferSuggestFRMUnit in 'formsunits\TransferSuggestFRMUnit.pas' {TransferSuggest},
+  ReportSQLForm in 'formsunits\ReportSQLForm.pas' {ReportSQL},
+  CheckLibFRMUnit in 'formsunits\CheckLibFRMUnit.pas' {FormCheckLib},
+  ReconcileFRMUnit in 'formsunits\ReconcileFRMUnit.pas' {ReconcileErrorForm},
+  MainFRMUnit in 'formsunits\MainFRMUnit.PAS' {MainForm},
+  catalog in 'units\catalog.pas',
+  COPTRLib_TLB in 'units\COPTRLib_TLB.pas',
+  uRijndael in 'units\uRijndael.pas',
+  EIDLIBCTRLLib_TLB in 'units\EIDLIBCTRLLib_TLB.pas',
+  DLLsucdapi in 'units\DLLsucdapi.pas',
+  wgssSTU_TLB in 'units\wgssSTU_TLB.pas',
+  SignatureForm in 'formsunits\SignatureForm.pas' {FormSign},
+  esd in 'units\esd.pas',
+  uLkJSON in 'units\uLkJSON.pas',
+  Vcl.Themes,
+  Vcl.Styles;
+
+{$R *.RES}
+
+begin
+  if not CheckPrevious.RestoreIfRunning(Application.Handle) then
+  begin
+    TStyleManager.TrySetStyle('Slate Classico');
+  Application.Title := 'GoMedia';
+    Application.Initialize;
+    Application.CreateForm(TRemoteDB, RemoteDB);
+  Application.CreateForm(TLoginForm, LoginForm);
+  LoginForm.ShowModal;
+    try
+      if IsPositiveResult(LoginForm.ModalResult) then
+      begin
+      end else begin
+        DBOKTOLAUNCH := False;
+      end;
+    except
+      DBOKTOLAUNCH := False;
+    end;
+    LoginForm.Free;
+    if DBOKTOLAUNCH then
+      try
+        RemoteDB.LoadDB;
+        Application.CreateForm(TMainForm, Mainform);
+        Application.CreateForm(TDavPreviewForm, DavPreviewForm);
+        Application.CreateForm(TReportModule, ReportModule);
+      finally
+        Application.ShowHint := True;
+        Mainform.Show;
+        Mainform.BringToFront;
+        Mainform.Update;
+        Application.Run;
+      end
+    else begin
+      Application.Terminate;
+    end;
+  end;
+
+end.

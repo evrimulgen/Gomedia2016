@@ -1,0 +1,101 @@
+//
+// Created by the DataSnap proxy generator.
+//
+
+unit ClientFunctions;
+
+interface
+
+uses DBXCommon, DBXJSON, Classes, SysUtils, DB, SqlExpr, DBXDBReaders;
+
+type
+  TDSServerModuleRFIDPanelClient = class
+  private
+    FDBXConnection: TDBXConnection;
+    FInstanceOwner: Boolean;
+    FGetJSONFTPConnCommand: TDBXCommand;
+    FechoCommand: TDBXCommand;
+    Fecho2Command: TDBXCommand;
+  public
+    constructor Create(ADBXConnection: TDBXConnection); overload;
+    constructor Create(ADBXConnection: TDBXConnection; AInstanceOwner: Boolean); overload;
+    destructor Destroy; override;
+    function GetJSONFTPConn: TJSONValue;
+    function echo(s: string): string;
+    function echo2(s: string): string;
+  end;
+
+implementation
+
+function TDSServerModuleRFIDPanelClient.GetJSONFTPConn: TJSONValue;
+begin
+  if FGetJSONFTPConnCommand = nil then
+  begin
+    FGetJSONFTPConnCommand := FDBXConnection.CreateCommand;
+    FGetJSONFTPConnCommand.CommandType := TDBXCommandTypes.DSServerMethod;
+    FGetJSONFTPConnCommand.Text := 'TDSServerModuleRFIDPanel.GetJSONFTPConn';
+    FGetJSONFTPConnCommand.Prepare;
+  end;
+  FGetJSONFTPConnCommand.ExecuteUpdate;
+  Result := TJSONValue(FGetJSONFTPConnCommand.Parameters[0].Value.GetJSONValue(FInstanceOwner));
+end;
+
+function TDSServerModuleRFIDPanelClient.echo(s: string): string;
+begin
+  if FechoCommand = nil then
+  begin
+    FechoCommand := FDBXConnection.CreateCommand;
+    FechoCommand.CommandType := TDBXCommandTypes.DSServerMethod;
+    FechoCommand.Text := 'TDSServerModuleRFIDPanel.echo';
+    FechoCommand.Prepare;
+  end;
+  FechoCommand.Parameters[0].Value.SetWideString(s);
+  FechoCommand.ExecuteUpdate;
+  Result := FechoCommand.Parameters[1].Value.GetWideString;
+end;
+
+function TDSServerModuleRFIDPanelClient.echo2(s: string): string;
+begin
+  if Fecho2Command = nil then
+  begin
+    Fecho2Command := FDBXConnection.CreateCommand;
+    Fecho2Command.CommandType := TDBXCommandTypes.DSServerMethod;
+    Fecho2Command.Text := 'TDSServerModuleRFIDPanel.echo2';
+    Fecho2Command.Prepare;
+  end;
+  Fecho2Command.Parameters[0].Value.SetWideString(s);
+  Fecho2Command.ExecuteUpdate;
+  Result := Fecho2Command.Parameters[1].Value.GetWideString;
+end;
+
+
+constructor TDSServerModuleRFIDPanelClient.Create(ADBXConnection: TDBXConnection);
+begin
+  inherited Create;
+  if ADBXConnection = nil then
+    raise EInvalidOperation.Create('Connection cannot be nil.  Make sure the connection has been opened.');
+  FDBXConnection := ADBXConnection;
+  FInstanceOwner := True;
+end;
+
+
+constructor TDSServerModuleRFIDPanelClient.Create(ADBXConnection: TDBXConnection; AInstanceOwner: Boolean);
+begin
+  inherited Create;
+  if ADBXConnection = nil then
+    raise EInvalidOperation.Create('Connection cannot be nil.  Make sure the connection has been opened.');
+  FDBXConnection := ADBXConnection;
+  FInstanceOwner := AInstanceOwner;
+end;
+
+
+destructor TDSServerModuleRFIDPanelClient.Destroy;
+begin
+  FreeAndNil(FGetJSONFTPConnCommand);
+  FreeAndNil(FechoCommand);
+  FreeAndNil(Fecho2Command);
+  inherited;
+end;
+
+end.
+

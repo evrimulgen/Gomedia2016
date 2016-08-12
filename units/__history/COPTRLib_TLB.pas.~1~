@@ -1,0 +1,294 @@
+unit COPTRLib_TLB;
+
+// ************************************************************************ //
+// WARNING                                                                    
+// -------                                                                    
+// The types declared in this file were generated from data read from a       
+// Type Library. If this type library is explicitly or indirectly (via        
+// another type library referring to this type library) re-imported, or the   
+// 'Refresh' command of the Type Library Editor activated while editing the   
+// Type Library, the contents of this file will be regenerated and all        
+// manual modifications will be lost.                                         
+// ************************************************************************ //
+
+// $Rev: 17244 $
+// File generated on 5/08/2013 08:55:31 from Type Library described below.
+
+// ************************************************************************  //
+// Type Lib: C:\PROGRA~2\OPOS\Epson2\Coptr19.ocx (1)
+// LIBID: {C9E1AFB0-1172-11D7-83AD-0050DA238ADA}
+// LCID: 0
+// Helpfile: C:\PROGRA~2\OPOS\Epson2\CoPtr.hlp
+// HelpString: EPSON OPOS POSPrinter Control 1.9
+// DepndLst: 
+//   (1) v2.0 stdole, (C:\Windows\SysWOW64\stdole2.tlb)
+// Errors:
+//   Hint: Parameter 'Type' of _DCoPtr.MarkFeed changed to 'Type_'
+// ************************************************************************ //
+{$TYPEDADDRESS OFF} // Unit must be compiled without type-checked pointers. 
+{$WARN SYMBOL_PLATFORM OFF}
+{$WRITEABLECONST ON}
+{$VARPROPSETTER ON}
+{$ALIGN 4}
+interface
+
+uses Windows, ActiveX, Classes, Graphics, OleCtrls, OleServer, StdVCL, Variants;
+  
+
+
+// *********************************************************************//
+// GUIDS declared in the TypeLibrary. Following prefixes are used:        
+//   Type Libraries     : LIBID_xxxx                                      
+//   CoClasses          : CLASS_xxxx                                      
+//   DISPInterfaces     : DIID_xxxx                                       
+//   Non-DISP interfaces: IID_xxxx                                        
+// *********************************************************************//
+const
+  // TypeLibrary Major and minor versions
+  COPTRLibMajorVersion = 1;
+  COPTRLibMinorVersion = 0;
+
+  LIBID_COPTRLib: TGUID = '{C9E1AFB0-1172-11D7-83AD-0050DA238ADA}';
+
+  DIID__DCoPtr: TGUID = '{C9E1AFB1-1172-11D7-83AD-0050DA238ADA}';
+  DIID__DCoPtrEvents: TGUID = '{C9E1AFB2-1172-11D7-83AD-0050DA238ADA}';
+  CLASS_OPOSPOSPrinter: TGUID = '{C9E1AFB3-1172-11D7-83AD-0050DA238ADA}';
+type
+
+// *********************************************************************//
+// Forward declaration of types defined in TypeLibrary                    
+// *********************************************************************//
+  _DCoPtr = dispinterface;
+  _DCoPtrEvents = dispinterface;
+
+// *********************************************************************//
+// Declaration of CoClasses defined in Type Library                       
+// (NOTE: Here we map each CoClass to its Default Interface)              
+// *********************************************************************//
+  OPOSPOSPrinter = _DCoPtr;
+
+
+// *********************************************************************//
+// Declaration of structures, unions and aliases.                         
+// *********************************************************************//
+  PInteger1 = ^Integer; {*}
+  PWideString1 = ^WideString; {*}
+
+
+// *********************************************************************//
+// DispIntf:  _DCoPtr
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {C9E1AFB1-1172-11D7-83AD-0050DA238ADA}
+// *********************************************************************//
+  _DCoPtr = dispinterface
+    ['{C9E1AFB1-1172-11D7-83AD-0050DA238ADA}']
+    procedure AboutBox; dispid -552;
+    function PageModePrint(Control: Integer): Integer; dispid 184;
+    function ClearPrintArea: Integer; dispid 183;
+    function UpdateFirmware(const FirmwareFileName: WideString): Integer; dispid 182;
+    function CompareFirmwareVersion(const FirmwareFileName: WideString; var Result: Integer): Integer; dispid 181;
+    function UpdateStatistics(const StatisticsBuffer: WideString): Integer; dispid 168;
+    function RetrieveStatistics(var StatisticsBuffer: WideString): Integer; dispid 167;
+    function ResetStatistics(const StatisticsBuffer: WideString): Integer; dispid 166;
+    function MarkFeed(Type_: Integer): Integer; dispid 159;
+    function ChangePrintSide(Side: Integer): Integer; dispid 158;
+    function ReleaseDevice: Integer; dispid 157;
+    function ClaimDevice(Timeout: Integer): Integer; dispid 156;
+    function SOProcessID: Integer; dispid 155;
+    procedure SOStatusUpdate(Data: Integer); dispid 154;
+    procedure SOOutputComplete(OutputID: Integer); dispid 153;
+    procedure SOError(ResultCode: Integer; ResultCodeExtended: Integer; ErrorLocus: Integer; 
+                      var pErrorResponse: Integer); dispid 152;
+    procedure SODirectIO(EventNumber: Integer; var pData: Integer; var pString: WideString); dispid 151;
+    function SetLogo(Location: Integer; const Data: WideString): Integer; dispid 150;
+    function SetBitmap(BitmapNumber: Integer; Station: Integer; const FileName: WideString; 
+                       Width: Integer; Alignment: Integer): Integer; dispid 149;
+    function ValidateData(Station: Integer; const Data: WideString): Integer; dispid 148;
+    function TransactionPrint(Station: Integer; Control: Integer): Integer; dispid 147;
+    function PrintBitmap(Station: Integer; const FileName: WideString; Width: Integer; 
+                         Alignment: Integer): Integer; dispid 146;
+    function PrintBarCode(Station: Integer; const Data: WideString; Symbology: Integer; 
+                          Height: Integer; Width: Integer; Alignment: Integer; TextPosition: Integer): Integer; dispid 145;
+    function RotatePrint(Station: Integer; Rotation: Integer): Integer; dispid 144;
+    function CutPaper(Percentage: Integer): Integer; dispid 143;
+    function EndRemoval: Integer; dispid 142;
+    function BeginRemoval(Timeout: Integer): Integer; dispid 141;
+    function EndInsertion: Integer; dispid 140;
+    function BeginInsertion(Timeout: Integer): Integer; dispid 139;
+    function PrintImmediate(Station: Integer; const Data: WideString): Integer; dispid 138;
+    function PrintTwoNormal(Stations: Integer; const Data1: WideString; const Data2: WideString): Integer; dispid 137;
+    function PrintNormal(Station: Integer; const Data: WideString): Integer; dispid 136;
+    function DirectIO(Command: Integer; var pData: Integer; var pString: WideString): Integer; dispid 135;
+    function ClearOutput: Integer; dispid 134;
+    function CheckHealth(Level: Integer): Integer; dispid 133;
+    function Release: Integer; dispid 132;
+    function Claim(Timeout: Integer): Integer; dispid 131;
+    function Close: Integer; dispid 130;
+    function Open(const DeviceName: WideString): Integer; dispid 129;
+    property DeviceName: WideString dispid 15;
+    property ServiceObjectVersion: Integer dispid 13;
+    property CapCharacterSet: Integer dispid 16;
+    property CapConcurrentJrnRec: WordBool dispid 17;
+    property DeviceDescription: WideString dispid 14;
+    property CapJrn2Color: WordBool dispid 23;
+    property CapTransaction: WordBool dispid 21;
+    property CapConcurrentJrnSlp: WordBool dispid 18;
+    property CapJrnPresent: WordBool dispid 22;
+    property ErrorString: WideString dispid 71;
+    property RotateSpecial: Integer dispid 75;
+    property FlagWhenIdle: WordBool dispid 72;
+    property ErrorStation: Integer dispid 70;
+    property JrnLineSpacing: Integer dispid 79;
+    property JrnLineChars: Integer dispid 76;
+    property JrnLineCharsList: WideString dispid 77;
+    property JrnLineWidth: Integer dispid 80;
+    property JrnLineHeight: Integer dispid 78;
+    property State: Integer dispid 9;
+    property ResultCode: Integer dispid 7;
+    property ControlObjectDescription: WideString dispid 10;
+    property ControlObjectVersion: Integer dispid 11;
+    property ResultCodeExtended: Integer dispid 8;
+    property CapRecDwide: WordBool dispid 38;
+    property CapRecBold: WordBool dispid 36;
+    property CapRecDwideDhigh: WordBool dispid 39;
+    property CapRecEmptySensor: WordBool dispid 40;
+    property ServiceObjectDescription: WideString dispid 12;
+    property DeviceEnabled: WordBool dispid 4;
+    property CapConcurrentRecSlp: WordBool dispid 19;
+    property CapCoverSensor: WordBool dispid 20;
+    property FreezeEvents: WordBool dispid 5;
+    property CheckHealthText: WideString dispid 2;
+    property OutputID: Integer dispid 6;
+    property Claimed: WordBool dispid 3;
+    property BinaryConversion: Integer dispid 1;
+    property MapMode: Integer dispid 74;
+    property CapSlpEmptySensor: WordBool dispid 58;
+    property CapSlpFullslip: WordBool dispid 50;
+    property AsyncMode: WordBool dispid 65;
+    property CharacterSet: Integer dispid 66;
+    property CapSlp2Color: WordBool dispid 51;
+    property CapRecUnderline: WordBool dispid 48;
+    property CapSlpBarCode: WordBool dispid 52;
+    property CapSlpPresent: WordBool dispid 49;
+    property CapRecStamp: WordBool dispid 47;
+    property CapSlpNearEndSensor: WordBool dispid 61;
+    property CapSlpItalic: WordBool dispid 59;
+    property CapSlpRight90: WordBool dispid 62;
+    property CapSlpRotate180: WordBool dispid 63;
+    property CapSlpLeft90: WordBool dispid 60;
+    property ErrorLevel: Integer dispid 69;
+    property CharacterSetList: WideString dispid 67;
+    property CapSlpUnderline: WordBool dispid 64;
+    property CoverOpen: WordBool dispid 68;
+    property RecNearEnd: WordBool dispid 91;
+    property RecSidewaysMaxLines: Integer dispid 92;
+    property JrnNearEnd: WordBool dispid 83;
+    property RecLineSpacing: Integer dispid 87;
+    property RecEmpty: WordBool dispid 90;
+    property JrnLetterQuality: WordBool dispid 81;
+    property FontTypefaceList: WideString dispid 73;
+    property RecLineWidth: Integer dispid 88;
+    property RecLetterQuality: WordBool dispid 89;
+    property CapSlpDhigh: WordBool dispid 55;
+    property CapSlpBitmap: WordBool dispid 53;
+    property CapSlpDwide: WordBool dispid 56;
+    property CapSlpDwideDhigh: WordBool dispid 57;
+    property CapSlpBold: WordBool dispid 54;
+    property RecLineChars: Integer dispid 84;
+    property JrnEmpty: WordBool dispid 82;
+    property RecLineCharsList: WideString dispid 85;
+    property RecLineHeight: Integer dispid 86;
+    property SlpEmpty: WordBool dispid 102;
+    property SlpLetterQuality: WordBool dispid 101;
+    property CartridgeNotify: Integer dispid 120;
+    property SlpNearEnd: WordBool dispid 103;
+    property SlpMaxLines: Integer dispid 106;
+    property SlpLineWidth: Integer dispid 100;
+    property SlpLineChars: Integer dispid 96;
+    property SlpSidewaysMaxChars: Integer dispid 105;
+    property SlpSidewaysMaxLines: Integer dispid 104;
+    property PageModeArea: WideString dispid 174;
+    property CapUpdateFirmware: WordBool dispid 170;
+    property PageModeStation: Integer dispid 179;
+    property PageModePrintDirection: Integer dispid 178;
+    property CapCompareFirmwareVersion: WordBool dispid 169;
+    property CapRecPageMode: WordBool dispid 172;
+    property CapConcurrentPageMode: WordBool dispid 171;
+    property CapUpdateStatistics: WordBool dispid 165;
+    property CapSlpPageMode: WordBool dispid 173;
+    property CapJrnCartridgeSensor: Integer dispid 113;
+    property CapPowerReporting: Integer dispid 109;
+    property CapSlpCartridgeSensor: Integer dispid 118;
+    property CapRecMarkFeed: Integer dispid 117;
+    property SlpBarCodeRotationList: WideString dispid 108;
+    property PowerState: Integer dispid 111;
+    property PowerNotify: Integer dispid 110;
+    property SlpLinesNearEndToEnd: Integer dispid 107;
+    property OpenResult: Integer dispid 112;
+    property SlpLineSpacing: Integer dispid 99;
+    property SlpLineHeight: Integer dispid 98;
+    property RecBarCodeRotationList: WideString dispid 95;
+    property RecLinesToPaperCut: Integer dispid 94;
+    property SlpLineCharsList: WideString dispid 97;
+    property CapJrnColor: Integer dispid 114;
+    property CapSlpColor: Integer dispid 119;
+    property CapRecColor: Integer dispid 116;
+    property CapRecCartridgeSensor: Integer dispid 115;
+    property PageModeVerticalPosition: Integer dispid 180;
+    property CapJrnBold: WordBool dispid 24;
+    property CapJrnDhigh: WordBool dispid 25;
+    property CapJrnEmptySensor: WordBool dispid 28;
+    property CapJrnDwide: WordBool dispid 26;
+    property CapJrnItalic: WordBool dispid 29;
+    property CapRecPresent: WordBool dispid 32;
+    property CapJrnNearEndSensor: WordBool dispid 30;
+    property CapRec2Color: WordBool dispid 33;
+    property CapRecBarCode: WordBool dispid 34;
+    property CapRecRight90: WordBool dispid 45;
+    property CapRecRotate180: WordBool dispid 46;
+    property CapRecDhigh: WordBool dispid 37;
+    property CapRecItalic: WordBool dispid 41;
+    property CapRecPapercut: WordBool dispid 44;
+    property CapRecBitmap: WordBool dispid 35;
+    property CapJrnDwideDhigh: WordBool dispid 27;
+    property CapRecLeft90: WordBool dispid 42;
+    property CapRecNearEndSensor: WordBool dispid 43;
+    property JrnCartridgeState: Integer dispid 121;
+    property SlpCartridgeState: Integer dispid 126;
+    property RecCartridgeState: Integer dispid 123;
+    property JrnCurrentCartridge: Integer dispid 122;
+    property SlpPrintSide: Integer dispid 125;
+    property PageModeHorizontalPosition: Integer dispid 176;
+    property PageModeDescriptor: Integer dispid 175;
+    property RecCurrentCartridge: Integer dispid 124;
+    property PageModePrintArea: WideString dispid 177;
+    property MapCharacterSet: WordBool dispid 161;
+    property CapMapCharacterSet: WordBool dispid 160;
+    property CapJrnUnderline: WordBool dispid 31;
+    property RecSidewaysMaxChars: Integer dispid 93;
+    property CapSlpBothSidesPrint: WordBool dispid 128;
+    property RecBitmapRotationList: WideString dispid 162;
+    property SlpCurrentCartridge: Integer dispid 127;
+    property CapStatisticsReporting: WordBool dispid 164;
+    property SlpBitmapRotationList: WideString dispid 163;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _DCoPtrEvents
+// Flags:     (4096) Dispatchable
+// GUID:      {C9E1AFB2-1172-11D7-83AD-0050DA238ADA}
+// *********************************************************************//
+  _DCoPtrEvents = dispinterface
+    ['{C9E1AFB2-1172-11D7-83AD-0050DA238ADA}']
+    procedure DirectIOEvent(EventNumber: Integer; var pData: Integer; var pString: WideString); dispid 1;
+    procedure ErrorEvent(ResultCode: Integer; ResultCodeExtended: Integer; ErrorLocus: Integer; 
+                         var pErrorResponse: Integer); dispid 2;
+    procedure OutputCompleteEvent(OutputID: Integer); dispid 3;
+    procedure StatusUpdateEvent(Data: Integer); dispid 4;
+  end;
+
+implementation
+
+uses ComObj;
+
+end.

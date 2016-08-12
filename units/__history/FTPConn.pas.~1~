@@ -1,0 +1,68 @@
+unit FTPConn;
+
+interface
+
+uses
+	   DBXJSON, DBXJSONReflect, SysUtils;
+type
+
+ TFTPConn = class
+   private
+    _Host:string;
+    _Dir:String;
+    _Login:string;
+    _Pass:string;
+   public
+    constructor create(Host,Dir,Login,Pass:string);
+    property host:string read _Host;
+    property dir:string read _Dir;
+    property login:string read _Login;
+    property pass:string read _Pass;
+  end;
+
+implementation
+
+	  function CustomerToJSON(customer: TFTPConn): TJSONValue;
+	  var
+	    m: TJSONMarshal;
+	  begin
+	    if Assigned(customer) then
+	    begin
+	      m := TJSONMarshal.Create(TJSONConverter.Create);
+	      try
+	        exit(m.Marshal(customer))
+	      finally
+	        m.Free;
+	      end;
+	    end
+	    else
+	      exit(TJSONNull.Create);
+	  end;
+
+	  function JSONToCustomer(json: TJSONValue): TFTPConn;
+	  var
+	     unm: TJSONUnMarshal;
+	  begin
+	    if json is TJSONNull then
+	      exit(nil);
+	    unm := TJSONUnMarshal.Create;
+	    try
+	      exit(unm.Unmarshal(json) as TFTPConn)
+	    finally
+	      unm.Free;
+	    end;
+	  end;
+
+    { TFTPConn }
+
+constructor TFTPConn.create(Host, Dir, Login, Pass: string);
+begin
+ _Host:=Host;
+ _Pass:=Pass;
+ _Dir:=Dir;
+ _Login:=Login;
+ inherited create;
+end;
+
+
+end.

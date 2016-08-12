@@ -1,0 +1,31 @@
+unit ServerModule;
+
+interface
+
+uses
+  SysUtils, Classes, DSServer;
+
+type
+  TDSServerModule1 = class(TDSServerModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function echo(s:string):string;
+  end;
+
+// var
+  // DSServerModule1: TDSServerModule1;
+
+implementation
+
+{$R *.dfm}
+
+{ TDSServerModule1 }
+
+function TDSServerModule1.echo(s: string): string;
+begin
+ Result := 'Returned data is '+s;
+end;
+
+end.

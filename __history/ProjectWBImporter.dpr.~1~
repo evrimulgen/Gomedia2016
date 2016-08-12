@@ -1,0 +1,15 @@
+program ProjectWBImporter;
+
+uses
+  Forms,
+  UnitMain in 'UnitMain.pas' {FormMain},
+  WinbooksOfficeApi_TLB in '..\Gomedia2011ML\units\WinbooksOfficeApi_TLB.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormMain, FormMain);
+  Application.Run;
+end.

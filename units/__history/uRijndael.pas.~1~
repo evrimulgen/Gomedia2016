@@ -1,0 +1,182 @@
+unit uRijndael;
+// Helper functions for 256-bit Rijndael/AES encryption with DCPcrypt
+
+interface
+
+Uses
+  StdCtrls;
+
+function RijndaelEncryptHex(hexstrKey,hexstrIV,hexstrPlain: String; MMo: TMemo = nil): String;
+function RijndaelDecryptHex(hexstrKey,hexstrIV,hexstrCypher: String; MMo: TMemo = nil): String;
+// Input en output zijn strings met hex waarden ('014730f80ac625fe84f026c60bfd547d')
+//
+// Deze routines gebruiken een 256-key AES/Rijndael encryptie, waarbij de plaintext
+// met NULL waarden ge-pad wordt tot een veelvoud van de blocksize.
+// Merk op dat de initializatievector even groot moet zijn als de blocksize (128 bits, dus een hex string van 32 tekens).
+//
+// Als TMemo gespecificeerd is wordt daar naar toe gelogd.
+
+// Helper routines:
+function HexToString(H: String): String;
+function StringtoHex(Data: string; WithSpaces: Boolean = false): string;
+function HexToInt(HexNum: string): LongInt;
+
+implementation
+
+Uses
+  SysUtils,
+  DCPbase64, DCPcrypt2, DCPblockciphers, DCPrijndael;
+
+type
+  KeyBuffer  = Array[1..32] of Byte;
+  IVBuffer   = Array[1..16] of Byte;
+
+function HexToString(H: String): String;
+var I : Integer;
+begin
+  Result:= '';
+  for I := 1 to length (H) div 2 do
+    Result:= Result+Char(StrToInt('$'+Copy(H,(I-1)*2+1,2)));
+end;
+
+function StringtoHex(Data: string; WithSpaces: Boolean = false): string;
+var
+  i, i2: Integer;
+  s: string;
+begin
+  i2 := 1;
+  for i := 1 to Length(Data) do
+  begin
+    Inc(i2);
+    if i2 = 2 then
+    begin
+      if WithSpaces then s  := s + ' ';
+      i2 := 1;
+    end;
+    s := s + IntToHex(Ord(Data[i]), 2);
+  end;
+  Result := s;
+end;
+
+function HexToInt(HexNum: string): LongInt;
+begin
+   Result := StrToInt('$' + HexNum) ;
+end;
+
+function FilterHex(S: String): String;
+// Filters all hex characters 0..F (case insensitive) uit S
+var
+   SOut: String;
+   l   : Word;
+begin
+   SOut := '';
+   for l := 1 to Length(S) do
+      if not (S[l] in ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F']) then
+         SOut := SOut + S[l];
+   Result := SOut;
+end;
+
+function RijndaelEncryptHex(hexstrKey,hexstrIV,hexstrPlain: String; MMo: TMemo = nil): String;
+var
+  InBuf,OutBuf  : array of byte;
+  BufSizeInBytes: Word;
+  KeyBuf        : KeyBuffer;
+  IVBuf         : IVBuffer;
+  l,i           : Integer;
+  Bytes,SOut    : String;
+  DCPR          : TDCP_rijndael;
+begin
+  l := Length(HexStrKey);
+  Assert(l=64,'Key heeft ongeldige lengte (moet 64 chars zijn): ' + IntToStr(l));
+  Assert(FilterHex(HexStrKey) = '','Key heeft ongeldige tekens: ' + HexStrKey);
+  l := Length(HexStrIV);
+  Assert(l=32,'IV heeft ongeldige lengte (moet 32 chars zijn): ' + IntToStr(l));
+  Assert(FilterHex(HexStrIV) = '','IV heeft ongeldige tekens: ' + HexStrIV);
+  Assert(FilterHex(hexstrPlain) = '','Plaintext heeft ongeldige tekens: ' + hexstrPlain);
+  l := Length(hexstrPlain);
+  Assert(l MOD 2 = 0,'Plaintext heeft oneven lengte: ' + hexstrPlain);
+  if Mmo<> nil then begin
+    Mmo.Lines.Add('Key: ' + hexstrKey);
+    Mmo.Lines.Add('IV: ' + hexstrIV);
+    Mmo.Lines.Add('Plaintext: ' + hexstrPlain);
+    end;
+  l := Length(hexstrKey) DIV 2;
+  for i := 1 to l do KeyBuf[i] := HexToInt(Copy(hexstrKey,2*(i-1)+1,2));
+  l := Length(hexstrIV) DIV 2;
+  for i := 1 to l do IVBuf[i] := HexToInt(Copy(hexstrIV,2*(i-1)+1,2));
+  // Pad with zeroes:
+  while Length(hexstrPlain) MOD 32 <> 0 do hexstrPlain := hexstrPlain + '00';
+  BufSizeInBytes := Length(hexstrPlain) DIV 2;
+  SetLength(InBuf,BufSizeInBytes);
+  SetLength(OutBuf,BufSizeInBytes);
+  for i := 0 to BufSizeInBytes-1 do InBuf[i] := HexToInt(Copy(hexstrPlain,2*i+1,2));
+  DCPR := TDCP_rijndael.Create(nil);
+  DCPR.Init(KeyBuf,256,@IVBuf);
+  DCPR.EncryptCBC(InBuf[0],OutBuf[0],BufSizeInBytes);
+  DCPR.Burn; // Leeg memory buffers voor security
+  DCPR.Free;
+  SOut := '';
+  for i := 0 to BufSizeInBytes-1 do begin SOut := SOut + Chr(OutBuf[i]); Bytes := Bytes + IntToStr(OutBuf[i]) + ' '; end;
+  if Mmo<> nil then begin
+    Mmo.Lines.Add('Cyphertext (bytes): ' + Bytes);
+    Mmo.Lines.Add('Cyphertext (base64): ' + Base64EncodeStr(SOut));
+    end;
+  SOut := LowerCase(StringToHex(SOut));
+  if Mmo<> nil then begin
+    Mmo.Lines.Add('Cyphertext (hex): ' + SOut);
+    Mmo.Lines.Add('');
+    end;
+  Result := SOut;
+end; { RijndaelEncryptHex }
+
+
+function RijndaelDecryptHex(hexstrKey,hexstrIV,hexstrCypher: String; MMo: TMemo = nil): String;
+var
+  InBuf,
+  OutBuf: array of byte;
+  BufSizeInBytes : Word;
+  KeyBuf: KeyBuffer;
+  IVBuf : IVBuffer;
+  l,i   : Integer;
+  SOut  : String;
+  DCPR  : TDCP_rijndael;
+begin
+  l := Length(HexStrKey);
+  Assert(l=64,'Key heeft ongeldige lengte (moet 64 chars zijn): ' + IntToStr(l));
+  Assert(FilterHex(HexStrKey) = '','Key heeft ongeldige tekens: ' + HexStrKey);
+  l := Length(HexStrIV);
+  Assert(l=32,'IV heeft ongeldige lengte (moet 32 chars zijn): ' + IntToStr(l));
+  Assert(FilterHex(HexStrIV) = '','IV heeft ongeldige tekens: ' + HexStrIV);
+  Assert(FilterHex(hexstrCypher) = '','Cyphertext heeft ongeldige tekens: ' + hexstrCypher);
+  l := Length(hexstrCypher);
+  Assert(l MOD 2 = 0,'Cyphertext heeft oneven lengte: ' + hexstrCypher);
+  if Mmo<> nil then begin
+    Mmo.Lines.Add('Key: ' + hexstrKey);
+    Mmo.Lines.Add('IV: ' + hexstrIV);
+    Mmo.Lines.Add('CypherText: ' + hexstrCypher);
+    end;
+  l := Length(hexstrKey) DIV 2;
+  for i := 1 to l do KeyBuf[i] := HexToInt(Copy(hexstrKey,2*(i-1)+1,2));
+  l := Length(hexstrIV) DIV 2;
+  for i := 1 to l do IVBuf[i] := HexToInt(Copy(hexstrIV,2*(i-1)+1,2));
+  // Pad with zeroes:
+  BufSizeInBytes := Length(hexstrCypher) DIV 2;
+  SetLength(InBuf,BufSizeInBytes);
+  SetLength(OutBuf,BufSizeInBytes);
+  for i := 0 to BufSizeInBytes-1 do InBuf[i] := HexToInt(Copy(hexstrCypher,2*i+1,2));
+  DCPR := TDCP_rijndael.Create(nil);
+  DCPR.Init(KeyBuf,256,@IVBuf);
+  DCPR.DecryptCBC(InBuf[0],OutBuf[0],BufSizeInBytes);
+  DCPR.Burn;
+  DCPR.Free;
+  SOut := '';
+  for i := 0 to BufSizeInBytes-1 do SOut := SOut + Chr(OutBuf[i]);
+  SOut := LowerCase(StringToHex(SOut));
+  if Mmo<> nil then begin
+    Mmo.Lines.Add('Plaintext (hex): ' + SOut);
+    Mmo.Lines.Add('');
+  end;
+  Result := SOut;
+end; { RijndaelDecryptHex }
+
+end.

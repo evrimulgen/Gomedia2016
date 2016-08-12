@@ -1,0 +1,133 @@
+unit ReportModuleUnit;
+
+interface
+
+uses
+  SysUtils, Classes, RpRave, RpDefine, RpCon, RpConDS, ClientDMUnit,
+  RpRenderHTML, RpRender, RpRenderPDF, RpBase, RpFiler, RpRenderCanvas,
+  RpRenderPrinter, RpRenderPreview, RpFormPreviewCustom, RpFormPreview, RpSystem, dtformsetup, forms, controls;
+
+type
+  TReportModule = class(TDataModule)
+    RvDataSetConnectionStock: TRvDataSetConnection;
+    RvProject: TRvProject;
+    RvDataSetConnectionInventory: TRvDataSetConnection;
+    RvDataSetConnectionSales: TRvDataSetConnection;
+    RvDataSetConnectionItemsSold: TRvDataSetConnection;
+    RvDataSetConnectionShops: TRvDataSetConnection;
+    RvDataSetConnectionInvoices: TRvDataSetConnection;
+    RvDataSetConnectionInvoicesItems: TRvDataSetConnection;
+    RvDataSetConnectionCustomers: TRvDataSetConnection;
+    RvDataSetConnectionAddressBook: TRvDataSetConnection;
+    RvDataSetConnectionCountry: TRvDataSetConnection;
+    RvSystem: TRvSystem;
+    RvRenderPDF: TRvRenderPDF;
+    RvDataSetConnectionAlerts: TRvDataSetConnection;
+    RvDataSetConnectionRentLate: TRvDataSetConnection;
+    RvNDRWriter: TRvNDRWriter;
+    RvDataSetConnectionInventoryErrors: TRvDataSetConnection;
+    RvDataSetConnectionRepair: TRvDataSetConnection;
+    procedure RvSystemOverrideSetup(ReportSystem: TRvSystem;
+      OverrideMode: TOverrideMode; var OverrideForm: TForm);
+    procedure RvSystemOverridePreview(ReportSystem: TRvSystem;
+      OverrideMode: TOverrideMode; var OverrideForm: TForm);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ReportModule: TReportModule;
+
+implementation
+
+{$R *.dfm}
+
+procedure TReportModule.RvSystemOverrideSetup(ReportSystem: TRvSystem;
+  OverrideMode: TOverrideMode; var OverrideForm: TForm);
+begin
+  case
+    OverrideMode of
+    omCreate:
+      begin
+        OverrideForm := TdtSetupForm.Create(nil);
+        OverrideForm.Caption := RvSystem.TitleSetup;
+        (OverrideForm as TdtSetupForm).ReportSystem := ReportSystem;
+      end;
+    omShow:
+      begin
+        with OverrideForm as TdtSetupForm, ReportSystem do
+        begin
+          PreviewSetup := False;
+          Aborted := ShowModal = mrCancel;
+        end;
+      end;
+    omWait:
+      begin
+	{because showModal: no wait necessary!}
+      end;
+    omFree:
+      begin
+        OverrideForm.Free;
+      end;
+  end;
+
+end;
+
+procedure TReportModule.RvSystemOverridePreview(ReportSystem: TRvSystem;
+  OverrideMode: TOverrideMode; var OverrideForm: TForm);
+begin
+begin { OverridePreviewProc }
+  case OverrideMode of
+    omCreate: begin
+      OverrideForm := TDavPreviewForm.Create(self);
+      OverrideForm.Caption := ReportSystem.TitlePreview;
+      OverrideForm.Width := ReportSystem.SystemPreview.FormWidth;
+      OverrideForm.Height := ReportSystem.SystemPreview.FormHeight;
+      OverrideForm.WindowState := ReportSystem.SystemPreview.FormState;
+      (OverrideForm as TDavPreviewForm).ReportSystem := ReportSystem;
+//      (OverrideForm as TRavePreviewForm).OnAfterPreviewPrint := OnAfterPreviewPrint;
+    end;
+    omShow: begin
+//      (OverrideForm as TRavePreviewForm).RvRenderPrinter.MacroData.Assign(StorageMacroData);
+//      (OverrideForm as TRavePreviewForm).RvRenderPreview.MacroData.Assign(StorageMacroData);
+//      (OverrideForm as TRavePreviewForm).RvRenderPrinter.OnDecodeImage := OnDecodeImage;
+//      (OverrideForm as TRavePreviewForm).RvRenderPreview.OnDecodeImage := OnDecodeImage;
+
+      ReportSystem.SystemPreview.InitPreview((OverrideForm as TDavPreviewForm).RvRenderPreview);
+//      if Assigned(OnPreviewSetup) then begin
+//        OnPreviewSetup((OverrideForm as TRavePreviewForm).RvRenderPreview);
+//      end; { if }
+
+      (OverrideForm as TDavPreviewForm).InputFileName := ReportSystem.SystemFiler.Filename;
+      (OverrideForm as TDavPreviewForm).InputStream := ReportSystem.SystemFiler.Stream;
+      (OverrideForm as TDavPreviewForm).InitFromRPSystem;
+    (* *)
+      if soPreviewModal in ReportSystem.SystemOptions then begin
+        OverrideForm.ShowModal;
+      end else begin
+        OverrideForm.Show;
+      end; { else }
+    end;
+    omWait: begin
+      if not (soPreviewModal in ReportSystem.SystemOptions) then begin
+      // Wait for close
+        repeat
+          Sleep(250);
+          Application.ProcessMessages;
+        until not OverrideForm.Visible;
+      end; { if }
+    end;
+    omFree: begin
+      if (ReportSystem.SystemFiler.StreamMode in [smTempFile,smFile]) then begin
+        (OverrideForm as TDavPreviewForm).RvRenderPreview.NDRStream.Free;
+        (OverrideForm as TDavPreviewForm).RvRenderPreview.NDRStream := nil;
+      end; { if }
+      FreeAndNil(OverrideForm);
+    end;
+  end; { case }
+end;  { OverridePreviewProc }
+end;
+
+end.

@@ -1,0 +1,35 @@
+program GoMediaWBImporter;
+
+uses
+  Forms,
+  WBImporterUnit in 'formsunits\WBImporterUnit.pas' {FormWBImporterMain},
+  ClientDMunit in 'formsunits\ClientDMunit.pas' {RemoteDB: TDataModule},
+  ReconcileFRMUnit in 'formsunits\ReconcileFRMUnit.pas' {ReconcileErrorForm},
+  DavidUtilsunit in 'units\DavidUtilsunit.pas',
+  GlobalsUnit in 'units\GlobalsUnit.pas',
+  WinbooksExport in 'units\WinbooksExport.pas',
+  CashRegistryFRMUnit in 'formsunits\CashRegistryFRMUnit.pas' {FormCashRegister},
+  WinbooksOfficeApi_TLB in 'units\WinbooksOfficeApi_TLB.pas',
+  COPTRLib_TLB in 'units\COPTRLib_TLB.pas',
+  DLLsucdapi in 'units\DLLsucdapi.pas',
+  Vcl.Themes,
+  Vcl.Styles,
+  Threadsunit in 'units\Threadsunit.pas',
+  ExitLibFRMUnit in 'formsunits\ExitLibFRMUnit.pas' {FormExitLibrary},
+  QExport4DBFPATCH in 'units\QExport4DBFPATCH.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+
+  DBHOSTNAME:='sql.smartoys.be';
+  DBUSER:='gomedia';
+  DBNAME:='c_smartoys';
+  DBPWD:='DhQKR79Lyce56vtB';
+  TStyleManager.TrySetStyle('Slate Classico');
+  Application.CreateForm(TFormWBImporterMain, FormWBImporterMain);
+  Application.CreateForm(TFormCashRegister, FormCashRegister);
+  Application.Run;
+end.
