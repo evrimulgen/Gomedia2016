@@ -37,7 +37,7 @@ uses clientDMUnit;
 
 procedure TChangeEANForm.BitBtnOkClick(Sender: TObject);
 begin
-  if Checkean(EditNewModel.Text) then
+  if ValidateModel(EditNewModel.Text) then
   begin
     RemoteDB.ChangeEAN(EditOldModel.Text, EditNewModel.Text);
   end else begin

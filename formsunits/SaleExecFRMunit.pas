@@ -520,6 +520,21 @@ begin
    end;
 
 
+   // vérification à jour des annulations
+   begin
+              with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+                for nowrow := 1 to Rowcount - 2 do
+                begin
+                  if Trim(Cells[10, nowrow]) <> '' then
+                  begin
+                    if not RemoteDB.SetItemSoldAsRefunded(Trim(Cells[10, nowrow]), -StrToInt(Cells[2 , Nowrow]), false) then begin
+                       ShowMessage('Impossible d''annuler ' + Cells[1, nowrow] +' operation intérompue.');
+                        cancontinue:=False;
+                    end;
+                    end;
+                  end;
+            end;
+
 
 
   if cancontinue = False then
@@ -704,6 +719,21 @@ begin
                   end;
                 end;
             end;
+
+            // Mise à jour des annulations
+            dxStatusBar1.Panels[1].Text := 'Mise à jour des annulations';
+            begin
+              with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+                for nowrow := 1 to Rowcount - 2 do
+                begin
+                  if Trim(Cells[10, nowrow]) <> '' then
+                  begin
+                    if not RemoteDB.SetItemSoldAsRefunded(Trim(Cells[10, nowrow]), -StrToInt(Cells[2 , Nowrow]), true) then
+                       ShowMessage('Erreur durant l''annulation de ' + Cells[1, nowrow]);
+                    end;
+                  end;
+            end;
+
 
             { mise à jour du stock -- Ne pas déplacer le code plus haut }
             dxStatusBar1.Panels[1].Text := 'Mise à jour du stock';

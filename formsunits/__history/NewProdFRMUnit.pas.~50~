@@ -267,11 +267,6 @@ begin
     messagedlg('Modèle du produit non valide', mtwarning, [mbok], 0);
     exit;
   end;
-  if Length(Trim(RemoteDB.Products.FieldByName('products_model').asstring)) < 11 then
-  begin
-    messagedlg('Modèle du produit non valide min 11 charactères', mtwarning, [mbok], 0);
-    exit;
-  end;
   if (RemoteDB.CDSProDescFR.FieldByName('products_name').asstring = '') and (RemoteDB.CDSProDescNL.FieldByName('products_name').asstring = '') then
   begin
     messagedlg('Nom du produit invalide', mtwarning, [mbok], 0);

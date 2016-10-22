@@ -76,6 +76,7 @@ type
     function CheckSaldo: Boolean;
     function BookESD(GridIndex:integer): Boolean;
     procedure CreateParams(var Params: TCreateParams); override;
+    procedure UpdateLabels;
     { Private declarations }
   public
     { Public declarations }
@@ -196,13 +197,28 @@ begin
   end;
 end;
 
-procedure TFormProcessSale.PaymentModeEditChange(Sender: TObject);
-var
-  a, b, c, tot, visa, bct, voucher, bank: double;
+procedure TFormProcessSale.UpdateLabels();
 begin
   Labelpaid.Caption := FloatToStrf(NumberEditCash.Value + NumberEditBCT.Value + NumberEditBank.Value + NumberEditVisa.Value + NumberEditVoucher.Value,
     fffixed, 7, 2);
   Labelsolde.Caption := FloatToStrf(strtofloat(LabelTotal.Caption) - strtofloat(Labelpaid.Caption), fffixed, 7, 2);
+
+  if POSBANK then begin
+  if strtofloat(Labelsolde.Caption) < strtofloat(LabelTotal.Caption)  then begin
+    aCustomerDisplay.LabelTotalText.Caption      := 'Solde : ' + Labelsolde.Caption;
+  end else begin
+      aCustomerDisplay.LabelTotalText.Caption      := 'Total : ' + LabelTotal.Caption;
+  end;
+  end;
+
+end;
+
+procedure TFormProcessSale.PaymentModeEditChange(Sender: TObject);
+var
+  a, b, c, tot, visa, bct, voucher, bank: double;
+begin
+
+  UpdateLabels;
 
   bank    := NumberEditBank.Value;
   bct     := NumberEditBCT.Value;
@@ -255,9 +271,7 @@ begin
     end;
   end;
 
-  Labelsolde.Caption := FloatToStrf(strtofloat(LabelTotal.Caption) - strtofloat(Labelpaid.Caption), fffixed, 7, 2);
-  Labelpaid.Caption  := FloatToStrf(NumberEditCash.Value + NumberEditBCT.Value + NumberEditBank.Value + NumberEditVisa.Value + NumberEditVoucher.Value,
-    fffixed, 7, 2);
+  UpdateLabels;
 
 end;
 
@@ -351,16 +365,19 @@ var
   ESDGate: EsdSoap;
   EsdAuth: ESD.ESDAuth2;
   nowrow : Integer;
+   model  : string;
 begin
     try
       Result := true;
       ESDGate     := GetEsdSoap();
-      if ESDGate.Identify(MainForm.Parameter['CLDLogin'], MainForm.Parameter['CLDPass']) then
+      if ESDGate.Identify(GlobalsUnit.CLDLogin, GlobalsUnit.CLDPass) then
       begin
-
         with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
           for nowrow := 1 to Rowcount - 2 do
           begin
+            model := (TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[Gridindex]).Cells[0, nowrow]);
+            if RemoteDB.Products.Locate('products_model', model, [locaseinsensitive]) then
+            if RemoteDB.Products.FieldByName('products_esd').AsInteger = 1 then
             if ( (Cells[9, nowrow]).Length < 32) and (Cells[2, nowrow] = '1') then begin
 
             EsdAuth := ESDGate.Booktoken(Cells[0, nowrow],RemoteDB.netshop_sales.FieldByName('sales_location').AsString + '-' +
@@ -381,12 +398,32 @@ begin
             end;
           end;
       end else begin
-        ShowMessage('Login ESD impossible');
+        ShowMessage('Login ESD impossible les produits esd sont retirés du panier');
+        with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+          for nowrow := 1 to Rowcount - 2 do
+          begin
+            model := (TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[Gridindex]).Cells[0, nowrow]);
+            if RemoteDB.Products.Locate('products_model', model, [locaseinsensitive]) then
+            if RemoteDB.Products.FieldByName('products_esd').AsInteger = 1 then
+            if ( (Cells[9, nowrow]).Length < 32) and (Cells[2, nowrow] = '1') then begin
+              Cells[2, nowrow] := '0';
+            end;
+          end;
         Result := False;
       end;
 
     except
-      ShowMessage('Erreur de connection au serveur ESD');
+      ShowMessage('Erreur de connection au serveur ESD, les produits esd sont retirés du panier');
+      with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+          for nowrow := 1 to Rowcount - 2 do
+          begin
+            model := (TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[Gridindex]).Cells[0, nowrow]);
+            if RemoteDB.Products.Locate('products_model', model, [locaseinsensitive]) then
+            if RemoteDB.Products.FieldByName('products_esd').AsInteger = 1 then
+            if ( (Cells[9, nowrow]).Length < 32) and (Cells[2, nowrow] = '1') then begin
+              Cells[2, nowrow] := '0';
+            end;
+          end;
       Result := False;
     end;
 end;
@@ -443,7 +480,7 @@ begin
      end;
      try
       ESDGate     := GetEsdSoap();
-      if ESDGate.Identify(MainForm.Parameter['CLDLogin'], MainForm.Parameter['CLDPass']) then
+      if ESDGate.Identify(GlobalsUnit.CLDLogin, GlobalsUnit.CLDPass) then
       begin
 
       end else begin
@@ -461,6 +498,12 @@ begin
       ShowMessage('Impossible de payer par banque sur le client comptoir');
       cancontinue:=False;
     end;
+  end;
+
+    // check vente banque sur compte client magasin
+  if NumberEditCash.Value>3000 then begin
+      ShowMessage('Interdit de payer plus de 3000 euros en Cash');
+      cancontinue:=False;
   end;
 
   // Checksales
@@ -534,8 +577,10 @@ begin
                 RemoteDB.Products.Locate('products_model', Cells[0, nowrow], []);
 
                 if (strtofloat(Cells[7, nowrow]) < 99999) and (strtofloat(Cells[8, nowrow]) < 99999) then
-                    begin // Si produit neuf
-                      RemoteDB.netshop_items_sold.FieldByName('items_sold_loyalty').AsInteger := RemoteDB.Products.FieldByName('products_points').AsInteger;
+                    begin // Si produit neuf et que le prix n'est pas changé
+                    if RemoteDB.Products.Locate('products_model', Cells[0, nowrow], [locaseinsensitive]) then
+                      if (strtofloat(Cells[4, nowrow]))>=((Round(RemoteDB.GetPriceTTC(RemoteDB.Productsproducts_model.Text, RemoteDB.Productsproducts_price.AsFloat ) * 99) / 100)) then
+                        RemoteDB.netshop_items_sold.FieldByName('items_sold_loyalty').AsInteger := RemoteDB.Products.FieldByName('products_points').AsInteger;
                 end else begin // Si porduit occasion
                       RemoteDB.netshop_items_sold.FieldByName('items_sold_loyalty').AsInteger := 0;
                 end;
@@ -613,10 +658,14 @@ begin
                 end;
               end;
               // New System
-              for nowrow := 1 to Rowcount - 2 do
-                begin
-
-                end;
+              // New System
+              for nowrow := 1 to Rowcount - 2 do begin
+                  if Cells[0, nowrow]='LOYALTY500' then begin
+                      RemoteDB.Customers.Edit;
+                      RemoteDB.Customers.FieldByName('customers_loyalty').AsFloat := RemoteDB.Customers.FieldByName('customers_loyalty').AsFloat + (LoyaltyThreshold*StrToInt(Cells[2, Nowrow]));
+                      RemoteDB.Customers.Post;
+                  end;
+              end;
             end;
 
 
@@ -632,67 +681,6 @@ begin
               RemoteDB.netshop_items_sold.Next;
             end;
             RemoteDB.Customers.Post;
-
-            { Impression Ticket }
-            { Ancienne procédure ticket
-              dxStatusBar1.Panels[1].Text:='Impression ticket';
-              if ((MainForm.Parameter['PrintersTicketEnabled']='TRUE') and (Ticket)) then begin
-              TicketToPrint:=TTicketJob.Create(self);
-              try
-              TicketToPrint.Printer:=Mainform.Parameter['PrintersTicketPrinter'];
-              TicketToPrint.Logo:=PrintLogo;
-              TicketToPrint.Url:=WEBURL;
-              TicketToPrint.ID:=RemoteDB.netshop_sales.FieldByName('sales_location').AssTring+'-'+RemoteDB.netshop_sales.FieldByName('sales_id').AssTring;
-              TicketToPrint.ShopData:=ShopDataList;
-              if Mainform.Parameter['PrintersTicketContinuous']='TRUE' then TicketToPrint.Model:=TmContinuous;
-              TicketToPrint.AddBox('Vente',True,bsProd);
-              with TadvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[GridIndex])do
-              for NowRow:=1 To Rowcount-2 do begin
-              TicketToPrint.AddLine(Cells[2,NowRow],Cells[4,NowRow],Cells[1,NowRow],'Vente');
-              if RemoteDB.Products.FindKey([Cells[0,NowRow]]) then begin
-              if ((StrToInt(Cells[7,NowRow])<100000) and (StrToInt(Cells[8,NowRow])<100000)) then begin
-
-              if RemoteDB.netshop_warranty.FindKey([RemoteDB.Productsproducts_warranty_id.Value])then begin
-              if RemoteDB.netshop_warranty.FieldByName('warranty_validity').Value>0 then begin
-              TicketToPrint.AddLine('','',RemoteDB.netshop_warranty.FieldByName('warranty_description').Value,'Vente',True);
-              end;
-              end;
-              end; // if occasion
-              end; // if produit existe dans la DB
-              end;
-
-              if NumberEditCash.Value>0 then begin
-              TicketToPrint.AddFinancialLine('Liquide :',NumberEditCash.Value);
-              end;
-              if NumberEditBCT.Value>0 then begin
-              TicketToPrint.AddFinancialLine('Carte de banque :',NumberEditBct.Value);
-              end;
-              if NumberEditVisa.Value>0 then begin
-              TicketToPrint.AddFinancialLine('Carte de crédit :',NumberEditVisa.Value);
-              end;
-              if NumberEditBank.Value>0 then begin
-              TicketToPrint.AddFinancialLine('Porte monnaie :',NumberEditBank.Value);
-              end;
-              if NumberEditVoucher.Value>0 then begin
-              TicketToPrint.AddFinancialLine('Bon achat :',NumberEditVoucher.Value);
-              end;
-              if Strtofloat(LabelSolde.Caption)<0 then begin
-              TicketToPrint.AddFinancialLine('Rendu :',-Strtofloat(LabelSolde.Caption));
-              end;
-
-              if RemoteDB.CustomersCustomers_nbr.Value > 100 then begin
-              TicketToPrint.AddCustomerLine('Client # :',RemoteDB.CustomersCustomers_nbr.Text);
-              TicketToPrint.AddCustomerLine('Nom :',RemoteDB.CustomersCustomers_lastname.Text);
-              TicketToPrint.AddCustomerLine('Crédit :',RemoteDB.CustomersCustomers_credit.Text);
-              TicketToPrint.AddCustomerLine('Points :',RemoteDB.CustomersCustomers_points.Text);
-              end;
-
-              if Mainform.Parameter['PrintersTicketOpos']='TRUE' then  TicketToPrint.PrintOpos else TicketToPrint.Print;
-              finally
-              TicketToPrint.Free;
-              end;
-              end;
-            }
 
             // Notification clients dépôt
             dxStatusBar1.Panels[1].Text := 'Envoi des mails produits en dépôt';

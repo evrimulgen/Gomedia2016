@@ -986,7 +986,6 @@ type
     cxgrdbclmnGrid5DBTableView1items_refunded_owner_id: TcxGridDBColumn;
     cxgrdbclmnGrid5DBTableView1items_refunded_supplier_id: TcxGridDBColumn;
     cxgrdbclmnGrid5DBTableView1items_refunded_date_in: TcxGridDBColumn;
-    dtp1: TDateTimePicker;
     dxBarSubItem7: TdxBarSubItem;
     ReportCoupons: TdxBarSubItem;
     RaportCoupons: TdxBarButton;
@@ -2254,15 +2253,16 @@ begin
       with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page]).Controls[index]) do
       begin
         Nowrow           := RowCount - 1;
-        Cells[0, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString;
-        Cells[1, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString;
-        Cells[2, Nowrow] := '-' + RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsString;;
-        Cells[3, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_ht').AsString;
-        Cells[4, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsString;
-        Cells[5, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsString;
-        Cells[6, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').AsString;
-        Cells[7, Nowrow] := inttostr(ConnectedShop);
-        Cells[8, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsString;;
+        Cells[0 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString;
+        Cells[1 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString;
+        Cells[2 , Nowrow] := '-' + RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsString;;
+        Cells[3 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_ht').AsString;
+        Cells[4 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsString;
+        Cells[5 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsString;
+        Cells[6 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').AsString;
+        Cells[7 , Nowrow] := inttostr(ConnectedShop);
+        Cells[8 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsString;
+        Cells[10, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_id').AsString;;
         RowCount         := Nowrow + 2;
       end;
     end else begin
@@ -12603,7 +12603,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           FixedRows                := 1;
           StdGridWidth             := 85;
           RowCount                 := 2;
-          ColCount                 := 10;
+          ColCount                 := 11;
           NewGrid.options          := options + [gorowselect];
           Flat                     := False;
           AutoNumAlign             := True;
@@ -12619,11 +12619,13 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           Cells[7, 0]              := 'Propriétaire';
           Cells[8, 0]              := 'Fournisseur';
           Cells[9, 0]              := 'Esd guid';
+          Cells[10, 0]              := 'Link ID';
           for Count                := 0 to ColCount - 1 do
           begin
             ColWidths[Count] := StdGridWidth;
           end;
           ColWidths[9] := 0;
+          ColWidths[10] := 0;
           ColWidths[1] := ClientWidth - StdGridWidth * (ColCount - 1);
           Refresh;
           Repaint;

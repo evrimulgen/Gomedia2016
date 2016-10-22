@@ -795,6 +795,7 @@ type
     function CalcInvoiceTVABase(TaxClassRate: integer): double;
     procedure CheckExtStock(Model: string; var Ingroup, outgroup: integer);
     procedure UpdateSmsMessage(aSmsMessage: TSmsMessage);
+    function SetItemSoldAsRefunded(items_sold_id:string;quantity :integer;credit:boolean):Boolean;
     function GetSmsMessage: TSmsMessage;
     procedure LoadDB;
     procedure Synchronise;
@@ -2129,6 +2130,31 @@ begin
   end;
 end;
 
+function TRemoteDB.SetItemSoldAsRefunded(items_sold_id: string; quantity : integer; credit : boolean):Boolean;
+var
+  CloneDS: TClientDataSet;
+begin
+  CloneDS := TClientDataSet.Create(nil);
+  try
+    Result := False;
+    CloneDS.CloneCursor(Self.netshop_items_sold, True);
+    if  CloneDS.Locate('items_sold_id',items_sold_id,[loCaseInsensitive]) then begin
+     if (CloneDS.FieldByName('items_sold_quantity').Value - CloneDS.FieldByName('items_refunded').Value) > 0 then begin
+      if credit then begin
+        CloneDS.Edit;
+        CloneDS.FieldByName('items_refunded').Value := CloneDS.FieldByName('items_refunded').Value + quantity ;
+        CloneDS.Post;
+      end;
+      Result := true;
+     end;
+    end;
+  finally
+    CloneDS.Free;
+  end;
+end;
+
+
+
 procedure TRemoteDB.SetItemsRefundedtoRefunds;
 begin
   with netshop_items_refunded do
@@ -2749,6 +2775,13 @@ procedure TRemoteDB.ChangeEAN(OldModel, NewModel: string);
 var
   OldID: Variant;
 begin
+
+if not CheckEan(NewModel) then begin
+ ShowMessage('Nouvel EAN non valide mise à jour annulée');
+ Exit;
+end;
+
+
   try
     if ((self.CDSProDescFR.fieldbyname('Products_id').Value <> null) and (CheckEan(NewModel))) then
     begin
@@ -2771,11 +2804,15 @@ begin
     CDSProDescFR.delete;
   end;
 
+
   OldID := self.Products.fieldbyname('products_id').Value;
 
   self.Products.Edit;
   self.Products.fieldbyname('Products_Model').Value := NewModel;
   self.Products.Post;
+
+  Self.netshop_customers_alerts.ApplyUpdates(-1);
+  Self.netshop_stock.ApplyUpdates(-1);
 
   SQLUpdateProductsVelocity.CommandText := 'UPDATE netshop_customers_alerts SET customers_alerts_products_model=' + QuotedStr(NewModel) +
     ' WHERE customers_alerts_products_model=' + QuotedStr(OldModel);
@@ -2785,18 +2822,15 @@ begin
     + VarToStr(OldID);
   SQLUpdateProductsVelocity.ExecSQL(False);
 
-  netshop_customers_alerts.Filter   := 'customers_alerts_products_model=' + QuotedStr(OldModel);
-  netshop_customers_alerts.Filtered := True;
-  netshop_customers_alerts.First;
-  while not self.netshop_customers_alerts.Eof do
-  begin
-    netshop_customers_alerts.Edit;
-    netshop_customers_alerts.fieldbyname('customers_alerts_products_model').Value := NewModel;
-    netshop_customers_alerts.Post;
-  end;
-  self.netshop_customers_alerts.Filtered := False;
+  SQLUpdateProductsVelocity.CommandText := 'UPDATE netshop_stock SET product_model=' + QuotedStr(NewModel) + ' WHERE product_model='
+    + QuotedStr(OldModel);
 
-end;
+  SQLUpdateProductsVelocity.ExecSQL(False);
+
+  Self.netshop_customers_alerts.refresh();
+  Self.netshop_stock.refresh();
+
+  end;
 
 procedure TRemoteDB.CheckCategories;
 begin

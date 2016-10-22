@@ -667,6 +667,11 @@ type
     CDSProDescNLproducts_id: TFMTBCDField;
     Productsproducts_model: TStringField;
     Productsproducts_posa: TIntegerField;
+    strngfldSQLDSItemsSolditems_sold_esd_guid: TStringField;
+    strngfld_items_solditems_sold_esd_guid: TStringField;
+    mfldCDSProDescNLproducts_msgticket: TMemoField;
+    mfldCDSProDescFRproducts_msgticket: TMemoField;
+    shrtntfld_customers_alertscustomers_alerts_dwnpay: TShortintField;
 
     procedure netshop_customers_alertsNewRecord(DataSet: TDataSet);
     procedure netshop_customers_alertsCalcFields(DataSet: TDataSet);
@@ -759,10 +764,14 @@ type
     function GetLocalCache: Boolean;
     procedure SetLocalCache(const Value: Boolean);
     function GetLoging(key: string): Boolean;
+    function GetRootCategoryName(Category_id: integer): string;
+
+
 
 
   public
     { Public declarations }
+    function ChangeCount: Integer;
     function GetRootCategory(Category_id: integer): integer;
     property IsUpdating: Boolean read DBIsUpdating write DBIsUpdating;
     property DatasetsCount: integer read GetDatasetsCount;
@@ -786,6 +795,7 @@ type
     function CalcInvoiceTVABase(TaxClassRate: integer): double;
     procedure CheckExtStock(Model: string; var Ingroup, outgroup: integer);
     procedure UpdateSmsMessage(aSmsMessage: TSmsMessage);
+    function SetItemSoldAsRefunded(items_sold_id:string):Boolean;
     function GetSmsMessage: TSmsMessage;
     procedure LoadDB;
     procedure Synchronise;
@@ -812,7 +822,10 @@ type
     procedure FreeRepairTo;
     procedure SetRefundsToCustomers;
     procedure FreeRefundsTo;
+    procedure SetCouponsToCustomers;
+    procedure FreeCouponsToCustomers;
     procedure FreeItemsRefundedTo;
+    procedure SetItemsRefundedtoRefunds;
     procedure SetAddress_bookToCustomers;
     procedure FreeAddress_booktoCustomers;
     procedure SetRentToCustomers;
@@ -1132,6 +1145,15 @@ const
 
 {$R *.DFM}
 
+function FloatToStrWithDecimalPoint(const Value: Extended; const Format: String = '0.###'): String;
+var
+  myFormatSettings: TFormatSettings;
+begin
+  GetLocaleFormatSettings(GetThreadLocale, myFormatSettings);
+  myFormatSettings.DecimalSeparator := '.';
+  Result := FormatFloat(Format, Value, myFormatSettings);
+end;
+
 function TRemoteDB.GetNextCustomersId(DataSet: TCustomClientDataSet; const PrimaryKey: string): integer;
 var
   CloneDS: TClientDataSet;
@@ -1444,6 +1466,7 @@ begin
   DataSet.fieldbyname('customers_alerts_attempts').AsFloat := 0;
   DataSet.fieldbyname('customers_alerts_status').AsFloat   := 0;
   DataSet.fieldbyname('customers_alerts_date_notified').AsFloat := 0;
+  DataSet.fieldbyname('customers_alerts_dwnpay').AsFloat := 0;
 end;
 
 procedure TRemoteDB.Synchronise;
@@ -1493,6 +1516,7 @@ begin
     updatestatus := IsUpdating;
     if not IsUpdating then
       IsUpdating                := True;
+
     customers.Filtered          := False;
     netshop_items_sold.Filtered := False;
     netshop_sales.Filtered      := False;
@@ -1572,24 +1596,27 @@ begin
         exit;
       if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
       begin
-        SaveDataset(TClientDataSet(self.Components[i]), True);
-        with TClientDataSet(self.Components[i]) do
-        begin
-          try
-            // DisableConstraints;
-            // DisableControls;
-            if TClientDataSet(self.Components[i]).ProviderName <> '' then
-            begin
-              if ApplyUpdates(-1) = 0 then
+        if TClientDataSet(self.Components[i]).ChangeCount>0 then begin
+
+          SaveDataset(TClientDataSet(self.Components[i]), True);
+          with TClientDataSet(self.Components[i]) do
+          begin
+            try
+              // DisableConstraints;
+              // DisableControls;
+              if TClientDataSet(self.Components[i]).ProviderName <> '' then
               begin
-                // Refresh;
+                if ApplyUpdates(-1) = 0 then
+                begin
+                  // Refresh;
+                end;
               end;
+            finally
+              SaveDataset(TClientDataSet(self.Components[i]), False);
+              // EnableConstraints;
+              // EnableControls;
+              // Close;
             end;
-          finally
-            SaveDataset(TClientDataSet(self.Components[i]), False);
-            // EnableConstraints;
-            // EnableControls;
-            // Close;
           end;
         end;
       end;
@@ -1598,6 +1625,23 @@ begin
     SQLConnection.Close;
     IsUpdating := updatestatus;
   end;
+end;
+
+function TRemoteDB.ChangeCount:Integer;
+var
+  i: integer;
+
+begin
+  Result:=0;
+    for i := 0 to self.ComponentCount - 1 do begin
+      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+      begin
+        if TClientDataSet(self.Components[i]).ChangeCount>0 then begin
+             Result := Result +  TClientDataSet(self.Components[i]).ChangeCount;
+        end;
+      end;
+    end;
+
 end;
 
 procedure TRemoteDB.ProductsNewRecord(DataSet: TDataSet);
@@ -2013,8 +2057,26 @@ begin
   end;
 end;
 
+procedure TRemoteDB.SetCouponsToCustomers;
+begin
+with CDSCoupons do
+  begin
+    if not((MasterSource = CustomersSRC) and (IndexName = 'CouponsIXCustomers') and (MasterFields = 'customers_nbr')) then
+    begin
+      DisableControls;
+      MasterFields    := '';
+      IndexFieldNames := '';
+      MasterSource    := CustomersSRC;
+      IndexName       := 'CouponsIXCustomers';
+      MasterFields    := 'customers_nbr';
+      EnableControls;
+    end;
+  end;
+end;
+
 procedure TRemoteDB.SetProductstoSuppliersStock;
 begin
+
 end;
 
 procedure TRemoteDB.setsalestoCustomers;
@@ -2063,6 +2125,45 @@ begin
       MasterSource    := SalesSRC;
       IndexName       := 'ItemsIXLocationId';
       MasterFields    := 'sales_location;sales_id';
+      EnableControls;
+    end;
+  end;
+end;
+
+function TRemoteDB.SetItemSoldAsRefunded(items_sold_id: string):Boolean;
+var
+  CloneDS: TClientDataSet;
+begin
+  CloneDS := TClientDataSet.Create(nil);
+  try
+    Result := False;
+    CloneDS.CloneCursor(Self.netshop_items_sold, True);
+    CloneDS.IndexFieldNames := PrimaryKey;
+    if  CloneDS.Locate('items_sold_id',items_sold_id,[loCaseInsensitive]) then begin
+     if CloneDS.FieldByName('items_refunded').Value := 0 then begin
+      CloneDS.Edit;
+      CloneDS.FieldByName('items_refunded').Value := 1 ;
+      CloneDS.Post;
+      Result := true;
+     end;
+    end;
+  finally
+    CloneDS.Free;
+  end;
+end;
+
+procedure TRemoteDB.SetItemsRefundedtoRefunds;
+begin
+  with netshop_items_refunded do
+  begin
+    if not((MasterSource = RefundsSRC) and (IndexName = 'ItemsRefundedIXShopId') and (MasterFields = 'refunds_shop_id;refunds_id')) then
+    begin
+      DisableControls;
+      MasterFields    := '';
+      IndexFieldNames := '';
+      MasterSource    := RefundsSRC;
+      IndexName       := 'ItemsRefundedIXShopId';
+      MasterFields    := 'refunds_shop_id;refunds_id';
       EnableControls;
     end;
   end;
@@ -2422,6 +2523,7 @@ begin
   end;
 end;
 
+
 procedure TRemoteDB.FreeDescTo;
 begin
   with CDSProDescFR do
@@ -2454,6 +2556,18 @@ begin
     netshop_customers_alerts.MasterSource := nil;
     netshop_customers_alerts.MasterFields := '';
     netshop_customers_alerts.EnableControls;
+  end;
+end;
+
+procedure TRemoteDB.FreeCouponsToCustomers;
+begin
+ if not((CDSCoupons.MasterSource = nil) and (CDSCoupons.MasterFields = '') and (CDSCoupons.IndexName = '')) then
+  begin
+    CDSCoupons.DisableControls;
+    CDSCoupons.MasterSource := nil;
+    CDSCoupons.MasterFields := '';
+    CDSCoupons.IndexName    := '';
+    CDSCoupons.EnableControls;
   end;
 end;
 
@@ -2658,6 +2772,13 @@ procedure TRemoteDB.ChangeEAN(OldModel, NewModel: string);
 var
   OldID: Variant;
 begin
+
+if not CheckEan(NewModel) then begin
+ ShowMessage('Nouvel EAN non valide mise à jour annulée');
+ Exit;
+end;
+
+
   try
     if ((self.CDSProDescFR.fieldbyname('Products_id').Value <> null) and (CheckEan(NewModel))) then
     begin
@@ -2680,11 +2801,15 @@ begin
     CDSProDescFR.delete;
   end;
 
+
   OldID := self.Products.fieldbyname('products_id').Value;
 
   self.Products.Edit;
   self.Products.fieldbyname('Products_Model').Value := NewModel;
   self.Products.Post;
+
+  Self.netshop_customers_alerts.ApplyUpdates(-1);
+  Self.netshop_stock.ApplyUpdates(-1);
 
   SQLUpdateProductsVelocity.CommandText := 'UPDATE netshop_customers_alerts SET customers_alerts_products_model=' + QuotedStr(NewModel) +
     ' WHERE customers_alerts_products_model=' + QuotedStr(OldModel);
@@ -2694,18 +2819,15 @@ begin
     + VarToStr(OldID);
   SQLUpdateProductsVelocity.ExecSQL(False);
 
-  netshop_customers_alerts.Filter   := 'customers_alerts_products_model=' + QuotedStr(OldModel);
-  netshop_customers_alerts.Filtered := True;
-  netshop_customers_alerts.First;
-  while not self.netshop_customers_alerts.Eof do
-  begin
-    netshop_customers_alerts.Edit;
-    netshop_customers_alerts.fieldbyname('customers_alerts_products_model').Value := NewModel;
-    netshop_customers_alerts.Post;
-  end;
-  self.netshop_customers_alerts.Filtered := False;
+  SQLUpdateProductsVelocity.CommandText := 'UPDATE netshop_stock SET product_model=' + QuotedStr(NewModel) + ' WHERE product_model='
+    + QuotedStr(OldModel);
 
-end;
+  SQLUpdateProductsVelocity.ExecSQL(False);
+
+  Self.netshop_customers_alerts.refresh();
+  Self.netshop_stock.refresh();
+
+  end;
 
 procedure TRemoteDB.CheckCategories;
 begin
@@ -4930,7 +5052,7 @@ begin
       Products.Post;
   end;
   self.SQLQuery.CommandText := 'CALL `update_product_price`(' + QuotedStr(self.Products.fieldbyname('products_CLD_id').AsString) + ',' +
-    QuotedStr(self.Products.fieldbyname('products_model').Value) + ',' + FloatToStr(Price) + ',0)';
+    QuotedStr(self.Products.fieldbyname('products_model').Value) + ',' + FloatToStrWithDecimalPoint(Price) + ',0)';
   self.SQLQuery.ExecSQL;
 end;
 
@@ -4957,7 +5079,7 @@ begin
     begin
       if Ctax_class.locate('tax_class_id', Cproducts.FieldValues['products_tax_class_id'], []) then
       begin
-        if Ctax_rates.locate('tax_class_id;tax_zone_id', Vararrayof([Cproducts.FieldValues['products_tax_class_id'], 18]), []) then
+        if Ctax_rates.locate('tax_class_id;tax_zone_id', Vararrayof([Cproducts.FieldValues['products_tax_class_id'], GeoZoneTaxId]), []) then
         begin
           Result := round(PriceTTC / (1 + (Ctax_rates.FieldValues['tax_rate'] / 100)) * 1000) / 1000;
         end
@@ -4989,7 +5111,7 @@ begin
     begin
       if Ctax_class.locate('tax_class_id', Cproducts.FieldValues['products_tax_class_id'], []) then
       begin
-        if Ctax_rates.locate('tax_class_id;tax_zone_id', Vararrayof([Cproducts.FieldValues['products_tax_class_id'], 18]), []) then
+        if Ctax_rates.locate('tax_class_id;tax_zone_id', Vararrayof([Cproducts.FieldValues['products_tax_class_id'], GeoZoneTaxId]), []) then
         begin
           Result := round(PriceHT * (1 + (Ctax_rates.FieldValues['tax_rate'] / 100)) * 1000) / 1000;
         end
@@ -5462,6 +5584,34 @@ begin
   end;
 end;
 
+function TRemoteDB.GetRootCategoryName(Category_id: integer): string;
+var
+  CloneDS: TClientDataSet;
+begin
+  CloneDS := TClientDataSet.Create(nil);
+  try
+    Result:='';
+    CloneDS.CloneCursor(Categories, True);
+    CloneDS.IndexFieldNames := 'categories_id';
+    CloneDS.FindKey([Category_id]);
+    while not((CloneDS.fieldbyname('parent_id').Value = 0) or (CloneDS.fieldbyname('parent_id').Value = 116)) do
+    begin
+      if CloneDS.FindKey([CloneDS.fieldbyname('parent_id').Value]) then begin
+       if self.Categories.locate('categories_id', CloneDS.fieldbyname('categories_id').Value, []) then begin
+         if Result='' then
+         Result :=  self.Categories.FieldByName('categories_name').asString
+         else
+         Result :=  self.Categories.FieldByName('categories_name').asString + ' - '  + Result;
+       end;
+      end else begin
+       Exit;
+      end;
+    end;
+  finally
+    CloneDS.Free;
+  end;
+end;
+
 function TRemoteDB.IsArchive(Category_id: integer): Boolean;
 var
   CloneDS: TClientDataSet;
@@ -5537,11 +5687,12 @@ procedure TRemoteDB.Productscategories_idChange(Sender: TField);
 var
   CatName: string;
 begin
-  if self.Categories.locate('categories_id', self.GetMotherCategory(Products.fieldbyname('categories_id').Value), []) then
+  //if self.Categories.locate('categories_id', self.GetMotherCategory(Products.fieldbyname('categories_id').Value), []) then
   begin
-    CatName := self.Categoriescategories_name.AsString;
+    //CatName := self.Categories.FieldByName('categories_name').AsString;
     // Products.Edit;
-    Products.fieldbyname('products_root_category_name').AsString := CatName;
+    //Products.fieldbyname('products_root_category_name').AsString := CatName;
+     Products.fieldbyname('products_root_category_name').AsString := Self.GetRootCategoryName(Products.fieldbyname('categories_id').Value);
     if IsArchive(Products.fieldbyname('categories_id').Value) then
       Products.fieldbyname('products_isobsolete').AsString := 'True'
     else

@@ -747,7 +747,7 @@ object Newproductform: TNewproductform
           UrlStyle.BkColor = clWhite
           UrlStyle.Style = [fsUnderline]
           UseStyler = False
-          Version = '3.1.10.1'
+          Version = '3.4.6.2'
           WordWrap = wwNone
           DataField = 'products_description'
           DataSource = RemoteDB.ProDescFRSRC
@@ -940,7 +940,7 @@ object Newproductform: TNewproductform
           UrlStyle.BkColor = clWhite
           UrlStyle.Style = [fsUnderline]
           UseStyler = False
-          Version = '3.1.10.1'
+          Version = '3.4.6.2'
           WordWrap = wwNone
           DataField = 'products_description'
           DataSource = RemoteDB.ProDescNLSRC
