@@ -24,7 +24,8 @@ object ReorderForm: TReorderForm
     LookAndFeel.Kind = lfUltraFlat
     LookAndFeel.NativeStyle = False
     object Gridview: TcxGridDBTableView
-      NavigatorButtons.ConfirmDelete = False
+      Navigator.Buttons.CustomButtons = <>
+      OnCellDblClick = GridviewCellDblClick
       DataController.DataSource = Source
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <
@@ -105,11 +106,12 @@ object ReorderForm: TReorderForm
           FieldName = 'Rachat'
         end>
       DataController.Summary.SummaryGroups = <>
-      OptionsCustomize.ColumnFiltering = False
+      OptionsData.Deleting = False
+      OptionsData.DeletingConfirmation = False
+      OptionsData.Inserting = False
       OptionsSelection.MultiSelect = True
       OptionsView.ColumnAutoWidth = True
       OptionsView.Footer = True
-      OptionsView.GroupByBox = False
       object GridviewRecId: TcxGridDBColumn
         DataBinding.FieldName = 'RecId'
         Visible = False
@@ -138,11 +140,9 @@ object ReorderForm: TReorderForm
         DataBinding.FieldName = 'Quantity'
         Width = 50
       end
-      object GridviewConfirmBO: TcxGridDBColumn
-        Caption = 'CLD'
-        DataBinding.FieldName = 'ConfirmBO'
-        Options.Editing = False
-        Width = 31
+      object GridviewQSTOCK: TcxGridDBColumn
+        Caption = 'STOCK'
+        DataBinding.FieldName = 'QSTOCK'
       end
       object GridviewGroupAvailable: TcxGridDBColumn
         Caption = 'Dispo In'
@@ -155,6 +155,9 @@ object ReorderForm: TReorderForm
         DataBinding.FieldName = 'Available'
         Options.Editing = False
         Width = 58
+      end
+      object GridviewQCLD: TcxGridDBColumn
+        DataBinding.FieldName = 'QCLD'
       end
     end
     object GridLevel1: TcxGridLevel
@@ -196,7 +199,6 @@ object ReorderForm: TReorderForm
     LookAndFeel.NativeStyle = False
     NotDocking = [dsNone, dsLeft, dsTop, dsRight, dsBottom]
     PopupMenuLinks = <>
-    Style = bmsUseLookAndFeel
     UseSystemFont = True
     Left = 705
     Top = 65535
@@ -414,6 +416,7 @@ object ReorderForm: TReorderForm
     Top = 72
   end
   object dxPSEngineController: TdxPSEngineController
+    PreviewDialogStyle = 'Ribbon'
     Left = 576
     Top = 136
   end
@@ -424,8 +427,8 @@ object ReorderForm: TReorderForm
   object TableData: TdxMemData
     Indexes = <>
     SortOptions = []
-    Left = 96
-    Top = 128
+    Left = 72
+    Top = 104
     object TableDataEAN: TStringField
       FieldName = 'EAN'
       Size = 15
@@ -456,6 +459,12 @@ object ReorderForm: TReorderForm
     end
     object TableDataIDART: TStringField
       FieldName = 'IDART'
+    end
+    object TableDataQCLD: TIntegerField
+      FieldName = 'QCLD'
+    end
+    object TableDataQSTOCK: TIntegerField
+      FieldName = 'QSTOCK'
     end
   end
   object Source: TDataSource

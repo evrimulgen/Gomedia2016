@@ -47,8 +47,6 @@ uses
   cxData, cxDataStorage, cxNavigator, cxDBData, cxImage, dxRibbonSkins,
   dxRibbonCustomizationForm, dxGDIPlusClasses;
 
-function tapiRequestMakeCall(lpszDestAddress, lpszAppName, lpszCalledParty, lpszComment: LPCSTR): DWORD; stdcall;
-
 type
 
   TStringArray = array of string;
@@ -992,6 +990,20 @@ type
     dxBarSubItem7: TdxBarSubItem;
     ReportCoupons: TdxBarSubItem;
     RaportCoupons: TdxBarButton;
+    tsVouchers: TTabSheet;
+    cxgrdCoupons: TcxGrid;
+    cxgrdbtblvwVouchers: TcxGridDBTableView;
+    cxgrdlvl4: TcxGridLevel;
+    cxgrdbclmnVoucherscoupon_code: TcxGridDBColumn;
+    cxgrdbclmnVoucherscoupon_amount: TcxGridDBColumn;
+    cxgrdbclmnVoucherscoupon_minimum_order: TcxGridDBColumn;
+    cxgrdbclmnVoucherscoupon_active: TcxGridDBColumn;
+    cxgrdbclmnVoucherscoupon_start_date: TcxGridDBColumn;
+    cxgrdbclmnVoucherscoupon_expire_date: TcxGridDBColumn;
+    cxgrdbclmnVoucherscoupon_description: TcxGridDBColumn;
+    PopupMenuCoupons: TPopupMenu;
+    CopierBon: TMenuItem;
+    act1: TAction;
 
     procedure MailingExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -1287,6 +1299,7 @@ type
     procedure ParamTreeParamPopup(Sender: TObject; ANode: TTreeNode;
       href: string; values: TStringList; var DoPopup: Boolean);
     procedure RaportCouponsClick(Sender: TObject);
+    procedure CopierBonClick(Sender: TObject);
 
   private
     Data : TManagerData;
@@ -1450,7 +1463,7 @@ begin
     begin
                       with MainForm.AdvAlertWindow.AlertMessages.Add do
                   begin
-                    Text.Text := 'Erreur durant une opération smartcard '+SysErrorMessage(ErrorCode) + ' Error code: 0x' + IntToHex(ErrorCode, 10));
+                    Text.Text := 'Erreur durant une opération smartcard '+SysErrorMessage(ErrorCode) + ' Error code: 0x' + IntToHex(ErrorCode, 10);
                     MainForm.AdvAlertWindow.Show;
                   end;
     end;
@@ -2679,7 +2692,7 @@ begin
       RemoteDB.Shops.Locate('shops_name', ComboBoxDestShop.Text, [locaseinsensitive]);
       DESTSHOP := RemoteDB.Shops.FieldByName('shops_id').AsInteger;
 
-      if (DESTSHOP = ConnectedShop) and (ComboBoxDestShop.ItemIndex = -1) then
+      if (DESTSHOP = ConnectedShop) or (ComboBoxDestShop.ItemIndex = -1) then
       begin
         messagedlg('Destination non valide', mtwarning, [mbok], 0);
         exit;
@@ -3196,6 +3209,9 @@ procedure TMainForm.RaportCouponsClick(Sender: TObject);
         FilterState: Boolean;
       begin
         try
+          ClientsExecute(nil);
+          RemoteDB.FreeCouponsToCustomers;
+
           RemoteDB.Shops.FindKey([ConnectedShop]);
           ReportModule.RvProject.Open;
           ReportModule.RvProject.SelectReport('ReportCoupons', True);
@@ -4457,7 +4473,7 @@ begin
 
   //  check for customer loaylty
   if RemoteDB.customers.FieldByName('customers_nbr').AsInteger > 100000 then begin
-    if RemoteDB.customers.FieldByName('customers_loyalty').AsInteger > LoyaltyThreshold  then begin
+    if (total>0) and (RemoteDB.customers.FieldByName('customers_loyalty').AsInteger >= LoyaltyThreshold)  then begin
       if messagedlg('Le client dispose d''assez de points de fidèlité, veut-il les convertir en bon de réduction ?', mtwarning, [mbyes, mbno], 0) = mrYes then begin
         // Add the reward code the the grid
         if RemoteDB.Products.Locate('products_model','LOYALTY500',[TLocateOption.loCaseInsensitive]) then   begin
@@ -4485,6 +4501,8 @@ begin
                     begin
                       loyaltyprice :=  (Round(RemoteDB.GetPriceTTC(RemoteDB.Products.FieldByName('products_model').Text, RemoteDB.Products.FieldByName('products_price').AsFloat ) * 100) / 100 );
                       QLoyalty := RemoteDB.customers.FieldByName('customers_loyalty').AsInteger div LoyaltyThreshold;
+                      QMax := 0;
+                      if total>0 then
                       QMax := Trunc(total) div Trunc(loyaltyprice) ;
                       Nowrow           := RowCount - 1;
                       Cells[0, Nowrow] := RemoteDB.Products.FieldByName('products_model').Text;
@@ -5697,6 +5715,11 @@ begin
     messagedlg('Imprimante à étiquettes non activée', mtwarning, [mbok], 0);
 end;
 
+procedure TMainForm.CopierBonClick(Sender: TObject);
+begin
+  ClipBoard.AsText := RemoteDB.CDSCoupons.FieldByName('coupon_code').AsString;
+end;
+
 procedure TMainForm.Copiermodle1Click(Sender: TObject);
 begin
   ClipBoard.AsText := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
@@ -6387,6 +6410,7 @@ procedure TMainForm.VenteExecute(Sender: TObject);
 
           RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
 
+
           // SearchString.Enabled:=True;
 
           SButtonSearch.Enabled := True;
@@ -6516,6 +6540,10 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         begin
           RemoteDB.SetRentToCustomers;
           ActionCustomerRentAll.Execute;
+        end;
+        if PageControlCustomers.ActivePage = tsVouchers then
+        begin
+          RemoteDB.SetCouponsToCustomers;
         end;
         if PageControlCustomers.ActivePage = TabSheetCustomersOrders then
         begin
@@ -11723,35 +11751,35 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
       procedure TMainForm.SBReadEIDClick(Sender: TObject);
       var
+        Identity : TEIDIdentity;
+        Address : TEIDAddress;
+        Pic : TEIDPicture;
+        MS : TMemoryStream;
+        Img : TJPEGImage;
         Picture: Variant;
-        WBSTR1, WBSTR2, WBSTR3: Variant;
-        i: Integer;
-        lhandle: Integer;
-        retStatus: IRetStatus;
-        MapColID: IMapCollection;
-        MapColAddress: IMapCollection;
-        MapColPicture: IMapCollection;
-        CertifCheck: ICertifCheck;
-        RawData: Raw;
-        EidLib: TEIDLib;
-        Address, Identity, NationalNumber, Gender: WideString;
+        ReadIdentity, ReadNationalNumber, ReadGender: WideString;
         IsUpdate: Boolean;
 
       begin
-        try
-          // retStatus.Init(Widestring('VIRTUAL'), 0, 0, lhandle)
-          EidLib := TEIDLib.Create(self);
-          // EidLib.ShowAboutBox;
-          retStatus := EidLib.init(WideString(''), 0, 0, lhandle);
-          if retStatus.GetGeneral = 0 then
-          begin
-            retStatus := EidLib.GetID(MapColID, CertifCheck);
-            if retStatus.GetGeneral = 0 then
-            begin
-              Identity       := UTF8ToWideString(MapColID.GetValue(WideString('CardNumber')));
-              NationalNumber := UTF8ToWideString(MapColID.GetValue(WideString('NationalNumber')));
-              Gender         := UTF8ToWideString(MapColID.GetValue(WideString('Gender')));
-              if RemoteDB.Customers.Locate('customers_identity', Identity, [locaseinsensitive]) then
+
+   if not IsEIDCard then
+   begin
+         ShowMessage('La carte détectée dans le lecteur n''est pas une carte d''identité Belge');
+         Exit;
+   end;
+
+    FillChar(Identity, sizeof(TEIDIdentity), 0);
+
+   if ReadIDData(@Identity) then
+   begin
+     FillChar(Address, sizeof(TEIDAddress), 0);
+     ReadAddress(@Address);
+
+      ReadIdentity := Identity.cardNumber;
+      ReadNationalNumber := Identity.nationalNumber;
+      ReadGender := Identity.sex;
+
+                    if RemoteDB.Customers.Locate('customers_identity', ReadIdentity, [locaseinsensitive]) then
               begin
                 IsUpdate := True;
               end else begin
@@ -11763,48 +11791,45 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               else
                 RemoteDB.Customers.Append;
 
-              RemoteDB.Customers.FieldByName('customers_firstname').AsString := UTF8ToWideString(MapColID.GetValue(WideString('FirstName1')));
-              RemoteDB.Customers.FieldByName('customers_Lastname').AsString := UTF8ToWideString(MapColID.GetValue(WideString('Name')));
-              RemoteDB.Customers.FieldByName('customers_nationalnbr').AsString := NationalNumber;
-              RemoteDB.Customers.FieldByName('customers_identity').AsString := Identity;
-              RemoteDB.Customers.FieldByName('customers_gender').AsString := Gender;
-              RemoteDB.Customers.FieldByName('customers_dob').AsDateTime := InvFormatDatetime(UTF8ToWideString(MapColID.GetValue(WideString('BirthDate'))),
-                'yyyymmdd');
+              RemoteDB.Customers.FieldByName('customers_firstname').AsString := Identity.firstName1;
+              RemoteDB.Customers.FieldByName('customers_Lastname').AsString := Identity.name;
+              RemoteDB.Customers.FieldByName('customers_nationalnbr').AsString := ReadNationalNumber;
+              RemoteDB.Customers.FieldByName('customers_identity').AsString := ReadIdentity;
+              RemoteDB.Customers.FieldByName('customers_gender').AsString := ReadGender;
+              RemoteDB.Customers.FieldByName('customers_dob').AsDateTime :=
+              InvFormatDatetime(Identity.birthDate,'yyyymmdd');
               RemoteDB.Customers.Post;
 
-              retStatus := EidLib.GetAddress(MapColAddress, CertifCheck);
-              if retStatus.GetGeneral = 0 then
-              begin
+
                 if IsUpdate then
                   RemoteDB.Address_Book.Edit
                 else
                   RemoteDB.Address_Book.Append;
-                RemoteDB.Address_Bookentry_street_address.AsString := UTF8ToWideString(MapColAddress.GetValue(WideString('Street')));
-                if MapColAddress.GetValue(WideString('HouseNumber')) <> '' then
-                begin
-                  RemoteDB.Address_Bookentry_street_address.AsString := RemoteDB.Address_Bookentry_street_address.Value + ', ' +
-                    UTF8ToWideString(MapColAddress.GetValue(WideString('HouseNumber')));
-                  if MapColAddress.GetValue(WideString('BoxNumber')) <> '' then
-                  begin
-                    RemoteDB.Address_Bookentry_street_address.AsString := RemoteDB.Address_Bookentry_street_address.Value + '/' +
-                      UTF8ToWideString(MapColAddress.GetValue(WideString('BoxNumber')));
-                  end;
-                end;
-                RemoteDB.Address_Bookentry_postcode.Value := UTF8ToWideString(MapColAddress.GetValue(WideString('ZIPCode')));
+                RemoteDB.Address_Bookentry_street_address.AsString :=  Trim(Address.Street);
+                RemoteDB.Address_Bookentry_postcode.Value := Address.zip;
 
-                if RemoteDB.Cities.FindKey([MapColAddress.GetValue(WideString('ZIPCode'))]) then
-                begin // RemoteDB.Cities.Locate('PostCode',RemoteDB.Address_Bookentry_postcode.Value,[]) then begin
-                  RemoteDB.Address_Bookentry_city.Value := RemoteDB.CitiesName.Value;
-                end else begin
-                  RemoteDB.Address_Bookentry_city.AsString := UTF8ToWideString(MapColAddress.GetValue(WideString('Municipality')))
-                end;
-                RemoteDB.Address_Book.Post;
-              end; // End Get Address
-            end; // End Init EID
-          end;
-        finally
-          EidLib.Free;
-        end;
+                RemoteDB.Address_Bookentry_city.Value := Address.municipality;
+
+
+
+   end;
+
+
+   if ReadPictureEx(@Pic) then
+    begin
+       MS := TMemoryStream.Create;
+       MS.Write(Pic.picture, Pic.pictureLength);
+       MS.Position := 0;
+       Img := TJPEGImage.Create;
+       Img.LoadFromStream(MS);
+       // TODO store image in DB
+       Img.Free;
+       MS.Free;
+    end;
+
+
+
+
 
       end;
 
@@ -13467,7 +13492,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           CommandText := CommandText + ' INNER JOIN tax_rates tr ON tr.`tax_class_id`=p.`products_tax_class_id` ';
           CommandText := CommandText + ' WHERE `product_owner_id` >=100000 ';
           CommandText := CommandText + ' AND `product_location` = ' + inttostr(ConnectedShop);
-          CommandText := CommandText + ' AND tax_zone_id=20 ';
+          CommandText := CommandText + ' AND tax_zone_id='+inttostr(GeoZoneTaxId);
           CommandText := CommandText + ' AND p.`products_price` *(1+tr.`tax_rate`/100)*0.85<product_price_stock ';
           CommandText := CommandText + ' ORDER BY products_root_category_name, product_date_in ';
 

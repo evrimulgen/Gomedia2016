@@ -8898,28 +8898,28 @@ procedure TMainForm.OnUSBCDDeviceChange;
                     if not aReorderForm.TableData.Locate('EAN', RemoteDB.CDSQuery.FieldByName('products_model').Value, [locaseinsensitive]) then
                     begin
                       aReorderForm.TableData.Append;
-                      aReorderForm.TableDataEAN.Value := RemoteDB.CDSQuery.FieldByName('products_model').Value;
-                      aReorderForm.TableDataNom.Value := RemoteDB.CDSQuery.FieldByName('products_name').AsString;
-                      aReorderForm.TableDataRootCategoryName.Value := RemoteDB.CDSQuery.FieldByName('products_root_category_name').AsString;
-                      aReorderForm.TableDataQuantity.Value := RemoteDB.CDSQuery.FieldByName('TOORDER').Value;
-                      aReorderForm.TableDataQSTOCK.Value := RemoteDB.CDSQuery.FieldByName('STOCK').Value;
+                      aReorderForm.TableData.FieldByName('EAN').Value := RemoteDB.CDSQuery.FieldByName('products_model').Value;
+                      aReorderForm.TableData.FieldByName('Name').Value := RemoteDB.CDSQuery.FieldByName('products_name').AsString;
+                      aReorderForm.TableData.FieldByName('RootCategoryName').Value := RemoteDB.CDSQuery.FieldByName('products_root_category_name').AsString;
+                      aReorderForm.TableData.FieldByName('Quantity').Value := RemoteDB.CDSQuery.FieldByName('TOORDER').Value;
+                      aReorderForm.TableData.FieldByName('QSTOCK').Value := RemoteDB.CDSQuery.FieldByName('STOCK').Value;
 
                       if not VarIsNull(RemoteDB.Products.FieldByName('products_CLD_id').Value) then
                       begin
-                        aReorderForm.TableDataConfirmBO.Value := True;
-                        aReorderForm.TableDataIDART.Value := RemoteDB.Productsproducts_CLD_id.AsString;
+                        aReorderForm.TableData.FieldByName('ConfirmBO').Value := True;
+                        aReorderForm.TableData.FieldByName('IDART').Value := RemoteDB.Productsproducts_CLD_id.AsString;
                       end else begin
-                        ReorderForm.TableDataIDART.AsString := '00000';
-                        aReorderForm.TableDataConfirmBO.Value := False;
+                        aReorderForm.TableData.FieldByName('IDART').AsString := '00000';
+                        aReorderForm.TableData.FieldByName('ConfirmBO').Value := False;
                       end;
                       RemoteDB.CheckExtStock(RemoteDB.CDSQuery.FieldByName('products_model').Value, InStock, OutStock);
-                      aReorderForm.TableDataGroupAvailable.AsInteger := InStock;
-                      aReorderForm.TableDataAvailable.AsInteger := OutStock;
+                      aReorderForm.TableData.FieldByName('GroupAvailable').AsInteger := InStock;
+                      aReorderForm.TableData.FieldByName('Available').AsInteger := OutStock;
                       aReorderForm.TableData.FieldByName('QCLD').AsInteger := RemoteDB.Products.FieldByName('products_cld_stock').Value;
                       aReorderForm.TableData.Post;
                     end;
             i                    := i + 1;
-            ProgressBar.Position := (i / (RemoteDB.netshop_sales.RecordCount) * 100);
+            ProgressBar.Position := (i / (RemoteDB.CDSQuery.RecordCount) * 100);
             Application.ProcessMessages;
             RemoteDB.CDSQuery.Next;
           end;
