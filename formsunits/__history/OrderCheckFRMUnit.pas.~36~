@@ -101,38 +101,43 @@ begin
 end;
 
 procedure TOrderCheckForm.ButtonSmsClick(Sender: TObject);
-
-
+var
+  asms: tsms;
+  smsid, smsfrom, smsresult, batchid: string;
+  list: widestring;
 begin
-  if  (Length(Trim(EditMessage.Text)) < 10) and (Trim(EditMessage.Text) <> 'Message à envoyer')  then
+  if EditMessage.Text = '' then
   begin
-    MessageDLG('Message Vide ou inférieur à 10 charactères !', mtwarning, [mbOK], 0);
+    MessageDLG('Message Vide !', mtwarning, [mbOK], 0);
     exit;
   end;
-
+  asms := tsms.Create(self);
   try
+    smsid   := asms.Authenticate(MainForm.Parameter['SmsId'], MainForm.Parameter['SmsLogin'], MainForm.Parameter['SmsPassword'], False);
+    smsfrom := clearphonenbr(MainForm.Shopdata4.Text);
 
+    list := '';
     RemoteDB.netshop_customers_alerts.First;
     while not RemoteDB.netshop_customers_alerts.Eof do
     begin
       if RemoteDB.Customers.Locate('customers_nbr', RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString,
         [locaseinsensitive]) then
       begin
-          RemoteDB.netshop_customers_alerts.Append;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := 'MICRO';
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString := 'SMS Message';
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.Customers.FieldByName('customers_nbr').AsString;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 1;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_message').AsString := EditMessage.Text;
-          RemoteDB.netshop_customers_alerts.Post;
+        list := list + RemoteDB.Customerscustomers_fax.AsString + ',';
       end;
       RemoteDB.netshop_customers_alerts.Next;
     end;
 
-    ShowMessage('Les messages sont dans la queue d''envoi');
-
+    asms.smsfrom := smsfrom;
+    batchid      := asms.StartBatch(EditMessage.Text);
+    smsresult    := asms.QuickBatchSend(list);
+    asms.EndBatch;
+    if Length(smsresult) < 30 then
+    begin
+      ShowMessage('Erreur SMS ' + inttostr(asms.smsError) + '-' + smsresult);
+    end
   finally
-
+    asms.Free;
   end;
 end;
 

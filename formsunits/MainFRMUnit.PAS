@@ -4473,7 +4473,7 @@ begin
 
   //  check for customer loaylty
   if RemoteDB.customers.FieldByName('customers_nbr').AsInteger > 100000 then begin
-    if RemoteDB.customers.FieldByName('customers_loyalty').AsInteger >= LoyaltyThreshold  then begin
+    if (total>0) and (RemoteDB.customers.FieldByName('customers_loyalty').AsInteger >= LoyaltyThreshold)  then begin
       if messagedlg('Le client dispose d''assez de points de fidèlité, veut-il les convertir en bon de réduction ?', mtwarning, [mbyes, mbno], 0) = mrYes then begin
         // Add the reward code the the grid
         if RemoteDB.Products.Locate('products_model','LOYALTY500',[TLocateOption.loCaseInsensitive]) then   begin
@@ -4501,6 +4501,8 @@ begin
                     begin
                       loyaltyprice :=  (Round(RemoteDB.GetPriceTTC(RemoteDB.Products.FieldByName('products_model').Text, RemoteDB.Products.FieldByName('products_price').AsFloat ) * 100) / 100 );
                       QLoyalty := RemoteDB.customers.FieldByName('customers_loyalty').AsInteger div LoyaltyThreshold;
+                      QMax := 0;
+                      if total>0 then
                       QMax := Trunc(total) div Trunc(loyaltyprice) ;
                       Nowrow           := RowCount - 1;
                       Cells[0, Nowrow] := RemoteDB.Products.FieldByName('products_model').Text;

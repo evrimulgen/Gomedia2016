@@ -129,7 +129,6 @@ begin
       RemoteDB.netshop_customers_alerts.Next;
     end;
 
-    ShowMessage('Les messages sont dans la queue d''envoi');
 
   finally
 
