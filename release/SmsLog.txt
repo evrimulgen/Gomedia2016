@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?><response><status>100</status><creditLeft>4995.20</creditLeft><smsIds><smsId>66827229</smsId></smsIds></response>
+
+<?xml version="1.0" encoding="UTF-8" ?><response><status>100</status><creditLeft>4994.40</creditLeft><smsIds><smsId>66827239</smsId></smsIds></response>
+
+<?xml version="1.0" encoding="UTF-8" ?><response><status>100</status><creditLeft>4993.60</creditLeft><smsIds><smsId>66827240</smsId></smsIds></response>
+
+<?xml version="1.0" encoding="UTF-8" ?><resp

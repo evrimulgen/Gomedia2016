@@ -184,7 +184,7 @@ var
   ReceivedUserPass, ReceivedHost, ReceivedLogin, ReceivedPwd, ReceivedDB, ReceivedID, ReceivedURL, ReceivedGroupID, ReceivedFTPHost, ReceivedFTPUser,
     ReceivedFTPPwd, ReceivedFTPDir, ReceivedUserLevel, ReceivedUserType: string;
 
-  ReceivedSmsAccount,ReceivedSmsLogin,ReceivedSmsPassword,ReceivedCLDLogin,ReceivedCLDCLDPass:string;
+  ReceivedSmsAccount,ReceivedSmsLogin,ReceivedSmsPassword,ReceivedSmsSender, ReceivedCLDLogin,ReceivedCLDCLDPass:string;
 
   UserDataReg: Tregistry;
   LoginReg: Tregistry;
@@ -192,7 +192,7 @@ var
   IdHTTP1 : TIdHttp;
   json : TlkJSONcustomlist;
   SQLDataset: TSQLDataSet;
-  test,str: string;
+  test,str, localpass, regpass: string;
 begin
   MessageLabel.Caption := '';
   LoginSuccess         := False;
@@ -271,48 +271,54 @@ begin
       begin
         if UserDataReg.ReadString('Userdata2') = EditLogin.Text then
         begin
-          DataEncoder.Reset;
-          if LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata3'))) = EditPwd.Text then
+          LocalEncoder.Reset;
+          regpass :=  (UserDataReg.ReadString('Userdata3'));
+          localpass := LocalEncoder.DecryptString(regpass);
+          if localpass = EditPwd.Text then
           begin
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedHost := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata4')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedLogin := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata5')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedPwd := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata6')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedDB := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata7')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedID := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata8')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedURL := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata9')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedGroupID := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata10')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedFTPHost := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata11')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedFTPUser := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata12')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedFTPPwd := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata13')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedFTPDir := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata14')));
-            DataEncoder.Reset;
+
             ReceivedUserLevel := Trim(UserDataReg.ReadString('Userdata15'));
             // 0 regular
             // 3 readonly
             // 2 poweruser
             ReceivedUserType := Trim(UserDataReg.ReadString('Userdata16'));
 
+            LocalEncoder.Reset;
             ReceivedSmsAccount := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata17')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedSmsLogin := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata18')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedSmsPassword := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata19')));
-            DataEncoder.Reset;
+
+            LocalEncoder.Reset;
             ReceivedCLDLogin := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata20')));
-            DataEncoder.Reset;
+            LocalEncoder.Reset;
             ReceivedCLDCLDPass := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata21')));
-            DataEncoder.Reset;
+
+            ReceivedSmsSender := Trim((UserDataReg.ReadString('Userdata22')));
+
             LoginSuccess     := True;
           end else begin
             MessageLabel.Caption := 'Mauvaise combinaison login / môt de passe';
@@ -363,20 +369,27 @@ begin
         ReceivedFTPPwd := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field13').AsString);
         DataEncoder.Reset;
         ReceivedFTPDir := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field14').AsString);
-        DataEncoder.Reset;
+
         ReceivedUserLevel := Trim((SQLDataSetLogin.FieldByName('field15').AsString));
         ReceivedUserType  := Trim((SQLDataSetLogin.FieldByName('field16').AsString));
 
+        DataEncoder.Reset;
         ReceivedSmsAccount := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('SmsAccount').AsString);
+
         DataEncoder.Reset;
         ReceivedSmsLogin := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('SmsLogin').AsString);
+
         DataEncoder.Reset;
         ReceivedSmsPassword := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('SmsPassword').AsString);
+
+        ReceivedSmsSender := Trim(SQLDataSetLogin.FieldByName('SmsSender').AsString);
+
         DataEncoder.Reset;
         ReceivedCLDLogin := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('CLDLogin').AsString);
+
         DataEncoder.Reset;
         ReceivedCLDCLDPass := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('CLDPass').AsString);
-        DataEncoder.Reset;
+
 
         LoginSuccess      := True;
         SQLDataSetLogin.Close;
@@ -389,45 +402,48 @@ begin
         try
           UserDataReg.OpenKey(UserDataRegPath, True);
           UserDataReg.WriteString('Userdata2', EditLogin.Text);
-          DataEncoder.Reset;
-          UserDataReg.WriteString('Userdata3', LocalEncoder.EncryptString((ReceivedUserPass)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
+          localpass := LocalEncoder.EncryptString((ReceivedUserPass));
+          UserDataReg.WriteString('Userdata3', localpass);
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata4', LocalEncoder.EncryptString((ReceivedHost)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata5', LocalEncoder.EncryptString((ReceivedLogin)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata6', LocalEncoder.EncryptString((ReceivedPwd)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata7', LocalEncoder.EncryptString((ReceivedDB)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata8', LocalEncoder.EncryptString((ReceivedID)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata9', LocalEncoder.EncryptString((ReceivedURL)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata10', LocalEncoder.EncryptString((ReceivedGroupID)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata11', LocalEncoder.EncryptString((ReceivedFTPHost)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata12', LocalEncoder.EncryptString((ReceivedFTPUser)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata13', LocalEncoder.EncryptString((ReceivedFTPPwd)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata14', LocalEncoder.EncryptString((ReceivedFTPDir)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
 
           UserDataReg.WriteString('Userdata15', ReceivedUserLevel);
           UserDataReg.WriteString('Userdata16', ReceivedUserType);
 
           UserDataReg.WriteString('Userdata17', LocalEncoder.EncryptString((ReceivedSmsAccount)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata18', LocalEncoder.EncryptString((ReceivedSmsLogin)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata19', LocalEncoder.EncryptString((ReceivedSmsPassword)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata20', LocalEncoder.EncryptString((ReceivedCLDLogin)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata21', LocalEncoder.EncryptString((ReceivedCLDCLDPass)));
-          DataEncoder.Reset;
+          LocalEncoder.Reset;
+          UserDataReg.WriteString('Userdata22', ReceivedSmsSender);
+          LocalEncoder.Reset;
         finally
           UserDataReg.CloseKey;
           UserDataReg.Free;
@@ -498,6 +514,7 @@ begin
     SmsAccountOVH       := ReceivedSmsAccount;
     SmsLoginOVH         := ReceivedSmsLogin;
     SmsPasswordOVH      := ReceivedSmsPassword;
+    SmsSenderOVH        := ReceivedSmsSender;
     CLDLogin            := ReceivedCLDLogin;
     CLDPass             := ReceivedCLDCLDPass;
     DBOKTOLAUNCH        := True;

@@ -7646,9 +7646,9 @@ END
 /* C:\Program Files (x86)\DelphiTools\jcl\lib\d20\win32\JclUnicode.res */
 /* C:\Program Files (x86)\DelphiTools\jvcl\Resources\JvConsts.res */
 /* C:\Program Files (x86)\DelphiTools\jvcl\Resources\JvSegmentedLEDDisplay.res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ExitLibFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ReconcileFRMunit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ClientDMunit.DFM */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ExitLibFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ReconcileFRMunit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ClientDMunit.DFM */
 /* C:\Program Files (x86)\DelphiTools\Various\barcode.d32 */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressLibrary\Sources\dxOffice11.res */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressLibrary\Sources\dxSkinInfo.res */
@@ -7673,7 +7673,7 @@ END
 /* C:\Program Files (x86)\DelphiTools\TMS8\AdvMemo.res */
 /* C:\Program Files (x86)\Nevrona\Rave11\XE6-32\RpFormSetup.dfm */
 /* C:\Program Files (x86)\Nevrona\Rave11\XE6-32\RpFormPreview.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\RpFormStatus.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\RpFormStatus.dfm */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressQuantumGrid\Sources\cxGrid.res */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressEditors Library\Sources\firtercontrolicons.res */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressQuantumGrid\Sources\cxFilterDialog.dfm */
@@ -7703,18 +7703,18 @@ END
 /* C:\Program Files (x86)\DelphiTools\DataExport\fuQExport4Progress.DFM */
 /* C:\Program Files (x86)\DelphiTools\DataExport\fuQExport4XLSColorEditor.DFM */
 /* C:\Program Files (x86)\DelphiTools\DataExport\QExport4Dialog.DFM */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\RentProcessFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\CustomerDisplayFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\RentProcessFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\CustomerDisplayFRMUnit.dfm */
 /* C:\Program Files (x86)\DelphiTools\jvcl\Resources\JvToolEdit.res */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressQuantumTreeList\Sources\cxTL.res */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressBars\Sources\dxRibbonCustomizationForm.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\RpFormPreviewCustom.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\RpFormPreviewCustom.dfm */
 /* C:\Program Files (x86)\DelphiTools\jvcl\Resources\JvSpin.Res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\dtFormSetup.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ReportModuleUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\NewProdFRMunit.DFM */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\EnterLibFrmUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\StockCheckFrmUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\dtFormSetup.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ReportModuleUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\NewProdFRMunit.DFM */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\EnterLibFrmUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\StockCheckFrmUnit.dfm */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressEditors Library\Sources\dxColorDialogForm.dfm */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressPrinting System\Sources\dxPSImgs.res */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressPrinting System\Sources\dxPSPrVwOpt.DFM */
@@ -7752,47 +7752,47 @@ END
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressPrinting System\Sources\dxPSTVLnk.DFM */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressPrinting System\Sources\dxPSLVLnk.DFM */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressPrinting System\Sources\dxPScxMCListBoxLnk.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DebugFRMunit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\UnitFRMDacalSearch.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ChangePriceFrmUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\RepairNewFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\RepairReturnFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DebugFRMunit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\UnitFRMDacalSearch.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ChangePriceFrmUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\RepairNewFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\RepairReturnFRMUnit.dfm */
 /* c:\program files (x86)\embarcadero\studio\14.0\lib\Win32\release\WindowsXP.res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\CashRegistryFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ExportWinbooksFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\InvoiceBatchPrintFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\RepairFixFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\SignatureForm.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DialogRefundFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DialogChangeEANFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DialogAddFundFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DialogCancelSalesFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\CashRegistryFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ExportWinbooksFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\InvoiceBatchPrintFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\RepairFixFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\SignatureForm.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DialogRefundFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DialogChangeEANFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DialogAddFundFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DialogCancelSalesFRMUnit.dfm */
 /* c:\program files (x86)\embarcadero\studio\14.0\lib\Win32\release\midas.res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DacalEmptyUnsoldFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\SalesCorrectFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\CancelInvoiceItemFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ProductSalesHistoryUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DialogSearchCustFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\CashFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DialogRentExtend.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\CheckLibFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\OrderCheckFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\TransferSuggestFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\TransferRequestFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ReorderFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\DialogSmsSendFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DacalEmptyUnsoldFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\SalesCorrectFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\CancelInvoiceItemFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ProductSalesHistoryUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DialogSearchCustFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\CashFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DialogRentExtend.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\CheckLibFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\OrderCheckFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\TransferSuggestFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\TransferRequestFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ReorderFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\DialogSmsSendFRMUnit.dfm */
 /* C:\Program Files (x86)\DelphiTools\DX14.1.2XE6\ExpressBars\Sources\dxBarExtDBItems.res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ReportSQLForm.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\MainFRMunit.DFM */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\SaleExecFRMunit.DFM */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ReportSQLForm.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\MainFRMunit.DFM */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\SaleExecFRMunit.DFM */
 /* C:\Program Files (x86)\DelphiTools\jvcl\Resources\JvLED.res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\LoginFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ChangeInvoiceFRMUnit.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\UnitFormLog.dfm */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\formsunits\ServerModuleGLight.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\LoginFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ChangeInvoiceFRMUnit.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\UnitFormLog.dfm */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\formsunits\ServerModuleGLight.dfm */
 /* c:\program files (x86)\embarcadero\studio\14.0\lib\Win32\release\CategoryButtons.res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\GoMedia2015Resource.res */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\GoMedia2015.dres */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\GoMedia2015.KLR */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\GoMedia2015.RES */
-/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2015\GoMedia2015.drf */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\GoMedia2015Resource.res */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\GoMedia2015.dres */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\GoMedia2015.KLR */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\GoMedia2015.RES */
+/* C:\Users\david\OneDrive - CLD Distribution\RAD Studio\Projects\Gomedia2016\GoMedia2015.drf */

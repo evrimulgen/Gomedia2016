@@ -25,7 +25,7 @@ var
   DBOKTOLAUNCH: Boolean;
   LOGINOKTOLAUNCH: Boolean;
   DBHOSTNAME, DBUSER, DBPWD, DBNAME, WEBURL, FTPHOST, FTPUSER, FTPPWD, FTPDIR: string;
-  SmsAccountOVH,SmsLoginOVH,SmsPasswordOVH: string;
+  SmsAccountOVH,SmsLoginOVH,SmsPasswordOVH,SmsSenderOVH: string;
   CLDLogin,CLDPass: string;
   ConnectedShop: integer;
   ShopGroupID: integer;

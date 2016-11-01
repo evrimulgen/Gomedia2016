@@ -1075,7 +1075,6 @@ type
 
 var
   RemoteDB: TRemoteDB;
-  smsLog: TextFile;
   SyncYears: integer;
 
 const
@@ -1322,8 +1321,7 @@ begin
   // Setting up local DB paths & filenames
   ChDir(ExtractFilePath(ParamStr(0)));
 
-  AssignFile(smsLog, 'SmsLog.txt');
-  ReWrite(smsLog);
+
 
   Error := False;
   if not(DirectoryExists('database')) then
@@ -1410,7 +1408,6 @@ end;
 
 procedure TRemoteDB.DataModuleDestroy(Sender: TObject);
 begin
-  CloseFile(smsLog);
   if DBOKTOLAUNCH then
   begin
     CloneDSCustomers.Free;
@@ -2292,20 +2289,12 @@ begin
       CloneDSAlertsSMS.fieldbyname('customers_alerts_status').Value := 2;
       CloneDSAlertsSMS.fieldbyname('customers_alerts_attempts').Value := 0;
       CloneDSAlertsSMS.Post;
-      if GetLoging('SMSLog') then
-      begin
-        write(smsLog, aSmsMessage.Response);
-        WriteLn(smsLog);
-      end;
+
     end else begin
       CloneDSAlertsSMS.Edit;
       CloneDSAlertsSMS.fieldbyname('customers_alerts_attempts').Value := CloneDSAlerts.fieldbyname('customers_alerts_attempts').Value + 1;
       CloneDSAlertsSMS.Post;
-      if GetLoging('SMSLog') then
-      begin
-        write(smsLog, aSmsMessage.Response);
-        WriteLn(smsLog);
-      end;
+
     end;
 
   end else begin

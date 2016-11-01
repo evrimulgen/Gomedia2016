@@ -29,6 +29,7 @@ type
     _model: string;
     _provider: string;
     _smssrc: string;
+    _smsLog: TextFile;
     _SmsMessage: TSmsMessage;
     plainData: TStringList; // this is the unencoded data
     HTTP: TidHTTP; // going to need the HTTP object
@@ -495,6 +496,11 @@ begin
   _smssrc         := smssrc;
   _provider       := Provider;
   FreeOnTerminate := True;
+  AssignFile(_smsLog, 'SmsLog.txt');
+  if not FileExists( 'SmsLog.txt') then
+        Rewrite(_smsLog)
+    else
+        Append(_smsLog);
   inherited Create(True);
   Resume;
 end;
@@ -566,6 +572,14 @@ begin
         ConvertCRLFToSpace;
         // clean up the CR/LFs so the data doesn't get funky (you may not need this)
         response.Text := HTTP.Get(_url + '?' + QueryString);
+
+        try
+        write(_smsLog, response.Text);
+        WriteLn(_smsLog);
+        finally
+
+        end;
+
         // response.text:=HTTP.POST(_url,PostFields);
         if _provider = 'Clickatel' then
         begin
@@ -629,6 +643,7 @@ begin
 
   end;
   PostFields.Free;
+  CloseFile(_smsLog);
 end;
 
 function TSendSms.ExtractTag(const Tag, Text: string): string;

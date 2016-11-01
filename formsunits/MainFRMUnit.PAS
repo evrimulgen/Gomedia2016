@@ -2130,7 +2130,7 @@ begin
       self.Parameter['SmsProvider'], RemoteDB.CleanPhoneNumber(ShopData4.Text));
   if self.Parameter['SmsProvider'] = 'OVH' then
     aSendSms := TSendSms.Create(GlobalsUnit.SmsLoginOVH, GlobalsUnit.SmsPasswordOVH, '', GlobalsUnit.SmsAccountOVH,
-      self.Parameter['SmsProvider'], CompanyName );   // Ovh needs sender defined in the admin
+      self.Parameter['SmsProvider'], SmsSenderOVH );   // Ovh needs sender defined in the admin
 end;
 
 procedure TMainForm.ShowHint(Sender: TObject);
