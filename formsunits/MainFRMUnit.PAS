@@ -2018,6 +2018,13 @@ begin
       ACustomerDisplay.Height := 768;
     end;
 
+    if ((self.Parameter['MISCPOSBANKModel'] = '3')) then
+    begin
+      ACustomerDisplay.Left := 1280;
+      ACustomerDisplay.Width  := 1280;
+      ACustomerDisplay.Height := 800;
+    end;
+
     ACustomerDisplay.Show;
 
     if RemoteDB.IsConnected then
