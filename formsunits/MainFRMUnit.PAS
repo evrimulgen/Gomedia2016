@@ -1477,6 +1477,8 @@ var
   ParamErr: string;
   adouble : double;
 begin
+
+  Self.Caption := 'Gomedia ' + GlobalsUnit.Version;
   RemoteDB.CDSActions.Append;
   RemoteDB.CDSActions.FieldByName('action').AsString := 'Action démarrage';
   RemoteDB.CDSActions.Post;

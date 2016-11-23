@@ -1921,9 +1921,19 @@ begin
   SQLConnection.Params.Values['PassWord']   := DBPWD;
   SQLConnection.Params.Values['HostName']   := DBHOSTNAME;
   SQLConnection.Params.Values['Database']   := DbName;
-  //SQLConnection.Params.Values['Compressed'] := 'True';
-  //SQLConnection.Params.Values['Encrypted']  := 'True';
+
   SQLConnection.Params.Values['UseUnicode']  := 'False';
+
+  SQLConnection.Params.Values['Custom String'] := 'Protocol=SSL;Compress=True';
+
+  SQLConnection.Params.Values['SSLCACert'] := 'ca-certs.pem';
+
+  SQLConnection.Params.Values['SSLCert'] := 'client-cert.pem';
+
+  SQLConnection.Params.Values['SSLKey'] := 'client-key.pem';
+
+  SQLConnection.Params.Values['SSLCipherList'] := 'ALL';
+
   IsUpdating                                := False;
 
   ProgressCreate.Execute;

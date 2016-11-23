@@ -89,11 +89,13 @@ uses clientDMunit, GlobalsUnit, EncdDecd;
 {$R *.dfm}
 
 var
-  Days: string;
+  Days,temp: string;
 
 const
-  USERDBLogin = 'SgfR7hztJDlJd4T3eQ6n';
-  USERDBPwd   = 'WE8sUzQYmME=';
+
+  USERDBLogin = 'TFH2D3kRiU63M1Q535vc';
+  USERDBPwd   = 'eo6DWURt4GK5/dagsmZCAw==';
+
   USERDBHost  = 'WFEUDYlqzuPnK7GxZ2u4';
   USERDBName  = 'SBuinQU8sw==';
 
@@ -237,8 +239,18 @@ begin
     DataEncoder.Reset;
     SQLConnectionLogin.Params.Values['Database'] := DataEncoder.DecryptString(USERDBName);
     // wMessage( SQLConnectionLogin.Params.Values['Password'])  ;
-    SQLConnectionLogin.Params.Values['Encrypted']  := 'True';
-    SQLConnectionLogin.Params.Values['Compressed'] := 'True';
+
+    SQLConnectionLogin.Params.Values['UseUnicode']  := 'False';
+
+    SQLConnectionLogin.Params.Values['Custom String'] := 'Protocol=SSL;Compress=True';
+
+    SQLConnectionLogin.Params.Values['SSLCACert'] := 'ca-cert.pem';
+
+    SQLConnectionLogin.Params.Values['SSLCert'] := 'client-cert.pem';
+
+    SQLConnectionLogin.Params.Values['SSLKey'] := 'client-key.pem';
+
+    SQLConnectionLogin.Params.Values['SSLCipherList'] := 'ALL';
 
     // Validate Offline mode
     SQLConnectionLogin.Open;
@@ -477,7 +489,7 @@ begin
   SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(json.Field['country'].Value)+',';
   SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(json.Field['loc'].Value)+',';
   SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr('')+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr('')+',';
+  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(GlobalsUnit.Version)+',';
   SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(EditCompany.Text)+',';
   SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(EditComputer.Text)+',';
   SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(EditWindowsID.Text)+')';

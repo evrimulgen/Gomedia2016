@@ -9,7 +9,7 @@ uses
   Forms,
   controls,
   DavidUtilsunit in 'units\DavidUtilsunit.pas',
-  ClientDMunit in 'formsunits\ClientDMunit.pas' {RemoteDB: TDataModule},
+  ClientDMunit in 'formsunits\ClientDMunit.pas' {SSL: TDataModule},
   SaleExecFRMunit in 'formsunits\SaleExecFRMunit.pas' {FormProcessSale},
   StockCheckFrmUnit in 'formsunits\StockCheckFrmUnit.pas' {StockCheckForm},
   ChangePriceFRMUnit in 'formsunits\ChangePriceFRMUnit.pas' {ChangePriceForm},

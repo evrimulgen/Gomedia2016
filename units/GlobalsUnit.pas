@@ -82,6 +82,7 @@ const
   MarginDepositRefund = 70;
   MarginNew = 30;
   GeoZoneTaxId = 18;
+  Version = '2016-11-23 SSL';
 
 
 implementation
