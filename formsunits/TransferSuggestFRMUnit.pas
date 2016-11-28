@@ -21,7 +21,10 @@ uses
   dxPSFillPatterns, dxPSEdgePatterns, dxPSPDFExportCore, dxPSPDFExport,
   cxDrawTextUtils, dxPSPrVwStd, dxPSPrVwRibbon, dxPSPrVwAdv,
   dxPScxPageControlProducer, dxPScxGridLayoutViewLnk, dxPScxEditorProducers,
-  dxPScxExtEditorProducers;
+  dxPScxExtEditorProducers, cxContainer, cxProgressBar, dxStatusBar;
+
+const
+  WM_STARTUP = WM_USER;
 
 type
   TTransferSuggest = class(TForm)
@@ -94,6 +97,9 @@ type
     StockExtproduct_isdefect: TIntegerField;
     PopupMenu: TPopupMenu;
     CopyModel: TMenuItem;
+    dxstsbr1: TdxStatusBar;
+    dxstsbrcntnrcntrldxstsbr1Container1: TdxStatusBarContainerControl;
+    cxprgrsbrProgress: TcxProgressBar;
     procedure cxGridDBTableView1KeyPress(Sender: TObject; var Key: Char);
     procedure cxGridDBTableViewTransferKeyPress(Sender: TObject; var Key: Char);
     procedure FormShow(Sender: TObject);
@@ -107,6 +113,7 @@ type
   private
     { Private declarations }
     procedure Compute;
+    procedure WMStartup(var Msg: TMessage); message WM_STARTUP;
   public
     Direction: string;
     Empty: Boolean;
@@ -116,6 +123,7 @@ type
 
 var
   TransferSuggest: TTransferSuggest;
+
 
 implementation
 
@@ -201,7 +209,7 @@ end;
 
 procedure TTransferSuggest.Compute;
 var
-  threshold: Integer;
+  threshold, i: Integer;
   ProductsClone, StockClone: TClientDataSet;
   aSqlDataset: TSqlDataset;
 begin
@@ -230,6 +238,12 @@ begin
     RemoteDB.netshop_stock.Filter   := 'product_owner_id = ' + IntToStr(CONNECTEDSHOP);
     RemoteDB.netshop_stock.Filtered := True;
     RemoteDB.netshop_stock.First;
+
+
+          cxprgrsbrProgress.Position:=0;
+          i                    := 0;
+    cxprgrsbrProgress.Visible  := True;
+
     try
       // Populate the Stock Summed Table
       while not RemoteDB.netshop_stock.Eof do
@@ -270,8 +284,12 @@ begin
             StockSummed.FieldByName('product_quantity_new').Value := RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
           end;
           StockSummed.Post;
+
         end;
         RemoteDB.netshop_stock.Next;
+                                  i:=i+1;
+            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+RemoteDB.netshop_stock.RecordCount) * 100);
+             Application.ProcessMessages;
       end;
 
       // Compute Transfer
@@ -291,6 +309,9 @@ begin
             CDSSuggest.Post;
           end;
         StockSummed.Next;
+                                          i:=i+1;
+            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+RemoteDB.netshop_stock.RecordCount) * 100);
+             Application.ProcessMessages;
       end;
       StockExt.Filtered := False;
 
@@ -308,6 +329,12 @@ begin
     StockExt.Filter   := 'product_owner_id = ' + RemoteDB.AllShops.FieldByName('shops_id').AsString;
     StockExt.Filtered := True;
     StockExt.First;
+
+          cxprgrsbrProgress.Position:=0;
+          i                    := 0;
+    cxprgrsbrProgress.Visible  := True;
+
+
     try
       // Populate the Stock Summed Table
       while not StockExt.Eof do
@@ -350,9 +377,14 @@ begin
           StockSummed.Post;
         end;
         StockExt.Next;
+                i:=i+1;
+            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+StockExt.RecordCount) * 100);
+                         Application.ProcessMessages;
       end;
 
       // Compute Transfer
+
+
       StockSummed.First;
       while not StockSummed.Eof do
       begin
@@ -369,6 +401,9 @@ begin
             CDSSuggest.Post;
           end;
         StockSummed.Next;
+        i:=i+1;
+            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+StockExt.RecordCount) * 100);
+                         Application.ProcessMessages;
       end;
       RemoteDB.netshop_stock.Filtered := False;
 
@@ -392,12 +427,19 @@ begin
   CDSRequest.CreateDataSet;
   CDSRequest.Open;
   self.PageControl.ActivePage := TabSheetSuggest;
-  Compute;
+  PostMessage(Handle, WM_STARTUP, 0, 0);
+  OnShow := nil;//only ever post the message once
 end;
 
 procedure TTransferSuggest.StockSummedCalcFields(DataSet: TDataSet);
 begin
   DataSet.FieldByName('product_quantity_total').Value := DataSet.FieldByName('product_quantity_new').Value + DataSet.FieldByName('product_quantity_used').Value;
+end;
+
+procedure TTransferSuggest.WMStartup(var Msg: TMessage);
+begin
+  inherited;
+   Compute;
 end;
 
 end.

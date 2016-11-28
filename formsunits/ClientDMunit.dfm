@@ -1121,19 +1121,20 @@ object RemoteDB: TRemoteDB
   object SQLDSProducts: TSQLDataSet
     SchemaName = 'gomedia'
     CommandText = 
-      'SELECT'#13#10'p.products_model,'#13#10'p.products_id,'#13#10'p.products_CLD_id,'#13#10'p' +
-      '.products_quantity,'#13#10'p.products_image,'#13#10'p.products_price,'#13#10'p.pro' +
-      'ducts_price_old,'#13#10'p.products_price_changed,'#13#10'p.products_date_add' +
-      'ed,'#13#10'p.products_weight,'#13#10'p.products_status,'#13#10'p.products_tax_clas' +
-      's_id,'#13#10'p.manufacturers_id,'#13#10'p.products_promo,'#13#10'p.products_stock_' +
-      'managed,'#13#10'p.products_date_available,'#13#10'p.products_last_modified,'#13 +
-      #10'p.products_ordered,'#13#10'p.products_ispreview,'#13#10'p.products_root_cat' +
-      'egory_name,'#13#10'p.products_isobsolete,'#13#10'p.products_warranty_id,'#13#10'p.' +
-      'products_street_block,'#13#10'p.products_cldprice,'#13#10'p.products_used_pr' +
-      'ice,'#13#10'p.products_intername,'#13#10'p.products_cld_stock,'#13#10'p.products_e' +
-      'sd,'#13#10'p.products_posa,'#13#10'p.products_points,'#13#10'p2c.categories_id'#13#10'FR' +
-      'OM'#13#10'products p'#13#10'LEFT OUTER JOIN products_to_categories p2c ON (p' +
-      '.products_id=p2c.products_id);'
+      'SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED ;'#13#10'SELECT'#13#10'p.pr' +
+      'oducts_model,'#13#10'p.products_id,'#13#10'p.products_CLD_id,'#13#10'p.products_qu' +
+      'antity,'#13#10'p.products_image,'#13#10'p.products_price,'#13#10'p.products_price_' +
+      'old,'#13#10'p.products_price_changed,'#13#10'p.products_date_added,'#13#10'p.produ' +
+      'cts_weight,'#13#10'p.products_status,'#13#10'p.products_tax_class_id,'#13#10'p.man' +
+      'ufacturers_id,'#13#10'p.products_promo,'#13#10'p.products_stock_managed,'#13#10'p.' +
+      'products_date_available,'#13#10'p.products_last_modified,'#13#10'p.products_' +
+      'ordered,'#13#10'p.products_ispreview,'#13#10'p.products_root_category_name,'#13 +
+      #10'p.products_isobsolete,'#13#10'p.products_warranty_id,'#13#10'p.products_str' +
+      'eet_block,'#13#10'p.products_cldprice,'#13#10'p.products_used_price,'#13#10'p.prod' +
+      'ucts_intername,'#13#10'p.products_cld_stock,'#13#10'p.products_esd,'#13#10'p.produ' +
+      'cts_posa,'#13#10'p.products_points,'#13#10'p2c.categories_id'#13#10'FROM'#13#10'products' +
+      ' p'#13#10'LEFT OUTER JOIN products_to_categories p2c ON (p.products_id' +
+      '=p2c.products_id);'#13#10'COMMIT ;'
     MaxBlobSize = 1
     Params = <>
     SQLConnection = SQLConnection
@@ -4294,7 +4295,7 @@ object RemoteDB: TRemoteDB
   end
   object ProgressCheckPID: TJvProgressComponent
     OnShow = ProgressCheckPIDShow
-    Left = 64
+    Left = 48
     Top = 360
   end
   object SQLDSCountriesToVat: TSQLDataSet
@@ -4846,8 +4847,8 @@ object RemoteDB: TRemoteDB
   end
   object ProgressUpdate: TJvProgressComponent
     OnShow = ProgressUpdateShow
-    Left = 64
-    Top = 416
+    Left = 48
+    Top = 424
   end
   object SQLDSAllShops: TSQLDataSet
     SchemaName = 'gomedia'
@@ -5945,7 +5946,7 @@ object RemoteDB: TRemoteDB
   end
   object ProgressMidSync: TJvProgressComponent
     OnShow = ProgressMidSyncShow
-    Left = 64
+    Left = 48
     Top = 472
   end
   object ProDescFRSRC: TDataSource

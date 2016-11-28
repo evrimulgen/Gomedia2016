@@ -20,21 +20,19 @@ object TransferSuggest: TTransferSuggest
     Left = 0
     Top = 28
     Width = 725
-    Height = 486
+    Height = 466
     ActivePage = TabSheetRequest
     Align = alClient
     TabOrder = 4
+    ExplicitHeight = 486
     object TabSheetSuggest: TTabSheet
       Caption = 'Proposition'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      ExplicitHeight = 458
       object cxGridSuggest: TcxGrid
         Left = 0
         Top = 0
         Width = 717
-        Height = 460
+        Height = 438
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -43,6 +41,7 @@ object TransferSuggest: TTransferSuggest
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        ExplicitHeight = 458
         object cxGridDBTableViewTransfer: TcxGridDBTableView
           PopupMenu = PopupMenu
           OnDblClick = cxGridDBTableViewTransferDblClick
@@ -85,15 +84,12 @@ object TransferSuggest: TTransferSuggest
     object TabSheetRequest: TTabSheet
       Caption = 'Demande'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      ExplicitHeight = 458
       object cxGridRequest: TcxGrid
         Left = 0
         Top = 0
         Width = 717
-        Height = 458
+        Height = 438
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -102,6 +98,7 @@ object TransferSuggest: TTransferSuggest
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        ExplicitHeight = 458
         object cxGridDBTableView1: TcxGridDBTableView
           OnKeyPress = cxGridDBTableView1KeyPress
           Navigator.Buttons.CustomButtons = <>
@@ -137,6 +134,63 @@ object TransferSuggest: TTransferSuggest
         object cxGridLevel1: TcxGridLevel
           GridView = cxGridDBTableView1
         end
+      end
+    end
+  end
+  object dxstsbr1: TdxStatusBar
+    Left = 0
+    Top = 494
+    Width = 725
+    Height = 20
+    Panels = <
+      item
+        PanelStyleClassName = 'TdxStatusBarKeyboardStatePanelStyle'
+        PanelStyle.CapsLockKeyAppearance.ActiveCaption = 'CAPS'
+        PanelStyle.CapsLockKeyAppearance.InactiveCaption = 'CAPS'
+        PanelStyle.NumLockKeyAppearance.ActiveCaption = 'NUM'
+        PanelStyle.NumLockKeyAppearance.InactiveCaption = 'NUM'
+        PanelStyle.ScrollLockKeyAppearance.ActiveCaption = 'SCRL'
+        PanelStyle.ScrollLockKeyAppearance.InactiveCaption = 'SCRL'
+        PanelStyle.InsertKeyAppearance.ActiveCaption = 'OVR'
+        PanelStyle.InsertKeyAppearance.InactiveCaption = 'INS'
+      end
+      item
+        PanelStyleClassName = 'TdxStatusBarContainerPanelStyle'
+        PanelStyle.Container = dxstsbrcntnrcntrldxstsbr1Container1
+        MinWidth = 100
+        Text = 'Progress'
+        Width = 100
+      end>
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ExplicitLeft = 304
+    ExplicitTop = 488
+    ExplicitWidth = 0
+    object dxstsbrcntnrcntrldxstsbr1Container1: TdxStatusBarContainerControl
+      Left = 128
+      Top = 4
+      Width = 579
+      Height = 14
+      object cxprgrsbrProgress: TcxProgressBar
+        Left = 0
+        Top = 0
+        Align = alClient
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWindowText
+        Style.Font.Height = -8
+        Style.Font.Name = 'Tahoma'
+        Style.Font.Style = []
+        Style.IsFontAssigned = True
+        TabOrder = 0
+        ExplicitLeft = 224
+        ExplicitTop = 3
+        ExplicitWidth = 121
+        ExplicitHeight = 21
+        Width = 579
       end
     end
   end
@@ -360,6 +414,7 @@ object TransferSuggest: TTransferSuggest
     object dxComponentPrinterLink1: TdxGridReportLink
       Active = True
       Component = cxGridSuggest
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -371,7 +426,8 @@ object TransferSuggest: TTransferSuggest
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 42359.991182870370000000
+      ReportDocument.CreationDate = 42702.610323379630000000
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
       OptionsView.Footers = False

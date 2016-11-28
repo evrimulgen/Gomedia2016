@@ -841,7 +841,6 @@ type
     function SetAlert(customers_nbr, quantity: integer; Model: string): Boolean;
     function CalcPriceVATIN(Price: double; tax_class_id: integer): double;
     procedure UpdateSyncYears();
-    procedure ApplySaleUpdate(Db: Boolean);
     procedure StoreSignBlob(filename,table:string);
 
   published
@@ -1504,46 +1503,6 @@ begin
   SetDescToProducts;
 end;
 
-procedure TRemoteDB.ApplySaleUpdate(Db: Boolean);
-var
-  i: integer;
-  updatestatus: Boolean;
-begin
-  try
-    updatestatus := IsUpdating;
-    if not IsUpdating then
-      IsUpdating                := True;
-
-    customers.Filtered          := False;
-    netshop_items_sold.Filtered := False;
-    netshop_sales.Filtered      := False;
-    netshop_stock.Filtered      := False;
-
-    SQLConnection.AutoClone := False;
-    SQLConnection.Params.Values['UseUnicode'] := 'False';
-    SQLConnection.Open;
-
-    // SaveDataset(Customers,False);
-    // SaveDataset(netshop_items_sold,False);
-    // SaveDataset(netshop_sales,False);
-    // SaveDataset(netshop_stock,False);
-
-    customers.ApplyUpdates(-1);
-    netshop_items_sold.ApplyUpdates(-1);
-    netshop_sales.ApplyUpdates(-1);
-    netshop_stock.ApplyUpdates(-1);
-    CDSActions.ApplyUpdates(-1);
-
-    SaveDataset(customers, False);
-    SaveDataset(netshop_items_sold, False);
-    SaveDataset(netshop_sales, False);
-    SaveDataset(netshop_stock, False);
-    SaveDataset(CDSActions, False);
-  finally
-    SQLConnection.Close;
-    IsUpdating := updatestatus;
-  end;
-end;
 
 procedure TRemoteDB.ApplyUpdates;
 var
@@ -3298,7 +3257,7 @@ begin
         ProgressSync.ProgressPosition := ProgressSync.ProgressPosition + 1;
         Application.ProcessMessages;
 
-        if True then
+        if TClientDataSet(self.Components[i]).ChangeCount > 0 then
         begin
 
           SaveDataset(TClientDataSet(self.Components[i]), True);
@@ -3307,9 +3266,7 @@ begin
             try
               if TClientDataSet(self.Components[i]).ProviderName <> '' then
               begin
-                if ApplyUpdates(-1) = 0 then
-                begin
-                end;
+                TClientDataSet(self.Components[i]).ApplyUpdates(-1);
               end;
             finally
               SaveDataset(TClientDataSet(self.Components[i]), False);
