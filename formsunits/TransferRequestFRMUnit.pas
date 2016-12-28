@@ -13,9 +13,6 @@ uses
   Provider, DBClient, SqlExpr, cxGridExportLink, dxBarExtItems, ComCtrls,
   ExtCtrls, Grids, DBGrids, StdCtrls,
 
-
-
-
   dxPScxGridLnk, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
   dxPrnDev, dxPSGlbl, dxPSUtl, dxPrnPg, dxBkgnd, dxWrap, dxPSCompsProvider,
@@ -116,20 +113,22 @@ var
 begin
   if PageControl.ActivePage = TabSheetIn then
   begin
-    Filename                 := 'Transfer-a-recevoir' + '.xls';
+    Filename := 'Transfer-a-recevoir' + '.xls';
     Self.SaveDialog.Filename := Filename;
     if Self.SaveDialog.Execute then
     begin
-      ExportGridToExcel(Self.SaveDialog.Filename, cxGridSuggest, True, True, True);
+      ExportGridToExcel(Self.SaveDialog.Filename, cxGridSuggest, True,
+        True, True);
     end;
   end;
   if PageControl.ActivePage = TabSheetOut then
   begin
-    Filename                 := 'Transfer-a-envoyer' + '.xls';
+    Filename := 'Transfer-a-envoyer' + '.xls';
     Self.SaveDialog.Filename := Filename;
     if Self.SaveDialog.Execute then
     begin
-      ExportGridToExcel(Self.SaveDialog.Filename, cxGridRequest, True, True, True);
+      ExportGridToExcel(Self.SaveDialog.Filename, cxGridRequest, True,
+        True, True);
     end;
   end;
 end;
@@ -152,7 +151,9 @@ begin
   aSqlDataset.CommandType := ctQuery;
   aSqlDataset.CommandText :=
     'SELECT nst.id AS ID,nst.product_quantity AS Q,nsh.shops_name AS Magasin, nsh.shops_id Num,nsh.Shops_phone As Tel,nst.product_owner_id AS Client,nst.product_price_stock AS Prix from netshop_stock nst, netshop_shops nsh'
-    + ' WHERE nsh.shops_visible=1 and nst.product_location <> ' + intToStr(CONNECTEDSHOP) + ' AND nst.product_model = ' + QuotedStr(Self.products_model) +
+    + ' WHERE nsh.shops_visible=1 and nst.product_location <> ' +
+    intToStr(CONNECTEDSHOP) + ' AND nst.product_model = ' +
+    QuotedStr(Self.products_model) +
     ' AND nsh.shops_id=nst.product_location order by nst.product_price_stock ASC';
   DPStockExt.DataSet := aSqlDataset;
   StockExt.Open;
@@ -166,35 +167,51 @@ var
   aSendEmail, bSendEmail: TSmartSendEmail;
 begin
 
-  aSqlDataset.CommandText := '' + 'INSERT INTO `netshop_transfer_request` (' + '`id` ,' + '`product_model` ,' + '`product_name` ,' + '`product_root_category` ,'
-    + '`product_price_stock` ,' + '`product_origin` ,' + '`product_destination` ,' + '`product_quantity` ,' + '`product_owner_id` ,' + '`date_added` ,' +
-    '`processed`' + ') VALUES ( NULL,' + QuotedStr(Self.products_model) + ',' + QuotedStr(Self.products_name) + ',' + QuotedStr(Self.products_root_category) +
-    ',' + QuotedStr(StockExt.FieldByName('Prix').AsString) + ',' + QuotedStr(StockExt.FieldByName('Num').AsString) + ',' + QuotedStr(intToStr(CONNECTEDSHOP)) +
-    ',' + QuotedStr('1') + ',' + QuotedStr(StockExt.FieldByName('Client').AsString) + ',' + ' CURDATE() ,' + QuotedStr('0') + ')';
+  aSqlDataset.CommandText := '' + 'INSERT INTO `netshop_transfer_request` (' +
+    '`id` ,' + '`product_model` ,' + '`product_name` ,' +
+    '`product_root_category` ,' + '`product_price_stock` ,' +
+    '`product_origin` ,' + '`product_destination` ,' + '`product_quantity` ,' +
+    '`product_owner_id` ,' + '`date_added` ,' + '`processed`' +
+    ') VALUES ( NULL,' + QuotedStr(Self.products_model) + ',' +
+    QuotedStr(Self.products_name) + ',' + QuotedStr(Self.products_root_category)
+    + ',' + QuotedStr(StockExt.FieldByName('Prix').AsString) + ',' +
+    QuotedStr(StockExt.FieldByName('Num').AsString) + ',' +
+    QuotedStr(intToStr(CONNECTEDSHOP)) + ',' + QuotedStr('1') + ',' +
+    QuotedStr(StockExt.FieldByName('Client').AsString) + ',' + ' CURDATE() ,' +
+    QuotedStr('0') + ')';
 
   aSqlDataset.ExecSQL(True);
 
   RemoteDB.Shops.FindKey([CONNECTEDSHOP]);
-  RemoteDB.AllShops.Locate('shops_id', StockExt.FieldByName('Num').AsString, [locaseinsensitive]);
+  RemoteDB.AllShops.Locate('shops_id', StockExt.FieldByName('Num').AsString,
+    [locaseinsensitive]);
 
   MessageSubject := 'Demande de transfer intermagasins';
-  MessageSender  := RemoteDB.Shops.FieldByName('shops_name').AsString;
-  MessageBody    := TStringList.Create;
+  MessageSender := RemoteDB.Shops.FieldByName('shops_name').AsString;
+  MessageBody := TStringList.Create;
   MessageBody.Add('Demande de transfer intermagasins');
-  MessageBody.Add('Depart : ' + StockExt.FieldByName('Num').AsString + ' ' + RemoteDB.AllShops.FieldByName('shops_name').AsString);
+  MessageBody.Add('Depart : ' + StockExt.FieldByName('Num').AsString + ' ' +
+    RemoteDB.AllShops.FieldByName('shops_name').AsString);
   MessageBody.Add('EAN# : ' + Self.products_model);
-  MessageBody.Add('1x ' + Self.products_name + ' ' + Self.products_root_category);
+  MessageBody.Add('1x ' + Self.products_name + ' ' +
+    Self.products_root_category);
   MessageBody.Add('Prix : ' + StockExt.FieldByName('Prix').AsString);
-  MessageBody.Add('Destination : ' + RemoteDB.Shops.FieldByName('shops_name').AsString);
+  MessageBody.Add('Destination : ' + RemoteDB.Shops.FieldByName('shops_name')
+    .AsString);
 
   // RemoteDB.Shopsshops_manager_email.AsString
 
-  aSendEmail := TSmartSendEmail.Create(MainForm.Shopdata1.Text, MainForm.Shopdata5.Text, RemoteDB.AllShops.FieldByName('shops_manager_email').AsString,
-    MessageSubject, '', MessageBody);
-  bSendEmail := TSmartSendEmail.Create(MainForm.Shopdata1.Text, MainForm.Shopdata5.Text, TransferExtraDest, MessageSubject, '', MessageBody);
+  aSendEmail := TSmartSendEmail.Create(MainForm.Shopdata1.Text,
+    MainForm.Shopdata5.Text, RemoteDB.AllShops.FieldByName
+    ('shops_manager_email').AsString, MessageSubject, '', MessageBody);
+  bSendEmail := TSmartSendEmail.Create(MainForm.Shopdata1.Text,
+    MainForm.Shopdata5.Text, TransferExtraDest, MessageSubject, '',
+    MessageBody);
 
   RemoteDB.netshop_customers_alerts.Edit;
-  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_comment').AsString := 'TFT DE ' + RemoteDB.AllShops.FieldByName('shops_name').AsString;
+  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_comment')
+    .AsString := 'TFT DE ' + RemoteDB.AllShops.FieldByName
+    ('shops_name').AsString;
   RemoteDB.netshop_customers_alerts.Post;
 
   MessageBody.Free;
@@ -223,15 +240,15 @@ begin
   // // Open;
   // end;
 
-  aSqlDataset               := TSqlDataset.Create(Self);
+  aSqlDataset := TSqlDataset.Create(Self);
   aSqlDataset.SQLConnection := RemoteDB.SQLConnection;
 
   if Self.products_model <> '' then
   begin
-    LabelModel.Caption          := Self.products_model;
-    LabelName.Caption           := Self.products_name;
-    LabelCategory.Caption       := Self.products_root_category;
-    TabSheetNew.Enabled         := True;
+    LabelModel.Caption := Self.products_model;
+    LabelName.Caption := Self.products_name;
+    LabelCategory.Caption := Self.products_root_category;
+    TabSheetNew.Enabled := True;
     Self.PageControl.ActivePage := TabSheetNew;
     Compute;
   end;
@@ -239,7 +256,9 @@ end;
 
 procedure TTransferRequestForm.StockSummedCalcFields(DataSet: TDataSet);
 begin
-  DataSet.FieldByName('product_quantity_total').Value := DataSet.FieldByName('product_quantity_new').Value + DataSet.FieldByName('product_quantity_used').Value;
+  DataSet.FieldByName('product_quantity_total').Value :=
+    DataSet.FieldByName('product_quantity_new').Value +
+    DataSet.FieldByName('product_quantity_used').Value;
 end;
 
 end.

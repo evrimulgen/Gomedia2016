@@ -94,79 +94,79 @@ const
 
   LIBID_WinbooksOfficeApi: TGUID = '{4C377DA0-FFAE-413F-BA40-C741D1F4B0BD}';
 
-  IID__FieldDef: TGUID            = '{486E1C6B-FDAC-4500-9BB0-9E54FAB3D314}';
-  CLASS_FieldDef: TGUID           = '{A34930DA-384B-4069-B20D-6BC4C26271DB}';
-  IID__Periods: TGUID             = '{1092CFBD-2DC9-4ED7-B92A-B51823054557}';
-  CLASS_Periods: TGUID            = '{0E6494B9-10AC-48C0-A288-45A6F75187C6}';
-  IID__FatalErrors: TGUID         = '{78D7C2FE-C8A0-4875-A8C9-C575A34F9A3F}';
-  CLASS_FatalErrors: TGUID        = '{EBF5276A-68D3-48B0-96EF-3CDCB2D42C76}';
-  IID__FatalError: TGUID          = '{BA1778B2-EBB0-4F92-8007-B5DA01D8612C}';
-  CLASS_FatalError: TGUID         = '{15C99B60-EFF0-417A-99A3-2C9ED67EA67C}';
-  IID__Warnings: TGUID            = '{DBC8894B-EF33-4780-A021-B796DDC31491}';
-  CLASS_Warnings: TGUID           = '{520D4A52-D494-4E4D-A9A2-62E117E0252B}';
-  IID__Queries: TGUID             = '{FFAE05BF-32D4-4666-9331-587377D866D9}';
-  CLASS_Queries: TGUID            = '{E6F7158B-6BA4-4754-8441-804E463FB43D}';
-  IID__TablesUser: TGUID          = '{7F525544-EE76-4A3F-B6F0-58420C36790D}';
-  CLASS_TablesUser: TGUID         = '{215B53FC-49C1-49E3-B4DF-F1E0A652CB3E}';
-  IID__Tables: TGUID              = '{0634AD47-2178-4E8A-90E7-C0F8838C862C}';
-  CLASS_Tables: TGUID             = '{5DBE4BC9-7EE2-4279-9922-6DF7F36D8EC5}';
-  IID__Warning: TGUID             = '{B01333D2-9497-4AC2-ADD4-7FD612E6F320}';
-  CLASS_Warning: TGUID            = '{2D7A39AA-CB4C-4A97-B4FC-CE9DBC8A4DD5}';
-  IID__ErrorCodes: TGUID          = '{3EE802AB-9C25-4818-9ACA-D167F702297D}';
-  CLASS_ErrorCodes: TGUID         = '{184F390B-1EA2-4CC0-B89D-4EA873B2F649}';
-  IID__Fields: TGUID              = '{BF9CFF11-A57E-4366-8ACB-48259AC3DBB7}';
-  CLASS_Fields: TGUID             = '{300F29DE-87B0-4E62-8B8C-CAF1CB264E0F}';
-  IID__BookYears: TGUID           = '{5DEF4379-FB79-4D6E-9A6A-C9A4432ACE05}';
-  CLASS_BookYears: TGUID          = '{268F50EF-CC4B-4813-9E04-CAE3F19C6B75}';
-  IID__BookYear: TGUID            = '{1A4570BF-C4D6-4ECB-8D1A-255CE6BC81D2}';
-  CLASS_BookYear: TGUID           = '{DDF3767C-CB2F-429B-BC2E-A4622E20B748}';
-  IID__Period: TGUID              = '{DFC7FAF8-21DF-44EB-B02B-3EED989DB860}';
-  CLASS_Period: TGUID             = '{7FEC6EF4-EC37-48E0-918B-78A4AA0E69C1}';
-  IID__SocAnalyticalParam: TGUID  = '{1409CADE-5A05-47C9-971B-F603BAA3CBC9}';
+  IID__FieldDef: TGUID = '{486E1C6B-FDAC-4500-9BB0-9E54FAB3D314}';
+  CLASS_FieldDef: TGUID = '{A34930DA-384B-4069-B20D-6BC4C26271DB}';
+  IID__Periods: TGUID = '{1092CFBD-2DC9-4ED7-B92A-B51823054557}';
+  CLASS_Periods: TGUID = '{0E6494B9-10AC-48C0-A288-45A6F75187C6}';
+  IID__FatalErrors: TGUID = '{78D7C2FE-C8A0-4875-A8C9-C575A34F9A3F}';
+  CLASS_FatalErrors: TGUID = '{EBF5276A-68D3-48B0-96EF-3CDCB2D42C76}';
+  IID__FatalError: TGUID = '{BA1778B2-EBB0-4F92-8007-B5DA01D8612C}';
+  CLASS_FatalError: TGUID = '{15C99B60-EFF0-417A-99A3-2C9ED67EA67C}';
+  IID__Warnings: TGUID = '{DBC8894B-EF33-4780-A021-B796DDC31491}';
+  CLASS_Warnings: TGUID = '{520D4A52-D494-4E4D-A9A2-62E117E0252B}';
+  IID__Queries: TGUID = '{FFAE05BF-32D4-4666-9331-587377D866D9}';
+  CLASS_Queries: TGUID = '{E6F7158B-6BA4-4754-8441-804E463FB43D}';
+  IID__TablesUser: TGUID = '{7F525544-EE76-4A3F-B6F0-58420C36790D}';
+  CLASS_TablesUser: TGUID = '{215B53FC-49C1-49E3-B4DF-F1E0A652CB3E}';
+  IID__Tables: TGUID = '{0634AD47-2178-4E8A-90E7-C0F8838C862C}';
+  CLASS_Tables: TGUID = '{5DBE4BC9-7EE2-4279-9922-6DF7F36D8EC5}';
+  IID__Warning: TGUID = '{B01333D2-9497-4AC2-ADD4-7FD612E6F320}';
+  CLASS_Warning: TGUID = '{2D7A39AA-CB4C-4A97-B4FC-CE9DBC8A4DD5}';
+  IID__ErrorCodes: TGUID = '{3EE802AB-9C25-4818-9ACA-D167F702297D}';
+  CLASS_ErrorCodes: TGUID = '{184F390B-1EA2-4CC0-B89D-4EA873B2F649}';
+  IID__Fields: TGUID = '{BF9CFF11-A57E-4366-8ACB-48259AC3DBB7}';
+  CLASS_Fields: TGUID = '{300F29DE-87B0-4E62-8B8C-CAF1CB264E0F}';
+  IID__BookYears: TGUID = '{5DEF4379-FB79-4D6E-9A6A-C9A4432ACE05}';
+  CLASS_BookYears: TGUID = '{268F50EF-CC4B-4813-9E04-CAE3F19C6B75}';
+  IID__BookYear: TGUID = '{1A4570BF-C4D6-4ECB-8D1A-255CE6BC81D2}';
+  CLASS_BookYear: TGUID = '{DDF3767C-CB2F-429B-BC2E-A4622E20B748}';
+  IID__Period: TGUID = '{DFC7FAF8-21DF-44EB-B02B-3EED989DB860}';
+  CLASS_Period: TGUID = '{7FEC6EF4-EC37-48E0-918B-78A4AA0E69C1}';
+  IID__SocAnalyticalParam: TGUID = '{1409CADE-5A05-47C9-971B-F603BAA3CBC9}';
   CLASS_SocAnalyticalParam: TGUID = '{209411EA-5621-42FA-A99E-BCE0A06E0642}';
-  IID__ErrorCode: TGUID           = '{9F5C353E-FB46-4D19-B4E3-E08C3C60B710}';
-  CLASS_ErrorCode: TGUID          = '{5BC8AA2E-0E42-4784-8133-F6DFDAB20DA5}';
-  IID__Import: TGUID              = '{76AF0DAA-A211-4884-BBCF-FCA0E7F17C2E}';
-  CLASS_Import: TGUID             = '{923C7ED7-E415-42CB-BDEA-6EB070C96BD9}';
-  IID__DbClassApi: TGUID          = '{32338ECD-D93E-420D-91A8-883E55B377D5}';
-  CLASS_DbClassApi: TGUID         = '{61E5DE91-C300-4C05-97BB-5A4BD68589BC}';
-  IID__Compte: TGUID              = '{0160E272-89CA-466B-A2A1-706B0027FEA5}';
-  CLASS_Compte: TGUID             = '{48F3777C-6A93-49E9-8356-F0A6D20FB28A}';
-  IID__TableUser: TGUID           = '{E77CFE56-9254-4F26-A270-01FECB1458D2}';
-  CLASS_TableUser: TGUID          = '{C2C9C138-51C3-4BB4-9F43-4C5006B23644}';
-  IID__Comptes: TGUID             = '{A550F779-9D65-431C-8423-6A191A123F9C}';
-  CLASS_Comptes: TGUID            = '{DA36E857-BB5A-4534-A29B-147DA9891BA3}';
-  IID__Dossier: TGUID             = '{85FD7C04-A8B8-4795-9890-0E89911DC530}';
-  CLASS_Dossier: TGUID            = '{7A5CABDC-4D00-4C7A-A9F3-0845AC81E465}';
-  IID__Options: TGUID             = '{E667C7A2-7F84-4C41-A337-126AD043478C}';
-  CLASS_Options: TGUID            = '{FD92BEAC-82DA-4AA8-BA93-EAA8C312512E}';
-  IID__Field: TGUID               = '{F105E093-D911-46A0-81AF-92B336CF4A83}';
-  CLASS_Field: TGUID              = '{FE3AC3CC-0C53-403F-8C8E-1A1FDDEE9F5B}';
-  IID__AnaLytique: TGUID          = '{7001AA94-00C5-4538-982B-229B29AEF8B2}';
-  CLASS_AnaLytique: TGUID         = '{6A32FF54-31A4-4A29-BBAC-484B0E3F5D74}';
-  IID__WbApiUtilities: TGUID      = '{013A3107-0813-411A-AF5E-474D7850B4E5}';
-  CLASS_WbApiUtilities: TGUID     = '{71979598-9C60-4F06-BC21-5827860DB27B}';
-  IID__SqlError: TGUID            = '{8C45D26C-2723-401D-852F-9928C0502573}';
-  CLASS_SqlError: TGUID           = '{E67D7428-EECE-4624-9CA3-D9B5F985789A}';
-  IID__User: TGUID                = '{5096A48E-51B7-4FA0-B779-95DF959F94E8}';
-  CLASS_User: TGUID               = '{EA8B7735-B14B-40BD-A5ED-16239F6F9A80}';
-  IID__Dossiers: TGUID            = '{7AA31EBA-863F-4397-B7EC-9E00BB941C97}';
-  CLASS_Dossiers: TGUID           = '{02FD2AEF-1046-4C4A-97B3-6E4DFD79CD94}';
-  IID__ApiIni: TGUID              = '{B17D41BA-16F6-4405-933B-9E3AE2F9EBB3}';
-  CLASS_ApiIni: TGUID             = '{32E39920-91ED-4ECE-A14C-0F9E11BE4126}';
-  IID__WinbooksObject: TGUID      = '{834C9818-ACFE-4420-9E30-7E5A63161D14}';
-  CLASS_WinbooksObject: TGUID     = '{B67F206D-2887-4898-89D8-8AD5691B6DF0}';
-  IID__SqlClass: TGUID            = '{53B092BD-10D4-4F44-B8C4-8137951306D3}';
-  DIID___SqlClass: TGUID          = '{22157BF3-9288-4011-BF76-7A3E4B8AD5CA}';
-  IID__Param: TGUID               = '{FAB874C8-E379-4AB3-AA5E-7CCC088B2160}';
-  CLASS_Param: TGUID              = '{BEEA7825-9F20-4A2F-B0D8-64ADC5E450CD}';
-  IID__Transactions: TGUID        = '{36B3C7F9-AEFA-407D-B52B-FEDCB7DC2553}';
-  CLASS_Transactions: TGUID       = '{3EFFC1A5-6784-471E-B92B-72A2AD941286}';
-  IID__Analytiques: TGUID         = '{72E29583-AE9F-41C8-8A52-7D02AACD690B}';
-  CLASS_Analytiques: TGUID        = '{EDC584A4-AB62-4BAB-94CF-13BC7D350961}';
-  IID__Transaction: TGUID         = '{04261072-CDDD-4655-BD4E-D79C36F1A776}';
-  CLASS_Transaction: TGUID        = '{DCCB2DE6-FA2A-430D-A79D-F79B258FF15A}';
-  CLASS_SqlClass: TGUID           = '{CEA217D2-2E26-4E20-A7E4-094A55E3C421}';
+  IID__ErrorCode: TGUID = '{9F5C353E-FB46-4D19-B4E3-E08C3C60B710}';
+  CLASS_ErrorCode: TGUID = '{5BC8AA2E-0E42-4784-8133-F6DFDAB20DA5}';
+  IID__Import: TGUID = '{76AF0DAA-A211-4884-BBCF-FCA0E7F17C2E}';
+  CLASS_Import: TGUID = '{923C7ED7-E415-42CB-BDEA-6EB070C96BD9}';
+  IID__DbClassApi: TGUID = '{32338ECD-D93E-420D-91A8-883E55B377D5}';
+  CLASS_DbClassApi: TGUID = '{61E5DE91-C300-4C05-97BB-5A4BD68589BC}';
+  IID__Compte: TGUID = '{0160E272-89CA-466B-A2A1-706B0027FEA5}';
+  CLASS_Compte: TGUID = '{48F3777C-6A93-49E9-8356-F0A6D20FB28A}';
+  IID__TableUser: TGUID = '{E77CFE56-9254-4F26-A270-01FECB1458D2}';
+  CLASS_TableUser: TGUID = '{C2C9C138-51C3-4BB4-9F43-4C5006B23644}';
+  IID__Comptes: TGUID = '{A550F779-9D65-431C-8423-6A191A123F9C}';
+  CLASS_Comptes: TGUID = '{DA36E857-BB5A-4534-A29B-147DA9891BA3}';
+  IID__Dossier: TGUID = '{85FD7C04-A8B8-4795-9890-0E89911DC530}';
+  CLASS_Dossier: TGUID = '{7A5CABDC-4D00-4C7A-A9F3-0845AC81E465}';
+  IID__Options: TGUID = '{E667C7A2-7F84-4C41-A337-126AD043478C}';
+  CLASS_Options: TGUID = '{FD92BEAC-82DA-4AA8-BA93-EAA8C312512E}';
+  IID__Field: TGUID = '{F105E093-D911-46A0-81AF-92B336CF4A83}';
+  CLASS_Field: TGUID = '{FE3AC3CC-0C53-403F-8C8E-1A1FDDEE9F5B}';
+  IID__AnaLytique: TGUID = '{7001AA94-00C5-4538-982B-229B29AEF8B2}';
+  CLASS_AnaLytique: TGUID = '{6A32FF54-31A4-4A29-BBAC-484B0E3F5D74}';
+  IID__WbApiUtilities: TGUID = '{013A3107-0813-411A-AF5E-474D7850B4E5}';
+  CLASS_WbApiUtilities: TGUID = '{71979598-9C60-4F06-BC21-5827860DB27B}';
+  IID__SqlError: TGUID = '{8C45D26C-2723-401D-852F-9928C0502573}';
+  CLASS_SqlError: TGUID = '{E67D7428-EECE-4624-9CA3-D9B5F985789A}';
+  IID__User: TGUID = '{5096A48E-51B7-4FA0-B779-95DF959F94E8}';
+  CLASS_User: TGUID = '{EA8B7735-B14B-40BD-A5ED-16239F6F9A80}';
+  IID__Dossiers: TGUID = '{7AA31EBA-863F-4397-B7EC-9E00BB941C97}';
+  CLASS_Dossiers: TGUID = '{02FD2AEF-1046-4C4A-97B3-6E4DFD79CD94}';
+  IID__ApiIni: TGUID = '{B17D41BA-16F6-4405-933B-9E3AE2F9EBB3}';
+  CLASS_ApiIni: TGUID = '{32E39920-91ED-4ECE-A14C-0F9E11BE4126}';
+  IID__WinbooksObject: TGUID = '{834C9818-ACFE-4420-9E30-7E5A63161D14}';
+  CLASS_WinbooksObject: TGUID = '{B67F206D-2887-4898-89D8-8AD5691B6DF0}';
+  IID__SqlClass: TGUID = '{53B092BD-10D4-4F44-B8C4-8137951306D3}';
+  DIID___SqlClass: TGUID = '{22157BF3-9288-4011-BF76-7A3E4B8AD5CA}';
+  IID__Param: TGUID = '{FAB874C8-E379-4AB3-AA5E-7CCC088B2160}';
+  CLASS_Param: TGUID = '{BEEA7825-9F20-4A2F-B0D8-64ADC5E450CD}';
+  IID__Transactions: TGUID = '{36B3C7F9-AEFA-407D-B52B-FEDCB7DC2553}';
+  CLASS_Transactions: TGUID = '{3EFFC1A5-6784-471E-B92B-72A2AD941286}';
+  IID__Analytiques: TGUID = '{72E29583-AE9F-41C8-8A52-7D02AACD690B}';
+  CLASS_Analytiques: TGUID = '{EDC584A4-AB62-4BAB-94CF-13BC7D350961}';
+  IID__Transaction: TGUID = '{04261072-CDDD-4655-BD4E-D79C36F1A776}';
+  CLASS_Transaction: TGUID = '{DCCB2DE6-FA2A-430D-A79D-F79B258FF15A}';
+  CLASS_SqlClass: TGUID = '{CEA217D2-2E26-4E20-A7E4-094A55E3C421}';
 
   // *********************************************************************//
   // Declaration of Enumerations defined in Type Library
@@ -176,17 +176,17 @@ type
   TableQuery = TOleEnum;
 
 const
-  wbCSF     = $00000000;
-  wbACF     = $00000001;
-  wbACT     = $00000002;
-  wbEXPCSF  = $00000003;
-  wbEXPACF  = $00000004;
-  wbEXPDBK  = $00000005;
+  wbCSF = $00000000;
+  wbACF = $00000001;
+  wbACT = $00000002;
+  wbEXPCSF = $00000003;
+  wbEXPACF = $00000004;
+  wbEXPDBK = $00000005;
   wbEXPMEMO = $00000006;
-  wbEXPVAT  = $00000007;
-  wbMEMO    = $00000008;
-  wbEXPACT  = $00000009;
-  wbDBK     = $0000000A;
+  wbEXPVAT = $00000007;
+  wbMEMO = $00000008;
+  wbEXPACT = $00000009;
+  wbDBK = $0000000A;
   wbCODEVAT = $0000000B;
 
   // Constants for enum FormatLink
@@ -195,14 +195,14 @@ type
 
 const
   wbWinbooks = $00000000;
-  wbCubic    = $00000001;
+  wbCubic = $00000001;
 
   // Constants for enum LangueforVat
 type
   LangueforVat = TOleEnum;
 
 const
-  wbFrench     = $00000000;
+  wbFrench = $00000000;
   wbNetherland = $00000001;
 
   // Constants for enum LanguageDll
@@ -210,7 +210,7 @@ type
   LanguageDll = TOleEnum;
 
 const
-  FRANCAIS   = $00000000;
+  FRANCAIS = $00000000;
   NEEDERLANS = $00000001;
 
   // Constants for enum TypeSolution
@@ -218,13 +218,13 @@ type
   TypeSolution = TOleEnum;
 
 const
-  wbToResolve   = $00000000;
-  wbAccept      = $00000001;
-  wbReplace     = $00000002;
+  wbToResolve = $00000000;
+  wbAccept = $00000001;
+  wbReplace = $00000002;
   wbBlankRecord = $00000003;
-  wbIgnore      = $00000004;
-  WbDontCopy    = $00000005;
-  wbEraseAll    = $00000006;
+  wbIgnore = $00000004;
+  WbDontCopy = $00000005;
+  wbEraseAll = $00000006;
   wbInformation = $00000007;
 
   // Constants for enum FileType
@@ -233,8 +233,8 @@ type
 
 const
   Excelfile = $00000000;
-  dbffile   = $00000001;
-  txtfile   = $00000002;
+  dbffile = $00000001;
+  txtfile = $00000002;
 
   // Constants for enum MODE
 type
@@ -242,127 +242,127 @@ type
 
 const
   Overwrite = $00000000;
-  Append    = $00000001;
+  Append = $00000001;
 
 type
 
   // *********************************************************************//
   // Forward declaration of types defined in TypeLibrary
   // *********************************************************************//
-  _FieldDef               = interface;
-  _FieldDefDisp           = dispinterface;
-  _Periods                = interface;
-  _PeriodsDisp            = dispinterface;
-  _FatalErrors            = interface;
-  _FatalErrorsDisp        = dispinterface;
-  _FatalError             = interface;
-  _FatalErrorDisp         = dispinterface;
-  _Warnings               = interface;
-  _WarningsDisp           = dispinterface;
-  _Queries                = interface;
-  _QueriesDisp            = dispinterface;
-  _TablesUser             = interface;
-  _TablesUserDisp         = dispinterface;
-  _Tables                 = interface;
-  _TablesDisp             = dispinterface;
-  _Warning                = interface;
-  _WarningDisp            = dispinterface;
-  _ErrorCodes             = interface;
-  _ErrorCodesDisp         = dispinterface;
-  _Fields                 = interface;
-  _FieldsDisp             = dispinterface;
-  _BookYears              = interface;
-  _BookYearsDisp          = dispinterface;
-  _BookYear               = interface;
-  _BookYearDisp           = dispinterface;
-  _Period                 = interface;
-  _PeriodDisp             = dispinterface;
-  _SocAnalyticalParam     = interface;
+  _FieldDef = interface;
+  _FieldDefDisp = dispinterface;
+  _Periods = interface;
+  _PeriodsDisp = dispinterface;
+  _FatalErrors = interface;
+  _FatalErrorsDisp = dispinterface;
+  _FatalError = interface;
+  _FatalErrorDisp = dispinterface;
+  _Warnings = interface;
+  _WarningsDisp = dispinterface;
+  _Queries = interface;
+  _QueriesDisp = dispinterface;
+  _TablesUser = interface;
+  _TablesUserDisp = dispinterface;
+  _Tables = interface;
+  _TablesDisp = dispinterface;
+  _Warning = interface;
+  _WarningDisp = dispinterface;
+  _ErrorCodes = interface;
+  _ErrorCodesDisp = dispinterface;
+  _Fields = interface;
+  _FieldsDisp = dispinterface;
+  _BookYears = interface;
+  _BookYearsDisp = dispinterface;
+  _BookYear = interface;
+  _BookYearDisp = dispinterface;
+  _Period = interface;
+  _PeriodDisp = dispinterface;
+  _SocAnalyticalParam = interface;
   _SocAnalyticalParamDisp = dispinterface;
-  _ErrorCode              = interface;
-  _ErrorCodeDisp          = dispinterface;
-  _Import                 = interface;
-  _ImportDisp             = dispinterface;
-  _DbClassApi             = interface;
-  _DbClassApiDisp         = dispinterface;
-  _Compte                 = interface;
-  _CompteDisp             = dispinterface;
-  _TableUser              = interface;
-  _TableUserDisp          = dispinterface;
-  _Comptes                = interface;
-  _ComptesDisp            = dispinterface;
-  _Dossier                = interface;
-  _DossierDisp            = dispinterface;
-  _Options                = interface;
-  _OptionsDisp            = dispinterface;
-  _Field                  = interface;
-  _FieldDisp              = dispinterface;
-  _AnaLytique             = interface;
-  _AnaLytiqueDisp         = dispinterface;
-  _WbApiUtilities         = interface;
-  _WbApiUtilitiesDisp     = dispinterface;
-  _SqlError               = interface;
-  _SqlErrorDisp           = dispinterface;
-  _User                   = interface;
-  _UserDisp               = dispinterface;
-  _Dossiers               = interface;
-  _DossiersDisp           = dispinterface;
-  _ApiIni                 = interface;
-  _ApiIniDisp             = dispinterface;
-  _WinbooksObject         = interface;
-  _WinbooksObjectDisp     = dispinterface;
-  _SqlClass               = interface;
-  _SqlClassDisp           = dispinterface;
-  __SqlClass              = dispinterface;
-  _Param                  = interface;
-  _ParamDisp              = dispinterface;
-  _Transactions           = interface;
-  _TransactionsDisp       = dispinterface;
-  _Analytiques            = interface;
-  _AnalytiquesDisp        = dispinterface;
-  _Transaction            = interface;
-  _TransactionDisp        = dispinterface;
+  _ErrorCode = interface;
+  _ErrorCodeDisp = dispinterface;
+  _Import = interface;
+  _ImportDisp = dispinterface;
+  _DbClassApi = interface;
+  _DbClassApiDisp = dispinterface;
+  _Compte = interface;
+  _CompteDisp = dispinterface;
+  _TableUser = interface;
+  _TableUserDisp = dispinterface;
+  _Comptes = interface;
+  _ComptesDisp = dispinterface;
+  _Dossier = interface;
+  _DossierDisp = dispinterface;
+  _Options = interface;
+  _OptionsDisp = dispinterface;
+  _Field = interface;
+  _FieldDisp = dispinterface;
+  _AnaLytique = interface;
+  _AnaLytiqueDisp = dispinterface;
+  _WbApiUtilities = interface;
+  _WbApiUtilitiesDisp = dispinterface;
+  _SqlError = interface;
+  _SqlErrorDisp = dispinterface;
+  _User = interface;
+  _UserDisp = dispinterface;
+  _Dossiers = interface;
+  _DossiersDisp = dispinterface;
+  _ApiIni = interface;
+  _ApiIniDisp = dispinterface;
+  _WinbooksObject = interface;
+  _WinbooksObjectDisp = dispinterface;
+  _SqlClass = interface;
+  _SqlClassDisp = dispinterface;
+  __SqlClass = dispinterface;
+  _Param = interface;
+  _ParamDisp = dispinterface;
+  _Transactions = interface;
+  _TransactionsDisp = dispinterface;
+  _Analytiques = interface;
+  _AnalytiquesDisp = dispinterface;
+  _Transaction = interface;
+  _TransactionDisp = dispinterface;
 
   // *********************************************************************//
   // Declaration of CoClasses defined in Type Library
   // (NOTE: Here we map each CoClass to its Default Interface)
   // *********************************************************************//
-  FieldDef           = _FieldDef;
-  Periods            = _Periods;
-  FatalErrors        = _FatalErrors;
-  FatalError         = _FatalError;
-  Warnings           = _Warnings;
-  Queries            = _Queries;
-  TablesUser         = _TablesUser;
-  Tables             = _Tables;
-  Warning            = _Warning;
-  ErrorCodes         = _ErrorCodes;
-  Fields             = _Fields;
-  BookYears          = _BookYears;
-  BookYear           = _BookYear;
-  Period             = _Period;
+  FieldDef = _FieldDef;
+  Periods = _Periods;
+  FatalErrors = _FatalErrors;
+  FatalError = _FatalError;
+  Warnings = _Warnings;
+  Queries = _Queries;
+  TablesUser = _TablesUser;
+  Tables = _Tables;
+  Warning = _Warning;
+  ErrorCodes = _ErrorCodes;
+  Fields = _Fields;
+  BookYears = _BookYears;
+  BookYear = _BookYear;
+  Period = _Period;
   SocAnalyticalParam = _SocAnalyticalParam;
-  ErrorCode          = _ErrorCode;
-  Import             = _Import;
-  DbClassApi         = _DbClassApi;
-  Compte             = _Compte;
-  TableUser          = _TableUser;
-  Comptes            = _Comptes;
-  Dossier            = _Dossier;
-  Options            = _Options;
-  Field              = _Field;
-  AnaLytique         = _AnaLytique;
-  WbApiUtilities     = _WbApiUtilities;
-  SqlError           = _SqlError;
-  User               = _User;
-  Dossiers           = _Dossiers;
-  ApiIni             = _ApiIni;
-  WinbooksObject     = _WinbooksObject;
-  Param              = _Param;
-  Transactions       = _Transactions;
-  Analytiques        = _Analytiques;
-  Transaction        = _Transaction;
-  SqlClass           = _SqlClass;
+  ErrorCode = _ErrorCode;
+  Import = _Import;
+  DbClassApi = _DbClassApi;
+  Compte = _Compte;
+  TableUser = _TableUser;
+  Comptes = _Comptes;
+  Dossier = _Dossier;
+  Options = _Options;
+  Field = _Field;
+  AnaLytique = _AnaLytique;
+  WbApiUtilities = _WbApiUtilities;
+  SqlError = _SqlError;
+  User = _User;
+  Dossiers = _Dossiers;
+  ApiIni = _ApiIni;
+  WinbooksObject = _WinbooksObject;
+  Param = _Param;
+  Transactions = _Transactions;
+  Analytiques = _Analytiques;
+  Transaction = _Transaction;
+  SqlClass = _SqlClass;
 
   // *********************************************************************//
   // Interface: _FieldDef
@@ -394,7 +394,8 @@ type
     property Expression: WideString read Get_Expression write Set_Expression;
     property Decimals: WideString read Get_Decimals write Set_Decimals;
     property Width: WideString read Get_Width write Set_Width;
-    property GetFieldType: WideString read Get_GetFieldType write Set_GetFieldType;
+    property GetFieldType: WideString read Get_GetFieldType
+      write Set_GetFieldType;
   end;
 
   // *********************************************************************//
@@ -606,10 +607,14 @@ type
     property PayCodes: _TablesUser read Get_PayCodes write _Set_PayCodes;
     property MoneyRates: _TablesUser read Get_MoneyRates write _Set_MoneyRates;
     property Diaries: _TablesUser read Get_Diaries write _Set_Diaries;
-    property CatAccountGen: _TablesUser read Get_CatAccountGen write _Set_CatAccountGen;
-    property CatCustomer: _TablesUser read Get_CatCustomer write _Set_CatCustomer;
-    property CatSupplier: _TablesUser read Get_CatSupplier write _Set_CatSupplier;
-    property CatAnalytique: _TablesUser read Get_CatAnalytique write _Set_CatAnalytique;
+    property CatAccountGen: _TablesUser read Get_CatAccountGen
+      write _Set_CatAccountGen;
+    property CatCustomer: _TablesUser read Get_CatCustomer
+      write _Set_CatCustomer;
+    property CatSupplier: _TablesUser read Get_CatSupplier
+      write _Set_CatSupplier;
+    property CatAnalytique: _TablesUser read Get_CatAnalytique
+      write _Set_CatAnalytique;
     property CatAssets: _TablesUser read Get_CatAssets write _Set_CatAssets;
   end;
 
@@ -707,7 +712,8 @@ type
     ['{BF9CFF11-A57E-4366-8ACB-48259AC3DBB7}']
     function Item(const FieldNameorFieldNum: WideString): _Field; safecall;
     function Get_Count: Smallint; safecall;
-    function GetIndiceInCollection(const FieldName: WideString): Smallint; safecall;
+    function GetIndiceInCollection(const FieldName: WideString)
+      : Smallint; safecall;
     property Count: Smallint read Get_Count;
   end;
 
@@ -720,7 +726,8 @@ type
     ['{BF9CFF11-A57E-4366-8ACB-48259AC3DBB7}']
     function Item(const FieldNameorFieldNum: WideString): _Field; dispid 0;
     property Count: Smallint readonly dispid 1745027072;
-    function GetIndiceInCollection(const FieldName: WideString): Smallint; dispid 1610809347;
+    function GetIndiceInCollection(const FieldName: WideString): Smallint;
+      dispid 1610809347;
   end;
 
   // *********************************************************************//
@@ -758,11 +765,13 @@ type
     procedure _Set_Periods(const Periods: _Periods); safecall;
     function Get_ShortName: WideString; safecall;
     function Get_LongName: WideString; safecall;
-    function Get_SigIndiceOfYear(var BookYearNum: Smallint): OleVariant; safecall;
+    function Get_SigIndiceOfYear(var BookYearNum: Smallint)
+      : OleVariant; safecall;
     property Periods: _Periods read Get_Periods write _Set_Periods;
     property ShortName: WideString read Get_ShortName;
     property LongName: WideString read Get_LongName;
-    property SigIndiceOfYear[var BookYearNum: Smallint]: OleVariant read Get_SigIndiceOfYear;
+    property SigIndiceOfYear[var BookYearNum: Smallint]: OleVariant
+      read Get_SigIndiceOfYear;
   end;
 
   // *********************************************************************//
@@ -776,7 +785,8 @@ type
     procedure GhostMethod__BookYear_32_1; dispid 1610743809;
     property ShortName: WideString readonly dispid 1745027074;
     property LongName: WideString readonly dispid 1745027073;
-    property SigIndiceOfYear[var BookYearNum: Smallint]: OleVariant readonly dispid 1745027072;
+    property SigIndiceOfYear[var BookYearNum: Smallint]
+      : OleVariant readonly dispid 1745027072;
   end;
 
   // *********************************************************************//
@@ -801,7 +811,8 @@ type
   _PeriodDisp = dispinterface
     ['{DFC7FAF8-21DF-44EB-B02B-3EED989DB860}']
     property name: WideString readonly dispid 1745027074;
-    function NumOfPeriod(const NamePeriod: WideString): WideString; dispid 1610809348;
+    function NumOfPeriod(const NamePeriod: WideString): WideString;
+      dispid 1610809348;
     property ListOfPeriods: WideString readonly dispid 1745027072;
   end;
 
@@ -885,14 +896,18 @@ type
     function SetDefaultPeriod(const sNewPeriod: WideString): WordBool; safecall;
     function FileFormat(const FileType: WideString): WordBool; safecall;
     function Directory(const vNewValue: WideString): WordBool; safecall;
-    function Backup(var WayForBackup: WideString; var EraseExisting: WordBool): WordBool; safecall;
-    function SigFieldToExclude(const sigFieldString: WideString): WordBool; safecall;
-    function SigParamFieldLink(const sigFieldString: WideString): WordBool; safecall;
+    function Backup(var WayForBackup: WideString; var EraseExisting: WordBool)
+      : WordBool; safecall;
+    function SigFieldToExclude(const sigFieldString: WideString)
+      : WordBool; safecall;
+    function SigParamFieldLink(const sigFieldString: WideString)
+      : WordBool; safecall;
     function Execute: Smallint; safecall;
     function test: WordBool; safecall;
     property ErrorCodes: _ErrorCodes read Get_ErrorCodes write _Set_ErrorCodes;
     property Warnings: _Warnings read Get_Warnings write _Set_Warnings;
-    property FatalErrors: _FatalErrors read Get_FatalErrors write _Set_FatalErrors;
+    property FatalErrors: _FatalErrors read Get_FatalErrors
+      write _Set_FatalErrors;
     property LinkFormat: FormatLink read Get_LinkFormat write Set_LinkFormat;
   end;
 
@@ -910,12 +925,18 @@ type
     property FatalErrors: _FatalErrors dispid 1073938434;
     procedure GhostMethod__Import_56_3; dispid 1610743815;
     property LinkFormat: FormatLink dispid 1745027072;
-    function SetDefaultPeriod(const sNewPeriod: WideString): WordBool; dispid 1610809345;
-    function FileFormat(const FileType: WideString): WordBool; dispid 1610809346;
-    function Directory(const vNewValue: WideString): WordBool; dispid 1610809347;
-    function Backup(var WayForBackup: WideString; var EraseExisting: WordBool): WordBool; dispid 1610809348;
-    function SigFieldToExclude(const sigFieldString: WideString): WordBool; dispid 1610809349;
-    function SigParamFieldLink(const sigFieldString: WideString): WordBool; dispid 1610809350;
+    function SetDefaultPeriod(const sNewPeriod: WideString): WordBool;
+      dispid 1610809345;
+    function FileFormat(const FileType: WideString): WordBool;
+      dispid 1610809346;
+    function Directory(const vNewValue: WideString): WordBool;
+      dispid 1610809347;
+    function Backup(var WayForBackup: WideString; var EraseExisting: WordBool)
+      : WordBool; dispid 1610809348;
+    function SigFieldToExclude(const sigFieldString: WideString): WordBool;
+      dispid 1610809349;
+    function SigParamFieldLink(const sigFieldString: WideString): WordBool;
+      dispid 1610809350;
     function Execute: Smallint; dispid 1610809351;
     function test: WordBool; dispid 1610809352;
   end;
@@ -946,14 +967,16 @@ type
   _Compte = interface(IDispatch)
     ['{0160E272-89CA-466B-A2A1-706B0027FEA5}']
     function Get_ListCount: Integer; safecall;
-    function Get_FieldValue(const FieldNameorNum: WideString): OleVariant; safecall;
+    function Get_FieldValue(const FieldNameorNum: WideString)
+      : OleVariant; safecall;
     procedure InitializeCancel; safecall;
     procedure CancelOperation; safecall;
     procedure InitializeCallBack(var ObjCallBack: IDispatch); safecall;
     procedure ExportXL; safecall;
     function Balance: Double; safecall;
     property ListCount: Integer read Get_ListCount;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   end;
 
   // *********************************************************************//
@@ -964,7 +987,8 @@ type
   _CompteDisp = dispinterface
     ['{0160E272-89CA-466B-A2A1-706B0027FEA5}']
     property ListCount: Integer readonly dispid 1745027073;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant readonly dispid 1745027072;
+    property FieldValue[const FieldNameorNum: WideString]
+      : OleVariant readonly dispid 1745027072;
     procedure InitializeCancel; dispid 1610809349;
     procedure CancelOperation; dispid 1610809350;
     procedure InitializeCallBack(var ObjCallBack: IDispatch); dispid 1610809351;
@@ -981,11 +1005,13 @@ type
     ['{E77CFE56-9254-4F26-A270-01FECB1458D2}']
     function Get_Number: WideString; safecall;
     function Get_SortOrder: Smallint; safecall;
-    function Get_FieldValue(const FieldNameorNum: WideString): OleVariant; safecall;
+    function Get_FieldValue(const FieldNameorNum: WideString)
+      : OleVariant; safecall;
     procedure ExportXL; safecall;
     property Number: WideString read Get_Number;
     property SortOrder: Smallint read Get_SortOrder;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   end;
 
   // *********************************************************************//
@@ -997,7 +1023,8 @@ type
     ['{E77CFE56-9254-4F26-A270-01FECB1458D2}']
     property Number: WideString readonly dispid 1745027074;
     property SortOrder: Smallint readonly dispid 1745027073;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant readonly dispid 1745027072;
+    property FieldValue[const FieldNameorNum: WideString]
+      : OleVariant readonly dispid 1745027072;
     procedure ExportXL; dispid 1610809349;
   end;
 
@@ -1161,13 +1188,16 @@ type
     procedure CancelOperation; safecall;
     procedure InitializeCallBack(var ObjCallBack: IDispatch); safecall;
     procedure ExportXL; safecall;
-    procedure ExportBalAna(const Deb_per: WideString; const End_per: WideString); safecall;
-    function Get_FieldValue(const FieldNameorNum: WideString): OleVariant; safecall;
+    procedure ExportBalAna(const Deb_per: WideString;
+      const End_per: WideString); safecall;
+    function Get_FieldValue(const FieldNameorNum: WideString)
+      : OleVariant; safecall;
     property DeterminePlan: Smallint write Set_DeterminePlan;
     property PeriodStart: WideString write Set_PeriodStart;
     property PeriodEnd: WideString write Set_PeriodEnd;
     property AllBookyear: WordBool write Set_AllBookyear;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   end;
 
   // *********************************************************************//
@@ -1185,8 +1215,10 @@ type
     procedure CancelOperation; dispid 1610809354;
     procedure InitializeCallBack(var ObjCallBack: IDispatch); dispid 1610809355;
     procedure ExportXL; dispid 1610809356;
-    procedure ExportBalAna(const Deb_per: WideString; const End_per: WideString); dispid 1610809357;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant readonly dispid 1745027072;
+    procedure ExportBalAna(const Deb_per: WideString;
+      const End_per: WideString); dispid 1610809357;
+    property FieldValue[const FieldNameorNum: WideString]
+      : OleVariant readonly dispid 1745027072;
   end;
 
   // *********************************************************************//
@@ -1196,15 +1228,20 @@ type
   // *********************************************************************//
   _WbApiUtilities = interface(IDispatch)
     ['{013A3107-0813-411A-AF5E-474D7850B4E5}']
-    procedure FillTreeView(var obj_treeview: IDispatch; var obj_nod: IDispatch); safecall;
-    function SaveNewQuery(const Id_query: WideString; const ID_statement: WideString): WordBool; safecall;
-    function SaveExistingQuery(const Id_query: WideString; const ID_statement: WideString): WordBool; safecall;
+    procedure FillTreeView(var obj_treeview: IDispatch;
+      var obj_nod: IDispatch); safecall;
+    function SaveNewQuery(const Id_query: WideString;
+      const ID_statement: WideString): WordBool; safecall;
+    function SaveExistingQuery(const Id_query: WideString;
+      const ID_statement: WideString): WordBool; safecall;
     function DeleteQuery(const Id_query: WideString): WordBool; safecall;
     function InitializeTime: Double; safecall;
     function Get_GetTime: Double; safecall;
-    function GetFieldCommentForTreeView(var the_objNOd: IDispatch): WideString; safecall;
+    function GetFieldCommentForTreeView(var the_objNOd: IDispatch)
+      : WideString; safecall;
     function LoadExistingQuery(var Obj_To_fill: IDispatch): WordBool; safecall;
-    function SeekSelectedQuery(const Id_query: WideString): WideString; safecall;
+    function SeekSelectedQuery(const Id_query: WideString): WideString;
+      safecall;
     function QueryExist(const ID_statement: WideString): WideString; safecall;
     property GetTime: Double read Get_GetTime;
   end;
@@ -1216,16 +1253,24 @@ type
   // *********************************************************************//
   _WbApiUtilitiesDisp = dispinterface
     ['{013A3107-0813-411A-AF5E-474D7850B4E5}']
-    procedure FillTreeView(var obj_treeview: IDispatch; var obj_nod: IDispatch); dispid 1610809345;
-    function SaveNewQuery(const Id_query: WideString; const ID_statement: WideString): WordBool; dispid 1610809346;
-    function SaveExistingQuery(const Id_query: WideString; const ID_statement: WideString): WordBool; dispid 1610809349;
-    function DeleteQuery(const Id_query: WideString): WordBool; dispid 1610809350;
+    procedure FillTreeView(var obj_treeview: IDispatch; var obj_nod: IDispatch);
+      dispid 1610809345;
+    function SaveNewQuery(const Id_query: WideString;
+      const ID_statement: WideString): WordBool; dispid 1610809346;
+    function SaveExistingQuery(const Id_query: WideString;
+      const ID_statement: WideString): WordBool; dispid 1610809349;
+    function DeleteQuery(const Id_query: WideString): WordBool;
+      dispid 1610809350;
     function InitializeTime: Double; dispid 1610809351;
     property GetTime: Double readonly dispid 1745027072;
-    function GetFieldCommentForTreeView(var the_objNOd: IDispatch): WideString; dispid 1610809352;
-    function LoadExistingQuery(var Obj_To_fill: IDispatch): WordBool; dispid 1610809353;
-    function SeekSelectedQuery(const Id_query: WideString): WideString; dispid 1610809354;
-    function QueryExist(const ID_statement: WideString): WideString; dispid 1610809355;
+    function GetFieldCommentForTreeView(var the_objNOd: IDispatch): WideString;
+      dispid 1610809352;
+    function LoadExistingQuery(var Obj_To_fill: IDispatch): WordBool;
+      dispid 1610809353;
+    function SeekSelectedQuery(const Id_query: WideString): WideString;
+      dispid 1610809354;
+    function QueryExist(const ID_statement: WideString): WideString;
+      dispid 1610809355;
   end;
 
   // *********************************************************************//
@@ -1260,9 +1305,12 @@ type
     ['{5096A48E-51B7-4FA0-B779-95DF959F94E8}']
     function Get_Name: WideString; safecall;
     procedure Set_Name(const Param1: WideString); safecall;
-    function CheckAccess(const SocName: WideString; const SocDirectory: WideString; const UserName: WideString): Smallint; safecall;
-    procedure Register(const SocDirectory: WideString; const UserName: WideString; const UserLanguage: WideString; const UserPassword: WideString;
-      const UserRights: WideString); safecall;
+    function CheckAccess(const SocName: WideString;
+      const SocDirectory: WideString; const UserName: WideString)
+      : Smallint; safecall;
+    procedure Register(const SocDirectory: WideString;
+      const UserName: WideString; const UserLanguage: WideString;
+      const UserPassword: WideString; const UserRights: WideString); safecall;
     function Get_Level: WideString; safecall;
     function Get_Language: WideString; safecall;
     procedure Set_Language(const Param1: WideString); safecall;
@@ -1270,12 +1318,16 @@ type
     procedure Set_Rights(const Param1: WideString); safecall;
     procedure UnRegister; safecall;
     function Get_PrefsPath: WideString; safecall;
-    function IsUserLoggedInDossier(const UserName: WideString; const SocPathName: WideString): Smallint; safecall;
+    function IsUserLoggedInDossier(const UserName: WideString;
+      const SocPathName: WideString): Smallint; safecall;
     function IsAdministrator: WordBool; safecall;
     function IsAccess(const ModuleItemName: WideString): WordBool; safecall;
-    function GetAlternateUsernameAndDossier(const UserName: WideString; ForceRecalculation: WordBool): WideString; safecall;
-    function CheckPasswordOfUser(const UserName: WideString; const the_soc: WideString): WordBool; safecall;
-    function GetLanguageOfCurrentUser(const UserName: WideString): WideString; safecall;
+    function GetAlternateUsernameAndDossier(const UserName: WideString;
+      ForceRecalculation: WordBool): WideString; safecall;
+    function CheckPasswordOfUser(const UserName: WideString;
+      const the_soc: WideString): WordBool; safecall;
+    function GetLanguageOfCurrentUser(const UserName: WideString)
+      : WideString; safecall;
     property name: WideString read Get_Name write Set_Name;
     property Level: WideString read Get_Level;
     property Language: WideString read Get_Language write Set_Language;
@@ -1291,20 +1343,29 @@ type
   _UserDisp = dispinterface
     ['{5096A48E-51B7-4FA0-B779-95DF959F94E8}']
     property name: WideString dispid 1745027077;
-    function CheckAccess(const SocName: WideString; const SocDirectory: WideString; const UserName: WideString): Smallint; dispid 1610809350;
-    procedure Register(const SocDirectory: WideString; const UserName: WideString; const UserLanguage: WideString; const UserPassword: WideString;
-      const UserRights: WideString); dispid 1610809351;
+    function CheckAccess(const SocName: WideString;
+      const SocDirectory: WideString; const UserName: WideString): Smallint;
+      dispid 1610809350;
+    procedure Register(const SocDirectory: WideString;
+      const UserName: WideString; const UserLanguage: WideString;
+      const UserPassword: WideString; const UserRights: WideString);
+      dispid 1610809351;
     property Level: WideString readonly dispid 1745027076;
     property Language: WideString dispid 1745027075;
     property Rights: WideString dispid 1745027073;
     procedure UnRegister; dispid 1610809352;
     property PrefsPath: WideString readonly dispid 1745027072;
-    function IsUserLoggedInDossier(const UserName: WideString; const SocPathName: WideString): Smallint; dispid 1610809353;
+    function IsUserLoggedInDossier(const UserName: WideString;
+      const SocPathName: WideString): Smallint; dispid 1610809353;
     function IsAdministrator: WordBool; dispid 1610809354;
-    function IsAccess(const ModuleItemName: WideString): WordBool; dispid 1610809355;
-    function GetAlternateUsernameAndDossier(const UserName: WideString; ForceRecalculation: WordBool): WideString; dispid 1610809356;
-    function CheckPasswordOfUser(const UserName: WideString; const the_soc: WideString): WordBool; dispid 1610809357;
-    function GetLanguageOfCurrentUser(const UserName: WideString): WideString; dispid 1610809359;
+    function IsAccess(const ModuleItemName: WideString): WordBool;
+      dispid 1610809355;
+    function GetAlternateUsernameAndDossier(const UserName: WideString;
+      ForceRecalculation: WordBool): WideString; dispid 1610809356;
+    function CheckPasswordOfUser(const UserName: WideString;
+      const the_soc: WideString): WordBool; dispid 1610809357;
+    function GetLanguageOfCurrentUser(const UserName: WideString): WideString;
+      dispid 1610809359;
   end;
 
   // *********************************************************************//
@@ -1317,12 +1378,14 @@ type
     function Get_Count: Smallint; safecall;
     function GetAllCompanies: PSafeArray; safecall;
     function GetCompanyListSorted: OleVariant; safecall;
-    function IsLocalDossierExist(const PathInUsersFile: WideString; const MyShortName: WideString): WordBool; safecall;
+    function IsLocalDossierExist(const PathInUsersFile: WideString;
+      const MyShortName: WideString): WordBool; safecall;
     function Item(index: Smallint): _Dossier; safecall;
     function Get_ShowArchivedBookyears: WordBool; safecall;
     procedure Set_ShowArchivedBookyears(Param1: WordBool); safecall;
     property Count: Smallint read Get_Count;
-    property ShowArchivedBookyears: WordBool read Get_ShowArchivedBookyears write Set_ShowArchivedBookyears;
+    property ShowArchivedBookyears: WordBool read Get_ShowArchivedBookyears
+      write Set_ShowArchivedBookyears;
   end;
 
   // *********************************************************************//
@@ -1335,7 +1398,8 @@ type
     property Count: Smallint readonly dispid 1745027073;
     function GetAllCompanies: { ??PSafeArray } OleVariant; dispid 1610809346;
     function GetCompanyListSorted: OleVariant; dispid 1610809347;
-    function IsLocalDossierExist(const PathInUsersFile: WideString; const MyShortName: WideString): WordBool; dispid 1610809349;
+    function IsLocalDossierExist(const PathInUsersFile: WideString;
+      const MyShortName: WideString): WordBool; dispid 1610809349;
     function Item(index: Smallint): _Dossier; dispid 0;
     property ShowArchivedBookyears: WordBool dispid 1745027072;
   end;
@@ -1347,9 +1411,12 @@ type
   // *********************************************************************//
   _ApiIni = interface(IDispatch)
     ['{B17D41BA-16F6-4405-933B-9E3AE2F9EBB3}']
-    function ReadINI(var Section: WideString; var Key: WideString): OleVariant; safecall;
-    procedure WriteINI(var Section: WideString; var Key: WideString; var Text: WideString); safecall;
-    function IsSpecifiedKeyExist(const Section: WideString; const Key: WideString; const IniFileName: WideString): WordBool; safecall;
+    function ReadINI(var Section: WideString; var Key: WideString)
+      : OleVariant; safecall;
+    procedure WriteINI(var Section: WideString; var Key: WideString;
+      var Text: WideString); safecall;
+    function IsSpecifiedKeyExist(const Section: WideString;
+      const Key: WideString; const IniFileName: WideString): WordBool; safecall;
     function Get_INIfile: WideString; safecall;
     procedure Set_INIfile(const Param1: WideString); safecall;
     function GetUserDbfPath: WideString; safecall;
@@ -1363,9 +1430,13 @@ type
   // *********************************************************************//
   _ApiIniDisp = dispinterface
     ['{B17D41BA-16F6-4405-933B-9E3AE2F9EBB3}']
-    function ReadINI(var Section: WideString; var Key: WideString): OleVariant; dispid 1610809345;
-    procedure WriteINI(var Section: WideString; var Key: WideString; var Text: WideString); dispid 1610809346;
-    function IsSpecifiedKeyExist(const Section: WideString; const Key: WideString; const IniFileName: WideString): WordBool; dispid 1610809347;
+    function ReadINI(var Section: WideString; var Key: WideString): OleVariant;
+      dispid 1610809345;
+    procedure WriteINI(var Section: WideString; var Key: WideString;
+      var Text: WideString); dispid 1610809346;
+    function IsSpecifiedKeyExist(const Section: WideString;
+      const Key: WideString; const IniFileName: WideString): WordBool;
+      dispid 1610809347;
     property INIfile: WideString dispid 1745027072;
     function GetUserDbfPath: WideString; dispid 1610809348;
   end;
@@ -1403,7 +1474,8 @@ type
     procedure _Set_AccountTrans(const AccountTrans: _Transactions); safecall;
     function Get_AnalyticalTrans: _Analytiques; safecall;
     procedure GhostMethod__WinbooksObject_128_9; safecall;
-    procedure _Set_AnalyticalTrans(const AnalyticalTrans: _Analytiques); safecall;
+    procedure _Set_AnalyticalTrans(const AnalyticalTrans
+      : _Analytiques); safecall;
     function Get_Tables: _Tables; safecall;
     procedure GhostMethod__WinbooksObject_140_10; safecall;
     procedure _Set_Tables(const Tables: _Tables); safecall;
@@ -1433,10 +1505,12 @@ type
     function ReturnLanguage: WideString; safecall;
     function Init: Smallint; safecall;
     function InitLocal: Smallint; safecall;
-    function Login(const UserName: WideString; const UserPassword: WideString; const UserLanguage: WideString): Smallint; safecall;
+    function Login(const UserName: WideString; const UserPassword: WideString;
+      const UserLanguage: WideString): Smallint; safecall;
     function OpenDossier(const ShortName: WideString): Smallint; safecall;
     procedure LoadFieldDefs; safecall;
-    function OpenBookYear(const BookYearShortName: WideString): Smallint; safecall;
+    function OpenBookYear(const BookYearShortName: WideString)
+      : Smallint; safecall;
     procedure Set_SetPath(const Param1: WideString); safecall;
     procedure CloseDossier; safecall;
     function GetDossierPath(const ShortName: WideString): WideString; safecall;
@@ -1451,12 +1525,17 @@ type
     property Customers: _Comptes read Get_Customers write _Set_Customers;
     property Suppliers: _Comptes read Get_Suppliers write _Set_Suppliers;
     property Accounts: _Comptes read Get_Accounts write _Set_Accounts;
-    property Analytical: _SocAnalyticalParam read Get_Analytical write _Set_Analytical;
-    property CustomerTrans: _Transactions read Get_CustomerTrans write _Set_CustomerTrans;
+    property Analytical: _SocAnalyticalParam read Get_Analytical
+      write _Set_Analytical;
+    property CustomerTrans: _Transactions read Get_CustomerTrans
+      write _Set_CustomerTrans;
     property CustTrans: _Transaction read Get_CustTrans write _Set_CustTrans;
-    property SupplierTrans: _Transactions read Get_SupplierTrans write _Set_SupplierTrans;
-    property AccountTrans: _Transactions read Get_AccountTrans write _Set_AccountTrans;
-    property AnalyticalTrans: _Analytiques read Get_AnalyticalTrans write _Set_AnalyticalTrans;
+    property SupplierTrans: _Transactions read Get_SupplierTrans
+      write _Set_SupplierTrans;
+    property AccountTrans: _Transactions read Get_AccountTrans
+      write _Set_AccountTrans;
+    property AnalyticalTrans: _Analytiques read Get_AnalyticalTrans
+      write _Set_AnalyticalTrans;
     property Tables: _Tables read Get_Tables write _Set_Tables;
     property Import: _Import read Get_Import write _Set_Import;
     property BookYear: _BookYears read Get_BookYear write _Set_BookYear;
@@ -1519,13 +1598,17 @@ type
     function ReturnLanguage: WideString; dispid 1610809350;
     function Init: Smallint; dispid 1610809351;
     function InitLocal: Smallint; dispid 1610809352;
-    function Login(const UserName: WideString; const UserPassword: WideString; const UserLanguage: WideString): Smallint; dispid 1610809353;
-    function OpenDossier(const ShortName: WideString): Smallint; dispid 1610809354;
+    function Login(const UserName: WideString; const UserPassword: WideString;
+      const UserLanguage: WideString): Smallint; dispid 1610809353;
+    function OpenDossier(const ShortName: WideString): Smallint;
+      dispid 1610809354;
     procedure LoadFieldDefs; dispid 1610809356;
-    function OpenBookYear(const BookYearShortName: WideString): Smallint; dispid 1610809358;
+    function OpenBookYear(const BookYearShortName: WideString): Smallint;
+      dispid 1610809358;
     property SetPath: WideString writeonly dispid 1745027075;
     procedure CloseDossier; dispid 1610809362;
-    function GetDossierPath(const ShortName: WideString): WideString; dispid 1610809363;
+    function GetDossierPath(const ShortName: WideString): WideString;
+      dispid 1610809363;
     procedure FreeClipBoard; dispid 1610809364;
     procedure PutInClipBoard(const Str_buffer1: WideString); dispid 1610809365;
     property Version: WideString readonly dispid 1745027074;
@@ -1551,10 +1634,13 @@ type
     procedure Set_OutputFileMode(Param1: MODE); safecall;
     function Get_GetExecutionTime: Double; safecall;
     procedure Initialize; safecall;
-    function WbSqlFunction(const QueryStatement: WideString; var WithCallBack: WordBool): OleVariant; safecall;
-    function ExecuteSqlQuery(const QueryStatement: WideString; var WithCallBack: WordBool): Smallint; safecall;
+    function WbSqlFunction(const QueryStatement: WideString;
+      var WithCallBack: WordBool): OleVariant; safecall;
+    function ExecuteSqlQuery(const QueryStatement: WideString;
+      var WithCallBack: WordBool): Smallint; safecall;
     function WanTotCallBack: WordBool; safecall;
-    function ValidateQueryStatement(SqlStatement: OleVariant): WordBool; safecall;
+    function ValidateQueryStatement(SqlStatement: OleVariant)
+      : WordBool; safecall;
     function Get_LastQueryRecCount: Integer; safecall;
     property Error: _SqlError read Get_Error write _Set_Error;
     property OutputFileFormat: FileType write Set_OutputFileFormat;
@@ -1578,10 +1664,13 @@ type
     property OutputFileMode: MODE writeonly dispid 1745027076;
     property GetExecutionTime: Double readonly dispid 1745027075;
     procedure Initialize; dispid 1610809352;
-    function WbSqlFunction(const QueryStatement: WideString; var WithCallBack: WordBool): OleVariant; dispid 1610809353;
-    function ExecuteSqlQuery(const QueryStatement: WideString; var WithCallBack: WordBool): Smallint; dispid 1610809354;
+    function WbSqlFunction(const QueryStatement: WideString;
+      var WithCallBack: WordBool): OleVariant; dispid 1610809353;
+    function ExecuteSqlQuery(const QueryStatement: WideString;
+      var WithCallBack: WordBool): Smallint; dispid 1610809354;
     function WanTotCallBack: WordBool; dispid 1610809355;
-    function ValidateQueryStatement(SqlStatement: OleVariant): WordBool; dispid 1610809360;
+    function ValidateQueryStatement(SqlStatement: OleVariant): WordBool;
+      dispid 1610809360;
     property LastQueryRecCount: Integer readonly dispid 1745027074;
   end;
 
@@ -1593,7 +1682,8 @@ type
   __SqlClass = dispinterface
     ['{22157BF3-9288-4011-BF76-7A3E4B8AD5CA}']
     procedure OnExecute(ExecutionTime: Double; var Cancel: WordBool); dispid 1;
-    procedure OnFillOutputFile(NbrRecOutput: Integer; NbrRecCount: Integer; var Cancel: WordBool); dispid 2;
+    procedure OnFillOutputFile(NbrRecOutput: Integer; NbrRecCount: Integer;
+      var Cancel: WordBool); dispid 2;
   end;
 
   // *********************************************************************//
@@ -1610,10 +1700,12 @@ type
     function Get_PathName: WideString; safecall;
     function Get_PathExcel: WideString; safecall;
     function Get_CurrentBookYearNumber: Smallint; safecall;
-    function Get_CurrentBookYearNumBis(const ExName: WideString): Smallint; safecall;
+    function Get_CurrentBookYearNumBis(const ExName: WideString)
+      : Smallint; safecall;
     function Get_Value(const ParamName: WideString): WideString; safecall;
     function GetParamValue(const StrID: WideString): WideString; safecall;
-    function VATInternalCode(const CodeUser: WideString; const CliFou: WideString; var Langue: WideString): WideString; safecall;
+    function VATInternalCode(const CodeUser: WideString;
+      const CliFou: WideString; var Langue: WideString): WideString; safecall;
     function PeriodInternalCode(ccDate: TDateTime): WideString; safecall;
     function IsFolderOpen: WordBool; safecall;
     function IsNetwork: WideString; safecall;
@@ -1621,13 +1713,15 @@ type
     function VatRate(const InternCodeVat: WideString): OleVariant; safecall;
     function VatAcc1(const InternCodeVat: WideString): WideString; safecall;
     function VatAcc2(const InternCodeVat: WideString): WideString; safecall;
-    function VATExternalCode(const InternalCode: WideString; lLanguage: LangueforVat): OleVariant; safecall;
+    function VATExternalCode(const InternalCode: WideString;
+      lLanguage: LangueforVat): OleVariant; safecall;
     property BookYears: _BookYears read Get_BookYears write _Set_BookYears;
     property ShortName: WideString read Get_ShortName;
     property PathName: WideString read Get_PathName;
     property PathExcel: WideString read Get_PathExcel;
     property CurrentBookYearNumber: Smallint read Get_CurrentBookYearNumber;
-    property CurrentBookYearNumBis[const ExName: WideString]: Smallint read Get_CurrentBookYearNumBis;
+    property CurrentBookYearNumBis[const ExName: WideString]: Smallint
+      read Get_CurrentBookYearNumBis;
     property Value[const ParamName: WideString]: WideString read Get_Value;
   end;
 
@@ -1644,18 +1738,28 @@ type
     property PathName: WideString readonly dispid 1745027076;
     property PathExcel: WideString readonly dispid 1745027075;
     property CurrentBookYearNumber: Smallint readonly dispid 1745027074;
-    property CurrentBookYearNumBis[const ExName: WideString]: Smallint readonly dispid 1745027073;
-    property Value[const ParamName: WideString]: WideString readonly dispid 1745027072;
-    function GetParamValue(const StrID: WideString): WideString; dispid 1610809350;
-    function VATInternalCode(const CodeUser: WideString; const CliFou: WideString; var Langue: WideString): WideString; dispid 1610809351;
-    function PeriodInternalCode(ccDate: TDateTime): WideString; dispid 1610809352;
+    property CurrentBookYearNumBis[const ExName: WideString]
+      : Smallint readonly dispid 1745027073;
+    property Value[const ParamName: WideString]
+      : WideString readonly dispid 1745027072;
+    function GetParamValue(const StrID: WideString): WideString;
+      dispid 1610809350;
+    function VATInternalCode(const CodeUser: WideString;
+      const CliFou: WideString; var Langue: WideString): WideString;
+      dispid 1610809351;
+    function PeriodInternalCode(ccDate: TDateTime): WideString;
+      dispid 1610809352;
     function IsFolderOpen: WordBool; dispid 1610809353;
     function IsNetwork: WideString; dispid 1610809354;
     function IsAsset: WordBool; dispid 1610809355;
-    function VatRate(const InternCodeVat: WideString): OleVariant; dispid 1610809356;
-    function VatAcc1(const InternCodeVat: WideString): WideString; dispid 1610809357;
-    function VatAcc2(const InternCodeVat: WideString): WideString; dispid 1610809358;
-    function VATExternalCode(const InternalCode: WideString; lLanguage: LangueforVat): OleVariant; dispid 1610809359;
+    function VatRate(const InternCodeVat: WideString): OleVariant;
+      dispid 1610809356;
+    function VatAcc1(const InternCodeVat: WideString): WideString;
+      dispid 1610809357;
+    function VatAcc2(const InternCodeVat: WideString): WideString;
+      dispid 1610809358;
+    function VATExternalCode(const InternalCode: WideString;
+      lLanguage: LangueforVat): OleVariant; dispid 1610809359;
   end;
 
   // *********************************************************************//
@@ -1677,17 +1781,20 @@ type
     procedure Set_PeriodRange(const Param1: WideString); safecall;
     function GetPathOfactFile: WideString; safecall;
     function GetThePathofExisintFile: WideString; safecall;
-    function PrecCalcACT(var TypeChoice: Byte; var Obj: IDispatch): WordBool; safecall;
+    function PrecCalcACT(var TypeChoice: Byte; var Obj: IDispatch)
+      : WordBool; safecall;
     function IsFileTotPerExist: WordBool; safecall;
     procedure Set_YearTransaction(const Param1: WideString); safecall;
     function Get_CalcSum: WordBool; safecall;
     procedure Set_CalcSum(var Param1: WordBool); safecall;
     function Get_SortOrder: Smallint; safecall;
     procedure Set_SortOrder(var Param1: Smallint); safecall;
-    function WichAccount(const Account: WideString; var ty: Smallint): _Transaction; safecall;
+    function WichAccount(const Account: WideString; var ty: Smallint)
+      : _Transaction; safecall;
     property Fields: _Fields read Get_Fields write _Set_Fields;
     property WithMatched: WordBool read Get_WithMatched write Set_WithMatched;
-    property CategoryFilter: WideString read Get_CategoryFilter write Set_CategoryFilter;
+    property CategoryFilter: WideString read Get_CategoryFilter
+      write Set_CategoryFilter;
     property PeriodRange: WideString read Get_PeriodRange write Set_PeriodRange;
     property YearTransaction: WideString write Set_YearTransaction;
     property CalcSum: WordBool read Get_CalcSum write Set_CalcSum;
@@ -1709,12 +1816,14 @@ type
     property PeriodRange: WideString dispid 1745027075;
     function GetPathOfactFile: WideString; dispid 1610809353;
     function GetThePathofExisintFile: WideString; dispid 1610809354;
-    function PrecCalcACT(var TypeChoice: Byte; var Obj: IDispatch): WordBool; dispid 1610809355;
+    function PrecCalcACT(var TypeChoice: Byte; var Obj: IDispatch): WordBool;
+      dispid 1610809355;
     function IsFileTotPerExist: WordBool; dispid 1610809356;
     property YearTransaction: WideString writeonly dispid 1745027074;
     property CalcSum: WordBool dispid 1745027073;
     property SortOrder: Smallint dispid 1745027072;
-    function WichAccount(const Account: WideString; var ty: Smallint): _Transaction; dispid 1610809357;
+    function WichAccount(const Account: WideString; var ty: Smallint)
+      : _Transaction; dispid 1610809357;
   end;
 
   // *********************************************************************//
@@ -1733,18 +1842,25 @@ type
     function Get_OnlyBooked: WordBool; safecall;
     procedure Set_OnlyBooked(Param1: WordBool); safecall;
     function Wichplan(strindex: Smallint): _AnaLytique; safecall;
-    function WichSectionPlan(const Section: WideString; const Plan: WideString): _AnaLytique; safecall;
+    function WichSectionPlan(const Section: WideString; const Plan: WideString)
+      : _AnaLytique; safecall;
     function FromWichNumber(const tipe: WideString): OleVariant; safecall;
     function FromWichAccount: OleVariant; safecall;
     function EnumCategory: OleVariant; safecall;
     procedure Set_PeriodRange(const Param1: WideString); safecall;
     function FromPeriods: OleVariant; safecall;
-    function BalanceCum(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-      var StartaccountG: WideString; var EndAccountG: WideString; var TypeOfbal: Byte): Currency; safecall;
-    function BalancePerEx(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-      var StartaccountG: WideString; var EndAccountG: WideString; var PlanAna2: WideString; var StartAccount2: WideString; var EndAccount2: WideString;
+    function BalanceCum(var PlanAna: WideString; var Periode: WideString;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var StartaccountG: WideString; var EndAccountG: WideString;
       var TypeOfbal: Byte): Currency; safecall;
-    procedure ExportListeOfAnalyticalPlan(SectionAna: Smallint; var StartAccount: WideString; var EndAccount: WideString; var Category: WideString); safecall;
+    function BalancePerEx(var PlanAna: WideString; var Periode: WideString;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var StartaccountG: WideString; var EndAccountG: WideString;
+      var PlanAna2: WideString; var StartAccount2: WideString;
+      var EndAccount2: WideString; var TypeOfbal: Byte): Currency; safecall;
+    procedure ExportListeOfAnalyticalPlan(SectionAna: Smallint;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var Category: WideString); safecall;
     property Fields: _Fields read Get_Fields write _Set_Fields;
     property SortOrder: Smallint read Get_SortOrder write Set_SortOrder;
     property OnlyBooked: WordBool read Get_OnlyBooked write Set_OnlyBooked;
@@ -1764,19 +1880,27 @@ type
     property SortOrder: Smallint dispid 1745027076;
     property OnlyBooked: WordBool dispid 1745027073;
     function Wichplan(strindex: Smallint): _AnaLytique; dispid 1610809350;
-    function WichSectionPlan(const Section: WideString; const Plan: WideString): _AnaLytique; dispid 1610809351;
-    function FromWichNumber(const tipe: WideString): OleVariant; dispid 1610809352;
+    function WichSectionPlan(const Section: WideString; const Plan: WideString)
+      : _AnaLytique; dispid 1610809351;
+    function FromWichNumber(const tipe: WideString): OleVariant;
+      dispid 1610809352;
     function FromWichAccount: OleVariant; dispid 1610809353;
     function EnumCategory: OleVariant; dispid 1610809354;
     property PeriodRange: WideString writeonly dispid 1745027072;
     function FromPeriods: OleVariant; dispid 1610809355;
-    function BalanceCum(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-      var StartaccountG: WideString; var EndAccountG: WideString; var TypeOfbal: Byte): Currency; dispid 1610809356;
-    function BalancePerEx(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-      var StartaccountG: WideString; var EndAccountG: WideString; var PlanAna2: WideString; var StartAccount2: WideString; var EndAccount2: WideString;
-      var TypeOfbal: Byte): Currency; dispid 1610809357;
-    procedure ExportListeOfAnalyticalPlan(SectionAna: Smallint; var StartAccount: WideString; var EndAccount: WideString; var Category: WideString);
-      dispid 1610809359;
+    function BalanceCum(var PlanAna: WideString; var Periode: WideString;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var StartaccountG: WideString; var EndAccountG: WideString;
+      var TypeOfbal: Byte): Currency; dispid 1610809356;
+    function BalancePerEx(var PlanAna: WideString; var Periode: WideString;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var StartaccountG: WideString; var EndAccountG: WideString;
+      var PlanAna2: WideString; var StartAccount2: WideString;
+      var EndAccount2: WideString; var TypeOfbal: Byte): Currency;
+      dispid 1610809357;
+    procedure ExportListeOfAnalyticalPlan(SectionAna: Smallint;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var Category: WideString); dispid 1610809359;
   end;
 
   // *********************************************************************//
@@ -1787,7 +1911,8 @@ type
   _Transaction = interface(IDispatch)
     ['{04261072-CDDD-4655-BD4E-D79C36F1A776}']
     function Get_ListCount: Integer; safecall;
-    function Get_FieldValue(const FieldNameorNum: WideString): OleVariant; safecall;
+    function Get_FieldValue(const FieldNameorNum: WideString)
+      : OleVariant; safecall;
     procedure InitializeCancel; safecall;
     procedure CancelOperation; safecall;
     procedure InitializeCallBack(var ObjCallBack: IDispatch); safecall;
@@ -1800,7 +1925,8 @@ type
     function BalanceCur: OleVariant; safecall;
     function CliFouBalCur: Currency; safecall;
     property ListCount: Integer read Get_ListCount;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   end;
 
   // *********************************************************************//
@@ -1811,7 +1937,8 @@ type
   _TransactionDisp = dispinterface
     ['{04261072-CDDD-4655-BD4E-D79C36F1A776}']
     property ListCount: Integer readonly dispid 1745027074;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant readonly dispid 1745027073;
+    property FieldValue[const FieldNameorNum: WideString]
+      : OleVariant readonly dispid 1745027073;
     procedure InitializeCancel; dispid 1610809350;
     procedure CancelOperation; dispid 1610809351;
     procedure InitializeCallBack(var ObjCallBack: IDispatch); dispid 1610809352;
@@ -1892,7 +2019,8 @@ type
     property Expression: WideString read Get_Expression write Set_Expression;
     property Decimals: WideString read Get_Decimals write Set_Decimals;
     property Width: WideString read Get_Width write Set_Width;
-    property GetFieldType: WideString read Get_GetFieldType write Set_GetFieldType;
+    property GetFieldType: WideString read Get_GetFieldType
+      write Set_GetFieldType;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TFieldDefProperties read GetServerProperties;
@@ -1939,7 +2067,8 @@ type
     property Expression: WideString read Get_Expression write Set_Expression;
     property Decimals: WideString read Get_Decimals write Set_Decimals;
     property Width: WideString read Get_Width write Set_Width;
-    property GetFieldType: WideString read Get_GetFieldType write Set_GetFieldType;
+    property GetFieldType: WideString read Get_GetFieldType
+      write Set_GetFieldType;
   end;
 {$ENDIF}
 
@@ -2467,10 +2596,14 @@ type
     property PayCodes: _TablesUser read Get_PayCodes write _Set_PayCodes;
     property MoneyRates: _TablesUser read Get_MoneyRates write _Set_MoneyRates;
     property Diaries: _TablesUser read Get_Diaries write _Set_Diaries;
-    property CatAccountGen: _TablesUser read Get_CatAccountGen write _Set_CatAccountGen;
-    property CatCustomer: _TablesUser read Get_CatCustomer write _Set_CatCustomer;
-    property CatSupplier: _TablesUser read Get_CatSupplier write _Set_CatSupplier;
-    property CatAnalytique: _TablesUser read Get_CatAnalytique write _Set_CatAnalytique;
+    property CatAccountGen: _TablesUser read Get_CatAccountGen
+      write _Set_CatAccountGen;
+    property CatCustomer: _TablesUser read Get_CatCustomer
+      write _Set_CatCustomer;
+    property CatSupplier: _TablesUser read Get_CatSupplier
+      write _Set_CatSupplier;
+    property CatAnalytique: _TablesUser read Get_CatAnalytique
+      write _Set_CatAnalytique;
     property CatAssets: _TablesUser read Get_CatAssets write _Set_CatAssets;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -2877,7 +3010,8 @@ type
     property Periods: _Periods read Get_Periods write _Set_Periods;
     property ShortName: WideString read Get_ShortName;
     property LongName: WideString read Get_LongName;
-    property SigIndiceOfYear[var BookYearNum: Smallint]: OleVariant read Get_SigIndiceOfYear;
+    property SigIndiceOfYear[var BookYearNum: Smallint]: OleVariant
+      read Get_SigIndiceOfYear;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TBookYearProperties read GetServerProperties;
@@ -3199,7 +3333,8 @@ type
     function SetDefaultPeriod(const sNewPeriod: WideString): WordBool;
     function FileFormat(const FileType: WideString): WordBool;
     function Directory(const vNewValue: WideString): WordBool;
-    function Backup(var WayForBackup: WideString; var EraseExisting: WordBool): WordBool;
+    function Backup(var WayForBackup: WideString; var EraseExisting: WordBool)
+      : WordBool;
     function SigFieldToExclude(const sigFieldString: WideString): WordBool;
     function SigParamFieldLink(const sigFieldString: WideString): WordBool;
     function Execute: Smallint;
@@ -3207,7 +3342,8 @@ type
     property DefaultInterface: _Import read GetDefaultInterface;
     property ErrorCodes: _ErrorCodes read Get_ErrorCodes write _Set_ErrorCodes;
     property Warnings: _Warnings read Get_Warnings write _Set_Warnings;
-    property FatalErrors: _FatalErrors read Get_FatalErrors write _Set_FatalErrors;
+    property FatalErrors: _FatalErrors read Get_FatalErrors
+      write _Set_FatalErrors;
     property LinkFormat: FormatLink read Get_LinkFormat write Set_LinkFormat;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -3366,7 +3502,8 @@ type
     function Balance: Double;
     property DefaultInterface: _Compte read GetDefaultInterface;
     property ListCount: Integer read Get_ListCount;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TCompteProperties read GetServerProperties;
@@ -3445,7 +3582,8 @@ type
     property DefaultInterface: _TableUser read GetDefaultInterface;
     property Number: WideString read Get_Number;
     property SortOrder: Smallint read Get_SortOrder;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TTableUserProperties read GetServerProperties;
@@ -3896,13 +4034,15 @@ type
     procedure CancelOperation;
     procedure InitializeCallBack(var ObjCallBack: IDispatch);
     procedure ExportXL;
-    procedure ExportBalAna(const Deb_per: WideString; const End_per: WideString);
+    procedure ExportBalAna(const Deb_per: WideString;
+      const End_per: WideString);
     property DefaultInterface: _AnaLytique read GetDefaultInterface;
     property DeterminePlan: Smallint write Set_DeterminePlan;
     property PeriodStart: WideString write Set_PeriodStart;
     property PeriodEnd: WideString write Set_PeriodEnd;
     property AllBookyear: WordBool write Set_AllBookyear;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TAnaLytiqueProperties read GetServerProperties;
@@ -3979,8 +4119,10 @@ type
     procedure ConnectTo(svrIntf: _WbApiUtilities);
     procedure Disconnect; override;
     procedure FillTreeView(var obj_treeview: IDispatch; var obj_nod: IDispatch);
-    function SaveNewQuery(const Id_query: WideString; const ID_statement: WideString): WordBool;
-    function SaveExistingQuery(const Id_query: WideString; const ID_statement: WideString): WordBool;
+    function SaveNewQuery(const Id_query: WideString;
+      const ID_statement: WideString): WordBool;
+    function SaveExistingQuery(const Id_query: WideString;
+      const ID_statement: WideString): WordBool;
     function DeleteQuery(const Id_query: WideString): WordBool;
     function InitializeTime: Double;
     function GetFieldCommentForTreeView(var the_objNOd: IDispatch): WideString;
@@ -4141,15 +4283,20 @@ type
     procedure Connect; override;
     procedure ConnectTo(svrIntf: _User);
     procedure Disconnect; override;
-    function CheckAccess(const SocName: WideString; const SocDirectory: WideString; const UserName: WideString): Smallint;
-    procedure Register(const SocDirectory: WideString; const UserName: WideString; const UserLanguage: WideString; const UserPassword: WideString;
-      const UserRights: WideString);
+    function CheckAccess(const SocName: WideString;
+      const SocDirectory: WideString; const UserName: WideString): Smallint;
+    procedure Register(const SocDirectory: WideString;
+      const UserName: WideString; const UserLanguage: WideString;
+      const UserPassword: WideString; const UserRights: WideString);
     procedure UnRegister;
-    function IsUserLoggedInDossier(const UserName: WideString; const SocPathName: WideString): Smallint;
+    function IsUserLoggedInDossier(const UserName: WideString;
+      const SocPathName: WideString): Smallint;
     function IsAdministrator: WordBool;
     function IsAccess(const ModuleItemName: WideString): WordBool;
-    function GetAlternateUsernameAndDossier(const UserName: WideString; ForceRecalculation: WordBool): WideString;
-    function CheckPasswordOfUser(const UserName: WideString; const the_soc: WideString): WordBool;
+    function GetAlternateUsernameAndDossier(const UserName: WideString;
+      ForceRecalculation: WordBool): WideString;
+    function CheckPasswordOfUser(const UserName: WideString;
+      const the_soc: WideString): WordBool;
     function GetLanguageOfCurrentUser(const UserName: WideString): WideString;
     property DefaultInterface: _User read GetDefaultInterface;
     property Level: WideString read Get_Level;
@@ -4242,11 +4389,13 @@ type
     procedure Disconnect; override;
     function GetAllCompanies: PSafeArray;
     function GetCompanyListSorted: OleVariant;
-    function IsLocalDossierExist(const PathInUsersFile: WideString; const MyShortName: WideString): WordBool;
+    function IsLocalDossierExist(const PathInUsersFile: WideString;
+      const MyShortName: WideString): WordBool;
     function Item(index: Smallint): _Dossier;
     property DefaultInterface: _Dossiers read GetDefaultInterface;
     property Count: Smallint read Get_Count;
-    property ShowArchivedBookyears: WordBool read Get_ShowArchivedBookyears write Set_ShowArchivedBookyears;
+    property ShowArchivedBookyears: WordBool read Get_ShowArchivedBookyears
+      write Set_ShowArchivedBookyears;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TDossiersProperties read GetServerProperties;
@@ -4273,7 +4422,8 @@ type
   public
     property DefaultInterface: _Dossiers read GetDefaultInterface;
   published
-    property ShowArchivedBookyears: WordBool read Get_ShowArchivedBookyears write Set_ShowArchivedBookyears;
+    property ShowArchivedBookyears: WordBool read Get_ShowArchivedBookyears
+      write Set_ShowArchivedBookyears;
   end;
 {$ENDIF}
 
@@ -4323,8 +4473,10 @@ type
     procedure ConnectTo(svrIntf: _ApiIni);
     procedure Disconnect; override;
     function ReadINI(var Section: WideString; var Key: WideString): OleVariant;
-    procedure WriteINI(var Section: WideString; var Key: WideString; var Text: WideString);
-    function IsSpecifiedKeyExist(const Section: WideString; const Key: WideString; const IniFileName: WideString): WordBool;
+    procedure WriteINI(var Section: WideString; var Key: WideString;
+      var Text: WideString);
+    function IsSpecifiedKeyExist(const Section: WideString;
+      const Key: WideString; const IniFileName: WideString): WordBool;
     function GetUserDbfPath: WideString;
     property DefaultInterface: _ApiIni read GetDefaultInterface;
     property INIfile: WideString read Get_INIfile write Set_INIfile;
@@ -4443,7 +4595,8 @@ type
     function ReturnLanguage: WideString;
     function Init: Smallint;
     function InitLocal: Smallint;
-    function Login(const UserName: WideString; const UserPassword: WideString; const UserLanguage: WideString): Smallint;
+    function Login(const UserName: WideString; const UserPassword: WideString;
+      const UserLanguage: WideString): Smallint;
     function OpenDossier(const ShortName: WideString): Smallint;
     procedure LoadFieldDefs;
     function OpenBookYear(const BookYearShortName: WideString): Smallint;
@@ -4458,12 +4611,17 @@ type
     property Customers: _Comptes read Get_Customers write _Set_Customers;
     property Suppliers: _Comptes read Get_Suppliers write _Set_Suppliers;
     property Accounts: _Comptes read Get_Accounts write _Set_Accounts;
-    property Analytical: _SocAnalyticalParam read Get_Analytical write _Set_Analytical;
-    property CustomerTrans: _Transactions read Get_CustomerTrans write _Set_CustomerTrans;
+    property Analytical: _SocAnalyticalParam read Get_Analytical
+      write _Set_Analytical;
+    property CustomerTrans: _Transactions read Get_CustomerTrans
+      write _Set_CustomerTrans;
     property CustTrans: _Transaction read Get_CustTrans write _Set_CustTrans;
-    property SupplierTrans: _Transactions read Get_SupplierTrans write _Set_SupplierTrans;
-    property AccountTrans: _Transactions read Get_AccountTrans write _Set_AccountTrans;
-    property AnalyticalTrans: _Analytiques read Get_AnalyticalTrans write _Set_AnalyticalTrans;
+    property SupplierTrans: _Transactions read Get_SupplierTrans
+      write _Set_SupplierTrans;
+    property AccountTrans: _Transactions read Get_AccountTrans
+      write _Set_AccountTrans;
+    property AnalyticalTrans: _Analytiques read Get_AnalyticalTrans
+      write _Set_AnalyticalTrans;
     property Tables: _Tables read Get_Tables write _Set_Tables;
     property Import: _Import read Get_Import write _Set_Import;
     property BookYear: _BookYears read Get_BookYear write _Set_BookYear;
@@ -4596,7 +4754,8 @@ type
     procedure ConnectTo(svrIntf: _Param);
     procedure Disconnect; override;
     function GetParamValue(const StrID: WideString): WideString;
-    function VATInternalCode(const CodeUser: WideString; const CliFou: WideString; var Langue: WideString): WideString;
+    function VATInternalCode(const CodeUser: WideString;
+      const CliFou: WideString; var Langue: WideString): WideString;
     function PeriodInternalCode(ccDate: TDateTime): WideString;
     function IsFolderOpen: WordBool;
     function IsNetwork: WideString;
@@ -4604,14 +4763,16 @@ type
     function VatRate(const InternCodeVat: WideString): OleVariant;
     function VatAcc1(const InternCodeVat: WideString): WideString;
     function VatAcc2(const InternCodeVat: WideString): WideString;
-    function VATExternalCode(const InternalCode: WideString; lLanguage: LangueforVat): OleVariant;
+    function VATExternalCode(const InternalCode: WideString;
+      lLanguage: LangueforVat): OleVariant;
     property DefaultInterface: _Param read GetDefaultInterface;
     property BookYears: _BookYears read Get_BookYears write _Set_BookYears;
     property ShortName: WideString read Get_ShortName;
     property PathName: WideString read Get_PathName;
     property PathExcel: WideString read Get_PathExcel;
     property CurrentBookYearNumber: Smallint read Get_CurrentBookYearNumber;
-    property CurrentBookYearNumBis[const ExName: WideString]: Smallint read Get_CurrentBookYearNumBis;
+    property CurrentBookYearNumBis[const ExName: WideString]: Smallint
+      read Get_CurrentBookYearNumBis;
     property Value[const ParamName: WideString]: WideString read Get_Value;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -4708,12 +4869,14 @@ type
     function GetThePathofExisintFile: WideString;
     function PrecCalcACT(var TypeChoice: Byte; var Obj: IDispatch): WordBool;
     function IsFileTotPerExist: WordBool;
-    function WichAccount(const Account: WideString; var ty: Smallint): _Transaction;
+    function WichAccount(const Account: WideString; var ty: Smallint)
+      : _Transaction;
     property DefaultInterface: _Transactions read GetDefaultInterface;
     property Fields: _Fields read Get_Fields write _Set_Fields;
     property YearTransaction: WideString write Set_YearTransaction;
     property WithMatched: WordBool read Get_WithMatched write Set_WithMatched;
-    property CategoryFilter: WideString read Get_CategoryFilter write Set_CategoryFilter;
+    property CategoryFilter: WideString read Get_CategoryFilter
+      write Set_CategoryFilter;
     property PeriodRange: WideString read Get_PeriodRange write Set_PeriodRange;
     property CalcSum: WordBool read Get_CalcSum write Set_CalcSum;
     property SortOrder: Smallint read Get_SortOrder write Set_SortOrder;
@@ -4754,7 +4917,8 @@ type
     property DefaultInterface: _Transactions read GetDefaultInterface;
   published
     property WithMatched: WordBool read Get_WithMatched write Set_WithMatched;
-    property CategoryFilter: WideString read Get_CategoryFilter write Set_CategoryFilter;
+    property CategoryFilter: WideString read Get_CategoryFilter
+      write Set_CategoryFilter;
     property PeriodRange: WideString read Get_PeriodRange write Set_PeriodRange;
     property CalcSum: WordBool read Get_CalcSum write Set_CalcSum;
     property SortOrder: Smallint read Get_SortOrder write Set_SortOrder;
@@ -4813,17 +4977,24 @@ type
     procedure Disconnect; override;
     function Item(const Range: WideString): _AnaLytique;
     function Wichplan(strindex: Smallint): _AnaLytique;
-    function WichSectionPlan(const Section: WideString; const Plan: WideString): _AnaLytique;
+    function WichSectionPlan(const Section: WideString; const Plan: WideString)
+      : _AnaLytique;
     function FromWichNumber(const tipe: WideString): OleVariant;
     function FromWichAccount: OleVariant;
     function EnumCategory: OleVariant;
     function FromPeriods: OleVariant;
-    function BalanceCum(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-      var StartaccountG: WideString; var EndAccountG: WideString; var TypeOfbal: Byte): Currency;
-    function BalancePerEx(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-      var StartaccountG: WideString; var EndAccountG: WideString; var PlanAna2: WideString; var StartAccount2: WideString; var EndAccount2: WideString;
+    function BalanceCum(var PlanAna: WideString; var Periode: WideString;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var StartaccountG: WideString; var EndAccountG: WideString;
       var TypeOfbal: Byte): Currency;
-    procedure ExportListeOfAnalyticalPlan(SectionAna: Smallint; var StartAccount: WideString; var EndAccount: WideString; var Category: WideString);
+    function BalancePerEx(var PlanAna: WideString; var Periode: WideString;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var StartaccountG: WideString; var EndAccountG: WideString;
+      var PlanAna2: WideString; var StartAccount2: WideString;
+      var EndAccount2: WideString; var TypeOfbal: Byte): Currency;
+    procedure ExportListeOfAnalyticalPlan(SectionAna: Smallint;
+      var StartAccount: WideString; var EndAccount: WideString;
+      var Category: WideString);
     property DefaultInterface: _Analytiques read GetDefaultInterface;
     property Fields: _Fields read Get_Fields write _Set_Fields;
     property PeriodRange: WideString write Set_PeriodRange;
@@ -4922,7 +5093,8 @@ type
     function CliFouBalCur: Currency;
     property DefaultInterface: _Transaction read GetDefaultInterface;
     property ListCount: Integer read Get_ListCount;
-    property FieldValue[const FieldNameorNum: WideString]: OleVariant read Get_FieldValue;
+    property FieldValue[const FieldNameorNum: WideString]: OleVariant
+      read Get_FieldValue;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TTransactionProperties read GetServerProperties;
@@ -4963,8 +5135,10 @@ type
     class function CreateRemote(const MachineName: string): _SqlClass;
   end;
 
-  TSqlClassOnExecute        = procedure(ASender: TObject; ExecutionTime: Double; var Cancel: WordBool) of object;
-  TSqlClassOnFillOutputFile = procedure(ASender: TObject; NbrRecOutput: Integer; NbrRecCount: Integer; var Cancel: WordBool) of object;
+  TSqlClassOnExecute = procedure(ASender: TObject; ExecutionTime: Double;
+    var Cancel: WordBool) of object;
+  TSqlClassOnFillOutputFile = procedure(ASender: TObject; NbrRecOutput: Integer;
+    NbrRecCount: Integer; var Cancel: WordBool) of object;
 
 
   // *********************************************************************//
@@ -5007,8 +5181,10 @@ type
     procedure ConnectTo(svrIntf: _SqlClass);
     procedure Disconnect; override;
     procedure Initialize;
-    function WbSqlFunction(const QueryStatement: WideString; var WithCallBack: WordBool): OleVariant;
-    function ExecuteSqlQuery(const QueryStatement: WideString; var WithCallBack: WordBool): Smallint;
+    function WbSqlFunction(const QueryStatement: WideString;
+      var WithCallBack: WordBool): OleVariant;
+    function ExecuteSqlQuery(const QueryStatement: WideString;
+      var WithCallBack: WordBool): Smallint;
     function WanTotCallBack: WordBool;
     function ValidateQueryStatement(SqlStatement: OleVariant): WordBool;
     property DefaultInterface: _SqlClass read GetDefaultInterface;
@@ -5023,7 +5199,8 @@ type
     property Server: TSqlClassProperties read GetServerProperties;
 {$ENDIF}
     property OnExecute: TSqlClassOnExecute read FOnExecute write FOnExecute;
-    property OnFillOutputFile: TSqlClassOnFillOutputFile read FOnFillOutputFile write FOnFillOutputFile;
+    property OnFillOutputFile: TSqlClassOnFillOutputFile read FOnFillOutputFile
+      write FOnFillOutputFile;
   end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -5076,7 +5253,8 @@ end;
 
 procedure TFieldDef.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{A34930DA-384B-4069-B20D-6BC4C26271DB}'; IntfIID: '{486E1C6B-FDAC-4500-9BB0-9E54FAB3D314}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{A34930DA-384B-4069-B20D-6BC4C26271DB}';
+    IntfIID: '{486E1C6B-FDAC-4500-9BB0-9E54FAB3D314}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -5088,7 +5266,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _FieldDef;
   end;
 end;
@@ -5111,7 +5289,8 @@ function TFieldDef.GetDefaultInterface: _FieldDef;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -5151,7 +5330,7 @@ procedure TFieldDef.Set_Name(const Name: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant      := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Name := name;
 end;
 
@@ -5167,7 +5346,7 @@ procedure TFieldDef.Set_Caption(const Caption: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Caption := Caption;
 end;
 
@@ -5193,7 +5372,7 @@ procedure TFieldDef.Set_Format(const Format: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Format := Format;
 end;
 
@@ -5209,7 +5388,7 @@ procedure TFieldDef.Set_Expression(const Expression: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Expression := Expression;
 end;
 
@@ -5225,7 +5404,7 @@ procedure TFieldDef.Set_Decimals(const Decimals: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Decimals := Decimals;
 end;
 
@@ -5241,7 +5420,7 @@ procedure TFieldDef.Set_Width(const Width: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Width := Width;
 end;
 
@@ -5257,7 +5436,7 @@ procedure TFieldDef.Set_GetFieldType(const GetFieldType: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant              := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.GetFieldType := GetFieldType;
 end;
 
@@ -5286,7 +5465,7 @@ procedure TFieldDefProperties.Set_Name(const Name: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant      := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Name := name;
 end;
 
@@ -5302,7 +5481,7 @@ procedure TFieldDefProperties.Set_Caption(const Caption: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Caption := Caption;
 end;
 
@@ -5328,7 +5507,7 @@ procedure TFieldDefProperties.Set_Format(const Format: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Format := Format;
 end;
 
@@ -5344,7 +5523,7 @@ procedure TFieldDefProperties.Set_Expression(const Expression: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Expression := Expression;
 end;
 
@@ -5360,7 +5539,7 @@ procedure TFieldDefProperties.Set_Decimals(const Decimals: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Decimals := Decimals;
 end;
 
@@ -5376,7 +5555,7 @@ procedure TFieldDefProperties.Set_Width(const Width: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Width := Width;
 end;
 
@@ -5392,7 +5571,7 @@ procedure TFieldDefProperties.Set_GetFieldType(const GetFieldType: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant              := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.GetFieldType := GetFieldType;
 end;
 
@@ -5410,7 +5589,8 @@ end;
 
 procedure TPeriods.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{0E6494B9-10AC-48C0-A288-45A6F75187C6}'; IntfIID: '{1092CFBD-2DC9-4ED7-B92A-B51823054557}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{0E6494B9-10AC-48C0-A288-45A6F75187C6}';
+    IntfIID: '{1092CFBD-2DC9-4ED7-B92A-B51823054557}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -5422,7 +5602,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Periods;
   end;
 end;
@@ -5445,7 +5625,8 @@ function TPeriods.GetDefaultInterface: _Periods;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -5508,14 +5689,17 @@ begin
   Result := CreateComObject(CLASS_FatalErrors) as _FatalErrors;
 end;
 
-class function CoFatalErrors.CreateRemote(const MachineName: string): _FatalErrors;
+class function CoFatalErrors.CreateRemote(const MachineName: string)
+  : _FatalErrors;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_FatalErrors) as _FatalErrors;
+  Result := CreateRemoteComObject(MachineName, CLASS_FatalErrors)
+    as _FatalErrors;
 end;
 
 procedure TFatalErrors.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{EBF5276A-68D3-48B0-96EF-3CDCB2D42C76}'; IntfIID: '{78D7C2FE-C8A0-4875-A8C9-C575A34F9A3F}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{EBF5276A-68D3-48B0-96EF-3CDCB2D42C76}';
+    IntfIID: '{78D7C2FE-C8A0-4875-A8C9-C575A34F9A3F}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -5527,7 +5711,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _FatalErrors;
   end;
 end;
@@ -5550,7 +5734,8 @@ function TFatalErrors.GetDefaultInterface: _FatalErrors;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -5608,14 +5793,16 @@ begin
   Result := CreateComObject(CLASS_FatalError) as _FatalError;
 end;
 
-class function CoFatalError.CreateRemote(const MachineName: string): _FatalError;
+class function CoFatalError.CreateRemote(const MachineName: string)
+  : _FatalError;
 begin
   Result := CreateRemoteComObject(MachineName, CLASS_FatalError) as _FatalError;
 end;
 
 procedure TFatalError.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{15C99B60-EFF0-417A-99A3-2C9ED67EA67C}'; IntfIID: '{BA1778B2-EBB0-4F92-8007-B5DA01D8612C}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{15C99B60-EFF0-417A-99A3-2C9ED67EA67C}';
+    IntfIID: '{BA1778B2-EBB0-4F92-8007-B5DA01D8612C}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -5627,7 +5814,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _FatalError;
   end;
 end;
@@ -5650,7 +5837,8 @@ function TFatalError.GetDefaultInterface: _FatalError;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -5725,7 +5913,8 @@ end;
 
 procedure TWarnings.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{520D4A52-D494-4E4D-A9A2-62E117E0252B}'; IntfIID: '{DBC8894B-EF33-4780-A021-B796DDC31491}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{520D4A52-D494-4E4D-A9A2-62E117E0252B}';
+    IntfIID: '{DBC8894B-EF33-4780-A021-B796DDC31491}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -5737,7 +5926,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Warnings;
   end;
 end;
@@ -5760,7 +5949,8 @@ function TWarnings.GetDefaultInterface: _Warnings;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -5825,7 +6015,8 @@ end;
 
 procedure TQueries.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{E6F7158B-6BA4-4754-8441-804E463FB43D}'; IntfIID: '{FFAE05BF-32D4-4666-9331-587377D866D9}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{E6F7158B-6BA4-4754-8441-804E463FB43D}';
+    IntfIID: '{FFAE05BF-32D4-4666-9331-587377D866D9}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -5837,7 +6028,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Queries;
   end;
 end;
@@ -5860,7 +6051,8 @@ function TQueries.GetDefaultInterface: _Queries;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -5907,14 +6099,16 @@ begin
   Result := CreateComObject(CLASS_TablesUser) as _TablesUser;
 end;
 
-class function CoTablesUser.CreateRemote(const MachineName: string): _TablesUser;
+class function CoTablesUser.CreateRemote(const MachineName: string)
+  : _TablesUser;
 begin
   Result := CreateRemoteComObject(MachineName, CLASS_TablesUser) as _TablesUser;
 end;
 
 procedure TTablesUser.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{215B53FC-49C1-49E3-B4DF-F1E0A652CB3E}'; IntfIID: '{7F525544-EE76-4A3F-B6F0-58420C36790D}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{215B53FC-49C1-49E3-B4DF-F1E0A652CB3E}';
+    IntfIID: '{7F525544-EE76-4A3F-B6F0-58420C36790D}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -5926,7 +6120,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _TablesUser;
   end;
 end;
@@ -5949,7 +6143,8 @@ function TTablesUser.GetDefaultInterface: _TablesUser;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -5989,7 +6184,7 @@ procedure TTablesUser._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -6038,7 +6233,7 @@ procedure TTablesUserProperties._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -6071,7 +6266,8 @@ end;
 
 procedure TTables.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{5DBE4BC9-7EE2-4279-9922-6DF7F36D8EC5}'; IntfIID: '{0634AD47-2178-4E8A-90E7-C0F8838C862C}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{5DBE4BC9-7EE2-4279-9922-6DF7F36D8EC5}';
+    IntfIID: '{0634AD47-2178-4E8A-90E7-C0F8838C862C}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -6083,7 +6279,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Tables;
   end;
 end;
@@ -6106,7 +6302,8 @@ function TTables.GetDefaultInterface: _Tables;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -6146,7 +6343,7 @@ procedure TTables._Set_ZipCode(const ZipCode: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.ZipCode := ZipCode;
 end;
 
@@ -6162,7 +6359,7 @@ procedure TTables._Set_Countries(const Countries: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Countries := Countries;
 end;
 
@@ -6178,7 +6375,7 @@ procedure TTables._Set_Civilities(const Civilities: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Civilities := Civilities;
 end;
 
@@ -6194,7 +6391,7 @@ procedure TTables._Set_Languages(const Languages: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Languages := Languages;
 end;
 
@@ -6210,7 +6407,7 @@ procedure TTables._Set_PayCodes(const PayCodes: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PayCodes := PayCodes;
 end;
 
@@ -6226,7 +6423,7 @@ procedure TTables._Set_MoneyRates(const MoneyRates: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.MoneyRates := MoneyRates;
 end;
 
@@ -6242,7 +6439,7 @@ procedure TTables._Set_Diaries(const Diaries: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Diaries := Diaries;
 end;
 
@@ -6258,7 +6455,7 @@ procedure TTables._Set_CatAccountGen(const CatAccountGen: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatAccountGen := CatAccountGen;
 end;
 
@@ -6274,7 +6471,7 @@ procedure TTables._Set_CatCustomer(const CatCustomer: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatCustomer := CatCustomer;
 end;
 
@@ -6290,7 +6487,7 @@ procedure TTables._Set_CatSupplier(const CatSupplier: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatSupplier := CatSupplier;
 end;
 
@@ -6306,7 +6503,7 @@ procedure TTables._Set_CatAnalytique(const CatAnalytique: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatAnalytique := CatAnalytique;
 end;
 
@@ -6322,7 +6519,7 @@ procedure TTables._Set_CatAssets(const CatAssets: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatAssets := CatAssets;
 end;
 
@@ -6351,7 +6548,7 @@ procedure TTablesProperties._Set_ZipCode(const ZipCode: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.ZipCode := ZipCode;
 end;
 
@@ -6367,7 +6564,7 @@ procedure TTablesProperties._Set_Countries(const Countries: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Countries := Countries;
 end;
 
@@ -6383,7 +6580,7 @@ procedure TTablesProperties._Set_Civilities(const Civilities: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Civilities := Civilities;
 end;
 
@@ -6399,7 +6596,7 @@ procedure TTablesProperties._Set_Languages(const Languages: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Languages := Languages;
 end;
 
@@ -6415,7 +6612,7 @@ procedure TTablesProperties._Set_PayCodes(const PayCodes: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PayCodes := PayCodes;
 end;
 
@@ -6431,7 +6628,7 @@ procedure TTablesProperties._Set_MoneyRates(const MoneyRates: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.MoneyRates := MoneyRates;
 end;
 
@@ -6447,7 +6644,7 @@ procedure TTablesProperties._Set_Diaries(const Diaries: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Diaries := Diaries;
 end;
 
@@ -6456,14 +6653,15 @@ begin
   Result := DefaultInterface.CatAccountGen;
 end;
 
-procedure TTablesProperties._Set_CatAccountGen(const CatAccountGen: _TablesUser);
+procedure TTablesProperties._Set_CatAccountGen(const CatAccountGen
+  : _TablesUser);
 { Warning: The property CatAccountGen has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatAccountGen := CatAccountGen;
 end;
 
@@ -6479,7 +6677,7 @@ procedure TTablesProperties._Set_CatCustomer(const CatCustomer: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatCustomer := CatCustomer;
 end;
 
@@ -6495,7 +6693,7 @@ procedure TTablesProperties._Set_CatSupplier(const CatSupplier: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatSupplier := CatSupplier;
 end;
 
@@ -6504,14 +6702,15 @@ begin
   Result := DefaultInterface.CatAnalytique;
 end;
 
-procedure TTablesProperties._Set_CatAnalytique(const CatAnalytique: _TablesUser);
+procedure TTablesProperties._Set_CatAnalytique(const CatAnalytique
+  : _TablesUser);
 { Warning: The property CatAnalytique has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatAnalytique := CatAnalytique;
 end;
 
@@ -6527,7 +6726,7 @@ procedure TTablesProperties._Set_CatAssets(const CatAssets: _TablesUser);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CatAssets := CatAssets;
 end;
 
@@ -6545,7 +6744,8 @@ end;
 
 procedure TWarning.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{2D7A39AA-CB4C-4A97-B4FC-CE9DBC8A4DD5}'; IntfIID: '{B01333D2-9497-4AC2-ADD4-7FD612E6F320}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{2D7A39AA-CB4C-4A97-B4FC-CE9DBC8A4DD5}';
+    IntfIID: '{B01333D2-9497-4AC2-ADD4-7FD612E6F320}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -6557,7 +6757,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Warning;
   end;
 end;
@@ -6580,7 +6780,8 @@ function TWarning.GetDefaultInterface: _Warning;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -6668,14 +6869,16 @@ begin
   Result := CreateComObject(CLASS_ErrorCodes) as _ErrorCodes;
 end;
 
-class function CoErrorCodes.CreateRemote(const MachineName: string): _ErrorCodes;
+class function CoErrorCodes.CreateRemote(const MachineName: string)
+  : _ErrorCodes;
 begin
   Result := CreateRemoteComObject(MachineName, CLASS_ErrorCodes) as _ErrorCodes;
 end;
 
 procedure TErrorCodes.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{184F390B-1EA2-4CC0-B89D-4EA873B2F649}'; IntfIID: '{3EE802AB-9C25-4818-9ACA-D167F702297D}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{184F390B-1EA2-4CC0-B89D-4EA873B2F649}';
+    IntfIID: '{3EE802AB-9C25-4818-9ACA-D167F702297D}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -6687,7 +6890,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _ErrorCodes;
   end;
 end;
@@ -6710,7 +6913,8 @@ function TErrorCodes.GetDefaultInterface: _ErrorCodes;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -6775,7 +6979,8 @@ end;
 
 procedure TFields.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{300F29DE-87B0-4E62-8B8C-CAF1CB264E0F}'; IntfIID: '{BF9CFF11-A57E-4366-8ACB-48259AC3DBB7}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{300F29DE-87B0-4E62-8B8C-CAF1CB264E0F}';
+    IntfIID: '{BF9CFF11-A57E-4366-8ACB-48259AC3DBB7}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -6787,7 +6992,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Fields;
   end;
 end;
@@ -6810,7 +7015,8 @@ function TFields.GetDefaultInterface: _Fields;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -6885,7 +7091,8 @@ end;
 
 procedure TBookYears.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{268F50EF-CC4B-4813-9E04-CAE3F19C6B75}'; IntfIID: '{5DEF4379-FB79-4D6E-9A6A-C9A4432ACE05}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{268F50EF-CC4B-4813-9E04-CAE3F19C6B75}';
+    IntfIID: '{5DEF4379-FB79-4D6E-9A6A-C9A4432ACE05}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -6897,7 +7104,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _BookYears;
   end;
 end;
@@ -6920,7 +7127,8 @@ function TBookYears.GetDefaultInterface: _BookYears;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -6990,7 +7198,8 @@ end;
 
 procedure TBookYear.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{DDF3767C-CB2F-429B-BC2E-A4622E20B748}'; IntfIID: '{1A4570BF-C4D6-4ECB-8D1A-255CE6BC81D2}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{DDF3767C-CB2F-429B-BC2E-A4622E20B748}';
+    IntfIID: '{1A4570BF-C4D6-4ECB-8D1A-255CE6BC81D2}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -7002,7 +7211,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _BookYear;
   end;
 end;
@@ -7025,7 +7234,8 @@ function TBookYear.GetDefaultInterface: _BookYear;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -7065,7 +7275,7 @@ procedure TBookYear._Set_Periods(const Periods: _Periods);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Periods := Periods;
 end;
 
@@ -7084,7 +7294,7 @@ var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.SigIndiceOfYear[BookYearNum];
+  Result := InterfaceVariant.SigIndiceOfYear[BookYearNum];
 end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -7112,7 +7322,7 @@ procedure TBookYearProperties._Set_Periods(const Periods: _Periods);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Periods := Periods;
 end;
 
@@ -7126,12 +7336,13 @@ begin
   Result := DefaultInterface.LongName;
 end;
 
-function TBookYearProperties.Get_SigIndiceOfYear(var BookYearNum: Smallint): OleVariant;
+function TBookYearProperties.Get_SigIndiceOfYear(var BookYearNum: Smallint)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.SigIndiceOfYear[BookYearNum];
+  Result := InterfaceVariant.SigIndiceOfYear[BookYearNum];
 end;
 
 {$ENDIF}
@@ -7148,7 +7359,8 @@ end;
 
 procedure TPeriod.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{7FEC6EF4-EC37-48E0-918B-78A4AA0E69C1}'; IntfIID: '{DFC7FAF8-21DF-44EB-B02B-3EED989DB860}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{7FEC6EF4-EC37-48E0-918B-78A4AA0E69C1}';
+    IntfIID: '{DFC7FAF8-21DF-44EB-B02B-3EED989DB860}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -7160,7 +7372,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Period;
   end;
 end;
@@ -7183,7 +7395,8 @@ function TPeriod.GetDefaultInterface: _Period;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -7256,14 +7469,17 @@ begin
   Result := CreateComObject(CLASS_SocAnalyticalParam) as _SocAnalyticalParam;
 end;
 
-class function CoSocAnalyticalParam.CreateRemote(const MachineName: string): _SocAnalyticalParam;
+class function CoSocAnalyticalParam.CreateRemote(const MachineName: string)
+  : _SocAnalyticalParam;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_SocAnalyticalParam) as _SocAnalyticalParam;
+  Result := CreateRemoteComObject(MachineName, CLASS_SocAnalyticalParam)
+    as _SocAnalyticalParam;
 end;
 
 procedure TSocAnalyticalParam.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{209411EA-5621-42FA-A99E-BCE0A06E0642}'; IntfIID: '{1409CADE-5A05-47C9-971B-F603BAA3CBC9}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{209411EA-5621-42FA-A99E-BCE0A06E0642}';
+    IntfIID: '{1409CADE-5A05-47C9-971B-F603BAA3CBC9}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -7275,7 +7491,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _SocAnalyticalParam;
   end;
 end;
@@ -7298,7 +7514,8 @@ function TSocAnalyticalParam.GetDefaultInterface: _SocAnalyticalParam;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -7383,7 +7600,8 @@ end;
 
 procedure TErrorCode.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{5BC8AA2E-0E42-4784-8133-F6DFDAB20DA5}'; IntfIID: '{9F5C353E-FB46-4D19-B4E3-E08C3C60B710}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{5BC8AA2E-0E42-4784-8133-F6DFDAB20DA5}';
+    IntfIID: '{9F5C353E-FB46-4D19-B4E3-E08C3C60B710}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -7395,7 +7613,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _ErrorCode;
   end;
 end;
@@ -7418,7 +7636,8 @@ function TErrorCode.GetDefaultInterface: _ErrorCode;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -7513,7 +7732,8 @@ end;
 
 procedure TImport.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{923C7ED7-E415-42CB-BDEA-6EB070C96BD9}'; IntfIID: '{76AF0DAA-A211-4884-BBCF-FCA0E7F17C2E}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{923C7ED7-E415-42CB-BDEA-6EB070C96BD9}';
+    IntfIID: '{76AF0DAA-A211-4884-BBCF-FCA0E7F17C2E}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -7525,7 +7745,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Import;
   end;
 end;
@@ -7548,7 +7768,8 @@ function TImport.GetDefaultInterface: _Import;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -7588,7 +7809,7 @@ procedure TImport._Set_ErrorCodes(const ErrorCodes: _ErrorCodes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.ErrorCodes := ErrorCodes;
 end;
 
@@ -7604,7 +7825,7 @@ procedure TImport._Set_Warnings(const Warnings: _Warnings);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Warnings := Warnings;
 end;
 
@@ -7620,7 +7841,7 @@ procedure TImport._Set_FatalErrors(const FatalErrors: _FatalErrors);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.FatalErrors := FatalErrors;
 end;
 
@@ -7649,7 +7870,8 @@ begin
   Result := DefaultInterface.Directory(vNewValue);
 end;
 
-function TImport.Backup(var WayForBackup: WideString; var EraseExisting: WordBool): WordBool;
+function TImport.Backup(var WayForBackup: WideString;
+  var EraseExisting: WordBool): WordBool;
 begin
   Result := DefaultInterface.Backup(WayForBackup, EraseExisting);
 end;
@@ -7699,7 +7921,7 @@ procedure TImportProperties._Set_ErrorCodes(const ErrorCodes: _ErrorCodes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.ErrorCodes := ErrorCodes;
 end;
 
@@ -7715,7 +7937,7 @@ procedure TImportProperties._Set_Warnings(const Warnings: _Warnings);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Warnings := Warnings;
 end;
 
@@ -7731,7 +7953,7 @@ procedure TImportProperties._Set_FatalErrors(const FatalErrors: _FatalErrors);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.FatalErrors := FatalErrors;
 end;
 
@@ -7752,14 +7974,16 @@ begin
   Result := CreateComObject(CLASS_DbClassApi) as _DbClassApi;
 end;
 
-class function CoDbClassApi.CreateRemote(const MachineName: string): _DbClassApi;
+class function CoDbClassApi.CreateRemote(const MachineName: string)
+  : _DbClassApi;
 begin
   Result := CreateRemoteComObject(MachineName, CLASS_DbClassApi) as _DbClassApi;
 end;
 
 procedure TDbClassApi.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{61E5DE91-C300-4C05-97BB-5A4BD68589BC}'; IntfIID: '{32338ECD-D93E-420D-91A8-883E55B377D5}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{61E5DE91-C300-4C05-97BB-5A4BD68589BC}';
+    IntfIID: '{32338ECD-D93E-420D-91A8-883E55B377D5}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -7771,7 +7995,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _DbClassApi;
   end;
 end;
@@ -7794,7 +8018,8 @@ function TDbClassApi.GetDefaultInterface: _DbClassApi;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -7848,7 +8073,8 @@ end;
 
 procedure TCompte.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{48F3777C-6A93-49E9-8356-F0A6D20FB28A}'; IntfIID: '{0160E272-89CA-466B-A2A1-706B0027FEA5}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{48F3777C-6A93-49E9-8356-F0A6D20FB28A}';
+    IntfIID: '{0160E272-89CA-466B-A2A1-706B0027FEA5}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -7860,7 +8086,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Compte;
   end;
 end;
@@ -7883,7 +8109,8 @@ function TCompte.GetDefaultInterface: _Compte;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -7921,7 +8148,7 @@ var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 procedure TCompte.InitializeCancel;
@@ -7967,12 +8194,13 @@ begin
   Result := DefaultInterface.ListCount;
 end;
 
-function TCompteProperties.Get_FieldValue(const FieldNameorNum: WideString): OleVariant;
+function TCompteProperties.Get_FieldValue(const FieldNameorNum: WideString)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 {$ENDIF}
@@ -7989,7 +8217,8 @@ end;
 
 procedure TTableUser.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{C2C9C138-51C3-4BB4-9F43-4C5006B23644}'; IntfIID: '{E77CFE56-9254-4F26-A270-01FECB1458D2}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{C2C9C138-51C3-4BB4-9F43-4C5006B23644}';
+    IntfIID: '{E77CFE56-9254-4F26-A270-01FECB1458D2}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -8001,7 +8230,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _TableUser;
   end;
 end;
@@ -8024,7 +8253,8 @@ function TTableUser.GetDefaultInterface: _TableUser;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -8062,12 +8292,13 @@ begin
   Result := DefaultInterface.SortOrder;
 end;
 
-function TTableUser.Get_FieldValue(const FieldNameorNum: WideString): OleVariant;
+function TTableUser.Get_FieldValue(const FieldNameorNum: WideString)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 procedure TTableUser.ExportXL;
@@ -8098,12 +8329,13 @@ begin
   Result := DefaultInterface.SortOrder;
 end;
 
-function TTableUserProperties.Get_FieldValue(const FieldNameorNum: WideString): OleVariant;
+function TTableUserProperties.Get_FieldValue(const FieldNameorNum: WideString)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 {$ENDIF}
@@ -8120,7 +8352,8 @@ end;
 
 procedure TComptes.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{DA36E857-BB5A-4534-A29B-147DA9891BA3}'; IntfIID: '{A550F779-9D65-431C-8423-6A191A123F9C}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{DA36E857-BB5A-4534-A29B-147DA9891BA3}';
+    IntfIID: '{A550F779-9D65-431C-8423-6A191A123F9C}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -8132,7 +8365,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Comptes;
   end;
 end;
@@ -8155,7 +8388,8 @@ function TComptes.GetDefaultInterface: _Comptes;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -8195,7 +8429,7 @@ procedure TComptes._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -8259,7 +8493,7 @@ procedure TComptesProperties._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -8307,7 +8541,8 @@ end;
 
 procedure TDossier.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{7A5CABDC-4D00-4C7A-A9F3-0845AC81E465}'; IntfIID: '{85FD7C04-A8B8-4795-9890-0E89911DC530}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{7A5CABDC-4D00-4C7A-A9F3-0845AC81E465}';
+    IntfIID: '{85FD7C04-A8B8-4795-9890-0E89911DC530}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -8319,7 +8554,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Dossier;
   end;
 end;
@@ -8342,7 +8577,8 @@ function TDossier.GetDefaultInterface: _Dossier;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -8417,7 +8653,8 @@ end;
 
 procedure TOptions.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{FD92BEAC-82DA-4AA8-BA93-EAA8C312512E}'; IntfIID: '{E667C7A2-7F84-4C41-A337-126AD043478C}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{FD92BEAC-82DA-4AA8-BA93-EAA8C312512E}';
+    IntfIID: '{E667C7A2-7F84-4C41-A337-126AD043478C}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -8429,7 +8666,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Options;
   end;
 end;
@@ -8452,7 +8689,8 @@ function TOptions.GetDefaultInterface: _Options;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -8517,7 +8755,7 @@ procedure TOptions.Set_Lang(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant      := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Lang := Param1;
 end;
 
@@ -8586,7 +8824,7 @@ procedure TOptionsProperties.Set_Lang(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant      := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Lang := Param1;
 end;
 
@@ -8609,7 +8847,8 @@ end;
 
 procedure TField.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{FE3AC3CC-0C53-403F-8C8E-1A1FDDEE9F5B}'; IntfIID: '{F105E093-D911-46A0-81AF-92B336CF4A83}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{FE3AC3CC-0C53-403F-8C8E-1A1FDDEE9F5B}';
+    IntfIID: '{F105E093-D911-46A0-81AF-92B336CF4A83}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -8621,7 +8860,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Field;
   end;
 end;
@@ -8644,7 +8883,8 @@ function TField.GetDefaultInterface: _Field;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -8729,7 +8969,7 @@ procedure TField.Set_Expression(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Expression := Param1;
 end;
 
@@ -8803,7 +9043,7 @@ procedure TFieldProperties.Set_Expression(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Expression := Param1;
 end;
 
@@ -8814,14 +9054,16 @@ begin
   Result := CreateComObject(CLASS_AnaLytique) as _AnaLytique;
 end;
 
-class function CoAnaLytique.CreateRemote(const MachineName: string): _AnaLytique;
+class function CoAnaLytique.CreateRemote(const MachineName: string)
+  : _AnaLytique;
 begin
   Result := CreateRemoteComObject(MachineName, CLASS_AnaLytique) as _AnaLytique;
 end;
 
 procedure TAnaLytique.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{6A32FF54-31A4-4A29-BBAC-484B0E3F5D74}'; IntfIID: '{7001AA94-00C5-4538-982B-229B29AEF8B2}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{6A32FF54-31A4-4A29-BBAC-484B0E3F5D74}';
+    IntfIID: '{7001AA94-00C5-4538-982B-229B29AEF8B2}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -8833,7 +9075,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _AnaLytique;
   end;
 end;
@@ -8856,7 +9098,8 @@ function TAnaLytique.GetDefaultInterface: _AnaLytique;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -8896,7 +9139,7 @@ procedure TAnaLytique.Set_PeriodStart(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodStart := Param1;
 end;
 
@@ -8907,7 +9150,7 @@ procedure TAnaLytique.Set_PeriodEnd(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodEnd := Param1;
 end;
 
@@ -8916,12 +9159,13 @@ begin
   DefaultInterface.Set_AllBookyear(Param1);
 end;
 
-function TAnaLytique.Get_FieldValue(const FieldNameorNum: WideString): OleVariant;
+function TAnaLytique.Get_FieldValue(const FieldNameorNum: WideString)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 procedure TAnaLytique.InitializeCancel;
@@ -8944,7 +9188,8 @@ begin
   DefaultInterface.ExportXL;
 end;
 
-procedure TAnaLytique.ExportBalAna(const Deb_per: WideString; const End_per: WideString);
+procedure TAnaLytique.ExportBalAna(const Deb_per: WideString;
+  const End_per: WideString);
 begin
   DefaultInterface.ExportBalAna(Deb_per, End_per);
 end;
@@ -8974,7 +9219,7 @@ procedure TAnaLytiqueProperties.Set_PeriodStart(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodStart := Param1;
 end;
 
@@ -8985,7 +9230,7 @@ procedure TAnaLytiqueProperties.Set_PeriodEnd(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodEnd := Param1;
 end;
 
@@ -8994,12 +9239,13 @@ begin
   DefaultInterface.Set_AllBookyear(Param1);
 end;
 
-function TAnaLytiqueProperties.Get_FieldValue(const FieldNameorNum: WideString): OleVariant;
+function TAnaLytiqueProperties.Get_FieldValue(const FieldNameorNum: WideString)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 {$ENDIF}
@@ -9009,14 +9255,17 @@ begin
   Result := CreateComObject(CLASS_WbApiUtilities) as _WbApiUtilities;
 end;
 
-class function CoWbApiUtilities.CreateRemote(const MachineName: string): _WbApiUtilities;
+class function CoWbApiUtilities.CreateRemote(const MachineName: string)
+  : _WbApiUtilities;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_WbApiUtilities) as _WbApiUtilities;
+  Result := CreateRemoteComObject(MachineName, CLASS_WbApiUtilities)
+    as _WbApiUtilities;
 end;
 
 procedure TWbApiUtilities.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{71979598-9C60-4F06-BC21-5827860DB27B}'; IntfIID: '{013A3107-0813-411A-AF5E-474D7850B4E5}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{71979598-9C60-4F06-BC21-5827860DB27B}';
+    IntfIID: '{013A3107-0813-411A-AF5E-474D7850B4E5}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -9028,7 +9277,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _WbApiUtilities;
   end;
 end;
@@ -9051,7 +9300,8 @@ function TWbApiUtilities.GetDefaultInterface: _WbApiUtilities;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -9084,17 +9334,20 @@ begin
   Result := DefaultInterface.GetTime;
 end;
 
-procedure TWbApiUtilities.FillTreeView(var obj_treeview: IDispatch; var obj_nod: IDispatch);
+procedure TWbApiUtilities.FillTreeView(var obj_treeview: IDispatch;
+  var obj_nod: IDispatch);
 begin
   DefaultInterface.FillTreeView(obj_treeview, obj_nod);
 end;
 
-function TWbApiUtilities.SaveNewQuery(const Id_query: WideString; const ID_statement: WideString): WordBool;
+function TWbApiUtilities.SaveNewQuery(const Id_query: WideString;
+  const ID_statement: WideString): WordBool;
 begin
   Result := DefaultInterface.SaveNewQuery(Id_query, ID_statement);
 end;
 
-function TWbApiUtilities.SaveExistingQuery(const Id_query: WideString; const ID_statement: WideString): WordBool;
+function TWbApiUtilities.SaveExistingQuery(const Id_query: WideString;
+  const ID_statement: WideString): WordBool;
 begin
   Result := DefaultInterface.SaveExistingQuery(Id_query, ID_statement);
 end;
@@ -9109,17 +9362,20 @@ begin
   Result := DefaultInterface.InitializeTime;
 end;
 
-function TWbApiUtilities.GetFieldCommentForTreeView(var the_objNOd: IDispatch): WideString;
+function TWbApiUtilities.GetFieldCommentForTreeView(var the_objNOd: IDispatch)
+  : WideString;
 begin
   Result := DefaultInterface.GetFieldCommentForTreeView(the_objNOd);
 end;
 
-function TWbApiUtilities.LoadExistingQuery(var Obj_To_fill: IDispatch): WordBool;
+function TWbApiUtilities.LoadExistingQuery(var Obj_To_fill: IDispatch)
+  : WordBool;
 begin
   Result := DefaultInterface.LoadExistingQuery(Obj_To_fill);
 end;
 
-function TWbApiUtilities.SeekSelectedQuery(const Id_query: WideString): WideString;
+function TWbApiUtilities.SeekSelectedQuery(const Id_query: WideString)
+  : WideString;
 begin
   Result := DefaultInterface.SeekSelectedQuery(Id_query);
 end;
@@ -9161,7 +9417,8 @@ end;
 
 procedure TSqlError.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{E67D7428-EECE-4624-9CA3-D9B5F985789A}'; IntfIID: '{8C45D26C-2723-401D-852F-9928C0502573}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{E67D7428-EECE-4624-9CA3-D9B5F985789A}';
+    IntfIID: '{8C45D26C-2723-401D-852F-9928C0502573}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -9173,7 +9430,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _SqlError;
   end;
 end;
@@ -9196,7 +9453,8 @@ function TSqlError.GetDefaultInterface: _SqlError;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -9266,7 +9524,8 @@ end;
 
 procedure TUser.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{EA8B7735-B14B-40BD-A5ED-16239F6F9A80}'; IntfIID: '{5096A48E-51B7-4FA0-B779-95DF959F94E8}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{EA8B7735-B14B-40BD-A5ED-16239F6F9A80}';
+    IntfIID: '{5096A48E-51B7-4FA0-B779-95DF959F94E8}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -9278,7 +9537,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _User;
   end;
 end;
@@ -9301,7 +9560,8 @@ function TUser.GetDefaultInterface: _User;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -9341,7 +9601,7 @@ procedure TUser.Set_Name(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant      := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Name := Param1;
 end;
 
@@ -9362,7 +9622,7 @@ procedure TUser.Set_Language(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Language := Param1;
 end;
 
@@ -9378,7 +9638,7 @@ procedure TUser.Set_Rights(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Rights := Param1;
 end;
 
@@ -9387,15 +9647,18 @@ begin
   Result := DefaultInterface.PrefsPath;
 end;
 
-function TUser.CheckAccess(const SocName: WideString; const SocDirectory: WideString; const UserName: WideString): Smallint;
+function TUser.CheckAccess(const SocName: WideString;
+  const SocDirectory: WideString; const UserName: WideString): Smallint;
 begin
   Result := DefaultInterface.CheckAccess(SocName, SocDirectory, UserName);
 end;
 
-procedure TUser.Register(const SocDirectory: WideString; const UserName: WideString; const UserLanguage: WideString; const UserPassword: WideString;
-  const UserRights: WideString);
+procedure TUser.Register(const SocDirectory: WideString;
+  const UserName: WideString; const UserLanguage: WideString;
+  const UserPassword: WideString; const UserRights: WideString);
 begin
-  DefaultInterface.Register(SocDirectory, UserName, UserLanguage, UserPassword, UserRights);
+  DefaultInterface.Register(SocDirectory, UserName, UserLanguage, UserPassword,
+    UserRights);
 end;
 
 procedure TUser.UnRegister;
@@ -9403,7 +9666,8 @@ begin
   DefaultInterface.UnRegister;
 end;
 
-function TUser.IsUserLoggedInDossier(const UserName: WideString; const SocPathName: WideString): Smallint;
+function TUser.IsUserLoggedInDossier(const UserName: WideString;
+  const SocPathName: WideString): Smallint;
 begin
   Result := DefaultInterface.IsUserLoggedInDossier(UserName, SocPathName);
 end;
@@ -9418,12 +9682,15 @@ begin
   Result := DefaultInterface.IsAccess(ModuleItemName);
 end;
 
-function TUser.GetAlternateUsernameAndDossier(const UserName: WideString; ForceRecalculation: WordBool): WideString;
+function TUser.GetAlternateUsernameAndDossier(const UserName: WideString;
+  ForceRecalculation: WordBool): WideString;
 begin
-  Result := DefaultInterface.GetAlternateUsernameAndDossier(UserName, ForceRecalculation);
+  Result := DefaultInterface.GetAlternateUsernameAndDossier(UserName,
+    ForceRecalculation);
 end;
 
-function TUser.CheckPasswordOfUser(const UserName: WideString; const the_soc: WideString): WordBool;
+function TUser.CheckPasswordOfUser(const UserName: WideString;
+  const the_soc: WideString): WordBool;
 begin
   Result := DefaultInterface.CheckPasswordOfUser(UserName, the_soc);
 end;
@@ -9458,7 +9725,7 @@ procedure TUserProperties.Set_Name(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant      := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Name := Param1;
 end;
 
@@ -9479,7 +9746,7 @@ procedure TUserProperties.Set_Language(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Language := Param1;
 end;
 
@@ -9495,7 +9762,7 @@ procedure TUserProperties.Set_Rights(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Rights := Param1;
 end;
 
@@ -9518,7 +9785,8 @@ end;
 
 procedure TDossiers.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{02FD2AEF-1046-4C4A-97B3-6E4DFD79CD94}'; IntfIID: '{7AA31EBA-863F-4397-B7EC-9E00BB941C97}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{02FD2AEF-1046-4C4A-97B3-6E4DFD79CD94}';
+    IntfIID: '{7AA31EBA-863F-4397-B7EC-9E00BB941C97}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -9530,7 +9798,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Dossiers;
   end;
 end;
@@ -9553,7 +9821,8 @@ function TDossiers.GetDefaultInterface: _Dossiers;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -9606,7 +9875,8 @@ begin
   Result := DefaultInterface.GetCompanyListSorted;
 end;
 
-function TDossiers.IsLocalDossierExist(const PathInUsersFile: WideString; const MyShortName: WideString): WordBool;
+function TDossiers.IsLocalDossierExist(const PathInUsersFile: WideString;
+  const MyShortName: WideString): WordBool;
 begin
   Result := DefaultInterface.IsLocalDossierExist(PathInUsersFile, MyShortName);
 end;
@@ -9658,7 +9928,8 @@ end;
 
 procedure TApiIni.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{32E39920-91ED-4ECE-A14C-0F9E11BE4126}'; IntfIID: '{B17D41BA-16F6-4405-933B-9E3AE2F9EBB3}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{32E39920-91ED-4ECE-A14C-0F9E11BE4126}';
+    IntfIID: '{B17D41BA-16F6-4405-933B-9E3AE2F9EBB3}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -9670,7 +9941,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _ApiIni;
   end;
 end;
@@ -9693,7 +9964,8 @@ function TApiIni.GetDefaultInterface: _ApiIni;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -9733,21 +10005,24 @@ procedure TApiIni.Set_INIfile(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.INIfile := Param1;
 end;
 
-function TApiIni.ReadINI(var Section: WideString; var Key: WideString): OleVariant;
+function TApiIni.ReadINI(var Section: WideString; var Key: WideString)
+  : OleVariant;
 begin
   Result := DefaultInterface.ReadINI(Section, Key);
 end;
 
-procedure TApiIni.WriteINI(var Section: WideString; var Key: WideString; var Text: WideString);
+procedure TApiIni.WriteINI(var Section: WideString; var Key: WideString;
+  var Text: WideString);
 begin
   DefaultInterface.WriteINI(Section, Key, Text);
 end;
 
-function TApiIni.IsSpecifiedKeyExist(const Section: WideString; const Key: WideString; const IniFileName: WideString): WordBool;
+function TApiIni.IsSpecifiedKeyExist(const Section: WideString;
+  const Key: WideString; const IniFileName: WideString): WordBool;
 begin
   Result := DefaultInterface.IsSpecifiedKeyExist(Section, Key, IniFileName);
 end;
@@ -9782,7 +10057,7 @@ procedure TApiIniProperties.Set_INIfile(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.INIfile := Param1;
 end;
 
@@ -9793,14 +10068,17 @@ begin
   Result := CreateComObject(CLASS_WinbooksObject) as _WinbooksObject;
 end;
 
-class function CoWinbooksObject.CreateRemote(const MachineName: string): _WinbooksObject;
+class function CoWinbooksObject.CreateRemote(const MachineName: string)
+  : _WinbooksObject;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_WinbooksObject) as _WinbooksObject;
+  Result := CreateRemoteComObject(MachineName, CLASS_WinbooksObject)
+    as _WinbooksObject;
 end;
 
 procedure TWinbooksObject.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{B67F206D-2887-4898-89D8-8AD5691B6DF0}'; IntfIID: '{834C9818-ACFE-4420-9E30-7E5A63161D14}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{B67F206D-2887-4898-89D8-8AD5691B6DF0}';
+    IntfIID: '{834C9818-ACFE-4420-9E30-7E5A63161D14}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -9812,7 +10090,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _WinbooksObject;
   end;
 end;
@@ -9835,7 +10113,8 @@ function TWinbooksObject.GetDefaultInterface: _WinbooksObject;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -9875,7 +10154,7 @@ procedure TWinbooksObject._Set_Customers(const Customers: _Comptes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Customers := Customers;
 end;
 
@@ -9891,7 +10170,7 @@ procedure TWinbooksObject._Set_Suppliers(const Suppliers: _Comptes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Suppliers := Suppliers;
 end;
 
@@ -9907,7 +10186,7 @@ procedure TWinbooksObject._Set_Accounts(const Accounts: _Comptes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Accounts := Accounts;
 end;
 
@@ -9916,14 +10195,15 @@ begin
   Result := DefaultInterface.Analytical;
 end;
 
-procedure TWinbooksObject._Set_Analytical(const Analytical: _SocAnalyticalParam);
+procedure TWinbooksObject._Set_Analytical(const Analytical
+  : _SocAnalyticalParam);
 { Warning: The property Analytical has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Analytical := Analytical;
 end;
 
@@ -9932,14 +10212,15 @@ begin
   Result := DefaultInterface.CustomerTrans;
 end;
 
-procedure TWinbooksObject._Set_CustomerTrans(const CustomerTrans: _Transactions);
+procedure TWinbooksObject._Set_CustomerTrans(const CustomerTrans
+  : _Transactions);
 { Warning: The property CustomerTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CustomerTrans := CustomerTrans;
 end;
 
@@ -9955,7 +10236,7 @@ procedure TWinbooksObject._Set_CustTrans(const CustTrans: _Transaction);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CustTrans := CustTrans;
 end;
 
@@ -9964,14 +10245,15 @@ begin
   Result := DefaultInterface.SupplierTrans;
 end;
 
-procedure TWinbooksObject._Set_SupplierTrans(const SupplierTrans: _Transactions);
+procedure TWinbooksObject._Set_SupplierTrans(const SupplierTrans
+  : _Transactions);
 { Warning: The property SupplierTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.SupplierTrans := SupplierTrans;
 end;
 
@@ -9987,7 +10269,7 @@ procedure TWinbooksObject._Set_AccountTrans(const AccountTrans: _Transactions);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant              := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.AccountTrans := AccountTrans;
 end;
 
@@ -9996,14 +10278,15 @@ begin
   Result := DefaultInterface.AnalyticalTrans;
 end;
 
-procedure TWinbooksObject._Set_AnalyticalTrans(const AnalyticalTrans: _Analytiques);
+procedure TWinbooksObject._Set_AnalyticalTrans(const AnalyticalTrans
+  : _Analytiques);
 { Warning: The property AnalyticalTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                 := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.AnalyticalTrans := AnalyticalTrans;
 end;
 
@@ -10019,7 +10302,7 @@ procedure TWinbooksObject._Set_Tables(const Tables: _Tables);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Tables := Tables;
 end;
 
@@ -10035,7 +10318,7 @@ procedure TWinbooksObject._Set_Import(const Import: _Import);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Import := Import;
 end;
 
@@ -10051,7 +10334,7 @@ procedure TWinbooksObject._Set_BookYear(const BookYear: _BookYears);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.BookYear := BookYear;
 end;
 
@@ -10067,7 +10350,7 @@ procedure TWinbooksObject._Set_Options(const Options: _Options);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Options := Options;
 end;
 
@@ -10083,7 +10366,7 @@ procedure TWinbooksObject._Set_Sql(const Sql: _SqlClass);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant     := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Sql := Sql;
 end;
 
@@ -10099,7 +10382,7 @@ procedure TWinbooksObject._Set_Param(const Param: _Param);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Param := Param;
 end;
 
@@ -10115,7 +10398,7 @@ procedure TWinbooksObject._Set_Utilities(const Utilities: _WbApiUtilities);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Utilities := Utilities;
 end;
 
@@ -10131,7 +10414,7 @@ procedure TWinbooksObject._Set_Companies(const Companies: _Dossiers);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Companies := Companies;
 end;
 
@@ -10152,7 +10435,7 @@ procedure TWinbooksObject.Set_SetPath(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.SetPath := Param1;
 end;
 
@@ -10168,7 +10451,7 @@ procedure TWinbooksObject.Set_GetEncryptionPwd(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                  := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.GetEncryptionPwd := Param1;
 end;
 
@@ -10192,7 +10475,8 @@ begin
   Result := DefaultInterface.InitLocal;
 end;
 
-function TWinbooksObject.Login(const UserName: WideString; const UserPassword: WideString; const UserLanguage: WideString): Smallint;
+function TWinbooksObject.Login(const UserName: WideString;
+  const UserPassword: WideString; const UserLanguage: WideString): Smallint;
 begin
   Result := DefaultInterface.Login(UserName, UserPassword, UserLanguage);
 end;
@@ -10207,7 +10491,8 @@ begin
   DefaultInterface.LoadFieldDefs;
 end;
 
-function TWinbooksObject.OpenBookYear(const BookYearShortName: WideString): Smallint;
+function TWinbooksObject.OpenBookYear(const BookYearShortName: WideString)
+  : Smallint;
 begin
   Result := DefaultInterface.OpenBookYear(BookYearShortName);
 end;
@@ -10217,7 +10502,8 @@ begin
   DefaultInterface.CloseDossier;
 end;
 
-function TWinbooksObject.GetDossierPath(const ShortName: WideString): WideString;
+function TWinbooksObject.GetDossierPath(const ShortName: WideString)
+  : WideString;
 begin
   Result := DefaultInterface.GetDossierPath(ShortName);
 end;
@@ -10272,7 +10558,7 @@ procedure TWinbooksObjectProperties._Set_Customers(const Customers: _Comptes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Customers := Customers;
 end;
 
@@ -10288,7 +10574,7 @@ procedure TWinbooksObjectProperties._Set_Suppliers(const Suppliers: _Comptes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Suppliers := Suppliers;
 end;
 
@@ -10304,7 +10590,7 @@ procedure TWinbooksObjectProperties._Set_Accounts(const Accounts: _Comptes);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Accounts := Accounts;
 end;
 
@@ -10313,14 +10599,15 @@ begin
   Result := DefaultInterface.Analytical;
 end;
 
-procedure TWinbooksObjectProperties._Set_Analytical(const Analytical: _SocAnalyticalParam);
+procedure TWinbooksObjectProperties._Set_Analytical(const Analytical
+  : _SocAnalyticalParam);
 { Warning: The property Analytical has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant            := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Analytical := Analytical;
 end;
 
@@ -10329,14 +10616,15 @@ begin
   Result := DefaultInterface.CustomerTrans;
 end;
 
-procedure TWinbooksObjectProperties._Set_CustomerTrans(const CustomerTrans: _Transactions);
+procedure TWinbooksObjectProperties._Set_CustomerTrans(const CustomerTrans
+  : _Transactions);
 { Warning: The property CustomerTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CustomerTrans := CustomerTrans;
 end;
 
@@ -10345,14 +10633,15 @@ begin
   Result := DefaultInterface.CustTrans;
 end;
 
-procedure TWinbooksObjectProperties._Set_CustTrans(const CustTrans: _Transaction);
+procedure TWinbooksObjectProperties._Set_CustTrans(const CustTrans
+  : _Transaction);
 { Warning: The property CustTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CustTrans := CustTrans;
 end;
 
@@ -10361,14 +10650,15 @@ begin
   Result := DefaultInterface.SupplierTrans;
 end;
 
-procedure TWinbooksObjectProperties._Set_SupplierTrans(const SupplierTrans: _Transactions);
+procedure TWinbooksObjectProperties._Set_SupplierTrans(const SupplierTrans
+  : _Transactions);
 { Warning: The property SupplierTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.SupplierTrans := SupplierTrans;
 end;
 
@@ -10377,14 +10667,15 @@ begin
   Result := DefaultInterface.AccountTrans;
 end;
 
-procedure TWinbooksObjectProperties._Set_AccountTrans(const AccountTrans: _Transactions);
+procedure TWinbooksObjectProperties._Set_AccountTrans(const AccountTrans
+  : _Transactions);
 { Warning: The property AccountTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant              := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.AccountTrans := AccountTrans;
 end;
 
@@ -10393,14 +10684,15 @@ begin
   Result := DefaultInterface.AnalyticalTrans;
 end;
 
-procedure TWinbooksObjectProperties._Set_AnalyticalTrans(const AnalyticalTrans: _Analytiques);
+procedure TWinbooksObjectProperties._Set_AnalyticalTrans(const AnalyticalTrans
+  : _Analytiques);
 { Warning: The property AnalyticalTrans has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                 := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.AnalyticalTrans := AnalyticalTrans;
 end;
 
@@ -10416,7 +10708,7 @@ procedure TWinbooksObjectProperties._Set_Tables(const Tables: _Tables);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Tables := Tables;
 end;
 
@@ -10432,7 +10724,7 @@ procedure TWinbooksObjectProperties._Set_Import(const Import: _Import);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Import := Import;
 end;
 
@@ -10448,7 +10740,7 @@ procedure TWinbooksObjectProperties._Set_BookYear(const BookYear: _BookYears);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant          := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.BookYear := BookYear;
 end;
 
@@ -10464,7 +10756,7 @@ procedure TWinbooksObjectProperties._Set_Options(const Options: _Options);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Options := Options;
 end;
 
@@ -10480,7 +10772,7 @@ procedure TWinbooksObjectProperties._Set_Sql(const Sql: _SqlClass);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant     := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Sql := Sql;
 end;
 
@@ -10496,7 +10788,7 @@ procedure TWinbooksObjectProperties._Set_Param(const Param: _Param);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Param := Param;
 end;
 
@@ -10505,14 +10797,15 @@ begin
   Result := DefaultInterface.Utilities;
 end;
 
-procedure TWinbooksObjectProperties._Set_Utilities(const Utilities: _WbApiUtilities);
+procedure TWinbooksObjectProperties._Set_Utilities(const Utilities
+  : _WbApiUtilities);
 { Warning: The property Utilities has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Utilities := Utilities;
 end;
 
@@ -10528,7 +10821,7 @@ procedure TWinbooksObjectProperties._Set_Companies(const Companies: _Dossiers);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Companies := Companies;
 end;
 
@@ -10549,7 +10842,7 @@ procedure TWinbooksObjectProperties.Set_SetPath(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.SetPath := Param1;
 end;
 
@@ -10558,14 +10851,15 @@ begin
   Result := DefaultInterface.Version;
 end;
 
-procedure TWinbooksObjectProperties.Set_GetEncryptionPwd(const Param1: WideString);
+procedure TWinbooksObjectProperties.Set_GetEncryptionPwd
+  (const Param1: WideString);
 { Warning: The property GetEncryptionPwd has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                  := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.GetEncryptionPwd := Param1;
 end;
 
@@ -10588,7 +10882,8 @@ end;
 
 procedure TParam.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{BEEA7825-9F20-4A2F-B0D8-64ADC5E450CD}'; IntfIID: '{FAB874C8-E379-4AB3-AA5E-7CCC088B2160}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{BEEA7825-9F20-4A2F-B0D8-64ADC5E450CD}';
+    IntfIID: '{FAB874C8-E379-4AB3-AA5E-7CCC088B2160}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -10600,7 +10895,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Param;
   end;
 end;
@@ -10623,7 +10918,8 @@ function TParam.GetDefaultInterface: _Param;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -10663,7 +10959,7 @@ procedure TParam._Set_BookYears(const BookYears: _BookYears);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.BookYears := BookYears;
 end;
 
@@ -10702,7 +10998,8 @@ begin
   Result := DefaultInterface.GetParamValue(StrID);
 end;
 
-function TParam.VATInternalCode(const CodeUser: WideString; const CliFou: WideString; var Langue: WideString): WideString;
+function TParam.VATInternalCode(const CodeUser: WideString;
+  const CliFou: WideString; var Langue: WideString): WideString;
 begin
   Result := DefaultInterface.VATInternalCode(CodeUser, CliFou, Langue);
 end;
@@ -10742,7 +11039,8 @@ begin
   Result := DefaultInterface.VatAcc2(InternCodeVat);
 end;
 
-function TParam.VATExternalCode(const InternalCode: WideString; lLanguage: LangueforVat): OleVariant;
+function TParam.VATExternalCode(const InternalCode: WideString;
+  lLanguage: LangueforVat): OleVariant;
 begin
   Result := DefaultInterface.VATExternalCode(InternalCode, lLanguage);
 end;
@@ -10772,7 +11070,7 @@ procedure TParamProperties._Set_BookYears(const BookYears: _BookYears);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.BookYears := BookYears;
 end;
 
@@ -10796,7 +11094,8 @@ begin
   Result := DefaultInterface.CurrentBookYearNumber;
 end;
 
-function TParamProperties.Get_CurrentBookYearNumBis(const ExName: WideString): Smallint;
+function TParamProperties.Get_CurrentBookYearNumBis(const ExName: WideString)
+  : Smallint;
 begin
   Result := DefaultInterface.CurrentBookYearNumBis[ExName];
 end;
@@ -10813,14 +11112,17 @@ begin
   Result := CreateComObject(CLASS_Transactions) as _Transactions;
 end;
 
-class function CoTransactions.CreateRemote(const MachineName: string): _Transactions;
+class function CoTransactions.CreateRemote(const MachineName: string)
+  : _Transactions;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_Transactions) as _Transactions;
+  Result := CreateRemoteComObject(MachineName, CLASS_Transactions)
+    as _Transactions;
 end;
 
 procedure TTransactions.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{3EFFC1A5-6784-471E-B92B-72A2AD941286}'; IntfIID: '{36B3C7F9-AEFA-407D-B52B-FEDCB7DC2553}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{3EFFC1A5-6784-471E-B92B-72A2AD941286}';
+    IntfIID: '{36B3C7F9-AEFA-407D-B52B-FEDCB7DC2553}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -10832,7 +11134,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Transactions;
   end;
 end;
@@ -10855,7 +11157,8 @@ function TTransactions.GetDefaultInterface: _Transactions;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -10895,7 +11198,7 @@ procedure TTransactions._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -10921,7 +11224,7 @@ procedure TTransactions.Set_CategoryFilter(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CategoryFilter := Param1;
 end;
 
@@ -10937,7 +11240,7 @@ procedure TTransactions.Set_PeriodRange(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodRange := Param1;
 end;
 
@@ -10948,7 +11251,7 @@ procedure TTransactions.Set_YearTransaction(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                 := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.YearTransaction := Param1;
 end;
 
@@ -10987,7 +11290,8 @@ begin
   Result := DefaultInterface.GetThePathofExisintFile;
 end;
 
-function TTransactions.PrecCalcACT(var TypeChoice: Byte; var Obj: IDispatch): WordBool;
+function TTransactions.PrecCalcACT(var TypeChoice: Byte; var Obj: IDispatch)
+  : WordBool;
 begin
   Result := DefaultInterface.PrecCalcACT(TypeChoice, Obj);
 end;
@@ -10997,7 +11301,8 @@ begin
   Result := DefaultInterface.IsFileTotPerExist;
 end;
 
-function TTransactions.WichAccount(const Account: WideString; var ty: Smallint): _Transaction;
+function TTransactions.WichAccount(const Account: WideString; var ty: Smallint)
+  : _Transaction;
 begin
   Result := DefaultInterface.WichAccount(Account, ty);
 end;
@@ -11027,7 +11332,7 @@ procedure TTransactionsProperties._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -11053,7 +11358,7 @@ procedure TTransactionsProperties.Set_CategoryFilter(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.CategoryFilter := Param1;
 end;
 
@@ -11069,7 +11374,7 @@ procedure TTransactionsProperties.Set_PeriodRange(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodRange := Param1;
 end;
 
@@ -11080,7 +11385,7 @@ procedure TTransactionsProperties.Set_YearTransaction(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                 := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.YearTransaction := Param1;
 end;
 
@@ -11111,14 +11416,17 @@ begin
   Result := CreateComObject(CLASS_Analytiques) as _Analytiques;
 end;
 
-class function CoAnalytiques.CreateRemote(const MachineName: string): _Analytiques;
+class function CoAnalytiques.CreateRemote(const MachineName: string)
+  : _Analytiques;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_Analytiques) as _Analytiques;
+  Result := CreateRemoteComObject(MachineName, CLASS_Analytiques)
+    as _Analytiques;
 end;
 
 procedure TAnalytiques.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{EDC584A4-AB62-4BAB-94CF-13BC7D350961}'; IntfIID: '{72E29583-AE9F-41C8-8A52-7D02AACD690B}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{EDC584A4-AB62-4BAB-94CF-13BC7D350961}';
+    IntfIID: '{72E29583-AE9F-41C8-8A52-7D02AACD690B}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -11130,7 +11438,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Analytiques;
   end;
 end;
@@ -11153,7 +11461,8 @@ function TAnalytiques.GetDefaultInterface: _Analytiques;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -11193,7 +11502,7 @@ procedure TAnalytiques._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -11224,7 +11533,7 @@ procedure TAnalytiques.Set_PeriodRange(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodRange := Param1;
 end;
 
@@ -11238,7 +11547,8 @@ begin
   Result := DefaultInterface.Wichplan(strindex);
 end;
 
-function TAnalytiques.WichSectionPlan(const Section: WideString; const Plan: WideString): _AnaLytique;
+function TAnalytiques.WichSectionPlan(const Section: WideString;
+  const Plan: WideString): _AnaLytique;
 begin
   Result := DefaultInterface.WichSectionPlan(Section, Plan);
 end;
@@ -11263,23 +11573,33 @@ begin
   Result := DefaultInterface.FromPeriods;
 end;
 
-function TAnalytiques.BalanceCum(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-  var StartaccountG: WideString; var EndAccountG: WideString; var TypeOfbal: Byte): Currency;
+function TAnalytiques.BalanceCum(var PlanAna: WideString;
+  var Periode: WideString; var StartAccount: WideString;
+  var EndAccount: WideString; var StartaccountG: WideString;
+  var EndAccountG: WideString; var TypeOfbal: Byte): Currency;
 begin
-  Result := DefaultInterface.BalanceCum(PlanAna, Periode, StartAccount, EndAccount, StartaccountG, EndAccountG, TypeOfbal);
+  Result := DefaultInterface.BalanceCum(PlanAna, Periode, StartAccount,
+    EndAccount, StartaccountG, EndAccountG, TypeOfbal);
 end;
 
-function TAnalytiques.BalancePerEx(var PlanAna: WideString; var Periode: WideString; var StartAccount: WideString; var EndAccount: WideString;
-  var StartaccountG: WideString; var EndAccountG: WideString; var PlanAna2: WideString; var StartAccount2: WideString; var EndAccount2: WideString;
+function TAnalytiques.BalancePerEx(var PlanAna: WideString;
+  var Periode: WideString; var StartAccount: WideString;
+  var EndAccount: WideString; var StartaccountG: WideString;
+  var EndAccountG: WideString; var PlanAna2: WideString;
+  var StartAccount2: WideString; var EndAccount2: WideString;
   var TypeOfbal: Byte): Currency;
 begin
-  Result := DefaultInterface.BalancePerEx(PlanAna, Periode, StartAccount, EndAccount, StartaccountG, EndAccountG, PlanAna2, StartAccount2, EndAccount2,
-    TypeOfbal);
+  Result := DefaultInterface.BalancePerEx(PlanAna, Periode, StartAccount,
+    EndAccount, StartaccountG, EndAccountG, PlanAna2, StartAccount2,
+    EndAccount2, TypeOfbal);
 end;
 
-procedure TAnalytiques.ExportListeOfAnalyticalPlan(SectionAna: Smallint; var StartAccount: WideString; var EndAccount: WideString; var Category: WideString);
+procedure TAnalytiques.ExportListeOfAnalyticalPlan(SectionAna: Smallint;
+  var StartAccount: WideString; var EndAccount: WideString;
+  var Category: WideString);
 begin
-  DefaultInterface.ExportListeOfAnalyticalPlan(SectionAna, StartAccount, EndAccount, Category);
+  DefaultInterface.ExportListeOfAnalyticalPlan(SectionAna, StartAccount,
+    EndAccount, Category);
 end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -11307,7 +11627,7 @@ procedure TAnalytiquesProperties._Set_Fields(const Fields: _Fields);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Fields := Fields;
 end;
 
@@ -11338,7 +11658,7 @@ procedure TAnalytiquesProperties.Set_PeriodRange(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.PeriodRange := Param1;
 end;
 
@@ -11349,14 +11669,17 @@ begin
   Result := CreateComObject(CLASS_Transaction) as _Transaction;
 end;
 
-class function CoTransaction.CreateRemote(const MachineName: string): _Transaction;
+class function CoTransaction.CreateRemote(const MachineName: string)
+  : _Transaction;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_Transaction) as _Transaction;
+  Result := CreateRemoteComObject(MachineName, CLASS_Transaction)
+    as _Transaction;
 end;
 
 procedure TTransaction.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{DCCB2DE6-FA2A-430D-A79D-F79B258FF15A}'; IntfIID: '{04261072-CDDD-4655-BD4E-D79C36F1A776}'; EventIID: '';
+  CServerData: TServerData = (ClassID: '{DCCB2DE6-FA2A-430D-A79D-F79B258FF15A}';
+    IntfIID: '{04261072-CDDD-4655-BD4E-D79C36F1A776}'; EventIID: '';
     LicenseKey: nil; Version: 500);
 begin
   ServerData := @CServerData;
@@ -11368,7 +11691,7 @@ var
 begin
   if FIntf = nil then
   begin
-    punk  := GetServer;
+    punk := GetServer;
     FIntf := punk as _Transaction;
   end;
 end;
@@ -11391,7 +11714,8 @@ function TTransaction.GetDefaultInterface: _Transaction;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -11424,12 +11748,13 @@ begin
   Result := DefaultInterface.ListCount;
 end;
 
-function TTransaction.Get_FieldValue(const FieldNameorNum: WideString): OleVariant;
+function TTransaction.Get_FieldValue(const FieldNameorNum: WideString)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 procedure TTransaction.InitializeCancel;
@@ -11505,12 +11830,13 @@ begin
   Result := DefaultInterface.ListCount;
 end;
 
-function TTransactionProperties.Get_FieldValue(const FieldNameorNum: WideString): OleVariant;
+function TTransactionProperties.Get_FieldValue(const FieldNameorNum: WideString)
+  : OleVariant;
 var
   InterfaceVariant: OleVariant;
 begin
   InterfaceVariant := DefaultInterface;
-  Result           := InterfaceVariant.FieldValue[FieldNameorNum];
+  Result := InterfaceVariant.FieldValue[FieldNameorNum];
 end;
 
 {$ENDIF}
@@ -11527,8 +11853,10 @@ end;
 
 procedure TSqlClass.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{CEA217D2-2E26-4E20-A7E4-094A55E3C421}'; IntfIID: '{53B092BD-10D4-4F44-B8C4-8137951306D3}';
-    EventIID: '{22157BF3-9288-4011-BF76-7A3E4B8AD5CA}'; LicenseKey: nil; Version: 500);
+  CServerData: TServerData = (ClassID: '{CEA217D2-2E26-4E20-A7E4-094A55E3C421}';
+    IntfIID: '{53B092BD-10D4-4F44-B8C4-8137951306D3}';
+    EventIID: '{22157BF3-9288-4011-BF76-7A3E4B8AD5CA}'; LicenseKey: nil;
+    Version: 500);
 begin
   ServerData := @CServerData;
 end;
@@ -11565,7 +11893,8 @@ function TSqlClass.GetDefaultInterface: _SqlClass;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call "Connect" or "ConnectTo" before this operation');
   Result := FIntf;
 end;
 
@@ -11600,10 +11929,12 @@ begin
       Exit; // DISPID_UNKNOWN
     1:
       if Assigned(FOnExecute) then
-        FOnExecute(Self, Params[0] { Double } , WordBool((TVarData(Params[1]).VPointer)^) { var WordBool } );
+        FOnExecute(Self, Params[0] { Double } ,
+          WordBool((TVarData(Params[1]).VPointer)^) { var WordBool } );
     2:
       if Assigned(FOnFillOutputFile) then
-        FOnFillOutputFile(Self, Params[0] { Integer } , Params[1] { Integer } , WordBool((TVarData(Params[2]).VPointer)^) { var WordBool } );
+        FOnFillOutputFile(Self, Params[0] { Integer } , Params[1] { Integer } ,
+          WordBool((TVarData(Params[2]).VPointer)^) { var WordBool } );
   end; { case DispID }
 end;
 
@@ -11619,7 +11950,7 @@ procedure TSqlClass._Set_Error(const Error: _SqlError);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Error := Error;
 end;
 
@@ -11635,7 +11966,7 @@ procedure TSqlClass.Set_OutputFileName(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.OutputFileName := Param1;
 end;
 
@@ -11659,12 +11990,14 @@ begin
   DefaultInterface.Initialize;
 end;
 
-function TSqlClass.WbSqlFunction(const QueryStatement: WideString; var WithCallBack: WordBool): OleVariant;
+function TSqlClass.WbSqlFunction(const QueryStatement: WideString;
+  var WithCallBack: WordBool): OleVariant;
 begin
   Result := DefaultInterface.WbSqlFunction(QueryStatement, WithCallBack);
 end;
 
-function TSqlClass.ExecuteSqlQuery(const QueryStatement: WideString; var WithCallBack: WordBool): Smallint;
+function TSqlClass.ExecuteSqlQuery(const QueryStatement: WideString;
+  var WithCallBack: WordBool): Smallint;
 begin
   Result := DefaultInterface.ExecuteSqlQuery(QueryStatement, WithCallBack);
 end;
@@ -11704,7 +12037,7 @@ procedure TSqlClassProperties._Set_Error(const Error: _SqlError);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.Error := Error;
 end;
 
@@ -11720,7 +12053,7 @@ procedure TSqlClassProperties.Set_OutputFileName(const Param1: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.OutputFileName := Param1;
 end;
 
@@ -11743,9 +12076,13 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents(dtlServerPage, [TFieldDef, TPeriods, TFatalErrors, TFatalError, TWarnings, TQueries, TTablesUser, TTables, TWarning, TErrorCodes, TFields,
-    TBookYears, TBookYear, TPeriod, TSocAnalyticalParam, TErrorCode, TImport, TDbClassApi, TCompte, TTableUser, TComptes, TDossier, TOptions, TField,
-    TAnaLytique, TWbApiUtilities, TSqlError, TUser, TDossiers, TApiIni, TWinbooksObject, TParam, TTransactions, TAnalytiques, TTransaction, TSqlClass]);
+  RegisterComponents(dtlServerPage, [TFieldDef, TPeriods, TFatalErrors,
+    TFatalError, TWarnings, TQueries, TTablesUser, TTables, TWarning,
+    TErrorCodes, TFields, TBookYears, TBookYear, TPeriod, TSocAnalyticalParam,
+    TErrorCode, TImport, TDbClassApi, TCompte, TTableUser, TComptes, TDossier,
+    TOptions, TField, TAnaLytique, TWbApiUtilities, TSqlError, TUser, TDossiers,
+    TApiIni, TWinbooksObject, TParam, TTransactions, TAnalytiques, TTransaction,
+    TSqlClass]);
 end;
 
 end.

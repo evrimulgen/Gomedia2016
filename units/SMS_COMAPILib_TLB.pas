@@ -65,8 +65,8 @@ const
   LIBID_SMS_COMAPILib: TGUID = '{B8AD23B5-6449-4797-A90A-A8698D226600}';
 
   DIID__ISMSEvents: TGUID = '{941A0129-BF4B-469B-8667-30BC0C34D5C5}';
-  IID_ISMS: TGUID         = '{EEFFA403-0DD7-4D83-A9ED-CA22DAD7C388}';
-  CLASS_SMS: TGUID        = '{231CD7E4-908C-45C0-B357-34FE860BED1D}';
+  IID_ISMS: TGUID = '{EEFFA403-0DD7-4D83-A9ED-CA22DAD7C388}';
+  CLASS_SMS: TGUID = '{231CD7E4-908C-45C0-B357-34FE860BED1D}';
 
   // *********************************************************************//
   // Declaration of Enumerations defined in Type Library
@@ -76,57 +76,57 @@ type
   eSMSErrors = TOleEnum;
 
 const
-  SMS_ERR_NONE                      = $00000000;
-  SMS_ERR_AUTH_FAILED               = $00000001;
-  SMS_ERR_INV_USER_PASSWD           = $00000002;
-  SMS_ERR_SESSION_EXP               = $00000003;
-  SMS_ERR_ACC_FROZEN                = $00000004;
-  SMS_ERR_MISS_SESSION_ID           = $00000005;
-  SMS_ERR_BASE_URL_INV_URL          = $00000061;
-  SMS_ERR_BASE_URL_INV_HASH_KEY     = $00000062;
-  SMS_ERR_COMMUNICATION             = $00000063;
-  SMS_ERR_INV_PARAMETER             = $00000065;
-  SMS_ERR_INV_UDH                   = $00000066;
-  SMS_ERR_UNKNOWN_APIMSGID          = $00000067;
-  SMS_ERR_UNKNOWN_CLIMSGID          = $00000068;
-  SMS_ERR_INV_DEST_ADDR             = $00000069;
-  SMS_ERR_INV_SRC_ADDR              = $0000006A;
-  SMS_ERR_EMPTY_MESSAGE             = $0000006B;
-  SMS_ERR_INV_APIID                 = $0000006C;
-  SMS_ERR_MISS_MSG_ID               = $0000006D;
-  SMS_ERR_EMAIL_MSG                 = $0000006E;
-  SMS_ERR_INVALID_PROTOCOL          = $0000006F;
-  SMS_ERR_INVALID_MSG_TYPE          = $00000070;
-  SMS_ERR_MAX_PARTS_EXCEEDED        = $00000071;
-  SMS_ERR_CANNOT_ROUTE_MSG          = $00000072;
-  SMS_ERR_MSG_EXPIRED               = $00000073;
-  SMS_ERR_THROTTLE_LIMIT_EXCEEDED   = $00000075;
-  SMS_ERR_INV_BATCH_ID              = $000000C9;
-  SMS_ERR_NO_BATCH_TEMPLATE         = $000000CA;
-  SMS_ERR_NO_CREDIT_LEFT            = $0000012D;
-  SMS_ERR_MAX_ALLOWED_CREDIT        = $0000012E;
-  SMS_ERR_INVALID_TOKEN             = $0000025E;
-  SMS_ERR_EXPIRED_TOKEN             = $0000025F;
+  SMS_ERR_NONE = $00000000;
+  SMS_ERR_AUTH_FAILED = $00000001;
+  SMS_ERR_INV_USER_PASSWD = $00000002;
+  SMS_ERR_SESSION_EXP = $00000003;
+  SMS_ERR_ACC_FROZEN = $00000004;
+  SMS_ERR_MISS_SESSION_ID = $00000005;
+  SMS_ERR_BASE_URL_INV_URL = $00000061;
+  SMS_ERR_BASE_URL_INV_HASH_KEY = $00000062;
+  SMS_ERR_COMMUNICATION = $00000063;
+  SMS_ERR_INV_PARAMETER = $00000065;
+  SMS_ERR_INV_UDH = $00000066;
+  SMS_ERR_UNKNOWN_APIMSGID = $00000067;
+  SMS_ERR_UNKNOWN_CLIMSGID = $00000068;
+  SMS_ERR_INV_DEST_ADDR = $00000069;
+  SMS_ERR_INV_SRC_ADDR = $0000006A;
+  SMS_ERR_EMPTY_MESSAGE = $0000006B;
+  SMS_ERR_INV_APIID = $0000006C;
+  SMS_ERR_MISS_MSG_ID = $0000006D;
+  SMS_ERR_EMAIL_MSG = $0000006E;
+  SMS_ERR_INVALID_PROTOCOL = $0000006F;
+  SMS_ERR_INVALID_MSG_TYPE = $00000070;
+  SMS_ERR_MAX_PARTS_EXCEEDED = $00000071;
+  SMS_ERR_CANNOT_ROUTE_MSG = $00000072;
+  SMS_ERR_MSG_EXPIRED = $00000073;
+  SMS_ERR_THROTTLE_LIMIT_EXCEEDED = $00000075;
+  SMS_ERR_INV_BATCH_ID = $000000C9;
+  SMS_ERR_NO_BATCH_TEMPLATE = $000000CA;
+  SMS_ERR_NO_CREDIT_LEFT = $0000012D;
+  SMS_ERR_MAX_ALLOWED_CREDIT = $0000012E;
+  SMS_ERR_INVALID_TOKEN = $0000025E;
+  SMS_ERR_EXPIRED_TOKEN = $0000025F;
   SMS_ERR_ACCOUNT_ALREADY_ACTIVATED = $00000262;
-  SMS_ERR_ACTIVATION_FAILED         = $00000263;
-  SMS_ERR_INVALID_PARAMETERS        = $000002BC;
-  SMS_ERR_DUPLICATE_USERNAME        = $000002BD;
+  SMS_ERR_ACTIVATION_FAILED = $00000263;
+  SMS_ERR_INVALID_PARAMETERS = $000002BC;
+  SMS_ERR_DUPLICATE_USERNAME = $000002BD;
 
   // Constants for enum eSMSMsgStatus
 type
   eSMSMsgStatus = TOleEnum;
 
 const
-  SMS_MSG_UNKNOWN            = $00000001;
-  SMS_MSG_QUEUED             = $00000002;
-  SMS_MSG_DELIVERED          = $00000003;
-  SMS_MSG_RECEIVED           = $00000004;
-  SMS_MSG_ERR_WITH_MSG       = $00000005;
-  SMS_MSG_CANCELLED          = $00000006;
+  SMS_MSG_UNKNOWN = $00000001;
+  SMS_MSG_QUEUED = $00000002;
+  SMS_MSG_DELIVERED = $00000003;
+  SMS_MSG_RECEIVED = $00000004;
+  SMS_MSG_ERR_WITH_MSG = $00000005;
+  SMS_MSG_CANCELLED = $00000006;
   SMS_MSG_ERR_DELIVERING_MSG = $00000007;
-  SMS_MSG_OK                 = $00000008;
-  SMS_MSG_ROUTING_ERROR      = $00000009;
-  SMS_MSG_EXPIRED            = $0000000A;
+  SMS_MSG_OK = $00000008;
+  SMS_MSG_ROUTING_ERROR = $00000009;
+  SMS_MSG_EXPIRED = $0000000A;
   SMS_MSG_QUEUED_LATER_DELIV = $0000000B;
 
   // Constants for enum eSMSMsgType
@@ -134,23 +134,23 @@ type
   eSMSMsgType = TOleEnum;
 
 const
-  SMS_TYPE_TEXT             = $00000000;
-  SMS_TYPE_FLASH            = $00000001;
-  SMS_TYPE_NOKIA_OLOGO      = $00000003;
-  SMS_TYPE_NOKIA_GLOGO      = $00000004;
-  SMS_TYPE_NOKIA_PICMSG     = $00000005;
-  SMS_TYPE_NOKIA_RINGTONE   = $00000006;
+  SMS_TYPE_TEXT = $00000000;
+  SMS_TYPE_FLASH = $00000001;
+  SMS_TYPE_NOKIA_OLOGO = $00000003;
+  SMS_TYPE_NOKIA_GLOGO = $00000004;
+  SMS_TYPE_NOKIA_PICMSG = $00000005;
+  SMS_TYPE_NOKIA_RINGTONE = $00000006;
   SMS_TYPE_NOKIA_CLEAN_LOGO = $00000007;
-  SMS_TYPE_NOKIA_VCARD      = $00000008;
-  SMS_TYPE_NOKIA_EVENT_CAL  = $00000009;
-  SMS_TYPE_NOKIA_RTTL       = $0000000A;
+  SMS_TYPE_NOKIA_VCARD = $00000008;
+  SMS_TYPE_NOKIA_EVENT_CAL = $00000009;
+  SMS_TYPE_NOKIA_RTTL = $0000000A;
 
   // Constants for enum eSMSConcatType
 type
   eSMSConcatType = TOleEnum;
 
 const
-  SMS_CONCAT_NONE  = $00000000;
+  SMS_CONCAT_NONE = $00000000;
   SMS_CONCAT_1_MSG = $00000001;
   SMS_CONCAT_2_MSG = $00000002;
   SMS_CONCAT_3_MSG = $00000003;
@@ -160,10 +160,10 @@ type
   eSMSCallbackType = TOleEnum;
 
 const
-  SMS_CALLBACK_NONE  = $00000000;
-  SMS_CALLBACK_SMSC  = $00000001;
+  SMS_CALLBACK_NONE = $00000000;
+  SMS_CALLBACK_SMSC = $00000001;
   SMS_CALLBACK_DELIV = $00000002;
-  SMS_CALLBACK_BOTH  = $00000003;
+  SMS_CALLBACK_BOTH = $00000003;
 
   // Constants for enum eSMSCommunicationType
 type
@@ -171,7 +171,7 @@ type
 
 const
   SMS_COMMS_HTTP = $00000000;
-  SMS_COMMS_SSL  = $00000001;
+  SMS_COMMS_SSL = $00000001;
 
   // Constants for enum eSMSAPIorCLI_ID
 type
@@ -186,19 +186,19 @@ type
   eSMSInetConnection = TOleEnum;
 
 const
-  SMS_INET_DIRECT           = $00000001;
-  SMS_INET_PRECONFIG        = $00000002;
+  SMS_INET_DIRECT = $00000001;
+  SMS_INET_PRECONFIG = $00000002;
   SMS_INET_PRECONFIG_NO_RUN = $00000003;
-  SMS_INET_PROXY            = $00000004;
+  SMS_INET_PROXY = $00000004;
 
   // Constants for enum eSMSSendQueue
 type
   eSMSSendQueue = TOleEnum;
 
 const
-  SMS_QUEUE_1ST     = $00000001;
-  SMS_QUEUE_2ND     = $00000002;
-  SMS_QUEUE_3RD     = $00000003;
+  SMS_QUEUE_1ST = $00000001;
+  SMS_QUEUE_2ND = $00000002;
+  SMS_QUEUE_3RD = $00000003;
   SMS_QUEUE_DEFAULT = $00000003;
 
   // Constants for enum eSMSEscalate
@@ -206,7 +206,7 @@ type
   eSMSEscalate = TOleEnum;
 
 const
-  SMS_ESCALATE_OFF           = $00000000;
+  SMS_ESCALATE_OFF = $00000000;
   SMS_ESCALATE_WITHIN_60SECS = $00000001;
   SMS_ESCALATE_WITHIN_30SECS = $00000002;
 
@@ -215,16 +215,16 @@ type
   eSMSReqFeatures = TOleEnum;
 
 const
-  SMS_REQ_FEAT_TEXT     = $00000001;
-  SMS_REQ_FEAT_8BIT     = $00000002;
-  SMS_REQ_FEAT_UDH      = $00000004;
-  SMS_REQ_FEAT_UCS2     = $00000008;
-  SMS_REQ_FEAT_ALPHA    = $00000010;
-  SMS_REQ_FEAT_NUMER    = $00000020;
-  SMS_REQ_FEAT_FLASH    = $00000200;
+  SMS_REQ_FEAT_TEXT = $00000001;
+  SMS_REQ_FEAT_8BIT = $00000002;
+  SMS_REQ_FEAT_UDH = $00000004;
+  SMS_REQ_FEAT_UCS2 = $00000008;
+  SMS_REQ_FEAT_ALPHA = $00000010;
+  SMS_REQ_FEAT_NUMER = $00000020;
+  SMS_REQ_FEAT_FLASH = $00000200;
   SMS_REQ_FEAT_DELIVACK = $00002000;
-  SMS_REQ_FEAT_CONCAT   = $00004000;
-  SMS_REQ_FEAT_DEFAULT  = $00000003;
+  SMS_REQ_FEAT_CONCAT = $00004000;
+  SMS_REQ_FEAT_DEFAULT = $00000003;
 
 type
 
@@ -232,8 +232,8 @@ type
   // Forward declaration of types defined in TypeLibrary
   // *********************************************************************//
   _ISMSEvents = dispinterface;
-  ISMS        = interface;
-  ISMSDisp    = dispinterface;
+  ISMS = interface;
+  ISMSDisp = dispinterface;
 
   // *********************************************************************//
   // Declaration of CoClasses defined in Type Library
@@ -257,44 +257,66 @@ type
   // *********************************************************************//
   ISMS = interface(IDispatch)
     ['{EEFFA403-0DD7-4D83-A9ED-CA22DAD7C388}']
-    function Authenticate(const API_ID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString; safecall;
-    function SendMsg(bUseSessionID: WordBool; const Msg: WideString; const To_: WideString): WideString; safecall;
-    function SendSimpleSMS(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const MsgText: WideString)
-      : WideString; safecall;
+    function Authenticate(const API_ID: WideString; const pUser: WideString;
+      const pPassword: WideString; Encoded: WordBool): WideString; safecall;
+    function SendMsg(bUseSessionID: WordBool; const Msg: WideString;
+      const To_: WideString): WideString; safecall;
+    function SendSimpleSMS(const API_ID: WideString; const User: WideString;
+      const Password: WideString; const To_: WideString;
+      const MsgText: WideString): WideString; safecall;
     function QueryMsgAPIID(const lApiMsgID: WideString): WideString; safecall;
     function QueryMsgCLIID(const CliMsgID: WideString): WideString; safecall;
-    function QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString; safecall;
+    function QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+      : WideString; safecall;
     function StopMsgAPIID(const ApiMsgID: WideString): WideString; safecall;
     function StopMsgCLIID(const CliMsgID: WideString): WideString; safecall;
-    function StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString; safecall;
+    function StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+      : WideString; safecall;
     function StartBatch(const Template: WideString): WideString; safecall;
-    function SendBatchItem(const To_: WideString; const Field1: WideString; const Field2: WideString; const Field3: WideString; const Field4: WideString;
-      const Field5: WideString; const Field6: WideString; const Field7: WideString; const Field8: WideString; const Field9: WideString): WideString; safecall;
+    function SendBatchItem(const To_: WideString; const Field1: WideString;
+      const Field2: WideString; const Field3: WideString;
+      const Field4: WideString; const Field5: WideString;
+      const Field6: WideString; const Field7: WideString;
+      const Field8: WideString; const Field9: WideString): WideString; safecall;
     function QuickBatchSend(const To_: WideString): WideString; safecall;
     function EndBatch: WideString; safecall;
     function Ping: WideString; safecall;
     function QueryBalance: WideString; safecall;
     procedure ResetSMS; safecall;
-    function EncodeToUnicode(const StringToConvert: WideString): WideString; safecall;
-    function TokenPay(const Token: WideString): WideString; safecall;
-    function AuthenticateClient(const ClientID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString; safecall;
-    function ChangePassword(const Password: WideString): WideString; safecall;
-    function RecoverPassword(const Username: WideString; const Email: WideString): WideString; safecall;
-    function ConfigureProxy(eInetType: eSMSInetConnection; const Proxy: WideString; const Port: WideString): WideString; safecall;
-    function client_reg(const ClientID: WideString; const Username: WideString; const Password: WideString; const Firstname: WideString;
-      const Surname: WideString; const Email: WideString; const Prefix: WideString; const Mobile: WideString; GetStats: WordBool; Encoded: WordBool)
+    function EncodeToUnicode(const StringToConvert: WideString)
       : WideString; safecall;
-    function mpro_reg(const Firstname: WideString; const Surname: WideString; const Username: WideString; const Password: WideString; const Company: WideString;
-      const Email: WideString; const CellPhone: WideString; const Telephone: WideString; const Title: WideString; GetNews: WordBool; GetStats: WordBool;
-      const CountryID: WideString; const CurrencyID: WideString; const Prefix: WideString; Encoded: WordBool): WideString; safecall;
+    function TokenPay(const Token: WideString): WideString; safecall;
+    function AuthenticateClient(const ClientID: WideString;
+      const pUser: WideString; const pPassword: WideString; Encoded: WordBool)
+      : WideString; safecall;
+    function ChangePassword(const Password: WideString): WideString; safecall;
+    function RecoverPassword(const Username: WideString;
+      const Email: WideString): WideString; safecall;
+    function ConfigureProxy(eInetType: eSMSInetConnection;
+      const Proxy: WideString; const Port: WideString): WideString; safecall;
+    function client_reg(const ClientID: WideString; const Username: WideString;
+      const Password: WideString; const Firstname: WideString;
+      const Surname: WideString; const Email: WideString;
+      const Prefix: WideString; const Mobile: WideString; GetStats: WordBool;
+      Encoded: WordBool): WideString; safecall;
+    function mpro_reg(const Firstname: WideString; const Surname: WideString;
+      const Username: WideString; const Password: WideString;
+      const Company: WideString; const Email: WideString;
+      const CellPhone: WideString; const Telephone: WideString;
+      const Title: WideString; GetNews: WordBool; GetStats: WordBool;
+      const CountryID: WideString; const CurrencyID: WideString;
+      const Prefix: WideString; Encoded: WordBool): WideString; safecall;
     function SetConnectTimeout(Timeout: Integer): Integer; safecall;
     function SetReceiveTimeout(Timeout: Integer): Integer; safecall;
-    function how_dat(const Serial: WideString; const API_ID: WideString; const User: WideString; const Password: WideString; Encoded: WordBool)
+    function how_dat(const Serial: WideString; const API_ID: WideString;
+      const User: WideString; const Password: WideString; Encoded: WordBool)
       : WideString; safecall;
-    function Activate(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const ActCode: WideString)
-      : WideString; safecall;
+    function Activate(const API_ID: WideString; const User: WideString;
+      const Password: WideString; const To_: WideString;
+      const ActCode: WideString): WideString; safecall;
     function QueryCoverage(const To_: WideString): WideString; safecall;
-    function SetBaseURL(bResetOnly: WordBool; const NewURL: WideString; HashKey: Integer): WideString; safecall;
+    function SetBaseURL(bResetOnly: WordBool; const NewURL: WideString;
+      HashKey: Integer): WideString; safecall;
     function Get_smsAPI_ID: WideString; safecall;
     procedure Set_smsAPI_ID(const pVal: WideString); safecall;
     function Get_smsUSER: WideString; safecall;
@@ -353,26 +375,36 @@ type
     property smsERROR: eSMSErrors read Get_smsERROR;
     property smsFROM: WideString read Get_smsFROM write Set_smsFROM;
     property smsTO: WideString read Get_smsTO write Set_smsTO;
-    property smsVAL_PERIOD: Integer read Get_smsVAL_PERIOD write Set_smsVAL_PERIOD;
-    property smsDELIVERY_ACK: WordBool read Get_smsDELIVERY_ACK write Set_smsDELIVERY_ACK;
-    property smsDELIVERY_TIME: Integer read Get_smsDELIVERY_TIME write Set_smsDELIVERY_TIME;
+    property smsVAL_PERIOD: Integer read Get_smsVAL_PERIOD
+      write Set_smsVAL_PERIOD;
+    property smsDELIVERY_ACK: WordBool read Get_smsDELIVERY_ACK
+      write Set_smsDELIVERY_ACK;
+    property smsDELIVERY_TIME: Integer read Get_smsDELIVERY_TIME
+      write Set_smsDELIVERY_TIME;
     property smsCONCAT: eSMSConcatType read Get_smsCONCAT write Set_smsCONCAT;
-    property smsCLI_MSG_ID: WideString read Get_smsCLI_MSG_ID write Set_smsCLI_MSG_ID;
-    property smsCALLBACK: eSMSCallbackType read Get_smsCALLBACK write Set_smsCALLBACK;
-    property smsMSG_TYPE: eSMSMsgType read Get_smsMSG_TYPE write Set_smsMSG_TYPE;
+    property smsCLI_MSG_ID: WideString read Get_smsCLI_MSG_ID
+      write Set_smsCLI_MSG_ID;
+    property smsCALLBACK: eSMSCallbackType read Get_smsCALLBACK
+      write Set_smsCALLBACK;
+    property smsMSG_TYPE: eSMSMsgType read Get_smsMSG_TYPE
+      write Set_smsMSG_TYPE;
     property smsUDH: WideString read Get_smsUDH write Set_smsUDH;
     property smsTEXT: WideString read Get_smsTEXT write Set_smsTEXT;
     property smsBATCH_ID: WideString read Get_smsBATCH_ID;
     property smsERROR_DESC: WideString read Get_smsERROR_DESC;
     property ThrowError: WordBool read Get_ThrowError write Set_ThrowError;
-    property smsCommunicationType: eSMSCommunicationType read Get_smsCommunicationType write Set_smsCommunicationType;
+    property smsCommunicationType: eSMSCommunicationType
+      read Get_smsCommunicationType write Set_smsCommunicationType;
     property smsUNICODE: WordBool read Get_smsUNICODE write Set_smsUNICODE;
     property CanSendViaSSL: WordBool read Get_CanSendViaSSL;
     property smsMO: WordBool read Get_smsMO write Set_smsMO;
-    property smsMAX_CREDITS: Integer read Get_smsMAX_CREDITS write Set_smsMAX_CREDITS;
+    property smsMAX_CREDITS: Integer read Get_smsMAX_CREDITS
+      write Set_smsMAX_CREDITS;
     property smsQUEUE: eSMSSendQueue read Get_smsQUEUE write Set_smsQUEUE;
-    property smsESCALATE: eSMSEscalate read Get_smsESCALATE write Set_smsESCALATE;
-    property smsREQUIRED_FEATURES: Integer read Get_smsREQUIRED_FEATURES write Set_smsREQUIRED_FEATURES;
+    property smsESCALATE: eSMSEscalate read Get_smsESCALATE
+      write Set_smsESCALATE;
+    property smsREQUIRED_FEATURES: Integer read Get_smsREQUIRED_FEATURES
+      write Set_smsREQUIRED_FEATURES;
   end;
 
   // *********************************************************************//
@@ -382,44 +414,67 @@ type
   // *********************************************************************//
   ISMSDisp = dispinterface
     ['{EEFFA403-0DD7-4D83-A9ED-CA22DAD7C388}']
-    function Authenticate(const API_ID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString; dispid 1;
-    function SendMsg(bUseSessionID: WordBool; const Msg: WideString; const To_: WideString): WideString; dispid 36;
-    function SendSimpleSMS(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const MsgText: WideString)
-      : WideString; dispid 39;
+    function Authenticate(const API_ID: WideString; const pUser: WideString;
+      const pPassword: WideString; Encoded: WordBool): WideString; dispid 1;
+    function SendMsg(bUseSessionID: WordBool; const Msg: WideString;
+      const To_: WideString): WideString; dispid 36;
+    function SendSimpleSMS(const API_ID: WideString; const User: WideString;
+      const Password: WideString; const To_: WideString;
+      const MsgText: WideString): WideString; dispid 39;
     function QueryMsgAPIID(const lApiMsgID: WideString): WideString; dispid 22;
     function QueryMsgCLIID(const CliMsgID: WideString): WideString; dispid 23;
-    function QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString; dispid 24;
+    function QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+      : WideString; dispid 24;
     function StopMsgAPIID(const ApiMsgID: WideString): WideString; dispid 25;
     function StopMsgCLIID(const CliMsgID: WideString): WideString; dispid 26;
-    function StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString; dispid 27;
+    function StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+      : WideString; dispid 27;
     function StartBatch(const Template: WideString): WideString; dispid 28;
-    function SendBatchItem(const To_: WideString; const Field1: WideString; const Field2: WideString; const Field3: WideString; const Field4: WideString;
-      const Field5: WideString; const Field6: WideString; const Field7: WideString; const Field8: WideString; const Field9: WideString): WideString; dispid 32;
+    function SendBatchItem(const To_: WideString; const Field1: WideString;
+      const Field2: WideString; const Field3: WideString;
+      const Field4: WideString; const Field5: WideString;
+      const Field6: WideString; const Field7: WideString;
+      const Field8: WideString; const Field9: WideString): WideString;
+      dispid 32;
     function QuickBatchSend(const To_: WideString): WideString; dispid 33;
     function EndBatch: WideString; dispid 29;
     function Ping: WideString; dispid 34;
     function QueryBalance: WideString; dispid 35;
     procedure ResetSMS; dispid 37;
-    function EncodeToUnicode(const StringToConvert: WideString): WideString; dispid 42;
+    function EncodeToUnicode(const StringToConvert: WideString): WideString;
+      dispid 42;
     function TokenPay(const Token: WideString): WideString; dispid 44;
-    function AuthenticateClient(const ClientID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString; dispid 45;
+    function AuthenticateClient(const ClientID: WideString;
+      const pUser: WideString; const pPassword: WideString; Encoded: WordBool)
+      : WideString; dispid 45;
     function ChangePassword(const Password: WideString): WideString; dispid 48;
-    function RecoverPassword(const Username: WideString; const Email: WideString): WideString; dispid 49;
-    function ConfigureProxy(eInetType: eSMSInetConnection; const Proxy: WideString; const Port: WideString): WideString; dispid 50;
-    function client_reg(const ClientID: WideString; const Username: WideString; const Password: WideString; const Firstname: WideString;
-      const Surname: WideString; const Email: WideString; const Prefix: WideString; const Mobile: WideString; GetStats: WordBool; Encoded: WordBool)
-      : WideString; dispid 51;
-    function mpro_reg(const Firstname: WideString; const Surname: WideString; const Username: WideString; const Password: WideString; const Company: WideString;
-      const Email: WideString; const CellPhone: WideString; const Telephone: WideString; const Title: WideString; GetNews: WordBool; GetStats: WordBool;
-      const CountryID: WideString; const CurrencyID: WideString; const Prefix: WideString; Encoded: WordBool): WideString; dispid 52;
+    function RecoverPassword(const Username: WideString;
+      const Email: WideString): WideString; dispid 49;
+    function ConfigureProxy(eInetType: eSMSInetConnection;
+      const Proxy: WideString; const Port: WideString): WideString; dispid 50;
+    function client_reg(const ClientID: WideString; const Username: WideString;
+      const Password: WideString; const Firstname: WideString;
+      const Surname: WideString; const Email: WideString;
+      const Prefix: WideString; const Mobile: WideString; GetStats: WordBool;
+      Encoded: WordBool): WideString; dispid 51;
+    function mpro_reg(const Firstname: WideString; const Surname: WideString;
+      const Username: WideString; const Password: WideString;
+      const Company: WideString; const Email: WideString;
+      const CellPhone: WideString; const Telephone: WideString;
+      const Title: WideString; GetNews: WordBool; GetStats: WordBool;
+      const CountryID: WideString; const CurrencyID: WideString;
+      const Prefix: WideString; Encoded: WordBool): WideString; dispid 52;
     function SetConnectTimeout(Timeout: Integer): Integer; dispid 53;
     function SetReceiveTimeout(Timeout: Integer): Integer; dispid 54;
-    function how_dat(const Serial: WideString; const API_ID: WideString; const User: WideString; const Password: WideString; Encoded: WordBool): WideString;
-      dispid 47;
-    function Activate(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const ActCode: WideString)
-      : WideString; dispid 56;
+    function how_dat(const Serial: WideString; const API_ID: WideString;
+      const User: WideString; const Password: WideString; Encoded: WordBool)
+      : WideString; dispid 47;
+    function Activate(const API_ID: WideString; const User: WideString;
+      const Password: WideString; const To_: WideString;
+      const ActCode: WideString): WideString; dispid 56;
     function QueryCoverage(const To_: WideString): WideString; dispid 62;
-    function SetBaseURL(bResetOnly: WordBool; const NewURL: WideString; HashKey: Integer): WideString; dispid 63;
+    function SetBaseURL(bResetOnly: WordBool; const NewURL: WideString;
+      HashKey: Integer): WideString; dispid 63;
     property smsAPI_ID: WideString dispid 2;
     property smsUSER: WideString dispid 3;
     property smsPASSWORD: WideString dispid 4;
@@ -544,19 +599,27 @@ type
     procedure Connect; override;
     procedure ConnectTo(svrIntf: ISMS);
     procedure Disconnect; override;
-    function Authenticate(const API_ID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString;
-    function SendMsg(bUseSessionID: WordBool; const Msg: WideString; const To_: WideString): WideString;
-    function SendSimpleSMS(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const MsgText: WideString)
-      : WideString;
+    function Authenticate(const API_ID: WideString; const pUser: WideString;
+      const pPassword: WideString; Encoded: WordBool): WideString;
+    function SendMsg(bUseSessionID: WordBool; const Msg: WideString;
+      const To_: WideString): WideString;
+    function SendSimpleSMS(const API_ID: WideString; const User: WideString;
+      const Password: WideString; const To_: WideString;
+      const MsgText: WideString): WideString;
     function QueryMsgAPIID(const lApiMsgID: WideString): WideString;
     function QueryMsgCLIID(const CliMsgID: WideString): WideString;
-    function QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString;
+    function QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+      : WideString;
     function StopMsgAPIID(const ApiMsgID: WideString): WideString;
     function StopMsgCLIID(const CliMsgID: WideString): WideString;
-    function StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString;
+    function StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+      : WideString;
     function StartBatch(const Template: WideString): WideString;
-    function SendBatchItem(const To_: WideString; const Field1: WideString; const Field2: WideString; const Field3: WideString; const Field4: WideString;
-      const Field5: WideString; const Field6: WideString; const Field7: WideString; const Field8: WideString; const Field9: WideString): WideString;
+    function SendBatchItem(const To_: WideString; const Field1: WideString;
+      const Field2: WideString; const Field3: WideString;
+      const Field4: WideString; const Field5: WideString;
+      const Field6: WideString; const Field7: WideString;
+      const Field8: WideString; const Field9: WideString): WideString;
     function QuickBatchSend(const To_: WideString): WideString;
     function EndBatch: WideString;
     function Ping: WideString;
@@ -564,23 +627,37 @@ type
     procedure ResetSMS;
     function EncodeToUnicode(const StringToConvert: WideString): WideString;
     function TokenPay(const Token: WideString): WideString;
-    function AuthenticateClient(const ClientID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString;
-    function ChangePassword(const Password: WideString): WideString;
-    function RecoverPassword(const Username: WideString; const Email: WideString): WideString;
-    function ConfigureProxy(eInetType: eSMSInetConnection; const Proxy: WideString; const Port: WideString): WideString;
-    function client_reg(const ClientID: WideString; const Username: WideString; const Password: WideString; const Firstname: WideString;
-      const Surname: WideString; const Email: WideString; const Prefix: WideString; const Mobile: WideString; GetStats: WordBool; Encoded: WordBool)
+    function AuthenticateClient(const ClientID: WideString;
+      const pUser: WideString; const pPassword: WideString; Encoded: WordBool)
       : WideString;
-    function mpro_reg(const Firstname: WideString; const Surname: WideString; const Username: WideString; const Password: WideString; const Company: WideString;
-      const Email: WideString; const CellPhone: WideString; const Telephone: WideString; const Title: WideString; GetNews: WordBool; GetStats: WordBool;
-      const CountryID: WideString; const CurrencyID: WideString; const Prefix: WideString; Encoded: WordBool): WideString;
+    function ChangePassword(const Password: WideString): WideString;
+    function RecoverPassword(const Username: WideString;
+      const Email: WideString): WideString;
+    function ConfigureProxy(eInetType: eSMSInetConnection;
+      const Proxy: WideString; const Port: WideString): WideString;
+    function client_reg(const ClientID: WideString; const Username: WideString;
+      const Password: WideString; const Firstname: WideString;
+      const Surname: WideString; const Email: WideString;
+      const Prefix: WideString; const Mobile: WideString; GetStats: WordBool;
+      Encoded: WordBool): WideString;
+    function mpro_reg(const Firstname: WideString; const Surname: WideString;
+      const Username: WideString; const Password: WideString;
+      const Company: WideString; const Email: WideString;
+      const CellPhone: WideString; const Telephone: WideString;
+      const Title: WideString; GetNews: WordBool; GetStats: WordBool;
+      const CountryID: WideString; const CurrencyID: WideString;
+      const Prefix: WideString; Encoded: WordBool): WideString;
     function SetConnectTimeout(Timeout: Integer): Integer;
     function SetReceiveTimeout(Timeout: Integer): Integer;
-    function how_dat(const Serial: WideString; const API_ID: WideString; const User: WideString; const Password: WideString; Encoded: WordBool): WideString;
-    function Activate(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const ActCode: WideString)
+    function how_dat(const Serial: WideString; const API_ID: WideString;
+      const User: WideString; const Password: WideString; Encoded: WordBool)
       : WideString;
+    function Activate(const API_ID: WideString; const User: WideString;
+      const Password: WideString; const To_: WideString;
+      const ActCode: WideString): WideString;
     function QueryCoverage(const To_: WideString): WideString;
-    function SetBaseURL(bResetOnly: WordBool; const NewURL: WideString; HashKey: Integer): WideString;
+    function SetBaseURL(bResetOnly: WordBool; const NewURL: WideString;
+      HashKey: Integer): WideString;
     property DefaultInterface: ISMS read GetDefaultInterface;
     property smsIsLoggedIn: WordBool read Get_smsIsLoggedIn;
     property smsSESSION_ID: WideString read Get_smsSESSION_ID;
@@ -593,23 +670,33 @@ type
     property smsPASSWORD: WideString read Get_smsPASSWORD write Set_smsPASSWORD;
     property smsFROM: WideString read Get_smsFROM write Set_smsFROM;
     property smsTO: WideString read Get_smsTO write Set_smsTO;
-    property smsVAL_PERIOD: Integer read Get_smsVAL_PERIOD write Set_smsVAL_PERIOD;
-    property smsDELIVERY_ACK: WordBool read Get_smsDELIVERY_ACK write Set_smsDELIVERY_ACK;
-    property smsDELIVERY_TIME: Integer read Get_smsDELIVERY_TIME write Set_smsDELIVERY_TIME;
+    property smsVAL_PERIOD: Integer read Get_smsVAL_PERIOD
+      write Set_smsVAL_PERIOD;
+    property smsDELIVERY_ACK: WordBool read Get_smsDELIVERY_ACK
+      write Set_smsDELIVERY_ACK;
+    property smsDELIVERY_TIME: Integer read Get_smsDELIVERY_TIME
+      write Set_smsDELIVERY_TIME;
     property smsCONCAT: eSMSConcatType read Get_smsCONCAT write Set_smsCONCAT;
-    property smsCLI_MSG_ID: WideString read Get_smsCLI_MSG_ID write Set_smsCLI_MSG_ID;
-    property smsCALLBACK: eSMSCallbackType read Get_smsCALLBACK write Set_smsCALLBACK;
-    property smsMSG_TYPE: eSMSMsgType read Get_smsMSG_TYPE write Set_smsMSG_TYPE;
+    property smsCLI_MSG_ID: WideString read Get_smsCLI_MSG_ID
+      write Set_smsCLI_MSG_ID;
+    property smsCALLBACK: eSMSCallbackType read Get_smsCALLBACK
+      write Set_smsCALLBACK;
+    property smsMSG_TYPE: eSMSMsgType read Get_smsMSG_TYPE
+      write Set_smsMSG_TYPE;
     property smsUDH: WideString read Get_smsUDH write Set_smsUDH;
     property smsTEXT: WideString read Get_smsTEXT write Set_smsTEXT;
     property ThrowError: WordBool read Get_ThrowError write Set_ThrowError;
-    property smsCommunicationType: eSMSCommunicationType read Get_smsCommunicationType write Set_smsCommunicationType;
+    property smsCommunicationType: eSMSCommunicationType
+      read Get_smsCommunicationType write Set_smsCommunicationType;
     property smsUNICODE: WordBool read Get_smsUNICODE write Set_smsUNICODE;
     property smsMO: WordBool read Get_smsMO write Set_smsMO;
-    property smsMAX_CREDITS: Integer read Get_smsMAX_CREDITS write Set_smsMAX_CREDITS;
+    property smsMAX_CREDITS: Integer read Get_smsMAX_CREDITS
+      write Set_smsMAX_CREDITS;
     property smsQUEUE: eSMSSendQueue read Get_smsQUEUE write Set_smsQUEUE;
-    property smsESCALATE: eSMSEscalate read Get_smsESCALATE write Set_smsESCALATE;
-    property smsREQUIRED_FEATURES: Integer read Get_smsREQUIRED_FEATURES write Set_smsREQUIRED_FEATURES;
+    property smsESCALATE: eSMSEscalate read Get_smsESCALATE
+      write Set_smsESCALATE;
+    property smsREQUIRED_FEATURES: Integer read Get_smsREQUIRED_FEATURES
+      write Set_smsREQUIRED_FEATURES;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TSMSProperties read GetServerProperties;
@@ -688,23 +775,33 @@ type
     property smsPASSWORD: WideString read Get_smsPASSWORD write Set_smsPASSWORD;
     property smsFROM: WideString read Get_smsFROM write Set_smsFROM;
     property smsTO: WideString read Get_smsTO write Set_smsTO;
-    property smsVAL_PERIOD: Integer read Get_smsVAL_PERIOD write Set_smsVAL_PERIOD;
-    property smsDELIVERY_ACK: WordBool read Get_smsDELIVERY_ACK write Set_smsDELIVERY_ACK;
-    property smsDELIVERY_TIME: Integer read Get_smsDELIVERY_TIME write Set_smsDELIVERY_TIME;
+    property smsVAL_PERIOD: Integer read Get_smsVAL_PERIOD
+      write Set_smsVAL_PERIOD;
+    property smsDELIVERY_ACK: WordBool read Get_smsDELIVERY_ACK
+      write Set_smsDELIVERY_ACK;
+    property smsDELIVERY_TIME: Integer read Get_smsDELIVERY_TIME
+      write Set_smsDELIVERY_TIME;
     property smsCONCAT: eSMSConcatType read Get_smsCONCAT write Set_smsCONCAT;
-    property smsCLI_MSG_ID: WideString read Get_smsCLI_MSG_ID write Set_smsCLI_MSG_ID;
-    property smsCALLBACK: eSMSCallbackType read Get_smsCALLBACK write Set_smsCALLBACK;
-    property smsMSG_TYPE: eSMSMsgType read Get_smsMSG_TYPE write Set_smsMSG_TYPE;
+    property smsCLI_MSG_ID: WideString read Get_smsCLI_MSG_ID
+      write Set_smsCLI_MSG_ID;
+    property smsCALLBACK: eSMSCallbackType read Get_smsCALLBACK
+      write Set_smsCALLBACK;
+    property smsMSG_TYPE: eSMSMsgType read Get_smsMSG_TYPE
+      write Set_smsMSG_TYPE;
     property smsUDH: WideString read Get_smsUDH write Set_smsUDH;
     property smsTEXT: WideString read Get_smsTEXT write Set_smsTEXT;
     property ThrowError: WordBool read Get_ThrowError write Set_ThrowError;
-    property smsCommunicationType: eSMSCommunicationType read Get_smsCommunicationType write Set_smsCommunicationType;
+    property smsCommunicationType: eSMSCommunicationType
+      read Get_smsCommunicationType write Set_smsCommunicationType;
     property smsUNICODE: WordBool read Get_smsUNICODE write Set_smsUNICODE;
     property smsMO: WordBool read Get_smsMO write Set_smsMO;
-    property smsMAX_CREDITS: Integer read Get_smsMAX_CREDITS write Set_smsMAX_CREDITS;
+    property smsMAX_CREDITS: Integer read Get_smsMAX_CREDITS
+      write Set_smsMAX_CREDITS;
     property smsQUEUE: eSMSSendQueue read Get_smsQUEUE write Set_smsQUEUE;
-    property smsESCALATE: eSMSEscalate read Get_smsESCALATE write Set_smsESCALATE;
-    property smsREQUIRED_FEATURES: Integer read Get_smsREQUIRED_FEATURES write Set_smsREQUIRED_FEATURES;
+    property smsESCALATE: eSMSEscalate read Get_smsESCALATE
+      write Set_smsESCALATE;
+    property smsREQUIRED_FEATURES: Integer read Get_smsREQUIRED_FEATURES
+      write Set_smsREQUIRED_FEATURES;
   end;
 {$ENDIF}
 
@@ -731,8 +828,10 @@ end;
 
 procedure TSMS.InitServerData;
 const
-  CServerData: TServerData = (ClassID: '{231CD7E4-908C-45C0-B357-34FE860BED1D}'; IntfIID: '{EEFFA403-0DD7-4D83-A9ED-CA22DAD7C388}';
-    EventIID: '{941A0129-BF4B-469B-8667-30BC0C34D5C5}'; LicenseKey: nil; Version: 500);
+  CServerData: TServerData = (ClassID: '{231CD7E4-908C-45C0-B357-34FE860BED1D}';
+    IntfIID: '{EEFFA403-0DD7-4D83-A9ED-CA22DAD7C388}';
+    EventIID: '{941A0129-BF4B-469B-8667-30BC0C34D5C5}'; LicenseKey: nil;
+    Version: 500);
 begin
   ServerData := @CServerData;
 end;
@@ -769,7 +868,8 @@ function TSMS.GetDefaultInterface: ISMS;
 begin
   if FIntf = nil then
     Connect;
-  Assert(FIntf <> nil, 'DefaultInterface is NULL. Component is not connected to Server. You must call ''Connect'' or ''ConnectTo'' before this operation');
+  Assert(FIntf <> nil,
+    'DefaultInterface is NULL. Component is not connected to Server. You must call ''Connect'' or ''ConnectTo'' before this operation');
   Result := FIntf;
 end;
 
@@ -817,7 +917,7 @@ procedure TSMS.Set_smsAPI_ID(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsAPI_ID := pVal;
 end;
 
@@ -833,7 +933,7 @@ procedure TSMS.Set_smsUSER(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsUSER := pVal;
 end;
 
@@ -849,7 +949,7 @@ procedure TSMS.Set_smsPASSWORD(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsPASSWORD := pVal;
 end;
 
@@ -880,7 +980,7 @@ procedure TSMS.Set_smsFROM(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsFROM := pVal;
 end;
 
@@ -896,7 +996,7 @@ procedure TSMS.Set_smsTO(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsTO := pVal;
 end;
 
@@ -952,7 +1052,7 @@ procedure TSMS.Set_smsCLI_MSG_ID(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsCLI_MSG_ID := pVal;
 end;
 
@@ -988,7 +1088,7 @@ procedure TSMS.Set_smsUDH(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsUDH := pVal;
 end;
 
@@ -1004,7 +1104,7 @@ procedure TSMS.Set_smsTEXT(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsTEXT := pVal;
 end;
 
@@ -1103,20 +1203,24 @@ begin
   DefaultInterface.Set_smsREQUIRED_FEATURES(pVal);
 end;
 
-function TSMS.Authenticate(const API_ID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString;
+function TSMS.Authenticate(const API_ID: WideString; const pUser: WideString;
+  const pPassword: WideString; Encoded: WordBool): WideString;
 begin
   Result := DefaultInterface.Authenticate(API_ID, pUser, pPassword, Encoded);
 end;
 
-function TSMS.SendMsg(bUseSessionID: WordBool; const Msg: WideString; const To_: WideString): WideString;
+function TSMS.SendMsg(bUseSessionID: WordBool; const Msg: WideString;
+  const To_: WideString): WideString;
 begin
   Result := DefaultInterface.SendMsg(bUseSessionID, Msg, To_);
 end;
 
-function TSMS.SendSimpleSMS(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const MsgText: WideString)
+function TSMS.SendSimpleSMS(const API_ID: WideString; const User: WideString;
+  const Password: WideString; const To_: WideString; const MsgText: WideString)
   : WideString;
 begin
-  Result := DefaultInterface.SendSimpleSMS(API_ID, User, Password, To_, MsgText);
+  Result := DefaultInterface.SendSimpleSMS(API_ID, User, Password, To_,
+    MsgText);
 end;
 
 function TSMS.QueryMsgAPIID(const lApiMsgID: WideString): WideString;
@@ -1129,7 +1233,8 @@ begin
   Result := DefaultInterface.QueryMsgCLIID(CliMsgID);
 end;
 
-function TSMS.QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString;
+function TSMS.QueryMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+  : WideString;
 begin
   Result := DefaultInterface.QueryMsg(MsgID, eIDType);
 end;
@@ -1144,7 +1249,8 @@ begin
   Result := DefaultInterface.StopMsgCLIID(CliMsgID);
 end;
 
-function TSMS.StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID): WideString;
+function TSMS.StopMsg(const MsgID: WideString; eIDType: eSMSAPIorCLI_ID)
+  : WideString;
 begin
   Result := DefaultInterface.StopMsg(MsgID, eIDType);
 end;
@@ -1154,10 +1260,13 @@ begin
   Result := DefaultInterface.StartBatch(Template);
 end;
 
-function TSMS.SendBatchItem(const To_: WideString; const Field1: WideString; const Field2: WideString; const Field3: WideString; const Field4: WideString;
-  const Field5: WideString; const Field6: WideString; const Field7: WideString; const Field8: WideString; const Field9: WideString): WideString;
+function TSMS.SendBatchItem(const To_: WideString; const Field1: WideString;
+  const Field2: WideString; const Field3: WideString; const Field4: WideString;
+  const Field5: WideString; const Field6: WideString; const Field7: WideString;
+  const Field8: WideString; const Field9: WideString): WideString;
 begin
-  Result := DefaultInterface.SendBatchItem(To_, Field1, Field2, Field3, Field4, Field5, Field6, Field7, Field8, Field9);
+  Result := DefaultInterface.SendBatchItem(To_, Field1, Field2, Field3, Field4,
+    Field5, Field6, Field7, Field8, Field9);
 end;
 
 function TSMS.QuickBatchSend(const To_: WideString): WideString;
@@ -1195,9 +1304,12 @@ begin
   Result := DefaultInterface.TokenPay(Token);
 end;
 
-function TSMS.AuthenticateClient(const ClientID: WideString; const pUser: WideString; const pPassword: WideString; Encoded: WordBool): WideString;
+function TSMS.AuthenticateClient(const ClientID: WideString;
+  const pUser: WideString; const pPassword: WideString; Encoded: WordBool)
+  : WideString;
 begin
-  Result := DefaultInterface.AuthenticateClient(ClientID, pUser, pPassword, Encoded);
+  Result := DefaultInterface.AuthenticateClient(ClientID, pUser,
+    pPassword, Encoded);
 end;
 
 function TSMS.ChangePassword(const Password: WideString): WideString;
@@ -1205,27 +1317,37 @@ begin
   Result := DefaultInterface.ChangePassword(Password);
 end;
 
-function TSMS.RecoverPassword(const Username: WideString; const Email: WideString): WideString;
+function TSMS.RecoverPassword(const Username: WideString;
+  const Email: WideString): WideString;
 begin
   Result := DefaultInterface.RecoverPassword(Username, Email);
 end;
 
-function TSMS.ConfigureProxy(eInetType: eSMSInetConnection; const Proxy: WideString; const Port: WideString): WideString;
+function TSMS.ConfigureProxy(eInetType: eSMSInetConnection;
+  const Proxy: WideString; const Port: WideString): WideString;
 begin
   Result := DefaultInterface.ConfigureProxy(eInetType, Proxy, Port);
 end;
 
-function TSMS.client_reg(const ClientID: WideString; const Username: WideString; const Password: WideString; const Firstname: WideString;
-  const Surname: WideString; const Email: WideString; const Prefix: WideString; const Mobile: WideString; GetStats: WordBool; Encoded: WordBool): WideString;
+function TSMS.client_reg(const ClientID: WideString; const Username: WideString;
+  const Password: WideString; const Firstname: WideString;
+  const Surname: WideString; const Email: WideString; const Prefix: WideString;
+  const Mobile: WideString; GetStats: WordBool; Encoded: WordBool): WideString;
 begin
-  Result := DefaultInterface.client_reg(ClientID, Username, Password, Firstname, Surname, Email, Prefix, Mobile, GetStats, Encoded);
+  Result := DefaultInterface.client_reg(ClientID, Username, Password, Firstname,
+    Surname, Email, Prefix, Mobile, GetStats, Encoded);
 end;
 
-function TSMS.mpro_reg(const Firstname: WideString; const Surname: WideString; const Username: WideString; const Password: WideString;
-  const Company: WideString; const Email: WideString; const CellPhone: WideString; const Telephone: WideString; const Title: WideString; GetNews: WordBool;
-  GetStats: WordBool; const CountryID: WideString; const CurrencyID: WideString; const Prefix: WideString; Encoded: WordBool): WideString;
+function TSMS.mpro_reg(const Firstname: WideString; const Surname: WideString;
+  const Username: WideString; const Password: WideString;
+  const Company: WideString; const Email: WideString;
+  const CellPhone: WideString; const Telephone: WideString;
+  const Title: WideString; GetNews: WordBool; GetStats: WordBool;
+  const CountryID: WideString; const CurrencyID: WideString;
+  const Prefix: WideString; Encoded: WordBool): WideString;
 begin
-  Result := DefaultInterface.mpro_reg(Firstname, Surname, Username, Password, Company, Email, CellPhone, Telephone, Title, GetNews, GetStats, CountryID,
+  Result := DefaultInterface.mpro_reg(Firstname, Surname, Username, Password,
+    Company, Email, CellPhone, Telephone, Title, GetNews, GetStats, CountryID,
     CurrencyID, Prefix, Encoded);
 end;
 
@@ -1239,12 +1361,15 @@ begin
   Result := DefaultInterface.SetReceiveTimeout(Timeout);
 end;
 
-function TSMS.how_dat(const Serial: WideString; const API_ID: WideString; const User: WideString; const Password: WideString; Encoded: WordBool): WideString;
+function TSMS.how_dat(const Serial: WideString; const API_ID: WideString;
+  const User: WideString; const Password: WideString; Encoded: WordBool)
+  : WideString;
 begin
   Result := DefaultInterface.how_dat(Serial, API_ID, User, Password, Encoded);
 end;
 
-function TSMS.Activate(const API_ID: WideString; const User: WideString; const Password: WideString; const To_: WideString; const ActCode: WideString)
+function TSMS.Activate(const API_ID: WideString; const User: WideString;
+  const Password: WideString; const To_: WideString; const ActCode: WideString)
   : WideString;
 begin
   Result := DefaultInterface.Activate(API_ID, User, Password, To_, ActCode);
@@ -1255,7 +1380,8 @@ begin
   Result := DefaultInterface.QueryCoverage(To_);
 end;
 
-function TSMS.SetBaseURL(bResetOnly: WordBool; const NewURL: WideString; HashKey: Integer): WideString;
+function TSMS.SetBaseURL(bResetOnly: WordBool; const NewURL: WideString;
+  HashKey: Integer): WideString;
 begin
   Result := DefaultInterface.SetBaseURL(bResetOnly, NewURL, HashKey);
 end;
@@ -1285,7 +1411,7 @@ procedure TSMSProperties.Set_smsAPI_ID(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant           := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsAPI_ID := pVal;
 end;
 
@@ -1301,7 +1427,7 @@ procedure TSMSProperties.Set_smsUSER(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsUSER := pVal;
 end;
 
@@ -1317,7 +1443,7 @@ procedure TSMSProperties.Set_smsPASSWORD(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant             := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsPASSWORD := pVal;
 end;
 
@@ -1348,7 +1474,7 @@ procedure TSMSProperties.Set_smsFROM(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsFROM := pVal;
 end;
 
@@ -1364,7 +1490,7 @@ procedure TSMSProperties.Set_smsTO(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant       := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsTO := pVal;
 end;
 
@@ -1420,7 +1546,7 @@ procedure TSMSProperties.Set_smsCLI_MSG_ID(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsCLI_MSG_ID := pVal;
 end;
 
@@ -1456,7 +1582,7 @@ procedure TSMSProperties.Set_smsUDH(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant        := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsUDH := pVal;
 end;
 
@@ -1472,7 +1598,7 @@ procedure TSMSProperties.Set_smsTEXT(const pVal: WideString);
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant         := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.smsTEXT := pVal;
 end;
 

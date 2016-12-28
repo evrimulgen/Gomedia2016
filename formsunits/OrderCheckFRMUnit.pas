@@ -12,9 +12,6 @@ uses
   dxPSDBBasedXplorer, dxPgsDlg, dxPrnDlg, cxGridExportLink,
   StdCtrls, ExtCtrls,
 
-
-
-
   dxPScxGridLnk, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
   dxPSGlbl, dxPSUtl, dxPrnPg, dxBkgnd, dxWrap, dxPrnDev, dxPSCompsProvider,
@@ -27,8 +24,10 @@ type
   TOrderCheckForm = class(TForm)
     cxGridCustomersAlert: TcxGrid;
     cxGridDBTableViewCustomersOrders: TcxGridDBTableView;
-    cxGridDBTableViewCustomersOrderscustomers_alerts_products_name: TcxGridDBColumn;
-    cxGridDBTableViewCustomersOrderscustomers_alerts_products_cat: TcxGridDBColumn;
+    cxGridDBTableViewCustomersOrderscustomers_alerts_products_name
+      : TcxGridDBColumn;
+    cxGridDBTableViewCustomersOrderscustomers_alerts_products_cat
+      : TcxGridDBColumn;
     cxGridDBTableViewCustomersOrderscustomers_alerts_used: TcxGridDBColumn;
     cxGridDBTableViewCustomersOrderscustomers_alerts_date_disp: TcxGridDBColumn;
     cxGridLevel7: TcxGridLevel;
@@ -36,7 +35,8 @@ type
     dxBarButtonPrint: TdxBarButton;
     dxBarButton2: TdxBarButton;
     dxBarGroup1: TdxBarGroup;
-    cxGridDBTableViewCustomersOrderscustomers_alerts_customers_nbr: TcxGridDBColumn;
+    cxGridDBTableViewCustomersOrderscustomers_alerts_customers_nbr
+      : TcxGridDBColumn;
     SaveDialog: TSaveDialog;
     PanelTop: TPanel;
     LabelReserved: TLabel;
@@ -48,7 +48,8 @@ type
     RadioButtonAlertsArrived: TRadioButton;
     RadioButtonAlertsNotified: TRadioButton;
     RadioButtonAlertsBought: TRadioButton;
-    cxgrdbclmnGridDBTableViewCustomersOrderscustomers_alerts_dwnpay: TcxGridDBColumn;
+    cxgrdbclmnGridDBTableViewCustomersOrderscustomers_alerts_dwnpay
+      : TcxGridDBColumn;
     dxComponentPrinter: TdxComponentPrinter;
     dxPSEngineController: TdxPSEngineController;
     dxPrintStyleManager: TdxPrintStyleManager;
@@ -88,11 +89,15 @@ begin
   mailtext.add(EditMessage.Text);
   while not RemoteDB.netshop_customers_alerts.Eof do
   begin
-    if RemoteDB.Customers.Locate('customers_nbr', RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString, [locaseinsensitive])
-    then
+    if RemoteDB.Customers.Locate('customers_nbr',
+      RemoteDB.netshop_customers_alerts.FieldByName
+      ('customers_alerts_customers_nbr').AsString, [locaseinsensitive]) then
     begin
-      aSendEmail := TSmartSendEmail.Create(MainForm.Shopdata1.Text, MainForm.Shopdata5.Text, RemoteDB.Customerscustomers_email_address.AsString,
-        'Concernant votre réservation chez ' + MainForm.Shopdata1.Text, '', mailtext);
+      aSendEmail := TSmartSendEmail.Create(MainForm.Shopdata1.Text,
+        MainForm.Shopdata5.Text,
+        RemoteDB.Customerscustomers_email_address.AsString,
+        'Concernant votre réservation chez ' + MainForm.Shopdata1.Text, '',
+        mailtext);
     end;
     RemoteDB.netshop_customers_alerts.Next;
   end;
@@ -102,11 +107,12 @@ end;
 
 procedure TOrderCheckForm.ButtonSmsClick(Sender: TObject);
 
-
 begin
-  if  (Length(Trim(EditMessage.Text)) < 10) and (Trim(EditMessage.Text) <> 'Message à envoyer')  then
+  if (Length(Trim(EditMessage.Text)) < 10) and
+    (Trim(EditMessage.Text) <> 'Message à envoyer') then
   begin
-    MessageDLG('Message Vide ou inférieur à 10 charactères !', mtwarning, [mbOK], 0);
+    MessageDLG('Message Vide ou inférieur à 10 charactères !', mtwarning,
+      [mbOK], 0);
     exit;
   end;
 
@@ -115,16 +121,23 @@ begin
     RemoteDB.netshop_customers_alerts.First;
     while not RemoteDB.netshop_customers_alerts.Eof do
     begin
-      if RemoteDB.Customers.Locate('customers_nbr', RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString,
-        [locaseinsensitive]) then
+      if RemoteDB.Customers.Locate('customers_nbr',
+        RemoteDB.netshop_customers_alerts.FieldByName
+        ('customers_alerts_customers_nbr').AsString, [locaseinsensitive]) then
       begin
-          RemoteDB.netshop_customers_alerts.Append;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := 'MICRO';
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString := 'SMS Message';
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.Customers.FieldByName('customers_nbr').AsString;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 1;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_message').AsString := EditMessage.Text;
-          RemoteDB.netshop_customers_alerts.Post;
+        RemoteDB.netshop_customers_alerts.Append;
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_model').AsString := 'MICRO';
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_name').AsString := 'SMS Message';
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_customers_nbr').AsString :=
+          RemoteDB.Customers.FieldByName('customers_nbr').AsString;
+        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status')
+          .Value := 1;
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_message').AsString := EditMessage.Text;
+        RemoteDB.netshop_customers_alerts.Post;
       end;
       RemoteDB.netshop_customers_alerts.Next;
     end;
@@ -140,12 +153,14 @@ procedure TOrderCheckForm.dxBarButton2Click(Sender: TObject);
 var
   Filename: string;
 begin
-  Filename := 'Réservations ' + RemoteDB.CDSProDescFR.FieldByName('products_name').AsString + ' ' +
+  Filename := 'Réservations ' + RemoteDB.CDSProDescFR.FieldByName
+    ('products_name').AsString + ' ' +
     RemoteDB.Productsproducts_root_category_name.AsString + '.xls';
   SaveDialog.Filename := Filename;
   if SaveDialog.Execute then
   begin
-    ExportGridToExcel(SaveDialog.Filename, cxGridCustomersAlert, True, True, True);
+    ExportGridToExcel(SaveDialog.Filename, cxGridCustomersAlert, True,
+      True, True);
   end;
 end;
 
@@ -165,13 +180,16 @@ end;
 procedure TOrderCheckForm.RadioButtonAlertsArrivedClick(Sender: TObject);
 begin
   RemoteDB.netshop_customers_alerts.Filtered := False;
-  RemoteDB.netshop_customers_alerts.Filter   := '( (customers_alerts_status=1) and (customers_alerts_products_model = ' + QuotedStr(Model) + ') )';
+  RemoteDB.netshop_customers_alerts.Filter :=
+    '( (customers_alerts_status=1) and (customers_alerts_products_model = ' +
+    QuotedStr(Model) + ') )';
   RemoteDB.netshop_customers_alerts.Filtered := True;
   RemoteDB.netshop_customers_alerts.First;
   Q := 0;
   while not RemoteDB.netshop_customers_alerts.Eof do
   begin
-    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger;
+    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName
+      ('customers_alerts_quantity').AsInteger;
     RemoteDB.netshop_customers_alerts.Next;
   end;
   LabelReserved.Caption := 'Arrivé : ' + inttostr(Q);
@@ -180,13 +198,16 @@ end;
 procedure TOrderCheckForm.RadioButtonAlertsBoughtClick(Sender: TObject);
 begin
   RemoteDB.netshop_customers_alerts.Filtered := False;
-  RemoteDB.netshop_customers_alerts.Filter   := '( (customers_alerts_status=3) and (customers_alerts_products_model = ' + QuotedStr(Model) + ') )';
+  RemoteDB.netshop_customers_alerts.Filter :=
+    '( (customers_alerts_status=3) and (customers_alerts_products_model = ' +
+    QuotedStr(Model) + ') )';
   RemoteDB.netshop_customers_alerts.Filtered := True;
   RemoteDB.netshop_customers_alerts.First;
   Q := 0;
   while not RemoteDB.netshop_customers_alerts.Eof do
   begin
-    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger;
+    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName
+      ('customers_alerts_quantity').AsInteger;
     RemoteDB.netshop_customers_alerts.Next;
   end;
   LabelReserved.Caption := 'Acheté : ' + inttostr(Q);
@@ -195,13 +216,16 @@ end;
 procedure TOrderCheckForm.RadioButtonAlertsNotifiedClick(Sender: TObject);
 begin
   RemoteDB.netshop_customers_alerts.Filtered := False;
-  RemoteDB.netshop_customers_alerts.Filter   := '( (customers_alerts_status=2) and (customers_alerts_products_model = ' + QuotedStr(Model) + ') )';
+  RemoteDB.netshop_customers_alerts.Filter :=
+    '( (customers_alerts_status=2) and (customers_alerts_products_model = ' +
+    QuotedStr(Model) + ') )';
   RemoteDB.netshop_customers_alerts.Filtered := True;
   RemoteDB.netshop_customers_alerts.First;
   Q := 0;
   while not RemoteDB.netshop_customers_alerts.Eof do
   begin
-    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger;
+    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName
+      ('customers_alerts_quantity').AsInteger;
     RemoteDB.netshop_customers_alerts.Next;
   end;
   LabelReserved.Caption := 'Notifié : ' + inttostr(Q);
@@ -210,13 +234,16 @@ end;
 procedure TOrderCheckForm.RadioButtonAlertsreservedClick(Sender: TObject);
 begin
   RemoteDB.netshop_customers_alerts.Filtered := False;
-  RemoteDB.netshop_customers_alerts.Filter   := '( (customers_alerts_status=0) and (customers_alerts_products_model = ' + QuotedStr(Model) + ') )';
+  RemoteDB.netshop_customers_alerts.Filter :=
+    '( (customers_alerts_status=0) and (customers_alerts_products_model = ' +
+    QuotedStr(Model) + ') )';
   RemoteDB.netshop_customers_alerts.Filtered := True;
   RemoteDB.netshop_customers_alerts.First;
   Q := 0;
   while not RemoteDB.netshop_customers_alerts.Eof do
   begin
-    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger;
+    Q := Q + RemoteDB.netshop_customers_alerts.FieldByName
+      ('customers_alerts_quantity').AsInteger;
     RemoteDB.netshop_customers_alerts.Next;
   end;
   LabelReserved.Caption := 'Réservé : ' + inttostr(Q);

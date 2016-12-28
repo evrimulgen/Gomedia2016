@@ -34,11 +34,14 @@ implementation
 
 {$R *.dfm}
 
-procedure TInvoicesCancelItemForm.UpDown1Click(Sender: TObject; Button: TUDBtnType);
+procedure TInvoicesCancelItemForm.UpDown1Click(Sender: TObject;
+  Button: TUDBtnType);
 begin
   if Button = btNext then
   begin
-    EditQmax.Text := inttostr(min(StrtoInt(EditQmax.Text) + 1, RemoteDB.netshop_invoices_items.FieldByName('invoices_items_quantity').AsInteger));
+    EditQmax.Text := inttostr(min(StrtoInt(EditQmax.Text) + 1,
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_quantity')
+      .AsInteger));
   end;
   if Button = btPrev then
   begin

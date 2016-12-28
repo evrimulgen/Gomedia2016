@@ -7,19 +7,19 @@ interface
 uses QExport4, Classes, SysUtils, QExport4IniFiles;
 
 const
-  dBaseIII     = $03;
+  dBaseIII = $03;
   dBaseIIIMemo = $83;
-  dBaseIVMemo  = $8B;
-  dBaseIVSQL   = $63;
-  FoxPro       = $05;
-  FoxProMemo   = $F5;
+  dBaseIVMemo = $8B;
+  dBaseIVSQL = $63;
+  FoxPro = $05;
+  FoxProMemo = $F5;
 
-  dftString  = 'C'; // char (symbol(s))
+  dftString = 'C'; // char (symbol(s))
   dftBoolean = 'L'; // boolean
-  dftNumber  = 'N'; // number
-  dftDate    = 'D'; // date
-  dftMemo    = 'M'; // memo
-  dftFloat   = 'F'; // float -- not in DBaseIII
+  dftNumber = 'N'; // number
+  dftDate = 'D'; // date
+  dftMemo = 'M'; // memo
+  dftFloat = 'F'; // float -- not in DBaseIII
 
   MAX_FIELD_NAME_LEN = 10;
 
@@ -87,7 +87,8 @@ type
 {$ENDIF}
     function WriteMemo(Index: integer): integer;
 {$IFDEF QE_UNICODE}
-    property ExportCharsetType: TQExportCharsetType read FExportCharsetType write FExportCharsetType;
+    property ExportCharsetType: TQExportCharsetType read FExportCharsetType
+      write FExportCharsetType;
 {$ENDIF}
   end;
 
@@ -102,7 +103,8 @@ type
     function GetNullValue: string;
     procedure SetNullValue(const Value: string);
     procedure SetColumnsPrecision(Value: TStrings);
-    procedure GetColumnSizeDecimal(const ColumnName: string; var Size, Decimal: integer);
+    procedure GetColumnSizeDecimal(const ColumnName: string;
+      var Size, Decimal: integer);
   protected
     function GetWriterClass: TQExportWriterClass; override;
     function GetWriter: TQDBFWriter;
@@ -123,10 +125,14 @@ type
   published
     property Captions;
     property ColumnsLength;
-    property ColumnsPrecision: TStrings read FColumnsPrecision write SetColumnsPrecision;
-    property DefaultFloatSize: integer read FDefaultFloatSize write FDefaultFloatSize default 15;
-    property DefaultFloatDecimal: integer read FDefaultFloatDecimal write FDefaultFloatDecimal default 4;
-    property ExportTimeAsStr: Boolean read FExportTimeAsStr write FExportTimeAsStr;
+    property ColumnsPrecision: TStrings read FColumnsPrecision
+      write SetColumnsPrecision;
+    property DefaultFloatSize: integer read FDefaultFloatSize
+      write FDefaultFloatSize default 15;
+    property DefaultFloatDecimal: integer read FDefaultFloatDecimal
+      write FDefaultFloatDecimal default 4;
+    property ExportTimeAsStr: Boolean read FExportTimeAsStr
+      write FExportTimeAsStr;
     property NullValue: string read GetNullValue write SetNullValue;
   end;
 
@@ -168,10 +174,12 @@ begin
   DecodeDate(Date, Y, M, D);
   with DBFHeader do
   begin
-    if (Owner as TQExport4DBF).Columns.ContainsBLOB and (Stream is TFileStream) then
+    if (Owner as TQExport4DBF).Columns.ContainsBLOB and (Stream is TFileStream)
+    then
     begin
-      DBType     := dBaseIIIMemo;
-      MemoStream := TFileStream.Create((Owner as TQExport4DBF).MemoFileName, fmCreate);
+      DBType := dBaseIIIMemo;
+      MemoStream := TFileStream.Create((Owner as TQExport4DBF).MemoFileName,
+        fmCreate);
       GetMem(MemoRecord, 512);
       FillChar(MemoRecord^, 512, #0);
       MemoStream.WriteBuffer(MemoRecord^, 512);
@@ -180,12 +188,12 @@ begin
     else
       DBType := dBaseIII;
 
-    Year         := Y - 2000;
-    Month        := M;
-    Day          := D;
-    HeaderSize   := (DList.Count + 1) * 32 + 1;
-    RecordSize   := 1;
-    for I        := 0 to DList.Count - 1 do
+    Year := Y - 2000;
+    Month := M;
+    Day := D;
+    HeaderSize := (DList.Count + 1) * 32 + 1;
+    RecordSize := 1;
+    for I := 0 to DList.Count - 1 do
       RecordSize := RecordSize + PDBFFieldDescriptor(DList[I])^.FieldLen;
   end;
   Stream.WriteBuffer(DBFHeader, SizeOf(DBFHeader));
@@ -259,10 +267,10 @@ procedure TQDBFWriter.WriteData(Num: integer; const Data: string);
 
 const
   NewRecordMarker: Byte = $20;
-  STrue                 = 'TRUE';
-  SFalse                = 'FALSE';
-  SDBFTrue              = 'T';
-  SDBFFalse             = 'F';
+  STrue = 'TRUE';
+  SFalse = 'FALSE';
+  SDBFTrue = 'T';
+  SDBFFalse = 'F';
 var
   CurPos, RCount: integer;
 {$IFDEF VCL12}
@@ -287,11 +295,12 @@ begin
           Move(Data[1], _Data[1], length(Data));
       dftNumber:
         begin
-          Move(Data[1], _Data[Max(length(_Data) - length(Data) + 1, 1)], length(Data));
+          Move(Data[1], _Data[Max(length(_Data) - length(Data) + 1, 1)],
+            length(Data));
         end;
       dftDate:
         begin
-          DD    := StrToDateTime(string(Data));
+          DD := StrToDateTime(string(Data));
           _Data := AnsiString(FormatDateTime('yyyymmdd', DD));
           if string(_Data) = EmptyStr then
           begin
@@ -314,7 +323,7 @@ begin
   begin
     Stream.WriteBuffer(NewRecordMarker, 1); // it's new record
     // update record count
-    CurPos          := Stream.Position; // save current position
+    CurPos := Stream.Position; // save current position
     Stream.Position := 4;
     Stream.ReadBuffer(RCount, 4);
     Inc(RCount);
@@ -350,7 +359,8 @@ begin
       Field := DBFExport.DataSet.FindField(DBFExport.Columns.Items[index].Name);
 {$IFNDEF NOGUI}
     esDBGrid:
-      Field := DBFExport.DBGrid.DataSource.DataSet.FindField(DBFExport.Columns[index].Name);
+      Field := DBFExport.DBGrid.DataSource.DataSet.FindField
+        (DBFExport.Columns[index].Name);
 {$ENDIF}
   end;
   if not Assigned(Field) or not(Field is TBlobField) then
@@ -363,7 +373,8 @@ begin
   try
 {$IFDEF QE_UNICODE}
 {$IFDEF VER180} // temporary fix
-    WriteToStreamUsingCharset(FieldBuffer, Field.AsWideString, ExportCharsetType);
+    WriteToStreamUsingCharset(FieldBuffer, Field.AsWideString,
+      ExportCharsetType);
 {$ELSE}
     (Field as TBlobField).SaveToStream(FieldBuffer);
 {$ENDIF}
@@ -383,7 +394,7 @@ begin
       MemoStream.Write(MemoRecord^, 512);
       Inc(NextMemoRecord);
     end;
-    Size     := FieldBuffer.Size;
+    Size := FieldBuffer.Size;
     Position := FieldBuffer.Position;
     if (Size - Position) > 0 then
     begin
@@ -402,10 +413,10 @@ end;
 constructor TQExport4DBF.Create(AOwner: TComponent);
 begin
   inherited;
-  FColumnsPrecision    := TStringList.Create;
-  FDefaultFloatSize    := 15;
+  FColumnsPrecision := TStringList.Create;
+  FDefaultFloatSize := 15;
   FDefaultFloatDecimal := 4;
-  Formats.NullString   := S_NULL_STRING;
+  Formats.NullString := S_NULL_STRING;
 {$IFDEF QE_UNICODE}
   CharsetType := ectLocalANSI;
 {$ENDIF}
@@ -426,7 +437,7 @@ end;
 procedure TQExport4DBF.BeforeExport;
 begin
   inherited;
-  FOldDecimalSeparator                     := SysUtils.FormatSettings.DecimalSeparator;
+  FOldDecimalSeparator := SysUtils.FormatSettings.DecimalSeparator;
   SysUtils.FormatSettings.DecimalSeparator := '.';
 end;
 
@@ -440,7 +451,7 @@ var
 begin
   inherited;
   CurrDisp := 0;
-  sfnGen   := TShortFieldNameGenerator.Create;
+  sfnGen := TShortFieldNameGenerator.Create;
   try
     for I := 0 to Columns.Count - 1 do
     begin
@@ -459,21 +470,23 @@ begin
       if Columns[I].IsBlob then
       begin
         FD^.FieldType := dftMemo;
-        FD^.FieldLen  := 10;
-        FD^.FieldDec  := 0;
-      end else begin
+        FD^.FieldLen := 10;
+        FD^.FieldDec := 0;
+      end
+      else
+      begin
         case Columns[I].ColType of
           ectInteger:
             begin
               FD^.FieldType := dftNumber;
-              FD^.FieldLen  := 11;
-              FD^.FieldDec  := 0;
+              FD^.FieldLen := 11;
+              FD^.FieldDec := 0;
             end;
           ectBigint:
             begin
               FD^.FieldType := dftNumber;
-              FD^.FieldLen  := 20;
-              FD^.FieldDec  := 0;
+              FD^.FieldLen := 20;
+              FD^.FieldDec := 0;
             end;
           (* ftInteger, ftAutoInc: begin
             FD^.FieldType := dftNumber;
@@ -497,7 +510,7 @@ begin
                 FD^.FieldLen := 254
               else
                 FD^.FieldLen := Columns[I].length;
-              FD^.FieldDec   := 0;
+              FD^.FieldDec := 0;
             end;
           (* ftString{$IFDEF VCL4}, ftWideString{$ENDIF}: begin
             FD^.FieldType := dftString;
@@ -514,43 +527,46 @@ begin
               GetColumnSizeDecimal(Columns[I].Name, s, D);
 
               FD^.FieldType := dftNumber;
-              FD^.FieldLen  := s;
-              FD^.FieldDec  := D;
+              FD^.FieldLen := s;
+              FD^.FieldDec := D;
             end;
           ectDate, ectTime, ectDateTime:
             begin
-              if ExportTimeAsStr and (Columns[I].ColType in [ectTime, ectDateTime]) then
+              if ExportTimeAsStr and
+                (Columns[I].ColType in [ectTime, ectDateTime]) then
               begin
                 FD^.FieldType := dftString;
                 if not Columns[I].length > 25 then
                   FD^.FieldLen := Columns[I].length
                 else
-                  FD^.FieldLen     := 25;
+                  FD^.FieldLen := 25;
                 Columns[I].ColType := ectString;
-                FD^.FieldDec       := 0;
-              end else begin
+                FD^.FieldDec := 0;
+              end
+              else
+              begin
                 FD^.FieldType := dftDate;
-                FD^.FieldLen  := 8;
-                FD^.FieldDec  := 0;
+                FD^.FieldLen := 8;
+                FD^.FieldDec := 0;
               end;
             end;
           ectBoolean:
             begin
               FD^.FieldType := dftBoolean;
-              FD^.FieldLen  := 1;
-              FD^.FieldDec  := 0;
+              FD^.FieldLen := 1;
+              FD^.FieldDec := 0;
             end
         else
           begin
             FD^.FieldType := dftString;
-            FD^.FieldLen  := 50;
+            FD^.FieldLen := 50;
             // 10; igorp при неопознанных > 10 (например GUID) вываливается AV
             FD^.FieldDec := 0;
           end;
         end;
       end;
       FD^.FieldDisp := CurrDisp;
-      CurrDisp      := CurrDisp + FD^.FieldLen;
+      CurrDisp := CurrDisp + FD^.FieldLen;
       GetWriter.AddFieldDef(FD);
     end;
   finally
@@ -587,23 +603,24 @@ begin
   FColumnsPrecision.Assign(Value);
 end;
 
-procedure TQExport4DBF.GetColumnSizeDecimal(const ColumnName: string; var Size, Decimal: integer);
+procedure TQExport4DBF.GetColumnSizeDecimal(const ColumnName: string;
+  var Size, Decimal: integer);
 var
   j: integer;
   str: string;
 begin
 
-  Size    := FDefaultFloatSize;
+  Size := FDefaultFloatSize;
   Decimal := FDefaultFloatDecimal;
 
   if ColumnName = 'CURRATE' then
   begin
-    Size    := 12;
+    Size := 12;
     Decimal := 5;
   end;
   if ColumnName = 'REMINDLEV' then
   begin
-    Size    := 1;
+    Size := 1;
     Decimal := 0;
   end;
 
@@ -611,14 +628,14 @@ begin
   if j > -1 then
   begin
     str := FColumnsPrecision.Values[FColumnsPrecision.Names[j]];
-    j   := Pos(',', str);
+    j := Pos(',', str);
     if j > 0 then
     begin
-      Size    := StrToIntDef(Copy(str, 1, j - 1), 0);
+      Size := StrToIntDef(Copy(str, 1, j - 1), 0);
       Decimal := StrToIntDef(Copy(str, j + 1, length(str) - j), 0);
       if (Size <= 0) and (Decimal <= 0) then
       begin
-        Size    := FDefaultFloatSize;
+        Size := FDefaultFloatSize;
         Decimal := FDefaultFloatDecimal;
       end;
     end;
@@ -682,24 +699,27 @@ begin
       begin
         str := Formats.NullString;
         GetWriter.WriteData(I, str);
-      end else begin
+      end
+      else
+      begin
         s := FDefaultFloatSize;
         D := FDefaultFloatDecimal;
         GetColumnSizeDecimal(ExportRow[I].Name, s, D);
         fmtstr := Format('%%%d.%df', [s, D]);
-        str    := ExportRow[I].Data;
-        str    := Format(fmtstr, [StrToFloat(str)]);
+        str := ExportRow[I].Data;
+        str := Format(fmtstr, [StrToFloat(str)]);
         { [ExportRow[i].Data] - Format '%15.4f' invalid or incompatible with argument }
         if Pos(',', str) > 0 then
           str := Replace(str, ',', '.');
         GetWriter.WriteData(I, str)
       end;
-    end else if Columns[I].IsBlob then
+    end
+    else if Columns[I].IsBlob then
     begin
       if (GetWriter.Stream is TFileStream) then
       begin
         Address := GetWriter.WriteMemo(I);
-        str     := '          ';
+        str := '          ';
         if Address > -1 then
         begin
           str := IntToStr(Address);
@@ -719,8 +739,8 @@ end;
 constructor TShortFieldNameGenerator.Create;
 begin
   inherited;
-  FFieldNames            := TStringList.Create;
-  FFieldNames.Sorted     := True;
+  FFieldNames := TStringList.Create;
+  FFieldNames.Sorted := True;
   FFieldNames.Duplicates := dupIgnore;
 end;
 
@@ -730,7 +750,8 @@ begin
   inherited;
 end;
 
-function TShortFieldNameGenerator.GetNumberString(const AValue: integer): string;
+function TShortFieldNameGenerator.GetNumberString(const AValue
+  : integer): string;
 begin
   Result := Format('~%d', [AValue]);
 end;
@@ -745,7 +766,7 @@ begin
   if FFieldNames.Find(AFieldName, I) then
   begin
     FFieldNames.Objects[I] := TObject(integer(FFieldNames.Objects[I]) + 1);
-    ns                     := GetNumberString(integer(FFieldNames.Objects[I]));
+    ns := GetNumberString(integer(FFieldNames.Objects[I]));
     Delete(AFieldName, MAX_FIELD_NAME_LEN - length(ns) + 1, length(ns));
     Result := AFieldName + ns;
     if FFieldNames.Find(Result, I) then
@@ -762,7 +783,7 @@ var
   s, ns: string;
 begin
   Result := AValue;
-  p      := Pos('~', AValue);
+  p := Pos('~', AValue);
   if p = 0 then
     Exit;
   s := Copy(AValue, p + 1, MaxInt);

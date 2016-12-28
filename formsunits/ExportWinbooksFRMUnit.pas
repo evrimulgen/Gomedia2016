@@ -57,12 +57,12 @@ begin
   if ComboBoxSelectPeriod.ItemIndex = 0 then
   begin
     StartDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 32) + 1;
-    EndDate.Date   := EndOfTheMonth(Now);
+    EndDate.Date := EndOfTheMonth(Now);
   end;
   if ComboBoxSelectPeriod.ItemIndex = 1 then
   begin
     StartDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 63) + 1;
-    EndDate.Date   := EndOfTheMonth(EndOfTheMonth(Now) - 32);
+    EndDate.Date := EndOfTheMonth(EndOfTheMonth(Now) - 32);
   end;
   if ComboBoxSelectPeriod.ItemIndex = 2 then
   begin
@@ -83,10 +83,12 @@ begin
       i := i - 1;
     if i = 0 then
     begin
-      workYear   := yearof(Now) - 1;
+      workYear := yearof(Now) - 1;
       startmonth := 10;
-    end else begin
-      workYear   := yearof(Now);
+    end
+    else
+    begin
+      workYear := yearof(Now);
       startmonth := i * 3 - 2
     end;
     if TryEncodeDate(workYear, startmonth, 1, tmpdate) then
@@ -99,7 +101,8 @@ begin
 
 end;
 
-procedure TFormExportWinbooks.JvWizardWinbooksFinishButtonClick(Sender: TObject);
+procedure TFormExportWinbooks.JvWizardWinbooksFinishButtonClick
+  (Sender: TObject);
 var
   i, nbr: integer;
   ExportACTDB: TACTDBCASH;
@@ -120,18 +123,20 @@ begin
   RemoteDB.FreeAlertsTo;
 
   RemoteDB.Products.IndexName := 'ProductsIXModel';
-  RemoteDB.Products.Filter    := '';
-  RemoteDB.Products.Filtered  := False;
+  RemoteDB.Products.Filter := '';
+  RemoteDB.Products.Filtered := False;
 
   ProgressBar.Visible := True;
-  ProgressBar.Min     := 0;
-  ProgressBar.Max     := round(EndDate.Date - StartDate.Date);
-  ProgressBar.Step    := 1;
-  AFormCashRegister   := TFormCashRegister.Create(self);
-  ExportACTDB         := TACTDBCASH.Create(Mainform.Parameter['WBShopClientCode'], Mainform.Parameter['WBShopBookCode'], Mainform.Parameter['WBShopAccount'],
-    Mainform.Parameter['WBShopEAccount'], Mainform.Parameter['WBShopInvoiceCode'], ComboBoxPeriod.Text, RemoteDB);
+  ProgressBar.Min := 0;
+  ProgressBar.Max := round(EndDate.Date - StartDate.Date);
+  ProgressBar.Step := 1;
+  AFormCashRegister := TFormCashRegister.Create(self);
+  ExportACTDB := TACTDBCASH.Create(Mainform.Parameter['WBShopClientCode'],
+    Mainform.Parameter['WBShopBookCode'], Mainform.Parameter['WBShopAccount'],
+    Mainform.Parameter['WBShopEAccount'],
+    Mainform.Parameter['WBShopInvoiceCode'], ComboBoxPeriod.Text, RemoteDB);
   Accu := 0;
-  nbr  := trunc(JvSpinEditStartDocNbr.Value);
+  nbr := trunc(JvSpinEditStartDocNbr.Value);
   try
     for i := trunc(StartDate.Date) to trunc(EndDate.Date) do
     begin
@@ -140,31 +145,54 @@ begin
       begin
         Accu := Accu + DayCashierSummary.TotalPay;
         AFormCashRegister.CashData.Append;
-        AFormCashRegister.CashData.FieldByName('Nbr').Value := AFormCashRegister.CashData.FieldByName('Nbr').Value + 1;
+        AFormCashRegister.CashData.FieldByName('Nbr').Value :=
+          AFormCashRegister.CashData.FieldByName('Nbr').Value + 1;
         AFormCashRegister.CashData.FieldByName('Date').Value := i;
-        AFormCashRegister.CashData.FieldByName('NEW-0').Value := DayCashierSummary.New0;
-        AFormCashRegister.CashData.FieldByName('NEW-6').Value := DayCashierSummary.New6;
-        AFormCashRegister.CashData.FieldByName('NEW-21').Value := DayCashierSummary.New21;
-        AFormCashRegister.CashData.FieldByName('New').Value := DayCashierSummary.New + DayCashierSummary.NoMargin;
-        AFormCashRegister.CashData.FieldByName('SH').Value := DayCashierSummary.SH;
-        AFormCashRegister.CashData.FieldByName('Depot').Value := DayCashierSummary.SHDeposit;
-        AFormCashRegister.CashData.FieldByName('Rachat').Value := DayCashierSummary.SHBought;
-        AFormCashRegister.CashData.FieldByName('Serv').Value := DayCashierSummary.Service;
-        AFormCashRegister.CashData.FieldByName('Returns').Value := DayCashierSummary.Returns;
-        AFormCashRegister.CashData.FieldByName('Total').Value := DayCashierSummary.TotalNature;
-        AFormCashRegister.CashData.FieldByName('Cash').Value := DayCashierSummary.Cash;
-        AFormCashRegister.CashData.FieldByName('Bct').Value := DayCashierSummary.BCT;
-        AFormCashRegister.CashData.FieldByName('Visa').Value := DayCashierSummary.Visa;
-        AFormCashRegister.CashData.FieldByName('Proton').Value := DayCashierSummary.Proton;
-        AFormCashRegister.CashData.FieldByName('Voucher').Value := DayCashierSummary.Voucher;
-        AFormCashRegister.CashData.FieldByName('Refunds').Value := DayCashierSummary.Refunds;
-        AFormCashRegister.CashData.FieldByName('TotalPay').Value := DayCashierSummary.TotalPay;
+        AFormCashRegister.CashData.FieldByName('NEW-0').Value :=
+          DayCashierSummary.New0;
+        AFormCashRegister.CashData.FieldByName('NEW-6').Value :=
+          DayCashierSummary.New6;
+        AFormCashRegister.CashData.FieldByName('NEW-21').Value :=
+          DayCashierSummary.New21;
+        AFormCashRegister.CashData.FieldByName('New').Value :=
+          DayCashierSummary.New + DayCashierSummary.NoMargin;
+        AFormCashRegister.CashData.FieldByName('SH').Value :=
+          DayCashierSummary.SH;
+        AFormCashRegister.CashData.FieldByName('Depot').Value :=
+          DayCashierSummary.SHDeposit;
+        AFormCashRegister.CashData.FieldByName('Rachat').Value :=
+          DayCashierSummary.SHBought;
+        AFormCashRegister.CashData.FieldByName('Serv').Value :=
+          DayCashierSummary.Service;
+        AFormCashRegister.CashData.FieldByName('Returns').Value :=
+          DayCashierSummary.Returns;
+        AFormCashRegister.CashData.FieldByName('Total').Value :=
+          DayCashierSummary.TotalNature;
+        AFormCashRegister.CashData.FieldByName('Cash').Value :=
+          DayCashierSummary.Cash;
+        AFormCashRegister.CashData.FieldByName('Bct').Value :=
+          DayCashierSummary.BCT;
+        AFormCashRegister.CashData.FieldByName('Visa').Value :=
+          DayCashierSummary.Visa;
+        AFormCashRegister.CashData.FieldByName('Proton').Value :=
+          DayCashierSummary.Proton;
+        AFormCashRegister.CashData.FieldByName('Voucher').Value :=
+          DayCashierSummary.Voucher;
+        AFormCashRegister.CashData.FieldByName('Refunds').Value :=
+          DayCashierSummary.Refunds;
+        AFormCashRegister.CashData.FieldByName('TotalPay').Value :=
+          DayCashierSummary.TotalPay;
         AFormCashRegister.CashData.FieldByName('CaisseTot').Value := Accu;
-        AFormCashRegister.CashData.FieldByName('Expenses').Value := DayCashierSummary.Expenses;
-        AFormCashRegister.CashData.FieldByName('ExpensesDesc').Value := DayCashierSummary.ExpensesDesc;
-        AFormCashRegister.CashData.FieldByName('INV-21').Value := DayCashierSummary.Invoice21;
-        AFormCashRegister.CashData.FieldByName('INV-6').Value := DayCashierSummary.Invoice6;
-        AFormCashRegister.CashData.FieldByName('INV-0').Value := DayCashierSummary.Invoice0;
+        AFormCashRegister.CashData.FieldByName('Expenses').Value :=
+          DayCashierSummary.Expenses;
+        AFormCashRegister.CashData.FieldByName('ExpensesDesc').Value :=
+          DayCashierSummary.ExpensesDesc;
+        AFormCashRegister.CashData.FieldByName('INV-21').Value :=
+          DayCashierSummary.Invoice21;
+        AFormCashRegister.CashData.FieldByName('INV-6').Value :=
+          DayCashierSummary.Invoice6;
+        AFormCashRegister.CashData.FieldByName('INV-0').Value :=
+          DayCashierSummary.Invoice0;
         AFormCashRegister.CashData.Post;
         ExportACTDB.AddDaySales(nbr, i, DayCashierSummary);
         if CheckBoxInvoices.State = cbChecked then
@@ -189,7 +217,7 @@ end;
 procedure TFormExportWinbooks.FormShow(Sender: TObject);
 begin
   self.JvWizardWinbooks.ActivePage := JvWizardInteriorPage1;
-  ComboBoxSelectPeriod.ItemIndex   := 1;
+  ComboBoxSelectPeriod.ItemIndex := 1;
   ComboBoxSelectPeriodSelect(self);
 end;
 

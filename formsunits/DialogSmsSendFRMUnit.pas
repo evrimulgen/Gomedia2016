@@ -37,11 +37,13 @@ procedure TDlgSmsSend.UpDownSmsToSendClick(Sender: TObject; Button: TUDBtnType);
 begin
   if Button = btNext then
   begin
-    LabelSmsToSend.Caption := inttostr(min((StrtoInt(LabelSmsToSend.Caption) + 1), Reserved));
+    LabelSmsToSend.Caption :=
+      inttostr(min((StrtoInt(LabelSmsToSend.Caption) + 1), Reserved));
   end;
   if Button = btPrev then
   begin
-    LabelSmsToSend.Caption := inttostr(max(StrtoInt(LabelSmsToSend.Caption) - 1, 0));
+    LabelSmsToSend.Caption :=
+      inttostr(max(StrtoInt(LabelSmsToSend.Caption) - 1, 0));
   end;
 end;
 

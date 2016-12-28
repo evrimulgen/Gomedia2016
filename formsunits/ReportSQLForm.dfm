@@ -342,6 +342,7 @@ object ReportSQL: TReportSQL
     Left = 432
     Top = 216
     object dxComponentPrinterLink1: TdxGridReportLink
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -354,6 +355,7 @@ object ReportSQL: TReportSQL
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.CreationDate = 40675.505035358790000000
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
       OptionsView.Footers = False

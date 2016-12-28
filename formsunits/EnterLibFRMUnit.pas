@@ -48,7 +48,7 @@ begin
   inherited CreateParams(Params);
   with Params do
   begin
-    ExStyle   := ExStyle or WS_EX_APPWINDOW;
+    ExStyle := ExStyle or WS_EX_APPWINDOW;
     WndParent := GetDesktopwindow;
   end;
 end;
@@ -56,24 +56,25 @@ end;
 procedure TFormEnterLibrary.FormShow(Sender: TObject);
 var
   FoundSlot: boolean;
-  NowRow, Pslot,i: integer;
-  MachineID,Machinetext: string;
+  NowRow, Pslot, i: integer;
+  MachineID, Machinetext: string;
   USBCDMoveOpen: TUSBCDMoveOpen;
 
 begin
   Messagelabel.Caption := '';
 
   BitBtnNextCD.Enabled := False;
-  BitBtnOk.Enabled     := False;
+  BitBtnOk.Enabled := False;
 
   RemoteDB.Caroussel.IndexFieldNames := 'machine_id;slot_id';
 
-  NowRow    := 1;
+  NowRow := 1;
   FoundSlot := False;
-  while (NowRow < MainForm.StringGridDacal.Rowcount - 1) and (FoundSlot = False) do
+  while (NowRow < MainForm.StringGridDacal.Rowcount - 1) and
+    (FoundSlot = False) do
   begin
-    MachineID                   := MainForm.StringGridDacal.Cells[0, NowRow];
-    RemoteDB.Caroussel.Filter   := 'machine_id = ' + MachineID;
+    MachineID := MainForm.StringGridDacal.Cells[0, NowRow];
+    RemoteDB.Caroussel.Filter := 'machine_id = ' + MachineID;
     RemoteDB.Caroussel.Filtered := True;
     RemoteDB.Caroussel.First;
 
@@ -81,7 +82,7 @@ begin
     if RemoteDB.Caroussel.Eof and RemoteDB.Caroussel.Bof then
     begin
       FoundSlot := True;
-      slot      := 1;
+      slot := 1;
     end;
 
     // SI Trous dans la DB
@@ -90,7 +91,7 @@ begin
     begin
       if RemoteDB.Caroussel.FieldByName('slot_id').Value > Pslot + 1 then
       begin
-        slot      := Pslot + 1;
+        slot := Pslot + 1;
         FoundSlot := True;
       end;
       Pslot := RemoteDB.Caroussel.FieldByName('slot_id').Value;
@@ -102,16 +103,18 @@ begin
     begin
       if Pslot < 150 then
       begin
-        slot      := Pslot + 1;
+        slot := Pslot + 1;
         FoundSlot := True;
-      end else begin
+      end
+      else
+      begin
       end;
     end;
 
     NowRow := NowRow + 1;
   end;
 
-  RemoteDB.Caroussel.Filter   := '';
+  RemoteDB.Caroussel.Filter := '';
   RemoteDB.Caroussel.Filtered := False;
 
   if FoundSlot then
@@ -119,48 +122,50 @@ begin
 
     try
 
+      USBCDMoveOpen := TUSBCDMoveOpen.Create(StrToInt(MachineID), slot);
 
-    USBCDMoveOpen := TUSBCDMoveOpen.Create(StrToInt(MachineID), slot);
+      if length(floattostr(slot)) = 1 then
+      begin
+        LedSlot.Text := '00' + floattostr(slot);
+      end;
+      if length(floattostr(slot)) = 2 then
+      begin
+        LedSlot.Text := '0' + floattostr(slot);
+      end;
+      if length(floattostr(slot)) = 3 then
+      begin
+        LedSlot.Text := floattostr(slot);
+      end;
 
-    if length(floattostr(slot)) = 1 then
-    begin
-      LedSlot.Text := '00' + floattostr(slot);
-    end;
-    if length(floattostr(slot)) = 2 then
-    begin
-      LedSlot.Text := '0' + floattostr(slot);
-    end;
-    if length(floattostr(slot)) = 3 then
-    begin
-      LedSlot.Text := floattostr(slot);
-    end;
-
-    Machinetext := '';
-    for i       := 7 downto length((MachineID)) do
-    begin
+      Machinetext := '';
+      for i := 7 downto length((MachineID)) do
+      begin
         Machinetext := Machinetext + '0';
-    end;
-    LedMachine.Text := Machinetext + (MachineID);
+      end;
+      LedMachine.Text := Machinetext + (MachineID);
 
-    USBCDMoveOpen.Execute;
+      USBCDMoveOpen.Execute;
 
-    RemoteDB.Caroussel.Append;
-    RemoteDB.Caroussel.FieldByName('machine_id').Value := StrToInt(MachineID);
-    RemoteDB.Caroussel.FieldByName('slot_id').Value    := slot;
-    RemoteDB.Caroussel.FieldByName('model').Value      := RemoteDB.Products.FieldByName('products_model').Value;
-    RemoteDB.Caroussel.FieldByName('customer_nbr').AsString := FEOwner;
-    RemoteDB.Caroussel.FieldByName('isRoot').Value := True;
-    RemoteDB.Caroussel.FieldByName('NextId').Value := -1;
-    RemoteDB.Caroussel.Post;
+      RemoteDB.Caroussel.Append;
+      RemoteDB.Caroussel.FieldByName('machine_id').Value := StrToInt(MachineID);
+      RemoteDB.Caroussel.FieldByName('slot_id').Value := slot;
+      RemoteDB.Caroussel.FieldByName('model').Value :=
+        RemoteDB.Products.FieldByName('products_model').Value;
+      RemoteDB.Caroussel.FieldByName('customer_nbr').AsString := FEOwner;
+      RemoteDB.Caroussel.FieldByName('isRoot').Value := True;
+      RemoteDB.Caroussel.FieldByName('NextId').Value := -1;
+      RemoteDB.Caroussel.Post;
 
-    Self.BitBtnOk.Enabled     := True;
-    Self.BitBtnNextCD.Enabled := True;
+      Self.BitBtnOk.Enabled := True;
+      Self.BitBtnNextCD.Enabled := True;
 
     finally
 
     end;
 
-  end else begin
+  end
+  else
+  begin
     Messagelabel.Caption := 'CD Library pleines ou indisponibles';
   end;
 
@@ -177,13 +182,14 @@ var
 begin
   FormerId := RemoteDB.Caroussel.FieldByName('id').Value;
 
-  NowRow    := 1;
+  NowRow := 1;
   FoundSlot := False;
 
-  while (NowRow < MainForm.StringGridDacal.Rowcount - 1) and (FoundSlot = False) do
+  while (NowRow < MainForm.StringGridDacal.Rowcount - 1) and
+    (FoundSlot = False) do
   begin
-    MachineID                   := MainForm.StringGridDacal.Cells[0, NowRow];
-    RemoteDB.Caroussel.Filter   := 'machine_id = ' + MachineID;
+    MachineID := MainForm.StringGridDacal.Cells[0, NowRow];
+    RemoteDB.Caroussel.Filter := 'machine_id = ' + MachineID;
     RemoteDB.Caroussel.Filtered := True;
     RemoteDB.Caroussel.First;
 
@@ -191,7 +197,7 @@ begin
     if RemoteDB.Caroussel.Eof and RemoteDB.Caroussel.Bof then
     begin
       FoundSlot := True;
-      slot      := 1;
+      slot := 1;
     end;
 
     // SI Trous dans la DB
@@ -200,7 +206,7 @@ begin
     begin
       if RemoteDB.Caroussel.FieldByName('slot_id').Value > Pslot + 1 then
       begin
-        slot      := Pslot + 1;
+        slot := Pslot + 1;
         FoundSlot := True;
       end;
       Pslot := RemoteDB.Caroussel.FieldByName('slot_id').Value;
@@ -212,16 +218,18 @@ begin
     begin
       if Pslot < 150 then
       begin
-        slot      := Pslot + 1;
+        slot := Pslot + 1;
         FoundSlot := True;
-      end else begin
+      end
+      else
+      begin
       end;
     end;
 
     NowRow := NowRow + 1;
   end;
 
-  RemoteDB.Caroussel.Filter   := '';
+  RemoteDB.Caroussel.Filter := '';
   RemoteDB.Caroussel.Filtered := False;
 
   if FoundSlot then
@@ -246,14 +254,17 @@ begin
     RemoteDB.Caroussel.Post;
 
     RemoteDB.Caroussel.Append;
-    RemoteDB.Caroussel.FieldByName('machine_id').Value   := StrToInt(MachineID);
-    RemoteDB.Caroussel.FieldByName('slot_id').Value      := slot;
-    RemoteDB.Caroussel.FieldByName('model').Value        := RemoteDB.Products.FieldByName('products_model').Value;
+    RemoteDB.Caroussel.FieldByName('machine_id').Value := StrToInt(MachineID);
+    RemoteDB.Caroussel.FieldByName('slot_id').Value := slot;
+    RemoteDB.Caroussel.FieldByName('model').Value :=
+      RemoteDB.Products.FieldByName('products_model').Value;
     RemoteDB.Caroussel.FieldByName('customer_nbr').Value := FEOwner;
-    RemoteDB.Caroussel.FieldByName('isRoot').Value       := True;
-    RemoteDB.Caroussel.FieldByName('NextId').Value       := FormerId;
+    RemoteDB.Caroussel.FieldByName('isRoot').Value := True;
+    RemoteDB.Caroussel.FieldByName('NextId').Value := FormerId;
     RemoteDB.Caroussel.Post;
-  end else begin
+  end
+  else
+  begin
     Messagelabel.Caption := 'CD Library pleines ou indisponibles';
   end;
 end;

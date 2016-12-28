@@ -48,53 +48,53 @@ const
   LIBID_EIDLIBCTRLLib: TGUID = '{7705C6CB-5A66-4F92-B296-2B34ED21745C}';
 
   DIID__IEIDlibEvents: TGUID = '{23271379-5195-4384-98DA-F54960DA8A84}';
-  IID_IEIDlib: TGUID         = '{D5701A16-9D8D-46C6-8E08-B3F1BAE9C4DC}';
-  CLASS_EIDlib: TGUID        = '{4E29F09E-EBCC-4A3B-BAA7-8372EC375870}';
-  IID_IRetStatus: TGUID      = '{9B4AD832-6FE8-4826-BFD3-3F278A40F741}';
-  IID_IMapCollection: TGUID  = '{886B55ED-4245-4FE9-B3B5-1D78B551000B}';
-  IID_ICertifCheck: TGUID    = '{9233063D-D860-4CAD-AD47-BE48CC62D709}';
-  IID_IPin: TGUID            = '{B7E86746-2EA7-4237-B523-5BD826A0BAF9}';
-  IID_IRaw: TGUID            = '{9D5F1B11-8438-4C4E-9011-070F2E43C758}';
-  CLASS_RetStatus: TGUID     = '{8923F2AE-B06E-430B-93F6-96FE1BDEEFF8}';
+  IID_IEIDlib: TGUID = '{D5701A16-9D8D-46C6-8E08-B3F1BAE9C4DC}';
+  CLASS_EIDlib: TGUID = '{4E29F09E-EBCC-4A3B-BAA7-8372EC375870}';
+  IID_IRetStatus: TGUID = '{9B4AD832-6FE8-4826-BFD3-3F278A40F741}';
+  IID_IMapCollection: TGUID = '{886B55ED-4245-4FE9-B3B5-1D78B551000B}';
+  IID_ICertifCheck: TGUID = '{9233063D-D860-4CAD-AD47-BE48CC62D709}';
+  IID_IPin: TGUID = '{B7E86746-2EA7-4237-B523-5BD826A0BAF9}';
+  IID_IRaw: TGUID = '{9D5F1B11-8438-4C4E-9011-070F2E43C758}';
+  CLASS_RetStatus: TGUID = '{8923F2AE-B06E-430B-93F6-96FE1BDEEFF8}';
   CLASS_MapCollection: TGUID = '{BB91CEDA-82D5-4889-8732-3DB804619852}';
-  IID_ICertif: TGUID         = '{26995400-2928-4E1B-9981-A317D486AC5A}';
-  CLASS_Certif: TGUID        = '{28310B8B-0774-4483-85AF-4966EC52D8BC}';
-  CLASS_CertifCheck: TGUID   = '{4CBC8AEE-7684-492E-8AA5-505943987B53}';
-  CLASS_Pin: TGUID           = '{B1731EE0-BE64-4FE3-8EAC-BF37A4D96B35}';
-  CLASS_Raw: TGUID           = '{79EAFF90-57D8-4A58-BC0C-0C5F7F60E65E}';
+  IID_ICertif: TGUID = '{26995400-2928-4E1B-9981-A317D486AC5A}';
+  CLASS_Certif: TGUID = '{28310B8B-0774-4483-85AF-4966EC52D8BC}';
+  CLASS_CertifCheck: TGUID = '{4CBC8AEE-7684-492E-8AA5-505943987B53}';
+  CLASS_Pin: TGUID = '{B1731EE0-BE64-4FE3-8EAC-BF37A4D96B35}';
+  CLASS_Raw: TGUID = '{79EAFF90-57D8-4A58-BC0C-0C5F7F60E65E}';
 
 type
 
   // *********************************************************************//
   // Forward declaration of types defined in TypeLibrary
   // *********************************************************************//
-  _IEIDlibEvents     = dispinterface;
-  IEIDlib            = interface;
-  IEIDlibDisp        = dispinterface;
-  IRetStatus         = interface;
-  IRetStatusDisp     = dispinterface;
-  IMapCollection     = interface;
+  _IEIDlibEvents = dispinterface;
+  IEIDlib = interface;
+  IEIDlibDisp = dispinterface;
+  IRetStatus = interface;
+  IRetStatusDisp = dispinterface;
+  IMapCollection = interface;
   IMapCollectionDisp = dispinterface;
-  ICertifCheck       = interface;
-  ICertifCheckDisp   = dispinterface;
-  IPin               = interface;
-  IPinDisp           = dispinterface;
-  IRaw               = interface;
-  IRawDisp           = dispinterface;
-  ICertif            = interface;
-  ICertifDisp        = dispinterface;
+  ICertifCheck = interface;
+  ICertifCheckDisp = dispinterface;
+  IPin = interface;
+  IPinDisp = dispinterface;
+  IRaw = interface;
+  IRawDisp = dispinterface;
+  ICertif = interface;
+  ICertifDisp = dispinterface;
 
   // *********************************************************************//
   // Declaration of CoClasses defined in Type Library
   // (NOTE: Here we map each CoClass to its Default Interface)
   // *********************************************************************//
-  EIDlib        = IEIDlib;
-  RetStatus     = IRetStatus;
+  EIDlib = IEIDlib;
+  RetStatus = IRetStatus;
   MapCollection = IMapCollection;
-  Certif        = ICertif;
-  CertifCheck   = ICertifCheck;
-  Pin           = IPin;
-  Raw           = IRaw;
+  Certif = ICertif;
+  CertifCheck = ICertifCheck;
+  Pin = IPin;
+  Raw = IRaw;
 
   // *********************************************************************//
   // DispIntf:  _IEIDlibEvents
@@ -112,22 +112,36 @@ type
   // *********************************************************************//
   IEIDlib = interface(IDispatch)
     ['{D5701A16-9D8D-46C6-8E08-B3F1BAE9C4DC}']
-    function Init(const strReaderName: WideString; lOCSP: Integer; lCRL: Integer; out plHandle: Integer): IRetStatus; safecall;
+    function Init(const strReaderName: WideString; lOCSP: Integer;
+      lCRL: Integer; out plHandle: Integer): IRetStatus; safecall;
     function Exit: IRetStatus; safecall;
-    function GetID(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus; safecall;
-    function GetAddress(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus; safecall;
-    function GetPicture(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus; safecall;
-    function GetVersionInfo(bSignature: Integer; out ppMapCollection: IMapCollection; out pvtSignature: OleVariant): IRetStatus; safecall;
+    function GetID(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus; safecall;
+    function GetAddress(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus; safecall;
+    function GetPicture(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus; safecall;
+    function GetVersionInfo(bSignature: Integer;
+      out ppMapCollection: IMapCollection; out pvtSignature: OleVariant)
+      : IRetStatus; safecall;
     function BeginTransaction: IRetStatus; safecall;
     function EndTransaction: IRetStatus; safecall;
     function FlushCache: IRetStatus; safecall;
     function SelectApplication(vtApplication: OleVariant): IRetStatus; safecall;
-    function SendAPDU(vtCommand: OleVariant; const pPIN: IPin; out pvtResponse: OleVariant): IRetStatus; safecall;
-    function VerifyPIN(const pPIN: IPin; const bstrPin: WideString; out plTriesLeft: Integer): IRetStatus; safecall;
-    function ChangePin(const pPIN: IPin; const strOldPin: WideString; const strNewPin: WideString; out plTriesLeft: Integer): IRetStatus; safecall;
-    function GetPinStatus(const pPIN: IPin; bSignature: Integer; out pvtSignature: OleVariant; out plTriesLeft: Integer): IRetStatus; safecall;
-    function ReadFile(const pPIN: IPin; vtFileId: OleVariant; out pvtData: OleVariant): IRetStatus; safecall;
-    function WriteFile(const pPIN: IPin; vtFileId: OleVariant; vtData: OleVariant): IRetStatus; safecall;
+    function SendAPDU(vtCommand: OleVariant; const pPIN: IPin;
+      out pvtResponse: OleVariant): IRetStatus; safecall;
+    function VerifyPIN(const pPIN: IPin; const bstrPin: WideString;
+      out plTriesLeft: Integer): IRetStatus; safecall;
+    function ChangePin(const pPIN: IPin; const strOldPin: WideString;
+      const strNewPin: WideString; out plTriesLeft: Integer)
+      : IRetStatus; safecall;
+    function GetPinStatus(const pPIN: IPin; bSignature: Integer;
+      out pvtSignature: OleVariant; out plTriesLeft: Integer)
+      : IRetStatus; safecall;
+    function ReadFile(const pPIN: IPin; vtFileId: OleVariant;
+      out pvtData: OleVariant): IRetStatus; safecall;
+    function WriteFile(const pPIN: IPin; vtFileId: OleVariant;
+      vtData: OleVariant): IRetStatus; safecall;
     function SetRawData(const pRaw: IRaw): IRetStatus; safecall;
     function GetRawData(out ppRaw: IRaw): IRetStatus; safecall;
   end;
@@ -139,22 +153,37 @@ type
   // *********************************************************************//
   IEIDlibDisp = dispinterface
     ['{D5701A16-9D8D-46C6-8E08-B3F1BAE9C4DC}']
-    function Init(const strReaderName: WideString; lOCSP: Integer; lCRL: Integer; out plHandle: Integer): IRetStatus; dispid 1;
+    function Init(const strReaderName: WideString; lOCSP: Integer;
+      lCRL: Integer; out plHandle: Integer): IRetStatus; dispid 1;
     function Exit: IRetStatus; dispid 2;
-    function GetID(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus; dispid 3;
-    function GetAddress(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus; dispid 4;
-    function GetPicture(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus; dispid 5;
-    function GetVersionInfo(bSignature: Integer; out ppMapCollection: IMapCollection; out pvtSignature: OleVariant): IRetStatus; dispid 6;
+    function GetID(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus; dispid 3;
+    function GetAddress(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus; dispid 4;
+    function GetPicture(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus; dispid 5;
+    function GetVersionInfo(bSignature: Integer;
+      out ppMapCollection: IMapCollection; out pvtSignature: OleVariant)
+      : IRetStatus; dispid 6;
     function BeginTransaction: IRetStatus; dispid 7;
     function EndTransaction: IRetStatus; dispid 8;
     function FlushCache: IRetStatus; dispid 9;
-    function SelectApplication(vtApplication: OleVariant): IRetStatus; dispid 10;
-    function SendAPDU(vtCommand: OleVariant; const pPIN: IPin; out pvtResponse: OleVariant): IRetStatus; dispid 11;
-    function VerifyPIN(const pPIN: IPin; const bstrPin: WideString; out plTriesLeft: Integer): IRetStatus; dispid 12;
-    function ChangePin(const pPIN: IPin; const strOldPin: WideString; const strNewPin: WideString; out plTriesLeft: Integer): IRetStatus; dispid 13;
-    function GetPinStatus(const pPIN: IPin; bSignature: Integer; out pvtSignature: OleVariant; out plTriesLeft: Integer): IRetStatus; dispid 14;
-    function ReadFile(const pPIN: IPin; vtFileId: OleVariant; out pvtData: OleVariant): IRetStatus; dispid 15;
-    function WriteFile(const pPIN: IPin; vtFileId: OleVariant; vtData: OleVariant): IRetStatus; dispid 16;
+    function SelectApplication(vtApplication: OleVariant): IRetStatus;
+      dispid 10;
+    function SendAPDU(vtCommand: OleVariant; const pPIN: IPin;
+      out pvtResponse: OleVariant): IRetStatus; dispid 11;
+    function VerifyPIN(const pPIN: IPin; const bstrPin: WideString;
+      out plTriesLeft: Integer): IRetStatus; dispid 12;
+    function ChangePin(const pPIN: IPin; const strOldPin: WideString;
+      const strNewPin: WideString; out plTriesLeft: Integer): IRetStatus;
+      dispid 13;
+    function GetPinStatus(const pPIN: IPin; bSignature: Integer;
+      out pvtSignature: OleVariant; out plTriesLeft: Integer): IRetStatus;
+      dispid 14;
+    function ReadFile(const pPIN: IPin; vtFileId: OleVariant;
+      out pvtData: OleVariant): IRetStatus; dispid 15;
+    function WriteFile(const pPIN: IPin; vtFileId: OleVariant;
+      vtData: OleVariant): IRetStatus; dispid 16;
     function SetRawData(const pRaw: IRaw): IRetStatus; dispid 17;
     function GetRawData(out ppRaw: IRaw): IRetStatus; dispid 18;
   end;
@@ -392,22 +421,34 @@ type
     procedure CreateControl;
     procedure InitControlData; override;
   public
-    function Init(const strReaderName: WideString; lOCSP: Integer; lCRL: Integer; out plHandle: Integer): IRetStatus;
+    function Init(const strReaderName: WideString; lOCSP: Integer;
+      lCRL: Integer; out plHandle: Integer): IRetStatus;
     function Exit: IRetStatus;
-    function GetID(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus;
-    function GetAddress(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus;
-    function GetPicture(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus;
-    function GetVersionInfo(bSignature: Integer; out ppMapCollection: IMapCollection; out pvtSignature: OleVariant): IRetStatus;
+    function GetID(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus;
+    function GetAddress(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus;
+    function GetPicture(out ppMapCollection: IMapCollection;
+      out ppCertifCheck: ICertifCheck): IRetStatus;
+    function GetVersionInfo(bSignature: Integer;
+      out ppMapCollection: IMapCollection; out pvtSignature: OleVariant)
+      : IRetStatus;
     function BeginTransaction: IRetStatus;
     function EndTransaction: IRetStatus;
     function FlushCache: IRetStatus;
     function SelectApplication(vtApplication: OleVariant): IRetStatus;
-    function SendAPDU(vtCommand: OleVariant; const pPIN: IPin; out pvtResponse: OleVariant): IRetStatus;
-    function VerifyPIN(const pPIN: IPin; const bstrPin: WideString; out plTriesLeft: Integer): IRetStatus;
-    function ChangePin(const pPIN: IPin; const strOldPin: WideString; const strNewPin: WideString; out plTriesLeft: Integer): IRetStatus;
-    function GetPinStatus(const pPIN: IPin; bSignature: Integer; out pvtSignature: OleVariant; out plTriesLeft: Integer): IRetStatus;
-    function ReadFile(const pPIN: IPin; vtFileId: OleVariant; out pvtData: OleVariant): IRetStatus;
-    function WriteFile(const pPIN: IPin; vtFileId: OleVariant; vtData: OleVariant): IRetStatus;
+    function SendAPDU(vtCommand: OleVariant; const pPIN: IPin;
+      out pvtResponse: OleVariant): IRetStatus;
+    function VerifyPIN(const pPIN: IPin; const bstrPin: WideString;
+      out plTriesLeft: Integer): IRetStatus;
+    function ChangePin(const pPIN: IPin; const strOldPin: WideString;
+      const strNewPin: WideString; out plTriesLeft: Integer): IRetStatus;
+    function GetPinStatus(const pPIN: IPin; bSignature: Integer;
+      out pvtSignature: OleVariant; out plTriesLeft: Integer): IRetStatus;
+    function ReadFile(const pPIN: IPin; vtFileId: OleVariant;
+      out pvtData: OleVariant): IRetStatus;
+    function WriteFile(const pPIN: IPin; vtFileId: OleVariant;
+      vtData: OleVariant): IRetStatus;
     function SetRawData(const pRaw: IRaw): IRetStatus;
     function GetRawData(out ppRaw: IRaw): IRetStatus;
     property ControlInterface: IEIDlib read GetControlInterface;
@@ -501,8 +542,10 @@ uses ComObj;
 
 procedure TEIDlib.InitControlData;
 const
-  CControlData: TControlData2 = (ClassID: '{4E29F09E-EBCC-4A3B-BAA7-8372EC375870}'; EventIID: ''; EventCount: 0; EventDispIDs: nil;
-    LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 500);
+  CControlData: TControlData2 = (ClassID
+    : '{4E29F09E-EBCC-4A3B-BAA7-8372EC375870}'; EventIID: ''; EventCount: 0;
+    EventDispIDs: nil; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000;
+    Version: 500);
 begin
   ControlData := @CControlData;
 end;
@@ -525,7 +568,8 @@ begin
   Result := FIntf;
 end;
 
-function TEIDlib.Init(const strReaderName: WideString; lOCSP: Integer; lCRL: Integer; out plHandle: Integer): IRetStatus;
+function TEIDlib.Init(const strReaderName: WideString; lOCSP: Integer;
+  lCRL: Integer; out plHandle: Integer): IRetStatus;
 begin
   Result := DefaultInterface.Init(strReaderName, lOCSP, lCRL, plHandle);
 end;
@@ -535,24 +579,30 @@ begin
   Result := DefaultInterface.Exit;
 end;
 
-function TEIDlib.GetID(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus;
+function TEIDlib.GetID(out ppMapCollection: IMapCollection;
+  out ppCertifCheck: ICertifCheck): IRetStatus;
 begin
   Result := DefaultInterface.GetID(ppMapCollection, ppCertifCheck);
 end;
 
-function TEIDlib.GetAddress(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus;
+function TEIDlib.GetAddress(out ppMapCollection: IMapCollection;
+  out ppCertifCheck: ICertifCheck): IRetStatus;
 begin
   Result := DefaultInterface.GetAddress(ppMapCollection, ppCertifCheck);
 end;
 
-function TEIDlib.GetPicture(out ppMapCollection: IMapCollection; out ppCertifCheck: ICertifCheck): IRetStatus;
+function TEIDlib.GetPicture(out ppMapCollection: IMapCollection;
+  out ppCertifCheck: ICertifCheck): IRetStatus;
 begin
   Result := DefaultInterface.GetPicture(ppMapCollection, ppCertifCheck);
 end;
 
-function TEIDlib.GetVersionInfo(bSignature: Integer; out ppMapCollection: IMapCollection; out pvtSignature: OleVariant): IRetStatus;
+function TEIDlib.GetVersionInfo(bSignature: Integer;
+  out ppMapCollection: IMapCollection; out pvtSignature: OleVariant)
+  : IRetStatus;
 begin
-  Result := DefaultInterface.GetVersionInfo(bSignature, ppMapCollection, pvtSignature);
+  Result := DefaultInterface.GetVersionInfo(bSignature, ppMapCollection,
+    pvtSignature);
 end;
 
 function TEIDlib.BeginTransaction: IRetStatus;
@@ -575,32 +625,39 @@ begin
   Result := DefaultInterface.SelectApplication(vtApplication);
 end;
 
-function TEIDlib.SendAPDU(vtCommand: OleVariant; const pPIN: IPin; out pvtResponse: OleVariant): IRetStatus;
+function TEIDlib.SendAPDU(vtCommand: OleVariant; const pPIN: IPin;
+  out pvtResponse: OleVariant): IRetStatus;
 begin
   Result := DefaultInterface.SendAPDU(vtCommand, pPIN, pvtResponse);
 end;
 
-function TEIDlib.VerifyPIN(const pPIN: IPin; const bstrPin: WideString; out plTriesLeft: Integer): IRetStatus;
+function TEIDlib.VerifyPIN(const pPIN: IPin; const bstrPin: WideString;
+  out plTriesLeft: Integer): IRetStatus;
 begin
   Result := DefaultInterface.VerifyPIN(pPIN, bstrPin, plTriesLeft);
 end;
 
-function TEIDlib.ChangePin(const pPIN: IPin; const strOldPin: WideString; const strNewPin: WideString; out plTriesLeft: Integer): IRetStatus;
+function TEIDlib.ChangePin(const pPIN: IPin; const strOldPin: WideString;
+  const strNewPin: WideString; out plTriesLeft: Integer): IRetStatus;
 begin
   Result := DefaultInterface.ChangePin(pPIN, strOldPin, strNewPin, plTriesLeft);
 end;
 
-function TEIDlib.GetPinStatus(const pPIN: IPin; bSignature: Integer; out pvtSignature: OleVariant; out plTriesLeft: Integer): IRetStatus;
+function TEIDlib.GetPinStatus(const pPIN: IPin; bSignature: Integer;
+  out pvtSignature: OleVariant; out plTriesLeft: Integer): IRetStatus;
 begin
-  Result := DefaultInterface.GetPinStatus(pPIN, bSignature, pvtSignature, plTriesLeft);
+  Result := DefaultInterface.GetPinStatus(pPIN, bSignature, pvtSignature,
+    plTriesLeft);
 end;
 
-function TEIDlib.ReadFile(const pPIN: IPin; vtFileId: OleVariant; out pvtData: OleVariant): IRetStatus;
+function TEIDlib.ReadFile(const pPIN: IPin; vtFileId: OleVariant;
+  out pvtData: OleVariant): IRetStatus;
 begin
   Result := DefaultInterface.ReadFile(pPIN, vtFileId, pvtData);
 end;
 
-function TEIDlib.WriteFile(const pPIN: IPin; vtFileId: OleVariant; vtData: OleVariant): IRetStatus;
+function TEIDlib.WriteFile(const pPIN: IPin; vtFileId: OleVariant;
+  vtData: OleVariant): IRetStatus;
 begin
   Result := DefaultInterface.WriteFile(pPIN, vtFileId, vtData);
 end;
@@ -630,9 +687,11 @@ begin
   Result := CreateComObject(CLASS_MapCollection) as IMapCollection;
 end;
 
-class function CoMapCollection.CreateRemote(const MachineName: string): IMapCollection;
+class function CoMapCollection.CreateRemote(const MachineName: string)
+  : IMapCollection;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_MapCollection) as IMapCollection;
+  Result := CreateRemoteComObject(MachineName, CLASS_MapCollection)
+    as IMapCollection;
 end;
 
 class function CoCertif.Create: ICertif;
@@ -650,9 +709,11 @@ begin
   Result := CreateComObject(CLASS_CertifCheck) as ICertifCheck;
 end;
 
-class function CoCertifCheck.CreateRemote(const MachineName: string): ICertifCheck;
+class function CoCertifCheck.CreateRemote(const MachineName: string)
+  : ICertifCheck;
 begin
-  Result := CreateRemoteComObject(MachineName, CLASS_CertifCheck) as ICertifCheck;
+  Result := CreateRemoteComObject(MachineName, CLASS_CertifCheck)
+    as ICertifCheck;
 end;
 
 class function CoPin.Create: IPin;

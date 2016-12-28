@@ -301,6 +301,8 @@ object FormProcessRent: TFormProcessRent
     FloatFormat = '%.2f'
     HoverButtons.Buttons = <>
     HoverButtons.Position = hbLeftFromColumnLeft
+    HTMLSettings.ImageFolder = 'images'
+    HTMLSettings.ImageBaseName = 'img'
     PrintSettings.DateFormat = 'dd/mm/yyyy'
     PrintSettings.Font.Charset = DEFAULT_CHARSET
     PrintSettings.Font.Color = clWindowText
@@ -340,7 +342,7 @@ object FormProcessRent: TFormProcessRent
     SearchFooter.HintHighlight = 'Highlight occurences'
     SearchFooter.MatchCaseCaption = 'Match case'
     SortSettings.DefaultFormat = ssAutomatic
-    Version = '2.3.6.21'
+    Version = '2.3.8.6'
     AutoCreateColumns = True
     AutoRemoveColumns = True
     Columns = <

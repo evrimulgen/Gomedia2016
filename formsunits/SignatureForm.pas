@@ -6,7 +6,8 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, wgssSTU_TLB, ExtCtrls, ActiveX, Math, Jpeg, pngimage;
 
-type TMyPenData = class
+type
+  TMyPenData = class
   public
     rdy: WordBool;
     sw: Byte;
@@ -14,71 +15,72 @@ type TMyPenData = class
     x: Word;
     y: Word;
     Constructor Create(penData: IPenData);
-end;
+  end;
 
 type
   TFormSign = class(TForm)
     Image1: TImage;
-  procedure FormCreate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormDestroy(Sender: TObject);
     procedure Image1Click(Sender: TObject);
   private
     procedure onPenData(ASender: TObject; const pPenData: IPenData);
-    procedure onGetReportException(ASender: TObject; const pException: ITabletEventsException);
+    procedure onGetReportException(ASender: TObject;
+      const pException: ITabletEventsException);
     procedure clearScreen();
-    function tabletToScreen(penData: TMyPenData) : TPoint;
-    function contains(bounds: TRect; point: TPoint) : boolean;
+    function tabletToScreen(penData: TMyPenData): TPoint;
+    function contains(bounds: TRect; point: TPoint): boolean;
     procedure clickAccept();
     procedure clickClear();
     procedure clickCancel();
-    procedure DrawAntialisedLine(Canvas: TCanvas; const AX1, AY1, AX2, AY2: real; const LineColor: TColor);
+    procedure DrawAntialisedLine(Canvas: TCanvas;
+      const AX1, AY1, AX2, AY2: real; const LineColor: TColor);
     procedure saveImage();
     procedure freePoints();
   public
-    TextLines : TStringList;
+    TextLines: TStringList;
     procedure connect(usbDevice: IUsbDevice);
-end;
+  end;
 
-TOnClickButton = procedure() of object;
+  TOnClickButton = procedure() of object;
 
-type TMyButton = class
+type
+  TMyButton = class
   public
-    Bounds : TRect;
-    Text   : String;
-    Click  : TOnClickButton;
-end;
+    bounds: TRect;
+    Text: String;
+    Click: TOnClickButton;
+  end;
 
 var
   FormSign: TFormSign;
   Tablet: TTablet;
   Capability: ICapability;
   Information: IInformation;
-  screenBmp : TBitmap;
-  bitmapData : PSafeArray;
+  screenBmp: TBitmap;
+  bitmapData: PSafeArray;
   Buttons: Array of TMyButton;
-  encodingMode : byte;
-  m_isDown : Integer;
-  points : TList;
-  
+  encodingMode: Byte;
+  m_isDown: Integer;
+  points: TList;
+
 implementation
 
 {$R *.dfm}
 
-
-
 procedure TFormSign.connect(usbDevice: IUsbDevice);
 var
-  errorCode  : IErrorCode;
-  w1, w2, w3 : Integer;
-  x, y, h, w : Integer;
-  h1, h2, h3 : Integer;
-  i,looplist : Integer;
+  errorCode: IErrorCode;
+  w1, w2, w3: Integer;
+  x, y, h, w: Integer;
+  h1, h2, h3: Integer;
+  i, looplist: Integer;
   ProtocolHelper: IProtocolHelper;
-  bArray : Array of Byte;
-  ms : TMemoryStream;
-  useColor : boolean;
-  fontSize : Integer;
+  bArray: Array of Byte;
+  ms: TMemoryStream;
+  useColor: boolean;
+  fontSize: Integer;
 begin
   errorCode := Tablet.usbConnect(usbDevice, True);
   if (errorCode.value = 0) then
@@ -86,8 +88,8 @@ begin
     Capability := Tablet.getCapability();
     Information := Tablet.getInformation();
 
-    Self.AutoSize := true;
-    Image1.Width  := Capability.screenWidth;
+    Self.AutoSize := True;
+    Image1.Width := Capability.screenWidth;
     Image1.Height := Capability.screenHeight;
 
     // Add the delagate that receives pen data.
@@ -98,17 +100,17 @@ begin
     for i := 0 to 2 do
       Buttons[i] := TMyButton.Create;
 
-    if (usbDevice.idProduct <> $000a2) then
+    if (usbDevice.idProduct <> $000A2) then
     begin
       w2 := Capability.screenWidth div 3;
       w3 := Capability.screenWidth div 3;
       w1 := Capability.screenWidth - w2 - w3;
-      y  := Capability.screenHeight * 6 div 7;
-      h  := Capability.screenHeight - y;
+      y := Capability.screenHeight * 6 div 7;
+      h := Capability.screenHeight - y;
 
-      Buttons[0].Bounds := Rect(0, y, w1, y + h);
-      Buttons[1].Bounds := Rect(w1, y, w1 + w2, y + h);
-      Buttons[2].Bounds := Rect(w1 + w2, y, w1 + w2 + w3, y + h);
+      Buttons[0].bounds := Rect(0, y, w1, y + h);
+      Buttons[1].bounds := Rect(w1, y, w1 + w2, y + h);
+      Buttons[2].bounds := Rect(w1 + w2, y, w1 + w2 + w3, y + h);
 
       fontSize := 18;
     end
@@ -124,9 +126,9 @@ begin
       h3 := Capability.screenHeight div 3;
       h1 := Capability.screenHeight - h2 - h3;
 
-      Buttons[0].Bounds := Rect(x, 0, x + w, h1);
-      Buttons[1].Bounds := Rect(x, h1, x + w, h1 + h2);
-      Buttons[2].Bounds := Rect(x, h1 + h2, x + w, h1 + h2 + h3);
+      Buttons[0].bounds := Rect(x, 0, x + w, h1);
+      Buttons[1].bounds := Rect(x, h1, x + w, h1 + h2);
+      Buttons[2].bounds := Rect(x, h1 + h2, x + w, h1 + h2 + h3);
 
       fontSize := 15;
     end;
@@ -139,7 +141,8 @@ begin
     Buttons[1].Click := clickClear;
     Buttons[2].Click := clickCancel;
 
-    useColor := (usbDevice.idProduct = $a3); // Only the STU-520A supports colour!
+    useColor := (usbDevice.idProduct = $A3);
+    // Only the STU-520A supports colour!
 
     // Disable color if the STU-520 bulk driver isn't installed.
     // This isn't necessary, but uploading colour images with out the driver
@@ -173,26 +176,27 @@ begin
     screenBmp.Canvas.Font.Size := fontSize;
 
     with screenBmp.Canvas do
-      begin
-        Brush.Color := clWhite;
-        FillRect(Rect(0, 0, Capability.screenWidth, Capability.screenHeight));
+    begin
+      Brush.Color := clWhite;
+      FillRect(Rect(0, 0, Capability.screenWidth, Capability.screenHeight));
 
-        for i := 0 to 2 do
-          begin
-            if (useColor) then
-            begin
-              Brush.Color := clSilver;
-            end;
-            rectangle(Buttons[i].Bounds);
-            DrawText(Handle, PChar(Buttons[i].Text), Length(Buttons[i].Text), Buttons[i].Bounds, DT_SINGLELINE or DT_CENTER or DT_VCENTER);
-          end;
+      for i := 0 to 2 do
+      begin
+        if (useColor) then
+        begin
+          Brush.Color := clSilver;
+        end;
+        rectangle(Buttons[i].bounds);
+        DrawText(Handle, PChar(Buttons[i].Text), Length(Buttons[i].Text),
+          Buttons[i].bounds, DT_SINGLELINE or DT_CENTER or DT_VCENTER);
+      end;
     end;
 
     screenBmp.Canvas.Font.Size := 10;
-    for looplist := 0 to Self.TextLines.Count-1 do begin
-     screenBmp.Canvas.TextOut(5,5+(15*looplist), TextLines[looplist] );
+    for looplist := 0 to Self.TextLines.Count - 1 do
+    begin
+      screenBmp.Canvas.TextOut(5, 5 + (15 * looplist), TextLines[looplist]);
     end;
-
 
     // Finally, use this bitmap for the window background.
     Image1.Picture.Bitmap := screenBmp;
@@ -214,8 +218,10 @@ begin
       ms.Free;
     end;
 
-    bitmapData := ProtocolHelper.resizeAndFlatten(bArray, 0, 0, screenBmp.Width, screenBmp.Height, Capability.screenWidth, Capability.screenHeight, useColor, Scale_Fit, 0, 0);
-    protocolHelper := nil;
+    bitmapData := ProtocolHelper.resizeAndFlatten(bArray, 0, 0, screenBmp.Width,
+      screenBmp.Height, Capability.screenWidth, Capability.screenHeight,
+      useColor, Scale_Fit, 0, 0);
+    ProtocolHelper := nil;
 
     // Initialize the screen
     clearScreen();
@@ -230,8 +236,8 @@ end;
 
 procedure TFormSign.FormCreate(Sender: TObject);
 begin
-  DoubleBuffered := true;
-  Tablet := TTablet.Create(self);
+  DoubleBuffered := True;
+  Tablet := TTablet.Create(Self);
   m_isDown := 0;
   points := TList.Create;
 
@@ -240,20 +246,20 @@ end;
 
 procedure TFormSign.onPenData(ASender: TObject; const pPenData: IPenData);
 var
-  pt     : TPoint;
-  prev   : TPoint;
-  btn    : Integer;
-  i      : Integer;
-  isDown : boolean;
+  pt: TPoint;
+  prev: TPoint;
+  btn: Integer;
+  i: Integer;
+  isDown: boolean;
 begin
   btn := 0; // will be +ve if the pen is over a button.
-  pt   := tabletToScreen(TMyPenData.Create(pPenData));
+  pt := tabletToScreen(TMyPenData.Create(pPenData));
 
   for i := 0 to 2 do
   begin
-    if (contains(Buttons[i].Bounds, pt)) then
+    if (contains(Buttons[i].bounds, pt)) then
     begin
-      btn := i+1;
+      btn := i + 1;
       Break;
     end;
   end;
@@ -294,7 +300,7 @@ begin
       if (pPenData.sw > 0) then
       begin
         prev := tabletToScreen(TMyPenData(points.Last()));
-        DrawAntialisedLine(Image1.Canvas, prev.X, prev.Y, pt.X, pt.Y, clBlack);
+        DrawAntialisedLine(Image1.Canvas, prev.x, prev.y, pt.x, pt.y, clBlack);
       end;
     end;
 
@@ -341,16 +347,18 @@ begin
   freePoints();
 end;
 
-function TFormSign.tabletToScreen(penData: TMyPenData) : TPoint;
+function TFormSign.tabletToScreen(penData: TMyPenData): TPoint;
 begin
-  Result := Point(penData.x * Capability.screenWidth div Capability.tabletMaxX, penData.y * Capability.screenHeight div Capability.tabletMaxY);
+  Result := point(penData.x * Capability.screenWidth div Capability.tabletMaxX,
+    penData.y * Capability.screenHeight div Capability.tabletMaxY);
 end;
 
-function TFormSign.contains(bounds: TRect; point: TPoint) : boolean;
+function TFormSign.contains(bounds: TRect; point: TPoint): boolean;
 begin
-  if (((point.X >= bounds.Left) and (point.X <= bounds.Right)) and ((point.Y >= bounds.Top) and (point.Y <= bounds.Bottom))) then
+  if (((point.x >= bounds.Left) and (point.x <= bounds.Right)) and
+    ((point.y >= bounds.Top) and (point.y <= bounds.Bottom))) then
   begin
-      Result := true;
+    Result := True;
   end
   else
   begin
@@ -364,7 +372,7 @@ begin
   if (points.Count > 0) then
   begin
     saveImage();
-    Self.ModalResult:=MrOk;
+    Self.ModalResult := MrOk;
     // Self.Close;
   end;
 end;
@@ -380,7 +388,7 @@ end;
 procedure TFormSign.clickCancel();
 begin
   // You probably want to add additional processing here.
-  Self.ModalResult:=MrCancel;
+  Self.ModalResult := MrCancel;
   // Self.Close;
 end;
 
@@ -390,22 +398,23 @@ begin
   freePoints();
 
   try
-  begin
-    tablet.setClearScreen;
-    tablet.disconnect1;
-  end;
+    begin
+      Tablet.setClearScreen;
+      Tablet.disconnect1;
+    end;
   except
-    on e : Exception do
-      ShowMessage(e.Message);
+    on e: Exception do
+      ShowMessage(e.message);
   end;
 end;
 
-procedure TFormSign.onGetReportException(ASender: TObject; const pException: ITabletEventsException);
+procedure TFormSign.onGetReportException(ASender: TObject;
+  const pException: ITabletEventsException);
 begin
   try
     pException.getException;
   except
-    on e : Exception do
+    on e: Exception do
     begin
       Self.Close();
     end;
@@ -414,15 +423,15 @@ end;
 
 Constructor TMyPenData.Create(penData: IPenData);
 begin
-  self.rdy      := penData.rdy;
-  self.sw       := penData.sw;
-  self.pressure := penData.pressure;
-  self.x        := penData.x;
-  self.y        := penData.y;
+  Self.rdy := penData.rdy;
+  Self.sw := penData.sw;
+  Self.pressure := penData.pressure;
+  Self.x := penData.x;
+  Self.y := penData.y;
 end;
 
-
-procedure TFormSign.DrawAntialisedLine(Canvas: TCanvas; const AX1, AY1, AX2, AY2: real; const LineColor: TColor);
+procedure TFormSign.DrawAntialisedLine(Canvas: TCanvas;
+  const AX1, AY1, AX2, AY2: real; const LineColor: TColor);
 
 var
   swapped: boolean;
@@ -435,9 +444,9 @@ var
       resclr := Canvas.Pixels[round(y), round(x)]
     else
       resclr := Canvas.Pixels[round(x), round(y)];
-      resclr := RGB(round(GetRValue(resclr) * (1-c) + GetRValue(LineColor) * c),
-                    round(GetGValue(resclr) * (1-c) + GetGValue(LineColor) * c),
-                    round(GetBValue(resclr) * (1-c) + GetBValue(LineColor) * c));
+    resclr := RGB(round(GetRValue(resclr) * (1 - c) + GetRValue(LineColor) * c),
+      round(GetGValue(resclr) * (1 - c) + GetGValue(LineColor) * c),
+      round(GetBValue(resclr) * (1 - c) + GetBValue(LineColor) * c));
     if swapped then
       Canvas.Pixels[round(y), round(x)] := resclr
     else
@@ -459,9 +468,9 @@ var
   end;
 
 var
-  x1, x2, y1, y2, dx, dy, gradient, xend, yend, xgap, xpxl1, ypxl1,
-  xpxl2, ypxl2, intery: real;
-  x: integer;
+  x1, x2, y1, y2, dx, dy, gradient, xend, yend, xgap, xpxl1, ypxl1, xpxl2,
+    ypxl2, intery: real;
+  x: Integer;
 
 begin
 
@@ -522,10 +531,10 @@ end;
 
 procedure TFormSign.saveImage();
 var
-  i,looplist: Integer;
+  i, looplist: Integer;
   act, prev: TMyPenData;
   bmp: TBitmap;
-  jp:TJpegimage;
+  jp: TJpegimage;
   point1, point2: TPoint;
 begin
 
@@ -546,19 +555,21 @@ begin
 
   for i := 1 to points.Count do
   begin
-    prev := TMyPenData(points[i-1]);
+    prev := TMyPenData(points[i - 1]);
     if (prev.sw <> 0) then
     begin
-      act  := TMyPenData(points[i]);
+      act := TMyPenData(points[i]);
       point1 := tabletToScreen(prev);
       point2 := tabletToScreen(act);
-      DrawAntialisedLine(bmp.Canvas, point1.x, point1.y, point2.x, point2.y, clBlack);
+      DrawAntialisedLine(bmp.Canvas, point1.x, point1.y, point2.x,
+        point2.y, clBlack);
     end;
   end;
 
-    bmp.Canvas.Font.Size := 10;
-    for looplist := 0 to Self.TextLines.Count-1 do begin
-     bmp.Canvas.TextOut(5,5+(15*looplist), TextLines[looplist] );
+  bmp.Canvas.Font.Size := 10;
+  for looplist := 0 to Self.TextLines.Count - 1 do
+  begin
+    bmp.Canvas.TextOut(5, 5 + (15 * looplist), TextLines[looplist]);
   end;
 
   with jp do
@@ -572,37 +583,37 @@ begin
   // RemoteDB.StoreSignBlob('signature.bmp');
 
   bmp.Free;
-  jp.free;
+  jp.Free;
 end;
 
 procedure TFormSign.freePoints();
 var
   i: Integer;
 begin
-for i := 1 to points.Count do
+  for i := 1 to points.Count do
   begin
-    TMyPenData(points[i-1]).Free;
+    TMyPenData(points[i - 1]).Free;
   end;
   points.Clear();
 end;
 
 procedure TFormSign.FormDestroy(Sender: TObject);
 begin
-  tablet.Free;
+  Tablet.Free;
   points.Free;
 end;
 
 procedure TFormSign.Image1Click(Sender: TObject);
 var
-  pt1, pt2 : TPoint;
-  i        : Integer;
+  pt1, pt2: TPoint;
+  i: Integer;
 begin
   pt1 := Mouse.CursorPos;
-  pt2 := Point(pt1.x - Image1.ClientOrigin.x,pt1.y - Image1.ClientOrigin.y);
+  pt2 := point(pt1.x - Image1.ClientOrigin.x, pt1.y - Image1.ClientOrigin.y);
 
   for i := 0 to 2 do
   begin
-    if (contains(Buttons[i].Bounds, pt2)) then
+    if (contains(Buttons[i].bounds, pt2)) then
     begin
       Buttons[i].Click();
       Break;

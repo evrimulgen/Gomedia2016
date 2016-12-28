@@ -16,6 +16,8 @@ object FormCustomerDisplay: TFormCustomerDisplay
   OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  ExplicitWidth = 320
+  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   object PanelAdvert: TPanel

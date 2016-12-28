@@ -106,8 +106,10 @@ begin
   with RemoteDB.netshop_sales do
   begin
     Edit;
-    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher').AsFloat + FieldByName('sales_paid_visa').AsFloat +
-      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_bct').AsFloat));
+    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher')
+      .AsFloat + FieldByName('sales_paid_visa').AsFloat +
+      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_bct')
+      .AsFloat));
     if saldo < 0 then
       FieldByName('sales_paid_cash').AsFloat := Min(0, saldo);
     if saldo > 0 then
@@ -123,8 +125,10 @@ begin
   with RemoteDB.netshop_sales do
   begin
     Edit;
-    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher').AsFloat + FieldByName('sales_paid_visa').AsFloat +
-      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_cash').AsFloat));
+    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher')
+      .AsFloat + FieldByName('sales_paid_visa').AsFloat +
+      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_cash')
+      .AsFloat));
     if saldo < 0 then
       FieldByName('sales_paid_bct').AsFloat := Min(0, saldo);
     if saldo > 0 then
@@ -140,8 +144,10 @@ begin
   with RemoteDB.netshop_sales do
   begin
     Edit;
-    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher').AsFloat + FieldByName('sales_paid_visa').AsFloat +
-      FieldByName('sales_paid_cash').AsFloat + FieldByName('sales_paid_bct').AsFloat));
+    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher')
+      .AsFloat + FieldByName('sales_paid_visa').AsFloat +
+      FieldByName('sales_paid_cash').AsFloat + FieldByName('sales_paid_bct')
+      .AsFloat));
     if saldo < 0 then
       FieldByName('sales_paid_proton').AsFloat := Min(0, saldo);
     if saldo > 0 then
@@ -157,8 +163,10 @@ begin
   with RemoteDB.netshop_sales do
   begin
     Edit;
-    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher').AsFloat + FieldByName('sales_paid_cash').AsFloat +
-      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_bct').AsFloat));
+    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_voucher')
+      .AsFloat + FieldByName('sales_paid_cash').AsFloat +
+      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_bct')
+      .AsFloat));
     if saldo < 0 then
       FieldByName('sales_paid_visa').AsFloat := Min(0, saldo);
     if saldo > 0 then
@@ -174,8 +182,10 @@ begin
   with RemoteDB.netshop_sales do
   begin
     Edit;
-    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_cash').AsFloat + FieldByName('sales_paid_visa').AsFloat +
-      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_bct').AsFloat));
+    saldo := (strtofloat(Initvalue.Caption) - (FieldByName('sales_paid_cash')
+      .AsFloat + FieldByName('sales_paid_visa').AsFloat +
+      FieldByName('sales_paid_proton').AsFloat + FieldByName('sales_paid_bct')
+      .AsFloat));
     if saldo < 0 then
       FieldByName('sales_paid_voucher').AsFloat := Min(0, saldo);
     if saldo > 0 then
@@ -189,12 +199,15 @@ var
   orig, new: string;
 begin
   orig := RemoteDB.netshop_sales.FieldByName('sales_paid_total').asstring;
-  new  := Initvalue.Caption;
+  new := Initvalue.Caption;
   if orig = new then
   begin
     Self.ModalResult := mrOk;
-  end else begin
-    messagedlg('Les nouveaux totaux ne sont pas égaux à la valeur initiale', mtwarning, [mbOk], 0)
+  end
+  else
+  begin
+    messagedlg('Les nouveaux totaux ne sont pas égaux à la valeur initiale',
+      mtwarning, [mbOk], 0)
   end;
 end;
 

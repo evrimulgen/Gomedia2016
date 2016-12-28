@@ -13,9 +13,6 @@ uses
   dxPSCore, dxPSDBBasedXplorer, dxPgsDlg,
   dxPScxCommon, dxPrnDlg, cxGridExportLink,
 
-
-
-
   DBClient, dxPScxGridLnk, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters,
   cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
   cxDBData, dxPrnDev, dxPSGlbl, dxPSUtl, dxPSEngn, dxPrnPg, dxBkgnd, dxWrap,
@@ -138,9 +135,11 @@ var
   FileName: string;
 begin
   CashData.First;
-  FileName := FormatDateTime('DD-MM-YY', CashData.FieldByName('Date').Value) + '-';
+  FileName := FormatDateTime('DD-MM-YY', CashData.FieldByName('Date')
+    .Value) + '-';
   CashData.Last;
-  FileName            := FileName + FormatDateTime('DD-MM-YY', CashData.FieldByName('Date').Value) + '.xls';
+  FileName := FileName + FormatDateTime('DD-MM-YY', CashData.FieldByName('Date')
+    .Value) + '.xls';
   SaveDialog.FileName := FileName;
   if SaveDialog.Execute then
   begin
@@ -202,9 +201,11 @@ end;
 procedure TFormCashRegister.SaveGrid(FileName: string);
 begin
   CashData.First;
-  FileName := FileName + '-' + FormatDateTime('DD-MM-YY', CashData.FieldByName('Date').Value) + '-';
+  FileName := FileName + '-' + FormatDateTime('DD-MM-YY',
+    CashData.FieldByName('Date').Value) + '-';
   CashData.Last;
-  FileName := FileName + FormatDateTime('DD-MM-YY', CashData.FieldByName('Date').Value) + '.xls';
+  FileName := FileName + FormatDateTime('DD-MM-YY', CashData.FieldByName('Date')
+    .Value) + '.xls';
   ExportGridToExcel(FileName, Grid, true, true, true);
 end;
 

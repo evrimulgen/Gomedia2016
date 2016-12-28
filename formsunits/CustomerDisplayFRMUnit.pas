@@ -41,7 +41,8 @@ implementation
 
 procedure TFormCustomerDisplay.FormCreate(Sender: TObject);
 begin
-  if GlobalsUnit.CompanyName <> 'SMARTOYS' then ImageBackgroundSale.Visible:=False;
+  if GlobalsUnit.CompanyName <> 'SMARTOYS' then
+    ImageBackgroundSale.Visible := False;
   JpegListAdvert := TJPEGImageList.Create;
   LabelTotalText.Font.Color := clWhite;
 end;
@@ -62,11 +63,13 @@ var
   aJpegImage: TJpegImage;
 begin
   self.JpegListAdvert.Clear;
-  r := FindFirst((ExtractFilePath(ParamStr(0))) + 'posbank\*.jpg', FaAnyfile, DirInfo);
+  r := FindFirst((ExtractFilePath(ParamStr(0))) + 'posbank\*.jpg',
+    FaAnyfile, DirInfo);
   while r = 0 do
   begin
-    if ((DirInfo.Attr and FaDirectory <> FaDirectory) and (DirInfo.Attr and FaVolumeId <> FaVolumeId)) then
-      Dest  := (ExtractFilePath(ParamStr(0))) + 'posbank\' + DirInfo.Name;
+    if ((DirInfo.Attr and FaDirectory <> FaDirectory) and
+      (DirInfo.Attr and FaVolumeId <> FaVolumeId)) then
+      Dest := (ExtractFilePath(ParamStr(0))) + 'posbank\' + DirInfo.Name;
     DestExt := ExtractFileExt(Dest);
     if DestExt = '.jpg' then
     begin
@@ -87,7 +90,7 @@ begin
   if JpegListAdvert.Count > 0 then
   begin
     aJpeg := TJpegImage.Create;
-    i     := Random(JpegListAdvert.Count);
+    i := Random(JpegListAdvert.Count);
     ImageAdvert.Picture.BitMap.Assign((JpegListAdvert.Items[i]));
     aJpeg.Free;
   end;

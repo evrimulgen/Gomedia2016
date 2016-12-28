@@ -170,7 +170,7 @@ end;
 
 procedure TDebug.SpeedButton1Click(Sender: TObject);
 begin
-  RemoteDB.netshop_repair.Filter   := EditFilter.Text;
+  RemoteDB.netshop_repair.Filter := EditFilter.Text;
   RemoteDB.netshop_repair.Filtered := True;
 end;
 
@@ -184,10 +184,13 @@ begin
   RemoteDB.netshop_stock.First;
   while not RemoteDB.netshop_stock.Eof do
   begin
-    if RemoteDB.Products.FindKey([RemoteDB.netshop_stock.FieldByName('product_model').AsString]) then
+    if RemoteDB.Products.FindKey
+      ([RemoteDB.netshop_stock.FieldByName('product_model').AsString]) then
     begin
 
-    end else begin
+    end
+    else
+    begin
       ShowMessage('Product Not Found');
     end;
     RemoteDB.netshop_stock.Next;
@@ -203,15 +206,17 @@ procedure TDebug.ToolButton1Click(Sender: TObject);
 var
   offset: integer;
 begin
-  offset                          := StrToInt(Target.Text) - StrToInt(Start.Text);
-  SOffset.Text                    := IntToStr(offset);
-  RemoteDB.netshop_sales.Filter   := '(sales_id >= ' + Start.Text + ') and (sales_id < ' + Target.Text + ')';
+  offset := StrToInt(Target.Text) - StrToInt(Start.Text);
+  SOffset.Text := IntToStr(offset);
+  RemoteDB.netshop_sales.Filter := '(sales_id >= ' + Start.Text +
+    ') and (sales_id < ' + Target.Text + ')';
   RemoteDB.netshop_sales.Filtered := True;
   RemoteDB.netshop_sales.First;
   while not RemoteDB.netshop_sales.Eof do
   begin
     RemoteDB.netshop_sales.Edit;
-    RemoteDB.netshop_sales.FieldByName('sales_id').Value := RemoteDB.netshop_sales.FieldByName('sales_id').Value + offset;
+    RemoteDB.netshop_sales.FieldByName('sales_id').Value :=
+      RemoteDB.netshop_sales.FieldByName('sales_id').Value + offset;
     RemoteDB.netshop_sales.Post;
   end;
   RemoteDB.netshop_sales.Filtered := False;
@@ -240,13 +245,15 @@ end;
 
 procedure TDebug.Button5Click(Sender: TObject);
 begin
-  RemoteDB.netshop_items_sold.Filter   := '(items_sold_id >= ' + IsStart.Text + ') and (items_sold_id <= ' + IsTarget.Text + ')';
+  RemoteDB.netshop_items_sold.Filter := '(items_sold_id >= ' + IsStart.Text +
+    ') and (items_sold_id <= ' + IsTarget.Text + ')';
   RemoteDB.netshop_items_sold.Filtered := True;
   RemoteDB.netshop_items_sold.First;
   while not RemoteDB.netshop_items_sold.Eof do
   begin
     RemoteDB.netshop_items_sold.Edit;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').Value := RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').Value +
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').Value :=
+      RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').Value +
       StrToInt(SOffset.Text);
     RemoteDB.netshop_items_sold.Post;
     RemoteDB.netshop_items_sold.Next;

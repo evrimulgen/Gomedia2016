@@ -35,7 +35,9 @@ begin
     if ModalResult = mrCancel then
     begin
       ReportSystem.BaseReport.Abort;
-    end else begin
+    end
+    else
+    begin
       FormClosed := true;
     end; { if }
   end; { with }

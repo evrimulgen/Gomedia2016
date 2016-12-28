@@ -27,6 +27,9 @@ object TransferSuggest: TTransferSuggest
     ExplicitHeight = 486
     object TabSheetSuggest: TTabSheet
       Caption = 'Proposition'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 458
       object cxGridSuggest: TcxGrid
         Left = 0
@@ -84,6 +87,9 @@ object TransferSuggest: TTransferSuggest
     object TabSheetRequest: TTabSheet
       Caption = 'Demande'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 458
       object cxGridRequest: TcxGrid
         Left = 0
@@ -188,8 +194,6 @@ object TransferSuggest: TTransferSuggest
         TabOrder = 0
         ExplicitLeft = 224
         ExplicitTop = 3
-        ExplicitWidth = 121
-        ExplicitHeight = 21
         Width = 579
       end
     end
@@ -414,7 +418,6 @@ object TransferSuggest: TTransferSuggest
     object dxComponentPrinterLink1: TdxGridReportLink
       Active = True
       Component = cxGridSuggest
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -426,8 +429,7 @@ object TransferSuggest: TTransferSuggest
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 42702.610323379630000000
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
+      ReportDocument.CreationDate = 42732.389865150460000000
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
       OptionsView.Footers = False
@@ -452,7 +454,6 @@ object TransferSuggest: TTransferSuggest
     Top = 72
   end
   object dxPSEngineController: TdxPSEngineController
-    Active = True
     PreviewDialogStyle = 'Ribbon'
     Left = 576
     Top = 136

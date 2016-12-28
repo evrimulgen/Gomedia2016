@@ -59,8 +59,8 @@ const
 
   LIBID_COPTRLib: TGUID = '{C9E1AFB0-1172-11D7-83AD-0050DA238ADA}';
 
-  DIID__DCoPtr: TGUID         = '{C9E1AFB1-1172-11D7-83AD-0050DA238ADA}';
-  DIID__DCoPtrEvents: TGUID   = '{C9E1AFB2-1172-11D7-83AD-0050DA238ADA}';
+  DIID__DCoPtr: TGUID = '{C9E1AFB1-1172-11D7-83AD-0050DA238ADA}';
+  DIID__DCoPtrEvents: TGUID = '{C9E1AFB2-1172-11D7-83AD-0050DA238ADA}';
   CLASS_OPOSPOSPrinter: TGUID = '{C9E1AFB3-1172-11D7-83AD-0050DA238ADA}';
 
 type
@@ -68,7 +68,7 @@ type
   // *********************************************************************//
   // Forward declaration of types defined in TypeLibrary
   // *********************************************************************//
-  _DCoPtr       = dispinterface;
+  _DCoPtr = dispinterface;
   _DCoPtrEvents = dispinterface;
 
   // *********************************************************************//
@@ -80,7 +80,7 @@ type
   // *********************************************************************//
   // Declaration of structures, unions and aliases.
   // *********************************************************************//
-  PInteger1    = ^Integer; { * }
+  PInteger1 = ^Integer; { * }
   PWideString1 = ^WideString; { * }
 
   // *********************************************************************//
@@ -93,11 +93,16 @@ type
     procedure AboutBox; dispid - 552;
     function PageModePrint(Control: Integer): Integer; dispid 184;
     function ClearPrintArea: Integer; dispid 183;
-    function UpdateFirmware(const FirmwareFileName: WideString): Integer; dispid 182;
-    function CompareFirmwareVersion(const FirmwareFileName: WideString; var PResult: Integer): Integer; dispid 181;
-    function UpdateStatistics(const StatisticsBuffer: WideString): Integer; dispid 168;
-    function RetrieveStatistics(var StatisticsBuffer: WideString): Integer; dispid 167;
-    function ResetStatistics(const StatisticsBuffer: WideString): Integer; dispid 166;
+    function UpdateFirmware(const FirmwareFileName: WideString): Integer;
+      dispid 182;
+    function CompareFirmwareVersion(const FirmwareFileName: WideString;
+      var PResult: Integer): Integer; dispid 181;
+    function UpdateStatistics(const StatisticsBuffer: WideString): Integer;
+      dispid 168;
+    function RetrieveStatistics(var StatisticsBuffer: WideString): Integer;
+      dispid 167;
+    function ResetStatistics(const StatisticsBuffer: WideString): Integer;
+      dispid 166;
     function MarkFeed(Type_: Integer): Integer; dispid 159;
     function ChangePrintSide(Side: Integer): Integer; dispid 158;
     function ReleaseDevice: Integer; dispid 157;
@@ -105,25 +110,39 @@ type
     function SOProcessID: Integer; dispid 155;
     procedure SOStatusUpdate(Data: Integer); dispid 154;
     procedure SOOutputComplete(OutputID: Integer); dispid 153;
-    procedure SOError(ResultCode: Integer; ResultCodeExtended: Integer; ErrorLocus: Integer; var pErrorResponse: Integer); dispid 152;
-    procedure SODirectIO(EventNumber: Integer; var pData: Integer; var pString: WideString); dispid 151;
-    function SetLogo(Location: Integer; const Data: WideString): Integer; dispid 150;
-    function SetBitmap(BitmapNumber: Integer; Station: Integer; const FileName: WideString; Width: Integer; Alignment: Integer): Integer; dispid 149;
-    function ValidateData(Station: Integer; const Data: WideString): Integer; dispid 148;
-    function TransactionPrint(Station: Integer; Control: Integer): Integer; dispid 147;
-    function PrintBitmap(Station: Integer; const FileName: WideString; Width: Integer; Alignment: Integer): Integer; dispid 146;
-    function PrintBarCode(Station: Integer; const Data: WideString; Symbology: Integer; Height: Integer; Width: Integer; Alignment: Integer;
+    procedure SOError(ResultCode: Integer; ResultCodeExtended: Integer;
+      ErrorLocus: Integer; var pErrorResponse: Integer); dispid 152;
+    procedure SODirectIO(EventNumber: Integer; var pData: Integer;
+      var pString: WideString); dispid 151;
+    function SetLogo(Location: Integer; const Data: WideString): Integer;
+      dispid 150;
+    function SetBitmap(BitmapNumber: Integer; Station: Integer;
+      const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
+      dispid 149;
+    function ValidateData(Station: Integer; const Data: WideString): Integer;
+      dispid 148;
+    function TransactionPrint(Station: Integer; Control: Integer): Integer;
+      dispid 147;
+    function PrintBitmap(Station: Integer; const FileName: WideString;
+      Width: Integer; Alignment: Integer): Integer; dispid 146;
+    function PrintBarCode(Station: Integer; const Data: WideString;
+      Symbology: Integer; Height: Integer; Width: Integer; Alignment: Integer;
       TextPosition: Integer): Integer; dispid 145;
-    function RotatePrint(Station: Integer; Rotation: Integer): Integer; dispid 144;
+    function RotatePrint(Station: Integer; Rotation: Integer): Integer;
+      dispid 144;
     function CutPaper(Percentage: Integer): Integer; dispid 143;
     function EndRemoval: Integer; dispid 142;
     function BeginRemoval(Timeout: Integer): Integer; dispid 141;
     function EndInsertion: Integer; dispid 140;
     function BeginInsertion(Timeout: Integer): Integer; dispid 139;
-    function PrintImmediate(Station: Integer; const Data: WideString): Integer; dispid 138;
-    function PrintTwoNormal(Stations: Integer; const Data1: WideString; const Data2: WideString): Integer; dispid 137;
-    function PrintNormal(Station: Integer; const Data: WideString): Integer; dispid 136;
-    function DirectIO(Command: Integer; var pData: Integer; var pString: WideString): Integer; dispid 135;
+    function PrintImmediate(Station: Integer; const Data: WideString): Integer;
+      dispid 138;
+    function PrintTwoNormal(Stations: Integer; const Data1: WideString;
+      const Data2: WideString): Integer; dispid 137;
+    function PrintNormal(Station: Integer; const Data: WideString): Integer;
+      dispid 136;
+    function DirectIO(Command: Integer; var pData: Integer;
+      var pString: WideString): Integer; dispid 135;
     function ClearOutput: Integer; dispid 134;
     function CheckHealth(Level: Integer): Integer; dispid 133;
     function Release: Integer; dispid 132;
@@ -285,8 +304,10 @@ type
   // *********************************************************************//
   _DCoPtrEvents = dispinterface
     ['{C9E1AFB2-1172-11D7-83AD-0050DA238ADA}']
-    procedure DirectIOEvent(EventNumber: Integer; var pData: Integer; var pString: WideString); dispid 1;
-    procedure ErrorEvent(ResultCode: Integer; ResultCodeExtended: Integer; ErrorLocus: Integer; var pErrorResponse: Integer); dispid 2;
+    procedure DirectIOEvent(EventNumber: Integer; var pData: Integer;
+      var pString: WideString); dispid 1;
+    procedure ErrorEvent(ResultCode: Integer; ResultCodeExtended: Integer;
+      ErrorLocus: Integer; var pErrorResponse: Integer); dispid 2;
     procedure OutputCompleteEvent(OutputID: Integer); dispid 3;
     procedure StatusUpdateEvent(Data: Integer); dispid 4;
   end;
@@ -300,11 +321,16 @@ type
   // Event   Interface: _DCoPtrEvents
   // TypeFlags        : (34) CanCreate Control
   // *********************************************************************//
-  TOPOSPOSPrinterDirectIOEvent = procedure(ASender: TObject; EventNumber: Integer; var pData: Integer; var pString: WideString) of object;
-  TOPOSPOSPrinterErrorEvent = procedure(ASender: TObject; ResultCode: Integer; ResultCodeExtended: Integer; ErrorLocus: Integer; var pErrorResponse: Integer)
+  TOPOSPOSPrinterDirectIOEvent = procedure(ASender: TObject;
+    EventNumber: Integer; var pData: Integer; var pString: WideString)
     of object;
-  TOPOSPOSPrinterOutputCompleteEvent = procedure(ASender: TObject; OutputID: Integer) of object;
-  TOPOSPOSPrinterStatusUpdateEvent   = procedure(ASender: TObject; Data: Integer) of object;
+  TOPOSPOSPrinterErrorEvent = procedure(ASender: TObject; ResultCode: Integer;
+    ResultCodeExtended: Integer; ErrorLocus: Integer;
+    var pErrorResponse: Integer) of object;
+  TOPOSPOSPrinterOutputCompleteEvent = procedure(ASender: TObject;
+    OutputID: Integer) of object;
+  TOPOSPOSPrinterStatusUpdateEvent = procedure(ASender: TObject; Data: Integer)
+    of object;
 
   TOPOSPOSPrinter = class(TOleControl)
   private
@@ -322,7 +348,8 @@ type
     function PageModePrint(Control: Integer): Integer;
     function ClearPrintArea: Integer;
     function UpdateFirmware(const FirmwareFileName: WideString): Integer;
-    function CompareFirmwareVersion(const FirmwareFileName: WideString; var PResult: Integer): Integer;
+    function CompareFirmwareVersion(const FirmwareFileName: WideString;
+      var PResult: Integer): Integer;
     function UpdateStatistics(const StatisticsBuffer: WideString): Integer;
     function RetrieveStatistics(var StatisticsBuffer: WideString): Integer;
     function ResetStatistics(const StatisticsBuffer: WideString): Integer;
@@ -333,14 +360,19 @@ type
     function SOProcessID: Integer;
     procedure SOStatusUpdate(Data: Integer);
     procedure SOOutputComplete(OutputID: Integer);
-    procedure SOError(ResultCode: Integer; ResultCodeExtended: Integer; ErrorLocus: Integer; var pErrorResponse: Integer);
-    procedure SODirectIO(EventNumber: Integer; var pData: Integer; var pString: WideString);
+    procedure SOError(ResultCode: Integer; ResultCodeExtended: Integer;
+      ErrorLocus: Integer; var pErrorResponse: Integer);
+    procedure SODirectIO(EventNumber: Integer; var pData: Integer;
+      var pString: WideString);
     function SetLogo(Location: Integer; const Data: WideString): Integer;
-    function SetBitmap(BitmapNumber: Integer; Station: Integer; const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
+    function SetBitmap(BitmapNumber: Integer; Station: Integer;
+      const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
     function ValidateData(Station: Integer; const Data: WideString): Integer;
     function TransactionPrint(Station: Integer; Control: Integer): Integer;
-    function PrintBitmap(Station: Integer; const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
-    function PrintBarCode(Station: Integer; const Data: WideString; Symbology: Integer; Height: Integer; Width: Integer; Alignment: Integer;
+    function PrintBitmap(Station: Integer; const FileName: WideString;
+      Width: Integer; Alignment: Integer): Integer;
+    function PrintBarCode(Station: Integer; const Data: WideString;
+      Symbology: Integer; Height: Integer; Width: Integer; Alignment: Integer;
       TextPosition: Integer): Integer;
     function RotatePrint(Station: Integer; Rotation: Integer): Integer;
     function CutPaper(Percentage: Integer): Integer;
@@ -349,9 +381,11 @@ type
     function EndInsertion: Integer;
     function BeginInsertion(Timeout: Integer): Integer;
     function PrintImmediate(Station: Integer; const Data: WideString): Integer;
-    function PrintTwoNormal(Stations: Integer; const Data1: WideString; const Data2: WideString): Integer;
+    function PrintTwoNormal(Stations: Integer; const Data1: WideString;
+      const Data2: WideString): Integer;
     function PrintNormal(Station: Integer; const Data: WideString): Integer;
-    function DirectIO(Command: Integer; var pData: Integer; var pString: WideString): Integer;
+    function DirectIO(Command: Integer; var pData: Integer;
+      var pString: WideString): Integer;
     function ClearOutput: Integer;
     function CheckHealth(Level: Integer): Integer;
     function Release: Integer;
@@ -362,156 +396,306 @@ type
     property DefaultInterface: _DCoPtr read GetControlInterface;
   published
     property Anchors;
-    property DeviceName: WideString index 15 read GetWideStringProp write SetWideStringProp stored False;
-    property ServiceObjectVersion: Integer index 13 read GetIntegerProp write SetIntegerProp stored False;
-    property CapCharacterSet: Integer index 16 read GetIntegerProp write SetIntegerProp stored False;
-    property CapConcurrentJrnRec: WordBool index 17 read GetWordBoolProp write SetWordBoolProp stored False;
-    property DeviceDescription: WideString index 14 read GetWideStringProp write SetWideStringProp stored False;
-    property CapJrn2Color: WordBool index 23 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapTransaction: WordBool index 21 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapConcurrentJrnSlp: WordBool index 18 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnPresent: WordBool index 22 read GetWordBoolProp write SetWordBoolProp stored False;
-    property ErrorString: WideString index 71 read GetWideStringProp write SetWideStringProp stored False;
-    property RotateSpecial: Integer index 75 read GetIntegerProp write SetIntegerProp stored False;
-    property FlagWhenIdle: WordBool index 72 read GetWordBoolProp write SetWordBoolProp stored False;
-    property ErrorStation: Integer index 70 read GetIntegerProp write SetIntegerProp stored False;
-    property JrnLineSpacing: Integer index 79 read GetIntegerProp write SetIntegerProp stored False;
-    property JrnLineChars: Integer index 76 read GetIntegerProp write SetIntegerProp stored False;
-    property JrnLineCharsList: WideString index 77 read GetWideStringProp write SetWideStringProp stored False;
-    property JrnLineWidth: Integer index 80 read GetIntegerProp write SetIntegerProp stored False;
-    property JrnLineHeight: Integer index 78 read GetIntegerProp write SetIntegerProp stored False;
-    property State: Integer index 9 read GetIntegerProp write SetIntegerProp stored False;
-    property ResultCode: Integer index 7 read GetIntegerProp write SetIntegerProp stored False;
-    property ControlObjectDescription: WideString index 10 read GetWideStringProp write SetWideStringProp stored False;
-    property ControlObjectVersion: Integer index 11 read GetIntegerProp write SetIntegerProp stored False;
-    property ResultCodeExtended: Integer index 8 read GetIntegerProp write SetIntegerProp stored False;
-    property CapRecDwide: WordBool index 38 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecBold: WordBool index 36 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecDwideDhigh: WordBool index 39 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecEmptySensor: WordBool index 40 read GetWordBoolProp write SetWordBoolProp stored False;
-    property ServiceObjectDescription: WideString index 12 read GetWideStringProp write SetWideStringProp stored False;
-    property DeviceEnabled: WordBool index 4 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapConcurrentRecSlp: WordBool index 19 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapCoverSensor: WordBool index 20 read GetWordBoolProp write SetWordBoolProp stored False;
-    property FreezeEvents: WordBool index 5 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CheckHealthText: WideString index 2 read GetWideStringProp write SetWideStringProp stored False;
-    property OutputID: Integer index 6 read GetIntegerProp write SetIntegerProp stored False;
-    property Claimed: WordBool index 3 read GetWordBoolProp write SetWordBoolProp stored False;
-    property BinaryConversion: Integer index 1 read GetIntegerProp write SetIntegerProp stored False;
-    property MapMode: Integer index 74 read GetIntegerProp write SetIntegerProp stored False;
-    property CapSlpEmptySensor: WordBool index 58 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpFullslip: WordBool index 50 read GetWordBoolProp write SetWordBoolProp stored False;
-    property AsyncMode: WordBool index 65 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CharacterSet: Integer index 66 read GetIntegerProp write SetIntegerProp stored False;
-    property CapSlp2Color: WordBool index 51 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecUnderline: WordBool index 48 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpBarCode: WordBool index 52 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpPresent: WordBool index 49 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecStamp: WordBool index 47 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpNearEndSensor: WordBool index 61 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpItalic: WordBool index 59 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpRight90: WordBool index 62 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpRotate180: WordBool index 63 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpLeft90: WordBool index 60 read GetWordBoolProp write SetWordBoolProp stored False;
-    property ErrorLevel: Integer index 69 read GetIntegerProp write SetIntegerProp stored False;
-    property CharacterSetList: WideString index 67 read GetWideStringProp write SetWideStringProp stored False;
-    property CapSlpUnderline: WordBool index 64 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CoverOpen: WordBool index 68 read GetWordBoolProp write SetWordBoolProp stored False;
-    property RecNearEnd: WordBool index 91 read GetWordBoolProp write SetWordBoolProp stored False;
-    property RecSidewaysMaxLines: Integer index 92 read GetIntegerProp write SetIntegerProp stored False;
-    property JrnNearEnd: WordBool index 83 read GetWordBoolProp write SetWordBoolProp stored False;
-    property RecLineSpacing: Integer index 87 read GetIntegerProp write SetIntegerProp stored False;
-    property RecEmpty: WordBool index 90 read GetWordBoolProp write SetWordBoolProp stored False;
-    property JrnLetterQuality: WordBool index 81 read GetWordBoolProp write SetWordBoolProp stored False;
-    property FontTypefaceList: WideString index 73 read GetWideStringProp write SetWideStringProp stored False;
-    property RecLineWidth: Integer index 88 read GetIntegerProp write SetIntegerProp stored False;
-    property RecLetterQuality: WordBool index 89 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpDhigh: WordBool index 55 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpBitmap: WordBool index 53 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpDwide: WordBool index 56 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpDwideDhigh: WordBool index 57 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpBold: WordBool index 54 read GetWordBoolProp write SetWordBoolProp stored False;
-    property RecLineChars: Integer index 84 read GetIntegerProp write SetIntegerProp stored False;
-    property JrnEmpty: WordBool index 82 read GetWordBoolProp write SetWordBoolProp stored False;
-    property RecLineCharsList: WideString index 85 read GetWideStringProp write SetWideStringProp stored False;
-    property RecLineHeight: Integer index 86 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpEmpty: WordBool index 102 read GetWordBoolProp write SetWordBoolProp stored False;
-    property SlpLetterQuality: WordBool index 101 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CartridgeNotify: Integer index 120 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpNearEnd: WordBool index 103 read GetWordBoolProp write SetWordBoolProp stored False;
-    property SlpMaxLines: Integer index 106 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpLineWidth: Integer index 100 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpLineChars: Integer index 96 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpSidewaysMaxChars: Integer index 105 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpSidewaysMaxLines: Integer index 104 read GetIntegerProp write SetIntegerProp stored False;
-    property PageModeArea: WideString index 174 read GetWideStringProp write SetWideStringProp stored False;
-    property CapUpdateFirmware: WordBool index 170 read GetWordBoolProp write SetWordBoolProp stored False;
-    property PageModeStation: Integer index 179 read GetIntegerProp write SetIntegerProp stored False;
-    property PageModePrintDirection: Integer index 178 read GetIntegerProp write SetIntegerProp stored False;
-    property CapCompareFirmwareVersion: WordBool index 169 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecPageMode: WordBool index 172 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapConcurrentPageMode: WordBool index 171 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapUpdateStatistics: WordBool index 165 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapSlpPageMode: WordBool index 173 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnCartridgeSensor: Integer index 113 read GetIntegerProp write SetIntegerProp stored False;
-    property CapPowerReporting: Integer index 109 read GetIntegerProp write SetIntegerProp stored False;
-    property CapSlpCartridgeSensor: Integer index 118 read GetIntegerProp write SetIntegerProp stored False;
-    property CapRecMarkFeed: Integer index 117 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpBarCodeRotationList: WideString index 108 read GetWideStringProp write SetWideStringProp stored False;
-    property PowerState: Integer index 111 read GetIntegerProp write SetIntegerProp stored False;
-    property PowerNotify: Integer index 110 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpLinesNearEndToEnd: Integer index 107 read GetIntegerProp write SetIntegerProp stored False;
-    property OpenResult: Integer index 112 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpLineSpacing: Integer index 99 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpLineHeight: Integer index 98 read GetIntegerProp write SetIntegerProp stored False;
-    property RecBarCodeRotationList: WideString index 95 read GetWideStringProp write SetWideStringProp stored False;
-    property RecLinesToPaperCut: Integer index 94 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpLineCharsList: WideString index 97 read GetWideStringProp write SetWideStringProp stored False;
-    property CapJrnColor: Integer index 114 read GetIntegerProp write SetIntegerProp stored False;
-    property CapSlpColor: Integer index 119 read GetIntegerProp write SetIntegerProp stored False;
-    property CapRecColor: Integer index 116 read GetIntegerProp write SetIntegerProp stored False;
-    property CapRecCartridgeSensor: Integer index 115 read GetIntegerProp write SetIntegerProp stored False;
-    property PageModeVerticalPosition: Integer index 180 read GetIntegerProp write SetIntegerProp stored False;
-    property CapJrnBold: WordBool index 24 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnDhigh: WordBool index 25 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnEmptySensor: WordBool index 28 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnDwide: WordBool index 26 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnItalic: WordBool index 29 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecPresent: WordBool index 32 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnNearEndSensor: WordBool index 30 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRec2Color: WordBool index 33 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecBarCode: WordBool index 34 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecRight90: WordBool index 45 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecRotate180: WordBool index 46 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecDhigh: WordBool index 37 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecItalic: WordBool index 41 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecPapercut: WordBool index 44 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecBitmap: WordBool index 35 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnDwideDhigh: WordBool index 27 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecLeft90: WordBool index 42 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapRecNearEndSensor: WordBool index 43 read GetWordBoolProp write SetWordBoolProp stored False;
-    property JrnCartridgeState: Integer index 121 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpCartridgeState: Integer index 126 read GetIntegerProp write SetIntegerProp stored False;
-    property RecCartridgeState: Integer index 123 read GetIntegerProp write SetIntegerProp stored False;
-    property JrnCurrentCartridge: Integer index 122 read GetIntegerProp write SetIntegerProp stored False;
-    property SlpPrintSide: Integer index 125 read GetIntegerProp write SetIntegerProp stored False;
-    property PageModeHorizontalPosition: Integer index 176 read GetIntegerProp write SetIntegerProp stored False;
-    property PageModeDescriptor: Integer index 175 read GetIntegerProp write SetIntegerProp stored False;
-    property RecCurrentCartridge: Integer index 124 read GetIntegerProp write SetIntegerProp stored False;
-    property PageModePrintArea: WideString index 177 read GetWideStringProp write SetWideStringProp stored False;
-    property MapCharacterSet: WordBool index 161 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapMapCharacterSet: WordBool index 160 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CapJrnUnderline: WordBool index 31 read GetWordBoolProp write SetWordBoolProp stored False;
-    property RecSidewaysMaxChars: Integer index 93 read GetIntegerProp write SetIntegerProp stored False;
-    property CapSlpBothSidesPrint: WordBool index 128 read GetWordBoolProp write SetWordBoolProp stored False;
-    property RecBitmapRotationList: WideString index 162 read GetWideStringProp write SetWideStringProp stored False;
-    property SlpCurrentCartridge: Integer index 127 read GetIntegerProp write SetIntegerProp stored False;
-    property CapStatisticsReporting: WordBool index 164 read GetWordBoolProp write SetWordBoolProp stored False;
-    property SlpBitmapRotationList: WideString index 163 read GetWideStringProp write SetWideStringProp stored False;
-    property OnDirectIOEvent: TOPOSPOSPrinterDirectIOEvent read FOnDirectIOEvent write FOnDirectIOEvent;
-    property OnErrorEvent: TOPOSPOSPrinterErrorEvent read FOnErrorEvent write FOnErrorEvent;
-    property OnOutputCompleteEvent: TOPOSPOSPrinterOutputCompleteEvent read FOnOutputCompleteEvent write FOnOutputCompleteEvent;
-    property OnStatusUpdateEvent: TOPOSPOSPrinterStatusUpdateEvent read FOnStatusUpdateEvent write FOnStatusUpdateEvent;
+    property DeviceName: WideString index 15 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property ServiceObjectVersion: Integer index 13 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapCharacterSet: Integer index 16 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapConcurrentJrnRec: WordBool index 17 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property DeviceDescription: WideString index 14 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property CapJrn2Color: WordBool index 23 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapTransaction: WordBool index 21 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapConcurrentJrnSlp: WordBool index 18 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnPresent: WordBool index 22 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property ErrorString: WideString index 71 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property RotateSpecial: Integer index 75 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property FlagWhenIdle: WordBool index 72 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property ErrorStation: Integer index 70 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property JrnLineSpacing: Integer index 79 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property JrnLineChars: Integer index 76 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property JrnLineCharsList: WideString index 77 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property JrnLineWidth: Integer index 80 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property JrnLineHeight: Integer index 78 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property State: Integer index 9 read GetIntegerProp write SetIntegerProp
+      stored False;
+    property ResultCode: Integer index 7 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property ControlObjectDescription: WideString index 10
+      read GetWideStringProp write SetWideStringProp stored False;
+    property ControlObjectVersion: Integer index 11 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property ResultCodeExtended: Integer index 8 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapRecDwide: WordBool index 38 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecBold: WordBool index 36 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecDwideDhigh: WordBool index 39 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecEmptySensor: WordBool index 40 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property ServiceObjectDescription: WideString index 12
+      read GetWideStringProp write SetWideStringProp stored False;
+    property DeviceEnabled: WordBool index 4 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapConcurrentRecSlp: WordBool index 19 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapCoverSensor: WordBool index 20 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property FreezeEvents: WordBool index 5 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CheckHealthText: WideString index 2 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property OutputID: Integer index 6 read GetIntegerProp write SetIntegerProp
+      stored False;
+    property Claimed: WordBool index 3 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property BinaryConversion: Integer index 1 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property MapMode: Integer index 74 read GetIntegerProp write SetIntegerProp
+      stored False;
+    property CapSlpEmptySensor: WordBool index 58 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpFullslip: WordBool index 50 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property AsyncMode: WordBool index 65 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CharacterSet: Integer index 66 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapSlp2Color: WordBool index 51 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecUnderline: WordBool index 48 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpBarCode: WordBool index 52 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpPresent: WordBool index 49 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecStamp: WordBool index 47 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpNearEndSensor: WordBool index 61 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpItalic: WordBool index 59 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpRight90: WordBool index 62 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpRotate180: WordBool index 63 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpLeft90: WordBool index 60 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property ErrorLevel: Integer index 69 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CharacterSetList: WideString index 67 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property CapSlpUnderline: WordBool index 64 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CoverOpen: WordBool index 68 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property RecNearEnd: WordBool index 91 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property RecSidewaysMaxLines: Integer index 92 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property JrnNearEnd: WordBool index 83 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property RecLineSpacing: Integer index 87 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property RecEmpty: WordBool index 90 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property JrnLetterQuality: WordBool index 81 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property FontTypefaceList: WideString index 73 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property RecLineWidth: Integer index 88 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property RecLetterQuality: WordBool index 89 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpDhigh: WordBool index 55 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpBitmap: WordBool index 53 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpDwide: WordBool index 56 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpDwideDhigh: WordBool index 57 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpBold: WordBool index 54 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property RecLineChars: Integer index 84 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property JrnEmpty: WordBool index 82 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property RecLineCharsList: WideString index 85 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property RecLineHeight: Integer index 86 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpEmpty: WordBool index 102 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property SlpLetterQuality: WordBool index 101 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CartridgeNotify: Integer index 120 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpNearEnd: WordBool index 103 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property SlpMaxLines: Integer index 106 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpLineWidth: Integer index 100 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpLineChars: Integer index 96 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpSidewaysMaxChars: Integer index 105 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpSidewaysMaxLines: Integer index 104 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property PageModeArea: WideString index 174 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property CapUpdateFirmware: WordBool index 170 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property PageModeStation: Integer index 179 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property PageModePrintDirection: Integer index 178 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapCompareFirmwareVersion: WordBool index 169 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecPageMode: WordBool index 172 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapConcurrentPageMode: WordBool index 171 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapUpdateStatistics: WordBool index 165 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapSlpPageMode: WordBool index 173 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnCartridgeSensor: Integer index 113 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapPowerReporting: Integer index 109 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapSlpCartridgeSensor: Integer index 118 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapRecMarkFeed: Integer index 117 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpBarCodeRotationList: WideString index 108 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property PowerState: Integer index 111 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property PowerNotify: Integer index 110 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpLinesNearEndToEnd: Integer index 107 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property OpenResult: Integer index 112 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpLineSpacing: Integer index 99 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpLineHeight: Integer index 98 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property RecBarCodeRotationList: WideString index 95 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property RecLinesToPaperCut: Integer index 94 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpLineCharsList: WideString index 97 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property CapJrnColor: Integer index 114 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapSlpColor: Integer index 119 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapRecColor: Integer index 116 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapRecCartridgeSensor: Integer index 115 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property PageModeVerticalPosition: Integer index 180 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapJrnBold: WordBool index 24 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnDhigh: WordBool index 25 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnEmptySensor: WordBool index 28 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnDwide: WordBool index 26 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnItalic: WordBool index 29 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecPresent: WordBool index 32 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnNearEndSensor: WordBool index 30 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRec2Color: WordBool index 33 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecBarCode: WordBool index 34 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecRight90: WordBool index 45 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecRotate180: WordBool index 46 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecDhigh: WordBool index 37 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecItalic: WordBool index 41 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecPapercut: WordBool index 44 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecBitmap: WordBool index 35 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnDwideDhigh: WordBool index 27 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecLeft90: WordBool index 42 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapRecNearEndSensor: WordBool index 43 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property JrnCartridgeState: Integer index 121 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpCartridgeState: Integer index 126 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property RecCartridgeState: Integer index 123 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property JrnCurrentCartridge: Integer index 122 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property SlpPrintSide: Integer index 125 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property PageModeHorizontalPosition: Integer index 176 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property PageModeDescriptor: Integer index 175 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property RecCurrentCartridge: Integer index 124 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property PageModePrintArea: WideString index 177 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property MapCharacterSet: WordBool index 161 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapMapCharacterSet: WordBool index 160 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CapJrnUnderline: WordBool index 31 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property RecSidewaysMaxChars: Integer index 93 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapSlpBothSidesPrint: WordBool index 128 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property RecBitmapRotationList: WideString index 162 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property SlpCurrentCartridge: Integer index 127 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property CapStatisticsReporting: WordBool index 164 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property SlpBitmapRotationList: WideString index 163 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property OnDirectIOEvent: TOPOSPOSPrinterDirectIOEvent read FOnDirectIOEvent
+      write FOnDirectIOEvent;
+    property OnErrorEvent: TOPOSPOSPrinterErrorEvent read FOnErrorEvent
+      write FOnErrorEvent;
+    property OnOutputCompleteEvent: TOPOSPOSPrinterOutputCompleteEvent
+      read FOnOutputCompleteEvent write FOnOutputCompleteEvent;
+    property OnStatusUpdateEvent: TOPOSPOSPrinterStatusUpdateEvent
+      read FOnStatusUpdateEvent write FOnStatusUpdateEvent;
   end;
 
 procedure Register;
@@ -527,12 +711,17 @@ uses ComObj;
 
 procedure TOPOSPOSPrinter.InitControlData;
 const
-  CEventDispIDs: array [0 .. 3] of DWORD = ($00000001, $00000002, $00000003, $00000004);
-  CControlData: TControlData2 = (ClassID: '{C9E1AFB3-1172-11D7-83AD-0050DA238ADA}'; EventIID: '{C9E1AFB2-1172-11D7-83AD-0050DA238ADA}'; EventCount: 4;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004005 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 3] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004);
+  CControlData: TControlData2 = (ClassID
+    : '{C9E1AFB3-1172-11D7-83AD-0050DA238ADA}';
+    EventIID: '{C9E1AFB2-1172-11D7-83AD-0050DA238ADA}'; EventCount: 4;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004005 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnDirectIOEvent) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnDirectIOEvent) -
+    Cardinal(Self);
 end;
 
 procedure TOPOSPOSPrinter.CreateControl;
@@ -568,27 +757,32 @@ begin
   Result := DefaultInterface.ClearPrintArea;
 end;
 
-function TOPOSPOSPrinter.UpdateFirmware(const FirmwareFileName: WideString): Integer;
+function TOPOSPOSPrinter.UpdateFirmware(const FirmwareFileName
+  : WideString): Integer;
 begin
   Result := DefaultInterface.UpdateFirmware(FirmwareFileName);
 end;
 
-function TOPOSPOSPrinter.CompareFirmwareVersion(const FirmwareFileName: WideString; var PResult: Integer): Integer;
+function TOPOSPOSPrinter.CompareFirmwareVersion(const FirmwareFileName
+  : WideString; var PResult: Integer): Integer;
 begin
   Result := DefaultInterface.CompareFirmwareVersion(FirmwareFileName, Result);
 end;
 
-function TOPOSPOSPrinter.UpdateStatistics(const StatisticsBuffer: WideString): Integer;
+function TOPOSPOSPrinter.UpdateStatistics(const StatisticsBuffer
+  : WideString): Integer;
 begin
   Result := DefaultInterface.UpdateStatistics(StatisticsBuffer);
 end;
 
-function TOPOSPOSPrinter.RetrieveStatistics(var StatisticsBuffer: WideString): Integer;
+function TOPOSPOSPrinter.RetrieveStatistics(var StatisticsBuffer
+  : WideString): Integer;
 begin
   Result := DefaultInterface.RetrieveStatistics(StatisticsBuffer);
 end;
 
-function TOPOSPOSPrinter.ResetStatistics(const StatisticsBuffer: WideString): Integer;
+function TOPOSPOSPrinter.ResetStatistics(const StatisticsBuffer
+  : WideString): Integer;
 begin
   Result := DefaultInterface.ResetStatistics(StatisticsBuffer);
 end;
@@ -628,48 +822,61 @@ begin
   DefaultInterface.SOOutputComplete(OutputID);
 end;
 
-procedure TOPOSPOSPrinter.SOError(ResultCode: Integer; ResultCodeExtended: Integer; ErrorLocus: Integer; var pErrorResponse: Integer);
+procedure TOPOSPOSPrinter.SOError(ResultCode: Integer;
+  ResultCodeExtended: Integer; ErrorLocus: Integer;
+  var pErrorResponse: Integer);
 begin
-  DefaultInterface.SOError(ResultCode, ResultCodeExtended, ErrorLocus, pErrorResponse);
+  DefaultInterface.SOError(ResultCode, ResultCodeExtended, ErrorLocus,
+    pErrorResponse);
 end;
 
-procedure TOPOSPOSPrinter.SODirectIO(EventNumber: Integer; var pData: Integer; var pString: WideString);
+procedure TOPOSPOSPrinter.SODirectIO(EventNumber: Integer; var pData: Integer;
+  var pString: WideString);
 begin
   DefaultInterface.SODirectIO(EventNumber, pData, pString);
 end;
 
-function TOPOSPOSPrinter.SetLogo(Location: Integer; const Data: WideString): Integer;
+function TOPOSPOSPrinter.SetLogo(Location: Integer;
+  const Data: WideString): Integer;
 begin
   Result := DefaultInterface.SetLogo(Location, Data);
 end;
 
-function TOPOSPOSPrinter.SetBitmap(BitmapNumber: Integer; Station: Integer; const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
+function TOPOSPOSPrinter.SetBitmap(BitmapNumber: Integer; Station: Integer;
+  const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
 begin
-  Result := DefaultInterface.SetBitmap(BitmapNumber, Station, FileName, Width, Alignment);
+  Result := DefaultInterface.SetBitmap(BitmapNumber, Station, FileName, Width,
+    Alignment);
 end;
 
-function TOPOSPOSPrinter.ValidateData(Station: Integer; const Data: WideString): Integer;
+function TOPOSPOSPrinter.ValidateData(Station: Integer;
+  const Data: WideString): Integer;
 begin
   Result := DefaultInterface.ValidateData(Station, Data);
 end;
 
-function TOPOSPOSPrinter.TransactionPrint(Station: Integer; Control: Integer): Integer;
+function TOPOSPOSPrinter.TransactionPrint(Station: Integer;
+  Control: Integer): Integer;
 begin
   Result := DefaultInterface.TransactionPrint(Station, Control);
 end;
 
-function TOPOSPOSPrinter.PrintBitmap(Station: Integer; const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
+function TOPOSPOSPrinter.PrintBitmap(Station: Integer;
+  const FileName: WideString; Width: Integer; Alignment: Integer): Integer;
 begin
   Result := DefaultInterface.PrintBitmap(Station, FileName, Width, Alignment);
 end;
 
-function TOPOSPOSPrinter.PrintBarCode(Station: Integer; const Data: WideString; Symbology: Integer; Height: Integer; Width: Integer; Alignment: Integer;
+function TOPOSPOSPrinter.PrintBarCode(Station: Integer; const Data: WideString;
+  Symbology: Integer; Height: Integer; Width: Integer; Alignment: Integer;
   TextPosition: Integer): Integer;
 begin
-  Result := DefaultInterface.PrintBarCode(Station, Data, Symbology, Height, Width, Alignment, TextPosition);
+  Result := DefaultInterface.PrintBarCode(Station, Data, Symbology, Height,
+    Width, Alignment, TextPosition);
 end;
 
-function TOPOSPOSPrinter.RotatePrint(Station: Integer; Rotation: Integer): Integer;
+function TOPOSPOSPrinter.RotatePrint(Station: Integer;
+  Rotation: Integer): Integer;
 begin
   Result := DefaultInterface.RotatePrint(Station, Rotation);
 end;
@@ -699,22 +906,26 @@ begin
   Result := DefaultInterface.BeginInsertion(Timeout);
 end;
 
-function TOPOSPOSPrinter.PrintImmediate(Station: Integer; const Data: WideString): Integer;
+function TOPOSPOSPrinter.PrintImmediate(Station: Integer;
+  const Data: WideString): Integer;
 begin
   Result := DefaultInterface.PrintImmediate(Station, Data);
 end;
 
-function TOPOSPOSPrinter.PrintTwoNormal(Stations: Integer; const Data1: WideString; const Data2: WideString): Integer;
+function TOPOSPOSPrinter.PrintTwoNormal(Stations: Integer;
+  const Data1: WideString; const Data2: WideString): Integer;
 begin
   Result := DefaultInterface.PrintTwoNormal(Stations, Data1, Data2);
 end;
 
-function TOPOSPOSPrinter.PrintNormal(Station: Integer; const Data: WideString): Integer;
+function TOPOSPOSPrinter.PrintNormal(Station: Integer;
+  const Data: WideString): Integer;
 begin
   Result := DefaultInterface.PrintNormal(Station, Data);
 end;
 
-function TOPOSPOSPrinter.DirectIO(Command: Integer; var pData: Integer; var pString: WideString): Integer;
+function TOPOSPOSPrinter.DirectIO(Command: Integer; var pData: Integer;
+  var pString: WideString): Integer;
 begin
   Result := DefaultInterface.DirectIO(Command, pData, pString);
 end;

@@ -65,7 +65,8 @@ end;
 
 procedure TFormCheckLib.Button1Click(Sender: TObject);
 begin
-  CloneDS.Locate('machine_id;slot_id', Vararrayof([EditMachine.Text, EditSlot.Text]), [locaseinsensitive]);
+  CloneDS.Locate('machine_id;slot_id',
+    Vararrayof([EditMachine.Text, EditSlot.Text]), [locaseinsensitive]);
 end;
 
 procedure TFormCheckLib.Button2Click(Sender: TObject);
@@ -80,10 +81,13 @@ var
 begin
   if not CloneDS.Eof then
   begin
-    RemoteDB.Products.Locate('products_model', CloneDS.FieldByName('model').AsString, [locaseinsensitive]);
-    USBCDMoveOpen        := TUSBCDMoveOpen.Create(CloneDS.FieldByName('machine_id').Value, CloneDS.FieldByName('slot_id').Value);
-    MessageLabel.Caption := 'Le CD ' + RemoteDB.CDSProDescFR.FieldByName('products_name').AsString + ' du client ' + CloneDS.FieldByName('customer_nbr')
-      .AsString + ' est-il dans le caroussel ?';
+    RemoteDB.Products.Locate('products_model', CloneDS.FieldByName('model')
+      .AsString, [locaseinsensitive]);
+    USBCDMoveOpen := TUSBCDMoveOpen.Create(CloneDS.FieldByName('machine_id')
+      .Value, CloneDS.FieldByName('slot_id').Value);
+    MessageLabel.Caption := 'Le CD ' + RemoteDB.CDSProDescFR.FieldByName
+      ('products_name').AsString + ' du client ' + CloneDS.FieldByName
+      ('customer_nbr').AsString + ' est-il dans le caroussel ?';
     Slot := CloneDS.FieldByName('slot_id').Value;
     if length(floattostr(Slot)) = 1 then
     begin
@@ -97,7 +101,9 @@ begin
     begin
       LedSlot.Text := floattostr(Slot);
     end;
-  end else begin
+  end
+  else
+  begin
     Application.ProcessMessages;
     Self.Close;
   end;

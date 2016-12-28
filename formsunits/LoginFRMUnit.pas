@@ -14,7 +14,8 @@ uses
   WideStrings, DBClient,
   DBXDynalink, DBXMySQL, DCPcrypt2, DCPblockciphers,
   DCPrijndael, DCPsha1, DCPdes, catalog, XMLDoc, SOAPHTTPClient, DCPBase64,
-  cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, DbxDevartMySql,IdHTTP,uLkJSON;
+  cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, DbxDevartMySql, IdHTTP,
+  uLkJSON;
 
 type
   TLoginForm = class(TForm)
@@ -62,7 +63,8 @@ type
     procedure btnEditClick(Sender: TObject);
   private
     procedure SaveREgistry;
-    procedure Decrypt(const aKey: AnsiString; aPVector: Pointer; const aInData: AnsiString; var aOutData: AnsiString);
+    procedure Decrypt(const aKey: AnsiString; aPVector: Pointer;
+      const aInData: AnsiString; var aOutData: AnsiString);
     function DecryptData(Data: string; aKey, AIv: AnsiString): string;
     function Base64DecodeBytes(Input: TBytes): TBytes;
     function DecryptStringDES(ASource: string): string;
@@ -78,9 +80,9 @@ var
   LoginForm: TLoginForm;
 
 const
-  LoginRegPath    = 'software\adaptec\2010\login';
+  LoginRegPath = 'software\adaptec\2010\login';
   UserDataRegPath = 'software\adaptec\2010\userdata';
-  Debug           = False;
+  Debug = False;
 
 implementation
 
@@ -89,33 +91,33 @@ uses clientDMunit, GlobalsUnit, EncdDecd;
 {$R *.dfm}
 
 var
-  Days,temp: string;
+  Days, temp: string;
 
 const
 
   USERDBLogin = 'TFH2D3kRiU63M1Q535vc';
-  USERDBPwd   = 'eo6DWURt4GK5/dagsmZCAw==';
+  USERDBPwd = 'eo6DWURt4GK5/dagsmZCAw==';
 
-  USERDBHost  = 'WFEUDYlqzuPnK7GxZ2u4';
-  USERDBName  = 'SBuinQU8sw==';
+  USERDBHost = 'WFEUDYlqzuPnK7GxZ2u4';
+  USERDBName = 'SBuinQU8sw==';
 
 procedure TLoginForm.FormCreate(Sender: TObject);
 var
   LoginReg: Tregistry;
   DecodeString: string;
 begin
-  EditCompany.Text   := JvComputerInfo.Identification.RegisteredCompany;
-  EditComputer.Text  := JvComputerInfo.Identification.LocalComputerName;
-  EditUser.Text      := JvComputerInfo.Identification.RegisteredOwner;
+  EditCompany.Text := JvComputerInfo.Identification.RegisteredCompany;
+  EditComputer.Text := JvComputerInfo.Identification.LocalComputerName;
+  EditUser.Text := JvComputerInfo.Identification.RegisteredOwner;
   EditWindowsID.Text := JvComputerInfo.Os.ProductID;
-  EditSystem.Text    := JvComputerInfo.Os.ProductName;
+  EditSystem.Text := JvComputerInfo.Os.ProductName;
 
   StatusCheckTimer(nil);
 
   DataEncoder.InitStr('smartoys.be', TDCP_sha1);
   LocalEncoder.InitStr('Video_Games', TDCP_sha1);
 
-  LoginReg         := Tregistry.Create;
+  LoginReg := Tregistry.Create;
   LoginReg.RootKey := HKEY_CURRENT_USER;
   try
     if True then
@@ -132,9 +134,11 @@ begin
         if LoginReg.ReadBool('saved') = True then
         begin
           DataEncoder.Reset;
-          EditLogin.Text := DataEncoder.DecryptString(LoginReg.ReadString('login'));
+          EditLogin.Text := DataEncoder.DecryptString
+            (LoginReg.ReadString('login'));
           DataEncoder.Reset;
-          EditPwd.Text := DataEncoder.DecryptString(LoginReg.ReadString('pass'));
+          EditPwd.Text := DataEncoder.DecryptString
+            (LoginReg.ReadString('pass'));
         end;
         CheckEditSaveToReg.Checked := LoginReg.ReadBool('saved');
       end;
@@ -177,43 +181,45 @@ begin
     DBLocalLed.Status := True
   else
     DBLocalLed.Status := False;
-  CanLoadLed.Status   := DBServLed.Status or DBLocalLed.Status;
-  ButLaunch.Enabled   := CanLoadLed.Status;
+  CanLoadLed.Status := DBServLed.Status or DBLocalLed.Status;
+  ButLaunch.Enabled := CanLoadLed.Status;
 end;
 
 procedure TLoginForm.BitBtn1Click(Sender: TObject);
 var
-  ReceivedUserPass, ReceivedHost, ReceivedLogin, ReceivedPwd, ReceivedDB, ReceivedID, ReceivedURL, ReceivedGroupID, ReceivedFTPHost, ReceivedFTPUser,
+  ReceivedUserPass, ReceivedHost, ReceivedLogin, ReceivedPwd, ReceivedDB,
+    ReceivedID, ReceivedURL, ReceivedGroupID, ReceivedFTPHost, ReceivedFTPUser,
     ReceivedFTPPwd, ReceivedFTPDir, ReceivedUserLevel, ReceivedUserType: string;
 
-  ReceivedSmsAccount,ReceivedSmsLogin,ReceivedSmsPassword,ReceivedSmsSender, ReceivedCLDLogin,ReceivedCLDCLDPass:string;
+  ReceivedSmsAccount, ReceivedSmsLogin, ReceivedSmsPassword, ReceivedSmsSender,
+    ReceivedCLDLogin, ReceivedCLDCLDPass: string;
 
   UserDataReg: Tregistry;
   LoginReg: Tregistry;
   LoginSuccess: Boolean;
-  IdHTTP1 : TIdHttp;
-  json : TlkJSONcustomlist;
+  IdHTTP1: TIdHttp;
+  json: TlkJSONcustomlist;
   SQLDataset: TSQLDataSet;
-  test,str, localpass, regpass: string;
+  test, str, localpass, regpass: string;
 begin
   MessageLabel.Caption := '';
-  LoginSuccess         := False;
+  LoginSuccess := False;
 
   if Debug then
   begin
-    DBUSER        := 'smartdebug';
-    DBPWD         := 'villalaan';
-    DBHOSTNAME    := 'localhost';
-    DBNAME        := 'c_smartoys';
-    WEBURL        := 'WWW.LOCAL.COM';
+    DBUSER := 'smartdebug';
+    DBPWD := 'villalaan';
+    DBHOSTNAME := 'localhost';
+    DBNAME := 'c_smartoys';
+    WEBURL := 'WWW.LOCAL.COM';
     CONNECTEDSHOP := 1;
-    SHOPGROUPID   := 1;
-    FTPHost       := 'localhost';
-    FTPUser       := 'root';
-    FTPPwd        := 'triadpass';
-    FTPDir        := '/';
-    DBOKTOLAUNCH  := True;
-    ModalResult   := mrYES;
+    SHOPGROUPID := 1;
+    FTPHost := 'localhost';
+    FTPUser := 'root';
+    FTPPwd := 'triadpass';
+    FTPDir := '/';
+    DBOKTOLAUNCH := True;
+    ModalResult := mrYES;
     Exit;
   end;
 
@@ -223,26 +229,31 @@ begin
     /// Constantes Codées en Hard
     ///
     ///
-    LoginReg         := Tregistry.Create;
+    LoginReg := Tregistry.Create;
     LoginReg.RootKey := HKEY_CURRENT_USER;
     LoginReg.OpenKey(LoginRegPath, True);
 
     DataEncoder.Reset;
-    SQLConnectionLogin.Params.Values['User_Name'] := DataEncoder.DecryptString(USERDBLogin);
+    SQLConnectionLogin.Params.Values['User_Name'] :=
+      DataEncoder.DecryptString(USERDBLogin);
 
     DataEncoder.Reset;
-    SQLConnectionLogin.Params.Values['Password'] := DataEncoder.DecryptString(USERDBPwd);
+    SQLConnectionLogin.Params.Values['Password'] :=
+      DataEncoder.DecryptString(USERDBPwd);
 
     DataEncoder.Reset;
-    SQLConnectionLogin.Params.Values['HostName'] := DataEncoder.DecryptString(USERDBHost);
+    SQLConnectionLogin.Params.Values['HostName'] :=
+      DataEncoder.DecryptString(USERDBHost);
     // howmessage(SQLConnectionLogin.Params.Values['HostName']);
     DataEncoder.Reset;
-    SQLConnectionLogin.Params.Values['Database'] := DataEncoder.DecryptString(USERDBName);
+    SQLConnectionLogin.Params.Values['Database'] :=
+      DataEncoder.DecryptString(USERDBName);
     // wMessage( SQLConnectionLogin.Params.Values['Password'])  ;
 
-    SQLConnectionLogin.Params.Values['UseUnicode']  := 'False';
+    SQLConnectionLogin.Params.Values['UseUnicode'] := 'False';
 
-    SQLConnectionLogin.Params.Values['Custom String'] := 'Protocol=SSL;Compress=True';
+    SQLConnectionLogin.Params.Values['Custom String'] :=
+      'Protocol=SSL;Compress=True';
 
     SQLConnectionLogin.Params.Values['SSLCACert'] := 'ca-cert.pem';
 
@@ -259,11 +270,13 @@ begin
     if SQLDataSetLogin.FieldByName('field3').Value <> Null then
     begin
       DataEncoder.Reset;
-      ReceivedUserPass := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field3').AsString);
+      ReceivedUserPass := DataEncoder.DecryptString
+        (SQLDataSetLogin.FieldByName('field3').AsString);
       if EditPwd.Text = ReceivedUserPass then
       begin
         DataEncoder.Reset;
-        LoginReg.WriteString('PrinterMode', DataEncoder.EncryptString(IntToStr(Round(Now))));
+        LoginReg.WriteString('PrinterMode',
+          DataEncoder.EncryptString(IntToStr(Round(Now))));
       end;
     end;
     LoginReg.CloseKey;
@@ -276,7 +289,7 @@ begin
     /// /
     /// / Read Login Data In the Registry
     /// /
-    UserDataReg         := Tregistry.Create;
+    UserDataReg := Tregistry.Create;
     UserDataReg.RootKey := HKEY_CURRENT_USER;
     try
       if UserDataReg.OpenKey(UserDataRegPath, False) then
@@ -284,32 +297,43 @@ begin
         if UserDataReg.ReadString('Userdata2') = EditLogin.Text then
         begin
           LocalEncoder.Reset;
-          regpass :=  (UserDataReg.ReadString('Userdata3'));
+          regpass := (UserDataReg.ReadString('Userdata3'));
           localpass := LocalEncoder.DecryptString(regpass);
           if localpass = EditPwd.Text then
           begin
             LocalEncoder.Reset;
-            ReceivedHost := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata4')));
+            ReceivedHost := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata4')));
             LocalEncoder.Reset;
-            ReceivedLogin := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata5')));
+            ReceivedLogin := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata5')));
             LocalEncoder.Reset;
-            ReceivedPwd := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata6')));
+            ReceivedPwd := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata6')));
             LocalEncoder.Reset;
-            ReceivedDB := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata7')));
+            ReceivedDB := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata7')));
             LocalEncoder.Reset;
-            ReceivedID := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata8')));
+            ReceivedID := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata8')));
             LocalEncoder.Reset;
-            ReceivedURL := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata9')));
+            ReceivedURL := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata9')));
             LocalEncoder.Reset;
-            ReceivedGroupID := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata10')));
+            ReceivedGroupID := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata10')));
             LocalEncoder.Reset;
-            ReceivedFTPHost := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata11')));
+            ReceivedFTPHost := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata11')));
             LocalEncoder.Reset;
-            ReceivedFTPUser := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata12')));
+            ReceivedFTPUser := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata12')));
             LocalEncoder.Reset;
-            ReceivedFTPPwd := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata13')));
+            ReceivedFTPPwd := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata13')));
             LocalEncoder.Reset;
-            ReceivedFTPDir := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata14')));
+            ReceivedFTPDir := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata14')));
 
             ReceivedUserLevel := Trim(UserDataReg.ReadString('Userdata15'));
             // 0 regular
@@ -318,28 +342,40 @@ begin
             ReceivedUserType := Trim(UserDataReg.ReadString('Userdata16'));
 
             LocalEncoder.Reset;
-            ReceivedSmsAccount := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata17')));
+            ReceivedSmsAccount := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata17')));
             LocalEncoder.Reset;
-            ReceivedSmsLogin := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata18')));
+            ReceivedSmsLogin := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata18')));
             LocalEncoder.Reset;
-            ReceivedSmsPassword := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata19')));
+            ReceivedSmsPassword := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata19')));
 
             LocalEncoder.Reset;
-            ReceivedCLDLogin := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata20')));
+            ReceivedCLDLogin := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata20')));
             LocalEncoder.Reset;
-            ReceivedCLDCLDPass := LocalEncoder.DecryptString((UserDataReg.ReadString('Userdata21')));
+            ReceivedCLDCLDPass := LocalEncoder.DecryptString
+              ((UserDataReg.ReadString('Userdata21')));
 
             ReceivedSmsSender := Trim((UserDataReg.ReadString('Userdata22')));
 
-            LoginSuccess     := True;
-          end else begin
+            LoginSuccess := True;
+          end
+          else
+          begin
             MessageLabel.Caption := 'Mauvaise combinaison login / môt de passe';
           end;
-        end else begin
+        end
+        else
+        begin
           MessageLabel.Caption := 'Mauvaise combinaison login / môt de passe';
         end;
-      end else begin
-        MessageLabel.Caption := 'Registre corrompu, veuillez ré-installer le programme';
+      end
+      else
+      begin
+        MessageLabel.Caption :=
+          'Registre corrompu, veuillez ré-installer le programme';
       end;
     finally
       UserDataReg.CloseKey;
@@ -347,7 +383,8 @@ begin
     end;
   end;
 
-  if (DBServLed.Status = True) and ( (Round(Now) > strtoint(Days) + 7) or (DBLocalLed.Status = False) or (cxchckbxForceRefresh.Checked) ) then
+  if (DBServLed.Status = True) and ((Round(Now) > strtoint(Days) + 7) or
+    (DBLocalLed.Status = False) or (cxchckbxForceRefresh.Checked)) then
   begin
 
     SQLConnectionLogin.Open;
@@ -356,60 +393,79 @@ begin
     if SQLDataSetLogin.FieldByName('field3').Value <> Null then
     begin
       DataEncoder.Reset;
-      ReceivedUserPass := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field3').AsString);
+      ReceivedUserPass := DataEncoder.DecryptString
+        (SQLDataSetLogin.FieldByName('field3').AsString);
       if EditPwd.Text = ReceivedUserPass then
       begin
         DataEncoder.Reset;
-        ReceivedHost := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field4').AsString);
+        ReceivedHost := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field4').AsString);
         DataEncoder.Reset;
-        ReceivedLogin := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field5').AsString);
+        ReceivedLogin := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field5').AsString);
         DataEncoder.Reset;
-        ReceivedPwd := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field6').AsString);
+        ReceivedPwd := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field6').AsString);
         DataEncoder.Reset;
-        ReceivedDB := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field7').AsString);
+        ReceivedDB := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field7').AsString);
         DataEncoder.Reset;
-        ReceivedID := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field8').AsString);
+        ReceivedID := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field8').AsString);
         DataEncoder.Reset;
-        ReceivedURL := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field9').AsString);
+        ReceivedURL := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field9').AsString);
         DataEncoder.Reset;
-        ReceivedGroupID := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field10').AsString);
+        ReceivedGroupID := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field10').AsString);
         DataEncoder.Reset;
-        ReceivedFTPHost := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field11').AsString);
+        ReceivedFTPHost := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field11').AsString);
         DataEncoder.Reset;
-        ReceivedFTPUser := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field12').AsString);
+        ReceivedFTPUser := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field12').AsString);
         DataEncoder.Reset;
-        ReceivedFTPPwd := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field13').AsString);
+        ReceivedFTPPwd := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field13').AsString);
         DataEncoder.Reset;
-        ReceivedFTPDir := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('field14').AsString);
+        ReceivedFTPDir := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('field14').AsString);
 
-        ReceivedUserLevel := Trim((SQLDataSetLogin.FieldByName('field15').AsString));
-        ReceivedUserType  := Trim((SQLDataSetLogin.FieldByName('field16').AsString));
+        ReceivedUserLevel :=
+          Trim((SQLDataSetLogin.FieldByName('field15').AsString));
+        ReceivedUserType :=
+          Trim((SQLDataSetLogin.FieldByName('field16').AsString));
 
         DataEncoder.Reset;
-        ReceivedSmsAccount := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('SmsAccount').AsString);
+        ReceivedSmsAccount := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('SmsAccount').AsString);
 
         DataEncoder.Reset;
-        ReceivedSmsLogin := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('SmsLogin').AsString);
+        ReceivedSmsLogin := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('SmsLogin').AsString);
 
         DataEncoder.Reset;
-        ReceivedSmsPassword := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('SmsPassword').AsString);
+        ReceivedSmsPassword := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('SmsPassword').AsString);
 
-        ReceivedSmsSender := Trim(SQLDataSetLogin.FieldByName('SmsSender').AsString);
+        ReceivedSmsSender := Trim(SQLDataSetLogin.FieldByName('SmsSender')
+          .AsString);
 
         DataEncoder.Reset;
-        ReceivedCLDLogin := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('CLDLogin').AsString);
+        ReceivedCLDLogin := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('CLDLogin').AsString);
 
         DataEncoder.Reset;
-        ReceivedCLDCLDPass := DataEncoder.DecryptString(SQLDataSetLogin.FieldByName('CLDPass').AsString);
+        ReceivedCLDCLDPass := DataEncoder.DecryptString
+          (SQLDataSetLogin.FieldByName('CLDPass').AsString);
 
-
-        LoginSuccess      := True;
+        LoginSuccess := True;
         SQLDataSetLogin.Close;
         SQLConnectionLogin.Close;
         /// /
         /// / Save Retreived Data In the Registry
         /// /
-        UserDataReg         := Tregistry.Create;
+        UserDataReg := Tregistry.Create;
         UserDataReg.RootKey := HKEY_CURRENT_USER;
         try
           UserDataReg.OpenKey(UserDataRegPath, True);
@@ -418,41 +474,57 @@ begin
           localpass := LocalEncoder.EncryptString((ReceivedUserPass));
           UserDataReg.WriteString('Userdata3', localpass);
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata4', LocalEncoder.EncryptString((ReceivedHost)));
+          UserDataReg.WriteString('Userdata4',
+            LocalEncoder.EncryptString((ReceivedHost)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata5', LocalEncoder.EncryptString((ReceivedLogin)));
+          UserDataReg.WriteString('Userdata5',
+            LocalEncoder.EncryptString((ReceivedLogin)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata6', LocalEncoder.EncryptString((ReceivedPwd)));
+          UserDataReg.WriteString('Userdata6',
+            LocalEncoder.EncryptString((ReceivedPwd)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata7', LocalEncoder.EncryptString((ReceivedDB)));
+          UserDataReg.WriteString('Userdata7',
+            LocalEncoder.EncryptString((ReceivedDB)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata8', LocalEncoder.EncryptString((ReceivedID)));
+          UserDataReg.WriteString('Userdata8',
+            LocalEncoder.EncryptString((ReceivedID)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata9', LocalEncoder.EncryptString((ReceivedURL)));
+          UserDataReg.WriteString('Userdata9',
+            LocalEncoder.EncryptString((ReceivedURL)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata10', LocalEncoder.EncryptString((ReceivedGroupID)));
+          UserDataReg.WriteString('Userdata10',
+            LocalEncoder.EncryptString((ReceivedGroupID)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata11', LocalEncoder.EncryptString((ReceivedFTPHost)));
+          UserDataReg.WriteString('Userdata11',
+            LocalEncoder.EncryptString((ReceivedFTPHost)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata12', LocalEncoder.EncryptString((ReceivedFTPUser)));
+          UserDataReg.WriteString('Userdata12',
+            LocalEncoder.EncryptString((ReceivedFTPUser)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata13', LocalEncoder.EncryptString((ReceivedFTPPwd)));
+          UserDataReg.WriteString('Userdata13',
+            LocalEncoder.EncryptString((ReceivedFTPPwd)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata14', LocalEncoder.EncryptString((ReceivedFTPDir)));
+          UserDataReg.WriteString('Userdata14',
+            LocalEncoder.EncryptString((ReceivedFTPDir)));
           LocalEncoder.Reset;
 
           UserDataReg.WriteString('Userdata15', ReceivedUserLevel);
           UserDataReg.WriteString('Userdata16', ReceivedUserType);
 
-          UserDataReg.WriteString('Userdata17', LocalEncoder.EncryptString((ReceivedSmsAccount)));
+          UserDataReg.WriteString('Userdata17',
+            LocalEncoder.EncryptString((ReceivedSmsAccount)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata18', LocalEncoder.EncryptString((ReceivedSmsLogin)));
+          UserDataReg.WriteString('Userdata18',
+            LocalEncoder.EncryptString((ReceivedSmsLogin)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata19', LocalEncoder.EncryptString((ReceivedSmsPassword)));
+          UserDataReg.WriteString('Userdata19',
+            LocalEncoder.EncryptString((ReceivedSmsPassword)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata20', LocalEncoder.EncryptString((ReceivedCLDLogin)));
+          UserDataReg.WriteString('Userdata20',
+            LocalEncoder.EncryptString((ReceivedCLDLogin)));
           LocalEncoder.Reset;
-          UserDataReg.WriteString('Userdata21', LocalEncoder.EncryptString((ReceivedCLDCLDPass)));
+          UserDataReg.WriteString('Userdata21',
+            LocalEncoder.EncryptString((ReceivedCLDCLDPass)));
           LocalEncoder.Reset;
           UserDataReg.WriteString('Userdata22', ReceivedSmsSender);
           LocalEncoder.Reset;
@@ -460,88 +532,111 @@ begin
           UserDataReg.CloseKey;
           UserDataReg.Free;
         end;
-      end else begin
+      end
+      else
+      begin
         MessageLabel.Caption := 'Mauvaise combinaison login / môt de passe';
         SQLDataSetLogin.Close;
         SQLConnectionLogin.Close;
       end;
-    end else begin
+    end
+    else
+    begin
       MessageLabel.Caption := 'Mauvaise combinaison login / môt de passe';
       SQLDataSetLogin.Close;
       SQLConnectionLogin.Close;
     end;
   end;
 
-  if LoginSuccess then str:='1' else str:='0';
+  if LoginSuccess then
+    str := '1'
+  else
+    str := '0';
 
-
-  IdHTTP1 :=  TIdHTTP.Create(self);
-  IdHTTP1.AllowCookies:= True;
-  SQLDataset               := TSQLDataSet.Create(nil);
+  IdHTTP1 := TIdHttp.Create(self);
+  IdHTTP1.AllowCookies := True;
+  SQLDataset := TSQLDataSet.Create(nil);
   try
-  try
-  json := TlkJSON.ParseText(IdHTTP1.Get('http://ipinfo.io/json')) as TlkJSONobject;
-  SQLDataset.SQLConnection := SQLConnectionLogin;
-  SQLConnectionLogin.Open;
-  SQLDataset.CommandText := 'INSERT INTO `logins`(`clientdate`,`user`, `success`, `ip`, `hostname`, `city`, `region`, `country`, `loc`, `org`, `postal`, `company`, `computer`, `windowsid`)';
-  SQLDataset.CommandText := SQLDataset.CommandText + ' VALUES ('+QuotedStr(FormatDateTime('yyyy-mm-dd hh:mm:ss',now))+','+QuotedStr(EditLogin.Text)+','+str+','+QuotedStr(json.Field['ip'].Value)+','+QuotedStr(json.Field['hostname'].Value)+','+QuotedStr(json.Field['city'].Value)+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(json.Field['region'].Value)+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(json.Field['country'].Value)+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(json.Field['loc'].Value)+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr('')+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(GlobalsUnit.Version)+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(EditCompany.Text)+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(EditComputer.Text)+',';
-  SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr(EditWindowsID.Text)+')';
-  SQLDataset.ExecSQL(False);
-  except
-  end
+    try
+      json := TlkJSON.ParseText(IdHTTP1.Get('http://ipinfo.io/json'))
+        as TlkJSONobject;
+      SQLDataset.SQLConnection := SQLConnectionLogin;
+      SQLConnectionLogin.Open;
+      SQLDataset.CommandText :=
+        'INSERT INTO `logins`(`clientdate`,`user`, `success`, `ip`, `hostname`, `city`, `region`, `country`, `loc`, `org`, `postal`, `company`, `computer`, `windowsid`)';
+      SQLDataset.CommandText := SQLDataset.CommandText + ' VALUES (' +
+        QuotedStr(FormatDateTime('yyyy-mm-dd hh:mm:ss', Now)) + ',' +
+        QuotedStr(EditLogin.Text) + ',' + str + ',' +
+        QuotedStr(json.Field['ip'].Value) + ',' +
+        QuotedStr(json.Field['hostname'].Value) + ',' +
+        QuotedStr(json.Field['city'].Value) + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText +
+        QuotedStr(json.Field['region'].Value) + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText +
+        QuotedStr(json.Field['country'].Value) + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText +
+        QuotedStr(json.Field['loc'].Value) + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText + QuotedStr('') + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText +
+        QuotedStr(GlobalsUnit.Version) + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText +
+        QuotedStr(EditCompany.Text) + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText +
+        QuotedStr(EditComputer.Text) + ',';
+      SQLDataset.CommandText := SQLDataset.CommandText +
+        QuotedStr(EditWindowsID.Text) + ')';
+      SQLDataset.ExecSQL(False);
+    except
+    end
   finally
-     IdHTTP1.Free;
-     SQLDataset.Close;
-     SQLConnectionLogin.Close;
-     SQLDataset.Free;
+    IdHTTP1.Free;
+    SQLDataset.Close;
+    SQLConnectionLogin.Close;
+    SQLDataset.Free;
   end;
 
   if LoginSuccess then
   begin
     SaveREgistry;
-    DBUSER              := ReceivedLogin;
-    DBPWD               := ReceivedPwd;
-    DBHOSTNAME          := ReceivedHost;
-    DBNAME              := ReceivedDB;
-    WEBURL              := ReceivedURL;
-    CONNECTEDSHOP       := strtoint(ReceivedID);
-    UserLevel           := strtoint(ReceivedUserLevel);
-    UserType            := strtoint(ReceivedUserType);
-    SHOPGROUPID         := strtoint(ReceivedGroupID);
-    FTPConnection.Host  := ReceivedFTPHost;
-    FTPConnection.Dir   := ReceivedFTPDir;
+    DBUSER := ReceivedLogin;
+    DBPWD := ReceivedPwd;
+    DBHOSTNAME := ReceivedHost;
+    DBNAME := ReceivedDB;
+    WEBURL := ReceivedURL;
+    CONNECTEDSHOP := strtoint(ReceivedID);
+    UserLevel := strtoint(ReceivedUserLevel);
+    UserType := strtoint(ReceivedUserType);
+    SHOPGROUPID := strtoint(ReceivedGroupID);
+    FTPConnection.Host := ReceivedFTPHost;
+    FTPConnection.Dir := ReceivedFTPDir;
     FTPConnection.Login := ReceivedFTPUser;
-    FTPConnection.Pass  := ReceivedFTPPwd;
-    FTPHost             := ReceivedFTPHost;
-    FTPUser             := ReceivedFTPUser;
-    FTPPwd              := ReceivedFTPPwd;
-    FTPDir              := ReceivedFTPDir;
-    SmsAccountOVH       := ReceivedSmsAccount;
-    SmsLoginOVH         := ReceivedSmsLogin;
-    SmsPasswordOVH      := ReceivedSmsPassword;
-    SmsSenderOVH        := ReceivedSmsSender;
-    CLDLogin            := ReceivedCLDLogin;
-    CLDPass             := ReceivedCLDCLDPass;
-    DBOKTOLAUNCH        := True;
-    ModalResult         := mrYES;
-  end else begin
-    ShowMessage('Impossible lancer Gomedia, veuillez vérifier votre connection internet ou contacter Smartoys SA afin de vérifier votre compte');
+    FTPConnection.Pass := ReceivedFTPPwd;
+    FTPHost := ReceivedFTPHost;
+    FTPUser := ReceivedFTPUser;
+    FTPPwd := ReceivedFTPPwd;
+    FTPDir := ReceivedFTPDir;
+    SmsAccountOVH := ReceivedSmsAccount;
+    SmsLoginOVH := ReceivedSmsLogin;
+    SmsPasswordOVH := ReceivedSmsPassword;
+    SmsSenderOVH := ReceivedSmsSender;
+    CLDLogin := ReceivedCLDLogin;
+    CLDPass := ReceivedCLDCLDPass;
+    DBOKTOLAUNCH := True;
+    ModalResult := mrYES;
+  end
+  else
+  begin
+    ShowMessage
+      ('Impossible lancer Gomedia, veuillez vérifier votre connection internet ou contacter Smartoys SA afin de vérifier votre compte');
   end;
 end;
 
 procedure TLoginForm.btnEditClick(Sender: TObject);
 begin
- EditLogin.Properties.ReadOnly:=False;
- EditPwd.Properties.ReadOnly:=False;
- CheckEditSaveToReg.Properties.ReadOnly:=False;
- cxchckbxForceRefresh.Properties.ReadOnly := False;
+  EditLogin.Properties.ReadOnly := False;
+  EditPwd.Properties.ReadOnly := False;
+  CheckEditSaveToReg.Properties.ReadOnly := False;
+  cxchckbxForceRefresh.Properties.ReadOnly := False;
 end;
 
 procedure TLoginForm.ButtonQuitClick(Sender: TObject);
@@ -555,7 +650,7 @@ var
   LoginReg: Tregistry;
 
 begin
-  LoginReg         := Tregistry.Create;
+  LoginReg := Tregistry.Create;
   LoginReg.RootKey := HKEY_CURRENT_USER;
 
   try
@@ -567,7 +662,9 @@ begin
       DataEncoder.Reset;
       LoginReg.WriteString('pass', DataEncoder.EncryptString(EditPwd.Text));
       LoginReg.WriteBool('saved', CheckEditSaveToReg.Checked);
-    end else begin
+    end
+    else
+    begin
       LoginReg.OpenKey(LoginRegPath, True);
       LoginReg.WriteString('login', '');
       LoginReg.WriteString('pass', '');
@@ -587,15 +684,17 @@ var
   loggedin: Boolean;
   din, dout: AnsiString;
   IV: array [0 .. 15] of byte;
-  StringToEncrypt, StringToDecrypt, DecryptedString, EncryptedString: AnsiString;
+  StringToEncrypt, StringToDecrypt, DecryptedString, EncryptedString
+    : AnsiString;
   XMLDoc: TXMLDocument;
   aHTTPRIO: THTTPRIO;
 begin
   // DBDebugExecute(Self);
-  aHTTPRIO     := THTTPRIO.Create(self);
-  aCatalogSoap := GetCatalogSoap(False, 'http://service.cld.be/catalog.asmx', aHTTPRIO);
-  loggedin     := aCatalogSoap.Identify('SMARTOYS', 'bebechifon');
-  test         := aCatalogSoap.HelloWorld;
+  aHTTPRIO := THTTPRIO.Create(self);
+  aCatalogSoap := GetCatalogSoap(False, 'http://service.cld.be/catalog.asmx',
+    aHTTPRIO);
+  loggedin := aCatalogSoap.Identify('SMARTOYS', 'bebechifon');
+  test := aCatalogSoap.HelloWorld;
 
   din := 'ikwzb5UMqVAsxdlFD1dsKw==';
 
@@ -617,10 +716,10 @@ begin
   try
     des.InitStr(AnsiString('PEp7XustuPawreF8'), TDCP_sha1);
 
-    src  := TEncoding.UTF8.GetBytes(Source);
+    src := TEncoding.UTF8.GetBytes(Source);
     slen := Length(src);
     // Add padding
-    bsize   := des.BlockSize div 8;
+    bsize := des.BlockSize div 8;
     padsize := bsize - (slen mod bsize);
     Inc(slen, padsize);
     SetLength(src, slen);
@@ -647,7 +746,7 @@ begin
   try
     des.InitStr(AnsiString('PEp7XustuPawreF8'), TDCP_sha1);
 
-    src  := EncdDecd.DecodeBase64(AnsiString(ASource));
+    src := EncdDecd.DecodeBase64(AnsiString(ASource));
     slen := Length(src);
     SetLength(dec, slen);
     des.DecryptCBC(src[0], dec[0], slen);
@@ -662,7 +761,8 @@ begin
   end;
 end;
 
-procedure TLoginForm.Decrypt(const aKey: AnsiString; aPVector: Pointer; const aInData: AnsiString; var aOutData: AnsiString);
+procedure TLoginForm.Decrypt(const aKey: AnsiString; aPVector: Pointer;
+  const aInData: AnsiString; var aOutData: AnsiString);
 var
   Cipher: TDCP_rijndael;
 begin
@@ -670,7 +770,7 @@ begin
   try
     Cipher.Init(aKey, Length(aKey) * 8, aPVector);
     Cipher.CipherMode := cmCBC;
-    aOutData          := Cipher.DecryptString(aInData);
+    aOutData := Cipher.DecryptString(aInData);
   finally
     Cipher.Burn;
     Cipher.Free;
@@ -699,7 +799,8 @@ begin
   SetLength(result, rlen);
 end;
 
-function TLoginForm.DecryptData(Data: string; aKey: AnsiString; AIv: AnsiString): string;
+function TLoginForm.DecryptData(Data: string; aKey: AnsiString;
+  AIv: AnsiString): string;
 var
   key, IV, src, dest: TBytes;
   Cipher: TDCP_rijndael;
@@ -708,14 +809,14 @@ begin
   // key := Base64DecodeBytes(TEncoding.UTF8.GetBytes(AKey));
   // iv := Base64DecodeBytes(TEncoding.UTF8.GetBytes(AIv));
   key := TEncoding.ASCII.GetBytes(aKey);
-  IV  := TEncoding.ASCII.GetBytes(AIv);
+  IV := TEncoding.ASCII.GetBytes(AIv);
 
   src := Base64DecodeBytes(TEncoding.UTF8.GetBytes(Data));
 
   Cipher := TDCP_rijndael.Create(nil);
   try
     Cipher.CipherMode := cmCBC;
-    slen              := Length(src);
+    slen := Length(src);
     SetLength(dest, slen);
     Cipher.Init(key[0], 256, @IV[0]); // DCP uses key size in BITS not BYTES
     Cipher.Decrypt(src[0], dest[0], slen);
@@ -731,7 +832,8 @@ begin
   end;
 end;
 
-function TLoginForm.EncryptData(Data: string; aKey: AnsiString; AIv: AnsiString): string;
+function TLoginForm.EncryptData(Data: string; aKey: AnsiString;
+  AIv: AnsiString): string;
 var
   Cipher: TDCP_rijndael;
   key, IV, src, dest, b64: TBytes;
@@ -740,7 +842,7 @@ begin
   // key := Base64DecodeBytes(TEncoding.UTF8.GetBytes(AKey));
   // iv := Base64DecodeBytes(TEncoding.UTF8.GetBytes(AIv));
   key := TEncoding.ASCII.GetBytes(aKey);
-  IV  := TEncoding.ASCII.GetBytes(AIv);
+  IV := TEncoding.ASCII.GetBytes(AIv);
 
   src := TEncoding.UTF8.GetBytes(Data);
 
@@ -750,9 +852,9 @@ begin
     // Add padding.
     // Resize the Value array to make it a multiple of the block length.
     // If it's already an exact multiple then add a full block of padding.
-    slen  := Length(src);
+    slen := Length(src);
     bsize := (Cipher.BlockSize div 8);
-    pad   := bsize - (slen mod bsize);
+    pad := bsize - (slen mod bsize);
     Inc(slen, pad);
     SetLength(src, slen);
     for index := pad downto 1 do
@@ -764,7 +866,7 @@ begin
     Cipher.Init(key[0], 256, @IV[0]); // DCP uses key size in BITS not BYTES
     Cipher.Encrypt(src[0], dest[0], slen);
 
-    b64    := Base64EncodeBytes(dest);
+    b64 := Base64EncodeBytes(dest);
     result := TEncoding.Default.GetString(b64);
   finally
     Cipher.Free;

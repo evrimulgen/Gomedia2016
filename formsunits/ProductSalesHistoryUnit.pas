@@ -61,16 +61,18 @@ procedure TFormProductSaleHistory.BitBtnFindCustomerClick(Sender: TObject);
 var
   SalesId, Filter: string;
 begin
-  SalesId := RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').AsString;
-  Filter  := RemoteDB.netshop_items_sold.Filter;
+  SalesId := RemoteDB.netshop_items_sold.FieldByName
+    ('items_sold_sales_id').AsString;
+  Filter := RemoteDB.netshop_items_sold.Filter;
   RemoteDB.SetItemstoSales;
   if RemoteDB.netshop_sales.Locate('sales_id', SalesId, []) then
   begin
     try
-      ShowMessage('Client : ' + RemoteDB.netshop_sales.FieldByName('sales_customer_id').AsString);
+      ShowMessage('Client : ' + RemoteDB.netshop_sales.FieldByName
+        ('sales_customer_id').AsString);
     finally
       RemoteDB.FreeItemsTo;
-      RemoteDB.netshop_items_sold.Filter   := Filter;
+      RemoteDB.netshop_items_sold.Filter := Filter;
       RemoteDB.netshop_items_sold.Filtered := True;
     end;
   end
@@ -83,17 +85,20 @@ var
   SalesId, Filter: string;
   OriginalDate: Double;
 begin
-  SalesId := RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').AsString;
-  Filter  := RemoteDB.netshop_items_sold.Filter;
+  SalesId := RemoteDB.netshop_items_sold.FieldByName
+    ('items_sold_sales_id').AsString;
+  Filter := RemoteDB.netshop_items_sold.Filter;
   RemoteDB.SetItemstoSales;
   if RemoteDB.netshop_sales.Locate('sales_id', SalesId, []) then
   begin
     try
       if CheckBoxForce.Checked then
       begin
-        OriginalDate := RemoteDB.netshop_sales.FieldByName('sales_date_time').Value;
+        OriginalDate := RemoteDB.netshop_sales.FieldByName
+          ('sales_date_time').Value;
         RemoteDB.netshop_sales.Edit;
-        RemoteDB.netshop_sales.FieldByName('sales_date_time').Value := Trunc(DateTimePickerDate.Date)+0.4166+(0.375*Random);
+        RemoteDB.netshop_sales.FieldByName('sales_date_time').Value :=
+          Trunc(DateTimePickerDate.Date) + 0.4166 + (0.375 * Random);
         RemoteDB.netshop_sales.Post;
       end;
       MainForm.BitBtnCustomerBuyTicketClick(nil)
@@ -101,11 +106,12 @@ begin
       if CheckBoxForce.Checked then
       begin
         RemoteDB.netshop_sales.Edit;
-        RemoteDB.netshop_sales.FieldByName('sales_date_time').Value := OriginalDate;
+        RemoteDB.netshop_sales.FieldByName('sales_date_time').Value :=
+          OriginalDate;
         RemoteDB.netshop_sales.Post;
       end;
       RemoteDB.FreeItemsTo;
-      RemoteDB.netshop_items_sold.Filter   := Filter;
+      RemoteDB.netshop_items_sold.Filter := Filter;
       RemoteDB.netshop_items_sold.Filtered := True;
     end;
   end
@@ -113,7 +119,8 @@ begin
     ShowMessage('Données du ticket plus disponibles');
 end;
 
-procedure TFormProductSaleHistory.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+procedure TFormProductSaleHistory.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
 begin
   RemoteDB.CDSQuery.Close;
 end;

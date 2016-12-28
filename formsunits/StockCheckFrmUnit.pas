@@ -75,8 +75,9 @@ begin
     exit;
   if RemoteDB.netshop_stock.FieldByName('product_owner_id').Value > 100 then
   begin
-    if messagedlg('Vous transferez un produit en depot, ce produit sera irrémédiablement marqué comme vendu pour le client, voulez vous continuer ?', mtwarning,
-      [mbyes, mbno], 0) = mrNo then
+    if messagedlg
+      ('Vous transferez un produit en depot, ce produit sera irrémédiablement marqué comme vendu pour le client, voulez vous continuer ?',
+      mtwarning, [mbyes, mbno], 0) = mrNo then
       exit;
     // Vérification de la table sales cohérence items sold
     if not RemoteDB.netshop_sales.Locate('sales_id', 0, []) then
@@ -93,30 +94,43 @@ begin
     end;
     // Transfer du produit occasion en Items Sold
     RemoteDB.netshop_items_sold.Append;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString := RemoteDB.netshop_stock.FieldByName('product_name').AsString;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString :=
+      RemoteDB.netshop_stock.FieldByName('product_model').AsString;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString :=
+      RemoteDB.netshop_stock.FieldByName('product_name').AsString;
     RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').Value := 1;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_price_catalog').AsFloat := RemoteDB.Products.FieldByName('products_price').AsFloat;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-    RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').AsString := RemoteDB.netshop_stock.FieldByName('product_date_in').AsString;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_price_catalog').AsFloat
+      := RemoteDB.Products.FieldByName('products_price').AsFloat;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat :=
+      RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsFloat :=
+      RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger :=
+      RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger
+      := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
+    RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').AsString :=
+      RemoteDB.netshop_stock.FieldByName('product_date_in').AsString;
     RemoteDB.netshop_items_sold.Post;
   end;
 
   // Transfer d'une unité de stock
   RemoteDB.netshop_rent_stock.Append;
-  RemoteDB.netshop_rent_stock.FieldByName('rent_stock_product_model').Value := RemoteDB.netshop_stock.FieldByName('product_model').Value;
-  RemoteDB.netshop_rent_stock.FieldByName('rent_stock_name').Value := RemoteDB.netshop_stock.FieldByName('product_name').Value;
+  RemoteDB.netshop_rent_stock.FieldByName('rent_stock_product_model').Value :=
+    RemoteDB.netshop_stock.FieldByName('product_model').Value;
+  RemoteDB.netshop_rent_stock.FieldByName('rent_stock_name').Value :=
+    RemoteDB.netshop_stock.FieldByName('product_name').Value;
   RemoteDB.netshop_rent_stock.Post;
   if RemoteDB.netshop_stock.FieldByName('product_quantity').Value > 1 then
   begin
     // Plusieurs unités disponibles
     RemoteDB.netshop_stock.Edit;
-    RemoteDB.netshop_stock.FieldByName('product_quantity').Value := RemoteDB.netshop_stock.FieldByName('product_quantity').Value - 1;
+    RemoteDB.netshop_stock.FieldByName('product_quantity').Value :=
+      RemoteDB.netshop_stock.FieldByName('product_quantity').Value - 1;
     RemoteDB.netshop_stock.Post;
-  end else begin
+  end
+  else
+  begin
     // 1 seul titre disponible
     RemoteDB.netshop_stock.Delete;
   end;
@@ -134,7 +148,8 @@ var
 begin
   AEnterLib := TFormEnterLibrary.Create(nil);
   try
-    AEnterLib.Enter(RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString, RemoteDB.netshop_stock.FieldByName('product_model').AsString);
+    AEnterLib.Enter(RemoteDB.netshop_stock.FieldByName('product_owner_id')
+      .AsString, RemoteDB.netshop_stock.FieldByName('product_model').AsString);
   finally
     AEnterLib.Free;
   end;
@@ -145,10 +160,13 @@ procedure TStockCheckForm.SpeedButtonPrintLabelClick(Sender: TObject);
 var
   LabelRent: TLabelRent;
 begin
-  LabelRent              := TLabelRent.Create;
+  LabelRent := TLabelRent.Create;
   LabelRent.LabelPrinter := (MainForm.Parameter['PrintersLabelPrinter']);
-  LabelRent.Print(RemoteDB.netshop_rent_stock.FieldByName('rent_stock_product_model').Value, RemoteDB.netshop_rent_stock.FieldByName('rent_stock_name').Value,
-    RemoteDB.netshop_rent_stock.FieldByName('rent_stock_id').Value, (StrToBool(MainForm.Parameter['PrintersLabelDialog'])));
+  LabelRent.Print(RemoteDB.netshop_rent_stock.FieldByName
+    ('rent_stock_product_model').Value, RemoteDB.netshop_rent_stock.FieldByName
+    ('rent_stock_name').Value, RemoteDB.netshop_rent_stock.FieldByName
+    ('rent_stock_id').Value,
+    (StrToBool(MainForm.Parameter['PrintersLabelDialog'])));
 end;
 
 end.

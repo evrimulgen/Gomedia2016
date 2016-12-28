@@ -46,9 +46,11 @@ var
 
 begin
   try
-    LinkToCust                       := False;
-    Pindex                           := Printer.printers.IndexOf((Mainform.Parameter['PrintersRapportPrinter']));
-    RemoteDB.netshop_invoices.Filter := '(invoices_date_time >=' + floattostr(Trunc(DateStart.Date)) + ') and (invoices_date_time <=' +
+    LinkToCust := False;
+    Pindex := Printer.printers.IndexOf
+      ((Mainform.Parameter['PrintersRapportPrinter']));
+    RemoteDB.netshop_invoices.Filter := '(invoices_date_time >=' +
+      floattostr(Trunc(DateStart.Date)) + ') and (invoices_date_time <=' +
       floattostr(Trunc(DateEnd.Date) + 1) + ')';
     RemoteDB.netshop_invoices.Filtered := True;
     if RemoteDB.netshop_invoices.MasterSource = RemoteDB.CustomersSRC then
@@ -61,7 +63,9 @@ begin
     RemoteDB.netshop_invoices.First;
     while not RemoteDB.netshop_invoices.Eof do
     begin
-      RemoteDB.Customers.Locate('customers_nbr', RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').Value, []);
+      RemoteDB.Customers.Locate('customers_nbr',
+        RemoteDB.netshop_invoices.FieldByName('invoices_customer_id')
+        .Value, []);
       RemoteDB.SetAddress_bookToCustomers;
       RemoteDB.SetInvoicesItemsToInvoices;
       Progress.Position := Progress.Position + 1;
@@ -71,18 +75,24 @@ begin
         RemoteDB.Shops.FindKey([CONNECTEDSHOP]);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInvoice', True);
-        ReportModule.RvProject.SetParam('TVA6', floattostr(RemoteDB.CalcInvoiceTVA(6)));
-        ReportModule.RvProject.SetParam('TVA21', floattostr(RemoteDB.CalcInvoiceTVA(21)));
-        ReportModule.RvProject.SetParam('BASE6', floattostr(RemoteDB.CalcInvoiceTVABASE(6)));
-        ReportModule.RvProject.SetParam('BASE21', floattostr(RemoteDB.CalcInvoiceTVABASE(21)));
+        ReportModule.RvProject.SetParam('TVA6',
+          floattostr(RemoteDB.CalcInvoiceTVA(6)));
+        ReportModule.RvProject.SetParam('TVA21',
+          floattostr(RemoteDB.CalcInvoiceTVA(21)));
+        ReportModule.RvProject.SetParam('BASE6',
+          floattostr(RemoteDB.CalcInvoiceTVABASE(6)));
+        ReportModule.RvProject.SetParam('BASE21',
+          floattostr(RemoteDB.CalcInvoiceTVABASE(21)));
         ReportModule.RvProject.SetParam('URL', WEBURL);
         ReportModule.RvSystem.DefaultDest := rdPrinter;
         // ReportModule.RvSystem.DoNativeOutput := true;
         ReportModule.RvNDRWriter.PrinterIndex := Pindex;
         if Sender = BitBtnPrintPrev then
-          ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
         if Sender = BitBtnPrint then
-          ReportModule.RvSystem.SystemSetups          := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
         ReportModule.RvSystem.SystemPreview.FormState := wsMaximized;
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
@@ -90,7 +100,7 @@ begin
       RemoteDB.netshop_invoices.Next;
     end;
   finally
-    RemoteDB.netshop_invoices.Filter   := '';
+    RemoteDB.netshop_invoices.Filter := '';
     RemoteDB.netshop_invoices.Filtered := False;
     if LinkToCust then
     begin
@@ -102,8 +112,8 @@ end;
 
 procedure TInvoiceBatchPrintForm.FormShow(Sender: TObject);
 begin
-  DateStart.Date    := Now;
-  DateEnd.Date      := Now;
+  DateStart.Date := Now;
+  DateEnd.Date := Now;
   Progress.Position := 0;
 end;
 

@@ -12,8 +12,6 @@ uses
   cxClasses, cxControls, cxGridCustomView, cxGrid, ClientDMUnit, FMTBcd,
   Provider, DBClient, SqlExpr, cxGridExportLink, dxBarExtItems, ComCtrls,
 
-
-
   Menus,
   dxPScxGridLnk, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
@@ -124,7 +122,6 @@ type
 var
   TransferSuggest: TTransferSuggest;
 
-
 implementation
 
 uses GlobalsUnit, ShellApi, Clipbrd;
@@ -136,7 +133,8 @@ begin
   ClipBoard.AsText := CDSSuggest.FieldByName('product_model').AsString;
 end;
 
-procedure TTransferSuggest.cxGridDBTableView1KeyPress(Sender: TObject; var Key: Char);
+procedure TTransferSuggest.cxGridDBTableView1KeyPress(Sender: TObject;
+  var Key: Char);
 begin
   if Key = chr(46) then
   begin
@@ -152,18 +150,22 @@ begin
   ShellExecute(self.WindowHandle, 'open', PChar(url), nil, nil, SW_SHOWNORMAL);
 end;
 
-procedure TTransferSuggest.cxGridDBTableViewTransferKeyPress(Sender: TObject; var Key: Char);
+procedure TTransferSuggest.cxGridDBTableViewTransferKeyPress(Sender: TObject;
+  var Key: Char);
 begin
   if Key = chr(13) then
   begin
     CDSRequest.Append;
-    CDSRequest.FieldByName('product_model').Value        := CDSSuggest.FieldByName('product_model').Value;
-    CDSRequest.FieldByName('product_name').Value         := CDSSuggest.FieldByName('product_name').Value;
+    CDSRequest.FieldByName('product_model').Value :=
+      CDSSuggest.FieldByName('product_model').Value;
+    CDSRequest.FieldByName('product_name').Value :=
+      CDSSuggest.FieldByName('product_name').Value;
     CDSRequest.FieldByName('product_quantity_new').Value := 1;
     // CDSSuggest.FieldByName('product_quantity_new').Value;
     CDSRequest.FieldByName('product_quantity_used').Value := 1;
     // CDSSuggest.FieldByName('product_quantity_used').Value;
-    CDSRequest.FieldByName('product_category_name').Value := CDSSuggest.FieldByName('product_category_name').Value;
+    CDSRequest.FieldByName('product_category_name').Value :=
+      CDSSuggest.FieldByName('product_category_name').Value;
     CDSRequest.Post;
   end;
 
@@ -180,20 +182,22 @@ var
 begin
   if PageControl.ActivePage = TabSheetSuggest then
   begin
-    Filename                 := 'TransferSuggest' + '.xls';
+    Filename := 'TransferSuggest' + '.xls';
     self.SaveDialog.Filename := Filename;
     if self.SaveDialog.Execute then
     begin
-      ExportGridToExcel(self.SaveDialog.Filename, cxGridSuggest, True, True, True);
+      ExportGridToExcel(self.SaveDialog.Filename, cxGridSuggest, True,
+        True, True);
     end;
   end;
   if PageControl.ActivePage = TabSheetRequest then
   begin
-    Filename                 := 'TransferRequest' + '.xls';
+    Filename := 'TransferRequest' + '.xls';
     self.SaveDialog.Filename := Filename;
     if self.SaveDialog.Execute then
     begin
-      ExportGridToExcel(self.SaveDialog.Filename, cxGridRequest, True, True, True);
+      ExportGridToExcel(self.SaveDialog.Filename, cxGridRequest, True,
+        True, True);
     end;
   end;
 end;
@@ -214,10 +218,12 @@ var
   aSqlDataset: TSqlDataset;
 begin
 
-  aSqlDataset               := TSqlDataset.Create(self);
+  aSqlDataset := TSqlDataset.Create(self);
   aSqlDataset.SQLConnection := RemoteDB.SQLConnection;
-  aSqlDataset.CommandType   := ctQuery;
-  aSqlDataset.CommandText   := 'select * from netshop_stock where product_location = ' + IntToStr(self.TargetShop);
+  aSqlDataset.CommandType := ctQuery;
+  aSqlDataset.CommandText :=
+    'select * from netshop_stock where product_location = ' +
+    IntToStr(self.TargetShop);
 
   DPStockExt.DataSet := aSqlDataset;
   StockExt.Open;
@@ -235,90 +241,123 @@ begin
   if Direction = 'out' then
   begin
     RemoteDB.netshop_stock.DisableControls;
-    RemoteDB.netshop_stock.Filter   := 'product_owner_id = ' + IntToStr(CONNECTEDSHOP);
+    RemoteDB.netshop_stock.Filter := 'product_owner_id = ' +
+      IntToStr(CONNECTEDSHOP);
     RemoteDB.netshop_stock.Filtered := True;
     RemoteDB.netshop_stock.First;
 
-
-          cxprgrsbrProgress.Position:=0;
-          i                    := 0;
-    cxprgrsbrProgress.Visible  := True;
+    cxprgrsbrProgress.Position := 0;
+    i := 0;
+    cxprgrsbrProgress.Visible := True;
 
     try
       // Populate the Stock Summed Table
       while not RemoteDB.netshop_stock.Eof do
       begin
-        if StockSummed.Locate('product_model', RemoteDB.netshop_stock.FieldByName('product_model').Value, [locaseinsensitive]) then
+        if StockSummed.Locate('product_model',
+          RemoteDB.netshop_stock.FieldByName('product_model').Value,
+          [locaseinsensitive]) then
         begin
-          if RemoteDB.netshop_stock.FieldByName('product_supplier_id').Value > 99999 then
+          if RemoteDB.netshop_stock.FieldByName('product_supplier_id').Value > 99999
+          then
           begin
             StockSummed.Edit;
-            StockSummed.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value +
+            StockSummed.FieldByName('product_quantity_used').Value :=
+              StockSummed.FieldByName('product_quantity_used').Value +
               RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
             StockSummed.Post;
-          end else begin
+          end
+          else
+          begin
             StockSummed.Edit;
-            StockSummed.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value +
+            StockSummed.FieldByName('product_quantity_new').Value :=
+              StockSummed.FieldByName('product_quantity_new').Value +
               RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
             StockSummed.Post;
           end;
-          if RemoteDB.netshop_stock.FieldByName('product_price_stock').Value < StockSummed.FieldByName('product_price_min').Value then
+          if RemoteDB.netshop_stock.FieldByName('product_price_stock').Value <
+            StockSummed.FieldByName('product_price_min').Value then
           begin
             StockSummed.Edit;
-            StockSummed.FieldByName('product_price_min').Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').Value;
+            StockSummed.FieldByName('product_price_min').Value :=
+              RemoteDB.netshop_stock.FieldByName('product_price_stock').Value;
             StockSummed.Post;
           end;
 
-        end else begin
+        end
+        else
+        begin
           StockSummed.Append;
-          StockSummed.FieldByName('product_model').Value := RemoteDB.netshop_stock.FieldByName('product_model').Value;
-          StockSummed.FieldByName('product_name').Value  := RemoteDB.netshop_stock.FieldByName('product_name').Value;
-          StockSummed.FieldByName('product_price_min').Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').Value;
-          StockSummed.FieldByName('product_location').Value := RemoteDB.netshop_stock.FieldByName('product_location').Value;
-          if RemoteDB.netshop_stock.FieldByName('product_supplier_id').Value > 99999 then
+          StockSummed.FieldByName('product_model').Value :=
+            RemoteDB.netshop_stock.FieldByName('product_model').Value;
+          StockSummed.FieldByName('product_name').Value :=
+            RemoteDB.netshop_stock.FieldByName('product_name').Value;
+          StockSummed.FieldByName('product_price_min').Value :=
+            RemoteDB.netshop_stock.FieldByName('product_price_stock').Value;
+          StockSummed.FieldByName('product_location').Value :=
+            RemoteDB.netshop_stock.FieldByName('product_location').Value;
+          if RemoteDB.netshop_stock.FieldByName('product_supplier_id').Value > 99999
+          then
           begin
             StockSummed.FieldByName('product_quantity_new').Value := 0;
-            StockSummed.FieldByName('product_quantity_used').Value := RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
-          end else begin
+            StockSummed.FieldByName('product_quantity_used').Value :=
+              RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
+          end
+          else
+          begin
             StockSummed.FieldByName('product_quantity_used').Value := 0;
-            StockSummed.FieldByName('product_quantity_new').Value := RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
+            StockSummed.FieldByName('product_quantity_new').Value :=
+              RemoteDB.netshop_stock.FieldByName('product_quantity').Value;
           end;
           StockSummed.Post;
 
         end;
         RemoteDB.netshop_stock.Next;
-                                  i:=i+1;
-            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+RemoteDB.netshop_stock.RecordCount) * 100);
-             Application.ProcessMessages;
+        i := i + 1;
+        cxprgrsbrProgress.Position :=
+          (i / (StockSummed.RecordCount +
+          RemoteDB.netshop_stock.RecordCount) * 100);
+        Application.ProcessMessages;
       end;
 
       // Compute Transfer
       StockSummed.First;
       while not StockSummed.Eof do
       begin
-        if StockSummed.FieldByName('product_quantity_total').Value > threshold then
-          if not StockExt.Locate('product_model', StockSummed.FieldByName('product_model').Value, [locaseinsensitive]) then
+        if StockSummed.FieldByName('product_quantity_total').Value > threshold
+        then
+          if not StockExt.Locate('product_model',
+            StockSummed.FieldByName('product_model').Value, [locaseinsensitive])
+          then
           begin
             CDSSuggest.Append;
-            CDSSuggest.FieldByName('product_model').Value := StockSummed.FieldByName('product_model').Value;
-            CDSSuggest.FieldByName('product_name').Value  := StockSummed.FieldByName('product_name').Value;
-            RemoteDB.Products.FindKey([StockSummed.FieldByName('product_model').Value]);
-            CDSSuggest.FieldByName('product_category_name').Value := RemoteDB.Productsproducts_root_category_name.AsString;
-            CDSSuggest.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value;
-            CDSSuggest.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value;
+            CDSSuggest.FieldByName('product_model').Value :=
+              StockSummed.FieldByName('product_model').Value;
+            CDSSuggest.FieldByName('product_name').Value :=
+              StockSummed.FieldByName('product_name').Value;
+            RemoteDB.Products.FindKey
+              ([StockSummed.FieldByName('product_model').Value]);
+            CDSSuggest.FieldByName('product_category_name').Value :=
+              RemoteDB.Productsproducts_root_category_name.AsString;
+            CDSSuggest.FieldByName('product_quantity_new').Value :=
+              StockSummed.FieldByName('product_quantity_new').Value;
+            CDSSuggest.FieldByName('product_quantity_used').Value :=
+              StockSummed.FieldByName('product_quantity_used').Value;
             CDSSuggest.Post;
           end;
         StockSummed.Next;
-                                          i:=i+1;
-            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+RemoteDB.netshop_stock.RecordCount) * 100);
-             Application.ProcessMessages;
+        i := i + 1;
+        cxprgrsbrProgress.Position :=
+          (i / (StockSummed.RecordCount +
+          RemoteDB.netshop_stock.RecordCount) * 100);
+        Application.ProcessMessages;
       end;
       StockExt.Filtered := False;
 
     finally
       RemoteDB.netshop_stock.EnableControls;
       RemoteDB.netshop_stock.Filtered := False;
-      RemoteDB.netshop_stock.Filter   := '';
+      RemoteDB.netshop_stock.Filter := '';
       RemoteDB.SQLConnection.Close;
     end;
   end;
@@ -326,98 +365,126 @@ begin
   if Direction = 'in' then
   begin
     StockExt.DisableControls;
-    StockExt.Filter   := 'product_owner_id = ' + RemoteDB.AllShops.FieldByName('shops_id').AsString;
+    StockExt.Filter := 'product_owner_id = ' + RemoteDB.AllShops.FieldByName
+      ('shops_id').AsString;
     StockExt.Filtered := True;
     StockExt.First;
 
-          cxprgrsbrProgress.Position:=0;
-          i                    := 0;
-    cxprgrsbrProgress.Visible  := True;
-
+    cxprgrsbrProgress.Position := 0;
+    i := 0;
+    cxprgrsbrProgress.Visible := True;
 
     try
       // Populate the Stock Summed Table
       while not StockExt.Eof do
       begin
-        if StockSummed.Locate('product_model', StockExtproduct_model.Value, [locaseinsensitive]) then
+        if StockSummed.Locate('product_model', StockExtproduct_model.Value,
+          [locaseinsensitive]) then
         begin
           if StockExt.FieldByName('product_supplier_id').Value > 99999 then
           begin
             StockSummed.Edit;
-            StockSummed.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value +
+            StockSummed.FieldByName('product_quantity_used').Value :=
+              StockSummed.FieldByName('product_quantity_used').Value +
               StockExt.FieldByName('product_quantity').Value;
             StockSummed.Post;
-          end else begin
+          end
+          else
+          begin
             StockSummed.Edit;
-            StockSummed.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value +
+            StockSummed.FieldByName('product_quantity_new').Value :=
+              StockSummed.FieldByName('product_quantity_new').Value +
               StockExt.FieldByName('product_quantity').Value;
             StockSummed.Post;
           end;
-          if RemoteDB.netshop_stock.FieldByName('product_price_stock').Value < StockSummed.FieldByName('product_price_min').Value then
+          if RemoteDB.netshop_stock.FieldByName('product_price_stock').Value <
+            StockSummed.FieldByName('product_price_min').Value then
           begin
             StockSummed.Edit;
-            StockSummed.FieldByName('product_price_min').Value := StockExt.FieldByName('product_price_stock').Value;
+            StockSummed.FieldByName('product_price_min').Value :=
+              StockExt.FieldByName('product_price_stock').Value;
             StockSummed.Post;
           end;
 
-        end else begin
+        end
+        else
+        begin
           StockSummed.Append;
-          StockSummed.FieldByName('product_model').Value := StockExt.FieldByName('product_model').Value;
-          StockSummed.FieldByName('product_name').Value  := StockExt.FieldByName('product_name').Value;
-          StockSummed.FieldByName('product_price_min').Value := StockExt.FieldByName('product_price_stock').Value;
-          StockSummed.FieldByName('product_location').Value := StockExt.FieldByName('product_location').Value;
+          StockSummed.FieldByName('product_model').Value :=
+            StockExt.FieldByName('product_model').Value;
+          StockSummed.FieldByName('product_name').Value :=
+            StockExt.FieldByName('product_name').Value;
+          StockSummed.FieldByName('product_price_min').Value :=
+            StockExt.FieldByName('product_price_stock').Value;
+          StockSummed.FieldByName('product_location').Value :=
+            StockExt.FieldByName('product_location').Value;
           if StockExt.FieldByName('product_supplier_id').Value > 99999 then
           begin
             StockSummed.FieldByName('product_quantity_new').Value := 0;
-            StockSummed.FieldByName('product_quantity_used').Value := StockExt.FieldByName('product_quantity').Value;
-          end else begin
+            StockSummed.FieldByName('product_quantity_used').Value :=
+              StockExt.FieldByName('product_quantity').Value;
+          end
+          else
+          begin
             StockSummed.FieldByName('product_quantity_used').Value := 0;
-            StockSummed.FieldByName('product_quantity_new').Value := StockExt.FieldByName('product_quantity').Value;
+            StockSummed.FieldByName('product_quantity_new').Value :=
+              StockExt.FieldByName('product_quantity').Value;
           end;
           StockSummed.Post;
         end;
         StockExt.Next;
-                i:=i+1;
-            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+StockExt.RecordCount) * 100);
-                         Application.ProcessMessages;
+        i := i + 1;
+        cxprgrsbrProgress.Position :=
+          (i / (StockSummed.RecordCount + StockExt.RecordCount) * 100);
+        Application.ProcessMessages;
       end;
 
       // Compute Transfer
 
-
       StockSummed.First;
       while not StockSummed.Eof do
       begin
-        if StockSummed.FieldByName('product_quantity_total').Value > threshold then
-          if not RemoteDB.netshop_stock.Locate('product_model', StockSummed.FieldByName('product_model').Value, [locaseinsensitive]) then
+        if StockSummed.FieldByName('product_quantity_total').Value > threshold
+        then
+          if not RemoteDB.netshop_stock.Locate('product_model',
+            StockSummed.FieldByName('product_model').Value, [locaseinsensitive])
+          then
           begin
             CDSSuggest.Append;
-            CDSSuggest.FieldByName('product_model').Value := StockSummed.FieldByName('product_model').Value;
-            CDSSuggest.FieldByName('product_name').Value  := StockSummed.FieldByName('product_name').Value;
-            RemoteDB.Products.FindKey([StockSummed.FieldByName('product_model').Value]);
-            CDSSuggest.FieldByName('product_category_name').Value := RemoteDB.Productsproducts_root_category_name.AsString;
-            CDSSuggest.FieldByName('product_quantity_new').Value := StockSummed.FieldByName('product_quantity_new').Value;
-            CDSSuggest.FieldByName('product_quantity_used').Value := StockSummed.FieldByName('product_quantity_used').Value;
+            CDSSuggest.FieldByName('product_model').Value :=
+              StockSummed.FieldByName('product_model').Value;
+            CDSSuggest.FieldByName('product_name').Value :=
+              StockSummed.FieldByName('product_name').Value;
+            RemoteDB.Products.FindKey
+              ([StockSummed.FieldByName('product_model').Value]);
+            CDSSuggest.FieldByName('product_category_name').Value :=
+              RemoteDB.Productsproducts_root_category_name.AsString;
+            CDSSuggest.FieldByName('product_quantity_new').Value :=
+              StockSummed.FieldByName('product_quantity_new').Value;
+            CDSSuggest.FieldByName('product_quantity_used').Value :=
+              StockSummed.FieldByName('product_quantity_used').Value;
             CDSSuggest.Post;
           end;
         StockSummed.Next;
-        i:=i+1;
-            cxprgrsbrProgress.Position := (i / (StockSummed.RecordCount+StockExt.RecordCount) * 100);
-                         Application.ProcessMessages;
+        i := i + 1;
+        cxprgrsbrProgress.Position :=
+          (i / (StockSummed.RecordCount + StockExt.RecordCount) * 100);
+        Application.ProcessMessages;
       end;
       RemoteDB.netshop_stock.Filtered := False;
 
     finally
       StockExt.EnableControls;
       StockExt.Filtered := False;
-      StockExt.Filter   := '';
+      StockExt.Filter := '';
       RemoteDB.SQLConnection.Close;
     end;
   end;
 
 end;
 
-procedure TTransferSuggest.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+procedure TTransferSuggest.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
 begin
   // Action:=TBasicAction(caFree);
 end;
@@ -428,18 +495,20 @@ begin
   CDSRequest.Open;
   self.PageControl.ActivePage := TabSheetSuggest;
   PostMessage(Handle, WM_STARTUP, 0, 0);
-  OnShow := nil;//only ever post the message once
+  OnShow := nil; // only ever post the message once
 end;
 
 procedure TTransferSuggest.StockSummedCalcFields(DataSet: TDataSet);
 begin
-  DataSet.FieldByName('product_quantity_total').Value := DataSet.FieldByName('product_quantity_new').Value + DataSet.FieldByName('product_quantity_used').Value;
+  DataSet.FieldByName('product_quantity_total').Value :=
+    DataSet.FieldByName('product_quantity_new').Value +
+    DataSet.FieldByName('product_quantity_used').Value;
 end;
 
 procedure TTransferSuggest.WMStartup(var Msg: TMessage);
 begin
   inherited;
-   Compute;
+  Compute;
 end;
 
 end.

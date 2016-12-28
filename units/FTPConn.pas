@@ -3,7 +3,7 @@ unit FTPConn;
 interface
 
 uses
-     System.JSON, SysUtils, Data.DBXJSONReflect;
+  System.JSON, SysUtils, Data.DBXJSONReflect;
 
 type
 
@@ -22,7 +22,7 @@ type
   end;
 
 function FTPConnToJSON(FTPConn: TFTPConn): TJSONValue;
-function JSONToFTPConn(json: TJSONValue): TFTPConn;
+function JSONToFTPConn(JSON: TJSONValue): TFTPConn;
 
 implementation
 
@@ -43,15 +43,15 @@ begin
     exit(TJSONNull.create);
 end;
 
-function JSONToFTPConn(json: TJSONValue): TFTPConn;
+function JSONToFTPConn(JSON: TJSONValue): TFTPConn;
 var
   unm: TJSONUnMarshal;
 begin
-  if json is TJSONNull then
+  if JSON is TJSONNull then
     exit(nil);
   unm := TJSONUnMarshal.create;
   try
-    exit(unm.Unmarshal(json) as TFTPConn)
+    exit(unm.Unmarshal(JSON) as TFTPConn)
   finally
     unm.Free;
   end;
@@ -61,9 +61,9 @@ end;
 
 constructor TFTPConn.create(Host, Dir, Login, Pass: string);
 begin
-  _Host  := Host;
-  _Pass  := Pass;
-  _Dir   := Dir;
+  _Host := Host;
+  _Pass := Pass;
+  _Dir := Dir;
   _Login := Login;
   inherited create;
 end;

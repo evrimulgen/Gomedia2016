@@ -35,14 +35,17 @@ implementation
 
 procedure TChangePriceForm.FormShow(Sender: TObject);
 begin
-  EditOldPrice.Value := RemoteDB.netshop_stock.FieldByName('product_price_Stock').AsFloat;
+  EditOldPrice.Value := RemoteDB.netshop_stock.FieldByName
+    ('product_price_Stock').AsFloat;
   EditNewPrice.SetFocus;
 end;
 
-procedure TChangePriceForm.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+procedure TChangePriceForm.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
 begin
   RemoteDB.netshop_stock.Edit;
-  RemoteDB.netshop_stock.FieldByName('product_price_Stock').AsFloat := EditNewPrice.Value;
+  RemoteDB.netshop_stock.FieldByName('product_price_Stock').AsFloat :=
+    EditNewPrice.Value;
   // RemoteDB.netshop_stock.Post;
   // Table is posted in the calling function
 end;

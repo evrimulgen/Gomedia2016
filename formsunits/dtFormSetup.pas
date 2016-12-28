@@ -81,13 +81,18 @@ begin { UpdateForm }
   if (RPDev = nil) or (RPDev.printers.Count = 0) then
   begin
     PrinterLabel.Caption := Trans('No printers installed!');
-  end else begin
+  end
+  else
+  begin
     RPDev.State := dsIC;
     if RPDev.Output = '' then
     begin
       PrinterLabel.Caption := RPDev.Device;
-    end else begin
-      PrinterLabel.Caption := Trans(Format( { Trans+ } '%s on %s', [RPDev.Device, RPDev.Output]));
+    end
+    else
+    begin
+      PrinterLabel.Caption :=
+        Trans(Format( { Trans+ } '%s on %s', [RPDev.Device, RPDev.Output]));
     end; { else }
   end; { if }
 end; { UpdateForm }
@@ -105,16 +110,16 @@ procedure TdtSetupForm.FileNameSBClick(Sender: TObject);
 begin
   if dlogSave.Execute then
   begin
-    editFileName.Text    := dlogSave.FileName;
+    editFileName.Text := dlogSave.FileName;
     cboxFormat.ItemIndex := dlogSave.FilterIndex - 1;
   end; { if }
 end;
 
 procedure TdtSetupForm.FormCreate(Sender: TObject);
 begin
-  SelectionED.Enabled  := false;
+  SelectionED.Enabled := false;
   editFileName.Enabled := false;
-  FileNameSB.Enabled   := false;
+  FileNameSB.Enabled := false;
 end;
 
 procedure TdtSetupForm.PagesRBClick(Sender: TObject);
@@ -148,32 +153,32 @@ end;
 procedure TdtSetupForm.AllRBClick(Sender: TObject);
 begin
   SelectionED.Enabled := false;
-  FromED.Enabled      := false;
-  ToLabel.Enabled     := false;
-  ToED.Enabled        := false;
+  FromED.Enabled := false;
+  ToLabel.Enabled := false;
+  ToED.Enabled := false;
 end;
 
 procedure TdtSetupForm.PrinterRBClick(Sender: TObject);
 begin
   editFileName.Enabled := false;
-  FileNameSB.Enabled   := false;
-  cboxFormat.Enabled   := false;
-  bbtnOK.Enabled       := true;
-  SetupBB.Enabled      := true;
+  FileNameSB.Enabled := false;
+  cboxFormat.Enabled := false;
+  bbtnOK.Enabled := true;
+  SetupBB.Enabled := true;
   // GroupBox2.Enabled := Sender = PrinterRB;
-  CopiesED.Enabled  := Sender = PrinterRB;
+  CopiesED.Enabled := Sender = PrinterRB;
   CollateCK.Enabled := Sender = PrinterRB;
-  DuplexCK.Enabled  := Sender = PrinterRB;
+  DuplexCK.Enabled := Sender = PrinterRB;
 end;
 
 procedure TdtSetupForm.FileRBClick(Sender: TObject);
 begin
   editFileName.Enabled := true;
-  FileNameSB.Enabled   := true;
-  cboxFormat.Enabled   := true;
+  FileNameSB.Enabled := true;
+  cboxFormat.Enabled := true;
   // GroupBox2.Enabled := false;
   SetupBB.Enabled := false;
-  bbtnOK.Enabled  := Trim(editFileName.Text) <> '';
+  bbtnOK.Enabled := Trim(editFileName.Text) <> '';
 end;
 
 procedure TdtSetupForm.FormShow(Sender: TObject);
@@ -186,10 +191,12 @@ begin
     if PreviewSetup then
     begin
       { Init Page range variables here for FilePrinter.ExecuteCustom }
-      FromED.Text      := '1';
-      ToED.Text        := IntToStr(FilePrinter.Pages);
+      FromED.Text := '1';
+      ToED.Text := IntToStr(FilePrinter.Pages);
       SelectionED.Text := { Trans- } '1-' + IntToStr(FilePrinter.Pages);
-    end else begin { Initial setup, ask for destination }
+    end
+    else
+    begin { Initial setup, ask for destination }
       if cboxFormat.ItemIndex < 0 then
       begin
         cboxFormat.ItemIndex := 0;
@@ -197,14 +204,18 @@ begin
       if (RPDev = nil) or RPDev.InvalidPrinter then
       begin
         PrinterRB.Enabled := false;
-        FileRB.Enabled    := false;
+        FileRB.Enabled := false;
         if not(ssAllowDestPreview in SystemSetups) then
         begin
           PreviewRB.Enabled := false;
-        end else begin
+        end
+        else
+        begin
           PreviewRB.Checked := true;
         end; { else }
-      end else begin
+      end
+      else
+      begin
         if not(ssAllowDestPrinter in SystemSetups) then
         begin
           PrinterRB.Enabled := false;
@@ -235,20 +246,22 @@ begin
     end; { else }
     if (RPDev = nil) or RPDev.InvalidPrinter then
     begin
-      CollateCK.Enabled   := false;
-      CopiesED.Enabled    := false;
+      CollateCK.Enabled := false;
+      CopiesED.Enabled := false;
       CopiesLabel.Enabled := false;
-      CopiesED.Text       := IntToStr(SystemPrinter.Copies);
-      DuplexCK.Enabled    := false;
-      SetupBB.Enabled     := false;
-    end else begin
+      CopiesED.Text := IntToStr(SystemPrinter.Copies);
+      DuplexCK.Enabled := false;
+      SetupBB.Enabled := false;
+    end
+    else
+    begin
       if not(ssAllowCollate in SystemSetups) then
       begin
         CollateCK.Enabled := false;
       end; { if }
       if not(ssAllowCopies in SystemSetups) then
       begin
-        CopiesED.Enabled    := false;
+        CopiesED.Enabled := false;
         CopiesLabel.Enabled := false;
       end; { if }
       CopiesED.Text := IntToStr(SystemPrinter.Copies);
@@ -277,15 +290,16 @@ begin
     begin
       { Put code here to retrieve page range info }
       FilePrinter.FirstPage := 1;
-      FilePrinter.LastPage  := 9999;
+      FilePrinter.LastPage := 9999;
       FilePrinter.Selection := '';
       if SelectionRB.Checked then
       begin
         FilePrinter.Selection := SelectionED.Text;
-      end else if PagesRB.Checked then
+      end
+      else if PagesRB.Checked then
       begin
         FilePrinter.FirstPage := StrToInt(FromED.Text);
-        FilePrinter.LastPage  := StrToInt(ToED.Text);
+        FilePrinter.LastPage := StrToInt(ToED.Text);
       end; { else }
 
       if ssAllowCopies in SystemSetups then
@@ -308,21 +322,28 @@ begin
           begin
             FilePrinter.Duplex := dupVertical;
           end; { if }
-        end else begin
+        end
+        else
+        begin
           FilePrinter.Duplex := dupSimplex;
         end; { else }
       end; { if }
-    end else begin
+    end
+    else
+    begin
       if PrinterRB.Checked then
       begin
-        ReportDest     := rdPrinter;
+        ReportDest := rdPrinter;
         OutputFileName := '';
-      end else if PreviewRB.Checked then
+      end
+      else if PreviewRB.Checked then
       begin
-        ReportDest     := rdPreview;
+        ReportDest := rdPreview;
         OutputFileName := '';
-      end else begin
-        ReportDest     := rdFile;
+      end
+      else
+      begin
+        ReportDest := rdFile;
         OutputFileName := Trim(editFileName.Text);
 
         if cboxFormat.ItemIndex = 0 then
@@ -332,18 +353,22 @@ begin
             OutputFileName := OutputFileName + { Trans- } '.ndr';
           end; { if }
           ReportSystem.DoNativeOutput := false;
-          ReportSystem.RenderObject   := nil;
-        end else if cboxFormat.ItemIndex = 1 then
+          ReportSystem.RenderObject := nil;
+        end
+        else if cboxFormat.ItemIndex = 1 then
         begin // Do Native Output PRN
           if Pos('.', OutputFileName) < 1 then
           begin
             OutputFileName := OutputFileName + { Trans- } '.prn';
           end; { if }
           ReportSystem.DoNativeOutput := true;
-          ReportSystem.RenderObject   := nil;
-        end else begin // Do Renderer
+          ReportSystem.RenderObject := nil;
+        end
+        else
+        begin // Do Renderer
           ReportSystem.DoNativeOutput := false;
-          ReportSystem.RenderObject   := TRPRender(cboxFormat.Items.Objects[cboxFormat.ItemIndex]);
+          ReportSystem.RenderObject :=
+            TRPRender(cboxFormat.Items.Objects[cboxFormat.ItemIndex]);
           if Pos('.', OutputFileName) < 1 then
           begin
             with ReportSystem.RenderObject do
@@ -376,7 +401,9 @@ begin
         begin
           SystemPrinter.Duplex := dupVertical;
         end; { if }
-      end else begin
+      end
+      else
+      begin
         SystemPrinter.Duplex := dupSimplex;
       end; { else }
     end; { if }
@@ -385,7 +412,8 @@ end;
 
 procedure TdtSetupForm.GetRenderList;
 const
-  DefOutputStr: array [0 .. 1] of string = ( { Trans+ } 'Rave Snapshot File (NDR)',
+  DefOutputStr: array [0 .. 1] of string =
+    ( { Trans+ } 'Rave Snapshot File (NDR)',
     { Trans+ } 'Native Printer Output (PRN)');
 begin
   cboxFormat.Items.Clear;

@@ -45,7 +45,7 @@ uses
   dxBarApplicationMenu, AdvObj, SHDocVw_EWB, EwbCore, EmbeddedWB,
   System.Actions, cxGraphics, cxLookAndFeelPainters, cxCustomData, cxFilter,
   cxData, cxDataStorage, cxNavigator, cxDBData, cxImage, dxRibbonSkins,
-  dxRibbonCustomizationForm, dxGDIPlusClasses;
+  dxRibbonCustomizationForm, dxGDIPlusClasses, ClientDMunit;
 
 type
 
@@ -210,41 +210,62 @@ type
     cxGridViewRepositoryDBTableViewSalesItems: TcxGridDBTableView;
     cxGridViewRepositoryDBTableViewSalesItemsitems_sold_model: TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewSalesItemsitems_sold_name: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_quantity: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_price_stock: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_owner_id: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_date_in: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_price_ht: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_quantity
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_price_stock
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_owner_id
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_date_in
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_price_ht
+      : TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewStockDeposit: TcxGridDBTableView;
     cxGridViewRepositoryDBTableViewStockDepositproduct_model: TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewStockDepositproduct_name: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewStockDepositproduct_price_stock: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewStockDepositproduct_quantity: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewStockDepositproduct_date_in_display: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewStockDepositproduct_price_stock
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewStockDepositproduct_quantity
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewStockDepositproduct_date_in_display
+      : TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewSalesItemsitems_refunded: TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewSalesDeposit: TcxGridDBTableView;
-    cxGridViewRepositoryDBTableViewSalesDeposititems_sold_model: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesDeposititems_sold_model
+      : TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewSalesDeposititems_sold_name: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewSalesDeposititems_sold_quantity: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewSalesDeposititems_sold_price_stock: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesDeposititems_sold_quantity
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesDeposititems_sold_price_stock
+      : TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewSalesDepositDBColumnDateIn: TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewRefunds: TcxGridDBTableView;
     cxGridViewRepositoryDBTableViewRefundsrefunds_id: TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewRefundsrefunds_amount: TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewRefundsrefunds_nature: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewRefundsrefunds_date_time_display: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewRefundsrefunds_date_time_display
+      : TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewCustRepair: TcxGridDBTableView;
-    cxGridViewRepositoryDBTableViewCustRepairrepair_products_name: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRepairrepair_products_serial: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRepairrepair_products_problem: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRepairrepair_date_in_display: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRepairrepair_date_out_display: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRepairrepair_products_name
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRepairrepair_products_serial
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRepairrepair_products_problem
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRepairrepair_date_in_display
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRepairrepair_date_out_display
+      : TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewCustRent: TcxGridDBTableView;
     cxGridViewRepositoryDBTableViewCustRentrent_transaction_id: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRentrent_transaction_product_name: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRentrent_transaction_start_display: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRentrent_transaction_due_display: TcxGridDBColumn;
-    cxGridViewRepositoryDBTableViewCustRentrent_transaction_returned: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRentrent_transaction_product_name
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRentrent_transaction_start_display
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRentrent_transaction_due_display
+      : TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewCustRentrent_transaction_returned
+      : TcxGridDBColumn;
     AdvPanelTransferGrid: TAdvPanel;
     StringGridTransfer: TAdvStringGrid;
     PanelAdminGrid: TAdvPanel;
@@ -379,7 +400,8 @@ type
     Sauver1: TMenuItem;
     dxBarButtonCleanStock: TdxBarButton;
     BitBtnOrders: TBitBtn;
-    cxGridViewRepositoryDBTableViewStockDepositproduct_isdefect: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewStockDepositproduct_isdefect
+      : TcxGridDBColumn;
     SBCustomerRentInShortcut: TSpeedButton;
     SBCustomerRentOutShortcut: TSpeedButton;
     dxBarButtonApplyUpdates: TdxBarButton;
@@ -757,9 +779,12 @@ type
     ButtonCustomerAlertsResetAttempts: TButton;
     cxGridCustomersAlert: TcxGrid;
     cxGridDBTableViewCustomersOrders: TcxGridDBTableView;
-    cxGridDBTableViewCustomersOrderscustomers_alerts_products_model: TcxGridDBColumn;
-    cxGridDBTableViewCustomersOrderscustomers_alerts_products_name: TcxGridDBColumn;
-    cxGridDBTableViewCustomersOrderscustomers_alerts_products_cat: TcxGridDBColumn;
+    cxGridDBTableViewCustomersOrderscustomers_alerts_products_model
+      : TcxGridDBColumn;
+    cxGridDBTableViewCustomersOrderscustomers_alerts_products_name
+      : TcxGridDBColumn;
+    cxGridDBTableViewCustomersOrderscustomers_alerts_products_cat
+      : TcxGridDBColumn;
     cxGridDBTableViewCustomersOrderscustomers_alerts_used: TcxGridDBColumn;
     cxGridDBTableViewCustomersOrderscustomers_alerts_date_disp: TcxGridDBColumn;
     cxGridDBTableViewCustomersOrdersColumnDateNotified: TcxGridDBColumn;
@@ -911,7 +936,8 @@ type
     dxBarButtonStockByPlatform: TdxBarButton;
     WebBrowserCLD: TEmbeddedWB;
     dxBarButtonScanDacal: TdxBarButton;
-    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_loyalty: TcxGridDBColumn;
+    cxGridViewRepositoryDBTableViewSalesItemsitems_sold_loyalty
+      : TcxGridDBColumn;
     cxGridViewRepositoryDBTableViewRefundsrefunds_signature: TcxGridDBColumn;
     DBCheckBoxProductsPOSA: TDBCheckBox;
     dxbrbtnAlertsMarkAsSent: TdxBarButton;
@@ -923,7 +949,8 @@ type
     dbdvmproducts_descriptionFR: TDBAdvMemo;
     lbl3: TLabel;
     dbdvmproducts_msgticketFR: TDBAdvMemo;
-    cxgrdbclmnGridDBTableViewCustomersOrderscustomers_alerts_dwnpay: TcxGridDBColumn;
+    cxgrdbclmnGridDBTableViewCustomersOrderscustomers_alerts_dwnpay
+      : TcxGridDBColumn;
     splReturns: TSplitter;
     advpnlItemsRefunded1: TAdvPanel;
     cxgrd1: TcxGrid;
@@ -966,7 +993,8 @@ type
     procedure MailingExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dxBarButton14Click(Sender: TObject);
-    procedure WebBrowserCLDDocumentComplete(ASender: TObject; const pDisp: IDispatch; var URL: OleVariant);
+    procedure WebBrowserCLDDocumentComplete(ASender: TObject;
+      const pDisp: IDispatch; var URL: OleVariant);
     procedure JvLookOutButtonReassortClick(Sender: TObject);
     procedure SBTransferSuggestInClick(Sender: TObject);
     procedure SBTransferSuggetsOutClick(Sender: TObject);
@@ -977,15 +1005,20 @@ type
     procedure SBCustomerRentInShortcutClick(Sender: TObject);
     procedure BitBtnTransferSuggestClick(Sender: TObject);
     procedure BitBtnOrdersClick(Sender: TObject);
-    procedure CustomerAlertMaxPriceKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure CustomerAlertMaxPriceKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure CustomerAlertMaxPriceEnter(Sender: TObject);
     procedure dxBarButtonCleanStockClick(Sender: TObject);
     procedure Sauver1Click(Sender: TObject);
     procedure ActionWebInfoExecute(Sender: TObject);
-    procedure EditSalesKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure EditStockinNewKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure EditTransferKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure EditInventoryKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditSalesKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure EditStockinNewKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure EditTransferKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure EditInventoryKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure BitBtnProductsPrintBarCodeClick(Sender: TObject);
     procedure dxBarButtonReportsStockSHClick(Sender: TObject);
     procedure dxBarButtonRapportStockNewClick(Sender: TObject);
@@ -1003,7 +1036,8 @@ type
     procedure Delete1Click(Sender: TObject);
     procedure RadioButtonSendClick(Sender: TObject);
     procedure RadioButtonReceiveClick(Sender: TObject);
-    procedure NeditTransferQuantityKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure NeditTransferQuantityKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure EditTransferModelExit(Sender: TObject);
     procedure ComboBoxTransferOwnerChange(Sender: TObject);
     procedure BitBtnSalesProcessClick(Sender: TObject);
@@ -1071,7 +1105,8 @@ type
     procedure DBEditCustomerPCodeExit(Sender: TObject);
     procedure dxBarButtonBatchPrintClick(Sender: TObject);
     procedure CustomersInvoiceMailClick(Sender: TObject);
-    procedure edsearchKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure edsearchKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure edsearchChange(Sender: TObject);
     procedure CustomersInvoicePreviewClick(Sender: TObject);
     procedure SpeedButtonProductsSortDateClick(Sender: TObject);
@@ -1082,12 +1117,14 @@ type
     procedure netshop_expensesExecute(Sender: TObject);
     procedure JvLookOutButtonAdminDayCashClick(Sender: TObject);
     procedure PageControlAdminSalesResize(Sender: TObject);
-    procedure ParamTreeParamList(Sender: TObject; ANode: TTreeNode; href: string; values: TStringList; var DoPopup: Boolean);
+    procedure ParamTreeParamList(Sender: TObject; ANode: TTreeNode;
+      href: string; values: TStringList; var DoPopup: Boolean);
     procedure ActionExportInvoiceExecute(Sender: TObject);
     procedure DBComboCustomerCountryExit(Sender: TObject);
     procedure DBCheckCustCountryClick(Sender: TObject);
     procedure Edit1Click(Sender: TObject);
-    procedure ParamTreeParamChanged(Sender: TObject; ANode: TTreeNode; href, oldvalue, newvalue: string);
+    procedure ParamTreeParamChanged(Sender: TObject; ANode: TTreeNode;
+      href, oldvalue, newvalue: string);
     procedure Ajouteraufiltre1Click(Sender: TObject);
     procedure Supprimerfiltre1Click(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
@@ -1098,9 +1135,11 @@ type
     procedure dxBarButtonCheckDacalClick(Sender: TObject);
     procedure CustomersInvoicesPrintStickerClick(Sender: TObject);
     procedure EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char);
-    procedure EditStockinCustomerIdKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditStockinCustomerIdKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure EditSalesCustomerNbrKeyPress(Sender: TObject; var Key: Char);
-    procedure EditSalesCustomerNbrKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditSalesCustomerNbrKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure BitBtnPurchaseHistoryClick(Sender: TObject);
     procedure DBDebugExecute(Sender: TObject);
     procedure SpeedButtonTipsAddClick(Sender: TObject);
@@ -1110,7 +1149,8 @@ type
     procedure EntrerCaroussel1Click(Sender: TObject);
     procedure EditRentCustomerIdOldEnter(Sender: TObject);
     procedure EditRentCustomerIdOldKeyPress(Sender: TObject; var Key: Char);
-    procedure EditRentCustomerIdOldKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditRentCustomerIdOldKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure JVButtonCustomerRentActivateClick(Sender: TObject);
     procedure dxBarButton6Click(Sender: TObject);
     procedure dxBarButton8Click(Sender: TObject);
@@ -1120,8 +1160,10 @@ type
     procedure BitBtnRentProcessClick(Sender: TObject);
     procedure EditRentCustomerIdEnter(Sender: TObject);
     procedure EditRentCustomerIdKeyPress(Sender: TObject; var Key: Char);
-    procedure EditRentCustomerIdKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure NewRentCaddyClick(Sender: TObject; TransactionType: TRentOperation);
+    procedure EditRentCustomerIdKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure NewRentCaddyClick(Sender: TObject;
+      TransactionType: TRentOperation);
     procedure SBNewSalesCaddyClick(Sender: TObject);
     procedure EditRentModelExit(Sender: TObject);
     procedure SBNewRentCaddyOutClick(Sender: TObject);
@@ -1130,18 +1172,21 @@ type
     procedure JvButtonCustomerRentExtendClick(Sender: TObject);
     procedure SBNewRentCaddyInClick(Sender: TObject);
     procedure PageControlRentCaddyChange(Sender: TObject);
-    procedure NEditRentAvailableKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure NEditRentAvailableKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     function GetRentCaddyType: TRentOperation;
     function GetRentCaddyCustomerNbr: Integer;
     procedure dxBarButton1Click(Sender: TObject);
     procedure dxBarButtonStock0valComputeClick(Sender: TObject);
-    procedure searchstringKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure searchstringKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure SBNewStockinCaddyClick(Sender: TObject);
     procedure BitBtnStockinClearClickClick(Sender: TObject);
     procedure SBNewStockinDepositCaddyClick(Sender: TObject);
     procedure SBNewStockinBoughtCaddyClick(Sender: TObject);
     procedure cxEditStockinModelExit(Sender: TObject);
-    procedure EditStockinCustomerNbrKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditStockinCustomerNbrKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure EditStockinCustomerNbrKeyPress(Sender: TObject; var Key: Char);
     procedure BitBtnStockinProcessClickClick(Sender: TObject);
     procedure SBCustomerCreateCaddyDepositClick(Sender: TObject);
@@ -1179,7 +1224,8 @@ type
     procedure dxBarButtonReportCustomerCreditClick(Sender: TObject);
     procedure dxBarButtonReportDepositNonRefundedClick(Sender: TObject);
     procedure dxBarButtonReportRepairClick(Sender: TObject);
-    procedure PhidgetRFIDOutputChange(ASender: TObject; Index: Integer; NewState: WordBool);
+    procedure PhidgetRFIDOutputChange(ASender: TObject; Index: Integer;
+      NewState: WordBool);
     procedure PhidgetRFIDTag(ASender: TObject; const TagNumber: WideString);
     procedure PhidgetRFIDAttach(Sender: TObject);
     procedure PhidgetRFIDTagLost(ASender: TObject; const TagNumber: WideString);
@@ -1236,11 +1282,11 @@ type
     procedure SpeedButtonPauseClick(Sender: TObject);
     procedure dxBarButtonStockByPlatformClick(Sender: TObject);
     procedure JvLookOutButtonReorderTopSellersClick(Sender: TObject);
-    procedure cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyle(
-      Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
+    procedure cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyle
+      (Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
       AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
-    procedure cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyl(
-      Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
+    procedure cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyl
+      (Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
       AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
     procedure dxBarButtonScanDacalClick(Sender: TObject);
     procedure dxbrbtnAlertsMarkAsSentClick(Sender: TObject);
@@ -1253,7 +1299,7 @@ type
     procedure CopierBonClick(Sender: TObject);
 
   private
-    Data : TManagerData;
+    Data: TManagerData;
     procedure SalesCaddyClose(Sender: TObject);
     procedure RentCaddyClose(Sender: TObject);
     function GetParameter(Name: string): string;
@@ -1275,17 +1321,19 @@ type
     procedure NewStockinCaddy(OwnerId, SupplierId: Integer);
     function ValidateCoupon(coupon: string): Boolean;
     procedure ClearCoupons;
-    procedure ProcessAlert(product_model, product_price_stock, product_owner_id, product_supplier_id, product_quantity: string);
-    procedure PrintPriceTag(quantity, description, price, owner, supplier: string);
+    procedure ProcessAlert(product_model, product_price_stock, product_owner_id,
+      product_supplier_id, product_quantity: string);
+    procedure PrintPriceTag(quantity, description, price, owner,
+      supplier: string);
     procedure JvLookOutButtonReassortBestsellers(Sender: TObject);
     procedure JvLookOutButtonReassortBestsellersClick(Sender: TObject);
     procedure TryApplyChangesToDB;
 
-
   public
     PhidgetRFID: TPhidgetRFID;
     procedure SalesClearSummary;
-    property Parameter[name: string]: string read GetParameter write SetParameter; default;
+    property Parameter[name: string]: string read GetParameter
+      write SetParameter; default;
     procedure WebbrowserCLDAddItem(productmodel: string);
     procedure WebbrowserCLDAddItems(QueryString: WideString);
     procedure WebbrowserCLDAddReturnItems(QueryString: WideString);
@@ -1303,7 +1351,7 @@ var
   ProductImage: TBitmap;
   SupplierList, Shoplist, AllShopList, ShopdataList, RentSchemeList: Tstrings;
   RegisterColHeaders: TStringList;
-  PrintLogo,SHLogo: TBitmap;
+  PrintLogo, SHLogo: TBitmap;
   ApplyTotalErrors: Integer;
   FtpImgUp: TFtpUp;
   Issucking: Boolean;
@@ -1327,11 +1375,10 @@ uses ReportModuleUnit, NewProdFRMunit, SaleExecFRMunit, StockCheckFrmUnit,
   SalesCorrectFRMUnit, SMS_COMAPILib_TLB, CancelInvoiceItemFRMUnit,
   CashRegistryFRMUnit, Registry, GlobalsUnit, DavidUtilsUnit,
   ProductSalesHistoryUnit, DialogSearchCustFRMUnit,
-  CashFRMUnit, ClientDMunit, DialogRentExtend, CheckLibFRMUnit,
+  CashFRMUnit, DialogRentExtend, CheckLibFRMUnit,
   OrderCheckFRMUnit, TransferSuggestFRMUnit, TransferRequestFRMUnit,
   ReorderFRMUnit, DialogSmsSendFRMUnit, ReportSQLForm,
-   wgssSTU_TLB, SignatureForm,esd;
-
+  wgssSTU_TLB, SignatureForm, esd;
 
 {$R *.DFM}
 
@@ -1344,89 +1391,90 @@ end;
 procedure CardInserted; stdcall;
 begin
   if Assigned(MainForm) then
+  begin
+    with MainForm.AdvAlertWindow.AlertMessages.Add do
     begin
-                  with MainForm.AdvAlertWindow.AlertMessages.Add do
-                  begin
-                    Text.Text := 'Smartcard insérée dans le lecteur';
-                    MainForm.AdvAlertWindow.Show;
-                  end;
-                  MainForm.SBReadEID.Enabled:=True;
+      Text.Text := 'Smartcard insérée dans le lecteur';
+      MainForm.AdvAlertWindow.Show;
     end;
+    MainForm.SBReadEID.Enabled := True;
+  end;
 end;
 
 // Card was activated
 procedure CardActive; stdcall;
 begin
   if Assigned(MainForm) then
+  begin
+    with MainForm.AdvAlertWindow.AlertMessages.Add do
     begin
-                  with MainForm.AdvAlertWindow.AlertMessages.Add do
-                  begin
-                    Text.Text := 'Smartcard activée';
-                    MainForm.AdvAlertWindow.Show;
-                  end;
+      Text.Text := 'Smartcard activée';
+      MainForm.AdvAlertWindow.Show;
     end;
+  end;
 end;
 
 // Card was removed from the reader
 procedure CardRemoved; stdcall;
 begin
   if Assigned(MainForm) then
+  begin
+    with MainForm.AdvAlertWindow.AlertMessages.Add do
     begin
-                  with MainForm.AdvAlertWindow.AlertMessages.Add do
-                  begin
-                    Text.Text := 'Smartcard enlevée du lecteur';
-                    MainForm.AdvAlertWindow.Show;
-                  end;
-                  MainForm.SBReadEID.Enabled:=False;
+      Text.Text := 'Smartcard enlevée du lecteur';
+      MainForm.AdvAlertWindow.Show;
     end;
+    MainForm.SBReadEID.Enabled := False;
+  end;
 end;
 
 // Invalid card was inserted into the reader
 procedure CardInvalid; stdcall;
 begin
   if Assigned(MainForm) then
+  begin
+    with MainForm.AdvAlertWindow.AlertMessages.Add do
     begin
-                  with MainForm.AdvAlertWindow.AlertMessages.Add do
-                  begin
-                    Text.Text := 'Smartcard non valide';
-                    MainForm.AdvAlertWindow.Show;
-                  end;    end;
+      Text.Text := 'Smartcard non valide';
+      MainForm.AdvAlertWindow.Show;
+    end;
+  end;
 end;
 
 // Waiting for card response
 procedure ReaderWaiting; stdcall;
 begin
   if Assigned(MainForm) then
+  begin
+    with MainForm.AdvAlertWindow.AlertMessages.Add do
     begin
-                  with MainForm.AdvAlertWindow.AlertMessages.Add do
-                  begin
-                    Text.Text := 'Le lecteur de smartcard est prêt';
-                    MainForm.AdvAlertWindow.Show;
-                  end;
+      Text.Text := 'Le lecteur de smartcard est prêt';
+      MainForm.AdvAlertWindow.Show;
     end;
+  end;
 end;
 
 // Card operation error
-procedure CardError(ErrorCode : cardinal); stdcall;
+procedure CardError(ErrorCode: cardinal); stdcall;
 begin
   if Assigned(MainForm) then
+  begin
+    with MainForm.AdvAlertWindow.AlertMessages.Add do
     begin
-                      with MainForm.AdvAlertWindow.AlertMessages.Add do
-                  begin
-                    Text.Text := 'Erreur durant une opération smartcard '+SysErrorMessage(ErrorCode) + ' Error code: 0x' + IntToHex(ErrorCode, 10);
-                    MainForm.AdvAlertWindow.Show;
-                  end;
+      Text.Text := 'Erreur durant une opération smartcard ' +
+        SysErrorMessage(ErrorCode) + ' Error code: 0x' +
+        IntToHex(ErrorCode, 10);
+      MainForm.AdvAlertWindow.Show;
     end;
+  end;
 end;
-
-
 
 procedure TMainForm.FormCreate(Sender: TObject);
 var
   Count, StdGridWidth, i: Integer;
   ParamReg: TRegistry;
   ParamErr: string;
-  adouble : double;
+  adouble: double;
 begin
 
   Self.Caption := 'Gomedia ' + GlobalsUnit.Version;
@@ -1465,8 +1513,8 @@ begin
     end;
   }
   GroupBoxProductImage.Visible := True;
-  RemoteDB.Products.ReadOnly   := False;
-  ActionDBCheckCat.Enabled     := True;
+  RemoteDB.Products.ReadOnly := False;
+  ActionDBCheckCat.Enabled := True;
 
   //
   // AdminLevels
@@ -1474,44 +1522,44 @@ begin
   if UserLevel = 0 then
   begin
     // if False then begin
-    MainForm.DBEditProductsID.ReadOnly                     := True;
-    MainForm.DBEditProductsImage.ReadOnly                  := True;
-    MainForm.DBEditProductsModel.ReadOnly                  := True;
-    MainForm.DBEditProductsName.ReadOnly                   := True;
-    MainForm.DBEditProductsRootName.ReadOnly               := True;
-    MainForm.DBEditProductWeight.ReadOnly                  := True;
-    MainForm.DBEditProductNameExt.ReadOnly                 := True;
-    MainForm.dbdvmproducts_descriptionFR.ReadOnly             := True;
-    dbdvmproducts_msgticketNL.ReadOnly                      :=True;
-    dbdvmproducts_msgticketFR.ReadOnly                      := True;
+    MainForm.DBEditProductsID.ReadOnly := True;
+    MainForm.DBEditProductsImage.ReadOnly := True;
+    MainForm.DBEditProductsModel.ReadOnly := True;
+    MainForm.DBEditProductsName.ReadOnly := True;
+    MainForm.DBEditProductsRootName.ReadOnly := True;
+    MainForm.DBEditProductWeight.ReadOnly := True;
+    MainForm.DBEditProductNameExt.ReadOnly := True;
+    MainForm.dbdvmproducts_descriptionFR.ReadOnly := True;
+    dbdvmproducts_msgticketNL.ReadOnly := True;
+    dbdvmproducts_msgticketFR.ReadOnly := True;
     MainForm.DBLookupComboBoxProductsManufacturer.ReadOnly := True;
-    MainForm.DBLookupComboBoxProductsTax.ReadOnly          := True;
-    MainForm.DBLookupComboBoxProductsWarranty.ReadOnly     := True;
-    MainForm.DBCheckProductStock.ReadOnly                  := True;
-    MainForm.DBCheckProductLoyalty.ReadOnly                := True;
-    MainForm.DBCheckProductPreview.ReadOnly                := True;
-    MainForm.DBCheckProductDiscontinued.ReadOnly           := True;
-    MainForm.DBCheckProductStreetBlock.ReadOnly            := True;
-    MainForm.SpeedButtonToArchives.Enabled                 := False;
-    MainForm.SpeedButtonToLive.Enabled                     := False;
-    MainForm.SpeedButtonChangeEAN.Enabled                  := False;
+    MainForm.DBLookupComboBoxProductsTax.ReadOnly := True;
+    MainForm.DBLookupComboBoxProductsWarranty.ReadOnly := True;
+    MainForm.DBCheckProductStock.ReadOnly := True;
+    MainForm.DBCheckProductLoyalty.ReadOnly := True;
+    MainForm.DBCheckProductPreview.ReadOnly := True;
+    MainForm.DBCheckProductDiscontinued.ReadOnly := True;
+    MainForm.DBCheckProductStreetBlock.ReadOnly := True;
+    MainForm.SpeedButtonToArchives.Enabled := False;
+    MainForm.SpeedButtonToLive.Enabled := False;
+    MainForm.SpeedButtonChangeEAN.Enabled := False;
     MainForm.cxDBProductsDateAvailable.Properties.ReadOnly := True;
-    MainForm.cxDBProductsDateIn.Properties.ReadOnly        := True;
-    MainForm.JvDBLookupTreeViewCombo.ReadOnly              := True;
-    MainForm.DBMemoBonus.ReadOnly                          := True;
-    MainForm.DBEditProductPriceHT.Properties.ReadOnly      := True;
-    MainForm.DBEditProductPriceAllIn.Properties.ReadOnly   := True;
-    MainForm.ButtonProductsSetPrice.Enabled                := False;
-    MainForm.dxBarButtonCheckCat.Visible                   := ivNever;
-    MainForm.dxBarButtonChackEan.Visible                   := ivNever;
-    MainForm.dxBarButtonDBIdGen.Visible                    := ivNever;
-    MainForm.dxBarButtonProductVisible.Visible             := ivNever;
-    MainForm.dxBarButtonTVARates.Visible                   := ivNever;
-    MainForm.dxBarButtonDebug.Visible                      := ivNever;
+    MainForm.cxDBProductsDateIn.Properties.ReadOnly := True;
+    MainForm.JvDBLookupTreeViewCombo.ReadOnly := True;
+    MainForm.DBMemoBonus.ReadOnly := True;
+    MainForm.DBEditProductPriceHT.Properties.ReadOnly := True;
+    MainForm.DBEditProductPriceAllIn.Properties.ReadOnly := True;
+    MainForm.ButtonProductsSetPrice.Enabled := False;
+    MainForm.dxBarButtonCheckCat.Visible := ivNever;
+    MainForm.dxBarButtonChackEan.Visible := ivNever;
+    MainForm.dxBarButtonDBIdGen.Visible := ivNever;
+    MainForm.dxBarButtonProductVisible.Visible := ivNever;
+    MainForm.dxBarButtonTVARates.Visible := ivNever;
+    MainForm.dxBarButtonDebug.Visible := ivNever;
   end;
 
-  ParamErr         := '';
-  ParamReg         := TRegistry.Create;
+  ParamErr := '';
+  ParamReg := TRegistry.Create;
   ParamReg.RootKey := HKEY_CURRENT_USER;
   ParamReg.OpenKey(ParamRegPath, True);
   for i := 0 to ParamTree.ParamRefCount - 1 do
@@ -1525,7 +1573,8 @@ begin
     end;
     if ParamReg.ReadString(ParamTree.ParamRefs[i]) <> '' then
     begin
-      ParamTree.Parameter[ParamTree.ParamRefs[i]] := ParamReg.ReadString(ParamTree.ParamRefs[i]);
+      ParamTree.Parameter[ParamTree.ParamRefs[i]] :=
+        ParamReg.ReadString(ParamTree.ParamRefs[i]);
     end;
   end;
   ParamReg.CloseKey;
@@ -1533,36 +1582,38 @@ begin
   if ParamErr <> '' then
   begin
     ParamErr := LeftStr(ParamErr, Length(ParamErr) - 2);
-    ShowMessage('Donnees de configuration non coherentes veuillez aller dans la partie configuration du programme. Erreurs : ' + ParamErr);
+    ShowMessage
+      ('Donnees de configuration non coherentes veuillez aller dans la partie configuration du programme. Erreurs : '
+      + ParamErr);
   end;
 
-  Application.OnHint   := ShowHint;
+  Application.OnHint := ShowHint;
   AllowMRUClientAccess := True;
 
   ChDir(ExtractFilePath(ParamStr(0)));
 
   { needed for the product picture scanning }
-  TmpBmp       := TBitmap.Create;
+  TmpBmp := TBitmap.Create;
   ProductImage := TBitmap.Create;
   // ProductImage.TransparentColor:=clFuchsia;
   // ProductImage.Transparent:=True;
   // ProductImage.TransparentMode:=tmFixed;
-  ThumbImg.Width  := 0;
+  ThumbImg.Width := 0;
   ThumbImg.Height := 0;
-  ThumbImg.Width  := 100;
+  ThumbImg.Width := 100;
   ThumbImg.Height := 100;
 
-  StyleError       := TcxStyle.Create(self);
+  StyleError := TcxStyle.Create(Self);
   StyleError.Color := ClRed;
 
   DefaultSupplierId := '6';
-  RateTva           := 1.21;
+  RateTva := 1.21;
 
   { Initialisation des composantses visuelles }
-  self.Width  := 1020;
-  self.Height := 720;
+  Self.Width := 1020;
+  Self.Height := 720;
 
-  PanelAdminGrid.Height    := 250; // TabsheetAdminSales.ClientHeight-235;
+  PanelAdminGrid.Height := 250; // TabsheetAdminSales.ClientHeight-235;
   PanelTransferGrid.Height := 250; // TabsheetAdmin.ClientHeight-235-65;
   // PanelInventoryGrids.Height:=250+65;//TabsheetInventory.ClientHeight-235;
 
@@ -1606,8 +1657,8 @@ begin
   StdGridWidth := 85;
   with StringGridTransfer do
   begin
-    RowCount    := 2;
-    ColCount    := 10;
+    RowCount := 2;
+    ColCount := 10;
     Cells[0, 0] := 'Modèle';
     Cells[1, 0] := 'Description';
     Cells[2, 0] := 'Quantité';
@@ -1618,7 +1669,7 @@ begin
     Cells[7, 0] := 'Propriétaire';
     Cells[8, 0] := 'Fournisseur';
     Cells[9, 0] := 'Magasin';
-    for Count   := 0 to ColCount - 1 do
+    for Count := 0 to ColCount - 1 do
     begin
       ColWidths[Count] := StdGridWidth;
     end;
@@ -1630,8 +1681,8 @@ begin
   StdGridWidth := 75;
   with StringGridAdmin do
   begin
-    RowCount    := 2;
-    ColCount    := 10;
+    RowCount := 2;
+    ColCount := 10;
     Cells[0, 0] := 'Modèle';
     Cells[1, 0] := 'Description';
     Cells[2, 0] := 'Quantité';
@@ -1642,7 +1693,7 @@ begin
     Cells[7, 0] := 'Propriétaire';
     Cells[8, 0] := 'Fournisseur';
     Cells[9, 0] := 'Identifiant';
-    for Count   := 0 to ColCount - 1 do
+    for Count := 0 to ColCount - 1 do
     begin
       ColWidths[Count] := StdGridWidth;
     end;
@@ -1667,25 +1718,23 @@ begin
     end;
   }
 
-
   PrintLogo := TBitmap.Create;
   if FileExists('printLogo.bmp') then
     PrintLogo.LoadfromFile('PrintLogo.bmp')
   else
-    PrintLogo                           := TBitmap.Create;
+    PrintLogo := TBitmap.Create;
 
   SHLogo := TBitmap.Create;
   if FileExists('logorecycle.bmp') then
     SHLogo.LoadfromFile('logorecycle.bmp')
   else
-    SHLogo                           := TBitmap.Create;
+    SHLogo := TBitmap.Create;
 
-  ImageTicketLogo.Picture.Bitmap        := TBitmap.Create;
+  ImageTicketLogo.Picture.Bitmap := TBitmap.Create;
   ImageTicketLogo.Picture.Bitmap.Height := ImageTicketLogo.Height;
-  ImageTicketLogo.Picture.Bitmap.Width  := ImageTicketLogo.Width;
-  ImageTicketLogo.Picture.Bitmap.Canvas.StretchDraw(rect(0, 0, ImageTicketLogo.Width, ImageTicketLogo.Height), PrintLogo);
-
-
+  ImageTicketLogo.Picture.Bitmap.Width := ImageTicketLogo.Width;
+  ImageTicketLogo.Picture.Bitmap.Canvas.StretchDraw
+    (rect(0, 0, ImageTicketLogo.Width, ImageTicketLogo.Height), PrintLogo);
 
   { Chargement des Paramètres magasins }
   if RemoteDB.Shops.Active then
@@ -1695,16 +1744,23 @@ begin
       ShopdataList := TStringList.Create;
       ShopdataList.Add(RemoteDB.Shops.FieldByName('shops_name').AsString);
       ShopdataList.Add(RemoteDB.Shops.FieldByName('shops_adress_one').AsString);
-      ShopdataList.Add(RemoteDB.Shops.FieldByName('shops_postcode').AsString + ' ' +RemoteDB.Shops.FieldByName('shops_city').AsString);
+      ShopdataList.Add(RemoteDB.Shops.FieldByName('shops_postcode').AsString +
+        ' ' + RemoteDB.Shops.FieldByName('shops_city').AsString);
       ShopdataList.Add(RemoteDB.Shops.FieldByName('shops_phone').AsString);
-      ShopdataList.Add(RemoteDB.Shops.FieldByName('shops_manager_email').AsString);
+      ShopdataList.Add(RemoteDB.Shops.FieldByName('shops_manager_email')
+        .AsString);
       ShopData1.Text := RemoteDB.Shops.FieldByName('shops_title').AsString;
       ShopData2.Text := RemoteDB.Shops.FieldByName('shops_adress_one').AsString;
-      ShopData3.Text := (RemoteDB.Shops.FieldByName('shops_postcode').AsString + ' ' +RemoteDB.Shops.FieldByName('shops_city').AsString);
+      ShopData3.Text := (RemoteDB.Shops.FieldByName('shops_postcode').AsString +
+        ' ' + RemoteDB.Shops.FieldByName('shops_city').AsString);
       ShopData4.Text := RemoteDB.Shops.FieldByName('shops_phone').AsString;
-      ShopData5.Text := RemoteDB.Shops.FieldByName('shops_manager_email').AsString;
-    end else begin
-      ShowMessage('Impossible de localiser le magasin '+inttostr(ConnectedShop)+' dans la base de données');
+      ShopData5.Text := RemoteDB.Shops.FieldByName
+        ('shops_manager_email').AsString;
+    end
+    else
+    begin
+      ShowMessage('Impossible de localiser le magasin ' +
+        inttostr(ConnectedShop) + ' dans la base de données');
     end;
   end;
 
@@ -1715,10 +1771,11 @@ begin
     RemoteDB.netshop_suppliers.First;
     while not RemoteDB.netshop_suppliers.Eof do
     begin
-      SupplierList.Add(RemoteDB.netshop_suppliers.FieldByName('Suppliers_Name').Text);
+      SupplierList.Add(RemoteDB.netshop_suppliers.FieldByName
+        ('Suppliers_Name').Text);
       RemoteDB.netshop_suppliers.Next;
     end;
-    ComboBoxSupplier.items     := SupplierList;
+    ComboBoxSupplier.items := SupplierList;
     ComboBoxSupplier.ItemIndex := ComboBoxSupplier.items.IndexOf('Cld');
   end;
 
@@ -1742,7 +1799,8 @@ begin
     RemoteDB.AllShops.First;
     while not RemoteDB.AllShops.Eof do
     begin
-      if RemoteDB.AllShops.FieldByName('shops_id').AsInteger <> ConnectedShop then
+      if RemoteDB.AllShops.FieldByName('shops_id').AsInteger <> ConnectedShop
+      then
         AllShopList.Add(RemoteDB.AllShops.FieldByName('Shops_Name').Text);
       RemoteDB.AllShops.Next;
     end;
@@ -1755,66 +1813,73 @@ begin
     RemoteDB.netshop_rent_schemes.First;
     while not RemoteDB.netshop_rent_schemes.Eof do
     begin
-      RentSchemeList.Add(RemoteDB.netshop_rent_schemes.FieldByName('rent_scheme_name').Text);
+      RentSchemeList.Add(RemoteDB.netshop_rent_schemes.FieldByName
+        ('rent_scheme_name').Text);
       RemoteDB.netshop_rent_schemes.Next;
     end;
   end;
 
   ComboBoxDestShop.items := Shoplist;
   // ComboBoxOriginShop.items := Shoplist;
-  ComboBoxRent.items    := RentSchemeList;
+  ComboBoxRent.items := RentSchemeList;
   ComboBoxSuggest.items := AllShopList;
 
   { Initialisation des panels }
   BitBtnTransferClearClick(nil);
   TransferClearSummary;
-  SBNewSalesCaddyClick(self);
+  SBNewSalesCaddyClick(Self);
 
-  AdvPanelCustDepositStock.Height := Round((PanelCustomersDeposidGrids.Height - PanelCustomersRadioButtons.Height) / 2);
-  AdvPanelCustSalesItems.Height   := Round(PanelcustSalesGrid.Height / 2);
+  AdvPanelCustDepositStock.Height :=
+    Round((PanelCustomersDeposidGrids.Height -
+    PanelCustomersRadioButtons.Height) / 2);
+  AdvPanelCustSalesItems.Height := Round(PanelcustSalesGrid.Height / 2);
 
   { Activation des Actions }
-  Vente.Enabled     := True;
-  Entree.Enabled    := True;
-  Admin.Enabled     := True;
-  Config.Enabled    := True;
-  Clients.Enabled   := True;
+  Vente.Enabled := True;
+  Entree.Enabled := True;
+  Admin.Enabled := True;
+  Config.Enabled := True;
+  Clients.Enabled := True;
   Transfert.Enabled := True;
-  Produits.Enabled  := True;
-  Rent.Enabled      := True;
-  Mailing.Enabled   := True;
+  Produits.Enabled := True;
+  Rent.Enabled := True;
+  Mailing.Enabled := True;
 
   { Activation du lecteur smartcard }
-   Data.CardInserted := CardInserted;
-   Data.CardActive := CardActive;
-   Data.CardRemoved := CardRemoved;
-   Data.CardInvalid := CardInvalid;
-   Data.Error := CardError;
-   Data.ReaderWaiting := ReaderWaiting;
+  Data.CardInserted := CardInserted;
+  Data.CardActive := CardActive;
+  Data.CardRemoved := CardRemoved;
+  Data.CardInvalid := CardInvalid;
+  Data.Error := CardError;
+  Data.ReaderWaiting := ReaderWaiting;
 
-   //Initialize reader
-   InitReaderEx(@Data);
-
+  // Initialize reader
+  InitReaderEx(@Data);
 
   { Activation du premier Tabsheet }
 
   Produits.Execute;
-  MonthCalendarAdminSales.Date    := Now;
+  MonthCalendarAdminSales.Date := Now;
   MonthCalendarAdminSalesEnd.Date := Now;
 
-  if self.Parameter['SyncAutoEnabled'] = 'TRUE' then
+  if Self.Parameter['SyncAutoEnabled'] = 'TRUE' then
     TimerDBupdate.Enabled := True
   else
     TimerDBupdate.Enabled := False;
-  TimerDBupdate.Interval  := Max(StrtoInt(self.Parameter['SyncDelay']) * 60000, (15 * 60000));
+  TimerDBupdate.Interval := Max(StrtoInt(Self.Parameter['SyncDelay']) * 60000,
+    (15 * 60000));
   TimerUpdateConnectionLedsTimer(nil);
 
   if not RemoteDB.countries.Locate('countries_id', '21', []) then
     exit;
-  if RemoteDB.Countries_To_Vat.Locate('countries_to_vat_iso', RemoteDB.countries.FieldByName('countries_iso_code_2').AsString, []) then
+  if RemoteDB.Countries_To_Vat.Locate('countries_to_vat_iso',
+    RemoteDB.countries.FieldByName('countries_iso_code_2').AsString, []) then
   begin
-    DBEditCustomerVAT.Properties.EditMask := RemoteDB.Countries_To_Vat.FieldByName('countries_to_vat_mask').AsString;
-  end else begin
+    DBEditCustomerVAT.Properties.EditMask :=
+      RemoteDB.Countries_To_Vat.FieldByName('countries_to_vat_mask').AsString;
+  end
+  else
+  begin
     DBEditCustomerVAT.Properties.EditMask := '';
   end;
 
@@ -1836,7 +1901,8 @@ begin
     ParamReg.OpenKey(ParamRegPath, True);
     for i := 0 to ParamTree.ParamRefCount - 1 do
     begin
-      ParamReg.WriteString(ParamTree.ParamRefs[i], ParamTree.Parameter[ParamTree.ParamRefs[i]]);
+      ParamReg.WriteString(ParamTree.ParamRefs[i],
+        ParamTree.Parameter[ParamTree.ParamRefs[i]]);
     end;
   finally
     ParamReg.CloseKey;
@@ -1878,7 +1944,7 @@ var
   source: string;
   aJpegImage: TJpegImage;
   FileNames: TStringArray;
-  adouble : double;
+  adouble: double;
 
   function InvertiBarre(sSource: string): string;
   begin
@@ -1890,7 +1956,7 @@ var
     i: Integer;
   begin
     Result := -1;
-    for i  := low(items) to high(items) do
+    for i := low(items) to high(items) do
     begin
       if AnsiSameText(Value, items[i]) then
       begin
@@ -1900,22 +1966,22 @@ var
     end; // for
   end; // IndexOfArray
 
-  procedure DeleteFromArray(const Index: Cardinal; var items: TStringArray);
+  procedure DeleteFromArray(const Index: cardinal; var items: TStringArray);
   var
-    ALength: Cardinal;
-    i: Cardinal;
+    ALength: cardinal;
+    i: cardinal;
   begin
     ALength := Length(items);
     Assert(ALength > 0);
     Assert(index < ALength);
-    for i          := index + 1 to ALength - 1 do
+    for i := index + 1 to ALength - 1 do
       items[i - 1] := items[i];
     SetLength(items, ALength - 1);
   end; // DeletefromArray
 
 begin
 
-  if (self.Parameter['MiscCDLibUse'] = 'TRUE') then
+  if (Self.Parameter['MiscCDLibUse'] = 'TRUE') then
   begin
     try
       InitUSBCDLibrary;
@@ -1927,34 +1993,34 @@ begin
   end;
 
   POSBANK := False;
-  if (UserType = 1) and (self.Parameter['MISCPOSBANKUse'] = 'TRUE') then
+  if (UserType = 1) and (Self.Parameter['MISCPOSBANKUse'] = 'TRUE') then
   begin
 
     try
-      PhidgetRFID                := TPhidgetRFID.Create(self);
-      PhidgetRFID.OnAttach       := PhidgetRFIDAttach;
+      PhidgetRFID := TPhidgetRFID.Create(Self);
+      PhidgetRFID.OnAttach := PhidgetRFIDAttach;
       PhidgetRFID.OnOutputChange := PhidgetRFIDOutputChange;
-      PhidgetRFID.OnTag          := PhidgetRFIDTag;
-      PhidgetRFID.OnTagLost      := PhidgetRFIDTagLost;
+      PhidgetRFID.OnTag := PhidgetRFIDTag;
+      PhidgetRFID.OnTagLost := PhidgetRFIDTagLost;
       PhidgetRFID.Open(-1);
     except
       ShowMessage('Erreur initialisation module RFID');
     end;
 
-    POSBANK               := True;
-    ACustomerDisplay      := TFormCustomerDisplay.Create(self);
+    POSBANK := True;
+    ACustomerDisplay := TFormCustomerDisplay.Create(Self);
     ACustomerDisplay.Left := 1024;
-    ACustomerDisplay.Top  := 0;
-    if ((self.Parameter['MISCPOSBANKModel'] = '2')) then
+    ACustomerDisplay.Top := 0;
+    if ((Self.Parameter['MISCPOSBANKModel'] = '2')) then
     begin
-      ACustomerDisplay.Width  := 1024;
+      ACustomerDisplay.Width := 1024;
       ACustomerDisplay.Height := 768;
     end;
 
-    if ((self.Parameter['MISCPOSBANKModel'] = '3')) then
+    if ((Self.Parameter['MISCPOSBANKModel'] = '3')) then
     begin
       ACustomerDisplay.Left := 1280;
-      ACustomerDisplay.Width  := 1280;
+      ACustomerDisplay.Width := 1280;
       ACustomerDisplay.Height := 800;
     end;
 
@@ -1963,7 +2029,7 @@ begin
     if RemoteDB.IsConnected then
     begin
 
-      SearchDir  := (ExtractFilePath(ParamStr(0))) + 'posbank\*.jpg';
+      SearchDir := (ExtractFilePath(ParamStr(0))) + 'posbank\*.jpg';
       nFileCount := 0;
       if FindFirst(SearchDir, faAnyFile, DirInfo) = 0 then
       begin
@@ -1992,14 +2058,14 @@ begin
         until FindNext(DirInfo) <> 0;
       end;
 
-      AFTP              := TidFTP.Create(self);
-      AFTP.Passive      := True;
-      AFTP.Host         := FTPHost;
+      AFTP := TidFTP.Create(Self);
+      AFTP.Passive := True;
+      AFTP.Host := FTPHost;
       AFTP.TransferType := ftBinary;
-      AFTP.Username     := FTPUSER;
-      AFTP.Password     := FTPPWD;
-      source            := FTPDIR + 'posbank/';
-      LS                := TStringList.Create;
+      AFTP.Username := FTPUSER;
+      AFTP.Password := FTPPWD;
+      source := FTPDIR + 'posbank/';
+      LS := TStringList.Create;
       try
         LS.Sorted := True;
         AFTP.connect;
@@ -2010,21 +2076,26 @@ begin
         AFTP.List;
 
         DirList := AFTP.DirectoryListing;
-        for i   := 0 to DirList.Count - 1 do
+        for i := 0 to DirList.Count - 1 do
         begin
           try
             DirItem := DirList.items[i];
             if (DirItem.ItemType = ditDirectory) then
             begin
               LS.Add(Trim(DirItem.FileName) + '/');
-            end else begin
+            end
+            else
+            begin
               index := IndexOfArray(DirItem.FileName, FileNames);
               if index = -1 then
               begin
                 // Dowload the file and remove from the array
-                Dest := (ExtractFilePath(ParamStr(0))) + 'posbank\' + DirItem.FileName;
+                Dest := (ExtractFilePath(ParamStr(0))) + 'posbank\' +
+                  DirItem.FileName;
                 AFTP.get(DirItem.FileName, Dest);
-              end else begin
+              end
+              else
+              begin
                 DeleteFromArray(index, FileNames);
               end;
             end;
@@ -2039,13 +2110,15 @@ begin
       // Delete removed images
       for i := 0 to high(FileNames) do
       begin
-        if DeleteFile(pChar((ExtractFilePath(ParamStr(0))) + 'posbank\' + FileNames[i])) = False then
-          ShowMessage('Unable to delete : ' + (ExtractFilePath(ParamStr(0))) + 'posbank\' + DirInfo.Name);
+        if DeleteFile(pChar((ExtractFilePath(ParamStr(0))) + 'posbank\' +
+          FileNames[i])) = False then
+          ShowMessage('Unable to delete : ' + (ExtractFilePath(ParamStr(0))) +
+            'posbank\' + DirInfo.Name);
       end;
 
     end; // End if DB Connected
     ACustomerDisplay.RefreshContent;
-    ACustomerDisplay.PanelAdvert.Visible       := True;
+    ACustomerDisplay.PanelAdvert.Visible := True;
     ACustomerDisplay.PanelCustomerData.Visible := False;
     ACustomerDisplay.PanelCustomerSale.Visible := False;
   end;
@@ -2053,24 +2126,31 @@ begin
   ActionWebInfo.Execute;
   RemoteDB.SetDescToProducts;
 
-  self.WebBrowserCLD.Navigate('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID=' + GlobalsUnit.CLDLogin + '&C_PW=' +
-    GlobalsUnit.CLDPass );
+  Self.WebBrowserCLD.Navigate
+    ('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID=' +
+    GlobalsUnit.CLDLogin + '&C_PW=' + GlobalsUnit.CLDPass);
   // while WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE do application.ProcessMessages ;
-  if not TryStrToFloat(Self.Parameter['LoyaltyAccPoints'],adouble) then  begin
-     Self.Parameter['LoyaltyAccPoints']:='0';
+  if not TryStrToFloat(Self.Parameter['LoyaltyAccPoints'], adouble) then
+  begin
+    Self.Parameter['LoyaltyAccPoints'] := '0';
   end;
 
-
   // Launch Sms Thread
-  if self.Parameter['SmsProvider'] = 'Clickatel' then
-    aSendSms := TSendSms.Create(self.Parameter['SmsLogin'], self.Parameter['SmsPassword'], self.Parameter['SmsURL'], self.Parameter['SmsID'],
-      self.Parameter['SmsProvider'], RemoteDB.CleanPhoneNumber(ShopData4.Text));
-  if self.Parameter['SmsProvider'] = 'Betamax' then
-    aSendSms := TSendSms.Create(self.Parameter['SmsLoginBm'], self.Parameter['SmsPasswordBm'], self.Parameter['SmsURL'], self.Parameter['SmsID'],
-      self.Parameter['SmsProvider'], RemoteDB.CleanPhoneNumber(ShopData4.Text));
-  if self.Parameter['SmsProvider'] = 'OVH' then
-    aSendSms := TSendSms.Create(GlobalsUnit.SmsLoginOVH, GlobalsUnit.SmsPasswordOVH, '', GlobalsUnit.SmsAccountOVH,
-      self.Parameter['SmsProvider'], SmsSenderOVH );   // Ovh needs sender defined in the admin
+  if Self.Parameter['SmsProvider'] = 'Clickatel' then
+    aSendSms := TSendSms.Create(Self.Parameter['SmsLogin'],
+      Self.Parameter['SmsPassword'], Self.Parameter['SmsURL'],
+      Self.Parameter['SmsID'], Self.Parameter['SmsProvider'],
+      RemoteDB.CleanPhoneNumber(ShopData4.Text));
+  if Self.Parameter['SmsProvider'] = 'Betamax' then
+    aSendSms := TSendSms.Create(Self.Parameter['SmsLoginBm'],
+      Self.Parameter['SmsPasswordBm'], Self.Parameter['SmsURL'],
+      Self.Parameter['SmsID'], Self.Parameter['SmsProvider'],
+      RemoteDB.CleanPhoneNumber(ShopData4.Text));
+  if Self.Parameter['SmsProvider'] = 'OVH' then
+    aSendSms := TSendSms.Create(GlobalsUnit.SmsLoginOVH,
+      GlobalsUnit.SmsPasswordOVH, '', GlobalsUnit.SmsAccountOVH,
+      Self.Parameter['SmsProvider'], SmsSenderOVH);
+  // Ovh needs sender defined in the admin
 end;
 
 procedure TMainForm.ShowHint(Sender: TObject);
@@ -2089,7 +2169,8 @@ begin
       begin
         RemoteDB.Inventory.Edit;
         RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat :=
-          Round(RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat / (1 + (StrtoInt(self.Parameter['MarginProfit']) / 100)) * 100) / 100;
+          Round(RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat /
+          (1 + (StrtoInt(Self.Parameter['MarginProfit']) / 100)) * 100) / 100;
         RemoteDB.Inventory.Post;
       end;
       RemoteDB.Inventory.Next;
@@ -2108,16 +2189,16 @@ end;
 
 procedure TMainForm.StockinClearEdit;
 begin
-  cxEditStockinModel.Text       := '';
+  cxEditStockinModel.Text := '';
   cxEditStockinPriceGross.Value := 0;
-  CxEditStockinQuantity.Text    := '0';
-  cxEditStockinPrice.Value      := 0;
+  CxEditStockinQuantity.Text := '0';
+  cxEditStockinPrice.Value := 0;
 end;
 
 procedure TMainForm.DBEdit4Change(Sender: TObject);
 begin
   ThumbImg.Picture.Bitmap.Height := 0;
-  ThumbImg.Picture.Bitmap.Width  := 0;
+  ThumbImg.Picture.Bitmap.Width := 0;
   { RemoteDB.Stock2prod.Filter:='Product_model=gccons';
     RemoteDB.Stock2Prod.Filtered:=True; }
 end;
@@ -2126,7 +2207,8 @@ procedure TMainForm.TimerDBupdateTimer(Sender: TObject);
 var
   updated: Boolean;
 begin
-  if not(TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType = sitGreen) then
+  if not(TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1]
+    .PanelStyle).Indicators.items[0].IndicatorType = sitGreen) then
     exit;
   updated := False;
   if not RemoteDB.IsUpdating then
@@ -2151,24 +2233,29 @@ var
   aCancelSalesForm: TCancelSalesForm;
   page, i, j, Index, Nowrow: Integer;
 begin
-  if RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger > RemoteDB.netshop_items_sold.FieldByName('items_refunded').AsInteger then
+  if RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger >
+    RemoteDB.netshop_items_sold.FieldByName('items_refunded').AsInteger then
   begin
-    if (RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger < 100000) and
-      (RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger < 100000) then
+    if (RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger
+      < 100000) and
+      (RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id')
+      .AsInteger < 100000) then
     begin
       // produit neuf annulation vente
       ///
       /// Restitution Article réparé
       ///
       // Find Customer Caddy
-      page  := -1;
-      for i := 0 to self.PageControlSalesCaddy.PageCount - 1 do
+      page := -1;
+      for i := 0 to Self.PageControlSalesCaddy.PageCount - 1 do
       begin
-        for j := 0 to TAdvTabSheet(self.PageControlSalesCaddy.Pages[i]).ControlCount - 1 do
+        for j := 0 to TAdvTabSheet(Self.PageControlSalesCaddy.Pages[i])
+          .ControlCount - 1 do
         begin
-          if self.PageControlSalesCaddy.Pages[i].Controls[j].Tag = 100 then
+          if Self.PageControlSalesCaddy.Pages[i].Controls[j].Tag = 100 then
           begin
-            if TEdit(self.PageControlSalesCaddy.Pages[i].Controls[j]).Text = RemoteDB.CustomersCustomers_nbr.AsString then
+            if TEdit(Self.PageControlSalesCaddy.Pages[i].Controls[j])
+              .Text = RemoteDB.CustomersCustomers_nbr.AsString then
             begin
               page := i;
             end;
@@ -2179,35 +2266,49 @@ begin
       // Create New caddy if not found
       if page = -1 then
       begin
-        SBNewSalesCaddyClick(self);
-        page := self.PageControlSalesCaddy.ActivePageIndex;
+        SBNewSalesCaddyClick(Self);
+        page := Self.PageControlSalesCaddy.ActivePageIndex;
       end;
 
-      for i := 0 to TAdvTabSheet(self.PageControlSalesCaddy.Pages[page]).ControlCount - 1 do
+      for i := 0 to TAdvTabSheet(Self.PageControlSalesCaddy.Pages[page])
+        .ControlCount - 1 do
       begin
-        if TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page]).Controls[i].ClassType = TAdvStringGrid then
+        if TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page]).Controls[i]
+          .ClassType = TAdvStringGrid then
         begin
           index := i;
         end;
       end;
-      with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page]).Controls[index]) do
+      with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages
+        [page]).Controls[index]) do
       begin
-        Nowrow           := RowCount - 1;
-        Cells[0 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString;
-        Cells[1 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString;
-        Cells[2 , Nowrow] := '-' + RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsString;;
-        Cells[3 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_ht').AsString;
-        Cells[4 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsString;
-        Cells[5 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsString;
-        Cells[6 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').AsString;
-        Cells[7 , Nowrow] := inttostr(ConnectedShop);
-        Cells[8 , Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsString;
-        Cells[10, Nowrow] := RemoteDB.netshop_items_sold.FieldByName('items_sold_id').AsString;;
-        RowCount         := Nowrow + 2;
+        Nowrow := RowCount - 1;
+        Cells[0, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_model').AsString;
+        Cells[1, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_name').AsString;
+        Cells[2, Nowrow] := '-' + RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_quantity').AsString;;
+        Cells[3, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_price_ht').AsString;
+        Cells[4, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_price_stock').AsString;
+        Cells[5, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_price_gross').AsString;
+        Cells[6, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_date_in').AsString;
+        Cells[7, Nowrow] := inttostr(ConnectedShop);
+        Cells[8, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_supplier_id').AsString;
+        Cells[10, Nowrow] := RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_id').AsString;;
+        RowCount := Nowrow + 2;
       end;
-    end else begin
+    end
+    else
+    begin
       RemoteDB.IsUpdating := True;
-      aCancelSalesForm    := TCancelSalesForm.Create(self);
+      aCancelSalesForm := TCancelSalesForm.Create(Self);
       try
         aCancelSalesForm.ShowModal;
       finally
@@ -2215,7 +2316,9 @@ begin
         aCancelSalesForm.Free;
       end;
     end;
-  end else begin
+  end
+  else
+  begin
     messagedlg('Articles déjà remboursés', mtwarning, [mbok], 0);
   end;
 end;
@@ -2229,8 +2332,8 @@ begin
   CustNbr := RemoteDB.Customers.FieldByName('Customers_Nbr').AsInteger;
   if CustNbr < 100000 then
   begin
-    AFormSelectCust := TFormSelectCust.Create(self);
-    CustNbr         := AFormSelectCust.ShowModal;
+    AFormSelectCust := TFormSelectCust.Create(Self);
+    CustNbr := AFormSelectCust.ShowModal;
     AFormSelectCust.Free;
     if CustNbr = -1 then
       exit;
@@ -2248,7 +2351,9 @@ begin
 
   if RemoteDB.netshop_sales.FieldByName('sales_invoiced').AsInteger = 1 then
   begin
-    if messagedlg('Articles déjà facturés ! Voulez-vous facturer une deuxième fois ?', mtwarning, [mbyes, mbno], 0) = mrno then
+    if messagedlg
+      ('Articles déjà facturés ! Voulez-vous facturer une deuxième fois ?',
+      mtwarning, [mbyes, mbno], 0) = mrno then
       exit;
   end;
 
@@ -2256,121 +2361,189 @@ begin
   ContainSH := False;
   while not RemoteDB.netshop_items_sold.Eof do
   begin
-    if RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger >= 100000 then
+    if RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger
+      >= 100000 then
       ContainSH := True;
-    if RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger >= 100000 then
+    if RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id')
+      .AsInteger >= 100000 then
       ContainSH := True;
     RemoteDB.netshop_items_sold.Next;
   end;
 
   if ContainSH then
   begin
-    messagedlg('Ce ticket contient des occasions : impossible de facturer', mtwarning, [mbok], 0);
+    messagedlg('Ce ticket contient des occasions : impossible de facturer',
+      mtwarning, [mbok], 0);
     exit;
   end;
 
   RemoteDB.netshop_invoices.DisableControls;
   RemoteDB.FreeInvoicesToCustomers;
-  RemoteDB.netshop_invoices.Filter    := 'invoices_customer_id = ' + inttostr(CustNbr);
-  RemoteDB.netshop_invoices.Filtered  := True;
+  RemoteDB.netshop_invoices.Filter := 'invoices_customer_id = ' +
+    inttostr(CustNbr);
+  RemoteDB.netshop_invoices.Filtered := True;
   RemoteDB.netshop_invoices.IndexName := 'InvoicesIXCustomers';
   try
     RemoteDB.netshop_invoices.First;
     if RemoteDB.netshop_invoices.Eof and RemoteDB.netshop_invoices.Bof then
     begin
       RemoteDB.netshop_invoices.Append;
-      RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsInteger := CustNbr;
-      RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat;
-      RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat;
-      RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat;
-      RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
-      RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat;
+      RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsInteger
+        := CustNbr;
+      RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat :=
+        RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat;
+      RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat :=
+        RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat;
+      RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat :=
+        RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat;
+      RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat :=
+        RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
+      RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat :=
+        RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat;
       RemoteDB.netshop_invoices.Post;
-    end else begin // SI PAS PREMIERE FACTURE
-      if RemoteDB.netshop_invoices.FieldByName('invoices_closed').AsInteger <> 1 then
+    end
+    else
+    begin // SI PAS PREMIERE FACTURE
+      if RemoteDB.netshop_invoices.FieldByName('invoices_closed').AsInteger <> 1
+      then
       begin
-        if messagedlg('Deniere facture non cloturee voulez-vous y ajouter ces achats', mtconfirmation, [mbok, mbno], 0) = mrOK then
+        if messagedlg
+          ('Deniere facture non cloturee voulez-vous y ajouter ces achats',
+          mtconfirmation, [mbok, mbno], 0) = mrOK then
         begin
           RemoteDB.netshop_invoices.Edit;
           RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat :=
-            (RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat + RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat);
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat := RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat +
+            (RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat
+            + RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat);
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat :=
+            RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat +
             RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat := RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat +
-            RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat := RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat +
-            RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat := RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat +
-            RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat
+            := RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton')
+            .AsFloat + RemoteDB.netshop_sales.FieldByName
+            ('sales_paid_proton').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat :=
+            RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat
+            + RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat
+            := RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher')
+            .AsFloat + RemoteDB.netshop_sales.FieldByName
+            ('sales_paid_voucher').AsFloat;
           RemoteDB.netshop_invoices.Post;
-        end else begin // SI CLOTURE IMMEDIATE
+        end
+        else
+        begin // SI CLOTURE IMMEDIATE
           RemoteDB.netshop_invoices.Edit;
           RemoteDB.netshop_invoices.FieldByName('invoices_closed').AsFloat := 1;
           RemoteDB.netshop_invoices.Post;
           RemoteDB.netshop_invoices.Append;
-          RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsFloat := CustNbr;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
-          RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsFloat
+            := CustNbr;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat :=
+            RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat :=
+            RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat
+            := RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat :=
+            RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
+          RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat
+            := RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat;
           RemoteDB.netshop_invoices.Post;
         end
-      end else begin // SI DEJA FERMEE
+      end
+      else
+      begin // SI DEJA FERMEE
         RemoteDB.netshop_invoices.Append;
-        RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsFloat := CustNbr;
-        RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat;
-        RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat;
-        RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat;
-        RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
-        RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat := RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat;
+        RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsFloat
+          := CustNbr;
+        RemoteDB.netshop_invoices.FieldByName('invoices_paid_cash').AsFloat :=
+          RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat;
+        RemoteDB.netshop_invoices.FieldByName('invoices_paid_bct').AsFloat :=
+          RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat;
+        RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat :=
+          RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat;
+        RemoteDB.netshop_invoices.FieldByName('invoices_paid_visa').AsFloat :=
+          RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat;
+        RemoteDB.netshop_invoices.FieldByName('invoices_paid_voucher').AsFloat
+          := RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat;
         RemoteDB.netshop_invoices.Post;
       end;
     end;
 
     // Adding the comment line;
     RemoteDB.netshop_invoices_items.Append;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_model').AsString := '';
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_name').AsString := 'Ticket ' + RemoteDB.netshop_sales.FieldByName('sales_id').AsString + ' du '
-      + RemoteDB.netshop_sales.FieldByName('sql_date_time').AsString;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_quantity').AsInteger := 0;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_gross').AsFloat := 0;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_catalog').AsFloat := 0;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_stock').AsFloat := 0;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_tva').AsFloat := 0;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate').AsFloat := 0;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_owner_id').AsInteger := 0;
-    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_supplier_id').AsInteger := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_model')
+      .AsString := '';
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_name').AsString
+      := 'Ticket ' + RemoteDB.netshop_sales.FieldByName('sales_id').AsString +
+      ' du ' + RemoteDB.netshop_sales.FieldByName('sql_date_time').AsString;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_quantity')
+      .AsInteger := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_gross')
+      .AsFloat := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_catalog')
+      .AsFloat := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_stock')
+      .AsFloat := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_tva')
+      .AsFloat := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate')
+      .AsFloat := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_owner_id')
+      .AsInteger := 0;
+    RemoteDB.netshop_invoices_items.FieldByName('invoices_items_supplier_id')
+      .AsInteger := 0;
     RemoteDB.netshop_invoices_items.Post;
 
     RemoteDB.netshop_items_sold.First;
     while not RemoteDB.netshop_items_sold.Eof do
     begin
       RemoteDB.netshop_invoices_items.Append;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_model').Value := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_name').Value := RemoteDB.netshop_items_sold.FieldByName('items_sold_name').Value;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_quantity').Value := RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').Value;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_gross').Value :=
-        RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').Value;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_catalog').Value := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_ht').Value;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_stock').Value :=
-        RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_tva').Value := RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_stock')
-        .Value - RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_catalog').Value;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_model').Value
+        := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_name').Value
+        := RemoteDB.netshop_items_sold.FieldByName('items_sold_name').Value;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_quantity')
+        .Value := RemoteDB.netshop_items_sold.FieldByName
+        ('items_sold_quantity').Value;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_gross')
+        .Value := RemoteDB.netshop_items_sold.FieldByName
+        ('items_sold_price_gross').Value;
+      RemoteDB.netshop_invoices_items.FieldByName
+        ('invoices_items_price_catalog').Value :=
+        RemoteDB.netshop_items_sold.FieldByName('items_sold_price_ht').Value;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_stock')
+        .Value := RemoteDB.netshop_items_sold.FieldByName
+        ('items_sold_price_stock').AsFloat;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_price_tva')
+        .Value := RemoteDB.netshop_invoices_items.FieldByName
+        ('invoices_items_price_stock').Value -
+        RemoteDB.netshop_invoices_items.FieldByName
+        ('invoices_items_price_catalog').Value;
       // RemoteDB.Invoices_itemsinvoices_items_price_tva.AsFloat:=RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock.AsFloat-RemoteDB.Invoices_itemsinvoices_items_price_catalog.AsFloat;
-      if RemoteDB.Products.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString]) then
+      if RemoteDB.Products.FindKey
+        ([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString])
+      then
       begin
-        if RemoteDB.Products.FieldByName('products_tax_class_id').AsFloat = 2 then
-          RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate').AsFloat := 6;
-        if RemoteDB.Products.FieldByName('products_tax_class_id').AsFloat = 1 then
-          RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate').AsFloat := 21;
+        if RemoteDB.Products.FieldByName('products_tax_class_id').AsFloat = 2
+        then
+          RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate')
+            .AsFloat := 6;
+        if RemoteDB.Products.FieldByName('products_tax_class_id').AsFloat = 1
+        then
+          RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate')
+            .AsFloat := 21;
       end
       else
-        RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate').AsFloat := 21;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_owner_id').AsInteger := RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id')
-        .AsInteger;
-      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_supplier_id').AsInteger := RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id')
-        .AsInteger;
+        RemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate')
+          .AsFloat := 21;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_owner_id')
+        .AsInteger := RemoteDB.netshop_items_sold.FieldByName
+        ('items_sold_owner_id').AsInteger;
+      RemoteDB.netshop_invoices_items.FieldByName('invoices_items_supplier_id')
+        .AsInteger := RemoteDB.netshop_items_sold.FieldByName
+        ('items_sold_supplier_id').AsInteger;
       RemoteDB.netshop_invoices_items.Post;
       RemoteDB.netshop_items_sold.Next;
     end;
@@ -2379,7 +2552,7 @@ begin
     RemoteDB.netshop_sales.Post;
   finally
     RemoteDB.netshop_invoices.EnableControls;
-    RemoteDB.netshop_invoices.Filter   := '';
+    RemoteDB.netshop_invoices.Filter := '';
     RemoteDB.netshop_invoices.Filtered := False;
     RemoteDB.SetInvoicesToCustomers;
     TryApplyChangesToDB();
@@ -2403,22 +2576,28 @@ begin
   if RemoteDB.netshop_items_sold.RecordCount > 500 then
   begin
     TooMuchLines := True;
-  end else begin
+  end
+  else
+  begin
     TooMuchLines := False;
   end;
 
   if not TooMuchLines then
   begin
     CanPrint := True;
-    HasEsd   := False;
+    HasEsd := False;
     RemoteDB.netshop_items_sold.First;
     while not RemoteDB.netshop_items_sold.Eof do
     begin
-      if RemoteDB.Products.Locate('products_model', RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString, [locaseinsensitive]) then
+      if RemoteDB.Products.Locate('products_model',
+        RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString,
+        [locaseinsensitive]) then
       begin
-        if RemoteDB.Products.FieldByName('products_street_block').AsString = 'True' then
+        if RemoteDB.Products.FieldByName('products_street_block').AsString = 'True'
+        then
         begin
-          if RemoteDB.Products.FieldByName('products_date_available').AsDateTime > Now then
+          if RemoteDB.Products.FieldByName('products_date_available').AsDateTime
+            > Now then
             CanPrint := False;
         end;
         if RemoteDB.Products.FieldByName('products_esd').AsInteger = 1 then
@@ -2429,50 +2608,70 @@ begin
       RemoteDB.netshop_items_sold.Next;
     end;
 
-    if not(self.Parameter['PrintersTicketEnabled'] = 'TRUE') and CanPrint then
+    if not(Self.Parameter['PrintersTicketEnabled'] = 'TRUE') and CanPrint then
     begin
-      messagedlg('Imrpimante désactivée ou produits bloqués en street date', mtwarning, [mbok], 0);
+      messagedlg('Imrpimante désactivée ou produits bloqués en street date',
+        mtwarning, [mbok], 0);
       goto Procend;
     end;
 
-    TicketToPrint := TTicketJob.Create(self);
+    TicketToPrint := TTicketJob.Create(Self);
     try
-      TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-      TicketToPrint.Logo     := PrintLogo;
-      TicketToPrint.URL      := WEBURL;
-      TicketToPrint.ID       := RemoteDB.netshop_sales.FieldByName('sales_location').AsString + '-' + RemoteDB.netshop_sales.FieldByName('sales_id').AsString;
-      if ShopdataList <> nil then begin
-      TicketToPrint.ShopData := ShopdataList;
-      end else begin
+      TicketToPrint.Printer := (Self.Parameter['PrintersTicketPrinter']);
+      TicketToPrint.Logo := PrintLogo;
+      TicketToPrint.URL := WEBURL;
+      TicketToPrint.ID := RemoteDB.netshop_sales.FieldByName('sales_location')
+        .AsString + '-' + RemoteDB.netshop_sales.FieldByName
+        ('sales_id').AsString;
+      if ShopdataList <> nil then
+      begin
+        TicketToPrint.ShopData := ShopdataList;
+      end
+      else
+      begin
         ShowMessage('Les données tickets du magasin ne sont pas correctes');
       end;
-      TicketToPrint.DateTime := RemoteDB.netshop_sales.FieldByName('sales_date_time').AsFloat;
-      if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+      TicketToPrint.DateTime := RemoteDB.netshop_sales.FieldByName
+        ('sales_date_time').AsFloat;
+      if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
         TicketToPrint.Model := TmContinuous;
       TicketToPrint.AddBox('Vente', True, bsProd);
       RemoteDB.netshop_items_sold.First;
       while not RemoteDB.netshop_items_sold.Eof do
       begin
-        TicketToPrint.AddLine(RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsString,
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsString, RemoteDB.netshop_items_sold.FieldByName('items_sold_name')
+        TicketToPrint.AddLine(RemoteDB.netshop_items_sold.FieldByName
+          ('items_sold_quantity').AsString,
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock')
+          .AsString, RemoteDB.netshop_items_sold.FieldByName('items_sold_name')
           .AsString, 'Vente');
-        if RemoteDB.Products.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString]) then
+        if RemoteDB.Products.FindKey
+          ([RemoteDB.netshop_items_sold.FieldByName('items_sold_model')
+          .AsString]) then
         begin
-          if ((RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger < 100000) and
-            (RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger < 100000)) then
+          if ((RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id')
+            .AsInteger < 100000) and
+            (RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id')
+            .AsInteger < 100000)) then
           begin
             // Traiter les ESD
-            if RemoteDB.netshop_items_sold.FieldByName('items_sold_esd').AsString <> '' then
+            if RemoteDB.netshop_items_sold.FieldByName('items_sold_esd')
+              .AsString <> '' then
             begin
-              esdcode := DavidUtilsUnit.DecryptStringDES(RemoteDB.netshop_items_sold.FieldByName('items_sold_esd').AsString);
+              esdcode := DavidUtilsUnit.DecryptStringDES
+                (RemoteDB.netshop_items_sold.FieldByName('items_sold_esd')
+                .AsString);
               TicketToPrint.AddLine('', '', esdcode, 'Vente', True);
             end;
             // Traiter les garanties
-            if RemoteDB.netshop_warranty.FindKey([RemoteDB.Productsproducts_warranty_id.Value]) then
+            if RemoteDB.netshop_warranty.FindKey
+              ([RemoteDB.Productsproducts_warranty_id.Value]) then
             begin
-              if RemoteDB.netshop_warranty.FieldByName('warranty_validity').Value > 0 then
+              if RemoteDB.netshop_warranty.FieldByName('warranty_validity')
+                .Value > 0 then
               begin
-                TicketToPrint.AddLine('', '', RemoteDB.netshop_warranty.FieldByName('warranty_description').Value, 'Vente', True);
+                TicketToPrint.AddLine('', '',
+                  RemoteDB.netshop_warranty.FieldByName('warranty_description')
+                  .Value, 'Vente', True);
               end;
             end;
           end; // if neuf
@@ -2482,59 +2681,80 @@ begin
 
       if RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat > 0 then
       begin
-        TicketToPrint.AddFinancialLine('Liquide :', RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat);
+        TicketToPrint.AddFinancialLine('Liquide :',
+          RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat);
       end;
       if RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat > 0 then
       begin
-        TicketToPrint.AddFinancialLine('Carte de banque :', RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat);
+        TicketToPrint.AddFinancialLine('Carte de banque :',
+          RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat);
       end;
       if RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat > 0 then
       begin
-        TicketToPrint.AddFinancialLine('Carte de crédit :', RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat);
+        TicketToPrint.AddFinancialLine('Carte de crédit :',
+          RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat);
       end;
-      if RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat > 0 then
+      if RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat > 0
+      then
       begin
-        TicketToPrint.AddFinancialLine('Virement banquaire :', RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat);
+        TicketToPrint.AddFinancialLine('Virement banquaire :',
+          RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat);
       end;
-      if RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat > 0 then
+      if RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat > 0
+      then
       begin
-        TicketToPrint.AddFinancialLine('Bon achat :', RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat);
+        TicketToPrint.AddFinancialLine('Bon achat :',
+          RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat);
       end;
 
-      if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000 then
+      if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000
+      then
       begin
-        TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-        TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
-        TicketToPrint.AddCustomerLine('Crédit :', RemoteDB.CustomersCustomers_credit.Text);
-        TicketToPrint.AddCustomerLine('Points :', RemoteDB.Customers.FieldByName('customers_loyalty').Text);
+        TicketToPrint.AddCustomerLine('Client # :',
+          RemoteDB.CustomersCustomers_nbr.Text);
+        TicketToPrint.AddCustomerLine('Nom :',
+          RemoteDB.CustomersCustomers_Lastname.Text);
+        TicketToPrint.AddCustomerLine('Crédit :',
+          RemoteDB.CustomersCustomers_credit.Text);
+        TicketToPrint.AddCustomerLine('Points :',
+          RemoteDB.Customers.FieldByName('customers_loyalty').Text);
       end;
 
       RemoteDB.netshop_items_sold.First;
       while not RemoteDB.netshop_items_sold.Eof do
       begin
         // Todo Handle NL based on customer language
-        if RemoteDB.Products.Locate('products_model', RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString, [locaseinsensitive]) then
+        if RemoteDB.Products.Locate('products_model',
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString,
+          [locaseinsensitive]) then
 
-        if RemoteDB.CDSProDescFR.FindKey([RemoteDB.Products.FieldByName('products_id').AsString]) then
-        begin
-          if RemoteDB.CDSProDescFR.FieldByName('products_msgticket').AsString.Length>0 then begin
-             TicketToPrint.Comment :=  RemoteDB.CDSProDescFR.FieldByName('products_msgticket').AsString;
+          if RemoteDB.CDSProDescFR.FindKey
+            ([RemoteDB.Products.FieldByName('products_id').AsString]) then
+          begin
+            if RemoteDB.CDSProDescFR.FieldByName('products_msgticket')
+              .AsString.Length > 0 then
+            begin
+              TicketToPrint.Comment := RemoteDB.CDSProDescFR.FieldByName
+                ('products_msgticket').AsString;
+            end;
           end;
-        end;
         RemoteDB.netshop_items_sold.Next;
       end;
 
-      if (false) then begin
+      if (False) then
+      begin
 
-          TicketToPrint.Comment := 'Attention !' + chr(10) + chr(13) +
-            ' Votre ticket contient un code digital. Ce code est à usage unique et ne peut être retourné ou échangé. Ce code est sensible à la casse et doit être saisi tel qu''affiché.';
-          TicketToPrint.Comment := TicketToPrint.Comment + ' Ce code est fourni par Sony Network Entertainment Europe et est valable jusqu''a 12 mois après sa date d''achat. '
-            + chr(10) + chr(13);
-          TicketToPrint.Comment := TicketToPrint.Comment +
-            ' Lisez l''intégralité des conditions d''utilisation sur sonyentertainmentnetwork.com/legal' + chr(10) + chr(13);
+        TicketToPrint.Comment := 'Attention !' + chr(10) + chr(13) +
+          ' Votre ticket contient un code digital. Ce code est à usage unique et ne peut être retourné ou échangé. Ce code est sensible à la casse et doit être saisi tel qu''affiché.';
+        TicketToPrint.Comment := TicketToPrint.Comment +
+          ' Ce code est fourni par Sony Network Entertainment Europe et est valable jusqu''a 12 mois après sa date d''achat. '
+          + chr(10) + chr(13);
+        TicketToPrint.Comment := TicketToPrint.Comment +
+          ' Lisez l''intégralité des conditions d''utilisation sur sonyentertainmentnetwork.com/legal'
+          + chr(10) + chr(13);
       end;
 
-      if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+      if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
         TicketToPrint.PrintOpos
       else
         TicketToPrint.Print;
@@ -2550,17 +2770,18 @@ procedure TMainForm.BitBtnOrdersClick(Sender: TObject);
 var
   aOrderCheckForm: TOrderCheckForm;
 begin
-  RemoteDB.netshop_customers_alerts.Filter := '( (customers_alerts_status=0) and (customers_alerts_products_model = ' +
+  RemoteDB.netshop_customers_alerts.Filter :=
+    '( (customers_alerts_status=0) and (customers_alerts_products_model = ' +
     QuotedStr(RemoteDB.Productsproducts_model.AsString) + ') )';
   RemoteDB.netshop_customers_alerts.Filtered := True;
-  aOrderCheckForm                            := TOrderCheckForm.Create(self);
-  aOrderCheckForm.Model                      := RemoteDB.Productsproducts_model.AsString;
+  aOrderCheckForm := TOrderCheckForm.Create(Self);
+  aOrderCheckForm.Model := RemoteDB.Productsproducts_model.AsString;
   try
     aOrderCheckForm.ShowModal;
   finally
     aOrderCheckForm.Free;
     RemoteDB.netshop_customers_alerts.Filtered := False;
-    RemoteDB.netshop_customers_alerts.Filter   := '';
+    RemoteDB.netshop_customers_alerts.Filter := '';
   end;
 
 end;
@@ -2569,13 +2790,14 @@ procedure TMainForm.BitBtnProductsPrintBarCodeClick(Sender: TObject);
 var
   LabelRent: TLabelRent;
 begin
-  if (self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
+  if (Self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
   begin
     LabelRent := TLabelRent.Create;
     try
-      LabelRent.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-      LabelRent.Print(RemoteDB.Products.FieldByName('products_model').AsString, RemoteDB.Products.FieldByName('products_intername').Text, 0,
-        (StrToBool(self.Parameter['PrintersLabelDialog'])));
+      LabelRent.LabelPrinter := (Self.Parameter['PrintersLabelPrinter']);
+      LabelRent.Print(RemoteDB.Products.FieldByName('products_model').AsString,
+        RemoteDB.Products.FieldByName('products_intername').Text, 0,
+        (StrToBool(Self.Parameter['PrintersLabelDialog'])));
     finally
       LabelRent.Free;
     end;
@@ -2588,24 +2810,31 @@ procedure TMainForm.BitBtnProductsPrintLabelClick(Sender: TObject);
 var
   Labelstoprint: Tlabeljob;
 begin
-  if (self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
+  if (Self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
   begin
     Labelstoprint := Tlabeljob.Create;
     try
-      Labelstoprint.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-      Labelstoprint.Style        := lsNew;
-      Labelstoprint.Logo         := PrintLogo;
-      Labelstoprint.URL          := WEBURL;
-      if (self.Parameter['PrintersLabelContinuous'] = 'TRUE') then
+      Labelstoprint.LabelPrinter := (Self.Parameter['PrintersLabelPrinter']);
+      Labelstoprint.Style := lsNew;
+      Labelstoprint.Logo := PrintLogo;
+      Labelstoprint.URL := WEBURL;
+      if (Self.Parameter['PrintersLabelContinuous'] = 'TRUE') then
         Labelstoprint.Model := LmContinuous;
-      if ((cxCurrencyEditLower.EditValue > 0) and (cxCurrencyEditLower.EditValue < RemoteDB.Products.FieldByName('products_price_allin').AsFloat)) then
+      if ((cxCurrencyEditLower.EditValue > 0) and
+        (cxCurrencyEditLower.EditValue < RemoteDB.Products.FieldByName
+        ('products_price_allin').AsFloat)) then
       begin
-        Labelstoprint.Addlabel(cxCurrencyEditLower.EditValue, RemoteDB.Products.FieldByName('products_intername').Text);
+        Labelstoprint.Addlabel(cxCurrencyEditLower.EditValue,
+          RemoteDB.Products.FieldByName('products_intername').Text);
         cxCurrencyEditLower.EditValue := 0;
-      end else begin
-        Labelstoprint.Addlabel(RemoteDB.Products.FieldByName('products_price_allin').AsFloat, RemoteDB.Products.FieldByName('products_intername').Text);
+      end
+      else
+      begin
+        Labelstoprint.Addlabel(RemoteDB.Products.FieldByName
+          ('products_price_allin').AsFloat,
+          RemoteDB.Products.FieldByName('products_intername').Text);
       end;
-      Labelstoprint.Print(StrToBool(self.Parameter['PrintersLabelDialog']));
+      Labelstoprint.Print(StrToBool(Self.Parameter['PrintersLabelDialog']));
     finally
       Labelstoprint.Free;
     end;
@@ -2616,21 +2845,23 @@ end;
 
 procedure TMainForm.BitBtnTransferProcessClick(Sender: TObject);
 var
-  SalesSavePoint, ItemsSavePoint, TransferSavePoint, StockSavePoint, ORIGINSHOP, DESTSHOP, Nowrow, ToCLDLoop: Integer;
+  SalesSavePoint, ItemsSavePoint, TransferSavePoint, StockSavePoint, ORIGINSHOP,
+    DESTSHOP, Nowrow, ToCLDLoop: Integer;
   StockLocated, TransferLocated: Boolean;
   ConfirmTransfer: Boolean;
   MrResult: TModalResult;
-  Art, Accu: Double;
+  Art, Accu: double;
   TicketToPrint: TTicketJob;
-  Value,TransferPrice: string;
+  Value, TransferPrice: string;
   SupplierId, OwnerId: Integer;
-  QueryString: Widestring;
+  QueryString: WideString;
 label endoftransfer;
 begin
   if RadioButtonSend.Checked then
   begin
     try
-      RemoteDB.Shops.Locate('shops_name', ComboBoxDestShop.Text, [locaseinsensitive]);
+      RemoteDB.Shops.Locate('shops_name', ComboBoxDestShop.Text,
+        [locaseinsensitive]);
       DESTSHOP := RemoteDB.Shops.FieldByName('shops_id').AsInteger;
 
       if (DESTSHOP = ConnectedShop) or (ComboBoxDestShop.ItemIndex = -1) then
@@ -2639,59 +2870,71 @@ begin
         exit;
       end;
 
+      if StringGridTransfer.RowCount < 3 then
+      begin
+        messagedlg('Rien à transférer', mtwarning, [mbok], 0);
+        exit;
+      end;
+
       // tft vers cld
-      if (DESTSHOP = 100) then begin
+      if (DESTSHOP = 100) then
+      begin
         QueryString := '';
-        ToCLDLoop           := 1;
+        ToCLDLoop := 1;
 
         for Nowrow := 1 to StringGridTransfer.RowCount - 2 do
         begin
 
-
-
-          if StrToInt(StringGridTransfer.Cells[2, Nowrow]) > 0 then
+          if StrtoInt(StringGridTransfer.Cells[2, Nowrow]) > 0 then
           begin
-            if RemoteDB.Products.locate('products_model',StringGridTransfer.Cells[0, Nowrow],[loCaseInsensitive]) then begin
+            if RemoteDB.Products.Locate('products_model',
+              StringGridTransfer.Cells[0, Nowrow], [locaseinsensitive]) then
+            begin
 
-              QueryString := QueryString + '&id_art' + inttostr(ToCLDLoop) + '=' + RemoteDB.Products.FieldByName('products_CLD_id').AsString;
-              QueryString := QueryString + '&q' + inttostr(ToCLDLoop) + '=' + StringGridTransfer.Cells[2, Nowrow];
-              ToCLDLoop           := ToCLDLoop + 1;
+              QueryString := QueryString + '&id_art' + inttostr(ToCLDLoop) + '='
+                + RemoteDB.Products.FieldByName('products_CLD_id').AsString;
+              QueryString := QueryString + '&q' + inttostr(ToCLDLoop) + '=' +
+                StringGridTransfer.Cells[2, Nowrow];
+              ToCLDLoop := ToCLDLoop + 1;
             end;
           end;
-          if ToCLDLoop mod 15 = 0 then begin
+          if ToCLDLoop mod 15 = 0 then
+          begin
             MainForm.WebbrowserCLDAddReturnItems(QueryString);
             QueryString := '';
           end;
 
-
-
-
-        RemoteDB.Transferout.Append;
-        RemoteDB.transferOutproduct_model.Text       := StringGridTransfer.Cells[0, Nowrow];
-        RemoteDB.transferOutproduct_owner_id.Text    := StringGridTransfer.Cells[7, Nowrow];
-        RemoteDB.transferOutproduct_Origin.Text      := inttostr(ConnectedShop);
-        RemoteDB.transferOutproduct_Destination.Text := inttostr(DESTSHOP);
-        RemoteDB.transferOutproduct_quantity.Text    := StringGridTransfer.Cells[2, Nowrow];
-        RemoteDB.transferOutproduct_supplier_id.Text := StringGridTransfer.Cells[8, Nowrow];
-        RemoteDB.transferOutproduct_date_in.Text     := StringGridTransfer.Cells[6, Nowrow];
-        RemoteDB.transferOutproduct_price_gross.Text := StringGridTransfer.Cells[5, Nowrow];
-        RemoteDB.transferOutproduct_price_stock.Text := StringGridTransfer.Cells[4, Nowrow];
-        RemoteDB.Transferout.Post;
+          RemoteDB.Transferout.Append;
+          RemoteDB.transferOutproduct_model.Text := StringGridTransfer.Cells
+            [0, Nowrow];
+          RemoteDB.transferOutproduct_owner_id.Text := StringGridTransfer.Cells
+            [7, Nowrow];
+          RemoteDB.transferOutproduct_Origin.Text := inttostr(ConnectedShop);
+          RemoteDB.transferOutproduct_Destination.Text := inttostr(DESTSHOP);
+          RemoteDB.transferOutproduct_quantity.Text := StringGridTransfer.Cells
+            [2, Nowrow];
+          RemoteDB.transferOutproduct_supplier_id.Text :=
+            StringGridTransfer.Cells[8, Nowrow];
+          RemoteDB.transferOutproduct_date_in.Text := StringGridTransfer.Cells
+            [6, Nowrow];
+          RemoteDB.transferOutproduct_price_gross.Text :=
+            StringGridTransfer.Cells[5, Nowrow];
+          RemoteDB.transferOutproduct_price_stock.Text :=
+            StringGridTransfer.Cells[4, Nowrow];
+          RemoteDB.Transferout.Post;
 
         end; // Fin des depacements en Transfer
         MainForm.WebbrowserCLDAddReturnItems(QueryString);
       end;
 
-
-
       RemoteDB.netshop_items_sold.Filtered := False;
       RemoteDB.netshop_stock.DisableControls;
       RemoteDB.netshop_stock.IndexName := 'StockIXModelOwnerSupplier';
 
-      SalesSavePoint    := RemoteDB.netshop_sales.SavePoint;
-      ItemsSavePoint    := RemoteDB.netshop_items_sold.SavePoint;
+      SalesSavePoint := RemoteDB.netshop_sales.SavePoint;
+      ItemsSavePoint := RemoteDB.netshop_items_sold.SavePoint;
       TransferSavePoint := RemoteDB.Transferout.SavePoint;
-      StockSavePoint    := RemoteDB.netshop_stock.SavePoint;
+      StockSavePoint := RemoteDB.netshop_stock.SavePoint;
 
       ConfirmTransfer := True;
 
@@ -2702,7 +2945,8 @@ begin
       begin // Verifications Preliminaires
         if StrtoInt(StringGridTransfer.Cells[2, Nowrow]) < 1 then
         begin
-          raise E_Outloop.Create('Impossible de transferer des quantites nulles');
+          raise E_Outloop.Create
+            ('Impossible de transferer des quantites nulles');
         end;
       end;
 
@@ -2716,18 +2960,21 @@ begin
           // Verification
 
           if not RemoteDB.netshop_stock.Locate('product_model;product_owner_id',
-            Vararrayof([StringGridTransfer.Cells[0, Nowrow], StringGridTransfer.Cells[7, Nowrow]]), [locaseinsensitive]) then
+            Vararrayof([StringGridTransfer.Cells[0, Nowrow],
+            StringGridTransfer.Cells[7, Nowrow]]), [locaseinsensitive]) then
           begin
             raise E_Outloop.Create('Impossible de localiser le stock');
           end;
           if (ConfirmTransfer) then
           begin
             MrResult :=
-              messagedlg('Vous transferez un produit en depot, ce produit sera irrémédiablement marqué comme vendu pour le client, voulez vous continuer ?',
+              messagedlg
+              ('Vous transferez un produit en depot, ce produit sera irrémédiablement marqué comme vendu pour le client, voulez vous continuer ?',
               mtwarning, [mbyes, mbno, mbyestoall], 0);
             if MrResult = mrno then
             begin
-              raise E_Outloop.Create('Impossible de transferer les produits en Depot');
+              raise E_Outloop.Create
+                ('Impossible de transferer les produits en Depot');
             end;
             if MrResult = mrYestoAll then
               ConfirmTransfer := False;
@@ -2738,72 +2985,100 @@ begin
           begin
             RemoteDB.netshop_sales.Append;
             RemoteDB.netshop_sales.FieldByName('sales_id').AsInteger := 0;
-            RemoteDB.netshop_sales.FieldByName('sales_customer_id').AsInteger := ConnectedShop;
+            RemoteDB.netshop_sales.FieldByName('sales_customer_id').AsInteger :=
+              ConnectedShop;
             RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat := 0;
             RemoteDB.netshop_sales.FieldByName('sales_date_time').AsFloat := 0;
-            RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat := 0;
+            RemoteDB.netshop_sales.FieldByName('sales_paid_proton')
+              .AsFloat := 0;
             RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat := 0;
-            RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat := 0;
+            RemoteDB.netshop_sales.FieldByName('sales_paid_voucher')
+              .AsFloat := 0;
             RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat := 0;
             RemoteDB.netshop_sales.Post;
           end;
 
           // Transfer du produit occasion en Items Sold
           RemoteDB.netshop_items_sold.Append;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString := RemoteDB.netshop_stock.FieldByName('product_name').AsString;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger := StrToInt(StringGridTransfer.Cells[2, Nowrow]);
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_catalog').AsFloat := RemoteDB.Products.FieldByName('products_price').AsFloat;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-          RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').AsString := RemoteDB.netshop_stock.FieldByName('product_date_in').AsString;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString
+            := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString :=
+            RemoteDB.netshop_stock.FieldByName('product_name').AsString;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity')
+            .AsInteger := StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_catalog')
+            .AsFloat := RemoteDB.Products.FieldByName('products_price').AsFloat;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock')
+            .AsFloat := RemoteDB.netshop_stock.FieldByName
+            ('product_price_stock').AsFloat;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross')
+            .AsFloat := RemoteDB.netshop_stock.FieldByName
+            ('product_price_gross').AsFloat;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id')
+            .AsInteger := RemoteDB.netshop_stock.FieldByName('product_owner_id')
+            .AsInteger;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id')
+            .AsInteger := RemoteDB.netshop_stock.FieldByName
+            ('product_supplier_id').AsInteger;
+          RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').AsString
+            := RemoteDB.netshop_stock.FieldByName('product_date_in').AsString;
           RemoteDB.netshop_items_sold.Post;
         end; // Gestion Mise des Occasions en ItemSold
 
         RemoteDB.Transferout.Append;
-        RemoteDB.transferOutproduct_model.Text       := StringGridTransfer.Cells[0, Nowrow];
-        RemoteDB.transferOutproduct_owner_id.Text    := StringGridTransfer.Cells[7, Nowrow];
-        RemoteDB.transferOutproduct_Origin.Text      := inttostr(ConnectedShop);
+        RemoteDB.transferOutproduct_model.Text := StringGridTransfer.Cells
+          [0, Nowrow];
+        RemoteDB.transferOutproduct_owner_id.Text := StringGridTransfer.Cells
+          [7, Nowrow];
+        RemoteDB.transferOutproduct_Origin.Text := inttostr(ConnectedShop);
         RemoteDB.transferOutproduct_Destination.Text := inttostr(DESTSHOP);
-        RemoteDB.transferOutproduct_quantity.Text    := StringGridTransfer.Cells[2, Nowrow];
-        RemoteDB.transferOutproduct_supplier_id.Text := StringGridTransfer.Cells[8, Nowrow];
-        RemoteDB.transferOutproduct_date_in.Text     := StringGridTransfer.Cells[6, Nowrow];
-        RemoteDB.transferOutproduct_price_gross.Text := StringGridTransfer.Cells[5, Nowrow];
-        RemoteDB.transferOutproduct_price_stock.Text := StringGridTransfer.Cells[4, Nowrow];
+        RemoteDB.transferOutproduct_quantity.Text := StringGridTransfer.Cells
+          [2, Nowrow];
+        RemoteDB.transferOutproduct_supplier_id.Text := StringGridTransfer.Cells
+          [8, Nowrow];
+        RemoteDB.transferOutproduct_date_in.Text := StringGridTransfer.Cells
+          [6, Nowrow];
+        RemoteDB.transferOutproduct_price_gross.Text := StringGridTransfer.Cells
+          [5, Nowrow];
+        RemoteDB.transferOutproduct_price_stock.Text := StringGridTransfer.Cells
+          [4, Nowrow];
         RemoteDB.Transferout.Post;
 
       end; // Fin des depacements en Transfer
 
       // Impression du ticket transfer
-      if self.Parameter['MiscPrintTransfer'] = 'TRUE' then
+      if Self.Parameter['MiscPrintTransfer'] = 'TRUE' then
       begin
-        TicketToPrint := TTicketJob.Create(self);
+        TicketToPrint := TTicketJob.Create(Self);
         try
-          TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-          TicketToPrint.Logo     := PrintLogo;
-          TicketToPrint.URL      := WEBURL;
-          if ShopdataList <> nil then begin
+          TicketToPrint.Printer := (Self.Parameter['PrintersTicketPrinter']);
+          TicketToPrint.Logo := PrintLogo;
+          TicketToPrint.URL := WEBURL;
+          if ShopdataList <> nil then
+          begin
             TicketToPrint.ShopData := ShopdataList;
-          end else begin
+          end
+          else
+          begin
             ShowMessage('Les données tickets du magasin ne sont pas correctes');
           end;
           TicketToPrint.DateTime := Now;
-          if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+          if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
             TicketToPrint.Model := TmContinuous;
           TicketToPrint.AddBox('TFT ' + ComboBoxDestShop.Text, True, bsProd);
 
           Accu := 0;
-          Art  := 0;
+          Art := 0;
           with StringGridTransfer do
           begin
             for Nowrow := 1 to RowCount - 2 do
             begin
-              Accu := Accu + (StrToFloat(StringGridTransfer.Cells[5, Nowrow]) * StrtoInt(StringGridTransfer.Cells[2, Nowrow]));
-              Art  := Art + StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
-              TicketToPrint.AddLine(StringGridTransfer.Cells[2, Nowrow], StringGridTransfer.Cells[5, Nowrow], StringGridTransfer.Cells[1, Nowrow],
-                'TFT ' + ComboBoxDestShop.Text);
+              Accu := Accu + (StrToFloat(StringGridTransfer.Cells[5, Nowrow]) *
+                StrtoInt(StringGridTransfer.Cells[2, Nowrow]));
+              Art := Art + StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
+              TicketToPrint.AddLine(StringGridTransfer.Cells[2, Nowrow],
+                StringGridTransfer.Cells[5, Nowrow], StringGridTransfer.Cells[1,
+                Nowrow], 'TFT ' + ComboBoxDestShop.Text);
             end;
           end;
 
@@ -2811,7 +3086,7 @@ begin
           TicketToPrint.AddFinancialLine('Valeur :', Accu);
           TicketToPrint.AddCustomerLine('Destination', ComboBoxDestShop.Text);
 
-          if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+          if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
             TicketToPrint.PrintOpos
           else
             TicketToPrint.Print;
@@ -2824,17 +3099,18 @@ begin
       with StringGridTransfer do
         for Nowrow := 1 to RowCount - 2 do
         begin
-          RemoteDB.DeleteFromStock(Cells[0, Nowrow], StrtoInt(Cells[7, Nowrow]), StrtoInt(Cells[8, Nowrow]), StrtoInt(Cells[2, Nowrow]));
+          RemoteDB.DeleteFromStock(Cells[0, Nowrow], StrtoInt(Cells[7, Nowrow]),
+            StrtoInt(Cells[8, Nowrow]), StrtoInt(Cells[2, Nowrow]));
         end;
 
       BitBtnTransferClear.OnClick(BitBtnTransferProcess);
     except
       on e: E_Outloop do
       begin
-        RemoteDB.netshop_stock.SavePoint      := StockSavePoint;
-        RemoteDB.Transferout.SavePoint        := TransferSavePoint;
+        RemoteDB.netshop_stock.SavePoint := StockSavePoint;
+        RemoteDB.Transferout.SavePoint := TransferSavePoint;
         RemoteDB.netshop_items_sold.SavePoint := ItemsSavePoint;
-        RemoteDB.netshop_sales.SavePoint      := SalesSavePoint;
+        RemoteDB.netshop_sales.SavePoint := SalesSavePoint;
         RemoteDB.netshop_stock.EnableControls;
         ShowMessage(e.Message);
       end;
@@ -2850,7 +3126,8 @@ begin
       // Envoi des Alertes
       for Nowrow := 1 to RowCount - 2 do
       begin
-        self.ProcessAlert(Cells[0, Nowrow], Cells[4, Nowrow], Cells[7, Nowrow], Cells[8, Nowrow], Cells[2, Nowrow]);
+        Self.ProcessAlert(Cells[0, Nowrow], Cells[4, Nowrow], Cells[7, Nowrow],
+          Cells[8, Nowrow], Cells[2, Nowrow]);
       end; // for rows loop
 
       for Nowrow := 1 to StringGridTransfer.RowCount - 2 do
@@ -2862,52 +3139,65 @@ begin
         // 1° dépôt
         if StrtoInt(Cells[7, Nowrow]) >= 100000 then
         begin
-          OwnerId    := ConnectedShop * 100000 + 1;
+          OwnerId := ConnectedShop * 100000 + 1;
           SupplierId := 0;
         end;
         // 2° rachat
         if StrtoInt(Cells[8, Nowrow]) >= 100000 then
         begin
           SupplierId := ConnectedShop * 100000 + 1;
-          OwnerId    := ConnectedShop;
+          OwnerId := ConnectedShop;
         end;
         // 3° neuf
-        if (StrtoInt(Cells[8, Nowrow]) < 100000) and (StrtoInt(Cells[7, Nowrow]) < 100000) then
+        if (StrtoInt(Cells[8, Nowrow]) < 100000) and
+          (StrtoInt(Cells[7, Nowrow]) < 100000) then
         begin
-          OwnerId    := ConnectedShop;
+          OwnerId := ConnectedShop;
           SupplierId := ConnectedShop;
           RemoteDB.Products.FindKey([Cells[0, Nowrow]]);
-          TransferPrice :=  RemoteDB.Products.FieldByName('Products_price_allin').AsString;
+          TransferPrice := RemoteDB.Products.FieldByName
+            ('Products_price_allin').AsString;
         end;
         RemoteDB.netshop_stock.Append;
-        RemoteDB.netshop_stock.FieldByName('product_location').Text := inttostr(ConnectedShop);
-        RemoteDB.netshop_stock.FieldByName('product_model').Text := Cells[0, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_name').Text := Cells[1, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_quantity').Text := Cells[2, Nowrow];
+        RemoteDB.netshop_stock.FieldByName('product_location').Text :=
+          inttostr(ConnectedShop);
+        RemoteDB.netshop_stock.FieldByName('product_model').Text :=
+          Cells[0, Nowrow];
+        RemoteDB.netshop_stock.FieldByName('product_name').Text :=
+          Cells[1, Nowrow];
+        RemoteDB.netshop_stock.FieldByName('product_quantity').Text :=
+          Cells[2, Nowrow];
         // RemoteDB.netshop_stock.FieldByName('product_date_in').Text := Cells[6, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_price_gross').Text := Cells[5, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_price_stock').Text := TransferPrice;
-        RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger := OwnerId;
-        RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger := SupplierId;
+        RemoteDB.netshop_stock.FieldByName('product_price_gross').Text :=
+          Cells[5, Nowrow];
+        RemoteDB.netshop_stock.FieldByName('product_price_stock').Text :=
+          TransferPrice;
+        RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger
+          := OwnerId;
+        RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger :=
+          SupplierId;
         RemoteDB.netshop_stock.Post;
 
         //
         // Impression Etiquettes
         //
-        PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow], inttostr(OwnerId), inttostr(SupplierId));
+        PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow],
+          inttostr(OwnerId), inttostr(SupplierId));
       end; // Fin entrée en stock
 
       // Suppression des données de la table tansfer
       for Nowrow := 1 to RowCount - 2 do
       begin
-        RemoteDB.DeleteFromTransfer(Cells[0, Nowrow], StrtoInt(Cells[7, Nowrow]), StrtoInt(Cells[8, Nowrow]), StrtoInt(Cells[2, Nowrow]));
+        RemoteDB.DeleteFromTransfer(Cells[0, Nowrow],
+          StrtoInt(Cells[7, Nowrow]), StrtoInt(Cells[8, Nowrow]),
+          StrtoInt(Cells[2, Nowrow]));
       end;
 
-      BitBtnTransferClearClick(self);
+      BitBtnTransferClearClick(Self);
     end;
   end; // end RadiobuttonReceive
 
-  endoftransfer:
+endoftransfer:
 
   TryApplyChangesToDB();
 end;
@@ -2925,15 +3215,18 @@ begin
 
   if PageControlMainForm.ActivePage = TabsheetSales then
   begin
-    for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+    for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+      .ControlCount - 1 do
     begin
-      if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+      if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid
+      then
       begin
         index := i;
       end;
     end;
 
-    with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]) do
+    with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+      .Controls[index]) do
     begin
       if Row < RowCount - 1 then
       begin
@@ -2950,14 +3243,17 @@ begin
 
   if PageControlMainForm.ActivePage = TabSheetStockin then
   begin
-    for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+    for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+      .ControlCount - 1 do
     begin
-      if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+      if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+        .ClassType = TAdvStringGrid then
       begin
         index := i;
       end;
     end;
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index]) do
+    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+      .Controls[index]) do
     begin
       if Row < RowCount - 1 then
       begin
@@ -2990,23 +3286,29 @@ var
   Index, i, Nowrow, delrow: Integer;
 begin
   begin
-    for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+    for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+      .ControlCount - 1 do
     begin
-      if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+      if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid
+      then
       begin
         index := i;
       end;
     end;
 
-    for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).RowCount - 2 do
+    for Nowrow := 1 to TAdvStringGrid
+      (TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index])
+      .RowCount - 2 do
     begin
-      if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).Cells[0, Nowrow] = 'COUPONBDAY')) then
+      if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+        .Controls[index]).Cells[0, Nowrow] = 'COUPONBDAY')) then
       begin
         delrow := Nowrow;
       end;
     end;
 
-    with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]) do
+    with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+      .Controls[index]) do
     begin
       if delrow < RowCount - 1 then
       begin
@@ -3029,28 +3331,32 @@ var
 begin
   if PageControlMainForm.ActivePage = TabsheetSales then
   begin
-    for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+    for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+      .ControlCount - 1 do
     begin
-      if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+      if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid
+      then
       begin
         index := i;
       end;
     end;
 
-    with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]) do
+    with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+      .Controls[index]) do
     begin
       if Row < RowCount - 1 then
       begin
         begin
           EditSalesModel.Text := Cells[0, Row];
           EditSalesModelExit(nil);
-          EditSalesName.Text           := Cells[1, Row];
-          EditSalesQuantity.Text       := Cells[2, Row];
-          EditSalesPrice.Text          := Cells[4, Row];
-          EditSalesDateIn.Text         := Cells[6, Row];
-          ComboBoxSalesOwner.Text      := Cells[7, Row];
-          ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf(Cells[7, Row]);
-          for i                        := Row to RowCount - 2 do
+          EditSalesName.Text := Cells[1, Row];
+          EditSalesQuantity.Text := Cells[2, Row];
+          EditSalesPrice.Text := Cells[4, Row];
+          EditSalesDateIn.Text := Cells[6, Row];
+          ComboBoxSalesOwner.Text := Cells[7, Row];
+          ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf
+            (Cells[7, Row]);
+          for i := Row to RowCount - 2 do
             Rows[i].Assign(Rows[i + 1]);
           Rows[RowCount - 1].Clear;
           RowCount := RowCount - 1;
@@ -3068,13 +3374,14 @@ begin
     begin
       with StringGridTransfer do
       begin
-        EditTransferModel.Text          := Cells[0, Row];
-        EditTransferName.Text           := Cells[1, Row];
-        EditTransferQuantity.Text       := Cells[2, Row];
-        EditTransferPrice.Value         := StrToFloat(Cells[4, Row]);
-        ComboBoxTransferOwner.Text      := Cells[7, Row];
-        ComboBoxTransferOwner.ItemIndex := ComboBoxTransferOwner.items.IndexOf(Cells[7, Row]);
-        for i                           := Row to RowCount - 2 do
+        EditTransferModel.Text := Cells[0, Row];
+        EditTransferName.Text := Cells[1, Row];
+        EditTransferQuantity.Text := Cells[2, Row];
+        EditTransferPrice.Value := StrToFloat(Cells[4, Row]);
+        ComboBoxTransferOwner.Text := Cells[7, Row];
+        ComboBoxTransferOwner.ItemIndex := ComboBoxTransferOwner.items.IndexOf
+          (Cells[7, Row]);
+        for i := Row to RowCount - 2 do
           Rows[i].Assign(Rows[i + 1]);
         Rows[RowCount - 1].Clear;
         RowCount := RowCount - 1;
@@ -3084,31 +3391,46 @@ begin
 
 end;
 
-procedure TMainForm.EditInventoryKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TMainForm.EditInventoryKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
   if Key = 13 then
   begin
-    if (RemoteDB.Products.Locate('Products_model', EditInventoryModel.Text, [locaseinsensitive])) and (StrtoInt(EditInventoryQuantity.Text) > 0) then
+    if (RemoteDB.Products.Locate('Products_model', EditInventoryModel.Text,
+      [locaseinsensitive])) and (StrtoInt(EditInventoryQuantity.Text) > 0) then
     begin
       sndPlaySound(OkSnd, SND_MEMORY or SND_NODEFAULT or SND_ASYNC);
-      if RemoteDB.Inventory.Locate('product_model', EditInventoryModel.Text, [locaseinsensitive]) then
+      if RemoteDB.Inventory.Locate('product_model', EditInventoryModel.Text,
+        [locaseinsensitive]) then
       begin
         RemoteDB.Inventory.Edit;
-        RemoteDB.Inventory.FieldByName('product_quantity').AsInteger := RemoteDB.Inventory.FieldByName('product_quantity').AsInteger +
+        RemoteDB.Inventory.FieldByName('product_quantity').AsInteger :=
+          RemoteDB.Inventory.FieldByName('product_quantity').AsInteger +
           StrtoInt(EditInventoryQuantity.Text);
         RemoteDB.Inventory.Post;
-      end else begin // Product already inventories
+      end
+      else
+      begin // Product already inventories
         RemoteDB.Inventory.Append;
-        RemoteDB.Inventory.FieldByName('product_model').AsString := EditInventoryModel.Text;
-        RemoteDB.Inventory.FieldByName('product_owner_id').AsInteger := (ConnectedShop);
-        RemoteDB.Inventory.FieldByName('product_location').AsInteger := (ConnectedShop);
-        RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat := RemoteDB.Products.FieldByName('products_price').AsFloat;
-        RemoteDB.Inventory.FieldByName('product_quantity').AsInteger := StrtoInt(EditInventoryQuantity.Text);
-        RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat := RemoteDB.Products.FieldByName('products_cldprice').AsFloat;
-        RemoteDB.Inventory.FieldByName('product_name').AsString := RemoteDB.Products.FieldByName('products_intername').AsString;
+        RemoteDB.Inventory.FieldByName('product_model').AsString :=
+          EditInventoryModel.Text;
+        RemoteDB.Inventory.FieldByName('product_owner_id').AsInteger :=
+          (ConnectedShop);
+        RemoteDB.Inventory.FieldByName('product_location').AsInteger :=
+          (ConnectedShop);
+        RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat :=
+          RemoteDB.Products.FieldByName('products_price').AsFloat;
+        RemoteDB.Inventory.FieldByName('product_quantity').AsInteger :=
+          StrtoInt(EditInventoryQuantity.Text);
+        RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat :=
+          RemoteDB.Products.FieldByName('products_cldprice').AsFloat;
+        RemoteDB.Inventory.FieldByName('product_name').AsString :=
+          RemoteDB.Products.FieldByName('products_intername').AsString;
         RemoteDB.Inventory.Post;
       end; // Product not yet inventoried yet
-    end else begin // Endif Product located and Q>0
+    end
+    else
+    begin // Endif Product located and Q>0
       sndPlaySound(ErrorSnd, SND_MEMORY or SND_NODEFAULT or SND_ASYNC);
     end;
     EditInventoryModel.Clear;
@@ -3120,9 +3442,11 @@ end;
 procedure TMainForm.EditInventoryModelExit(Sender: TObject);
 begin
   EditInventoryModel.Text := UpperCase(EditInventoryModel.Text);
-  if (not RemoteDB.Products.Locate('Products_model', EditInventoryModel.Text, [locaseinsensitive])) and (EditInventoryModel.Text <> '') then
+  if (not RemoteDB.Products.Locate('Products_model', EditInventoryModel.Text,
+    [locaseinsensitive])) and (EditInventoryModel.Text <> '') then
   begin
-    messagedlg('Produit inconnu veuillez l introduire dans la base de données', mtwarning, [mbok], 0);
+    messagedlg('Produit inconnu veuillez l introduire dans la base de données',
+      mtwarning, [mbok], 0);
     EditInventoryModel.Clear;
     EditInventoryModel.SetFocus;
     EditInventoryQuantity.Text := '1';
@@ -3143,32 +3467,33 @@ begin
   ComboBoxDestShop.Enabled := True;
   ComboBoxDestShop.SetFocus;
   ComboBoxDestShop.ItemIndex := -1;
-  ComboBoxDestShop.Text      := 'Select destination';
+  ComboBoxDestShop.Text := 'Select destination';
 end;
 
 procedure TMainForm.RaportCouponsClick(Sender: TObject);
-      var
-        Filter: string;
-        FilterState: Boolean;
-      begin
-        try
-          ClientsExecute(nil);
-          RemoteDB.FreeCouponsToCustomers;
+var
+  Filter: string;
+  FilterState: Boolean;
+begin
+  try
+    ClientsExecute(nil);
+    RemoteDB.FreeCouponsToCustomers;
 
-          RemoteDB.Shops.FindKey([ConnectedShop]);
-          ReportModule.RvProject.Open;
-          ReportModule.RvProject.SelectReport('ReportCoupons', True);
-          ReportModule.RvProject.SetParam('URL', WEBURL);
-          ReportModule.RvSystem.DefaultDest    := rdpreview;
-          ReportModule.RvSystem.DoNativeOutput := True;
-          ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
-          // ReportModule.RvSystem.Execute;
+    RemoteDB.Shops.FindKey([ConnectedShop]);
+    ReportModule.RvProject.Open;
+    ReportModule.RvProject.SelectReport('ReportCoupons', True);
+    ReportModule.RvProject.SetParam('URL', WEBURL);
+    ReportModule.RvSystem.DefaultDest := rdpreview;
+    ReportModule.RvSystem.DoNativeOutput := True;
+    ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups -
+      [ssAllowSetup];
+    // ReportModule.RvSystem.Execute;
 
-          ReportModule.RvProject.Execute;
-          ReportModule.RvProject.Close;
-        finally
+    ReportModule.RvProject.Execute;
+    ReportModule.RvProject.Close;
+  finally
 
-        end;
+  end;
 end;
 
 procedure TMainForm.RadioButtonAlertsArrivedClick(Sender: TObject);
@@ -3191,12 +3516,14 @@ begin
   RemoteDB.FilterProductsAll
 end;
 
-procedure TMainForm.RadioButtonAlertsProductFilterBackCatalogueClick(Sender: TObject);
+procedure TMainForm.RadioButtonAlertsProductFilterBackCatalogueClick
+  (Sender: TObject);
 begin
   RemoteDB.FilterProductsBackCatalogue
 end;
 
-procedure TMainForm.RadioButtonAlertsProductFilterPreOrderClick(Sender: TObject);
+procedure TMainForm.RadioButtonAlertsProductFilterPreOrderClick
+  (Sender: TObject);
 begin
   RemoteDB.FilterProductsPreOrder
 end;
@@ -3213,9 +3540,10 @@ begin
   TransferClearSummary;
 
   RemoteDB.Shops.Locate('Shops_id', ConnectedShop, []);
-  ComboBoxDestShop.Enabled   := True;
-  ComboBoxDestShop.ItemIndex := ComboBoxDestShop.items.IndexOf(RemoteDB.Shops.FieldByName('shops_name').AsString);
-  ComboBoxDestShop.Enabled   := False;
+  ComboBoxDestShop.Enabled := True;
+  ComboBoxDestShop.ItemIndex := ComboBoxDestShop.items.IndexOf
+    (RemoteDB.Shops.FieldByName('shops_name').AsString);
+  ComboBoxDestShop.Enabled := False;
 
   // ComboBoxOriginShop.Enabled := True;
   // ComboBoxOriginShop.SetFocus;
@@ -3223,7 +3551,8 @@ begin
   // ComboBoxOriginShop.Text := 'Select origin';
 end;
 
-procedure TMainForm.EditTransferKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TMainForm.EditTransferKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 var
   Nowrow, rowpresent, quantitypresent: Integer;
   ProductPresent: Boolean;
@@ -3241,11 +3570,13 @@ begin
         TmpStr := '-';
         if Pos(TmpStr, ComboBoxTransferOwner.Text) <> 0 then
         begin
-          OwnSup   := StrSplit(ComboBoxTransferOwner.Text, '-');
-          owner    := OwnSup[0];
+          OwnSup := StrSplit(ComboBoxTransferOwner.Text, '-');
+          owner := OwnSup[0];
           supplier := OwnSup[1];
-        end else begin;
-          owner    := ComboBoxTransferOwner.Text;
+        end
+        else
+        begin;
+          owner := ComboBoxTransferOwner.Text;
           supplier := '-1';
         end;
 
@@ -3255,7 +3586,8 @@ begin
         RemoteDB.Products.DisableControls;
         RemoteDB.Products.IndexName := 'ProductsIXModel';
 
-        if (RemoteDB.Products.Locate('products_model', EditTransferModel.Text, [locaseinsensitive])) then
+        if (RemoteDB.Products.Locate('products_model', EditTransferModel.Text,
+          [locaseinsensitive])) then
         begin
           if (ComboBoxTransferOwner.ItemIndex <> -1) then
           begin
@@ -3265,83 +3597,124 @@ begin
             begin
               for Nowrow := 1 to StringGridTransfer.RowCount - 2 do
               begin
-                if (StringGridTransfer.Cells[0, Nowrow] = EditTransferModel.Text) and (StringGridTransfer.Cells[7, Nowrow] = owner) then
+                if (StringGridTransfer.Cells[0, Nowrow]
+                  = EditTransferModel.Text) and
+                  (StringGridTransfer.Cells[7, Nowrow] = owner) then
                 begin
-                  quantitypresent := quantitypresent + StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
+                  quantitypresent := quantitypresent +
+                    StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
                 end;
               end;
-              RemoteDB.netshop_stock.FindKey([EditTransferModel.Text, ComboBoxTransferOwner.Text]);
-            end else begin // Supplier Occasion
+              RemoteDB.netshop_stock.FindKey([EditTransferModel.Text,
+                ComboBoxTransferOwner.Text]);
+            end
+            else
+            begin // Supplier Occasion
               for Nowrow := 1 to StringGridTransfer.RowCount - 2 do
               begin
-                if (StringGridTransfer.Cells[0, Nowrow] = EditTransferModel.Text) and (StringGridTransfer.Cells[7, Nowrow] = owner) and
+                if (StringGridTransfer.Cells[0, Nowrow]
+                  = EditTransferModel.Text) and
+                  (StringGridTransfer.Cells[7, Nowrow] = owner) and
                   (StringGridTransfer.Cells[8, Nowrow] = supplier) then
                 begin
-                  quantitypresent := quantitypresent + StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
+                  quantitypresent := quantitypresent +
+                    StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
                 end;
               end;
-              RemoteDB.netshop_stock.FindKey([EditTransferModel.Text, owner, supplier]);
+              RemoteDB.netshop_stock.FindKey([EditTransferModel.Text, owner,
+                supplier]);
             end;
 
-            if ((StrtoInt(EditTransferQuantity.Text) > 0) and (StrtoInt(EditTransferQuantity.Text) <= StrtoInt(EditTransferAvailable.Text))) then
+            if ((StrtoInt(EditTransferQuantity.Text) > 0) and
+              (StrtoInt(EditTransferQuantity.Text) <=
+              StrtoInt(EditTransferAvailable.Text))) then
             begin
 
               if not ProductPresent then
               begin { Ajouter d'une ligne dans le transfer grid }
 
                 { Sortie du Dacal CD Library }
-                RemoteDB.Products.Locate('products_model', EditTransferModel.Text, []);
-                if ((self.Parameter['MiscCDLibUse'] = 'TRUE') and (RemoteDB.Caroussel.Locate('model;customer_nbr;IsRoot',
-                  Vararrayof([RemoteDB.Products.FieldByName('products_model').AsString, StrtoInt(owner), True]), [])) and
-                  (((StrtoInt(owner) < 100000) and (StrtoInt(supplier) >= 100000)) or ((StrtoInt(owner) >= 100000)))) then
+                RemoteDB.Products.Locate('products_model',
+                  EditTransferModel.Text, []);
+                if ((Self.Parameter['MiscCDLibUse'] = 'TRUE') and
+                  (RemoteDB.Caroussel.Locate('model;customer_nbr;IsRoot',
+                  Vararrayof([RemoteDB.Products.FieldByName('products_model')
+                  .AsString, StrtoInt(owner), True]), [])) and
+                  (((StrtoInt(owner) < 100000) and (StrtoInt(supplier) >=
+                  100000)) or ((StrtoInt(owner) >= 100000)))) then
                 begin
-                  ExitLib := TFormExitLibrary.Create(self);
+                  ExitLib := TFormExitLibrary.Create(Self);
                   ExitLib.Enter(owner, EditTransferModel.Text);
                   ExitLib.Free;
                 end;
-                Nowrow                              := StringGridTransfer.RowCount - 1;
-                StringGridTransfer.Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
-                StringGridTransfer.Cells[1, Nowrow] := RemoteDB.Products.FieldByName('products_intername').Text;
-                StringGridTransfer.Cells[2, Nowrow] := EditTransferQuantity.Text;
-                StringGridTransfer.Cells[3, Nowrow] := FloatToStrF(RemoteDB.ProductsProducts_Price.AsFloat, fffixed, 7, 2);
-                StringGridTransfer.Cells[4, Nowrow] := FloatToStrF(EditTransferPrice.Value, fffixed, 7, 2);
-                StringGridTransfer.Cells[5, Nowrow] := FloatToStrF(RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat, fffixed, 7, 2);
-                StringGridTransfer.Cells[6, Nowrow] := RemoteDB.netshop_stock.FieldByName('product_date_in').Text;
-                StringGridTransfer.Cells[7, Nowrow] := RemoteDB.netshop_stock.FieldByName('product_owner_id').Text;
-                StringGridTransfer.Cells[8, Nowrow] := RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text;
+                Nowrow := StringGridTransfer.RowCount - 1;
+                StringGridTransfer.Cells[0, Nowrow] :=
+                  RemoteDB.Productsproducts_model.Text;
+                StringGridTransfer.Cells[1, Nowrow] :=
+                  RemoteDB.Products.FieldByName('products_intername').Text;
+                StringGridTransfer.Cells[2, Nowrow] :=
+                  EditTransferQuantity.Text;
+                StringGridTransfer.Cells[3, Nowrow] :=
+                  FloatToStrF(RemoteDB.ProductsProducts_Price.AsFloat,
+                  fffixed, 7, 2);
+                StringGridTransfer.Cells[4, Nowrow] :=
+                  FloatToStrF(EditTransferPrice.Value, fffixed, 7, 2);
+                StringGridTransfer.Cells[5, Nowrow] :=
+                  FloatToStrF(RemoteDB.netshop_stock.FieldByName
+                  ('product_price_gross').AsFloat, fffixed, 7, 2);
+                StringGridTransfer.Cells[6, Nowrow] :=
+                  RemoteDB.netshop_stock.FieldByName('product_date_in').Text;
+                StringGridTransfer.Cells[7, Nowrow] :=
+                  RemoteDB.netshop_stock.FieldByName('product_owner_id').Text;
+                StringGridTransfer.Cells[8, Nowrow] :=
+                  RemoteDB.netshop_stock.FieldByName
+                  ('product_supplier_id').Text;
                 StringGridTransfer.Cells[9, Nowrow] := inttostr(ConnectedShop);
-                StringGridTransfer.RowCount         := Nowrow + 2;
+                StringGridTransfer.RowCount := Nowrow + 2;
 
                 { Reinitialisation de la barre de selection }
                 TransferClearEdit;
                 if EditTransferModel.Visible then
                   EditTransferModel.SetFocus;
-              end else begin { Incrémenter une ligne dans le transfer grid }
-                if StrtoInt(EditTransferQuantity.Text) <= StrtoInt(EditTransferAvailable.Text) - quantitypresent then
+              end
+              else
+              begin { Incrémenter une ligne dans le transfer grid }
+                if StrtoInt(EditTransferQuantity.Text) <=
+                  StrtoInt(EditTransferAvailable.Text) - quantitypresent then
                 begin
-                  StringGridTransfer.Cells[2, rowpresent] := inttostr(quantitypresent + Round(StrtoInt(EditTransferQuantity.Text)));
+                  StringGridTransfer.Cells[2, rowpresent] :=
+                    inttostr(quantitypresent +
+                    Round(StrtoInt(EditTransferQuantity.Text)));
 
                   { Reinitialisation de la barre de selection }
                   TransferClearEdit;
                   if EditTransferModel.Visible then
                     EditTransferModel.SetFocus;
-                end else begin { Q insuffisante }
+                end
+                else
+                begin { Q insuffisante }
                   if EditTransferQuantity.Visible then
                     EditTransferQuantity.SetFocus;
                 end;
 
               end;
-            end else begin { quantité farfelue }
+            end
+            else
+            begin { quantité farfelue }
               messagedlg('Unavailable quantity', mtwarning, [mbok], 0);
               if EditTransferQuantity.Visible then
                 EditTransferQuantity.SetFocus;
             end
-          end else begin { Pas de owner selectionné }
+          end
+          else
+          begin { Pas de owner selectionné }
             messagedlg('Select owner', mtwarning, [mbok], 0);
             if ComboBoxTransferOwner.Visible then
               ComboBoxTransferOwner.SetFocus;
           end;
-        end else begin { Product model non localisé }
+        end
+        else
+        begin { Product model non localisé }
           messagedlg('Modèle non valide', mtwarning, [mbok], 0);
         end;
       finally
@@ -3356,63 +3729,89 @@ begin
     if Key = 13 then
       if (ComboBoxTransferOwner.ItemIndex <> -1) then
       begin
-        if (RemoteDB.Products.Locate('products_model', EditTransferModel.Text, [locaseinsensitive])) then
+        if (RemoteDB.Products.Locate('products_model', EditTransferModel.Text,
+          [locaseinsensitive])) then
         begin
-          if ((StrtoInt(EditTransferQuantity.Text) > 0) and (StrtoInt(EditTransferQuantity.Text) <= StrtoInt(EditTransferAvailable.Text))) then
+          if ((StrtoInt(EditTransferQuantity.Text) > 0) and
+            (StrtoInt(EditTransferQuantity.Text) <=
+            StrtoInt(EditTransferAvailable.Text))) then
           begin
             { Rechercher dans le transfer grid pour la meme occurence de product model }
             TmpStr := '-';
             if Pos(TmpStr, ComboBoxTransferOwner.Text) <> 0 then
             begin
               // Stock Rachat Mag
-              OwnSup   := TStringList.Create;
-              OwnSup   := StrSplit(ComboBoxTransferOwner.Text, '-');
-              owner    := OwnSup[0];
+              OwnSup := TStringList.Create;
+              OwnSup := StrSplit(ComboBoxTransferOwner.Text, '-');
+              owner := OwnSup[0];
               supplier := OwnSup[1];
-            end else begin
+            end
+            else
+            begin
               // Stock Dépot ou Neuf
-              owner    := ComboBoxTransferOwner.Text;
+              owner := ComboBoxTransferOwner.Text;
               supplier := '-1';
             end;
 
             ProductPresent := False;
-            rowpresent     := -1;
-            for Nowrow     := 1 to StringGridTransfer.RowCount - 2 do
+            rowpresent := -1;
+            for Nowrow := 1 to StringGridTransfer.RowCount - 2 do
             begin
-              if ((StringGridTransfer.Cells[0, Nowrow] = EditTransferModel.Text) and (StringGridTransfer.Cells[7, Nowrow] = owner)) then
+              if ((StringGridTransfer.Cells[0, Nowrow] = EditTransferModel.Text)
+                and (StringGridTransfer.Cells[7, Nowrow] = owner)) then
               begin
                 if supplier = '-1' then
                 begin
-                  ProductPresent  := True;
-                  rowpresent      := Nowrow;
-                  quantitypresent := StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
-                end else begin
+                  ProductPresent := True;
+                  rowpresent := Nowrow;
+                  quantitypresent :=
+                    StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
+                end
+                else
+                begin
                   if (StringGridTransfer.Cells[8, Nowrow] = supplier) then
                   begin
-                    ProductPresent  := True;
-                    rowpresent      := Nowrow;
-                    quantitypresent := StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
+                    ProductPresent := True;
+                    rowpresent := Nowrow;
+                    quantitypresent :=
+                      StrtoInt(StringGridTransfer.Cells[2, Nowrow]);
                   end;
                 end;
               end;
             end;
             if not ProductPresent then
             begin { Ajouter d'une ligne dans le transfer grid }
-              Nowrow                              := StringGridTransfer.RowCount - 1;
-              StringGridTransfer.Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
-              StringGridTransfer.Cells[1, Nowrow] := RemoteDB.Products.FieldByName('products_intername').Text;
+              Nowrow := StringGridTransfer.RowCount - 1;
+              StringGridTransfer.Cells[0, Nowrow] :=
+                RemoteDB.Productsproducts_model.Text;
+              StringGridTransfer.Cells[1, Nowrow] :=
+                RemoteDB.Products.FieldByName('products_intername').Text;
               StringGridTransfer.Cells[2, Nowrow] := EditTransferQuantity.Text;
-              StringGridTransfer.Cells[3, Nowrow] := RemoteDB.ProductsProducts_Price.Text;
-              if ((RemoteDB.netshop_transfer.FieldByName('product_owner_id').AsInteger >= 100000) or
-                (RemoteDB.netshop_transfer.FieldByName('product_supplier_id').AsInteger >= 100000)) then
-                StringGridTransfer.Cells[4, Nowrow] := FloatToStr(RemoteDB.netshop_transfer.FieldByName('Product_Price_Stock').AsFloat + 3)
+              StringGridTransfer.Cells[3, Nowrow] :=
+                RemoteDB.ProductsProducts_Price.Text;
+              if ((RemoteDB.netshop_transfer.FieldByName('product_owner_id')
+                .AsInteger >= 100000) or
+                (RemoteDB.netshop_transfer.FieldByName('product_supplier_id')
+                .AsInteger >= 100000)) then
+                StringGridTransfer.Cells[4, Nowrow] :=
+                  FloatToStr(RemoteDB.netshop_transfer.FieldByName
+                  ('Product_Price_Stock').AsFloat + 3)
               else
-                StringGridTransfer.Cells[4, Nowrow] := RemoteDB.netshop_transfer.FieldByName('Product_Price_Stock').Text;
-              StringGridTransfer.Cells[5, Nowrow]   := RemoteDB.netshop_transfer.FieldByName('Product_Price_Gross').Text;
-              StringGridTransfer.Cells[6, Nowrow]   := RemoteDB.netshop_transfer.FieldByName('Product_Date_In').Text;
-              StringGridTransfer.Cells[7, Nowrow]   := RemoteDB.netshop_transfer.FieldByName('Product_Owner_id').Text;
-              StringGridTransfer.Cells[8, Nowrow]   := RemoteDB.netshop_transfer.FieldByName('product_supplier_id').Text;
-              StringGridTransfer.Cells[9, Nowrow]   := RemoteDB.netshop_transfer.FieldByName('product_origin').Text;
+                StringGridTransfer.Cells[4, Nowrow] :=
+                  RemoteDB.netshop_transfer.FieldByName
+                  ('Product_Price_Stock').Text;
+              StringGridTransfer.Cells[5, Nowrow] :=
+                RemoteDB.netshop_transfer.FieldByName
+                ('Product_Price_Gross').Text;
+              StringGridTransfer.Cells[6, Nowrow] :=
+                RemoteDB.netshop_transfer.FieldByName('Product_Date_In').Text;
+              StringGridTransfer.Cells[7, Nowrow] :=
+                RemoteDB.netshop_transfer.FieldByName('Product_Owner_id').Text;
+              StringGridTransfer.Cells[8, Nowrow] :=
+                RemoteDB.netshop_transfer.FieldByName
+                ('product_supplier_id').Text;
+              StringGridTransfer.Cells[9, Nowrow] :=
+                RemoteDB.netshop_transfer.FieldByName('product_origin').Text;
 
               StringGridTransfer.RowCount := Nowrow + 2;
 
@@ -3421,15 +3820,22 @@ begin
               if EditTransferModel.Visible then
                 EditTransferModel.SetFocus;
 
-            end else begin { Incrémenter une ligne dans le transfer grid }
-              if StrtoInt(EditTransferQuantity.Text) <= StrtoInt(EditTransferAvailable.Text) - quantitypresent then
+            end
+            else
+            begin { Incrémenter une ligne dans le transfer grid }
+              if StrtoInt(EditTransferQuantity.Text) <=
+                StrtoInt(EditTransferAvailable.Text) - quantitypresent then
               begin
-                StringGridTransfer.Cells[2, rowpresent] := inttostr(quantitypresent + StrtoInt(EditTransferQuantity.Text));
+                StringGridTransfer.Cells[2, rowpresent] :=
+                  inttostr(quantitypresent +
+                  StrtoInt(EditTransferQuantity.Text));
                 { Reinitialisation de la barre de selection }
                 TransferClearEdit;
                 if EditTransferModel.Visible then
                   EditTransferModel.SetFocus;;
-              end else begin { Q insuffisante }
+              end
+              else
+              begin { Q insuffisante }
                 if EditTransferQuantity.Visible then
                 begin
                   messagedlg('Quantité insuffisante', mtwarning, [mbok], 0);
@@ -3437,12 +3843,16 @@ begin
                 end;
               end;
             end;
-          end else begin { quantité farfelue }
+          end
+          else
+          begin { quantité farfelue }
             messagedlg('Quantité non disponnible', mtwarning, [mbok], 0);
             if EditTransferQuantity.Visible then
               EditTransferQuantity.SetFocus;
           end
-        end else begin { Product model non localisé }
+        end
+        else
+        begin { Product model non localisé }
           messagedlg('Modèle non valide', mtwarning, [mbok], 0);
         end;
       end; { endif chr(13) }
@@ -3451,7 +3861,7 @@ end;
 
 procedure TMainForm.EditTransferModelExit(Sender: TObject);
 var
-  MinPrice: Double;
+  MinPrice: double;
   MinPriceOwner: string;
   CheckPreviouslyInserted: string;
 begin
@@ -3462,53 +3872,78 @@ begin
     begin
       ComboBoxTransferOwner.Clear;
       // Verification validité article
-      if RemoteDB.Products.Locate('products_model', EditTransferModel.Text, [locaseinsensitive]) then
+      if RemoteDB.Products.Locate('products_model', EditTransferModel.Text,
+        [locaseinsensitive]) then
       begin
         RemoteDB.netshop_stock.DisableControls;
         RemoteDB.netshop_stock.First;
         RemoteDB.netshop_stock.IndexFieldNames := 'product_model';
         // Verification Présence en Stock
         try
-          if RemoteDB.netshop_stock.Locate('product_model;product_location', Vararrayof([EditTransferModel.Text, ConnectedShop]), [locaseinsensitive]) then
+          if RemoteDB.netshop_stock.Locate('product_model;product_location',
+            Vararrayof([EditTransferModel.Text, ConnectedShop]),
+            [locaseinsensitive]) then
           begin
-            EditTransferName.Text     := RemoteDB.Products.FieldByName('products_intername').Text;
-            EditTransferPrice.Value   := RemoteDB.Products.FieldByName('products_price').AsFloat;
+            EditTransferName.Text := RemoteDB.Products.FieldByName
+              ('products_intername').Text;
+            EditTransferPrice.Value := RemoteDB.Products.FieldByName
+              ('products_price').AsFloat;
             EditTransferQuantity.Text := '1';
             EditTransferModel.SelectAll;
 
             // Population de la listbox owner et recherche du prix min
-            MinPrice      := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-            MinPriceOwner := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString;
+            MinPrice := RemoteDB.netshop_stock.FieldByName
+              ('product_price_stock').AsFloat;
+            MinPriceOwner := RemoteDB.netshop_stock.FieldByName
+              ('product_owner_id').AsString;
 
             repeat
-              if RemoteDB.netshop_stock.FieldByName('product_model').Text = EditTransferModel.Text then
+              if RemoteDB.netshop_stock.FieldByName('product_model')
+                .Text = EditTransferModel.Text then
               begin
-                if RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger <= 100000 then
+                if RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                  .AsInteger <= 100000 then
                 begin
-                  CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString;
-                end else begin
-                  CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString + '-' +
-                    RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString;
+                  CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName
+                    ('product_owner_id').AsString;
+                end
+                else
+                begin
+                  CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName
+                    ('product_owner_id').AsString + '-' +
+                    RemoteDB.netshop_stock.FieldByName
+                    ('product_supplier_id').AsString;
                 end;
-                if (ComboBoxTransferOwner.items.IndexOf(CheckPreviouslyInserted) = -1) then
+                if (ComboBoxTransferOwner.items.IndexOf(CheckPreviouslyInserted)
+                  = -1) then
                 begin
                   ComboBoxTransferOwner.items.Add(CheckPreviouslyInserted);
-                  if RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat <= MinPrice then
+                  if RemoteDB.netshop_stock.FieldByName('product_price_stock')
+                    .AsFloat <= MinPrice then
                   begin
-                    MinPrice      := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+                    MinPrice := RemoteDB.netshop_stock.FieldByName
+                      ('product_price_stock').AsFloat;
                     MinPriceOwner := CheckPreviouslyInserted;
                   end;
                 end;
-                if (ComboBoxTransferOwner.items.IndexOf(RemoteDB.netshop_stock.FieldByName('product_owner_id').Text) = -1) and
-                  (RemoteDB.netshop_stock.FieldByName('product_location').AsInteger = ConnectedShop) then
-                  ComboBoxTransferOwner.items.Add(RemoteDB.netshop_stock.FieldByName('product_owner_id').Text);
+                if (ComboBoxTransferOwner.items.IndexOf
+                  (RemoteDB.netshop_stock.FieldByName('product_owner_id').Text)
+                  = -1) and (RemoteDB.netshop_stock.FieldByName
+                  ('product_location').AsInteger = ConnectedShop) then
+                  ComboBoxTransferOwner.items.Add
+                    (RemoteDB.netshop_stock.FieldByName
+                    ('product_owner_id').Text);
               end;
               RemoteDB.netshop_stock.Next;
-            until (RemoteDB.netshop_stock.FieldByName('product_model').AsString <> EditTransferModel.Text) or RemoteDB.netshop_stock.Eof;
-            ComboBoxTransferOwner.ItemIndex := ComboBoxTransferOwner.items.IndexOf(inttostr(ConnectedShop));
+            until (RemoteDB.netshop_stock.FieldByName('product_model').AsString
+              <> EditTransferModel.Text) or RemoteDB.netshop_stock.Eof;
+            ComboBoxTransferOwner.ItemIndex :=
+              ComboBoxTransferOwner.items.IndexOf(inttostr(ConnectedShop));
             ComboBoxTransferOwner.OnChange(EditTransferModel);
             // Fin population listbox
-          end else begin
+          end
+          else
+          begin
             messagedlg('No Stock', mtwarning, [mbok], 0);
             TransferClearEdit;
             if EditTransferModel.Visible then
@@ -3516,9 +3951,12 @@ begin
           end;
         finally
           RemoteDB.netshop_stock.EnableControls;
-          RemoteDB.netshop_stock.IndexFieldNames := 'Product_Model;Product_owner_id';
+          RemoteDB.netshop_stock.IndexFieldNames :=
+            'Product_Model;Product_owner_id';
         end;
-      end else begin
+      end
+      else
+      begin
         if (EditTransferModel.Text <> '') and (EditTransferModel.Visible) then
           EditTransferModel.SetFocus;
         TransferClearEdit;
@@ -3529,7 +3967,8 @@ begin
     begin
       ComboBoxTransferOwner.Clear;
       // Verification validité article
-      if RemoteDB.Products.Locate('products_model', EditTransferModel.Text, [locaseinsensitive]) then
+      if RemoteDB.Products.Locate('products_model', EditTransferModel.Text,
+        [locaseinsensitive]) then
       begin
         RemoteDB.netshop_transfer.DisableControls;
         RemoteDB.netshop_transfer.First;
@@ -3538,50 +3977,76 @@ begin
 
           // Verification Présence en Transfer
 
-          if RemoteDB.netshop_transfer.Locate('product_model;product_destination', Vararrayof([EditTransferModel.Text, ConnectedShop]), [locaseinsensitive])
-          then
+          if RemoteDB.netshop_transfer.Locate
+            ('product_model;product_destination',
+            Vararrayof([EditTransferModel.Text, ConnectedShop]),
+            [locaseinsensitive]) then
           begin
-            EditTransferName.Text      := RemoteDB.Products.FieldByName('products_intername').Text;
-            EditTransferPrice.Value    := RemoteDB.netshop_transfer.FieldByName('Product_Price_Stock').AsFloat;
-            EditTransferQuantity.Text  := '1';
+            EditTransferName.Text := RemoteDB.Products.FieldByName
+              ('products_intername').Text;
+            EditTransferPrice.Value := RemoteDB.netshop_transfer.FieldByName
+              ('Product_Price_Stock').AsFloat;
+            EditTransferQuantity.Text := '1';
             EditTransferAvailable.Text := '0';
             EditTransferModel.SelectAll;
             // Population de la listbox owner   ZZZZZZZZZZZ
             repeat
-              if RemoteDB.netshop_transfer.FieldByName('product_model').Text = EditTransferModel.Text then
+              if RemoteDB.netshop_transfer.FieldByName('product_model')
+                .Text = EditTransferModel.Text then
               begin
-                if RemoteDB.netshop_transfer.FieldByName('product_supplier_id').AsInteger < 100000 then
+                if RemoteDB.netshop_transfer.FieldByName('product_supplier_id')
+                  .AsInteger < 100000 then
                 begin
-                  CheckPreviouslyInserted := RemoteDB.netshop_transfer.FieldByName('product_owner_id').AsString;
-                end else begin
-                  CheckPreviouslyInserted := RemoteDB.netshop_transfer.FieldByName('product_owner_id').AsString + '-' +
-                    RemoteDB.netshop_transfer.FieldByName('product_supplier_id').AsString;
+                  CheckPreviouslyInserted :=
+                    RemoteDB.netshop_transfer.FieldByName
+                    ('product_owner_id').AsString;
+                end
+                else
+                begin
+                  CheckPreviouslyInserted :=
+                    RemoteDB.netshop_transfer.FieldByName('product_owner_id')
+                    .AsString + '-' + RemoteDB.netshop_transfer.FieldByName
+                    ('product_supplier_id').AsString;
                 end;
-                if (ComboBoxTransferOwner.items.IndexOf(CheckPreviouslyInserted) = -1) then
+                if (ComboBoxTransferOwner.items.IndexOf(CheckPreviouslyInserted)
+                  = -1) then
                 begin
                   ComboBoxTransferOwner.items.Add(CheckPreviouslyInserted);
-                  if RemoteDB.netshop_transfer.FieldByName('product_price_stock').AsFloat <= MinPrice then
+                  if RemoteDB.netshop_transfer.FieldByName
+                    ('product_price_stock').AsFloat <= MinPrice then
                   begin
-                    MinPrice      := RemoteDB.netshop_transfer.FieldByName('product_price_stock').AsFloat;
+                    MinPrice := RemoteDB.netshop_transfer.FieldByName
+                      ('product_price_stock').AsFloat;
                     MinPriceOwner := CheckPreviouslyInserted;
                   end;
                 end;
               end;
               RemoteDB.netshop_transfer.Next;
-            until (RemoteDB.netshop_transfer.FieldByName('product_model').AsString <> EditTransferModel.Text) or RemoteDB.netshop_transfer.Eof;
-            ComboBoxTransferOwner.ItemIndex := ComboBoxTransferOwner.items.IndexOf(inttostr(ConnectedShop));
+            until (RemoteDB.netshop_transfer.FieldByName('product_model')
+              .AsString <> EditTransferModel.Text) or
+              RemoteDB.netshop_transfer.Eof;
+            ComboBoxTransferOwner.ItemIndex :=
+              ComboBoxTransferOwner.items.IndexOf(inttostr(ConnectedShop));
             ComboBoxTransferOwner.OnChange(EditTransferModel);
             // Fin population listbox
 
             repeat
-              if RemoteDB.netshop_transfer.FieldByName('Product_model').Text = EditTransferModel.Text then
+              if RemoteDB.netshop_transfer.FieldByName('Product_model')
+                .Text = EditTransferModel.Text then
               begin
-                if (ComboBoxTransferOwner.items.IndexOf(RemoteDB.netshop_transfer.FieldByName('Product_Owner_id').Text) = -1) and
-                  (RemoteDB.netshop_transfer.FieldByName('Product_Destination').AsInteger = ConnectedShop) then
-                  ComboBoxTransferOwner.items.Add(RemoteDB.netshop_transfer.FieldByName('Product_Owner_id').Text);
+                if (ComboBoxTransferOwner.items.IndexOf
+                  (RemoteDB.netshop_transfer.FieldByName('Product_Owner_id')
+                  .Text) = -1) and
+                  (RemoteDB.netshop_transfer.FieldByName('Product_Destination')
+                  .AsInteger = ConnectedShop) then
+                  ComboBoxTransferOwner.items.Add
+                    (RemoteDB.netshop_transfer.FieldByName
+                    ('Product_Owner_id').Text);
               end;
               RemoteDB.netshop_transfer.Next;
-            until (RemoteDB.netshop_transfer.FieldByName('Product_model').AsString <> EditTransferModel.Text) or RemoteDB.netshop_transfer.Eof;
+            until (RemoteDB.netshop_transfer.FieldByName('Product_model')
+              .AsString <> EditTransferModel.Text) or
+              RemoteDB.netshop_transfer.Eof;
 
             ComboBoxTransferOwner.OnChange(EditTransferModel);
             // Vérification des quantités Disponibles
@@ -3590,15 +4055,22 @@ begin
             if RemoteDB.netshop_transfer.FindKey([EditTransferModel.Text]) then
             begin
               repeat
-                if (RemoteDB.netshop_transfer.FieldByName('Product_Destination').AsInteger = ConnectedShop) then
-                  EditTransferAvailable.Text := inttostr(StrtoInt(EditTransferAvailable.Text) + RemoteDB.netshop_transfer.FieldByName('Product_Quantity')
+                if (RemoteDB.netshop_transfer.FieldByName('Product_Destination')
+                  .AsInteger = ConnectedShop) then
+                  EditTransferAvailable.Text :=
+                    inttostr(StrtoInt(EditTransferAvailable.Text) +
+                    RemoteDB.netshop_transfer.FieldByName('Product_Quantity')
                     .AsInteger);
                 RemoteDB.netshop_transfer.Next;
-              until (RemoteDB.netshop_transfer.FieldByName('Product_model').Text <> EditTransferModel.Text) or RemoteDB.netshop_transfer.Eof;
-              RemoteDB.netshop_transfer.IndexFieldNames := 'Product_Model;Product_owner_id';
+              until (RemoteDB.netshop_transfer.FieldByName('Product_model').Text
+                <> EditTransferModel.Text) or RemoteDB.netshop_transfer.Eof;
+              RemoteDB.netshop_transfer.IndexFieldNames :=
+                'Product_Model;Product_owner_id';
             end;
             ComboBoxTransferOwner.OnChange(EditTransferModel);
-          end else begin // Si pas en transfer
+          end
+          else
+          begin // Si pas en transfer
             messagedlg('Pas en transfer', mtwarning, [mbok], 0);
             TransferClearEdit;
             if EditTransferModel.Visible then
@@ -3606,9 +4078,12 @@ begin
           end;
         finally
           RemoteDB.netshop_transfer.EnableControls;
-          RemoteDB.netshop_transfer.IndexFieldNames := 'Product_Model;Product_owner_id';
+          RemoteDB.netshop_transfer.IndexFieldNames :=
+            'Product_Model;Product_owner_id';
         end;
-      end else begin // Si product Model invalide
+      end
+      else
+      begin // Si product Model invalide
         messagedlg('Modèle non valide', mtwarning, [mbok], 0);
         EditTransferModel.SelectAll;
         EditTransferModel.SetFocus;
@@ -3628,24 +4103,30 @@ begin
     RemoteDB.netshop_stock.DisableControls;
     try
       EditTransferAvailable.Text := '0';
-      EditTransferReserved.Text  := inttostr(RemoteDB.GetReservedStock(EditTransferModel.Text));
-      TmpStr                     := inttostr(ConnectedShop) + '-';
+      EditTransferReserved.Text :=
+        inttostr(RemoteDB.GetReservedStock(EditTransferModel.Text));
+      TmpStr := inttostr(ConnectedShop) + '-';
       if Pos(TmpStr, ComboBoxTransferOwner.Text) = 1 then
       begin
         // Stock Rachat Mag
-        owner                            := inttostr(ConnectedShop);
-        supplier                         := RightStr(ComboBoxTransferOwner.Text, Length(ComboBoxTransferOwner.Text) - Length(TmpStr));
+        owner := inttostr(ConnectedShop);
+        supplier := RightStr(ComboBoxTransferOwner.Text,
+          Length(ComboBoxTransferOwner.Text) - Length(TmpStr));
         RemoteDB.netshop_stock.IndexName := 'StockIXModelOwnerSupplier';
         RemoteDB.netshop_stock.SetKey;
-        RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString := supplier;
-      end else begin
+        RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString
+          := supplier;
+      end
+      else
+      begin
         // Stock Dépot ou Neuf
-        owner                            := ComboBoxTransferOwner.Text;
-        supplier                         := '-1';
+        owner := ComboBoxTransferOwner.Text;
+        supplier := '-1';
         RemoteDB.netshop_stock.IndexName := 'StockIXModelOwner';
         RemoteDB.netshop_stock.SetKey;
       end;
-      RemoteDB.netshop_stock.FieldByName('product_model').AsString := EditTransferModel.Text;
+      RemoteDB.netshop_stock.FieldByName('product_model').AsString :=
+        EditTransferModel.Text;
       RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString := owner;
 
       if RemoteDB.netshop_stock.GotoKey then
@@ -3655,31 +4136,49 @@ begin
         if ComboBoxTransferOwner.Text = inttostr(ConnectedShop) then
         begin
           if RemoteDB.Customerscustomers_htprice.AsString = 'False' then
-            EditTransferPrice.Value := RemoteDB.Products.FieldByName('Products_Price_AllIn').AsFloat
+            EditTransferPrice.Value := RemoteDB.Products.FieldByName
+              ('Products_Price_AllIn').AsFloat
           else
-            EditTransferPrice.Value := RemoteDB.Products.FieldByName('Products_Price').AsFloat
-        end else begin
-          EditTransferPrice.Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+            EditTransferPrice.Value := RemoteDB.Products.FieldByName
+              ('Products_Price').AsFloat
+        end
+        else
+        begin
+          EditTransferPrice.Value := RemoteDB.netshop_stock.FieldByName
+            ('product_price_stock').AsFloat;
         end;
         // Date In
         if supplier <> '-1' then
         begin
-          while ((RemoteDB.netshop_stock.FieldByName('product_model').Text = EditTransferModel.Text) and
-            (RemoteDB.netshop_stock.FieldByName('product_owner_id').Text = owner) and (not RemoteDB.netshop_stock.Eof) and
-            (RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text = supplier)) do
+          while ((RemoteDB.netshop_stock.FieldByName('product_model')
+            .Text = EditTransferModel.Text) and
+            (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+            .Text = owner) and (not RemoteDB.netshop_stock.Eof) and
+            (RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+            .Text = supplier)) do
           begin
             // Traitement des Rachats
-            EditTransferAvailable.Text := inttostr(StrtoInt(EditTransferAvailable.Text) + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger);
+            EditTransferAvailable.Text :=
+              inttostr(StrtoInt(EditTransferAvailable.Text) +
+              RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger);
             RemoteDB.netshop_stock.Next;
           end;
-        end else begin
-          while ((RemoteDB.netshop_stock.FieldByName('product_model').Text = EditTransferModel.Text) and
-            (RemoteDB.netshop_stock.FieldByName('product_owner_id').Text = owner) and (not RemoteDB.netshop_stock.Eof)) do
+        end
+        else
+        begin
+          while ((RemoteDB.netshop_stock.FieldByName('product_model')
+            .Text = EditTransferModel.Text) and
+            (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+            .Text = owner) and (not RemoteDB.netshop_stock.Eof)) do
           begin
             // Traitement des Dépôt et stock Neuf
-            if (RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger < 100000) then
+            if (RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+              .AsInteger < 100000) then
             begin
-              EditTransferAvailable.Text := inttostr(StrtoInt(EditTransferAvailable.Text) + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger);
+              EditTransferAvailable.Text :=
+                inttostr(StrtoInt(EditTransferAvailable.Text) +
+                RemoteDB.netshop_stock.FieldByName('product_quantity')
+                .AsInteger);
             end;
             RemoteDB.netshop_stock.Next;
           end;
@@ -3693,33 +4192,40 @@ begin
   if RadioButtonReceive.Checked then
   begin
     EditTransferAvailable.Text := '0';
-    TmpStr                     := '-';
+    TmpStr := '-';
     if Pos(TmpStr, ComboBoxTransferOwner.Text) <> 0 then
     begin
       // Stock Rachat Mag
-      OwnSup                              := TStringList.Create;
-      OwnSup                              := StrSplit(ComboBoxTransferOwner.Text, '-');
-      owner                               := OwnSup[0];
-      supplier                            := OwnSup[1];
+      OwnSup := TStringList.Create;
+      OwnSup := StrSplit(ComboBoxTransferOwner.Text, '-');
+      owner := OwnSup[0];
+      supplier := OwnSup[1];
       RemoteDB.netshop_transfer.IndexName := 'TransferIXModelOwnerSupplier';
       RemoteDB.netshop_transfer.SetKey;
-      RemoteDB.netshop_transfer.FieldByName('product_supplier_id').AsString := supplier;
-    end else begin
+      RemoteDB.netshop_transfer.FieldByName('product_supplier_id').AsString
+        := supplier;
+    end
+    else
+    begin
       // Stock Dépot ou Neuf
-      owner                               := ComboBoxTransferOwner.Text;
-      supplier                            := '-1';
+      owner := ComboBoxTransferOwner.Text;
+      supplier := '-1';
       RemoteDB.netshop_transfer.IndexName := 'TransferIXModelOwner';
       RemoteDB.netshop_transfer.SetKey;
     end;
-    RemoteDB.netshop_transfer.FieldByName('product_model').AsString := EditTransferModel.Text;
+    RemoteDB.netshop_transfer.FieldByName('product_model').AsString :=
+      EditTransferModel.Text;
     RemoteDB.netshop_transfer.FieldByName('product_owner_id').AsString := owner;
     if RemoteDB.netshop_transfer.GotoKey then
     begin
 
-      EditTransferPrice.Value    := RemoteDB.netshop_transfer.FieldByName('Product_Price_Stock').AsFloat;
-      EditTransferAvailable.Text := RemoteDB.netshop_transfer.FieldByName('Product_Quantity').AsString;
-      if ((RemoteDB.netshop_transfer.FieldByName('product_owner_id').AsInteger >= 100000) or
-        (RemoteDB.netshop_transfer.FieldByName('product_supplier_id').AsInteger >= 100000)) then
+      EditTransferPrice.Value := RemoteDB.netshop_transfer.FieldByName
+        ('Product_Price_Stock').AsFloat;
+      EditTransferAvailable.Text := RemoteDB.netshop_transfer.FieldByName
+        ('Product_Quantity').AsString;
+      if ((RemoteDB.netshop_transfer.FieldByName('product_owner_id').AsInteger
+        >= 100000) or (RemoteDB.netshop_transfer.FieldByName
+        ('product_supplier_id').AsInteger >= 100000)) then
         EditTransferPrice.Value := EditTransferPrice.Value + 3;
 
     end;
@@ -3741,17 +4247,17 @@ begin
   // (RemoteDB.Shops.FieldByName('shops_name').AsString);
   // ComboBoxOriginShop.Enabled := False;
 
-  ComboBoxDestShop.Enabled   := True;
+  ComboBoxDestShop.Enabled := True;
   ComboBoxDestShop.ItemIndex := -1;
-  ComboBoxDestShop.Text      := 'Select destination';
+  ComboBoxDestShop.Text := 'Select destination';
 end;
 
 procedure TMainForm.TransferClearEdit;
 begin
   EditTransferModel.Clear;
   EditTransferName.Clear;
-  EditTransferQuantity.Text  := '0';
-  EditTransferPrice.Value    := 0;
+  EditTransferQuantity.Text := '0';
+  EditTransferPrice.Value := 0;
   EditTransferAvailable.Text := '0';
   ComboBoxTransferOwner.Clear;
   ComboBoxTransferOwner.Text := ('Select Owner');
@@ -3763,7 +4269,7 @@ var
 begin
   for Nowrow := 1 to StringGridTransfer.RowCount - 2 do
   begin
-    for NowCol                                 := 0 to StringGridTransfer.ColCount - 1 do
+    for NowCol := 0 to StringGridTransfer.ColCount - 1 do
       StringGridTransfer.Cells[NowCol, Nowrow] := '';
   end;
   StringGridTransfer.RowCount := 2;
@@ -3778,7 +4284,8 @@ procedure TMainForm.ComboBoxOriginShopChange(Sender: TObject);
 begin
   if StringGridTransfer.RowCount > 2 then
   begin
-    if messagedlg('Changing shop will reset from', mtwarning, [mbok, mbCancel], 0) = mrOK then
+    if messagedlg('Changing shop will reset from', mtwarning, [mbok, mbCancel],
+      0) = mrOK then
     begin
       TransferClearEdit;
       TransferClearStringGrid;
@@ -3786,7 +4293,9 @@ begin
     end
     else
       exit;
-  end else begin
+  end
+  else
+  begin
     TransferClearEdit;
     TransferClearStringGrid;
     TransferClearSummary;
@@ -3797,16 +4306,18 @@ procedure TMainForm.StockCheckClick(Sender: TObject);
 var
   TmpIndex: string;
 begin
-  RemoteDB.IsUpdating                    := True;
-  TmpIndex                               := RemoteDB.netshop_stock.IndexFieldNames;
-  RemoteDB.netshop_stock.IndexFieldNames := 'Product_Model;Product_Location;Product_owner_id';
-  RemoteDB.netshop_stock.Filter          := 'Product_Model = ' + QuotedStr(RemoteDB.Products.FieldByName('products_model').AsString);
-  RemoteDB.netshop_stock.Filtered        := True;
+  RemoteDB.IsUpdating := True;
+  TmpIndex := RemoteDB.netshop_stock.IndexFieldNames;
+  RemoteDB.netshop_stock.IndexFieldNames :=
+    'Product_Model;Product_Location;Product_owner_id';
+  RemoteDB.netshop_stock.Filter := 'Product_Model = ' +
+    QuotedStr(RemoteDB.Products.FieldByName('products_model').AsString);
+  RemoteDB.netshop_stock.Filtered := True;
   StockCheckForm.ShowModal;
   RemoteDB.netshop_stock.IndexFieldNames := TmpIndex;
-  RemoteDB.netshop_stock.Filtered        := False;
-  RemoteDB.netshop_stock.Filter          := '';
-  RemoteDB.IsUpdating                    := False;
+  RemoteDB.netshop_stock.Filtered := False;
+  RemoteDB.netshop_stock.Filter := '';
+  RemoteDB.IsUpdating := False;
 end;
 
 /// ///
@@ -3819,7 +4330,8 @@ var
   indexnbr, i: Integer;
   customer_nbr: string;
 begin
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
     if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95 then
     begin
@@ -3827,34 +4339,45 @@ begin
     end;
   end;
 
-  with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexnbr]) do
+  with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .Controls[indexnbr]) do
   begin
-    if not RemoteDB.Customers.Locate('customers_nbr', Text, [locaseinsensitive]) then
+    if not RemoteDB.Customers.Locate('customers_nbr', Text, [locaseinsensitive])
+    then
       exit;
     customer_nbr := Text;
   end;
-  if RemoteDB.CDSCoupons.Locate('coupon_code;restrict_to_customers', Vararrayof([coupon, customer_nbr]), []) then
+  if RemoteDB.CDSCoupons.Locate('coupon_code;restrict_to_customers',
+    Vararrayof([coupon, customer_nbr]), []) then
   begin
     if RemoteDB.CDSCoupons.FieldByName('coupon_active').AsString = 'Y' then
     begin
       Result := True;
-    end else begin
-      if messagedlg('Coupon déjà utlisé êtes vous sur de voulois le ré-introduire ? Le remboursement sera éffectué une seule fois', mtwarning, [mbyes, mbno], 0)
-        = mryes then
+    end
+    else
+    begin
+      if messagedlg
+        ('Coupon déjà utlisé êtes vous sur de voulois le ré-introduire ? Le remboursement sera éffectué une seule fois',
+        mtwarning, [mbyes, mbno], 0) = mryes then
       begin
         Result := True;
-      end else begin
+      end
+      else
+      begin
         Result := False;
       end;
     end;
-  end else begin
+  end
+  else
+  begin
     Result := False;
   end;
 end;
 
 procedure TMainForm.EditSalesModelExit(Sender: TObject);
 var
-  TmpIndex, CheckPreviouslyInserted, MinPriceOwner, customer_nbr, ProductCode, owner, supplier: string;
+  TmpIndex, CheckPreviouslyInserted, MinPriceOwner, customer_nbr, ProductCode,
+    owner, supplier: string;
   MinPrice, newvalue: currency;
   indexnbr, i, GridIndex, quantitypresent, Nowrow: Integer;
 
@@ -3872,71 +4395,101 @@ begin
       RemoteDB.netshop_stock.DisableControls;
       RemoteDB.netshop_stock.IndexName := 'StockIXModelLocation';
       try
-        if RemoteDB.netshop_stock.FindKey([EditSalesModel.Text, ConnectedShop]) then
+        if RemoteDB.netshop_stock.FindKey([EditSalesModel.Text, ConnectedShop])
+        then
         begin
-          EditSalesName.Text     := RemoteDB.Products.FieldByName('products_intername').Text;
+          EditSalesName.Text := RemoteDB.Products.FieldByName
+            ('products_intername').Text;
           EditSalesQuantity.Text := '1';
           EditSalesModel.SelectAll;
 
           // Population de la listbox owner et recherche du prix min
-          MinPrice      := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-          MinPriceOwner := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString;
+          MinPrice := RemoteDB.netshop_stock.FieldByName
+            ('product_price_stock').AsFloat;
+          MinPriceOwner := RemoteDB.netshop_stock.FieldByName
+            ('product_owner_id').AsString;
 
           repeat
-            if RemoteDB.netshop_stock.FieldByName('product_model').Text = EditSalesModel.Text then
+            if RemoteDB.netshop_stock.FieldByName('product_model')
+              .Text = EditSalesModel.Text then
             begin
-              if RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger < 100000 then
+              if RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                .AsInteger < 100000 then
               begin
-                CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString;
-              end else begin
-                CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString + '-' +
-                  RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString;
+                CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName
+                  ('product_owner_id').AsString;
+              end
+              else
+              begin
+                CheckPreviouslyInserted := RemoteDB.netshop_stock.FieldByName
+                  ('product_owner_id').AsString + '-' +
+                  RemoteDB.netshop_stock.FieldByName
+                  ('product_supplier_id').AsString;
               end;
-              if (ComboBoxSalesOwner.items.IndexOf(CheckPreviouslyInserted) = -1) then
+              if (ComboBoxSalesOwner.items.IndexOf(CheckPreviouslyInserted) = -1)
+              then
               begin
                 ComboBoxSalesOwner.items.Add(CheckPreviouslyInserted);
-                if RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat <= MinPrice then
+                if RemoteDB.netshop_stock.FieldByName('product_price_stock')
+                  .AsFloat <= MinPrice then
                 begin
-                  MinPrice      := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+                  MinPrice := RemoteDB.netshop_stock.FieldByName
+                    ('product_price_stock').AsFloat;
                   MinPriceOwner := CheckPreviouslyInserted;
                 end;
               end;
             end;
             RemoteDB.netshop_stock.Next;
-          until (RemoteDB.netshop_stock.FieldByName('product_model').AsString <> EditSalesModel.Text) or RemoteDB.netshop_stock.Eof;
+          until (RemoteDB.netshop_stock.FieldByName('product_model').AsString <>
+            EditSalesModel.Text) or RemoteDB.netshop_stock.Eof;
 
           // Sélection du stock magasin et si non dispo le moins cher des occasions
           if ComboBoxSalesOwner.items.IndexOf(inttostr(ConnectedShop)) = -1 then
           begin
-            ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf(MinPriceOwner)
-          end else begin
-            ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf(inttostr(ConnectedShop));
+            ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf
+              (MinPriceOwner)
+          end
+          else
+          begin
+            ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf
+              (inttostr(ConnectedShop));
           end;
 
-          for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+          for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+            .ControlCount - 1 do
           begin
-            if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95 then
+            if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95
+            then
             begin
               indexnbr := i;
             end;
           end;
 
-          with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexnbr]) do
+          with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+            .Controls[indexnbr]) do
           begin
-            if not RemoteDB.Customers.Locate('customers_nbr', Text, [locaseinsensitive]) then
+            if not RemoteDB.Customers.Locate('customers_nbr', Text,
+              [locaseinsensitive]) then
               exit;
           end;
           ComboBoxSalesOwner.OnChange(EditSalesModel);
 
-        end else begin
-          if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'True') then
+        end
+        else
+        begin
+          if (RemoteDB.Products.FieldByName('products_stock_managed')
+            .Text = 'True') then
           begin
             messagedlg('Pas disponible en stock', mtwarning, [mbok], 0);
             SalesClearEdit;
-          end else begin
-            EditSalesName.Text := RemoteDB.Products.FieldByName('products_intername').Text;
+          end
+          else
+          begin
+            EditSalesName.Text := RemoteDB.Products.FieldByName
+              ('products_intername').Text;
             ComboBoxSalesOwner.items.Add(inttostr(ConnectedShop));
-            ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf(inttostr(ConnectedShop));
+            ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf
+              (inttostr(ConnectedShop));
             ComboBoxSalesOwner.OnChange(EditSalesModel);
           end;
         end;
@@ -3945,44 +4498,55 @@ begin
         RemoteDB.netshop_stock.EnableControls;
         RemoteDB.netshop_stock.IndexName := TmpIndex;
       end;
-    end else begin // Product model non valide vérifier pour coupon
+    end
+    else
+    begin // Product model non valide vérifier pour coupon
       if ValidateCoupon(EditSalesModel.Text) then
       begin
         // Résupération infos coupons
         ComboBoxSalesOwner.items.Add(inttostr(ConnectedShop));
-        ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf(inttostr(ConnectedShop));
+        ComboBoxSalesOwner.ItemIndex := ComboBoxSalesOwner.items.IndexOf
+          (inttostr(ConnectedShop));
         ComboBoxSalesOwner.OnChange(EditSalesModel);
-        EditSalesQuantity.Text  := '1';
+        EditSalesQuantity.Text := '1';
         EditSalesAvailable.Text := '1';
-        EditSalesName.Text      := RemoteDB.CDSCoupons.FieldByName('coupon_description').AsString;
-        EditSalesPrice.Value    := -RemoteDB.CDSCoupons.FieldByName('coupon_amount').AsFloat;
+        EditSalesName.Text := RemoteDB.CDSCoupons.FieldByName
+          ('coupon_description').AsString;
+        EditSalesPrice.Value := -RemoteDB.CDSCoupons.FieldByName
+          ('coupon_amount').AsFloat;
         // Rajout immédiat dans le caddy
 
-        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]
+            .ClassType = TAdvStringGrid then
           begin
             GridIndex := i;
           end;
         end;
 
-        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95 then
+          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95
+          then
           begin
             indexnbr := i;
           end;
         end;
 
-        with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexnbr]) do
+        with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .Controls[indexnbr]) do
         begin
-          if not RemoteDB.Customers.Locate('customers_nbr', Text, [locaseinsensitive]) then
+          if not RemoteDB.Customers.Locate('customers_nbr', Text,
+            [locaseinsensitive]) then
             exit;
           customer_nbr := Text;
         end;
 
         begin;
-          owner    := inttostr(ConnectedShop);
+          owner := inttostr(ConnectedShop);
           supplier := '-1';
         end;
 
@@ -3992,13 +4556,14 @@ begin
         RemoteDB.Products.DisableControls;
         RemoteDB.Products.IndexName := 'ProductsIXModel';
 
-        EditSalesPrice.SelLength    := 0;
+        EditSalesPrice.SelLength := 0;
         EditSalesQuantity.SelLength := 0;
-        EditSalesName.SelLength     := 0;
+        EditSalesName.SelLength := 0;
 
         ProductCode := 'COUPONBDAY';
 
-        if (RemoteDB.Products.Locate('products_model', ProductCode, [locaseinsensitive])) then
+        if (RemoteDB.Products.Locate('products_model', ProductCode,
+          [locaseinsensitive])) then
         begin
 
           if (ComboBoxSalesOwner.ItemIndex <> -1) then
@@ -4008,13 +4573,20 @@ begin
             if supplier = '-1' then
 
             begin
-              for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).RowCount - 2 do
+              for Nowrow := 1 to TAdvStringGrid
+                (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]).RowCount - 2 do
               begin
-                if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[0, Nowrow] = ProductCode) and
-                  (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[7, Nowrow] = owner)) then
+                if ((TAdvStringGrid(TAdvTabSheet
+                  (PageControlSalesCaddy.ActivePage).Controls[GridIndex])
+                  .Cells[0, Nowrow] = ProductCode) and
+                  (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                  .Controls[GridIndex]).Cells[7, Nowrow] = owner)) then
                 begin
-                  quantitypresent := quantitypresent + StrtoInt(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex])
-                    .Cells[2, Nowrow]);
+                  quantitypresent := quantitypresent +
+                    StrtoInt(TAdvStringGrid
+                    (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                    .Controls[GridIndex]).Cells[2, Nowrow]);
                 end;
               end;
             end;
@@ -4023,46 +4595,73 @@ begin
             newvalue := 0;
             if supplier = '-1' then
             begin
-              for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).RowCount - 2 do
+              for Nowrow := 1 to TAdvStringGrid
+                (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]).RowCount - 2 do
               begin
-                if (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[7, Nowrow] = owner) then
+                if (TAdvStringGrid
+                  (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                  .Controls[GridIndex]).Cells[7, Nowrow] = owner) then
                 begin
-                  if ((StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[7, Nowrow]) < 100000) and
-                    (StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[8, Nowrow]) < 100000)) then
-                    newvalue := newvalue + StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[4, Nowrow]);
+                  if ((StrToFloat(TAdvStringGrid(TAdvTabSheet
+                    (PageControlSalesCaddy.ActivePage).Controls[GridIndex])
+                    .Cells[7, Nowrow]) < 100000) and
+                    (StrToFloat(TAdvStringGrid(TAdvTabSheet
+                    (PageControlSalesCaddy.ActivePage).Controls[GridIndex])
+                    .Cells[8, Nowrow]) < 100000)) then
+                    newvalue := newvalue +
+                      StrToFloat
+                      (TAdvStringGrid
+                      (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                      .Controls[GridIndex]).Cells[4, Nowrow]);
                 end;
               end;
             end;
 
-            if (quantitypresent < 1) and (newvalue >= RemoteDB.CDSCoupons.FieldByName('coupon_amount').AsFloat) then
+            if (quantitypresent < 1) and
+              (newvalue >= RemoteDB.CDSCoupons.FieldByName('coupon_amount')
+              .AsFloat) then
             begin
               { Ajouter d'une ligne dans le Sales grid }
               RemoteDB.Products.Locate('products_model', ProductCode, []);
 
-              with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+              with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]) do
               begin
-                Nowrow           := RowCount - 1;
+                Nowrow := RowCount - 1;
                 Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
                 Cells[1, Nowrow] := EditSalesName.Text;
                 // .Stockproduct_name.Value;
                 Cells[2, Nowrow] := EditSalesQuantity.Text;
-                Cells[3, Nowrow] := FloatToStrF(RemoteDB.Products.FieldByName('products_price').AsFloat, fffixed, 7, 2);
+                Cells[3, Nowrow] :=
+                  FloatToStrF(RemoteDB.Products.FieldByName('products_price')
+                  .AsFloat, fffixed, 7, 2);
                 if RemoteDB.Customerscustomers_htprice.AsString = 'False' then
-                  Cells[4, Nowrow] := FloatToStrF(EditSalesPrice.Value, fffixed, 7, 2)
+                  Cells[4, Nowrow] := FloatToStrF(EditSalesPrice.Value,
+                    fffixed, 7, 2)
                 else
-                  Cells[4, Nowrow] := FloatToStrF(Round(RemoteDB.GetPriceTTC(RemoteDB.Productsproducts_model.Text, EditSalesPrice.Value) * 100) / 100,
-                    fffixed, 7, 2);
-                if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'False') then
+                  Cells[4, Nowrow] :=
+                    FloatToStrF
+                    (Round(RemoteDB.GetPriceTTC(RemoteDB.Productsproducts_model.
+                    Text, EditSalesPrice.Value) * 100) / 100, fffixed, 7, 2);
+                if (RemoteDB.Products.FieldByName('products_stock_managed')
+                  .Text = 'False') then
                 begin
                   Cells[5, Nowrow] := '0';
                   Cells[6, Nowrow] := VCLToOSCDate(Now);
                   Cells[7, Nowrow] := inttostr(ConnectedShop);
                   Cells[8, Nowrow] := '0';
-                end else begin
-                  Cells[5, Nowrow] := FloatToStrF(RemoteDB.netshop_stock.FieldByName('Product_Price_Gross').AsFloat, fffixed, 7, 2);
+                end
+                else
+                begin
+                  Cells[5, Nowrow] :=
+                    FloatToStrF(RemoteDB.netshop_stock.FieldByName
+                    ('Product_Price_Gross').AsFloat, fffixed, 7, 2);
                   Cells[6, Nowrow] := EditSalesDateIn.Text;
-                  Cells[7, Nowrow] := RemoteDB.netshop_stock.FieldByName('product_owner_id').Text;
-                  Cells[8, Nowrow] := RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text;
+                  Cells[7, Nowrow] := RemoteDB.netshop_stock.FieldByName
+                    ('product_owner_id').Text;
+                  Cells[8, Nowrow] := RemoteDB.netshop_stock.FieldByName
+                    ('product_supplier_id').Text;
                 end;
                 RowCount := Nowrow + 2;
               end;
@@ -4074,23 +4673,32 @@ begin
               SalesClearEdit;
               StringGridSalesEditingDone(nil);
 
-            end else begin { quantité farfelue }
-              messagedlg('Double utilisation ou valeur caddy insuffisante', mtwarning, [mbok], 0);
+            end
+            else
+            begin { quantité farfelue }
+              messagedlg('Double utilisation ou valeur caddy insuffisante',
+                mtwarning, [mbok], 0);
               if EditSalesQuantity.Visible then
                 EditSalesQuantity.SetFocus;
             end
 
-          end else begin { Pas de owner selectionné }
+          end
+          else
+          begin { Pas de owner selectionné }
             messagedlg('Select owner', mtwarning, [mbok], 0);
             if ComboBoxSalesOwner.Visible then
               ComboBoxSalesOwner.SetFocus;
           end;
-        end else begin { Product model non localisé }
+        end
+        else
+        begin { Product model non localisé }
           messagedlg('Modèle non valide', mtwarning, [mbok], 0);
           SalesClearEdit;
         end;
 
-      end else begin
+      end
+      else
+      begin
         messagedlg('Code article ou coupon invalide', mtwarning, [mbok], 0);
         SalesClearEdit;
       end;
@@ -4098,7 +4706,8 @@ begin
   end;
 end;
 
-procedure TMainForm.EditSalesKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TMainForm.EditSalesKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 
 var
   Nowrow, quantitypresent, i, GridIndex, indexnbr: Integer;
@@ -4110,25 +4719,31 @@ begin
   if Key = 13 then
     try
 
-      for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+      for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+        .ControlCount - 1 do
       begin
-        if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+        if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]
+          .ClassType = TAdvStringGrid then
         begin
           GridIndex := i;
         end;
       end;
 
-      for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+      for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+        .ControlCount - 1 do
       begin
-        if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95 then
+        if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95
+        then
         begin
           indexnbr := i;
         end;
       end;
 
-      with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexnbr]) do
+      with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+        .Controls[indexnbr]) do
       begin
-        if not RemoteDB.Customers.Locate('customers_nbr', Text, [locaseinsensitive]) then
+        if not RemoteDB.Customers.Locate('customers_nbr', Text,
+          [locaseinsensitive]) then
           exit;
         customer_nbr := Text;
       end;
@@ -4136,10 +4751,13 @@ begin
       TmpStr := inttostr(ConnectedShop) + '-';
       if Pos(TmpStr, ComboBoxSalesOwner.Text) = 1 then
       begin
-        owner    := inttostr(ConnectedShop);
-        supplier := RightStr(ComboBoxSalesOwner.Text, Length(ComboBoxSalesOwner.Text) - Length(TmpStr));
-      end else begin;
-        owner    := ComboBoxSalesOwner.Text;
+        owner := inttostr(ConnectedShop);
+        supplier := RightStr(ComboBoxSalesOwner.Text,
+          Length(ComboBoxSalesOwner.Text) - Length(TmpStr));
+      end
+      else
+      begin;
+        owner := ComboBoxSalesOwner.Text;
         supplier := '-1';
       end;
 
@@ -4149,17 +4767,19 @@ begin
       RemoteDB.Products.DisableControls;
       RemoteDB.Products.IndexName := 'ProductsIXModel';
 
-      EditSalesPrice.SelLength    := 0;
+      EditSalesPrice.SelLength := 0;
       EditSalesQuantity.SelLength := 0;
-      EditSalesName.SelLength     := 0;
+      EditSalesName.SelLength := 0;
 
-      if (RemoteDB.Products.Locate('products_model', EditSalesModel.Text, [locaseinsensitive])) then
+      if (RemoteDB.Products.Locate('products_model', EditSalesModel.Text,
+        [locaseinsensitive])) then
       begin
         if RemoteDB.Products.FieldByName('products_esd').AsFloat = 1 then
         begin
           if StrtoInt(EditSalesQuantity.Text) <> 1 then
           begin
-            messagedlg('Produits ESD maximum 1 par ligne', mtwarning, [mbok], 0);
+            messagedlg('Produits ESD maximum 1 par ligne', mtwarning,
+              [mbok], 0);
             EditSalesQuantity.Text := '1';
           end;
         end;
@@ -4171,95 +4791,144 @@ begin
           begin
             // Calculer quantity present pour check disponible
 
-            for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).RowCount - 2 do
+            for Nowrow := 1 to TAdvStringGrid
+              (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+              .Controls[GridIndex]).RowCount - 2 do
             begin
-              if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[0, Nowrow] = EditSalesModel.Text) and
-                (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[7, Nowrow] = owner)) then
+              if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]).Cells[0, Nowrow] = EditSalesModel.Text)
+                and (TAdvStringGrid(TAdvTabSheet
+                (PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[7,
+                Nowrow] = owner)) then
               begin
-                quantitypresent := quantitypresent + StrtoInt(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex])
-                  .Cells[2, Nowrow]);
+                quantitypresent := quantitypresent +
+                  StrtoInt(TAdvStringGrid
+                  (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                  .Controls[GridIndex]).Cells[2, Nowrow]);
               end;
             end;
-            RemoteDB.netshop_stock.FindKey([EditSalesModel.Text, ComboBoxSalesOwner.Text]);
-          end else begin // Supplier Occasion
-            for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).RowCount - 2 do
+            RemoteDB.netshop_stock.FindKey([EditSalesModel.Text,
+              ComboBoxSalesOwner.Text]);
+          end
+          else
+          begin // Supplier Occasion
+            for Nowrow := 1 to TAdvStringGrid
+              (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+              .Controls[GridIndex]).RowCount - 2 do
             begin
-              if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[0, Nowrow] = EditSalesModel.Text) and
-                (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[7, Nowrow] = owner) and
-                (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[8, Nowrow] = supplier)) then
+              if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]).Cells[0, Nowrow] = EditSalesModel.Text)
+                and (TAdvStringGrid(TAdvTabSheet
+                (PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[7,
+                Nowrow] = owner) and
+                (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]).Cells[8, Nowrow] = supplier)) then
               begin
-                quantitypresent := quantitypresent + StrtoInt(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex])
-                  .Cells[2, Nowrow]);
+                quantitypresent := quantitypresent +
+                  StrtoInt(TAdvStringGrid
+                  (TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                  .Controls[GridIndex]).Cells[2, Nowrow]);
               end;
             end;
-            RemoteDB.netshop_stock.FindKey([EditSalesModel.Text, owner, supplier]);
+            RemoteDB.netshop_stock.FindKey([EditSalesModel.Text, owner,
+              supplier]);
           end;
 
-          if (StrtoInt(EditSalesQuantity.Text) <= (StrtoInt(EditSalesAvailable.Text) - quantitypresent)) then
+          if (StrtoInt(EditSalesQuantity.Text) <=
+            (StrtoInt(EditSalesAvailable.Text) - quantitypresent)) then
           begin
             begin { Ajouter d'une ligne dans le Sales grid }
-              RemoteDB.Products.Locate('products_model', EditSalesModel.Text, []);
+              RemoteDB.Products.Locate('products_model',
+                EditSalesModel.Text, []);
               { Sortie Du Dacal }
-              if ((self.Parameter['MiscCDLibUse'] = 'TRUE')) and
-                (RemoteDB.Caroussel.Locate('model;customer_nbr;IsRoot', Vararrayof([RemoteDB.Products.FieldByName('products_model').AsString, StrtoInt(owner),
-                True]), []) and (((StrtoInt(owner) < 100000) and (StrtoInt(supplier) >= 100000)) or ((StrtoInt(owner) >= 100000)))) then
+              if ((Self.Parameter['MiscCDLibUse'] = 'TRUE')) and
+                (RemoteDB.Caroussel.Locate('model;customer_nbr;IsRoot',
+                Vararrayof([RemoteDB.Products.FieldByName('products_model')
+                .AsString, StrtoInt(owner), True]), []) and
+                (((StrtoInt(owner) < 100000) and (StrtoInt(supplier) >= 100000))
+                or ((StrtoInt(owner) >= 100000)))) then
               begin
-                ExitLib := TFormExitLibrary.Create(self);
+                ExitLib := TFormExitLibrary.Create(Self);
                 ExitLib.Enter(owner, EditSalesModel.Text);
                 ExitLib.Free;
               end;
 
-              with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+              with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]) do
               begin
-                Nowrow           := RowCount - 1;
+                Nowrow := RowCount - 1;
                 Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
                 Cells[1, Nowrow] := EditSalesName.Text;
                 // .Stockproduct_name.Value;
                 Cells[2, Nowrow] := EditSalesQuantity.Text;
-                Cells[3, Nowrow] := FloatToStrF(RemoteDB.Products.FieldByName('products_price').AsFloat, fffixed, 7, 2);
+                Cells[3, Nowrow] :=
+                  FloatToStrF(RemoteDB.Products.FieldByName('products_price')
+                  .AsFloat, fffixed, 7, 2);
                 if RemoteDB.Customerscustomers_htprice.AsString = 'False' then
-                  Cells[4, Nowrow] := FloatToStrF(EditSalesPrice.Value, fffixed, 7, 2)
+                  Cells[4, Nowrow] := FloatToStrF(EditSalesPrice.Value,
+                    fffixed, 7, 2)
                 else
-                  Cells[4, Nowrow] := FloatToStrF(Round(RemoteDB.GetPriceTTC(RemoteDB.Productsproducts_model.Text, EditSalesPrice.Value) * 100) / 100,
-                    fffixed, 7, 2);
-                if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'False') then
+                  Cells[4, Nowrow] :=
+                    FloatToStrF
+                    (Round(RemoteDB.GetPriceTTC(RemoteDB.Productsproducts_model.
+                    Text, EditSalesPrice.Value) * 100) / 100, fffixed, 7, 2);
+                if (RemoteDB.Products.FieldByName('products_stock_managed')
+                  .Text = 'False') then
                 begin
                   Cells[5, Nowrow] := '0';
                   Cells[6, Nowrow] := VCLToOSCDate(Now);
                   Cells[7, Nowrow] := inttostr(ConnectedShop);
                   Cells[8, Nowrow] := '0';
-                end else begin
-                  Cells[5, Nowrow] := FloatToStrF(RemoteDB.netshop_stock.FieldByName('Product_Price_Gross').AsFloat, fffixed, 7, 2);
+                end
+                else
+                begin
+                  Cells[5, Nowrow] :=
+                    FloatToStrF(RemoteDB.netshop_stock.FieldByName
+                    ('Product_Price_Gross').AsFloat, fffixed, 7, 2);
                   Cells[6, Nowrow] := EditSalesDateIn.Text;
-                  Cells[7, Nowrow] := RemoteDB.netshop_stock.FieldByName('product_owner_id').Text;
-                  Cells[8, Nowrow] := RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text;
+                  Cells[7, Nowrow] := RemoteDB.netshop_stock.FieldByName
+                    ('product_owner_id').Text;
+                  Cells[8, Nowrow] := RemoteDB.netshop_stock.FieldByName
+                    ('product_supplier_id').Text;
                 end;
                 RowCount := Nowrow + 2;
               end;
 
               { Sortie des réservations }
               RemoteDB.FilterAlertsNotBought;
-              if RemoteDB.netshop_customers_alerts.Locate('customers_alerts_products_model;customers_alerts_customers_nbr',
-                Vararrayof([RemoteDB.Productsproducts_model.Text, customer_nbr]), [locaseinsensitive]) then
+              if RemoteDB.netshop_customers_alerts.Locate
+                ('customers_alerts_products_model;customers_alerts_customers_nbr',
+                Vararrayof([RemoteDB.Productsproducts_model.Text, customer_nbr]
+                ), [locaseinsensitive]) then
               begin
-               // Add reservation points
-               if (RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger<100000) and
-                   ( RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger<100000) and
-                     (RemoteDB.Products.FieldByName('products_date_available').AsDateTime > Now-7) then
-                      if Messagedlg('Ce produit était réservé, accorder le bonus reservation de 50 points au client ?',mtconfirmation,[mbOk,mbNo],0)=mrOK then
-                begin
-                  RemoteDB.Customers.Locate('customers_nbr', customer_nbr, [locaseinsensitive]);
-                  RemoteDB.Customers.Edit;
-                  RemoteDB.Customers.FieldByName('customers_loyalty').AsInteger := RemoteDB.Customers.FieldByName('customers_loyalty').AsInteger + 50;
-                  RemoteDB.Customers.Post;
-                end;
+                // Add reservation points
+                if (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                  .AsInteger < 100000) and
+                  (RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                  .AsInteger < 100000) and
+                  (RemoteDB.Products.FieldByName('products_date_available')
+                  .AsDateTime > Now - 7) then
+                  if messagedlg
+                    ('Ce produit était réservé, accorder le bonus reservation de 50 points au client ?',
+                    mtconfirmation, [mbok, mbno], 0) = mrOK then
+                  begin
+                    RemoteDB.Customers.Locate('customers_nbr', customer_nbr,
+                      [locaseinsensitive]);
+                    RemoteDB.Customers.Edit;
+                    RemoteDB.Customers.FieldByName('customers_loyalty')
+                      .AsInteger := RemoteDB.Customers.FieldByName
+                      ('customers_loyalty').AsInteger + 50;
+                    RemoteDB.Customers.Post;
+                  end;
                 begin
                   RemoteDB.netshop_customers_alerts.Edit;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').AsInteger := 3;
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_status').AsInteger := 3;
                   RemoteDB.netshop_customers_alerts.Post;
                   with AdvAlertWindow.AlertMessages.Add do
                   begin
-                    Text.Text := 'Produit en réservation.<br/><br/>Le statut est passé en réservation enlevée';
+                    Text.Text :=
+                      'Produit en réservation.<br/><br/>Le statut est passé en réservation enlevée';
                     AdvAlertWindow.Show;
                   end;
                 end;
@@ -4269,18 +4938,24 @@ begin
               SalesClearEdit;
               StringGridSalesEditingDone(nil);
             end
-          end else begin { quantité farfelue }
+          end
+          else
+          begin { quantité farfelue }
             messagedlg('Unavailable quantity', mtwarning, [mbok], 0);
             if EditSalesQuantity.Visible then
               EditSalesQuantity.SetFocus;
           end
 
-        end else begin { Pas de owner selectionné }
+        end
+        else
+        begin { Pas de owner selectionné }
           messagedlg('Select owner', mtwarning, [mbok], 0);
           if ComboBoxSalesOwner.Visible then
             ComboBoxSalesOwner.SetFocus;
         end;
-      end else begin { Product model non localisé }
+      end
+      else
+      begin { Product model non localisé }
         messagedlg('Modèle non valide', mtwarning, [mbok], 0);
         SalesClearEdit;
       end;
@@ -4298,27 +4973,34 @@ begin
   RemoteDB.netshop_stock.DisableControls;
   try
     EditSalesAvailable.Text := '0';
-    EditSalesReserved.Text  := inttostr(RemoteDB.GetReservedStock(EditSalesModel.Text));
+    EditSalesReserved.Text :=
+      inttostr(RemoteDB.GetReservedStock(EditSalesModel.Text));
 
     RemoteDB.Products.FindKey([EditSalesModel.Text]);
-    if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'True') then
+    if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'True')
+    then
     begin
 
       TmpStr := inttostr(ConnectedShop) + '-';
       if Pos(TmpStr, ComboBoxSalesOwner.Text) = 1 then
       begin
-        owner                            := inttostr(ConnectedShop);
-        supplier                         := RightStr(ComboBoxSalesOwner.Text, Length(ComboBoxSalesOwner.Text) - Length(TmpStr));
+        owner := inttostr(ConnectedShop);
+        supplier := RightStr(ComboBoxSalesOwner.Text,
+          Length(ComboBoxSalesOwner.Text) - Length(TmpStr));
         RemoteDB.netshop_stock.IndexName := 'StockIXModelOwnerSupplier';
         RemoteDB.netshop_stock.SetKey;
-        RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString := supplier;
-      end else begin
-        owner                            := ComboBoxSalesOwner.Text;
-        supplier                         := '-1';
+        RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString
+          := supplier;
+      end
+      else
+      begin
+        owner := ComboBoxSalesOwner.Text;
+        supplier := '-1';
         RemoteDB.netshop_stock.IndexName := 'StockIXModelOwner';
         RemoteDB.netshop_stock.SetKey;
       end;
-      RemoteDB.netshop_stock.FieldByName('product_model').AsString := EditSalesModel.Text;
+      RemoteDB.netshop_stock.FieldByName('product_model').AsString :=
+        EditSalesModel.Text;
       RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString := owner;
 
       if RemoteDB.netshop_stock.GotoKey then
@@ -4328,33 +5010,52 @@ begin
         if ComboBoxSalesOwner.Text = inttostr(ConnectedShop) then
         begin
           if RemoteDB.Customerscustomers_htprice.AsString = 'False' then
-            EditSalesPrice.Value := RemoteDB.Products.FieldByName('Products_price_allin').AsFloat
+            EditSalesPrice.Value := RemoteDB.Products.FieldByName
+              ('Products_price_allin').AsFloat
           else
           begin
             // EditSalesPrice.Value:=RemoteDB.Products.Fieldbyname('Products_price').Value
-            EditSalesPrice.Value := RemoteDB.GetWholeSalePrice(EditSalesModel.Text);
+            EditSalesPrice.Value := RemoteDB.GetWholeSalePrice
+              (EditSalesModel.Text);
           end;
-        end else begin
-          EditSalesPrice.Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+        end
+        else
+        begin
+          EditSalesPrice.Value := RemoteDB.netshop_stock.FieldByName
+            ('product_price_stock').AsFloat;
         end;
         // Date In
-        EditSalesDateIn.Text := RemoteDB.netshop_stock.FieldByName('product_date_in').AsString;
+        EditSalesDateIn.Text := RemoteDB.netshop_stock.FieldByName
+          ('product_date_in').AsString;
         if supplier <> '-1' then
         begin
-          while ((RemoteDB.netshop_stock.FieldByName('product_model').Text = EditSalesModel.Text) and
-            (RemoteDB.netshop_stock.FieldByName('product_owner_id').Text = owner) and (not RemoteDB.netshop_stock.Eof) and
-            (RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text = supplier)) do
+          while ((RemoteDB.netshop_stock.FieldByName('product_model')
+            .Text = EditSalesModel.Text) and
+            (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+            .Text = owner) and (not RemoteDB.netshop_stock.Eof) and
+            (RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+            .Text = supplier)) do
           begin
-            EditSalesAvailable.Text := inttostr(StrtoInt(EditSalesAvailable.Text) + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger);
+            EditSalesAvailable.Text :=
+              inttostr(StrtoInt(EditSalesAvailable.Text) +
+              RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger);
             RemoteDB.netshop_stock.Next;
           end;
-        end else begin
-          while ((RemoteDB.netshop_stock.FieldByName('product_model').Text = EditSalesModel.Text) and
-            (RemoteDB.netshop_stock.FieldByName('product_owner_id').Text = owner) and (not RemoteDB.netshop_stock.Eof)) do
+        end
+        else
+        begin
+          while ((RemoteDB.netshop_stock.FieldByName('product_model')
+            .Text = EditSalesModel.Text) and
+            (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+            .Text = owner) and (not RemoteDB.netshop_stock.Eof)) do
           begin
-            if (RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger < 100000) then
+            if (RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+              .AsInteger < 100000) then
             begin
-              EditSalesAvailable.Text := inttostr(StrtoInt(EditSalesAvailable.Text) + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger);
+              EditSalesAvailable.Text :=
+                inttostr(StrtoInt(EditSalesAvailable.Text) +
+                RemoteDB.netshop_stock.FieldByName('product_quantity')
+                .AsInteger);
             end;
             RemoteDB.netshop_stock.Next;
           end;
@@ -4364,7 +5065,8 @@ begin
     else
     begin
       EditSalesAvailable.Text := '99999';
-      EditSalesPrice.Value    := RemoteDB.Products.FieldByName('products_price_allin').AsFloat;
+      EditSalesPrice.Value := RemoteDB.Products.FieldByName
+        ('products_price_allin').AsFloat;
     end;
   finally
     RemoteDB.netshop_stock.EnableControls;
@@ -4372,7 +5074,8 @@ begin
 
 end;
 
-procedure TMainForm.NeditTransferQuantityKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TMainForm.NeditTransferQuantityKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
 end; // End procedure
 
@@ -4380,27 +5083,33 @@ procedure TMainForm.BitBtnSalesProcessClick(Sender: TObject);
 var
   AFormProcessSale: TFormProcessSale;
   i, CustomerIndex, GridIndex, LabelTotalIndex, Nowrow, Qloyalty, Qmax: Integer;
-  total, loyaltyprice : Double;
+  total, loyaltyprice: double;
 begin
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
-    if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+    if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid
+    then
     begin
       GridIndex := i;
     end;
   end;
 
-    for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
-      if TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[i].Tag = 97 then
+    if TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[i].Tag = 97
+    then
     begin
       LabelTotalIndex := i;
     end;
-    total := StrToFloat(TLabel(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[LabelTotalIndex]).Caption)
+    total := StrToFloat
+      (TLabel(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage)
+      .Controls[LabelTotalIndex]).Caption)
   end;
 
-
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
     if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95 then
     begin
@@ -4408,68 +5117,105 @@ begin
     end;
   end;
 
-  with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[CustomerIndex]) do
+  with TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .Controls[CustomerIndex]) do
   begin
-    if not RemoteDB.Customers.Locate('customers_nbr', Text, [locaseinsensitive]) then
+    if not RemoteDB.Customers.Locate('customers_nbr', Text, [locaseinsensitive])
+    then
       exit;
   end;
 
-  //  check for customer loaylty
-  if RemoteDB.customers.FieldByName('customers_nbr').AsInteger > 100000 then begin
-    if (total>0) and (RemoteDB.customers.FieldByName('customers_loyalty').AsInteger >= LoyaltyThreshold)  then begin
-      if messagedlg('Le client dispose d''assez de points de fidèlité, veut-il les convertir en bon de réduction ?', mtwarning, [mbyes, mbno], 0) = mrYes then begin
+  // check for customer loaylty
+  if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger > 100000 then
+  begin
+    if (total > 0) and (RemoteDB.Customers.FieldByName('customers_loyalty')
+      .AsInteger >= LoyaltyThreshold) then
+    begin
+      if messagedlg
+        ('Le client dispose d''assez de points de fidèlité, veut-il les convertir en bon de réduction ?',
+        mtwarning, [mbyes, mbno], 0) = mryes then
+      begin
         // Add the reward code the the grid
-        if RemoteDB.Products.Locate('products_model','LOYALTY500',[TLocateOption.loCaseInsensitive]) then   begin
+        if RemoteDB.Products.Locate('products_model', 'LOYALTY500',
+          [TLocateOption.locaseinsensitive]) then
+        begin
 
 
-            // Remove loyaty if present
+          // Remove loyaty if present
 
-            for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).RowCount - 2 do
+          for Nowrow := 1 to TAdvStringGrid
+            (TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex])
+            .RowCount - 2 do
+          begin
+            if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+              .Controls[GridIndex]).Cells[0, Nowrow] = 'LOYALTY500')) then
             begin
-              if ((TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]).Cells[0, Nowrow] = 'LOYALTY500')) then begin
-                with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do begin
-                    if Nowrow < RowCount - 1 then
-                    begin
-                      for i := Nowrow to RowCount - 2 do
-                        Rows[i].Assign(Rows[i + 1]);
-                      Rows[RowCount - 1].Clear;
-                      RowCount := RowCount - 1;
-                    end;
-
+              with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+                .Controls[GridIndex]) do
+              begin
+                if Nowrow < RowCount - 1 then
+                begin
+                  for i := Nowrow to RowCount - 2 do
+                    Rows[i].Assign(Rows[i + 1]);
+                  Rows[RowCount - 1].Clear;
+                  RowCount := RowCount - 1;
                 end;
+
               end;
             end;
+          end;
 
-          with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
-                    begin
-                      loyaltyprice :=  (Round(RemoteDB.GetPriceTTC(RemoteDB.Products.FieldByName('products_model').Text, RemoteDB.Products.FieldByName('products_price').AsFloat ) * 100) / 100 );
-                      QLoyalty := RemoteDB.customers.FieldByName('customers_loyalty').AsInteger div LoyaltyThreshold;
-                      QMax := 0;
-                      if total>0 then
-                      QMax := Trunc(total) div Trunc(loyaltyprice) ;
-                      Nowrow           := RowCount - 1;
-                      Cells[0, Nowrow] := RemoteDB.Products.FieldByName('products_model').Text;
-                      Cells[1, Nowrow] := RemoteDB.Products.FieldByName('products_intername').Text;
-                      // .Stockproduct_name.Value;
-                      Cells[2, Nowrow] := IntToStr(-Min(QLoyalty,Qmax));
-                      Cells[3, Nowrow] := FloatToStrF(RemoteDB.Products.FieldByName('products_price').AsFloat, fffixed, 7, 2);
-                      Cells[4, Nowrow] := FloatToStrF(Round(RemoteDB.GetPriceTTC(RemoteDB.Products.FieldByName('products_model').Text, RemoteDB.Products.FieldByName('products_price').AsFloat ) * 100) / 100,
-                          fffixed, 7, 2);
-                      if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'False') then
-                      begin
-                        Cells[5, Nowrow] := '0';
-                        Cells[6, Nowrow] := VCLToOSCDate(Now);
-                        Cells[7, Nowrow] := inttostr(ConnectedShop);
-                        Cells[8, Nowrow] := '0';
-                      end else begin
-                        Cells[5, Nowrow] := FloatToStrF(RemoteDB.netshop_stock.FieldByName('Product_Price_Gross').AsFloat, fffixed, 7, 2);
-                        Cells[6, Nowrow] := VCLToOSCDate(Now);
-                        Cells[7, Nowrow] := IntToStr(ConnectedShop);
-                        Cells[8, Nowrow] := IntToStr(ConnectedShop);
-                      end;
-                      RowCount := Nowrow + 2;
-                    end;
-        end else begin
+          with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+            .Controls[GridIndex]) do
+          begin
+            loyaltyprice :=
+              (Round(RemoteDB.GetPriceTTC(RemoteDB.Products.FieldByName
+              ('products_model').Text,
+              RemoteDB.Products.FieldByName('products_price').AsFloat) *
+              100) / 100);
+            Qloyalty := RemoteDB.Customers.FieldByName('customers_loyalty')
+              .AsInteger div LoyaltyThreshold;
+            Qmax := 0;
+            if total > 0 then
+              Qmax := Trunc(total) div Trunc(loyaltyprice);
+            Nowrow := RowCount - 1;
+            Cells[0, Nowrow] := RemoteDB.Products.FieldByName
+              ('products_model').Text;
+            Cells[1, Nowrow] := RemoteDB.Products.FieldByName
+              ('products_intername').Text;
+            // .Stockproduct_name.Value;
+            Cells[2, Nowrow] := inttostr(-Min(Qloyalty, Qmax));
+            Cells[3, Nowrow] :=
+              FloatToStrF(RemoteDB.Products.FieldByName('products_price')
+              .AsFloat, fffixed, 7, 2);
+            Cells[4, Nowrow] :=
+              FloatToStrF
+              (Round(RemoteDB.GetPriceTTC(RemoteDB.Products.FieldByName
+              ('products_model').Text,
+              RemoteDB.Products.FieldByName('products_price').AsFloat) * 100) /
+              100, fffixed, 7, 2);
+            if (RemoteDB.Products.FieldByName('products_stock_managed')
+              .Text = 'False') then
+            begin
+              Cells[5, Nowrow] := '0';
+              Cells[6, Nowrow] := VCLToOSCDate(Now);
+              Cells[7, Nowrow] := inttostr(ConnectedShop);
+              Cells[8, Nowrow] := '0';
+            end
+            else
+            begin
+              Cells[5, Nowrow] :=
+                FloatToStrF(RemoteDB.netshop_stock.FieldByName
+                ('Product_Price_Gross').AsFloat, fffixed, 7, 2);
+              Cells[6, Nowrow] := VCLToOSCDate(Now);
+              Cells[7, Nowrow] := inttostr(ConnectedShop);
+              Cells[8, Nowrow] := inttostr(ConnectedShop);
+            end;
+            RowCount := Nowrow + 2;
+          end;
+        end
+        else
+        begin
           ShowMessage('Produit fidèlité non trouvé');
         end;
       end;
@@ -4478,16 +5224,15 @@ begin
 
   end;
 
-
-
-  with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+  with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .Controls[GridIndex]) do
   begin
     if RowCount <= 2 then
       exit;
   end;
 
   RemoteDB.IsUpdating := True;
-  AFormProcessSale    := TFormProcessSale.Create(self);
+  AFormProcessSale := TFormProcessSale.Create(Self);
   try
     StringGridSalesEditingDone(nil);
 
@@ -4506,30 +5251,34 @@ end;
 
 procedure TMainForm.TryApplyChangesToDB();
 begin
-        if TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType = sitGreen then
-      begin;
-        if self.Parameter['SyncAutoUpdate'] = 'TRUE' then
-          RemoteDB.ProgressUpdate.Execute();
-      end
+  if TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle)
+    .Indicators.items[0].IndicatorType = sitGreen then
+  begin;
+    if Self.Parameter['SyncAutoUpdate'] = 'TRUE' then
+      RemoteDB.ProgressUpdate.Execute();
+  end
 end;
 
 procedure TMainForm.BitBtnSalesReserveClick(Sender: TObject);
 var
   i, Index, indexnbr, GridIndex, Nowrow: Integer;
   CustNbr: string;
-  SHValue: Double;
+  SHValue: double;
   aLabelAddress: TLabelAddress;
   Address: Tstrings;
 begin
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
-    if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+    if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid
+    then
     begin
       index := i;
     end;
   end;
 
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
     if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 95 then
     begin
@@ -4537,9 +5286,11 @@ begin
     end;
   end;
 
-  CustNbr := TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexnbr]).Text;
+  CustNbr := TEdit(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .Controls[indexnbr]).Text;
 
-  if not RemoteDB.Customers.Locate('customers_nbr', CustNbr, [locaseinsensitive]) then
+  if not RemoteDB.Customers.Locate('customers_nbr', CustNbr, [locaseinsensitive])
+  then
   begin
     ShowMessage('Client non trouvé');
     exit;
@@ -4547,11 +5298,13 @@ begin
 
   if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger < 100000 then
   begin
-    ShowMessage('Client non valide : impossible de réserver sur les comptes magasins');
+    ShowMessage
+      ('Client non valide : impossible de réserver sur les comptes magasins');
     exit;
   end;
 
-  with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]) do
+  with TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .Controls[index]) do
   begin
     if RowCount <= 2 then
       exit;
@@ -4560,39 +5313,57 @@ begin
   RemoteDB.IsUpdating := True;
   try
     StringGridSalesEditingDone(nil);
-    for i := 0 to TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+    for i := 0 to TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage)
+      .ControlCount - 1 do
     begin
-      if TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+      if TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[i]
+        .ClassType = TAdvStringGrid then
       begin
         GridIndex := i;
       end;
     end;
-    with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage).Controls[GridIndex]) do
+    with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.ActivePage)
+      .Controls[GridIndex]) do
       for Nowrow := 1 to RowCount - 2 do
       begin
         RemoteDB.netshop_customers_alerts.Append;
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsInteger := RemoteDB.Customers.FieldByName('customers_nbr').AsInteger;
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := Cells[0, Nowrow];
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString := Cells[1, Nowrow];
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := '';
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date').AsFloat := Now;
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsString := Cells[2, Nowrow];
-        if ((StrtoInt(Cells[7, Nowrow]) >= 100000) or (StrtoInt(Cells[8, Nowrow]) >= 100000)) then
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_customers_nbr').AsInteger :=
+          RemoteDB.Customers.FieldByName('customers_nbr').AsInteger;
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_model').AsString := Cells[0, Nowrow];
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_name').AsString := Cells[1, Nowrow];
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_cat').AsString := '';
+        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date')
+          .AsFloat := Now;
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_quantity').AsString := Cells[2, Nowrow];
+        if ((StrtoInt(Cells[7, Nowrow]) >= 100000) or
+          (StrtoInt(Cells[8, Nowrow]) >= 100000)) then
         begin
           SHValue := StrToFloat(Cells[4, Nowrow]);
           if frac(SHValue) > 0 then
-            SHValue := trunc(SHValue) + 1
+            SHValue := Trunc(SHValue) + 1
           else
-            SHValue := trunc(SHValue);
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').AsInteger := trunc(SHValue);
+            SHValue := Trunc(SHValue);
+          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used')
+            .AsInteger := Trunc(SHValue);
         end
         else
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').AsString := '0';
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').AsInteger := 2;
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date_notified').AsFloat := Now;
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_attempts').AsInteger := 0;
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_message').AsString := '';
-        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_comment').AsString := '';
+          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used')
+            .AsString := '0';
+        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status')
+          .AsInteger := 2;
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_date_notified').AsFloat := Now;
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_attempts').AsInteger := 0;
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_message').AsString := '';
+        RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_comment').AsString := '';
         RemoteDB.netshop_customers_alerts.Post;
       end;
 
@@ -4600,15 +5371,20 @@ begin
     // Print Sticker
     //
     aLabelAddress := TLabelAddress.Create;
-    Address       := TStringList.Create;
+    Address := TStringList.Create;
     try
-      aLabelAddress.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
+      aLabelAddress.LabelPrinter := (Self.Parameter['PrintersLabelPrinter']);
       Address.Add('Client # ' + RemoteDB.CustomersCustomers_nbr.AsString);
-      Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
-      Address.Add(RemoteDB.Products.FieldByName('products_intername').Text + ' ' + RemoteDB.Products.FieldByName('products_root_category_name').AsString);
+      Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' ' +
+        RemoteDB.CustomersCustomers_Lastname.AsString);
+      Address.Add(RemoteDB.Products.FieldByName('products_intername').Text + ' '
+        + RemoteDB.Products.FieldByName('products_root_category_name')
+        .AsString);
       Address.Add('SMS: ' + DateToStr(Now));
-      for i := 1 to RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger do
-        aLabelAddress.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+      for i := 1 to RemoteDB.netshop_customers_alerts.FieldByName
+        ('customers_alerts_quantity').AsInteger do
+        aLabelAddress.Print(Address,
+          (StrToBool(Self.Parameter['PrintersLabelDialog'])));
     finally
       aLabelAddress.Free;
       Address.Free;
@@ -4623,11 +5399,12 @@ end;
 
 procedure TMainForm.BitBtnStockinClearClickClick(Sender: TObject);
 begin
-  RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
+  RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop),
+    [locaseinsensitive]);
   EditStockinCustomerNbr.Text := inttostr(ConnectedShop);
   PageControlStockinCaddy.ActivePage.Free;
   if PageControlStockinCaddy.PageCount = 0 then
-    SBNewStockinCaddyClick(self);
+    SBNewStockinCaddyClick(Self);
   StockinClearEdit;
 end;
 
@@ -4639,9 +5416,9 @@ var
   Incoherent, PurchaseValid, signed: Boolean;
   AmountSum, CaddyValue: currency;
   Labelstoprint: Tlabeljob;
-  usbDevices : IUsbDevices;
-  usbDevice  : IUsbDevice;
-  FormSign : TFormSign;
+  usbDevices: IUsbDevices;
+  usbDevice: IUsbDevice;
+  FormSign: TFormSign;
 
 label StockinProcessEnd;
 begin
@@ -4649,326 +5426,385 @@ begin
 
   PageControlStockinCaddy.Enabled := False;
   try
-  if PageControlStockinCaddy.ActivePage = nil then
-  begin
-    ShowMessage('Veuillez créer un caddy');
-    goto StockinProcessEnd;
-  end;
-
-  // Récupération des Données du PageControl
-  for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
-  begin
-    if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+    if PageControlStockinCaddy.ActivePage = nil then
     begin
-      // Index de la grille
-      GridIndex := i;
+      ShowMessage('Veuillez créer un caddy');
+      goto StockinProcessEnd;
     end;
-  end;
 
-  if TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]).RowCount <= 1 then
-  begin
-    ShowMessage('Caddy vide');
-    goto StockinProcessEnd;
-  end;
-
-  for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
-  begin
-    if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 95 then
+    // Récupération des Données du PageControl
+    for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+      .ControlCount - 1 do
     begin
-      // Index du premier champs (Nom fourn / ou Num Client)
-      NbrData := TEdit(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]).Text;
+      if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+        .ClassType = TAdvStringGrid then
+      begin
+        // Index de la grille
+        GridIndex := i;
+      end;
     end;
-  end;
 
-  for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
-  begin
-    if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 10 then
+    if TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+      .Controls[GridIndex]).RowCount <= 1 then
     begin
-      // Index du type de transaction
-      StockinType := TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]).Caption;
+      ShowMessage('Caddy vide');
+      goto StockinProcessEnd;
     end;
-  end;
 
-  ProgressBar.Visible       := True;
-  ProgressBar.Position      := (1 / (7) * 100);
-  StatusLine.Panels[3].Text := 'Initialisation';
-  Application.ProcessMessages;
+    for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+      .ControlCount - 1 do
+    begin
+      if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 95
+      then
+      begin
+        // Index du premier champs (Nom fourn / ou Num Client)
+        NbrData := TEdit(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[i]).Text;
+      end;
+    end;
 
-  // Pour les envois Sms ne pas bouger;
-  RemoteDB.Shops.FindKey([ConnectedShop]);
+    for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+      .ControlCount - 1 do
+    begin
+      if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 10
+      then
+      begin
+        // Index du type de transaction
+        StockinType := TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[i]).Caption;
+      end;
+    end;
 
-  // Envoi des Alertes
-  with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-  begin
-    ProgressBar.Position      := (2 / (7) * 100);
-    StatusLine.Panels[3].Text := 'MAJ Statut réservations';
+    ProgressBar.Visible := True;
+    ProgressBar.Position := (1 / (7) * 100);
+    StatusLine.Panels[3].Text := 'Initialisation';
     Application.ProcessMessages;
-    for Nowrow := 1 to RowCount - 2 do
-    begin
-      self.ProcessAlert(Cells[0, Nowrow], Cells[4, Nowrow], Cells[7, Nowrow], Cells[8, Nowrow], Cells[2, Nowrow]);
-    end; // for rows loop
-  end; // End Alerts
 
-  if StockinType = 'Neuf' then
-  begin
-    // Vérifications Préalables
-    if not RemoteDB.netshop_suppliers.Locate('suppliers_name', NbrData, [locaseinsensitive]) then
-    begin
-      ShowMessage('Fournisseur Non Trouvé');
-      goto StockinProcessEnd;
-    end;
-    if not RemoteDB.Customers.Locate('Customers_nbr', ConnectedShop, []) then
-    begin
-      ShowMessage('Compte magasin non trouvé');
-      goto StockinProcessEnd;
-    end;
+    // Pour les envois Sms ne pas bouger;
+    RemoteDB.Shops.FindKey([ConnectedShop]);
 
-    // Produits à sortir des previews + Réactivation
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+    // Envoi des Alertes
+    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+      .Controls[GridIndex]) do
     begin
-      ProgressBar.Position      := (3 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Mise à jour des previews';
+      ProgressBar.Position := (2 / (7) * 100);
+      StatusLine.Panels[3].Text := 'MAJ Statut réservations';
       Application.ProcessMessages;
       for Nowrow := 1 to RowCount - 2 do
       begin
-        if RemoteDB.Products.FindKey([Cells[0, Nowrow]]) then
-        begin
-          if (RemoteDB.Products.FieldByName('products_ispreview').AsString = 'True') and (UserLevel <> 0) then
-          begin
-            RemoteDB.Products.Edit;
-            RemoteDB.Products.FieldByName('products_ispreview').AsString := 'False';
-            RemoteDB.Products.FieldByName('products_date_added').AsDateTime := trunc(Now);
-            RemoteDB.Products.Post;
-          end;
-          if RemoteDB.Products.FieldByName('products_status').AsInteger = 0 then
-          begin
-            RemoteDB.Products.Edit;
-            RemoteDB.Products.FieldByName('products_status').AsInteger := 0;
-            RemoteDB.Products.Post;
-          end;
-        end
-        else
-          ShowMessage('Produit non trouvé : ' + Cells[0, Nowrow]);
-      end;
-    end;
+        Self.ProcessAlert(Cells[0, Nowrow], Cells[4, Nowrow], Cells[7, Nowrow],
+          Cells[8, Nowrow], Cells[2, Nowrow]);
+      end; // for rows loop
+    end; // End Alerts
 
-    // Entrée en Stock
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+    if StockinType = 'Neuf' then
     begin
-      ProgressBar.Position      := (4 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Entrée en stock';
-      Application.ProcessMessages;
-      for Nowrow := 1 to RowCount - 2 do
+      // Vérifications Préalables
+      if not RemoteDB.netshop_suppliers.Locate('suppliers_name', NbrData,
+        [locaseinsensitive]) then
       begin
-        RemoteDB.netshop_stock.Append;
-        RemoteDB.netshop_stock.FieldByName('product_model').Text := Cells[0, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_name').Text := Cells[1, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_owner_id').Text := Cells[7, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_location').AsInteger := ConnectedShop;
-        RemoteDB.netshop_stock.FieldByName('product_quantity').Text := Cells[2, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text := Cells[8, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_date_in').Text := Formatdatetime('yyyymmdd', Now);
-        RemoteDB.netshop_stock.FieldByName('product_price_gross').Text := Cells[5, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_price_stock').Text := Cells[4, Nowrow];
-        RemoteDB.netshop_stock.Post;
-      end;
-    end; // End Entrée en Stock
-
-    // Impressions & Verification Prix
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (5 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Impression reçu';
-      Application.ProcessMessages;
-      if (self.Parameter['PrintersTicketEnabled'] = 'TRUE') and (self.Parameter['MiscPrintStockIn'] = 'TRUE') then
-      begin
-        TicketToPrint := TTicketJob.Create(nil);
-        try
-          TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-          TicketToPrint.Logo     := PrintLogo;
-          TicketToPrint.URL      := WEBURL;
-          if ShopdataList <> nil then begin
-            TicketToPrint.ShopData := ShopdataList;
-            end else begin
-              ShowMessage('Les données tickets du magasin ne sont pas correctes');
-          end;
-          if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
-            TicketToPrint.Model := TmContinuous;
-          TicketToPrint.AddBox('Etat entrée', True, bsProd);
-          for Nowrow := 1 to RowCount - 2 do
-          begin
-            TicketToPrint.AddLine(Cells[2, Nowrow], Cells[5, Nowrow], Cells[1, Nowrow], 'Etat entrée');
-          end;
-          TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-          TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
-          if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
-            TicketToPrint.PrintOpos
-          else
-            TicketToPrint.Print;
-        finally
-          TicketToPrint.Free;
-        end;
-      end;
-
-      for Nowrow := 1 to RowCount - 2 do
-      begin
-        try
-          if StrToFloat(Cells[5, Nowrow]) > (StrToFloat(Cells[3, Nowrow]) * 1.1) then
-          begin
-            with AdvAlertWindow.AlertMessages.Add do
-            begin
-              Text.Text := 'Le produit ' + Cells[1, Nowrow] + ' (' + Cells[0, Nowrow] + ') est vendu à perte ou prix achat incorrect';
-              AdvAlertWindow.Show;
-              MemoLog.Lines.Add(Text.Text);
-            end;
-          end;
-        except
-          MemoLog.Lines.Add('Erreur lors de la vérification des prix entrée');
-        end;
-      end;
-      //
-      // Impression Etiquettes
-      //
-      for Nowrow := 1 to RowCount - 2 do
-      begin
-        PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow], Cells[7, Nowrow], Cells[8, Nowrow]);
-      end;
-
-    end; // End Impression Reçu
-    // Fermeture Caddy
-    with PageControlStockinCaddy.ActivePage do
-    begin
-      ProgressBar.Position      := (6 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Fermeture caddy';
-      Application.ProcessMessages;
-      Free;
-    end; // End Fermeture Caddy
-  end;
-
-  if StockinType = 'Achat' then
-  begin
-    if not RemoteDB.Customers.Locate('Customers_Nbr', NbrData, [locaseinsensitive]) then
-    begin
-      ShowMessage('Client Non Trouvé');
-      goto StockinProcessEnd;
-    end;
-    if not RemoteDB.CustomersCustomers_nbr.AsInteger >= 100000 then
-    begin
-      ShowMessage('Client non valide');
-      goto StockinProcessEnd;
-    end;
-
-    // Vérification Cohérence  + Réactivation
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (3 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Vérification Cohérence';
-      Application.ProcessMessages;
-      Incoherent := False;
-      for Nowrow := 1 to RowCount - 2 do
-      begin
-        if Cells[8, Nowrow] <> RemoteDB.CustomersCustomers_nbr.AsString then
-          Incoherent := True;
-        if Cells[7, Nowrow] <> inttostr(ConnectedShop) then
-          Incoherent := True;
-        if RemoteDB.Products.FindKey([Cells[0, Nowrow]]) then
-        begin
-          if RemoteDB.Products.FieldByName('products_status').AsInteger = 0 then
-          begin
-            RemoteDB.Products.Edit;
-            RemoteDB.Products.FieldByName('products_status').AsInteger := 1;
-            RemoteDB.Products.Post;
-          end;
-        end
-        else
-          ShowMessage('Produit non trouvé : ' + Cells[0, Nowrow]);
-      end;
-      if Incoherent then
-      begin
-        ShowMessage('Données incohérentes : client caddy <> client produits');
+        ShowMessage('Fournisseur Non Trouvé');
         goto StockinProcessEnd;
       end;
-    end; // End Vérification Cohérence
-
-    // Produits à sortir des previews + Réactivation
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (3 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Mise à jour des previews';
-      Application.ProcessMessages;
-      for Nowrow := 1 to RowCount - 2 do
+      if not RemoteDB.Customers.Locate('Customers_nbr', ConnectedShop, []) then
       begin
+        ShowMessage('Compte magasin non trouvé');
+        goto StockinProcessEnd;
       end;
+
+      // Produits à sortir des previews + Réactivation
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (3 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Mise à jour des previews';
+        Application.ProcessMessages;
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          if RemoteDB.Products.FindKey([Cells[0, Nowrow]]) then
+          begin
+            if (RemoteDB.Products.FieldByName('products_ispreview')
+              .AsString = 'True') and (UserLevel <> 0) then
+            begin
+              RemoteDB.Products.Edit;
+              RemoteDB.Products.FieldByName('products_ispreview').AsString
+                := 'False';
+              RemoteDB.Products.FieldByName('products_date_added').AsDateTime :=
+                Trunc(Now);
+              RemoteDB.Products.Post;
+            end;
+            if RemoteDB.Products.FieldByName('products_status').AsInteger = 0
+            then
+            begin
+              RemoteDB.Products.Edit;
+              RemoteDB.Products.FieldByName('products_status').AsInteger := 0;
+              RemoteDB.Products.Post;
+            end;
+          end
+          else
+            ShowMessage('Produit non trouvé : ' + Cells[0, Nowrow]);
+        end;
+      end;
+
+      // Entrée en Stock
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (4 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Entrée en stock';
+        Application.ProcessMessages;
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          RemoteDB.netshop_stock.Append;
+          RemoteDB.netshop_stock.FieldByName('product_model').Text :=
+            Cells[0, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_name').Text :=
+            Cells[1, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_owner_id').Text :=
+            Cells[7, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_location').AsInteger :=
+            ConnectedShop;
+          RemoteDB.netshop_stock.FieldByName('product_quantity').Text :=
+            Cells[2, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text :=
+            Cells[8, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_date_in').Text :=
+            Formatdatetime('yyyymmdd', Now);
+          RemoteDB.netshop_stock.FieldByName('product_price_gross').Text :=
+            Cells[5, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_price_stock').Text :=
+            Cells[4, Nowrow];
+          RemoteDB.netshop_stock.Post;
+        end;
+      end; // End Entrée en Stock
+
+      // Impressions & Verification Prix
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (5 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Impression reçu';
+        Application.ProcessMessages;
+        if (Self.Parameter['PrintersTicketEnabled'] = 'TRUE') and
+          (Self.Parameter['MiscPrintStockIn'] = 'TRUE') then
+        begin
+          TicketToPrint := TTicketJob.Create(nil);
+          try
+            TicketToPrint.Printer := (Self.Parameter['PrintersTicketPrinter']);
+            TicketToPrint.Logo := PrintLogo;
+            TicketToPrint.URL := WEBURL;
+            if ShopdataList <> nil then
+            begin
+              TicketToPrint.ShopData := ShopdataList;
+            end
+            else
+            begin
+              ShowMessage
+                ('Les données tickets du magasin ne sont pas correctes');
+            end;
+            if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+              TicketToPrint.Model := TmContinuous;
+            TicketToPrint.AddBox('Etat entrée', True, bsProd);
+            for Nowrow := 1 to RowCount - 2 do
+            begin
+              TicketToPrint.AddLine(Cells[2, Nowrow], Cells[5, Nowrow],
+                Cells[1, Nowrow], 'Etat entrée');
+            end;
+            TicketToPrint.AddCustomerLine('Client # :',
+              RemoteDB.CustomersCustomers_nbr.Text);
+            TicketToPrint.AddCustomerLine('Nom :',
+              RemoteDB.CustomersCustomers_Lastname.Text);
+            if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+              TicketToPrint.PrintOpos
+            else
+              TicketToPrint.Print;
+          finally
+            TicketToPrint.Free;
+          end;
+        end;
+
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          try
+            if StrToFloat(Cells[5, Nowrow]) >
+              (StrToFloat(Cells[3, Nowrow]) * 1.1) then
+            begin
+              with AdvAlertWindow.AlertMessages.Add do
+              begin
+                Text.Text := 'Le produit ' + Cells[1, Nowrow] + ' (' +
+                  Cells[0, Nowrow] +
+                  ') est vendu à perte ou prix achat incorrect';
+                AdvAlertWindow.Show;
+                MemoLog.Lines.Add(Text.Text);
+              end;
+            end;
+          except
+            MemoLog.Lines.Add('Erreur lors de la vérification des prix entrée');
+          end;
+        end;
+        //
+        // Impression Etiquettes
+        //
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow],
+            Cells[7, Nowrow], Cells[8, Nowrow]);
+        end;
+
+      end; // End Impression Reçu
+      // Fermeture Caddy
+      with PageControlStockinCaddy.ActivePage do
+      begin
+        ProgressBar.Position := (6 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Fermeture caddy';
+        Application.ProcessMessages;
+        Free;
+      end; // End Fermeture Caddy
     end;
 
-    // Calcul fidélité achat
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+    if StockinType = 'Achat' then
     begin
-      ProgressBar.Position      := (3 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Calcul fidélité';
-      Application.ProcessMessages;
-      CaddyValue := 0;
-      for Nowrow := 1 to RowCount - 2 do
+      if not RemoteDB.Customers.Locate('Customers_Nbr', NbrData,
+        [locaseinsensitive]) then
       begin
-        CaddyValue := CaddyValue + (strtofloat(Cells[5, nowrow]) * strtofloat(Cells[2, nowrow]));
+        ShowMessage('Client Non Trouvé');
+        goto StockinProcessEnd;
       end;
-      RemoteDB.customers.Edit;
-      RemoteDB.customers.FieldByName('customers_loyalty').AsInteger := RemoteDB.customers.FieldByName('customers_loyalty').AsInteger
-       + (Trunc(CaddyValue) Div 5) *10;
-      RemoteDB.customers.Post;
-    end;
+      if not RemoteDB.CustomersCustomers_nbr.AsInteger >= 100000 then
+      begin
+        ShowMessage('Client non valide');
+        goto StockinProcessEnd;
+      end;
 
-    // Impression signature
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (4 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Signature';
-      Application.ProcessMessages;
-      PurchaseValid:=False;
-      Signed:=False;
-      if (Mainform.Parameter['MiscSIGNPADUse'] = 'TRUE') then begin
+      // Vérification Cohérence  + Réactivation
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (3 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Vérification Cohérence';
+        Application.ProcessMessages;
+        Incoherent := False;
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          if Cells[8, Nowrow] <> RemoteDB.CustomersCustomers_nbr.AsString then
+            Incoherent := True;
+          if Cells[7, Nowrow] <> inttostr(ConnectedShop) then
+            Incoherent := True;
+          if RemoteDB.Products.FindKey([Cells[0, Nowrow]]) then
+          begin
+            if RemoteDB.Products.FieldByName('products_status').AsInteger = 0
+            then
+            begin
+              RemoteDB.Products.Edit;
+              RemoteDB.Products.FieldByName('products_status').AsInteger := 1;
+              RemoteDB.Products.Post;
+            end;
+          end
+          else
+            ShowMessage('Produit non trouvé : ' + Cells[0, Nowrow]);
+        end;
+        if Incoherent then
+        begin
+          ShowMessage('Données incohérentes : client caddy <> client produits');
+          goto StockinProcessEnd;
+        end;
+      end; // End Vérification Cohérence
+
+      // Produits à sortir des previews + Réactivation
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (3 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Mise à jour des previews';
+        Application.ProcessMessages;
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+        end;
+      end;
+
+      // Calcul fidélité achat
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (3 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Calcul fidélité';
+        Application.ProcessMessages;
+        CaddyValue := 0;
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          CaddyValue := CaddyValue +
+            (StrToFloat(Cells[5, Nowrow]) * StrToFloat(Cells[2, Nowrow]));
+        end;
+        RemoteDB.Customers.Edit;
+        RemoteDB.Customers.FieldByName('customers_loyalty').AsInteger :=
+          RemoteDB.Customers.FieldByName('customers_loyalty').AsInteger +
+          (Trunc(CaddyValue) Div 5) * 10;
+        RemoteDB.Customers.Post;
+      end;
+
+      // Impression signature
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (4 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Signature';
+        Application.ProcessMessages;
+        PurchaseValid := False;
+        signed := False;
+        if (MainForm.Parameter['MiscSIGNPADUse'] = 'TRUE') then
+        begin
           /// Utiisation du signpad
           usbDevices := CoUsbDevices.Create();
           if (usbDevices.Count > 0) then
           begin
-            FormSign := TFormSign.Create(self);
+            FormSign := TFormSign.Create(Self);
             try
-            try
-              begin
-                AmountSum  := 0;
-                QuantitySum := 0;
-                if RowCount > 5 then begin
-                  for Nowrow := 1 to RowCount - 2 do
+              try
+                begin
+                  AmountSum := 0;
+                  QuantitySum := 0;
+                  if RowCount > 5 then
                   begin
-                    QuantitySum := QuantitySum + StrtoInt(Cells[2, Nowrow]);
-                    AmountSum := AmountSum + StrToFloat(Cells[5, Nowrow]) * StrtoInt(Cells[2, Nowrow]);
-                  end;
-                  end else begin
-                   for Nowrow := 1 to RowCount - 2 do
+                    for Nowrow := 1 to RowCount - 2 do
+                    begin
+                      QuantitySum := QuantitySum + StrtoInt(Cells[2, Nowrow]);
+                      AmountSum := AmountSum + StrToFloat(Cells[5, Nowrow]) *
+                        StrtoInt(Cells[2, Nowrow]);
+                    end;
+                  end
+                  else
                   begin
-                    FormSign.TextLines.Add(Cells[2, Nowrow] + ' ' + Cells[1, Nowrow] + ' ' +  Cells[5, Nowrow] + ' EUR');
-                    QuantitySum := QuantitySum + StrtoInt(Cells[2, Nowrow]);
-                    AmountSum := AmountSum + StrToFloat(Cells[5, Nowrow]) * StrtoInt(Cells[2, Nowrow]);
+                    for Nowrow := 1 to RowCount - 2 do
+                    begin
+                      FormSign.TextLines.Add(Cells[2, Nowrow] + ' ' + Cells[1,
+                        Nowrow] + ' ' + Cells[5, Nowrow] + ' EUR');
+                      QuantitySum := QuantitySum + StrtoInt(Cells[2, Nowrow]);
+                      AmountSum := AmountSum + StrToFloat(Cells[5, Nowrow]) *
+                        StrtoInt(Cells[2, Nowrow]);
+                    end;
                   end;
-                end;
 
-                usbDevice := usbDevices.Item[0]; //select the first device
-                // loop the products
-                FormSign.TextLines.Add('Rachat : '+ FloatToStr(AmountSum));
-                FormSign.TextLines.Add('Client # : ' + RemoteDB.CustomersCustomers_nbr.Text);
-                FormSign.TextLines.Add('Nom : ' + RemoteDB.CustomersCustomers_firstname.Text);
-                FormSign.TextLines.Add('Nombre de jeux : ' + IntToStr(QuantitySum));
-                FormSign.connect(usbDevice);
-                FormSign.ShowModal();
+                  usbDevice := usbDevices.Item[0]; // select the first device
+                  // loop the products
+                  FormSign.TextLines.Add('Rachat : ' + FloatToStr(AmountSum));
+                  FormSign.TextLines.Add
+                    ('Client # : ' + RemoteDB.CustomersCustomers_nbr.Text);
+                  FormSign.TextLines.Add
+                    ('Nom : ' + RemoteDB.Customerscustomers_firstname.Text);
+                  FormSign.TextLines.Add('Nombre de jeux : ' +
+                    inttostr(QuantitySum));
+                  FormSign.connect(usbDevice);
+                  FormSign.ShowModal();
+                end;
+              except
+                on e: Exception do
+                  ShowMessage(e.Message);
               end;
-            except
-              on e : Exception do
-                ShowMessage(e.Message);
-            end;
-            if FormSign.ModalResult=mrOK then begin
-              PurchaseValid:=True;
-              Signed:=True;
-            end;
+              if FormSign.ModalResult = mrOK then
+              begin
+                PurchaseValid := True;
+                signed := True;
+              end;
 
             finally
               FormSign.Free;
@@ -4978,264 +5814,315 @@ begin
           begin
             ShowMessage('Pad de signature non connecté');
           end;
-      end else begin
+        end
+        else
+        begin
           ///
           /// IMPRESSION DU RECU
           ///
-          if (self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
+          if (Self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
           begin
-            TicketToPrint := TTicketJob.Create(self);
+            TicketToPrint := TTicketJob.Create(Self);
             try
-              TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-              TicketToPrint.Logo     := PrintLogo;
-              TicketToPrint.URL      := WEBURL;
-              if ShopdataList <> nil then begin
+              TicketToPrint.Printer :=
+                (Self.Parameter['PrintersTicketPrinter']);
+              TicketToPrint.Logo := PrintLogo;
+              TicketToPrint.URL := WEBURL;
+              if ShopdataList <> nil then
+              begin
                 TicketToPrint.ShopData := ShopdataList;
-              end else begin
-                ShowMessage('Les données tickets du magasin ne sont pas correctes');
+              end
+              else
+              begin
+                ShowMessage
+                  ('Les données tickets du magasin ne sont pas correctes');
               end;
-              if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+              if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
                 TicketToPrint.Model := TmContinuous;
               TicketToPrint.AddBox('Achat', True, bsProd);
               for Nowrow := 1 to RowCount - 2 do
               begin
-                TicketToPrint.AddLine(Cells[2, Nowrow], Cells[5, Nowrow], Cells[1, Nowrow], 'Achat');
+                TicketToPrint.AddLine(Cells[2, Nowrow], Cells[5, Nowrow],
+                  Cells[1, Nowrow], 'Achat');
               end;
-              TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-              TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
+              TicketToPrint.AddCustomerLine('Client # :',
+                RemoteDB.CustomersCustomers_nbr.Text);
+              TicketToPrint.AddCustomerLine('Nom :',
+                RemoteDB.CustomersCustomers_Lastname.Text);
 
-              if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+              if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
                 TicketToPrint.PrintOpos
               else
                 TicketToPrint.Print;
 
-              PurchaseValid:=True;
+              PurchaseValid := True;
             finally
               TicketToPrint.Free;
             end;
           end;
-      end;
-    end; // End Impressions signature
+        end;
+      end; // End Impressions signature
 
-
-   if PurchaseValid then  begin
-      // Entrée en Stock
-      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+      if PurchaseValid then
       begin
-        ProgressBar.Position      := (5 / (7) * 100);
+        // Entrée en Stock
+        with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[GridIndex]) do
+        begin
+          ProgressBar.Position := (5 / (7) * 100);
+          StatusLine.Panels[3].Text := 'Entrée en stock';
+          Application.ProcessMessages;
+          ///
+          /// Entrée en Stock
+          ///
+          AmountSum := 0;
+          for Nowrow := 1 to RowCount - 2 do
+          begin
+            RemoteDB.netshop_stock.Append;
+            RemoteDB.netshop_stock.FieldByName('product_model').Text :=
+              Cells[0, Nowrow];
+            RemoteDB.netshop_stock.FieldByName('product_name').Text :=
+              Cells[1, Nowrow];
+            RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger :=
+              ConnectedShop;
+            RemoteDB.netshop_stock.FieldByName('product_location').Text :=
+              inttostr(ConnectedShop);
+            RemoteDB.netshop_stock.FieldByName('product_quantity').Text :=
+              Cells[2, Nowrow];
+            RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString
+              := Cells[8, Nowrow];
+            RemoteDB.netshop_stock.FieldByName('product_date_in').Text :=
+              Formatdatetime('yyyymmdd', Now);
+            RemoteDB.netshop_stock.FieldByName('product_price_gross').Text :=
+              Cells[5, Nowrow];
+            RemoteDB.netshop_stock.FieldByName('product_price_stock').Text :=
+              Cells[4, Nowrow];
+            RemoteDB.netshop_stock.Post;
+            AmountSum := AmountSum + StrToFloat(Cells[5, Nowrow]) *
+              StrtoInt(Cells[2, Nowrow]);
+          end;
+
+          ///
+          /// Ajour du refund
+          ///
+          RemoteDB.netshop_refunds.Append;
+          RemoteDB.netshop_refunds.FieldByName('refunds_customer_nbr').AsInteger
+            := RemoteDB.Customers.FieldByName('customers_nbr').AsInteger;
+          RemoteDB.netshop_refunds.FieldByName('refunds_amount').AsFloat :=
+            AmountSum;
+          RemoteDB.netshop_refunds.FieldByName('refunds_nature').AsString
+            := 'Achat';
+          if signed then
+            RemoteDB.StoreSignBlob('signature.jpg', 'refunds');
+          RemoteDB.netshop_refunds.Post;
+
+        end; // End Entrée en Stock
+
+        // Impressions
+        with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[GridIndex]) do
+        begin
+          ProgressBar.Position := (6 / (7) * 100);
+          StatusLine.Panels[3].Text := 'Impression labels';
+          Application.ProcessMessages;
+          /// /
+          /// / Impression Labels
+          /// /
+          for Nowrow := 1 to RowCount - 2 do
+          begin
+            PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow],
+              Cells[7, Nowrow], Cells[8, Nowrow]);
+          end;
+
+        end; // End Impressions
+
+        // Fermeture Caddy
+        with PageControlStockinCaddy.ActivePage do
+        begin
+          ProgressBar.Position := (7 / (7) * 100);
+          StatusLine.Panels[3].Text := 'Fermeture caddy';
+          Application.ProcessMessages;
+          Free;
+        end; // End Fermeture Caddy
+      end;
+    end;
+
+    if StockinType = 'Dépôt' then
+    begin
+      if not RemoteDB.Customers.Locate('Customers_Nbr', NbrData,
+        [locaseinsensitive]) then
+      begin
+        ShowMessage('Client Non Trouvé');
+        goto StockinProcessEnd;
+      end;
+
+      // Vérification Cohérence et re-activation
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (3 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Vérification Cohérence';
+        Application.ProcessMessages;
+        Incoherent := False;
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          if Cells[7, Nowrow] <> RemoteDB.Customers.FieldByName('customers_nbr')
+            .AsString then
+            Incoherent := True;
+          if RemoteDB.Products.FindKey([Cells[0, Nowrow]]) then
+          begin
+            if RemoteDB.Products.FieldByName('products_status').AsInteger = 0
+            then
+            begin
+              RemoteDB.Products.Edit;
+              RemoteDB.Products.FieldByName('products_status').AsInteger := 1;
+              RemoteDB.Products.Post;
+            end;
+          end
+          else
+            ShowMessage('Produit non trouvé : ' + Cells[0, Nowrow]);
+        end;
+        if Incoherent then
+        begin
+          ShowMessage('Données incohérentes : client caddy <> client produits');
+          goto StockinProcessEnd;
+        end;
+      end; // End Vérification Cohérence
+
+      // Todo déplacer vers ventes
+      // Calcul fidélité dépôt
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (3 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Calcul fidélité';
+        Application.ProcessMessages;
+        CaddyValue := 0;
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          CaddyValue := CaddyValue +
+            (StrToFloat(Cells[4, Nowrow]) * StrToFloat(Cells[2, Nowrow]));
+        end;
+        RemoteDB.Customers.Edit;
+        RemoteDB.Customers.FieldByName('customers_loyalty').AsInteger :=
+          RemoteDB.Customers.FieldByName('customers_loyalty').AsInteger +
+          (Trunc(CaddyValue) Div 5) * 2;
+        RemoteDB.Customers.Post;
+      end;
+
+      // Entrée en Stock
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
+      begin
+        ProgressBar.Position := (4 / (7) * 100);
         StatusLine.Panels[3].Text := 'Entrée en stock';
         Application.ProcessMessages;
-        ///
-        /// Entrée en Stock
-        ///
-        AmountSum  := 0;
         for Nowrow := 1 to RowCount - 2 do
         begin
           RemoteDB.netshop_stock.Append;
-          RemoteDB.netshop_stock.FieldByName('product_model').Text := Cells[0, Nowrow];
-          RemoteDB.netshop_stock.FieldByName('product_name').Text := Cells[1, Nowrow];
-          RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger := ConnectedShop;
-          RemoteDB.netshop_stock.FieldByName('product_location').Text := inttostr(ConnectedShop);
-          RemoteDB.netshop_stock.FieldByName('product_quantity').Text := Cells[2, Nowrow];
-          RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsString := Cells[8, Nowrow];
-          RemoteDB.netshop_stock.FieldByName('product_date_in').Text := Formatdatetime('yyyymmdd', Now);
-          RemoteDB.netshop_stock.FieldByName('product_price_gross').Text := Cells[5, Nowrow];
-          RemoteDB.netshop_stock.FieldByName('product_price_stock').Text := Cells[4, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_model').Text :=
+            Cells[0, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_name').Text :=
+            Cells[1, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString :=
+            Cells[7, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_location').Text :=
+            inttostr(ConnectedShop);
+          RemoteDB.netshop_stock.FieldByName('product_quantity').Text :=
+            Cells[2, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text := '0';
+          RemoteDB.netshop_stock.FieldByName('product_date_in').Text :=
+            Formatdatetime('yyyymmdd', Now);
+          RemoteDB.netshop_stock.FieldByName('product_price_gross').Text :=
+            Cells[5, Nowrow];
+          RemoteDB.netshop_stock.FieldByName('product_price_stock').Text :=
+            Cells[4, Nowrow];
           RemoteDB.netshop_stock.Post;
-          AmountSum := AmountSum + StrToFloat(Cells[5, Nowrow]) * StrtoInt(Cells[2, Nowrow]);
         end;
-
-        ///
-        /// Ajour du refund
-        ///
-        RemoteDB.netshop_refunds.Append;
-        RemoteDB.netshop_refunds.FieldByName('refunds_customer_nbr').AsInteger := RemoteDB.Customers.FieldByName('customers_nbr').AsInteger;
-        RemoteDB.netshop_refunds.FieldByName('refunds_amount').AsFloat := AmountSum;
-        RemoteDB.netshop_refunds.FieldByName('refunds_nature').AsString := 'Achat';
-        if Signed then RemoteDB.StoreSignBlob('signature.jpg','refunds');
-        RemoteDB.netshop_refunds.Post;
-
       end; // End Entrée en Stock
 
-
       // Impressions
-      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do
       begin
-        ProgressBar.Position      := (6 / (7) * 100);
-        StatusLine.Panels[3].Text := 'Impression labels';
+        ProgressBar.Position := (5 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Impression reçu';
         Application.ProcessMessages;
-        /// /
-        /// / Impression Labels
-        /// /
+        // Tickets
+        if (Self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
+        begin
+          TicketToPrint := TTicketJob.Create(Self);
+          try
+            TicketToPrint.Printer := (Self.Parameter['PrintersTicketPrinter']);
+            TicketToPrint.Logo := PrintLogo;
+            TicketToPrint.URL := WEBURL;
+            if ShopdataList <> nil then
+            begin
+              TicketToPrint.ShopData := ShopdataList;
+            end
+            else
+            begin
+              ShowMessage
+                ('Les données tickets du magasin ne sont pas correctes');
+            end;
+            if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+              TicketToPrint.Model := TmContinuous;
+            TicketToPrint.AddBox('Dépôt', True, bsProd);
+            for Nowrow := 1 to RowCount - 2 do
+            begin
+              TicketToPrint.AddLine(Cells[2, Nowrow], Cells[4, Nowrow],
+                Cells[1, Nowrow], 'Dépôt');
+            end;
+            TicketToPrint.AddCustomerLine('Client # :',
+              RemoteDB.CustomersCustomers_nbr.Text);
+            TicketToPrint.AddCustomerLine('Nom :',
+              RemoteDB.CustomersCustomers_Lastname.Text);
+
+            TicketToPrint.Comment := DepositComment;
+            if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+              TicketToPrint.PrintOpos
+            else
+              TicketToPrint.Print;
+          finally
+            TicketToPrint.Free;
+          end;
+        end
+        else
+          messagedlg('Imprimante à tickets non activée', mtwarning, [mbok], 0);
+        ProgressBar.Position := (6 / (7) * 100);
+        StatusLine.Panels[3].Text := 'Impression étiquettes';
+        Application.ProcessMessages;
+        // Labels
         for Nowrow := 1 to RowCount - 2 do
         begin
-          PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow], Cells[7, Nowrow], Cells[8, Nowrow]);
+          PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow],
+            Cells[7, Nowrow], Cells[8, Nowrow]);
         end;
-
       end; // End Impressions
 
       // Fermeture Caddy
       with PageControlStockinCaddy.ActivePage do
       begin
-        ProgressBar.Position      := (7 / (7) * 100);
+        ProgressBar.Position := (6 / (7) * 100);
         StatusLine.Panels[3].Text := 'Fermeture caddy';
         Application.ProcessMessages;
         Free;
       end; // End Fermeture Caddy
-    end;
-  end;
 
-  if StockinType = 'Dépôt' then
-  begin
-    if not RemoteDB.Customers.Locate('Customers_Nbr', NbrData, [locaseinsensitive]) then
-    begin
-      ShowMessage('Client Non Trouvé');
-      goto StockinProcessEnd;
     end;
 
-    // Vérification Cohérence et re-activation
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (3 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Vérification Cohérence';
-      Application.ProcessMessages;
-      Incoherent := False;
-      for Nowrow := 1 to RowCount - 2 do
-      begin
-        if Cells[7, Nowrow] <> RemoteDB.Customers.FieldByName('customers_nbr').AsString then
-          Incoherent := True;
-        if RemoteDB.Products.FindKey([Cells[0, Nowrow]]) then
-        begin
-          if RemoteDB.Products.FieldByName('products_status').AsInteger = 0 then
-          begin
-            RemoteDB.Products.Edit;
-            RemoteDB.Products.FieldByName('products_status').AsInteger := 1;
-            RemoteDB.Products.Post;
-          end;
-        end
-        else
-          ShowMessage('Produit non trouvé : ' + Cells[0, Nowrow]);
-      end;
-      if Incoherent then
-      begin
-        ShowMessage('Données incohérentes : client caddy <> client produits');
-        goto StockinProcessEnd;
-      end;
-    end; // End Vérification Cohérence
-
-    // Todo déplacer vers ventes
-    // Calcul fidélité dépôt
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (3 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Calcul fidélité';
-      Application.ProcessMessages;
-      CaddyValue := 0;
-      for Nowrow := 1 to RowCount - 2 do
-      begin
-        CaddyValue := CaddyValue + (strtofloat(Cells[4, nowrow]) * strtofloat(Cells[2, nowrow]));
-      end;
-      RemoteDB.customers.Edit;
-      RemoteDB.customers.FieldByName('customers_loyalty').AsInteger := RemoteDB.customers.FieldByName('customers_loyalty').AsInteger
-       + (Trunc(CaddyValue) Div 5) * 2;
-      RemoteDB.customers.Post;
-    end;
-
-    // Entrée en Stock
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (4 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Entrée en stock';
-      Application.ProcessMessages;
-      for Nowrow := 1 to RowCount - 2 do
-      begin
-        RemoteDB.netshop_stock.Append;
-        RemoteDB.netshop_stock.FieldByName('product_model').Text := Cells[0, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_name').Text := Cells[1, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString := Cells[7, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_location').Text := inttostr(ConnectedShop);
-        RemoteDB.netshop_stock.FieldByName('product_quantity').Text := Cells[2, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_supplier_id').Text := '0';
-        RemoteDB.netshop_stock.FieldByName('product_date_in').Text := Formatdatetime('yyyymmdd', Now);
-        RemoteDB.netshop_stock.FieldByName('product_price_gross').Text := Cells[5, Nowrow];
-        RemoteDB.netshop_stock.FieldByName('product_price_stock').Text := Cells[4, Nowrow];
-        RemoteDB.netshop_stock.Post;
-      end;
-    end; // End Entrée en Stock
-
-    // Impressions
-    with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
-    begin
-      ProgressBar.Position      := (5 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Impression reçu';
-      Application.ProcessMessages;
-      // Tickets
-      if (self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
-      begin
-        TicketToPrint := TTicketJob.Create(self);
-        try
-          TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-          TicketToPrint.Logo     := PrintLogo;
-          TicketToPrint.URL      := WEBURL;
-          if ShopdataList <> nil then begin
-            TicketToPrint.ShopData := ShopdataList;
-            end else begin
-              ShowMessage('Les données tickets du magasin ne sont pas correctes');
-          end;
-          if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
-            TicketToPrint.Model := TmContinuous;
-          TicketToPrint.AddBox('Dépôt', True, bsProd);
-          for Nowrow := 1 to RowCount - 2 do
-          begin
-            TicketToPrint.AddLine(Cells[2, Nowrow], Cells[4, Nowrow], Cells[1, Nowrow], 'Dépôt');
-          end;
-          TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-          TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
-
-          TicketToPrint.Comment := DepositComment;
-          if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
-            TicketToPrint.PrintOpos
-          else
-            TicketToPrint.Print;
-        finally
-          TicketToPrint.Free;
-        end;
-      end
-      else
-        messagedlg('Imprimante à tickets non activée', mtwarning, [mbok], 0);
-      ProgressBar.Position      := (6 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Impression étiquettes';
-      Application.ProcessMessages;
-      // Labels
-      for Nowrow := 1 to RowCount - 2 do
-      begin
-        PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow], Cells[7, Nowrow], Cells[8, Nowrow]);
-      end;
-    end; // End Impressions
-
-    // Fermeture Caddy
-    with PageControlStockinCaddy.ActivePage do
-    begin
-      ProgressBar.Position      := (6 / (7) * 100);
-      StatusLine.Panels[3].Text := 'Fermeture caddy';
-      Application.ProcessMessages;
-      Free;
-    end; // End Fermeture Caddy
-
-  end;
-
-  ProgressBar.Position      := (7 / (7) * 100);
-  StatusLine.Panels[3].Text := 'Finalisation';
-  Application.ProcessMessages;
+    ProgressBar.Position := (7 / (7) * 100);
+    StatusLine.Panels[3].Text := 'Finalisation';
+    Application.ProcessMessages;
 
   StockinProcessEnd:
 
   finally
 
     BitBtnStockinProcessClick.Enabled := True;
-    PageControlStockinCaddy.Enabled   := True;
-    ProgressBar.Visible               := False;
-    StatusLine.Panels[3].Text         := '';
+    PageControlStockinCaddy.Enabled := True;
+    ProgressBar.Visible := False;
+    StatusLine.Panels[3].Text := '';
 
     TryApplyChangesToDB();
   end;
@@ -5244,11 +6131,12 @@ end;
 
 procedure TMainForm.BitBtnSalesClearClick(Sender: TObject);
 begin
-  RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
+  RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop),
+    [locaseinsensitive]);
   EditSalesCustomerNbr.Text := inttostr(ConnectedShop);
   PageControlSalesCaddy.ActivePage.Free;
   if PageControlSalesCaddy.PageCount = 0 then
-    SBNewSalesCaddyClick(self);
+    SBNewSalesCaddyClick(Self);
   SalesClearEdit;
 end;
 
@@ -5257,27 +6145,33 @@ var
   i, Index, indexcount, indexht, indexttc: Integer;
 begin
   // Count
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
     if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 99 then
     begin
-      TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]).Caption := '0';
+      TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i])
+        .Caption := '0';
     end;
   end;
   // HT
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
     if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 98 then
     begin
-      TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]).Caption := FloatToStrF(0, fffixed, 7, 2);;
+      TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]).Caption
+        := FloatToStrF(0, fffixed, 7, 2);;
     end;
   end;
   // TTC
-  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+  for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+    .ControlCount - 1 do
   begin
     if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 97 then
     begin
-      TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]).Caption := FloatToStrF(0, fffixed, 7, 2);;
+      TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]).Caption
+        := FloatToStrF(0, fffixed, 7, 2);;
     end;
   end;
 end;
@@ -5292,20 +6186,20 @@ begin
   if PageControlMainForm.ActivePage = TabsheetSales then
   begin
     FileName := 'CaddyVentes.csv';
-    FileExt  := '.csv';
+    FileExt := '.csv';
   end;
 
   if PageControlMainForm.ActivePage = TabSheetStockin then
   begin
     FileName := 'CaddyEntreeStock.csv';
-    FileExt  := '.csv';
+    FileExt := '.csv';
 
   end;
 
   if PageControlMainForm.ActivePage = TabSheetTransfer then
   begin
     FileName := 'TransferTable.csv';
-    FileExt  := '.csv';
+    FileExt := '.csv';
   end;
 end;
 
@@ -5314,12 +6208,12 @@ begin
   EditSalesName.Clear;
   EditSalesModel.Clear;
   EditSalesDateIn.Clear;
-  EditSalesQuantity.Text  := '0';
-  EditSalesPrice.Value    := 0;
+  EditSalesQuantity.Text := '0';
+  EditSalesPrice.Value := 0;
   EditSalesAvailable.Text := '0';
   ComboBoxSalesOwner.Clear;
   ComboBoxSalesOwner.ItemIndex := -1;
-  ComboBoxSalesOwner.Text      := 'Select owner';
+  ComboBoxSalesOwner.Text := 'Select owner';
   EditSalesModel.SetFocus;
 end;
 
@@ -5328,20 +6222,16 @@ begin
   EditRentName.Clear;
   EditRentModel.Clear;
   EditRentDateIn.Clear;
-  EditRentPrice.Text     := '0.00';
+  EditRentPrice.Text := '0.00';
   EditRentAvailable.Text := '0';
   EditRentModel.SetFocus;
 end;
 
-
-
-
-
 procedure TMainForm.SButtonproductimagerotateClick(Sender: TObject);
 begin
-  TmpBmp.Width  := 0;
+  TmpBmp.Width := 0;
   TmpBmp.Height := 0;
-  TmpBmp.Width  := ProductImage.Width;
+  TmpBmp.Width := ProductImage.Width;
   TmpBmp.Height := ProductImage.Height;
   Janfx.Turn(ProductImage, TmpBmp);
   ProductImage.Assign(TmpBmp);
@@ -5378,8 +6268,9 @@ begin
     ThumbImg.Picture.Assign(ProductImage);
 
     RemoteDB.Products.Edit;
-    RemoteDB.Products.FieldByName('products_image').AsString := 'products/' + RemoteDB.Products.FieldByName('Products_model').AsString + '.' +
-      ansiuppercase(self.Parameter['ImageFileType']);
+    RemoteDB.Products.FieldByName('products_image').AsString := 'products/' +
+      RemoteDB.Products.FieldByName('Products_model').AsString + '.' +
+      ansiuppercase(Self.Parameter['ImageFileType']);
     RemoteDB.Products.Post
 
   end;
@@ -5398,7 +6289,7 @@ begin
     exit;
   end;
 
-  AcquireImg := TAcquireImage.Create(self);
+  AcquireImg := TAcquireImage.Create(Self);
   try
     flag := False;
     if AcquireImg.loadTwainModule then
@@ -5427,8 +6318,9 @@ begin
         Janfx.SquareFrame(ProductImage, BackGround, 120);
       end;
       RemoteDB.Products.Edit;
-      RemoteDB.Products.FieldByName('products_image').AsString := 'products/' + RemoteDB.Products.FieldByName('Products_model').AsString + '.' +
-        ansiuppercase(self.Parameter['ImageFileType']);
+      RemoteDB.Products.FieldByName('products_image').AsString := 'products/' +
+        RemoteDB.Products.FieldByName('Products_model').AsString + '.' +
+        ansiuppercase(Self.Parameter['ImageFileType']);
       RemoteDB.Products.Post;
       ThumbImg.Picture.Bitmap := ProductImage;
     end;
@@ -5466,7 +6358,8 @@ begin
     if not RemoteDB.IsUpdating then
       RemoteDB.IsUpdating := True;
 
-    for i := trunc(MonthCalendarAdminSales.Date) to trunc(MonthCalendarAdminSalesEnd.Date) do
+    for i := Trunc(MonthCalendarAdminSales.Date)
+      to Trunc(MonthCalendarAdminSalesEnd.Date) do
     begin
       DayCashierSummary := RemoteDB.CalcDayCahsierSummary(i, i);
       if DayCashierSummary.Open then
@@ -5474,28 +6367,32 @@ begin
         if (MainForm.Parameter['PrintersLabelEnabled'] = 'TRUE') then
         begin
           Labelstoprint := TLabelAddress.Create;
-          Address       := TStringList.Create;
+          Address := TStringList.Create;
           try
             Address.Add(DateToStr(i));
-            Address.Add('Neuf : ' + FloatToStr(DayCashierSummary.New + DayCashierSummary.NoMargin));
+            Address.Add('Neuf : ' + FloatToStr(DayCashierSummary.New +
+              DayCashierSummary.NoMargin));
             Address.Add('Occasion : ' + FloatToStr(DayCashierSummary.SH));
             Address.Add('Retours : ' + FloatToStr(DayCashierSummary.Returns));
             Address.Add('Bons : ' + FloatToStr(DayCashierSummary.Voucher));
             Address.Add('Rembours : ' + FloatToStr(DayCashierSummary.Refunds));
-            Labelstoprint.LabelPrinter := (MainForm.Parameter['PrintersLabelPrinter']);
-            Labelstoprint.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+            Labelstoprint.LabelPrinter :=
+              (MainForm.Parameter['PrintersLabelPrinter']);
+            Labelstoprint.Print(Address,
+              (StrToBool(Self.Parameter['PrintersLabelDialog'])));
           finally
             Labelstoprint.Free;
             Address.Free;
           end;
         end
         else
-          messagedlg('Imprimante à étiquettes non activée', mtwarning, [mbok], 0);
+          messagedlg('Imprimante à étiquettes non activée', mtwarning,
+            [mbok], 0);
         Application.ProcessMessages;
       end;
     end;
   finally
-    Screen.Cursor       := crDefault;
+    Screen.Cursor := crDefault;
     RemoteDB.IsUpdating := UpdateStatus;
 
   end;
@@ -5524,29 +6421,31 @@ begin
   if RemoteDB.Products.State <> dsBrowse then
     RemoteDB.Products.Post;
 
-  if self.Parameter['ImageFileType'] = 'JPG' then
+  if Self.Parameter['ImageFileType'] = 'JPG' then
   begin
     SaveJPG := TJpegImage.Create;
     try
       SaveJPG.CompressionQuality := 80;
-      SaveJPG.Transparent        := True;
+      SaveJPG.Transparent := True;
       SaveJPG.Assign(ProductImage);
       SaveJPG.Compress;
-      SaveJPG.SaveToFile(ExtractFilePath(ParamStr(0)) + '/images/' + RemoteDB.Products.FieldByName('products_image').AsString);
+      SaveJPG.SaveToFile(ExtractFilePath(ParamStr(0)) + '/images/' +
+        RemoteDB.Products.FieldByName('products_image').AsString);
     finally
       SaveJPG.Free;
     end;
   end;
 
-  if self.Parameter['ImageFileType'] = 'PNG' then
+  if Self.Parameter['ImageFileType'] = 'PNG' then
   begin
     SavePng := TpngImage.Create;
     try
       SavePng.CompressionLevel := 9;
-      SavePng.Transparent      := True;
+      SavePng.Transparent := True;
       SavePng.TransparentColor := clWhite;
       SavePng.Assign(ProductImage);
-      SavePng.SaveToFile((ExtractFilePath(ParamStr(0))) + '/images/' + RemoteDB.Products.FieldByName('products_image').AsString);
+      SavePng.SaveToFile((ExtractFilePath(ParamStr(0))) + '/images/' +
+        RemoteDB.Products.FieldByName('products_image').AsString);
     finally
       SavePng.Free;
     end;
@@ -5555,10 +6454,13 @@ begin
   // Upload Image
 
   if Upload then
-    if TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType = sitGreen then
+    if TdxStatusBarStateIndicatorPanelStyle
+      (StatusLine.Panels.items[1].PanelStyle).Indicators.items[0]
+      .IndicatorType = sitGreen then
     begin;
 
-      SrcFile  := (ExtractFilePath(ParamStr(0))) + 'images\' + RemoteDB.Products.FieldByName('products_image').AsString;
+      SrcFile := (ExtractFilePath(ParamStr(0))) + 'images\' +
+        RemoteDB.Products.FieldByName('products_image').AsString;
       DestFile := RemoteDB.Products.FieldByName('products_image').AsString;
       // RemoteDB.IdFTP.host:=FTPHost;
       // RemoteDB.IdFTP.UserName:=FTPUser;
@@ -5580,28 +6482,35 @@ var
   TmpIndex, TmpIndexRent: string;
   AStockCheckForm: TStockCheckForm;
 begin
-  AStockCheckForm := TStockCheckForm.Create(self);
+  AStockCheckForm := TStockCheckForm.Create(Self);
   try
-    RemoteDB.IsUpdating                    := True;
-    TmpIndex                               := RemoteDB.netshop_stock.IndexName;
-    RemoteDB.netshop_stock.IndexFieldNames := 'Product_Model;Product_Location;Product_owner_id';
-    RemoteDB.netshop_stock.Filter          := 'Product_Model = ' + QuotedStr(UpperCase(RemoteDB.Products.FieldByName('Products_model').AsString));
-    RemoteDB.netshop_stock.Filtered        := True;
+    RemoteDB.IsUpdating := True;
+    TmpIndex := RemoteDB.netshop_stock.IndexName;
+    RemoteDB.netshop_stock.IndexFieldNames :=
+      'Product_Model;Product_Location;Product_owner_id';
+    RemoteDB.netshop_stock.Filter := 'Product_Model = ' +
+      QuotedStr(UpperCase(RemoteDB.Products.FieldByName('Products_model')
+      .AsString));
+    RemoteDB.netshop_stock.Filtered := True;
 
-    TmpIndexRent                                := RemoteDB.netshop_rent_stock.IndexName;
-    RemoteDB.netshop_rent_stock.IndexFieldNames := 'rent_stock_product_model;rent_stock_last_rent';
-    RemoteDB.netshop_rent_stock.Filter := 'rent_stock_product_model = ' + QuotedStr(UpperCase(RemoteDB.Products.FieldByName('Products_model').AsString));
+    TmpIndexRent := RemoteDB.netshop_rent_stock.IndexName;
+    RemoteDB.netshop_rent_stock.IndexFieldNames :=
+      'rent_stock_product_model;rent_stock_last_rent';
+    RemoteDB.netshop_rent_stock.Filter := 'rent_stock_product_model = ' +
+      QuotedStr(UpperCase(RemoteDB.Products.FieldByName('Products_model')
+      .AsString));
     RemoteDB.netshop_rent_stock.Filtered := True;
-    AStockCheckForm.Model                := UpperCase(RemoteDB.Products.FieldByName('Products_model').AsString);
+    AStockCheckForm.Model :=
+      UpperCase(RemoteDB.Products.FieldByName('Products_model').AsString);
     AStockCheckForm.ShowModal;
   finally
     RemoteDB.netshop_stock.IndexName := TmpIndex;
-    RemoteDB.netshop_stock.Filtered  := False;
-    RemoteDB.netshop_stock.Filter    := '';
+    RemoteDB.netshop_stock.Filtered := False;
+    RemoteDB.netshop_stock.Filter := '';
 
     RemoteDB.netshop_rent_stock.IndexName := TmpIndexRent;
-    RemoteDB.netshop_rent_stock.Filtered  := False;
-    RemoteDB.netshop_rent_stock.Filter    := '';
+    RemoteDB.netshop_rent_stock.Filtered := False;
+    RemoteDB.netshop_rent_stock.Filter := '';
 
     RemoteDB.IsUpdating := False;
     AStockCheckForm.Free;
@@ -5621,29 +6530,40 @@ procedure TMainForm.PrintLabel1Click(Sender: TObject);
 var
   Labelstoprint: Tlabeljob;
 begin
-  if (self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
+  if (Self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
   begin
     Labelstoprint := Tlabeljob.Create;
     try
-      Labelstoprint.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
+      Labelstoprint.LabelPrinter := (Self.Parameter['PrintersLabelPrinter']);
 
-      if RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger<100000 then begin
-        if RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger<100000 then begin
-           Labelstoprint.Style        := lsNew
-        end else begin
-           Labelstoprint.Style        := lsSH;
+      if RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger < 100000
+      then
+      begin
+        if RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger < 100000
+        then
+        begin
+          Labelstoprint.Style := lsNew
+        end
+        else
+        begin
+          Labelstoprint.Style := lsSH;
         end;
-      end else begin
-         Labelstoprint.Style        := lsDp
+      end
+      else
+      begin
+        Labelstoprint.Style := lsDp
       end;
 
-      Labelstoprint.Logo    := SHLogo;
-      Labelstoprint.URL          := WEBURL;
-      Labelstoprint.owner        := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-      if (self.Parameter['PrintersLabelContinuous'] = 'TRUE') then
+      Labelstoprint.Logo := SHLogo;
+      Labelstoprint.URL := WEBURL;
+      Labelstoprint.owner := RemoteDB.netshop_stock.FieldByName
+        ('product_owner_id').AsInteger;
+      if (Self.Parameter['PrintersLabelContinuous'] = 'TRUE') then
         Labelstoprint.Model := LmContinuous;
-      Labelstoprint.Addlabel(RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat, RemoteDB.netshop_stock.FieldByName('product_name').AsString);
-      Labelstoprint.Print(StrToBool(self.Parameter['PrintersLabelDialog']));
+      Labelstoprint.Addlabel(RemoteDB.netshop_stock.FieldByName
+        ('product_price_stock').AsFloat,
+        RemoteDB.netshop_stock.FieldByName('product_name').AsString);
+      Labelstoprint.Print(StrToBool(Self.Parameter['PrintersLabelDialog']));
     finally
       Labelstoprint.Free;
     end;
@@ -5659,7 +6579,8 @@ end;
 
 procedure TMainForm.Copiermodle1Click(Sender: TObject);
 begin
-  ClipBoard.AsText := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
+  ClipBoard.AsText := RemoteDB.netshop_stock.FieldByName
+    ('product_model').AsString;
 end;
 ///
 ///
@@ -5671,25 +6592,33 @@ procedure TMainForm.BitBtn_InventoryClearClick(Sender: TObject);
 var
   i: Integer;
 begin
-  if messagedlg('Etes vous sur de vouloir effacer toutes les données inventaire', mtconfirmation, [mbok, mbCancel], 0) = mrOK then
+  if messagedlg
+    ('Etes vous sur de vouloir effacer toutes les données inventaire',
+    mtconfirmation, [mbok, mbCancel], 0) = mrOK then
   begin
 
     RemoteDB.Inventory.First;
     RemoteDB.InventoryErrors.First;
-    i                    := 0;
-    ProgressBar.Visible  := True;
-    ProgressBar.Position := (i / (RemoteDB.Inventory.RecordCount + RemoteDB.InventoryErrors.RecordCount) * 100);
+    i := 0;
+    ProgressBar.Visible := True;
+    ProgressBar.Position :=
+      (i / (RemoteDB.Inventory.RecordCount +
+      RemoteDB.InventoryErrors.RecordCount) * 100);
     while not(RemoteDB.Inventory.Eof and RemoteDB.Inventory.Bof) do
     begin
-      i                    := i + 1;
-      ProgressBar.Position := (i / (RemoteDB.Inventory.RecordCount + RemoteDB.InventoryErrors.RecordCount) * 100);
+      i := i + 1;
+      ProgressBar.Position :=
+        (i / (RemoteDB.Inventory.RecordCount +
+        RemoteDB.InventoryErrors.RecordCount) * 100);
       Application.ProcessMessages;
       RemoteDB.Inventory.delete;
     end;
     while not(RemoteDB.InventoryErrors.Eof and RemoteDB.InventoryErrors.Bof) do
     begin
-      i                    := i + 1;
-      ProgressBar.Position := (i / (RemoteDB.Inventory.RecordCount + RemoteDB.InventoryErrors.RecordCount) * 100);
+      i := i + 1;
+      ProgressBar.Position :=
+        (i / (RemoteDB.Inventory.RecordCount +
+        RemoteDB.InventoryErrors.RecordCount) * 100);
       Application.ProcessMessages;
       RemoteDB.InventoryErrors.delete;
     end;
@@ -5707,15 +6636,17 @@ begin
   RemoteDB.InventoryErrors.DisableControls;
   RemoteDB.Products.DisableControls;
 
-  RemoteDB.netshop_stock.Filter    := '( Product_supplier_id < 100000 ) and ( Product_Owner_Id = ' + inttostr(ConnectedShop) + ' )';
-  RemoteDB.netshop_stock.Filtered  := True;
+  RemoteDB.netshop_stock.Filter :=
+    '( Product_supplier_id < 100000 ) and ( Product_Owner_Id = ' +
+    inttostr(ConnectedShop) + ' )';
+  RemoteDB.netshop_stock.Filtered := True;
   RemoteDB.netshop_stock.IndexName := 'StockIXModelDate';
 
   // Self.Enabled:=False;
   RemoteDB.netshop_stock.First;
   RemoteDB.Products.First;
-  ProgressBar.Visible  := True;
-  i                    := 0;
+  ProgressBar.Visible := True;
+  i := 0;
   ProgressBar.Position := (i / (RemoteDB.Products.RecordCount) * 100);
   Application.ProcessMessages;
 
@@ -5723,165 +6654,295 @@ begin
     try
       repeat
         /// Si le produit est repris dans l'inventaire
-        if RemoteDB.Inventory.Locate('Product_model', RemoteDB.Products.FieldByName('Products_model').AsString, [locaseinsensitive]) then
+        if RemoteDB.Inventory.Locate('Product_model',
+          RemoteDB.Products.FieldByName('Products_model').AsString,
+          [locaseinsensitive]) then
         begin
           StockQuantityCount := 0;
           /// / Si le produit est déjà repris qq part dans le stock
-          if RemoteDB.netshop_stock.Locate('product_model', RemoteDB.Inventory.FieldByName('product_model').AsString, [locaseinsensitive]) then
+          if RemoteDB.netshop_stock.Locate('product_model',
+            RemoteDB.Inventory.FieldByName('product_model').AsString,
+            [locaseinsensitive]) then
           begin
 
             // Comptage de la quantité totale reprise en stock
             repeat
-              StockQuantityCount := StockQuantityCount + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
+              StockQuantityCount := StockQuantityCount +
+                RemoteDB.netshop_stock.FieldByName('product_quantity')
+                .AsInteger;
               RemoteDB.netshop_stock.Next;
-            until (RemoteDB.netshop_stock.FieldByName('product_model').AsString <> RemoteDB.Inventory.FieldByName('product_model').AsString) or
+            until (RemoteDB.netshop_stock.FieldByName('product_model').AsString
+              <> RemoteDB.Inventory.FieldByName('product_model').AsString) or
               (RemoteDB.netshop_stock.Eof);
-            StockDifference := StockQuantityCount - RemoteDB.Inventory.FieldByName('product_quantity').AsInteger;
+            StockDifference := StockQuantityCount -
+              RemoteDB.Inventory.FieldByName('product_quantity').AsInteger;
 
             // Ajout d'éléments ds le Stock
-            if StockQuantityCount < RemoteDB.Inventory.FieldByName('product_quantity').AsInteger then
+            if StockQuantityCount < RemoteDB.Inventory.FieldByName
+              ('product_quantity').AsInteger then
             begin
               if not RemoteDB.netshop_stock.Eof then
                 RemoteDB.netshop_stock.Prior;
               // incrémentation du dernier entré en stock chronoligiquement classé
               RemoteDB.netshop_stock.Edit;
-              RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger := RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger +
-                RemoteDB.Inventory.FieldByName('product_quantity').AsInteger - StockQuantityCount;
+              RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger
+                := RemoteDB.netshop_stock.FieldByName('product_quantity')
+                .AsInteger + RemoteDB.Inventory.FieldByName('product_quantity')
+                .AsInteger - StockQuantityCount;
               RemoteDB.netshop_stock.Post;
               // Insertions ds la table d'erreur de stock
               RemoteDB.InventoryErrors.Append;
-              RemoteDB.InventoryErrors.FieldByName('product_model').AsString := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-              RemoteDB.InventoryErrors.FieldByName('product_owner_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-              RemoteDB.InventoryErrors.FieldByName('product_price_stock').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-              RemoteDB.InventoryErrors.FieldByName('product_location').AsInteger := RemoteDB.netshop_stock.FieldByName('product_location').AsInteger;
-              RemoteDB.InventoryErrors.FieldByName('product_quantity').AsInteger := RemoteDB.Inventory.FieldByName('product_quantity').AsInteger -
-                StockQuantityCount;
-              RemoteDB.InventoryErrors.FieldByName('product_supplier_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-              RemoteDB.InventoryErrors.FieldByName('product_date_in').Value := RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
-              RemoteDB.InventoryErrors.FieldByName('product_price_gross').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-              RemoteDB.InventoryErrors.FieldByName('product_name').AsString := RemoteDB.netshop_stock.FieldByName('product_name').AsString;
+              RemoteDB.InventoryErrors.FieldByName('product_model').AsString :=
+                RemoteDB.netshop_stock.FieldByName('product_model').AsString;
+              RemoteDB.InventoryErrors.FieldByName('product_owner_id').AsInteger
+                := RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                .AsInteger;
+              RemoteDB.InventoryErrors.FieldByName('product_price_stock')
+                .AsFloat := RemoteDB.netshop_stock.FieldByName
+                ('product_price_stock').AsFloat;
+              RemoteDB.InventoryErrors.FieldByName('product_location').AsInteger
+                := RemoteDB.netshop_stock.FieldByName('product_location')
+                .AsInteger;
+              RemoteDB.InventoryErrors.FieldByName('product_quantity').AsInteger
+                := RemoteDB.Inventory.FieldByName('product_quantity').AsInteger
+                - StockQuantityCount;
+              RemoteDB.InventoryErrors.FieldByName('product_supplier_id')
+                .AsInteger := RemoteDB.netshop_stock.FieldByName
+                ('product_supplier_id').AsInteger;
+              RemoteDB.InventoryErrors.FieldByName('product_date_in').Value :=
+                RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
+              RemoteDB.InventoryErrors.FieldByName('product_price_gross')
+                .AsFloat := RemoteDB.netshop_stock.FieldByName
+                ('product_price_gross').AsFloat;
+              RemoteDB.InventoryErrors.FieldByName('product_name').AsString :=
+                RemoteDB.netshop_stock.FieldByName('product_name').AsString;
               RemoteDB.InventoryErrors.Post;
             end;
 
             // Retrait d'éléments ds le stock
-            if StockQuantityCount > RemoteDB.Inventory.FieldByName('product_quantity').AsInteger then
+            if StockQuantityCount > RemoteDB.Inventory.FieldByName
+              ('product_quantity').AsInteger then
             begin
               repeat // until Stock Difference=0
                 RemoteDB.netshop_stock.First;
-                RemoteDB.netshop_stock.Locate('Product_model', RemoteDB.Inventoryproduct_model.Value, [locaseinsensitive]);
+                RemoteDB.netshop_stock.Locate('Product_model',
+                  RemoteDB.Inventoryproduct_model.Value, [locaseinsensitive]);
                 // Trouve la plus ancienne entrée en stock
-                if (StockDifference <> 0) and (RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger = StockDifference) then
+                if (StockDifference <> 0) and
+                  (RemoteDB.netshop_stock.FieldByName('product_quantity')
+                  .AsInteger = StockDifference) then
                 begin
                   // Insertions ds la table d'erreur de stock
                   RemoteDB.InventoryErrors.Append;
-                  RemoteDB.InventoryErrorsproduct_model.Value := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-                  RemoteDB.InventoryErrorsproduct_owner_id.Value := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_price_stock.Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-                  RemoteDB.InventoryErrorsproduct_location.Value := RemoteDB.netshop_stock.FieldByName('product_location').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_quantity.Value := -RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_supplier_id.Value := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_date_in.Value := RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
-                  RemoteDB.InventoryErrorsproduct_price_gross.Value := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-                  RemoteDB.InventoryErrorsproduct_name.Value := RemoteDB.netshop_stock.FieldByName('product_name').Value;
+                  RemoteDB.InventoryErrorsproduct_model.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_model')
+                    .AsString;
+                  RemoteDB.InventoryErrorsproduct_owner_id.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_price_stock.Value :=
+                    RemoteDB.netshop_stock.FieldByName
+                    ('product_price_stock').AsFloat;
+                  RemoteDB.InventoryErrorsproduct_location.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_location')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_quantity.Value :=
+                    -RemoteDB.netshop_stock.FieldByName('product_quantity')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_supplier_id.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_date_in.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
+                  RemoteDB.InventoryErrorsproduct_price_gross.Value :=
+                    RemoteDB.netshop_stock.FieldByName
+                    ('product_price_gross').AsFloat;
+                  RemoteDB.InventoryErrorsproduct_name.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_name').Value;
                   RemoteDB.InventoryErrors.Post;
                   RemoteDB.netshop_stock.delete;
                   StockDifference := 0;
                 end;
-                if (StockDifference <> 0) and (RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger > StockDifference) then
+                if (StockDifference <> 0) and
+                  (RemoteDB.netshop_stock.FieldByName('product_quantity')
+                  .AsInteger > StockDifference) then
                 begin
                   // Insertions ds la table d'erreur de stock
                   RemoteDB.InventoryErrors.Append;
-                  RemoteDB.InventoryErrorsproduct_model.Value := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-                  RemoteDB.InventoryErrorsproduct_owner_id.Value := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_price_stock.Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-                  RemoteDB.InventoryErrorsproduct_location.Value := RemoteDB.netshop_stock.FieldByName('product_location').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_quantity.Value := -StockDifference;
-                  RemoteDB.InventoryErrorsproduct_supplier_id.Value := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_date_in.Value := RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
-                  RemoteDB.InventoryErrorsproduct_price_gross.Value := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-                  RemoteDB.InventoryErrorsproduct_name.Value := RemoteDB.netshop_stock.FieldByName('product_name').Value;
+                  RemoteDB.InventoryErrorsproduct_model.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_model')
+                    .AsString;
+                  RemoteDB.InventoryErrorsproduct_owner_id.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_price_stock.Value :=
+                    RemoteDB.netshop_stock.FieldByName
+                    ('product_price_stock').AsFloat;
+                  RemoteDB.InventoryErrorsproduct_location.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_location')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_quantity.Value :=
+                    -StockDifference;
+                  RemoteDB.InventoryErrorsproduct_supplier_id.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_date_in.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
+                  RemoteDB.InventoryErrorsproduct_price_gross.Value :=
+                    RemoteDB.netshop_stock.FieldByName
+                    ('product_price_gross').AsFloat;
+                  RemoteDB.InventoryErrorsproduct_name.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_name').Value;
                   RemoteDB.InventoryErrors.Post;
                   RemoteDB.netshop_stock.Edit;
-                  RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger := RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger -
-                    StockDifference;
+                  RemoteDB.netshop_stock.FieldByName('product_quantity')
+                    .AsInteger := RemoteDB.netshop_stock.FieldByName
+                    ('product_quantity').AsInteger - StockDifference;
                   RemoteDB.netshop_stock.Post;
                   StockDifference := 0;
                 end;
-                if (StockDifference <> 0) and (RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger < StockDifference) then
+                if (StockDifference <> 0) and
+                  (RemoteDB.netshop_stock.FieldByName('product_quantity')
+                  .AsInteger < StockDifference) then
                 begin
                   // Insertions ds la table d'erreur de stock
                   RemoteDB.InventoryErrors.Append;
-                  RemoteDB.InventoryErrorsproduct_model.Value := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-                  RemoteDB.InventoryErrorsproduct_owner_id.Value := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_price_stock.Value := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-                  RemoteDB.InventoryErrorsproduct_location.Value := RemoteDB.netshop_stock.FieldByName('product_location').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_quantity.Value := -RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_supplier_id.Value := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-                  RemoteDB.InventoryErrorsproduct_date_in.Value := RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
-                  RemoteDB.InventoryErrorsproduct_price_gross.Value := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-                  RemoteDB.InventoryErrorsproduct_name.Value := RemoteDB.netshop_stock.FieldByName('product_name').Value;
+                  RemoteDB.InventoryErrorsproduct_model.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_model')
+                    .AsString;
+                  RemoteDB.InventoryErrorsproduct_owner_id.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_price_stock.Value :=
+                    RemoteDB.netshop_stock.FieldByName
+                    ('product_price_stock').AsFloat;
+                  RemoteDB.InventoryErrorsproduct_location.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_location')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_quantity.Value :=
+                    -RemoteDB.netshop_stock.FieldByName('product_quantity')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_supplier_id.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                    .AsInteger;
+                  RemoteDB.InventoryErrorsproduct_date_in.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
+                  RemoteDB.InventoryErrorsproduct_price_gross.Value :=
+                    RemoteDB.netshop_stock.FieldByName
+                    ('product_price_gross').AsFloat;
+                  RemoteDB.InventoryErrorsproduct_name.Value :=
+                    RemoteDB.netshop_stock.FieldByName('product_name').Value;
                   RemoteDB.InventoryErrors.Post;
-                  StockDifference := StockDifference - RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
+                  StockDifference := StockDifference -
+                    RemoteDB.netshop_stock.FieldByName('product_quantity')
+                    .AsInteger;
                   RemoteDB.netshop_stock.delete;
                 end;
               until StockDifference = 0 end;
               // Endif Quantite en stock trop importante
 
-            end else begin // endif produit localisé en stock donc créér une nouvelle entrée
+            end
+            else
+            begin // endif produit localisé en stock donc créér une nouvelle entrée
               // Création d'éléments ds le stock
               RemoteDB.netshop_stock.Append;
-              RemoteDB.netshop_stock.FieldByName('product_model').AsString := RemoteDB.Inventoryproduct_model.Value;
-              RemoteDB.netshop_stock.FieldByName('product_name').Value := RemoteDB.Inventoryproduct_name.Value;
-              RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger := (ConnectedShop);
-              RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger := RemoteDB.Inventoryproduct_quantity.Value;
-              RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger := StrtoInt(DefaultSupplierId);
-              RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat := RemoteDB.Inventoryproduct_price_gross.AsFloat;
-              RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat := RemoteDB.Inventoryproduct_price_stock.AsFloat;
+              RemoteDB.netshop_stock.FieldByName('product_model').AsString :=
+                RemoteDB.Inventoryproduct_model.Value;
+              RemoteDB.netshop_stock.FieldByName('product_name').Value :=
+                RemoteDB.Inventoryproduct_name.Value;
+              RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger
+                := (ConnectedShop);
+              RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger
+                := RemoteDB.Inventoryproduct_quantity.Value;
+              RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                .AsInteger := StrtoInt(DefaultSupplierId);
+              RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat
+                := RemoteDB.Inventoryproduct_price_gross.AsFloat;
+              RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat
+                := RemoteDB.Inventoryproduct_price_stock.AsFloat;
               RemoteDB.netshop_stock.Post;
 
               // Insertions ds la table d'erreur de stock
               RemoteDB.InventoryErrors.Append;
-              RemoteDB.InventoryErrorsproduct_model.Value := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-              RemoteDB.InventoryErrorsproduct_owner_id.Value := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-              RemoteDB.InventoryErrorsproduct_price_stock.AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-              RemoteDB.InventoryErrorsproduct_location.Value := RemoteDB.netshop_stock.FieldByName('product_location').AsInteger;
-              RemoteDB.InventoryErrorsproduct_quantity.Value := RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-              RemoteDB.InventoryErrorsproduct_supplier_id.Value := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-              RemoteDB.InventoryErrorsproduct_date_in.Value := RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
-              RemoteDB.InventoryErrorsproduct_price_gross.AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-              RemoteDB.InventoryErrorsproduct_name.Value := RemoteDB.netshop_stock.FieldByName('product_name').Value;
+              RemoteDB.InventoryErrorsproduct_model.Value :=
+                RemoteDB.netshop_stock.FieldByName('product_model').AsString;
+              RemoteDB.InventoryErrorsproduct_owner_id.Value :=
+                RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                .AsInteger;
+              RemoteDB.InventoryErrorsproduct_price_stock.AsFloat :=
+                RemoteDB.netshop_stock.FieldByName
+                ('product_price_stock').AsFloat;
+              RemoteDB.InventoryErrorsproduct_location.Value :=
+                RemoteDB.netshop_stock.FieldByName('product_location')
+                .AsInteger;
+              RemoteDB.InventoryErrorsproduct_quantity.Value :=
+                RemoteDB.netshop_stock.FieldByName('product_quantity')
+                .AsInteger;
+              RemoteDB.InventoryErrorsproduct_supplier_id.Value :=
+                RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                .AsInteger;
+              RemoteDB.InventoryErrorsproduct_date_in.Value :=
+                RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
+              RemoteDB.InventoryErrorsproduct_price_gross.AsFloat :=
+                RemoteDB.netshop_stock.FieldByName
+                ('product_price_gross').AsFloat;
+              RemoteDB.InventoryErrorsproduct_name.Value :=
+                RemoteDB.netshop_stock.FieldByName('product_name').Value;
               RemoteDB.InventoryErrors.Post;
             end;
-          end else begin // Fin de si repris en inventaire
+          end
+          else
+          begin // Fin de si repris en inventaire
             // Produit non repris dans l'inventaire donc suprimer du stock si existant
-            if RemoteDB.netshop_stock.Locate('Product_model', RemoteDB.Productsproducts_model.Value, [locaseinsensitive]) then
+            if RemoteDB.netshop_stock.Locate('Product_model',
+              RemoteDB.Productsproducts_model.Value, [locaseinsensitive]) then
             begin
               // RemoteDB.netshop_stock.FieldByName('.Filtered:=False;
-              RemoteDB.netshop_stock.Filter := '( Product_supplier_id < 100000 ) and (Product_Owner_Id = ' + inttostr(ConnectedShop) +
-                ') and ( Product_Model = ' + QuotedStr(RemoteDB.Products.FieldByName('products_model').Value) + ')';
+              RemoteDB.netshop_stock.Filter :=
+                '( Product_supplier_id < 100000 ) and (Product_Owner_Id = ' +
+                inttostr(ConnectedShop) + ') and ( Product_Model = ' +
+                QuotedStr(RemoteDB.Products.FieldByName('products_model')
+                .Value) + ')';
               RemoteDB.netshop_stock.First;
               while not RemoteDB.netshop_stock.Eof do
               begin
                 // Insertions ds la table d'erreur de stock
                 RemoteDB.InventoryErrors.Append;
-                RemoteDB.InventoryErrorsproduct_model.Value := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-                RemoteDB.InventoryErrorsproduct_owner_id.Value := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-                RemoteDB.InventoryErrorsproduct_price_stock.AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-                RemoteDB.InventoryErrorsproduct_location.Value := RemoteDB.netshop_stock.FieldByName('product_location').AsInteger;
-                RemoteDB.InventoryErrorsproduct_quantity.Value := -RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-                RemoteDB.InventoryErrorsproduct_supplier_id.Value := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-                RemoteDB.InventoryErrorsproduct_date_in.Value := RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
-                RemoteDB.InventoryErrorsproduct_price_gross.AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-                RemoteDB.InventoryErrorsproduct_name.Value := RemoteDB.netshop_stock.FieldByName('product_name').Value;
+                RemoteDB.InventoryErrorsproduct_model.Value :=
+                  RemoteDB.netshop_stock.FieldByName('product_model').AsString;
+                RemoteDB.InventoryErrorsproduct_owner_id.Value :=
+                  RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                  .AsInteger;
+                RemoteDB.InventoryErrorsproduct_price_stock.AsFloat :=
+                  RemoteDB.netshop_stock.FieldByName
+                  ('product_price_stock').AsFloat;
+                RemoteDB.InventoryErrorsproduct_location.Value :=
+                  RemoteDB.netshop_stock.FieldByName('product_location')
+                  .AsInteger;
+                RemoteDB.InventoryErrorsproduct_quantity.Value :=
+                  -RemoteDB.netshop_stock.FieldByName('product_quantity')
+                  .AsInteger;
+                RemoteDB.InventoryErrorsproduct_supplier_id.Value :=
+                  RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                  .AsInteger;
+                RemoteDB.InventoryErrorsproduct_date_in.Value :=
+                  RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
+                RemoteDB.InventoryErrorsproduct_price_gross.AsFloat :=
+                  RemoteDB.netshop_stock.FieldByName
+                  ('product_price_gross').AsFloat;
+                RemoteDB.InventoryErrorsproduct_name.Value :=
+                  RemoteDB.netshop_stock.FieldByName('product_name').Value;
                 RemoteDB.InventoryErrors.Post;
                 RemoteDB.netshop_stock.delete;
               end;
-              RemoteDB.netshop_stock.Filter := '( Product_supplier_id < 100000 ) and (Product_Owner_Id = ' + inttostr(ConnectedShop) + ')';
+              RemoteDB.netshop_stock.Filter :=
+                '( Product_supplier_id < 100000 ) and (Product_Owner_Id = ' +
+                inttostr(ConnectedShop) + ')';
             end; // endif produit présent en stock test pour évider delete si pas de record
           end;
 
           RemoteDB.Products.Next;
-          i                    := i + 1;
+          i := i + 1;
           ProgressBar.Position := (i / (RemoteDB.Products.RecordCount) * 100);
           Application.ProcessMessages;
           until RemoteDB.Products.Eof;
@@ -5889,7 +6950,7 @@ begin
         finally
           RemoteDB.netshop_stock.EnableControls;
           RemoteDB.netshop_stock.Filtered := False;
-          RemoteDB.netshop_stock.Filter   := '';
+          RemoteDB.netshop_stock.Filter := '';
           RemoteDB.Inventory.EnableControls;
           RemoteDB.InventoryErrors.EnableControls;
           RemoteDB.Products.EnableControls;
@@ -5899,49 +6960,58 @@ begin
         end;
       end;
 
-
-
-procedure TMainForm.btnRefreshESDClick(Sender: TObject);
-var
-  ESDGate: EsdSoap;
-  EsdAuth: ESD.ESDAuth;
-  EsdToken:ESD.ESDToken;
-begin
-     try
-      ESDGate     := GetEsdSoap();
-      if ESDGate.Identify(GlobalsUnit.CLDLogin,GlobalsUnit.CLDPass) then
+      procedure TMainForm.btnRefreshESDClick(Sender: TObject);
+      var
+        ESDGate: EsdSoap;
+        EsdAuth: esd.EsdAuth;
+        EsdToken: esd.EsdToken;
       begin
-        RemoteDB.netshop_items_sold.First;
-        while not RemoteDB.netshop_items_sold.eof  do begin
-          if RemoteDB.netshop_items_sold.FieldByName('items_sold_esd_guid').AsString.Length>=32 then begin
-            EsdToken:=ESDGate.Requesttoken(RemoteDB.netshop_items_sold.FieldByName('items_sold_esd_guid').AsString);
-            if EsdToken.status=1 then begin
-              RemoteDB.netshop_items_sold.FieldByName('items_sold_esd').AsString:=EsdToken.token;
-            end else begin
-             ShowMessage(EsdToken.comment+ ' GUID: ' + RemoteDB.netshop_items_sold.FieldByName('items_sold_esd_guid').AsString);
+        try
+          ESDGate := GetEsdSoap();
+          if ESDGate.Identify(GlobalsUnit.CLDLogin, GlobalsUnit.CLDPass) then
+          begin
+            RemoteDB.netshop_items_sold.First;
+            while not RemoteDB.netshop_items_sold.Eof do
+            begin
+              if RemoteDB.netshop_items_sold.FieldByName('items_sold_esd_guid')
+                .AsString.Length >= 32 then
+              begin
+                EsdToken := ESDGate.Requesttoken
+                  (RemoteDB.netshop_items_sold.FieldByName
+                  ('items_sold_esd_guid').AsString);
+                if EsdToken.status = 1 then
+                begin
+                  RemoteDB.netshop_items_sold.FieldByName('items_sold_esd')
+                    .AsString := EsdToken.token;
+                end
+                else
+                begin
+                  ShowMessage(EsdToken.Comment + ' GUID: ' +
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_esd_guid').AsString);
+                end;
+              end;
+              RemoteDB.netshop_items_sold.Next;
             end;
+          end
+          else
+          begin
+            ShowMessage('Login ESD impossible');
           end;
-        RemoteDB.netshop_items_sold.Next;
+
+        except
+          ShowMessage('Erreur de connection au serveur ESD');
         end;
-      end else begin
-        ShowMessage('Login ESD impossible');
+
       end;
 
-    except
-      ShowMessage('Erreur de connection au serveur ESD');
-    end;
-
-
- end;
-
-
-procedure TMainForm.ChangeOrice1Click(Sender: TObject);
+      procedure TMainForm.ChangeOrice1Click(Sender: TObject);
       var
         aChangePriceForm: TChangePriceForm;
       begin
         try
           RemoteDB.IsUpdating := True;
-          aChangePriceForm    := TChangePriceForm.Create(self);
+          aChangePriceForm := TChangePriceForm.Create(Self);
           try
             if aChangePriceForm.ShowModal = mrOK then
             begin
@@ -5968,20 +7038,20 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
         if PageControlMainForm.ActivePage = TabsheetSales then
         begin
           FileName := 'CaddyVentes.csv';
-          FileExt  := '.csv';
+          FileExt := '.csv';
         end;
 
         if PageControlMainForm.ActivePage = TabSheetStockin then
         begin
           FileName := 'CaddyEntreeStock.csv';
-          FileExt  := '.csv';
+          FileExt := '.csv';
 
         end;
 
         if PageControlMainForm.ActivePage = TabSheetTransfer then
         begin
           FileName := 'TransferTable.csv';
-          FileExt  := '.csv';
+          FileExt := '.csv';
         end;
 
       end;
@@ -6004,22 +7074,22 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
         RemoteDB.FreeAlertsTo;
 
         RemoteDB.Products.IndexName := 'ProductsIXModel';
-        RemoteDB.Products.Filter    := '';
-        RemoteDB.Products.Filtered  := False;
+        RemoteDB.Products.Filter := '';
+        RemoteDB.Products.Filtered := False;
 
         // SearchString.Enabled:=False;
         searchstring.Text := '';
         // SButtonSearch.Enabled:=False;
 
         DBNavigatorMain.DataSource := nil;
-        DBNavigatorFirst1.Enabled  := True;
-        DBNavigatorPrev1.Enabled   := True;
-        DBNavigatorNext1.Enabled   := True;
-        DBNavigatorLast1.Enabled   := True;
+        DBNavigatorFirst1.Enabled := True;
+        DBNavigatorPrev1.Enabled := True;
+        DBNavigatorNext1.Enabled := True;
+        DBNavigatorLast1.Enabled := True;
         DBNavigatorInsert1.Enabled := True;
         DBNavigatorDelete1.Enabled := True;
-        DBNavigatorEdit1.Enabled   := True;
-        DBNavigatorPost1.Enabled   := True;
+        DBNavigatorEdit1.Enabled := True;
+        DBNavigatorPost1.Enabled := True;
         DBNavigatorCancel1.Enabled := True;
 
         PageControlMainForm.ActivePage := TabSheetLog;
@@ -6038,22 +7108,22 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := RemoteDB.InventorySRC;
-          DBNavigatorFirst1.Enabled  := True;
-          DBNavigatorPrev1.Enabled   := True;
-          DBNavigatorNext1.Enabled   := True;
-          DBNavigatorLast1.Enabled   := True;
+          DBNavigatorFirst1.Enabled := True;
+          DBNavigatorPrev1.Enabled := True;
+          DBNavigatorNext1.Enabled := True;
+          DBNavigatorLast1.Enabled := True;
           DBNavigatorInsert1.Enabled := True;
           DBNavigatorDelete1.Enabled := True;
-          DBNavigatorEdit1.Enabled   := True;
-          DBNavigatorPost1.Enabled   := True;
+          DBNavigatorEdit1.Enabled := True;
+          DBNavigatorPost1.Enabled := True;
           DBNavigatorCancel1.Enabled := True;
 
           RemoteDB.Inventory.First;
@@ -6073,25 +7143,26 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           EditRentCustomerId.Text := inttostr(ConnectedShop);
-          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
+          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop),
+            [locaseinsensitive]);
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := nil;
-          DBNavigatorFirst1.Enabled  := False;
-          DBNavigatorPrev1.Enabled   := False;
-          DBNavigatorNext1.Enabled   := False;
-          DBNavigatorLast1.Enabled   := False;
+          DBNavigatorFirst1.Enabled := False;
+          DBNavigatorPrev1.Enabled := False;
+          DBNavigatorNext1.Enabled := False;
+          DBNavigatorLast1.Enabled := False;
           DBNavigatorInsert1.Enabled := False;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := False;
-          DBNavigatorPost1.Enabled   := False;
+          DBNavigatorEdit1.Enabled := False;
+          DBNavigatorPost1.Enabled := False;
           DBNavigatorCancel1.Enabled := False;
 
           PageControlMainForm.ActivePage := TabSheetRent;
@@ -6110,25 +7181,25 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
           RemoteDB.FreeInvoicesToCustomers;
           RemoteDB.FreeAlertsTo;
 
-          RemoteDB.Products.Filter   := '';
+          RemoteDB.Products.Filter := '';
           RemoteDB.Products.Filtered := False;
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
-          DBNavigatorMain.DataSource         := RemoteDB.ExpensesSRC;
-          RemoteDB.netshop_expenses.Filter   := '';
+          DBNavigatorMain.DataSource := RemoteDB.ExpensesSRC;
+          RemoteDB.netshop_expenses.Filter := '';
           RemoteDB.netshop_expenses.Filtered := False;
-          DBNavigatorFirst1.Enabled          := True;
-          DBNavigatorPrev1.Enabled           := True;
-          DBNavigatorNext1.Enabled           := True;
-          DBNavigatorLast1.Enabled           := True;
-          DBNavigatorInsert1.Enabled         := True;
-          DBNavigatorDelete1.Enabled         := True;
-          DBNavigatorEdit1.Enabled           := True;
-          DBNavigatorPost1.Enabled           := True;
-          DBNavigatorCancel1.Enabled         := True;
+          DBNavigatorFirst1.Enabled := True;
+          DBNavigatorPrev1.Enabled := True;
+          DBNavigatorNext1.Enabled := True;
+          DBNavigatorLast1.Enabled := True;
+          DBNavigatorInsert1.Enabled := True;
+          DBNavigatorDelete1.Enabled := True;
+          DBNavigatorEdit1.Enabled := True;
+          DBNavigatorPost1.Enabled := True;
+          DBNavigatorCancel1.Enabled := True;
 
           PageControlMainForm.ActivePage := TabSheetExpenses;
         end;
@@ -6148,22 +7219,22 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := nil;
-          DBNavigatorFirst1.Enabled  := False;
-          DBNavigatorPrev1.Enabled   := False;
-          DBNavigatorNext1.Enabled   := False;
-          DBNavigatorLast1.Enabled   := False;
+          DBNavigatorFirst1.Enabled := False;
+          DBNavigatorPrev1.Enabled := False;
+          DBNavigatorNext1.Enabled := False;
+          DBNavigatorLast1.Enabled := False;
           DBNavigatorInsert1.Enabled := False;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := False;
-          DBNavigatorPost1.Enabled   := False;
+          DBNavigatorEdit1.Enabled := False;
+          DBNavigatorPost1.Enabled := False;
           DBNavigatorCancel1.Enabled := False;
 
           PageControlMainForm.ActivePage := TabSheetConfiguration;
@@ -6184,22 +7255,22 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := nil;
-          DBNavigatorFirst1.Enabled  := False;
-          DBNavigatorPrev1.Enabled   := False;
-          DBNavigatorNext1.Enabled   := False;
-          DBNavigatorLast1.Enabled   := False;
+          DBNavigatorFirst1.Enabled := False;
+          DBNavigatorPrev1.Enabled := False;
+          DBNavigatorNext1.Enabled := False;
+          DBNavigatorLast1.Enabled := False;
           DBNavigatorInsert1.Enabled := False;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := False;
-          DBNavigatorPost1.Enabled   := False;
+          DBNavigatorEdit1.Enabled := False;
+          DBNavigatorPost1.Enabled := False;
           DBNavigatorCancel1.Enabled := False;
 
           PageControlMainForm.ActivePage := TabSheetMailing;
@@ -6220,22 +7291,22 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := nil;
-          DBNavigatorFirst1.Enabled  := False;
-          DBNavigatorPrev1.Enabled   := False;
-          DBNavigatorNext1.Enabled   := False;
-          DBNavigatorLast1.Enabled   := False;
+          DBNavigatorFirst1.Enabled := False;
+          DBNavigatorPrev1.Enabled := False;
+          DBNavigatorNext1.Enabled := False;
+          DBNavigatorLast1.Enabled := False;
           DBNavigatorInsert1.Enabled := False;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := False;
-          DBNavigatorPost1.Enabled   := False;
+          DBNavigatorEdit1.Enabled := False;
+          DBNavigatorPost1.Enabled := False;
           DBNavigatorCancel1.Enabled := False;
 
           PageControlMainForm.ActivePage := TabSheetAdmin;
@@ -6243,8 +7314,7 @@ procedure TMainForm.ChangeOrice1Click(Sender: TObject);
         end;
       end;
 
-
-procedure TMainForm.VenteExecute(Sender: TObject);
+      procedure TMainForm.VenteExecute(Sender: TObject);
       begin
         begin // Sales
           RemoteDB.FreeStockto;
@@ -6255,25 +7325,26 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           EditSalesCustomerNbr.Text := inttostr(ConnectedShop);
-          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
+          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop),
+            [locaseinsensitive]);
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := nil;
-          DBNavigatorFirst1.Enabled  := False;
-          DBNavigatorPrev1.Enabled   := False;
-          DBNavigatorNext1.Enabled   := False;
-          DBNavigatorLast1.Enabled   := False;
+          DBNavigatorFirst1.Enabled := False;
+          DBNavigatorPrev1.Enabled := False;
+          DBNavigatorNext1.Enabled := False;
+          DBNavigatorLast1.Enabled := False;
           DBNavigatorInsert1.Enabled := False;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := False;
-          DBNavigatorPost1.Enabled   := False;
+          DBNavigatorEdit1.Enabled := False;
+          DBNavigatorPost1.Enabled := False;
           DBNavigatorCancel1.Enabled := False;
 
           PageControlMainForm.ActivePage := TabsheetSales;
@@ -6298,22 +7369,22 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           // SearchString.Enabled:=False;
           searchstring.Text := '';
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := nil;
-          DBNavigatorFirst1.Enabled  := False;
-          DBNavigatorPrev1.Enabled   := False;
-          DBNavigatorNext1.Enabled   := False;
-          DBNavigatorLast1.Enabled   := False;
+          DBNavigatorFirst1.Enabled := False;
+          DBNavigatorPrev1.Enabled := False;
+          DBNavigatorNext1.Enabled := False;
+          DBNavigatorLast1.Enabled := False;
           DBNavigatorInsert1.Enabled := False;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := False;
-          DBNavigatorPost1.Enabled   := False;
+          DBNavigatorEdit1.Enabled := False;
+          DBNavigatorPost1.Enabled := False;
           DBNavigatorCancel1.Enabled := False;
 
           PageControlMainForm.ActivePage := TabSheetTransfer;
@@ -6328,21 +7399,22 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           RemoteDB.SetAddress_bookToCustomers;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
           DBNavigatorMain.DataSource := RemoteDB.CustomersSRC;
-          DBNavigatorFirst1.Enabled  := True;
-          DBNavigatorPrev1.Enabled   := True;
-          DBNavigatorNext1.Enabled   := True;
-          DBNavigatorLast1.Enabled   := True;
+          DBNavigatorFirst1.Enabled := True;
+          DBNavigatorPrev1.Enabled := True;
+          DBNavigatorNext1.Enabled := True;
+          DBNavigatorLast1.Enabled := True;
           DBNavigatorInsert1.Enabled := True;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := True;
-          DBNavigatorPost1.Enabled   := True;
+          DBNavigatorEdit1.Enabled := True;
+          DBNavigatorPost1.Enabled := True;
           DBNavigatorCancel1.Enabled := True;
 
-          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
+          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop),
+            [locaseinsensitive]);
 
 
           // SearchString.Enabled:=True;
@@ -6351,7 +7423,7 @@ procedure TMainForm.VenteExecute(Sender: TObject);
 
           PageControlMainForm.ActivePage := TabSheetCustomers;
           Application.ProcessMessages;
-          PageControlCustomers.ActivePage        := TabSheetCustomersSales;
+          PageControlCustomers.ActivePage := TabSheetCustomersSales;
           PageControlCustomersDetails.ActivePage := TabSheetDetails;
           PageControlCustomers.OnChange(nil);
 
@@ -6374,24 +7446,25 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         RemoteDB.FreeAlertsTo;
 
         RemoteDB.Products.IndexName := 'ProductsIXModel';
-        RemoteDB.Products.Filter    := '';
-        RemoteDB.Products.Filtered  := False;
+        RemoteDB.Products.Filter := '';
+        RemoteDB.Products.Filtered := False;
 
         // SearchString.Enabled:=True;
         SButtonSearch.Enabled := True;
 
         DBNavigatorMain.DataSource := RemoteDB.ProductsSRC;
-        DBNavigatorFirst1.Enabled  := True;
-        DBNavigatorPrev1.Enabled   := True;
-        DBNavigatorNext1.Enabled   := True;
-        DBNavigatorLast1.Enabled   := True;
+        DBNavigatorFirst1.Enabled := True;
+        DBNavigatorPrev1.Enabled := True;
+        DBNavigatorNext1.Enabled := True;
+        DBNavigatorLast1.Enabled := True;
         DBNavigatorInsert1.Enabled := False;
         DBNavigatorDelete1.Enabled := False;
-        DBNavigatorEdit1.Enabled   := True;
-        DBNavigatorPost1.Enabled   := True;
+        DBNavigatorEdit1.Enabled := True;
+        DBNavigatorPost1.Enabled := True;
         DBNavigatorCancel1.Enabled := True;
 
-        RemoteDB.Products.FindKey([RemoteDB.Products.FieldByName('products_model').AsString]);
+        RemoteDB.Products.FindKey
+          ([RemoteDB.Products.FieldByName('products_model').AsString]);
 
         PageControlMainForm.ActivePage := TabSheetProducts;
       end;
@@ -6409,10 +7482,11 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           RemoteDB.FreeAlertsTo;
 
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filter    := '';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filter := '';
+          RemoteDB.Products.Filtered := False;
 
-          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
+          RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop),
+            [locaseinsensitive]);
           EditStockinCustomerNbr.Text := inttostr(ConnectedShop);
 
           // SearchString.Enabled:=False;
@@ -6420,14 +7494,14 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           // SButtonSearch.Enabled:=False;
 
           DBNavigatorMain.DataSource := nil;
-          DBNavigatorFirst1.Enabled  := False;
-          DBNavigatorPrev1.Enabled   := False;
-          DBNavigatorNext1.Enabled   := False;
-          DBNavigatorLast1.Enabled   := False;
+          DBNavigatorFirst1.Enabled := False;
+          DBNavigatorPrev1.Enabled := False;
+          DBNavigatorNext1.Enabled := False;
+          DBNavigatorLast1.Enabled := False;
           DBNavigatorInsert1.Enabled := False;
           DBNavigatorDelete1.Enabled := False;
-          DBNavigatorEdit1.Enabled   := False;
-          DBNavigatorPost1.Enabled   := False;
+          DBNavigatorEdit1.Enabled := False;
+          DBNavigatorPost1.Enabled := False;
           DBNavigatorCancel1.Enabled := False;
 
           PageControlMainForm.ActivePage := TabSheetStockin;
@@ -6439,8 +7513,11 @@ procedure TMainForm.VenteExecute(Sender: TObject);
 
       procedure TMainForm.PageControlCustomersChange(Sender: TObject);
       begin
-        if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000 then
-          dxBarMRUListItemCustomers.AddItem(RemoteDB.CustomersCustomers_nbr.AsString + ' - ' + RemoteDB.Customerscustomers_firstname.AsString + ' ' +
+        if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000
+        then
+          dxBarMRUListItemCustomers.AddItem
+            (RemoteDB.CustomersCustomers_nbr.AsString + ' - ' +
+            RemoteDB.Customerscustomers_firstname.AsString + ' ' +
             RemoteDB.CustomersCustomers_Lastname.AsString, nil);
 
         if PageControlCustomers.ActivePage = TabSheetCustomersDeposit then
@@ -6501,9 +7578,10 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInventory', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
-        ReportModule.RvSystem.DefaultDest    := rdpreview;
+        ReportModule.RvSystem.DefaultDest := rdpreview;
         ReportModule.RvSystem.DoNativeOutput := True;
-        ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          - [ssAllowSetup];
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
       end;
@@ -6513,15 +7591,18 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         try
           while not RemoteDB.Inventory.Eof do
           begin
-            if RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat > RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat /
+            if RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat >
+              RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat /
               (0.90 + (MarginNew / 100)) then
             begin
-              if messagedlg('Le produit ' + RemoteDB.Inventory.FieldByName('product_name').AsString + ' semble sur-évalué', mtwarning, [mbyes, mbno], 0) = mryes
-              then
+              if messagedlg('Le produit ' + RemoteDB.Inventory.FieldByName
+                ('product_name').AsString + ' semble sur-évalué', mtwarning,
+                [mbyes, mbno], 0) = mryes then
               begin
                 RemoteDB.Inventory.Edit;
-                RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat := RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat /
-                  (1 + (MarginNew / 100));
+                RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat :=
+                  RemoteDB.Inventory.FieldByName('product_price_stock').AsFloat
+                  / (1 + (MarginNew / 100));
                 RemoteDB.Inventory.Post;
               end;
             end;
@@ -6536,11 +7617,21 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         if RemoteDB.IsConnected then
         begin
           StatusLine.Panels[0].Text := 'Connecté';
-          TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType := sitGreen;
-          TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[1].IndicatorType := sitOff;
-        end else begin
-          TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType := sitOff;
-          TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[1].IndicatorType := sitRed;
+          TdxStatusBarStateIndicatorPanelStyle
+            (StatusLine.Panels.items[1].PanelStyle).Indicators.items[0]
+            .IndicatorType := sitGreen;
+          TdxStatusBarStateIndicatorPanelStyle
+            (StatusLine.Panels.items[1].PanelStyle).Indicators.items[1]
+            .IndicatorType := sitOff;
+        end
+        else
+        begin
+          TdxStatusBarStateIndicatorPanelStyle
+            (StatusLine.Panels.items[1].PanelStyle).Indicators.items[0]
+            .IndicatorType := sitOff;
+          TdxStatusBarStateIndicatorPanelStyle
+            (StatusLine.Panels.items[1].PanelStyle).Indicators.items[1]
+            .IndicatorType := sitRed;
           StatusLine.Panels[0].Text := 'Non connecté';
         end;
         {
@@ -6567,7 +7658,7 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         end;
         ChDir(ExtractFilePath(ParamStr(0)) + '/export');
 
-        QexportDialog := TQexport4Dialog.Create(self);
+        QexportDialog := TQexport4Dialog.Create(Self);
         try
           QexportDialog.DataSet := RemoteDB.InventoryErrors;
           QexportDialog.Execute;
@@ -6580,16 +7671,18 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       var
         Pindex: Integer;
       begin
-        Pindex := Printer.Printers.IndexOf((self.Parameter['PrintersRapportPrinter']));
+        Pindex := Printer.Printers.IndexOf
+          ((Self.Parameter['PrintersRapportPrinter']));
         RemoteDB.Shops.FindKey([ConnectedShop]);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInventory', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
         ReportModule.RvSystem.DefaultDest := rdPrinter;
         // ReportModule.RvSystem.DoNativeOutput := true;
-        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          + [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
-        ReportModule.RvNDRWriter.PrinterIndex         := Pindex;
+        ReportModule.RvNDRWriter.PrinterIndex := Pindex;
         ReportModule.RvSystem.SystemPreview.FormState := wsMaximized;
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
@@ -6606,7 +7699,7 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         end;
         ChDir(ExtractFilePath(ParamStr(0)) + '/export');
 
-        QexportDialog := TQexport4Dialog.Create(self);
+        QexportDialog := TQexport4Dialog.Create(Self);
         try
           QexportDialog.DataSet := RemoteDB.Inventory;
           QexportDialog.Execute;
@@ -6622,9 +7715,9 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       begin
 
         ChDir(ExtractFilePath(ParamStr(0)));
-        aOpenDialog            := TOpenDialog.Create(self);
+        aOpenDialog := TOpenDialog.Create(Self);
         aOpenDialog.DefaultExt := 'xml';
-        aOpenDialog.FileName   := 'inventory_errors.xml';
+        aOpenDialog.FileName := 'inventory_errors.xml';
         try
           if aOpenDialog.Execute then
           begin
@@ -6639,16 +7732,18 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       var
         Pindex: Integer;
       begin
-        Pindex := Printer.Printers.IndexOf((self.Parameter['PrintersRapportPrinter']));
+        Pindex := Printer.Printers.IndexOf
+          ((Self.Parameter['PrintersRapportPrinter']));
         RemoteDB.Shops.FindKey([ConnectedShop]);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInventoryErros', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
         ReportModule.RvSystem.DefaultDest := rdPrinter;
         // ReportModule.RvSystem.DoNativeOutput := true;
-        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          + [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
-        ReportModule.RvNDRWriter.PrinterIndex         := Pindex;
+        ReportModule.RvNDRWriter.PrinterIndex := Pindex;
         ReportModule.RvSystem.SystemPreview.FormState := wsMaximized;
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
@@ -6664,9 +7759,9 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           CreateDir('export');
         end;
         ChDir(ExtractFilePath(ParamStr(0)) + '/export');
-        aSaveDialog            := TsaveDialog.Create(self);
+        aSaveDialog := TsaveDialog.Create(Self);
         aSaveDialog.DefaultExt := 'xml';
-        aSaveDialog.FileName   := 'inventory_errors.xml';
+        aSaveDialog.FileName := 'inventory_errors.xml';
         try
           if aSaveDialog.Execute then
           begin
@@ -6683,9 +7778,10 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInventoryErrors', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
-        ReportModule.RvSystem.DefaultDest    := rdpreview;
+        ReportModule.RvSystem.DefaultDest := rdpreview;
         ReportModule.RvSystem.DoNativeOutput := True;
-        ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          - [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
@@ -6698,9 +7794,9 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         i: Integer;
       begin
         ChDir(ExtractFilePath(ParamStr(0)));
-        aOpenDialog                        := TOpenDialog.Create(self);
-        aOpenDialog.DefaultExt             := 'cds';
-        aOpenDialog.FileName               := 'inventory.cds';
+        aOpenDialog := TOpenDialog.Create(Self);
+        aOpenDialog.DefaultExt := 'cds';
+        aOpenDialog.FileName := 'inventory.cds';
         RemoteDB.Inventory.IndexFieldNames := 'product_model';
         try
           if aOpenDialog.Execute then
@@ -6710,13 +7806,17 @@ procedure TMainForm.VenteExecute(Sender: TObject);
             table.First;
             while not table.Eof do
             begin
-              if RemoteDB.Inventory.FindKey([table.FieldByName('product_model').AsString]) then
+              if RemoteDB.Inventory.FindKey
+                ([table.FieldByName('product_model').AsString]) then
               begin
                 RemoteDB.Inventory.Edit;
-                RemoteDB.Inventory.FieldByName('product_quantity').AsInteger := RemoteDB.Inventory.FieldByName('product_quantity').AsInteger +
+                RemoteDB.Inventory.FieldByName('product_quantity').AsInteger :=
+                  RemoteDB.Inventory.FieldByName('product_quantity').AsInteger +
                   table.FieldByName('product_quantity').AsInteger;
                 RemoteDB.Inventory.Post;
-              end else begin
+              end
+              else
+              begin
                 RemoteDB.Inventory.Append;
                 for i := 0 to (table.Fieldcount - 1) do
                 begin
@@ -6740,9 +7840,9 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       begin
 
         ChDir(ExtractFilePath(ParamStr(0)));
-        aOpenDialog            := TOpenDialog.Create(self);
+        aOpenDialog := TOpenDialog.Create(Self);
         aOpenDialog.DefaultExt := 'xml';
-        aOpenDialog.FileName   := 'inventory.xml';
+        aOpenDialog.FileName := 'inventory.xml';
         try
           if aOpenDialog.Execute then
           begin
@@ -6763,9 +7863,9 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           CreateDir('export');
         end;
         ChDir(ExtractFilePath(ParamStr(0)) + '/export');
-        aSaveDialog            := TsaveDialog.Create(self);
+        aSaveDialog := TsaveDialog.Create(Self);
         aSaveDialog.DefaultExt := 'xml';
-        aSaveDialog.FileName   := 'inventory.xml';
+        aSaveDialog.FileName := 'inventory.xml';
         try
           if aSaveDialog.Execute then
           begin
@@ -6783,9 +7883,10 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInventory', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
-        ReportModule.RvSystem.DefaultDest    := rdpreview;
+        ReportModule.RvSystem.DefaultDest := rdpreview;
         ReportModule.RvSystem.DoNativeOutput := True;
-        ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          - [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
@@ -6798,51 +7899,57 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         RemoteDB.Customers.Append;
       end;
 
-      procedure TMainForm.ActionCustomerDepositnonrefundedExecute(Sender: TObject);
+      procedure TMainForm.ActionCustomerDepositnonrefundedExecute
+        (Sender: TObject);
       begin
-        RemoteDB.netshop_items_sold.Filter            := 'items_refunded = ' + QuotedStr('0');
-        RemoteDB.netshop_items_sold.Filtered          := True;
+        RemoteDB.netshop_items_sold.Filter := 'items_refunded = ' +
+          QuotedStr('0');
+        RemoteDB.netshop_items_sold.Filtered := True;
         RadioButtonCustomerDepositNonRefunded.Checked := True;
       end;
 
       procedure TMainForm.ActionCustomerDepositRefundedExecute(Sender: TObject);
       begin
-        RemoteDB.netshop_items_sold.Filter         := 'items_refunded = ' + QuotedStr('1');
-        RemoteDB.netshop_items_sold.Filtered       := True;
+        RemoteDB.netshop_items_sold.Filter := 'items_refunded = ' +
+          QuotedStr('1');
+        RemoteDB.netshop_items_sold.Filtered := True;
         RadioButtonCustomerDepositRefunded.Checked := True;
       end;
 
       procedure TMainForm.ActionCustomerDepositAllExecute(Sender: TObject);
       begin
-        RemoteDB.netshop_items_sold.Filter    := '';
-        RemoteDB.netshop_items_sold.Filtered  := False;
+        RemoteDB.netshop_items_sold.Filter := '';
+        RemoteDB.netshop_items_sold.Filtered := False;
         RadioButtonCustomerDepositAll.Checked := True;
       end;
 
       procedure TMainForm.ActionCustomerRepairAllExecute(Sender: TObject);
       begin
-        BitBtnCustomerRepairExecute.Enabled  := True;
-        BitBtnCustomerRepairReturn.Enabled   := True;
-        RemoteDB.netshop_repair.Filter       := '(repair_fixed=' + QuotedStr('false') + ') and (repair_returned=' + QuotedStr('false') + ' )';
-        RemoteDB.netshop_repair.Filtered     := True;
+        BitBtnCustomerRepairExecute.Enabled := True;
+        BitBtnCustomerRepairReturn.Enabled := True;
+        RemoteDB.netshop_repair.Filter := '(repair_fixed=' + QuotedStr('false')
+          + ') and (repair_returned=' + QuotedStr('false') + ' )';
+        RemoteDB.netshop_repair.Filtered := True;
         RadioButtonCustomerRepairAll.Checked := True;
       end;
 
       procedure TMainForm.ActionCustomerRepairProcessedExecute(Sender: TObject);
       begin
-        BitBtnCustomerRepairExecute.Enabled        := False;
-        BitBtnCustomerRepairReturn.Enabled         := True;
-        RemoteDB.netshop_repair.Filter             := '( repair_fixed= ' + QuotedStr('true') + ') and (repair_returned=' + QuotedStr('false') + ' )';
-        RemoteDB.netshop_repair.Filtered           := True;
+        BitBtnCustomerRepairExecute.Enabled := False;
+        BitBtnCustomerRepairReturn.Enabled := True;
+        RemoteDB.netshop_repair.Filter := '( repair_fixed= ' + QuotedStr('true')
+          + ') and (repair_returned=' + QuotedStr('false') + ' )';
+        RemoteDB.netshop_repair.Filtered := True;
         RadioButtonCustomerRepairProcessed.Checked := True;
       end;
 
       procedure TMainForm.ActionCustomerRepairReturnedExecute(Sender: TObject);
       begin
-        BitBtnCustomerRepairReturn.Enabled        := False;
-        BitBtnCustomerRepairExecute.Enabled       := False;
-        RemoteDB.netshop_repair.Filter            := '(repair_returned=' + QuotedStr('true') + ' )';
-        RemoteDB.netshop_repair.Filtered          := True;
+        BitBtnCustomerRepairReturn.Enabled := False;
+        BitBtnCustomerRepairExecute.Enabled := False;
+        RemoteDB.netshop_repair.Filter := '(repair_returned=' +
+          QuotedStr('true') + ' )';
+        RemoteDB.netshop_repair.Filtered := True;
         RadioButtonCustomerRepairReturned.Checked := True;
       end;
 
@@ -6859,11 +7966,15 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         try
           while not RemoteDB.Inventory.Eof do
           begin
-            if RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat = 0 then
+            if RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat = 0
+            then
             begin
-            end else begin
+            end
+            else
+            begin
               RemoteDB.Inventory.Edit;
-              RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat := 0;
+              RemoteDB.Inventory.FieldByName('product_price_gross')
+                .AsFloat := 0;
               RemoteDB.Inventory.Post;
             end;
             RemoteDB.Inventory.Next;
@@ -6878,9 +7989,8 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       begin;
       end;
 
-
-
-      procedure TMainForm.DBLookupTreeViewProductsCategoriesDropDown(Sender: TObject);
+      procedure TMainForm.DBLookupTreeViewProductsCategoriesDropDown
+        (Sender: TObject);
       begin
         RemoteDB.Products.Edit;
       end;
@@ -6890,7 +8000,9 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         if DBMemoCustomersMemo.Lines.Count > 0 then
         begin
           DBEditCustomerNbr.Style.Color := ClRed;
-        end else begin
+        end
+        else
+        begin
           DBEditCustomerNbr.Style.Color := clWindow;
         end;
 
@@ -6900,19 +8012,23 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       var
         LabelCode39: TLabelCODE39;
       begin
-        if (self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
+        if (Self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
         begin
           LabelCode39 := TLabelCODE39.Create;
           try
-            LabelCode39.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
+            LabelCode39.LabelPrinter :=
+              (Self.Parameter['PrintersLabelPrinter']);
 
-            LabelCode39.Print('A-009-05', RemoteDB.Products.FieldByName('products_intername').Text, 0, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+            LabelCode39.Print('A-009-05',
+              RemoteDB.Products.FieldByName('products_intername').Text, 0,
+              (StrToBool(Self.Parameter['PrintersLabelDialog'])));
           finally
             LabelCode39.Free;
           end;
         end
         else
-          messagedlg('Imprimante à étiquettes non activée', mtwarning, [mbok], 0);
+          messagedlg('Imprimante à étiquettes non activée', mtwarning,
+            [mbok], 0);
       end;
 
       procedure TMainForm.ButtonAddProductsPathClick(Sender: TObject);
@@ -6922,7 +8038,9 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         RemoteDB.Products.First;
         while not RemoteDB.Products.Eof do
         begin
-          if Pos('products/', lowercase(RemoteDB.Products.FieldByName('products_image').AsString)) = 0 then
+          if Pos('products/',
+            lowercase(RemoteDB.Products.FieldByName('products_image')
+            .AsString)) = 0 then
           begin
             TempStr := RemoteDB.Products.FieldByName('products_image').AsString;
             Insert('products/', TempStr, 0);
@@ -6934,13 +8052,15 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         end;
       end;
 
-      procedure TMainForm.ButtonCustomerAlertsResetAttemptsClick(Sender: TObject);
+      procedure TMainForm.ButtonCustomerAlertsResetAttemptsClick
+        (Sender: TObject);
       begin
         RemoteDB.netshop_customers_alerts.First;
         while not RemoteDB.netshop_customers_alerts.Eof do
         begin
           RemoteDB.netshop_customers_alerts.Edit;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_attempts').AsInteger := 0;
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_attempts').AsInteger := 0;
           RemoteDB.netshop_customers_alerts.Post;
           RemoteDB.netshop_customers_alerts.Next;
         end;
@@ -6952,54 +8072,83 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       begin
         SalesClearSummary;
         // Grid
-        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i]
+            .ClassType = TAdvStringGrid then
           begin
             index := i;
           end;
         end;
         // Count
-        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 99 then
+          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 99
+          then
           begin
             indexcount := i;
           end;
         end;
         // HT
-        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 98 then
+          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 98
+          then
           begin
             indexht := i;
           end;
         end;
         // TTC
-        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 97 then
+          if TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[i].Tag = 97
+          then
           begin
             indexttc := i;
           end;
         end;
-        with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexcount]) do
+        with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .Controls[indexcount]) do
           Caption := '0';
-        with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexht]) do
+        with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .Controls[indexht]) do
           Caption := FloatToStrF(0, fffixed, 7, 2);
-        with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexttc]) do
-          Caption  := FloatToStrF(0, fffixed, 7, 2);
-        for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).RowCount - 2 do
+        with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+          .Controls[indexttc]) do
+          Caption := FloatToStrF(0, fffixed, 7, 2);
+        for Nowrow := 1 to TAdvStringGrid
+          (TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index])
+          .RowCount - 2 do
         begin
-          with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexcount]) do
-            Caption := inttostr(StrtoInt(Caption) + StrtoInt(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).Cells[2, Nowrow]));
-          with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexht]) do
-            Caption := FloatToStrF(StrToFloat(Caption) + RemoteDB.GetPriceHT(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index])
-              .Cells[0, Nowrow], StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).Cells[4, Nowrow])) *
-              StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
-          with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[indexttc]) do
-            Caption := FloatToStrF(StrToFloat(Caption) + StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).Cells[4,
-              Nowrow]) * StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage).Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
+          with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+            .Controls[indexcount]) do
+            Caption := inttostr(StrtoInt(Caption) +
+              StrtoInt(TAdvStringGrid(TAdvTabSheet
+              (PageControlSalesCaddy.ActivePage).Controls[index]).Cells[2,
+              Nowrow]));
+          with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+            .Controls[indexht]) do
+            Caption := FloatToStrF(StrToFloat(Caption) +
+              RemoteDB.GetPriceHT
+              (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+              .Controls[index]).Cells[0, Nowrow],
+              StrToFloat(TAdvStringGrid(TAdvTabSheet
+              (PageControlSalesCaddy.ActivePage).Controls[index]).Cells[4,
+              Nowrow])) * StrToFloat
+              (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+              .Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
+          with TLabel(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+            .Controls[indexttc]) do
+            Caption := FloatToStrF(StrToFloat(Caption) +
+              StrToFloat(TAdvStringGrid(TAdvTabSheet
+              (PageControlSalesCaddy.ActivePage).Controls[index]).Cells[4,
+              Nowrow]) * StrToFloat
+              (TAdvStringGrid(TAdvTabSheet(PageControlSalesCaddy.ActivePage)
+              .Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
         end;
       end;
 
@@ -7008,55 +8157,83 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         Nowrow, i, Index, indexcount, indexttc, indexht: Integer;
       begin
         // Grid
-        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+            .ClassType = TAdvStringGrid then
           begin
             index := i;
           end;
         end;
         // Count
-        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 99 then
+          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 99
+          then
           begin
             indexcount := i;
           end;
         end;
         // HT
-        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 98 then
+          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 98
+          then
           begin
             indexht := i;
           end;
         end;
         // TTC
-        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 97 then
+          if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 97
+          then
           begin
             indexttc := i;
           end;
         end;
-        with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[indexcount]) do
+        with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[indexcount]) do
           Caption := '0';
-        with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[indexht]) do
+        with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[indexht]) do
           Caption := FloatToStrF(0, fffixed, 7, 2);
-        with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[indexttc]) do
-          Caption  := FloatToStrF(0, fffixed, 7, 2);
-        for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index]).RowCount - 2 do
+        with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[indexttc]) do
+          Caption := FloatToStrF(0, fffixed, 7, 2);
+        for Nowrow := 1 to TAdvStringGrid
+          (TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index])
+          .RowCount - 2 do
         begin
-          with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[indexcount]) do
-            Caption := inttostr(StrtoInt(Caption) + StrtoInt(TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index]).Cells[2,
+          with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+            .Controls[indexcount]) do
+            Caption := inttostr(StrtoInt(Caption) +
+              StrtoInt(TAdvStringGrid(TAdvTabSheet
+              (PageControlStockinCaddy.ActivePage).Controls[index]).Cells[2,
               Nowrow]));
-          with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[indexht]) do
-            Caption := FloatToStrF(StrToFloat(Caption) + RemoteDB.GetPriceHT(TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index])
-              .Cells[0, Nowrow], StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index]).Cells[4, Nowrow])) *
-              StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
-          with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[indexttc]) do
-            Caption := FloatToStrF(StrToFloat(Caption) + StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index]).Cells[4,
-              Nowrow]) * StrToFloat(TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
+          with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+            .Controls[indexht]) do
+            Caption := FloatToStrF(StrToFloat(Caption) +
+              RemoteDB.GetPriceHT
+              (TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+              .Controls[index]).Cells[0, Nowrow],
+              StrToFloat(TAdvStringGrid(TAdvTabSheet
+              (PageControlStockinCaddy.ActivePage).Controls[index]).Cells[4,
+              Nowrow])) * StrToFloat
+              (TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+              .Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
+          with TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+            .Controls[indexttc]) do
+            Caption := FloatToStrF(StrToFloat(Caption) +
+              StrToFloat(TAdvStringGrid(TAdvTabSheet
+              (PageControlStockinCaddy.ActivePage).Controls[index]).Cells[4,
+              Nowrow]) * StrToFloat
+              (TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+              .Controls[index]).Cells[2, Nowrow]), fffixed, 7, 2);
         end;
       end;
 
@@ -7065,10 +8242,14 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         // Self.Enabled:=False;
         try
           begin
-            if TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType = sitGreen then
+            if TdxStatusBarStateIndicatorPanelStyle
+              (StatusLine.Panels.items[1].PanelStyle).Indicators.items[0]
+              .IndicatorType = sitGreen then
             begin;
               RemoteDB.SynchroniseMin;
-            end else begin
+            end
+            else
+            begin
               messagedlg('Serveur DB Inacessible : ', mtwarning, [mbok], 0);
             end;
           end;
@@ -7098,21 +8279,28 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           RemoteDB.Shops.IndexName := 'ShopsIXId';
           RemoteDB.Shops.FindKey([ConnectedShop]);
           RemoteDB.FreeItemsTo;
-          RemoteDB.netshop_refunds.Filter := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< refunds_date_time and refunds_date_time < ' +
-            FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (refunds_shop_id = ' + inttostr(ConnectedShop) + ')';
+          RemoteDB.netshop_refunds.Filter :=
+            '(' + FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+            '< refunds_date_time and refunds_date_time < ' +
+            FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+            ') and (refunds_shop_id = ' + inttostr(ConnectedShop) + ')';
           RemoteDB.netshop_refunds.Filtered := True;
-          RemoteDB.netshop_sales.Filter     := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< sales_date_time and sales_date_time < ' +
-            FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
-          RemoteDB.netshop_sales.Filtered    := True;
-          ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+          RemoteDB.netshop_sales.Filter := '(' +
+            FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+            '< sales_date_time and sales_date_time < ' +
+            FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+            ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
+          RemoteDB.netshop_sales.Filtered := True;
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
           ReportModule.RvProject.ExecuteReport('ReportDaySales');
           // ReportModule.RvProject.ExecuteReport('SalesReport');
           // ReportModule.RvProject.DesignReport('ReportDaySales');
         finally
-          RemoteDB.netshop_refunds.Filter   := '';
+          RemoteDB.netshop_refunds.Filter := '';
           RemoteDB.netshop_refunds.Filtered := False;
-          RemoteDB.netshop_sales.Filter     := '';
-          RemoteDB.netshop_sales.Filtered   := False;
+          RemoteDB.netshop_sales.Filter := '';
+          RemoteDB.netshop_sales.Filtered := False;
           RemoteDB.SetItemstoSales;
         end;
 
@@ -7130,21 +8318,21 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         RemoteDB.FreeAlertsTo;
 
         RemoteDB.Products.IndexName := 'ProductsIXModel';
-        RemoteDB.Products.Filter    := '';
-        RemoteDB.Products.Filtered  := False;
+        RemoteDB.Products.Filter := '';
+        RemoteDB.Products.Filtered := False;
 
         // SearchString.Enabled:=True;
         SButtonSearch.Enabled := True;
 
         DBNavigatorMain.DataSource := nil;
-        DBNavigatorFirst1.Enabled  := False;
-        DBNavigatorPrev1.Enabled   := False;
-        DBNavigatorNext1.Enabled   := False;
-        DBNavigatorLast1.Enabled   := False;
+        DBNavigatorFirst1.Enabled := False;
+        DBNavigatorPrev1.Enabled := False;
+        DBNavigatorNext1.Enabled := False;
+        DBNavigatorLast1.Enabled := False;
         DBNavigatorInsert1.Enabled := False;
         DBNavigatorDelete1.Enabled := False;
-        DBNavigatorEdit1.Enabled   := False;
-        DBNavigatorPost1.Enabled   := False;
+        DBNavigatorEdit1.Enabled := False;
+        DBNavigatorPost1.Enabled := False;
         DBNavigatorCancel1.Enabled := False;
 
         PageControlMainForm.ActivePage := TabSheetWebInfo;
@@ -7153,7 +8341,8 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       procedure TMainForm.ActionWebOrdersExecute(Sender: TObject);
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Verifications commandes WEB';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Verifications commandes WEB';
         RemoteDB.CDSActions.Post;
         RemoteDB.FreeItemsTo;
         RemoteDB.FreeItemsRefundedTo;
@@ -7165,22 +8354,22 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         RemoteDB.FreeAlertsTo;
 
         RemoteDB.Products.IndexName := 'ProductsIXModel';
-        RemoteDB.Products.Filter    := '';
-        RemoteDB.Products.Filtered  := False;
+        RemoteDB.Products.Filter := '';
+        RemoteDB.Products.Filtered := False;
 
         // SearchString.Enabled:=True;
         searchstring.Text := '';
         // SButtonSearch.Enabled:=False;
 
         DBNavigatorMain.DataSource := nil;
-        DBNavigatorFirst1.Enabled  := False;
-        DBNavigatorPrev1.Enabled   := False;
-        DBNavigatorNext1.Enabled   := False;
-        DBNavigatorLast1.Enabled   := False;
+        DBNavigatorFirst1.Enabled := False;
+        DBNavigatorPrev1.Enabled := False;
+        DBNavigatorNext1.Enabled := False;
+        DBNavigatorLast1.Enabled := False;
         DBNavigatorInsert1.Enabled := False;
         DBNavigatorDelete1.Enabled := False;
-        DBNavigatorEdit1.Enabled   := False;
-        DBNavigatorPost1.Enabled   := False;
+        DBNavigatorEdit1.Enabled := False;
+        DBNavigatorPost1.Enabled := False;
         DBNavigatorCancel1.Enabled := False;
 
         PageControlMainForm.ActivePage := TabSheetWebOrders;
@@ -7196,7 +8385,8 @@ procedure TMainForm.VenteExecute(Sender: TObject);
 
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Analyse des ventes produits';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Analyse des ventes produits';
         RemoteDB.CDSActions.Post;
         UpdateStatus := RemoteDB.IsUpdating;
 
@@ -7210,23 +8400,25 @@ procedure TMainForm.VenteExecute(Sender: TObject);
 
         StringGridAdmin.Clear;
 
-        StringGridAdmin.ColCount     := 11;
-        StringGridAdmin.Cells[0, 0]  := 'Modèle';
-        StringGridAdmin.Cells[1, 0]  := 'Description';
-        StringGridAdmin.Cells[2, 0]  := 'Quantité';
-        StringGridAdmin.Cells[3, 0]  := 'P. catalogue';
-        StringGridAdmin.Cells[4, 0]  := 'P. stock';
-        StringGridAdmin.Cells[5, 0]  := 'P. achat';
-        StringGridAdmin.Cells[6, 0]  := 'Date entrée';
-        StringGridAdmin.Cells[7, 0]  := 'Propriétaire';
-        StringGridAdmin.Cells[8, 0]  := 'Fournisseur';
-        StringGridAdmin.Cells[9, 0]  := 'Identifiant';
+        StringGridAdmin.ColCount := 11;
+        StringGridAdmin.Cells[0, 0] := 'Modèle';
+        StringGridAdmin.Cells[1, 0] := 'Description';
+        StringGridAdmin.Cells[2, 0] := 'Quantité';
+        StringGridAdmin.Cells[3, 0] := 'P. catalogue';
+        StringGridAdmin.Cells[4, 0] := 'P. stock';
+        StringGridAdmin.Cells[5, 0] := 'P. achat';
+        StringGridAdmin.Cells[6, 0] := 'Date entrée';
+        StringGridAdmin.Cells[7, 0] := 'Propriétaire';
+        StringGridAdmin.Cells[8, 0] := 'Fournisseur';
+        StringGridAdmin.Cells[9, 0] := 'Identifiant';
         StringGridAdmin.Cells[10, 0] := 'TVA';
 
         // Resize Columns
-        StringGridAdmin.ColWidths[0]   := 95;
-        StringGridAdmin.ColWidths[1]   := Max(StringGridAdmin.ClientWidth - 100 - (StringGridAdmin.ColCount - 2) * 60, 150);
-        for i                          := 2 to StringGridAdmin.ColCount - 1 do
+        StringGridAdmin.ColWidths[0] := 95;
+        StringGridAdmin.ColWidths[1] :=
+          Max(StringGridAdmin.ClientWidth - 100 - (StringGridAdmin.ColCount - 2)
+          * 60, 150);
+        for i := 2 to StringGridAdmin.ColCount - 1 do
           StringGridAdmin.ColWidths[i] := 60;
 
         StringGridFiguresClear;
@@ -7235,23 +8427,27 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         // StringGridFigures.BeginUpdate;
         MainForm.Cursor := crHourglass;
         Application.ProcessMessages;
-        self.Enabled := False;
+        Self.Enabled := False;
 
         STempIndex := RemoteDB.netshop_sales.IndexName;
         ITempIndex := RemoteDB.netshop_items_sold.IndexName;
         RemoteDB.FreeItemsTo;
         RemoteDB.SetItemstoSales;
         RemoteDB.netshop_sales.IndexName := 'SalesIXLocationId';
-        RemoteDB.netshop_sales.Filter    := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< sales_date_time and sales_date_time < ' +
-          FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
-        RemoteDB.netshop_sales.Filtered       := True;
+        RemoteDB.netshop_sales.Filter := '(' +
+          FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+          '< sales_date_time and sales_date_time < ' +
+          FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+          ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
+        RemoteDB.netshop_sales.Filtered := True;
         RemoteDB.netshop_items_sold.IndexName := 'ItemsIXLocationId';
         RemoteDB.netshop_items_sold.DisableControls;
         RemoteDB.Products.IndexName := 'ProductsIXModel';
-        RemoteDB.Products.Filtered  := False;
+        RemoteDB.Products.Filtered := False;
 
         RemoteDB.SetItemstoSales;
-        if ((RemoteDB.netshop_sales.RecordCount < 10000) and (RemoteDB.netshop_items_sold.RecordCount < 15000)) then
+        if ((RemoteDB.netshop_sales.RecordCount < 10000) and
+          (RemoteDB.netshop_items_sold.RecordCount < 15000)) then
           try
             Screen.Cursor := crHourglass;
             RemoteDB.netshop_sales.First;
@@ -7263,19 +8459,32 @@ procedure TMainForm.VenteExecute(Sender: TObject);
                 ///
                 /// Analyse des moyens de payment
                 ///
-                StringGridFigures.Cells[3, 0] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 0]) + RemoteDB.netshop_sales.FieldByName('sales_paid_cash')
-                  .AsFloat, fffixed, 7, 2);
-                StringGridFigures.Cells[3, 2] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 2]) + RemoteDB.netshop_sales.FieldByName('sales_paid_proton')
-                  .AsFloat, fffixed, 7, 2);
-                StringGridFigures.Cells[3, 1] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 1]) + RemoteDB.netshop_sales.FieldByName('sales_paid_bct')
-                  .AsFloat, fffixed, 7, 2);
-                StringGridFigures.Cells[3, 3] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 3]) + RemoteDB.netshop_sales.FieldByName('sales_paid_visa')
-                  .AsFloat, fffixed, 7, 2);
-                StringGridFigures.Cells[3, 4] :=
-                  FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) + RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsFloat, fffixed, 7, 2);
-                StringGridFigures.Cells[3, 5] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) + StrToFloat(StringGridFigures.Cells[3, 3]) +
-                  StrToFloat(StringGridFigures.Cells[3, 2]) + StrToFloat(StringGridFigures.Cells[3, 1]) + StrToFloat(StringGridFigures.Cells[3, 0]),
+                StringGridFigures.Cells[3, 0] :=
+                  FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 0]) +
+                  RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat,
                   fffixed, 7, 2);
+                StringGridFigures.Cells[3, 2] :=
+                  FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 2]) +
+                  RemoteDB.netshop_sales.FieldByName('sales_paid_proton')
+                  .AsFloat, fffixed, 7, 2);
+                StringGridFigures.Cells[3, 1] :=
+                  FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 1]) +
+                  RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat,
+                  fffixed, 7, 2);
+                StringGridFigures.Cells[3, 3] :=
+                  FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 3]) +
+                  RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat,
+                  fffixed, 7, 2);
+                StringGridFigures.Cells[3, 4] :=
+                  FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) +
+                  RemoteDB.netshop_sales.FieldByName('sales_paid_voucher')
+                  .AsFloat, fffixed, 7, 2);
+                StringGridFigures.Cells[3, 5] :=
+                  FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) +
+                  StrToFloat(StringGridFigures.Cells[3, 3]) +
+                  StrToFloat(StringGridFigures.Cells[3, 2]) +
+                  StrToFloat(StringGridFigures.Cells[3, 1]) +
+                  StrToFloat(StringGridFigures.Cells[3, 0]), fffixed, 7, 2);
                 RemoteDB.netshop_items_sold.First;
                 CurrentSaleSubTot := 0;
                 while not RemoteDB.netshop_items_sold.Eof do
@@ -7283,12 +8492,17 @@ procedure TMainForm.VenteExecute(Sender: TObject);
                   ///
                   /// Analyse de la nature des produits
                   ///
-                  if (RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger < 100000) and
-                    (RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger < 10000) then
+                  if (RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_owner_id').AsInteger < 100000) and
+                    (RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_supplier_id').AsInteger < 10000) then
                   begin
-                    if RemoteDB.Products.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value]) then
+                    if RemoteDB.Products.FindKey
+                      ([RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_model').Value]) then
                     begin
-                      if RemoteDB.Products.FieldByName('products_promo').AsString <> 'True' then
+                      if RemoteDB.Products.FieldByName('products_promo')
+                        .AsString <> 'True' then
                         LowMargin := False
                       else
                         LowMargin := True;
@@ -7296,88 +8510,138 @@ procedure TMainForm.VenteExecute(Sender: TObject);
                     if not LowMargin then
                     begin
                       StringGridFigures.Cells[1, 0] :=
-                        FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0]) + RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat *
-                        RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger, fffixed, 7, 2);
-                    end else begin
+                        FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0]) +
+                        RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_price_Stock').AsFloat *
+                        RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_quantity').AsInteger, fffixed, 7, 2);
+                    end
+                    else
+                    begin
                       StringGridFigures.Cells[1, 2] :=
-                        FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 2]) + RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat *
-                        RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger, fffixed, 7, 2);
+                        FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 2]) +
+                        RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_price_Stock').AsFloat *
+                        RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_quantity').AsInteger, fffixed, 7, 2);
                     end;
-                  end else begin
+                  end
+                  else
+                  begin
                     StringGridFigures.Cells[1, 1] :=
-                      FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 1]) + RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat *
-                      RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger, fffixed, 7, 2);
+                      FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 1]) +
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_price_stock').AsFloat *
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_quantity').AsInteger, fffixed, 7, 2);
                   end;
 
-                  StringGridFigures.Cells[1, 5] := FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0]) + StrToFloat(StringGridFigures.Cells[1, 1]) +
-                    StrToFloat(StringGridFigures.Cells[1, 2]) + StrToFloat(StringGridFigures.Cells[1, 3]) + StrToFloat(StringGridFigures.Cells[1, 4]),
-                    fffixed, 7, 2);
+                  StringGridFigures.Cells[1, 5] :=
+                    FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0]) +
+                    StrToFloat(StringGridFigures.Cells[1, 1]) +
+                    StrToFloat(StringGridFigures.Cells[1, 2]) +
+                    StrToFloat(StringGridFigures.Cells[1, 3]) +
+                    StrToFloat(StringGridFigures.Cells[1, 4]), fffixed, 7, 2);
                   ///
                   /// Comptabilisation des produits dans le Grid
                   ///
-                  StringGridAdmin.Cells[0, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Text;
-                  StringGridAdmin.Cells[1, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_name').Text;
-                  StringGridAdmin.Cells[2, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').Text;
+                  StringGridAdmin.Cells[0, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_model').Text;
+                  StringGridAdmin.Cells[1, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_name').Text;
+                  StringGridAdmin.Cells[2, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_quantity').Text;
                   StringGridAdmin.Cells[3, StringGridAdmin.RowCount - 1] :=
-                    FloatToStrF(RemoteDB.netshop_items_sold.FieldByName('items_sold_price_catalog').AsFloat, fffixed, 7, 2);
+                    FloatToStrF(RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_catalog').AsFloat, fffixed, 7, 2);
                   StringGridAdmin.Cells[4, StringGridAdmin.RowCount - 1] :=
-                    FloatToStrF(RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat, fffixed, 7, 2);
+                    FloatToStrF(RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_Stock').AsFloat, fffixed, 7, 2);
                   StringGridAdmin.Cells[5, StringGridAdmin.RowCount - 1] :=
-                    FloatToStrF(RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsFloat, fffixed, 7, 2);
-                  StringGridAdmin.Cells[6, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_date_in').Text;
-                  StringGridAdmin.Cells[7, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').Text;
-                  StringGridAdmin.Cells[8, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').Text;
-                  StringGridAdmin.Cells[9, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_sales_id').Text;
-                  if RemoteDB.Products.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString]) then
+                    FloatToStrF(RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_gross').AsFloat, fffixed, 7, 2);
+                  StringGridAdmin.Cells[6, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_date_in').Text;
+                  StringGridAdmin.Cells[7, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_owner_id').Text;
+                  StringGridAdmin.Cells[8, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_supplier_id').Text;
+                  StringGridAdmin.Cells[9, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_sales_id').Text;
+                  if RemoteDB.Products.FindKey
+                    ([RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_model').AsString]) then
                   begin
                     if RemoteDB.Productsproducts_tax_class_id.AsFloat = 2 then
-                      StringGridAdmin.Cells[10, StringGridAdmin.RowCount - 1] := '6';
+                      StringGridAdmin.Cells[10, StringGridAdmin.RowCount -
+                        1] := '6';
                     if RemoteDB.Productsproducts_tax_class_id.AsFloat = 1 then
-                      StringGridAdmin.Cells[10, StringGridAdmin.RowCount - 1] := '21';
-                  end else begin
-                    ShowMessage('Produit supprimé ' + RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString);
-                    StringGridAdmin.Cells[10, StringGridAdmin.RowCount - 1] := '21';
+                      StringGridAdmin.Cells[10, StringGridAdmin.RowCount -
+                        1] := '21';
+                  end
+                  else
+                  begin
+                    ShowMessage('Produit supprimé ' +
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_model').AsString);
+                    StringGridAdmin.Cells[10, StringGridAdmin.RowCount -
+                      1] := '21';
                   end;
                   StringGridAdmin.RowCount := StringGridAdmin.RowCount + 1;
                   ///
                   /// Analyse concordance Montants Items et Sales
                   ///
-                  CurrentSaleSubTot := CurrentSaleSubTot + RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat *
-                    RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsFloat;
+                  CurrentSaleSubTot := CurrentSaleSubTot +
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_Stock').AsFloat *
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_quantity').AsFloat;
                   Application.ProcessMessages;
                   RemoteDB.netshop_items_sold.Next;
                 end;
               end;
-              ActualSaleSubTot := RemoteDB.netshop_sales.FieldByName('sales_paid_total').AsFloat;
+              ActualSaleSubTot := RemoteDB.netshop_sales.FieldByName
+                ('sales_paid_total').AsFloat;
               if not(ActualSaleSubTot = CurrentSaleSubTot) then
               begin
-                messagedlg('La Vente ' + RemoteDB.netshop_sales.FieldByName('sales_id').AsString + ' pose problème. Total produits = ' +
-                  FloatToStr(CurrentSaleSubTot) + ' <> total vente = ' + RemoteDB.netshop_sales.FieldByName('sales_paid_total').AsString, mtwarning, [mbok], 0)
+                messagedlg('La Vente ' + RemoteDB.netshop_sales.FieldByName
+                  ('sales_id').AsString + ' pose problème. Total produits = ' +
+                  FloatToStr(CurrentSaleSubTot) + ' <> total vente = ' +
+                  RemoteDB.netshop_sales.FieldByName('sales_paid_total')
+                  .AsString, mtwarning, [mbok], 0)
               end;
               Application.ProcessMessages;
               RemoteDB.netshop_sales.Next;
             end;
           finally
 
-            RemoteDB.netshop_items_sold.Filter   := '';
+            RemoteDB.netshop_items_sold.Filter := '';
             RemoteDB.netshop_items_sold.Filtered := False;
-            RemoteDB.netshop_sales.Filter        := '';
-            RemoteDB.netshop_sales.Filtered      := False;
+            RemoteDB.netshop_sales.Filter := '';
+            RemoteDB.netshop_sales.Filtered := False;
             // RemoteDB.netshop_sales.FieldByName('.IndexName:=STempIndex;
             // RemoteDB.Items_sold.IndexName:=ITempIndex;
             RemoteDB.netshop_sales.EnableControls;
             RemoteDB.netshop_items_sold.EnableControls;
             if StringGridAdmin.RowCount > 2 then
               StringGridAdmin.RowCount := StringGridAdmin.RowCount - 1;
-            Screen.Cursor              := crDefault;
-            RemoteDB.IsUpdating        := UpdateStatus;
-            self.Enabled               := True;
+            Screen.Cursor := crDefault;
+            RemoteDB.IsUpdating := UpdateStatus;
+            Self.Enabled := True;
             StringGridAdmin.EndUpdate;
             // StringGridFigures.EndUpdate;
             MainForm.Cursor := crDefault;
           end
         else
-          ShowMessage('Selection trop large, veuillez utiliser une autre plage de dates');
+          ShowMessage
+            ('Selection trop large, veuillez utiliser une autre plage de dates');
       end;
 
       procedure TMainForm.JvLookOutButtonPaymentAnalysis(Sender: TObject);
@@ -7386,12 +8650,13 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         LowMargin: Boolean;
         CurrentSaleSubTot, ActualSaleSubTot: currency;
         i: Integer;
-        margin: Double;
+        margin: double;
         UpdateStatus: Boolean;
 
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Analyse des ventes paiements';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Analyse des ventes paiements';
         RemoteDB.CDSActions.Post;
         UpdateStatus := RemoteDB.IsUpdating;
         // Self.Enabled:=False;
@@ -7402,7 +8667,7 @@ procedure TMainForm.VenteExecute(Sender: TObject);
 
         StringGridAdmin.Clear;
 
-        StringGridAdmin.ColCount    := 10;
+        StringGridAdmin.ColCount := 10;
         StringGridAdmin.Cells[0, 0] := 'Id';
         StringGridAdmin.Cells[1, 0] := 'Total';
         StringGridAdmin.Cells[2, 0] := 'Cash';
@@ -7413,9 +8678,11 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         StringGridAdmin.Cells[9, 0] := 'Id';
 
         // Resize Columns
-        StringGridAdmin.ColWidths[0]   := 95;
-        StringGridAdmin.ColWidths[1]   := Max(StringGridAdmin.ClientWidth - 100 - (StringGridAdmin.ColCount - 2) * 60, 150);
-        for i                          := 2 to StringGridAdmin.ColCount - 1 do
+        StringGridAdmin.ColWidths[0] := 95;
+        StringGridAdmin.ColWidths[1] :=
+          Max(StringGridAdmin.ClientWidth - 100 - (StringGridAdmin.ColCount - 2)
+          * 60, 150);
+        for i := 2 to StringGridAdmin.ColCount - 1 do
           StringGridAdmin.ColWidths[i] := 60;
 
         // StringGridAdmin.BeginUpdate;
@@ -7429,8 +8696,11 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         RemoteDB.FreeItemsTo;
         RemoteDB.SetItemstoSales;
         RemoteDB.netshop_sales.IndexName := 'SalesIXLocationId';
-        RemoteDB.netshop_sales.Filter    := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< sales_date_time and sales_date_time < ' +
-          FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
+        RemoteDB.netshop_sales.Filter := '(' +
+          FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+          '< sales_date_time and sales_date_time < ' +
+          FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+          ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
         RemoteDB.netshop_sales.Filtered := True;
 
         if ((RemoteDB.netshop_sales.RecordCount < 10000)) then
@@ -7443,30 +8713,51 @@ procedure TMainForm.VenteExecute(Sender: TObject);
               ///
               /// Analyse des moyens de payment
               ///
-              StringGridFigures.Cells[3, 0] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 0]) + RemoteDB.netshop_sales.FieldByName('sales_paid_cash')
-                .AsFloat, fffixed, 7, 2);
-              StringGridFigures.Cells[3, 2] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 2]) + RemoteDB.netshop_sales.FieldByName('sales_paid_proton')
-                .AsFloat, fffixed, 7, 2);
-              StringGridFigures.Cells[3, 1] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 1]) + RemoteDB.netshop_sales.FieldByName('sales_paid_bct')
-                .AsFloat, fffixed, 7, 2);
-              StringGridFigures.Cells[3, 3] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 3]) + RemoteDB.netshop_sales.FieldByName('sales_paid_visa')
-                .AsFloat, fffixed, 7, 2);
-              StringGridFigures.Cells[3, 4] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) + RemoteDB.netshop_sales.FieldByName('sales_paid_voucher')
-                .AsFloat, fffixed, 7, 2);
-              StringGridFigures.Cells[3, 5] := FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) + StrToFloat(StringGridFigures.Cells[3, 3]) +
-                StrToFloat(StringGridFigures.Cells[3, 2]) + StrToFloat(StringGridFigures.Cells[3, 1]) + StrToFloat(StringGridFigures.Cells[3, 0]),
+              StringGridFigures.Cells[3, 0] :=
+                FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 0]) +
+                RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsFloat,
                 fffixed, 7, 2);
+              StringGridFigures.Cells[3, 2] :=
+                FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 2]) +
+                RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat,
+                fffixed, 7, 2);
+              StringGridFigures.Cells[3, 1] :=
+                FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 1]) +
+                RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsFloat,
+                fffixed, 7, 2);
+              StringGridFigures.Cells[3, 3] :=
+                FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 3]) +
+                RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsFloat,
+                fffixed, 7, 2);
+              StringGridFigures.Cells[3, 4] :=
+                FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) +
+                RemoteDB.netshop_sales.FieldByName('sales_paid_voucher')
+                .AsFloat, fffixed, 7, 2);
+              StringGridFigures.Cells[3, 5] :=
+                FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 4]) +
+                StrToFloat(StringGridFigures.Cells[3, 3]) +
+                StrToFloat(StringGridFigures.Cells[3, 2]) +
+                StrToFloat(StringGridFigures.Cells[3, 1]) +
+                StrToFloat(StringGridFigures.Cells[3, 0]), fffixed, 7, 2);
               ///
               /// Comptabilisation des produits dans le Grid
               ///
-              StringGridAdmin.Cells[0, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_id').Text;
-              StringGridAdmin.Cells[1, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_paid_total').Text;
-              StringGridAdmin.Cells[2, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_paid_cash').Text;
-              StringGridAdmin.Cells[3, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_paid_proton').Text;
-              StringGridAdmin.Cells[4, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_paid_BCT').Text;
-              StringGridAdmin.Cells[5, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_paid_visa').Text;
-              StringGridAdmin.Cells[6, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').Text;
-              StringGridAdmin.Cells[9, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_sales.FieldByName('sales_id').Text;
+              StringGridAdmin.Cells[0, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_id').Text;
+              StringGridAdmin.Cells[1, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_paid_total').Text;
+              StringGridAdmin.Cells[2, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_paid_cash').Text;
+              StringGridAdmin.Cells[3, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_paid_proton').Text;
+              StringGridAdmin.Cells[4, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_paid_BCT').Text;
+              StringGridAdmin.Cells[5, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_paid_visa').Text;
+              StringGridAdmin.Cells[6, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').Text;
+              StringGridAdmin.Cells[9, StringGridAdmin.RowCount - 1] :=
+                RemoteDB.netshop_sales.FieldByName('sales_id').Text;
               StringGridAdmin.RowCount := StringGridAdmin.RowCount + 1;
 
               Application.ProcessMessages;
@@ -7474,17 +8765,18 @@ procedure TMainForm.VenteExecute(Sender: TObject);
             end;
           finally
 
-            RemoteDB.netshop_sales.Filter   := '';
+            RemoteDB.netshop_sales.Filter := '';
             RemoteDB.netshop_sales.Filtered := False;
 
             if StringGridAdmin.RowCount > 2 then
               StringGridAdmin.RowCount := StringGridAdmin.RowCount - 1;
-            Screen.Cursor              := crDefault;
-            RemoteDB.IsUpdating        := UpdateStatus;
+            Screen.Cursor := crDefault;
+            RemoteDB.IsUpdating := UpdateStatus;
 
           end
         else
-          ShowMessage('Selection trop large, veuillez utiliser une autre plage de dates');
+          ShowMessage
+            ('Selection trop large, veuillez utiliser une autre plage de dates');
       end;
 
       procedure TMainForm.JvLookOutButton3Click(Sender: TObject);
@@ -7495,7 +8787,7 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       begin
 
         StringGridAdmin.Clear;
-        StringGridAdmin.RowCount    := 2;
+        StringGridAdmin.RowCount := 2;
         StringGridAdmin.Cells[0, 0] := 'Modèle';
         StringGridAdmin.Cells[1, 0] := 'Description';
         StringGridAdmin.Cells[2, 0] := 'Quantité';
@@ -7505,15 +8797,18 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         StringGridAdmin.Cells[6, 0] := 'Date entrée';
         StringGridAdmin.Cells[7, 0] := 'Propriétaire';
         StringGridAdmin.Cells[8, 0] := 'Fournisseur';
-        Screen.Cursor               := crHourglass;
+        Screen.Cursor := crHourglass;
         StringGridFiguresClear;
         Application.ProcessMessages;
 
         StringGridAdmin.BeginUpdate;
-        TempIndex                        := RemoteDB.netshop_sales.IndexName;
+        TempIndex := RemoteDB.netshop_sales.IndexName;
         RemoteDB.netshop_sales.IndexName := 'SalesIXLocationId';
-        RemoteDB.netshop_sales.Filter    := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< sales_date_time and sales_date_time < ' +
-          FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
+        RemoteDB.netshop_sales.Filter := '(' +
+          FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+          '< sales_date_time and sales_date_time < ' +
+          FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+          ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
         RemoteDB.netshop_sales.Filtered := True;
         RemoteDB.netshop_items_sold.DisableControls;
 
@@ -7532,64 +8827,109 @@ procedure TMainForm.VenteExecute(Sender: TObject);
                 ///
                 /// Analyse de la nature des produits
                 ///
-                RemoteDB.Products.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value]);
+                RemoteDB.Products.FindKey
+                  ([RemoteDB.netshop_items_sold.FieldByName
+                  ('items_sold_model').Value]);
 
-                if (RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger < 100000) and
-                  (RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger < 100000) and
-                  (RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat < RemoteDB.netshop_items_sold.FieldByName
+                if (RemoteDB.netshop_items_sold.FieldByName
+                  ('items_sold_owner_id').AsInteger < 100000) and
+                  (RemoteDB.netshop_items_sold.FieldByName
+                  ('items_sold_supplier_id').AsInteger < 100000) and
+                  (RemoteDB.netshop_items_sold.FieldByName
+                  ('items_sold_price_stock').AsFloat <
+                  RemoteDB.netshop_items_sold.FieldByName
                   ('items_sold_price_catalog').AsFloat * 1.20) then
                 begin
-                  if RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger < 100000 then
+                  if RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_owner_id').AsInteger < 100000 then
                   begin
-                    if RemoteDB.Products.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value]) then
+                    if RemoteDB.Products.FindKey
+                      ([RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_model').Value]) then
                     begin
                       // if RemoteDB.Products.Locate('products_model',RemoteDB.items_sold.Fieldbyname('items_sold_model').Value,[]) then begin
-                      if RemoteDB.Products.FieldByName('products_promo').AsString <> 'True' then
+                      if RemoteDB.Products.FieldByName('products_promo')
+                        .AsString <> 'True' then
                       begin
                         StringGridFigures.Cells[1, 0] :=
-                          FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0]) + RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat *
-                          RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger, fffixed, 7, 2);
+                          FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0])
+                          + RemoteDB.netshop_items_sold.FieldByName
+                          ('items_sold_price_stock').AsFloat *
+                          RemoteDB.netshop_items_sold.FieldByName
+                          ('items_sold_quantity').AsInteger, fffixed, 7, 2);
                       end;
                     end;
-                  end else begin
+                  end
+                  else
+                  begin
                     StringGridFigures.Cells[1, 1] :=
-                      FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 1]) + RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat *
-                      RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').Value, fffixed, 7, 2);
+                      FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 1]) +
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_price_Stock').AsFloat *
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_quantity').Value, fffixed, 7, 2);
                   end;
                   // if RemoteDB.Products.Locate('products_model',RemoteDB.items_sold.Fieldbyname('items_sold_model').Value,[]) then begin
-                  if RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger < 100000 then
+                  if RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_owner_id').AsInteger < 100000 then
                   begin
-                    if RemoteDB.Products.FieldByName('products_promo').AsString = 'True' then
+                    if RemoteDB.Products.FieldByName('products_promo')
+                      .AsString = 'True' then
                     begin
                       StringGridFigures.Cells[1, 2] :=
-                        FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 2]) + RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').AsFloat *
-                        RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsInteger, fffixed, 7, 2);
+                        FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 2]) +
+                        RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_price_Stock').AsFloat *
+                        RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_quantity').AsInteger, fffixed, 7, 2);
                     end;
                   end;
 
-                  StringGridFigures.Cells[1, 5] := FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0]) + StrToFloat(StringGridFigures.Cells[1, 1]) +
-                    StrToFloat(StringGridFigures.Cells[1, 2]) + StrToFloat(StringGridFigures.Cells[1, 3]) + StrToFloat(StringGridFigures.Cells[1, 4]),
-                    fffixed, 7, 2);
+                  StringGridFigures.Cells[1, 5] :=
+                    FloatToStrF(StrToFloat(StringGridFigures.Cells[1, 0]) +
+                    StrToFloat(StringGridFigures.Cells[1, 1]) +
+                    StrToFloat(StringGridFigures.Cells[1, 2]) +
+                    StrToFloat(StringGridFigures.Cells[1, 3]) +
+                    StrToFloat(StringGridFigures.Cells[1, 4]), fffixed, 7, 2);
 
                   StringGridFigures.Cells[3, 0] :=
                     FloatToStrF(StrToFloat(StringGridFigures.Cells[3, 0]) +
-                    (RemoteDB.CalcPriceVATIN(RemoteDB.netshop_items_sold.FieldByName('items_sold_price_catalog').AsFloat,
-                    RemoteDB.Products.FieldByName('products_tax_class_id').Value) - RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat),
-                    fffixed, 7, 2);
+                    (RemoteDB.CalcPriceVATIN(RemoteDB.netshop_items_sold.
+                    FieldByName('items_sold_price_catalog').AsFloat,
+                    RemoteDB.Products.FieldByName('products_tax_class_id')
+                    .Value) - RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_stock').AsFloat), fffixed, 7, 2);
 
                   ///
                   /// Comptabilisation des produits dans le Grid
                   ///
-                  StringGridAdmin.Cells[1, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_name').Text;
-                  StringGridAdmin.Cells[0, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Text;
-                  StringGridAdmin.Cells[2, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').Text;
+                  StringGridAdmin.Cells[1, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_name').Text;
+                  StringGridAdmin.Cells[0, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_model').Text;
+                  StringGridAdmin.Cells[2, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_quantity').Text;
                   StringGridAdmin.Cells[3, StringGridAdmin.RowCount - 1] :=
-                    FloatToStr(RemoteDB.netshop_items_sold.FieldByName('items_sold_price_catalog').AsFloat * 1.21);
-                  StringGridAdmin.Cells[4, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_Stock').Text;
-                  StringGridAdmin.Cells[5, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').Text;
-                  StringGridAdmin.Cells[7, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').Text;
-                  StringGridAdmin.Cells[8, StringGridAdmin.RowCount - 1] := RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').Text;
-                  StringGridAdmin.Cells[6, StringGridAdmin.RowCount - 1] := datetimetostr(RemoteDB.netshop_sales.FieldByName('sales_date_time_value').Value);
+                    FloatToStr(RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_catalog').AsFloat * 1.21);
+                  StringGridAdmin.Cells[4, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_Stock').Text;
+                  StringGridAdmin.Cells[5, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_gross').Text;
+                  StringGridAdmin.Cells[7, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_owner_id').Text;
+                  StringGridAdmin.Cells[8, StringGridAdmin.RowCount - 1] :=
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_supplier_id').Text;
+                  StringGridAdmin.Cells[6, StringGridAdmin.RowCount - 1] :=
+                    datetimetostr(RemoteDB.netshop_sales.FieldByName
+                    ('sales_date_time_value').Value);
                   StringGridAdmin.RowCount := StringGridAdmin.RowCount + 1;
                 end; // if
                 RemoteDB.netshop_items_sold.Next;
@@ -7598,11 +8938,11 @@ procedure TMainForm.VenteExecute(Sender: TObject);
             RemoteDB.netshop_sales.Next;
           end;
         finally
-          RemoteDB.netshop_items_sold.Filter   := '';
+          RemoteDB.netshop_items_sold.Filter := '';
           RemoteDB.netshop_items_sold.Filtered := False;
-          RemoteDB.netshop_sales.Filter        := '';
-          RemoteDB.netshop_sales.Filtered      := False;
-          RemoteDB.netshop_sales.IndexName     := TempIndex;
+          RemoteDB.netshop_sales.Filter := '';
+          RemoteDB.netshop_sales.Filtered := False;
+          RemoteDB.netshop_sales.IndexName := TempIndex;
           RemoteDB.netshop_sales.EnableControls;
           RemoteDB.netshop_items_sold.EnableControls;
           if StringGridAdmin.RowCount > 2 then
@@ -7620,17 +8960,18 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       begin
         Months := 8;
 
-        TempIX                           := RemoteDB.netshop_stock.IndexName;
+        TempIX := RemoteDB.netshop_stock.IndexName;
         RemoteDB.netshop_stock.IndexName := 'StockIXModelLocation';
         RemoteDB.Products.DisableControls;
         RemoteDB.netshop_stock.DisableControls;
 
-        RemoteDB.netshop_sales.Filter   := 'sales_date_time > ' + inttostr(Round(Now - Months * 30));
+        RemoteDB.netshop_sales.Filter := 'sales_date_time > ' +
+          inttostr(Round(Now - Months * 30));
         RemoteDB.netshop_sales.Filtered := True;
         RemoteDB.netshop_sales.First;
-        SaleIdMin                       := RemoteDB.netshop_sales.FieldByName('sales_id').AsInteger;
+        SaleIdMin := RemoteDB.netshop_sales.FieldByName('sales_id').AsInteger;
         RemoteDB.netshop_sales.Filtered := False;
-        RemoteDB.netshop_sales.Filter   := '';
+        RemoteDB.netshop_sales.Filter := '';
 
         try
           with RemoteDB do
@@ -7655,37 +8996,56 @@ procedure TMainForm.VenteExecute(Sender: TObject);
             while not Products.Eof do
             begin
               Archived := False;
-              if not IsInArchives(Products.FieldByName('products_model').AsString) then
+              if not IsInArchives(Products.FieldByName('products_model')
+                .AsString) then
               begin
                 // Vieux
-                if not((Products.FieldByName('products_date_added').AsDateTime > (Now - Months * 30))) then
+                if not((Products.FieldByName('products_date_added').AsDateTime >
+                  (Now - Months * 30))) then
                 begin
-                  RemoteDB.netshop_items_sold.Filter := '(items_sold_sales_id > ' + inttostr(SaleIdMin) + ') and (items_sold_model = ' +
-                    Products.FieldByName('products_model').AsString + ')';
+                  RemoteDB.netshop_items_sold.Filter :=
+                    '(items_sold_sales_id > ' + inttostr(SaleIdMin) +
+                    ') and (items_sold_model = ' + Products.FieldByName
+                    ('products_model').AsString + ')';
                   RemoteDB.netshop_items_sold.Filtered := True;
                   if RemoteDB.netshop_items_sold.RecordCount > Months then
                   begin
-                    if messagedlg('Mettre le produit ' + RemoteDB.Products.FieldByName('products_intername').Text + ' vendu 1 x par mois aux archives ?',
-                      mtwarning, [mbyes, mbno], 0) = mryes then
+                    if messagedlg('Mettre le produit ' +
+                      RemoteDB.Products.FieldByName('products_intername').Text +
+                      ' vendu 1 x par mois aux archives ?', mtwarning,
+                      [mbyes, mbno], 0) = mryes then
                     begin
-                      MoveToArchives(RemoteDB.Products.FieldByName('Products_model').AsString);
+                      MoveToArchives
+                        (RemoteDB.Products.FieldByName('Products_model')
+                        .AsString);
                       Archived := True;
                     end;
-                  end else begin
-                    MoveToArchives(RemoteDB.Products.FieldByName('Products_model').AsString);
+                  end
+                  else
+                  begin
+                    MoveToArchives
+                      (RemoteDB.Products.FieldByName('Products_model')
+                      .AsString);
                     Archived := True;
                   end;
 
-                end else begin
+                end
+                else
+                begin
                   // messagedlg('le produit '+CDSProDescFR.FieldByName('products_name').AsString+' '+FloattoStr(Products.FieldByName('products_date_added').AsDateTime)+' Non archivé',mtwarning,[mbyes,mbNo],0)
                 end;
                 // Sans Image
-                if (Products.FieldByName('products_image').AsString = 'products/default.gif') and (Archived = False) then
+                if (Products.FieldByName('products_image')
+                  .AsString = 'products/default.gif') and (Archived = False)
+                then
                 begin
-                  if messagedlg('Mettre le produit ' + Products.FieldByName('products_intername').Text + ' sans image en archive', mtwarning, [mbyes, mbno], 0)
-                    = mryes then
+                  if messagedlg('Mettre le produit ' +
+                    Products.FieldByName('products_intername').Text +
+                    ' sans image en archive', mtwarning, [mbyes, mbno], 0) = mryes
+                  then
                   begin
-                    MoveToArchives(Products.FieldByName('Products_model').AsString);
+                    MoveToArchives(Products.FieldByName('Products_model')
+                      .AsString);
                     // Archived:=True;
                   end;
                 end;
@@ -7698,22 +9058,23 @@ procedure TMainForm.VenteExecute(Sender: TObject);
           // Self.Enabled:=True;
           RemoteDB.Products.EnableControls;
           RemoteDB.netshop_stock.EnableControls;
-          RemoteDB.netshop_stock.IndexName     := TempIX;
-          RemoteDB.netshop_items_sold.Filter   := '';
+          RemoteDB.netshop_stock.IndexName := TempIX;
+          RemoteDB.netshop_items_sold.Filter := '';
           RemoteDB.netshop_items_sold.Filtered := False;
         end;
       end;
 
       procedure TMainForm.SpeedButtonToArchivesClick(Sender: TObject);
       begin
-        RemoteDB.MoveToArchives(RemoteDB.Products.FieldByName('products_model').AsString);
+        RemoteDB.MoveToArchives(RemoteDB.Products.FieldByName('products_model')
+          .AsString);
       end;
 
       procedure TMainForm.SpeedButtonToLiveClick(Sender: TObject);
       begin
-        RemoteDB.RestoreFromArchives(RemoteDB.Products.FieldByName('products_model').AsString);
+        RemoteDB.RestoreFromArchives
+          (RemoteDB.Products.FieldByName('products_model').AsString);
       end;
-
 
       procedure TMainForm.dxBarButtonUkClick(Sender: TObject);
       begin
@@ -7725,10 +9086,14 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         // Self.Enabled:=False;
         try
           begin
-            if TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType = sitGreen then
+            if TdxStatusBarStateIndicatorPanelStyle
+              (StatusLine.Panels.items[1].PanelStyle).Indicators.items[0]
+              .IndicatorType = sitGreen then
             begin;
               RemoteDB.Synchronise;
-            end else begin
+            end
+            else
+            begin
               messagedlg('Serveur DB Inacessible : ', mtwarning, [mbok], 0);
             end;
           end;
@@ -7742,10 +9107,14 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         // Self.Enabled:=False;
         try
           begin
-            if TdxStatusBarStateIndicatorPanelStyle(StatusLine.Panels.items[1].PanelStyle).Indicators.items[0].IndicatorType = sitGreen then
+            if TdxStatusBarStateIndicatorPanelStyle
+              (StatusLine.Panels.items[1].PanelStyle).Indicators.items[0]
+              .IndicatorType = sitGreen then
             begin;
               RemoteDB.ApplyUpdates;
-            end else begin
+            end
+            else
+            begin
               messagedlg('Serveur DB Inacessible : ', mtwarning, [mbok], 0);
             end;
           end;
@@ -7761,15 +9130,17 @@ procedure TMainForm.VenteExecute(Sender: TObject);
         i: Integer;
       begin
         ClientsExecute(nil);
-        MruItem      := dxBarMRUListItemCustomers.items[dxBarMRUListItemCustomers.ItemIndex];
+        MruItem := dxBarMRUListItemCustomers.items
+          [dxBarMRUListItemCustomers.ItemIndex];
         DestCustomer := '';
-        for i        := 1 to Length(MruItem) do
+        for i := 1 to Length(MruItem) do
         begin
           if MruItem[i] = ' ' then
             Break;
           DestCustomer := DestCustomer + MruItem[i];
         end;
-        RemoteDB.Customers.Locate('customers_nbr', DestCustomer, [locaseinsensitive]);
+        RemoteDB.Customers.Locate('customers_nbr', DestCustomer,
+          [locaseinsensitive]);
       end;
 
       procedure TMainForm.dxBarSubItemCustomersCloseUp(Sender: TObject);
@@ -7783,11 +9154,11 @@ procedure TMainForm.VenteExecute(Sender: TObject);
       end;
 
       procedure TMainForm.dxbrbtnAlertsMarkAsSentClick(Sender: TObject);
-begin
-  RemoteDB.AlertsMarkAsNotified
-end;
+      begin
+        RemoteDB.AlertsMarkAsNotified
+      end;
 
-procedure TMainForm.OnUSBCDDeviceChange;
+      procedure TMainForm.OnUSBCDDeviceChange;
       var
         i, NowCol, Nowrow: Integer;
         DeviceCount: Integer;
@@ -7796,16 +9167,18 @@ procedure TMainForm.OnUSBCDDeviceChange;
         InitUSBCDLibrary();
         for Nowrow := 1 to StringGridDacal.RowCount - 2 do
         begin
-          for NowCol                              := 0 to StringGridDacal.ColCount - 1 do
+          for NowCol := 0 to StringGridDacal.ColCount - 1 do
             StringGridDacal.Cells[NowCol, Nowrow] := '';
         end;
         StringGridDacal.RowCount := 2;
-        DeviceCount              := GetDeviceNumber;
-        for i                    := 0 to DeviceCount - 1 do
+        DeviceCount := GetDeviceNumber;
+        for i := 0 to DeviceCount - 1 do
         begin
           DeviceID := EnumDevice(i);
-          StringGridDacal.Cells[0, StringGridDacal.RowCount - 1] := inttostr(DeviceID);
-          StringGridDacal.Cells[1, StringGridDacal.RowCount - 1] := inttostr(i + 1);
+          StringGridDacal.Cells[0, StringGridDacal.RowCount - 1] :=
+            inttostr(DeviceID);
+          StringGridDacal.Cells[1, StringGridDacal.RowCount - 1] :=
+            inttostr(i + 1);
           StringGridDacal.AddRow;
         end;
       end;
@@ -7823,29 +9196,30 @@ procedure TMainForm.OnUSBCDDeviceChange;
       procedure TMainForm.dxBarButtonProductsClick(Sender: TObject);
       begin
         Produits.Execute;
-        self.dxBarButtonSearchLocalClick(nil);
+        Self.dxBarButtonSearchLocalClick(nil);
       end;
-
 
       procedure TMainForm.ActionCustomerRentAllExecute(Sender: TObject);
       begin
-        RemoteDB.netshop_rent_transaction.Filter   := '';
+        RemoteDB.netshop_rent_transaction.Filter := '';
         RemoteDB.netshop_rent_transaction.Filtered := True;
-        RadioButtonCustomerRentAll.Checked         := True;
+        RadioButtonCustomerRentAll.Checked := True;
       end;
 
       procedure TMainForm.ActionCustomerRentPendingExecute(Sender: TObject);
       begin
-        RemoteDB.netshop_rent_transaction.Filter   := 'rent_transaction_returned = 0';
+        RemoteDB.netshop_rent_transaction.Filter :=
+          'rent_transaction_returned = 0';
         RemoteDB.netshop_rent_transaction.Filtered := True;
-        RadioButtonCustomerRentPending.Checked     := True;
+        RadioButtonCustomerRentPending.Checked := True;
       end;
 
       procedure TMainForm.ActionCustomerRentClosedExecute(Sender: TObject);
       begin
-        RemoteDB.netshop_rent_transaction.Filter   := 'rent_transaction_returned = 1';
+        RemoteDB.netshop_rent_transaction.Filter :=
+          'rent_transaction_returned = 1';
         RemoteDB.netshop_rent_transaction.Filtered := True;
-        RadioButtonCustomerRentClosed.Checked      := True;
+        RadioButtonCustomerRentClosed.Checked := True;
       end;
 
       procedure TMainForm.InvClick(Sender: TObject);
@@ -7856,9 +9230,12 @@ procedure TMainForm.OnUSBCDDeviceChange;
         while not RemoteDB.Inventory.Eof do
         begin
           RemoteDB.Inventory.Edit;
-          if RemoteDB.Products.Locate('products_model', UpperCase(RemoteDB.Inventoryproduct_model.AsString), [locaseinsensitive]) then
+          if RemoteDB.Products.Locate('products_model',
+            UpperCase(RemoteDB.Inventoryproduct_model.AsString),
+            [locaseinsensitive]) then
           begin
-            RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat := RemoteDB.Products.FieldByName('products_cldprice').AsFloat;
+            RemoteDB.Inventory.FieldByName('product_price_gross').AsFloat :=
+              RemoteDB.Products.FieldByName('products_cldprice').AsFloat;
           end;
           RemoteDB.Inventory.Post;
           RemoteDB.Inventory.Next;
@@ -7871,16 +9248,20 @@ procedure TMainForm.OnUSBCDDeviceChange;
         i, selindex, Asavepoint: Integer;
         aSalesCorrectForm: TSalesCorrectForm;
       begin
-        if (StringGridAdmin.Selection.Top < StringGridAdmin.RowCount) and (StringGridAdmin.Selection.Top >= 0) then
+        if (StringGridAdmin.Selection.Top < StringGridAdmin.RowCount) and
+          (StringGridAdmin.Selection.Top >= 0) then
         begin
           try
             RemoteDB.IsUpdating := True;
-            if not RemoteDB.netshop_sales.Locate('sales_id', StrtoInt(StringGridAdmin.Cells[9, StringGridAdmin.Selection.Top]), []) then
+            if not RemoteDB.netshop_sales.Locate('sales_id',
+              StrtoInt(StringGridAdmin.Cells[9, StringGridAdmin.Selection.Top]
+              ), []) then
               exit;
-            Asavepoint        := RemoteDB.netshop_sales.SavePoint;
-            aSalesCorrectForm := TSalesCorrectForm.Create(self);
+            Asavepoint := RemoteDB.netshop_sales.SavePoint;
+            aSalesCorrectForm := TSalesCorrectForm.Create(Self);
             try
-              aSalesCorrectForm.InitValue.Caption := RemoteDB.netshop_sales.FieldByName('sales_paid_total').AsString;
+              aSalesCorrectForm.InitValue.Caption :=
+                RemoteDB.netshop_sales.FieldByName('sales_paid_total').AsString;
               if aSalesCorrectForm.ShowModal <> mrOK then
                 RemoteDB.netshop_sales.SavePoint := Asavepoint;
             finally
@@ -7906,12 +9287,14 @@ procedure TMainForm.OnUSBCDDeviceChange;
         if pcode <> '' then
           if RemoteDB.Cities.FindKey([StrtoInt(pcode)]) then
           begin
-            RemoteDB.Cities.Filter   := 'Postcode = ' + ClearPhoneNbr(DBEditCustomerPCode.Text);
+            RemoteDB.Cities.Filter := 'Postcode = ' +
+              ClearPhoneNbr(DBEditCustomerPCode.Text);
             RemoteDB.Cities.Filtered := True;
             DBComboCustomerCity.Properties.items.Clear;
             while not RemoteDB.Cities.Eof do
             begin
-              DBComboCustomerCity.Properties.items.Add(RemoteDB.CitiesName.AsString);
+              DBComboCustomerCity.Properties.items.Add
+                (RemoteDB.CitiesName.AsString);
               RemoteDB.Cities.Next;
             end;
             DBComboCustomerCity.Properties.ImmediateDropDown := True;
@@ -7922,12 +9305,13 @@ procedure TMainForm.OnUSBCDDeviceChange;
               RemoteDB.Address_Book.Post;
               end;
             }
-            RemoteDB.Cities.Filter   := '';
+            RemoteDB.Cities.Filter := '';
             RemoteDB.Cities.Filtered := False;
           end;
       end;
 
-      procedure TMainForm.DBEditCustomerVATEditing(Sender: TObject; var CanEdit: Boolean);
+      procedure TMainForm.DBEditCustomerVATEditing(Sender: TObject;
+        var CanEdit: Boolean);
       begin
         if not cxDBCheckBoxCustIsTVA.Checked then
         begin
@@ -7936,7 +9320,8 @@ procedure TMainForm.OnUSBCDDeviceChange;
         end;
       end;
 
-      procedure TMainForm.searchstringKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.searchstringKeyDown(Sender: TObject; var Key: Word;
+        Shift: TShiftState);
       begin
         if Key = 13 then
         begin
@@ -7951,7 +9336,7 @@ procedure TMainForm.OnUSBCDDeviceChange;
       begin
         Produits.Execute;
         RemoteDB.FreeInvoicesToCustomers;
-        aInvoiceBatchPrintForm := TInvoiceBatchPrintForm.Create(self);
+        aInvoiceBatchPrintForm := TInvoiceBatchPrintForm.Create(Self);
         try
           aInvoiceBatchPrintForm.ShowModal;
         finally
@@ -7968,21 +9353,28 @@ procedure TMainForm.OnUSBCDDeviceChange;
       begin
         // Préparation du rapport
         ChDir(ExtractFilePath(ParamStr(0)));
-        title := 'Facture N° ' + RemoteDB.netshop_invoices.FieldByName('invoices_location').AsString + '-' +
+        title := 'Facture N° ' + RemoteDB.netshop_invoices.FieldByName
+          ('invoices_location').AsString + '-' +
           RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString;
-        FileName := 'reports\invoices\Facture_' + RemoteDB.netshop_invoices.FieldByName('invoices_location').AsString + '-' +
-          RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString + '.pdf';
+        FileName := 'reports\invoices\Facture_' +
+          RemoteDB.netshop_invoices.FieldByName('invoices_location').AsString +
+          '-' + RemoteDB.netshop_invoices.FieldByName('invoices_id')
+          .AsString + '.pdf';
 
         RemoteDB.Shops.FindKey([ConnectedShop]);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInvoice', True);
 
-        ReportModule.RvProject.SetParam('TVA6', FloatToStr(RemoteDB.CalcInvoiceTVA(6)));
-        ReportModule.RvProject.SetParam('TVA21', FloatToStr(RemoteDB.CalcInvoiceTVA(21)));
-        ReportModule.RvProject.SetParam('BASE6', FloatToStr(RemoteDB.CalcInvoiceTVABASE(6)));
-        ReportModule.RvProject.SetParam('BASE21', FloatToStr(RemoteDB.CalcInvoiceTVABASE(21)));
+        ReportModule.RvProject.SetParam('TVA6',
+          FloatToStr(RemoteDB.CalcInvoiceTVA(6)));
+        ReportModule.RvProject.SetParam('TVA21',
+          FloatToStr(RemoteDB.CalcInvoiceTVA(21)));
+        ReportModule.RvProject.SetParam('BASE6',
+          FloatToStr(RemoteDB.CalcInvoiceTVABASE(6)));
+        ReportModule.RvProject.SetParam('BASE21',
+          FloatToStr(RemoteDB.CalcInvoiceTVABASE(21)));
         Randomize;
-        i := trunc(Random(RemoteDB.Tips.RecordCount));
+        i := Trunc(Random(RemoteDB.Tips.RecordCount));
         RemoteDB.Tips.First;
         if not RemoteDB.Tips.Eof then
         begin
@@ -7991,31 +9383,41 @@ procedure TMainForm.OnUSBCDDeviceChange;
             RemoteDB.Tips.Next;
             i := i - 1;
           end;
-          ReportModule.RvProject.SetParam('Conditions', RemoteDB.TipsTipsText.AsString);
+          ReportModule.RvProject.SetParam('Conditions',
+            RemoteDB.TipsTipsText.AsString);
         end
         else
           ReportModule.RvProject.SetParam('Conditions', '');
 
-        if RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat > 0 then
+        if RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton')
+          .AsFloat > 0 then
         begin
-          ReportModule.RvProject.SetParam('URL', 'COMMUNICATION : SMARTFACT*' + RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsString + '*' +
-            RemoteDB.netshop_invoices.FieldByName('invoices_location').AsString + '-' + RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
-        end else begin
+          ReportModule.RvProject.SetParam('URL', 'COMMUNICATION : SMARTFACT*' +
+            RemoteDB.netshop_invoices.FieldByName('invoices_customer_id')
+            .AsString + '*' + RemoteDB.netshop_invoices.FieldByName
+            ('invoices_location').AsString + '-' +
+            RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
+        end
+        else
+        begin
           ReportModule.RvProject.SetParam('URL', WEBURL);
         end;
 
-        ReportModule.RvSystem.DefaultDest    := rdFile;
+        ReportModule.RvSystem.DefaultDest := rdFile;
         ReportModule.RvSystem.DoNativeOutput := False;
-        ReportModule.RvSystem.RenderObject   := ReportModule.RvRenderPDF;
+        ReportModule.RvSystem.RenderObject := ReportModule.RvRenderPDF;
         ReportModule.RvSystem.OutputFileName := FileName;
-        ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          - [ssAllowSetup];
         ReportModule.RvSystem.Execute;
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
 
         // Corps du message
         Body := TStringList.Create;
-        Body.Add(('Ce message contient en pièce jointe une facture au format Adobe PDF' + chr(13) + chr(10)));
+        Body.Add((
+          'Ce message contient en pièce jointe une facture au format Adobe PDF'
+          + chr(13) + chr(10)));
         Body.Add(ShopData1.Text);
         Body.Add(ShopData2.Text);
         Body.Add(ShopData3.Text);
@@ -8023,11 +9425,14 @@ procedure TMainForm.OnUSBCDDeviceChange;
         Body.Add(ShopData5.Text);
 
         // Prepare le corps de l email
-        aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text, RemoteDB.Customerscustomers_email_address.AsString, title, FileName, Body);
+        aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text,
+          RemoteDB.Customerscustomers_email_address.AsString, title,
+          FileName, Body);
         Body.Free;
       end;
 
-      procedure TMainForm.edsearchKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.edsearchKeyDown(Sender: TObject; var Key: Word;
+        Shift: TShiftState);
       var
         ExactMatch: Boolean;
         ANotifyServer: TNotifyServer;
@@ -8043,60 +9448,91 @@ procedure TMainForm.OnUSBCDDeviceChange;
 
         if Key = 13 then
         begin
-          if RemoteDB.netshop_customers_alerts.Locate('customers_alerts_customers_nbr;customers_alerts_products_model',
-            Vararrayof([RemoteDB.CustomersCustomers_nbr.AsString, RemoteDB.Productsproducts_model.AsString]), [locaseinsensitive]) then
+          if RemoteDB.netshop_customers_alerts.Locate
+            ('customers_alerts_customers_nbr;customers_alerts_products_model',
+            Vararrayof([RemoteDB.CustomersCustomers_nbr.AsString,
+            RemoteDB.Productsproducts_model.AsString]), [locaseinsensitive])
+          then
           begin
-            if messagedlg('Client déjà inscrit ? Voulez-vous rajouter un article supplémentaire ?', mtwarning, [mbyes, mbno], 0, mbno) = mryes then
+            if messagedlg
+              ('Client déjà inscrit ? Voulez-vous rajouter un article supplémentaire ?',
+              mtwarning, [mbyes, mbno], 0, mbno) = mryes then
             begin
               RemoteDB.netshop_customers_alerts.Edit;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger :=
-                RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger + 1;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_quantity').AsInteger :=
+                RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_quantity').AsInteger + 1;
               RemoteDB.netshop_customers_alerts.Post;
             end;
             exit;
           end;
           // goto nearest match
-          if Sender=Edsearch then begin
-          with RemoteDB.Products do
+          if Sender = Edsearch then
           begin
-            IndexName := 'ProductsIXName';
-            SetKey;
-            FieldByName('products_intername').AsString := Edsearch.Text;
-            ExactMatch                                 := GotoKey;
-          end;
-          end else begin
-           with RemoteDB.Products do
+            with RemoteDB.Products do
+            begin
+              IndexName := 'ProductsIXName';
+              SetKey;
+              FieldByName('products_intername').AsString := Edsearch.Text;
+              ExactMatch := GotoKey;
+            end;
+          end
+          else
           begin
-            IndexName := 'ProductsIXModel';
-            SetKey;
-            FieldByName('products_model').AsString := Edsearch.Text;
-            ExactMatch                                 := GotoKey;
-          end;
+            with RemoteDB.Products do
+            begin
+              IndexName := 'ProductsIXModel';
+              SetKey;
+              FieldByName('products_model').AsString := Edsearch.Text;
+              ExactMatch := GotoKey;
+            end;
           end;
           if ExactMatch then
           begin
             RemoteDB.netshop_customers_alerts.Append;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := RemoteDB.Productsproducts_model.AsString;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString :=
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_customers_nbr').AsString :=
+              RemoteDB.CustomersCustomers_nbr.AsString;
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_products_model').AsString :=
+              RemoteDB.Productsproducts_model.AsString;
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_products_name').AsString :=
               RemoteDB.Products.FieldByName('products_intername').Text;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := RemoteDB.Productsproducts_root_category_name.AsString;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := Round(StrtoInt(CustomerAlertMaxPrice.Text));
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_products_cat').AsString :=
+              RemoteDB.Productsproducts_root_category_name.AsString;
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_used').Value :=
+              Round(StrtoInt(CustomerAlertMaxPrice.Text));
             RemoteDB.netshop_customers_alerts.Post;
-          end else begin
-            if messagedlg('Attention pas de reference dans la DB cette commande ne generera pas de SMS', mtwarning, [mbok, mbCancel], 0) = mrOK then
+          end
+          else
+          begin
+            if messagedlg
+              ('Attention pas de reference dans la DB cette commande ne generera pas de SMS',
+              mtwarning, [mbok, mbCancel], 0) = mrOK then
             begin
               RemoteDB.netshop_customers_alerts.Append;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := 'NILL';
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString := Edsearch.Text;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := RemoteDB.Productsproducts_root_category_name.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_customers_nbr').AsString :=
+                RemoteDB.CustomersCustomers_nbr.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_model').AsString := 'NILL';
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_name').AsString := Edsearch.Text;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_cat').AsString :=
+                RemoteDB.Productsproducts_root_category_name.AsString;
               RemoteDB.netshop_customers_alerts.Post;
             end;
           end;
           if UserType = 1 then
           begin
-            ANotifyServer := TNotifyServer.Create('smsalert', RemoteDB.Customerscustomers_email_address.AsString, '', NOTIFYURL);
+            ANotifyServer := TNotifyServer.Create('smsalert',
+              RemoteDB.Customerscustomers_email_address.AsString, '',
+              NOTIFYURL);
           end;
           CustomerAlertMaxPrice.Text := '0';
         end;
@@ -8132,12 +9568,12 @@ procedure TMainForm.OnUSBCDDeviceChange;
 
         // calculate what part of text should be selected
         sfind := RemoteDB.Products.FieldByName('products_intername').AsString;
-        len   := Length(sfind) - Length(txt);
+        len := Length(sfind) - Length(txt);
         if len > 0 then
         begin
-          edfromcode         := True;
-          Edsearch.Text      := sfind;
-          Edsearch.SelStart  := Length(txt);
+          edfromcode := True;
+          Edsearch.Text := sfind;
+          Edsearch.SelStart := Length(txt);
           Edsearch.SelLength := len;
         end;
       end;
@@ -8150,12 +9586,16 @@ procedure TMainForm.OnUSBCDDeviceChange;
         RemoteDB.Shops.FindKey([ConnectedShop]);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInvoice', True);
-        ReportModule.RvProject.SetParam('TVA6', FloatToStr(RemoteDB.CalcInvoiceTVA(6)));
-        ReportModule.RvProject.SetParam('TVA21', FloatToStr(RemoteDB.CalcInvoiceTVA(21)));
-        ReportModule.RvProject.SetParam('BASE6', FloatToStr(RemoteDB.CalcInvoiceTVABASE(6)));
-        ReportModule.RvProject.SetParam('BASE21', FloatToStr(RemoteDB.CalcInvoiceTVABASE(21)));
+        ReportModule.RvProject.SetParam('TVA6',
+          FloatToStr(RemoteDB.CalcInvoiceTVA(6)));
+        ReportModule.RvProject.SetParam('TVA21',
+          FloatToStr(RemoteDB.CalcInvoiceTVA(21)));
+        ReportModule.RvProject.SetParam('BASE6',
+          FloatToStr(RemoteDB.CalcInvoiceTVABASE(6)));
+        ReportModule.RvProject.SetParam('BASE21',
+          FloatToStr(RemoteDB.CalcInvoiceTVABASE(21)));
         Randomize;
-        i := trunc(Random(RemoteDB.Tips.RecordCount));
+        i := Trunc(Random(RemoteDB.Tips.RecordCount));
         RemoteDB.Tips.First;
         if not RemoteDB.Tips.Eof then
         begin
@@ -8164,22 +9604,30 @@ procedure TMainForm.OnUSBCDDeviceChange;
             RemoteDB.Tips.Next;
             i := i - 1;
           end;
-          ReportModule.RvProject.SetParam('Conditions', RemoteDB.TipsTipsText.AsString);
+          ReportModule.RvProject.SetParam('Conditions',
+            RemoteDB.TipsTipsText.AsString);
         end
         else
           ReportModule.RvProject.SetParam('Conditions', '');
 
-        if RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat > 0 then
+        if RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton')
+          .AsFloat > 0 then
         begin
-          ReportModule.RvProject.SetParam('URL', 'COMMUNICATION : SMARTFACT*' + RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsString + '*' +
-            RemoteDB.netshop_invoices.FieldByName('invoices_location').AsString + '-' + RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
-        end else begin
+          ReportModule.RvProject.SetParam('URL', 'COMMUNICATION : SMARTFACT*' +
+            RemoteDB.netshop_invoices.FieldByName('invoices_customer_id')
+            .AsString + '*' + RemoteDB.netshop_invoices.FieldByName
+            ('invoices_location').AsString + '-' +
+            RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
+        end
+        else
+        begin
           ReportModule.RvProject.SetParam('URL', WEBURL);
         end;
 
-        ReportModule.RvSystem.DefaultDest    := rdpreview;
+        ReportModule.RvSystem.DefaultDest := rdpreview;
         ReportModule.RvSystem.DoNativeOutput := True;
-        ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          - [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
 
         ReportModule.RvProject.Execute;
@@ -8193,14 +9641,14 @@ procedure TMainForm.OnUSBCDDeviceChange;
 
       procedure TMainForm.SpeedButton1Click(Sender: TObject);
       begin
-        DBDebugExecute(self);
+        DBDebugExecute(Self);
       end;
 
       procedure TMainForm.SpeedButtonChangeEANClick(Sender: TObject);
       var
         aDialogChangeEanForm: TChangeEanForm;
       begin
-        aDialogChangeEanForm := TChangeEanForm.Create(self);
+        aDialogChangeEanForm := TChangeEanForm.Create(Self);
         try
           aDialogChangeEanForm.ShowModal;
         finally
@@ -8219,15 +9667,17 @@ procedure TMainForm.OnUSBCDDeviceChange;
           RemoteDB.CDSActions.Append;
           RemoteDB.CDSActions.FieldByName('action').AsString := 'Fin pause';
           RemoteDB.CDSActions.Post;
-          aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text, PauseNotification, 'Fin pause ' + ShopData1.Text, '',
-            aStrings);
+          aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text,
+            PauseNotification, 'Fin pause ' + ShopData1.Text, '', aStrings);
           Screen.Cursor := crDefault;
-        end else begin
+        end
+        else
+        begin
           RemoteDB.CDSActions.Append;
           RemoteDB.CDSActions.FieldByName('action').AsString := 'Début pause';
           RemoteDB.CDSActions.Post;
-          aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text, PauseNotification, 'Début pause ' + ShopData1.Text, '',
-            aStrings);
+          aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text,
+            PauseNotification, 'Début pause ' + ShopData1.Text, '', aStrings);
           Screen.Cursor := crNoDrop;
         end;
 
@@ -8243,15 +9693,19 @@ procedure TMainForm.OnUSBCDDeviceChange;
         CustomerAlertMaxPrice.SelectAll;
       end;
 
-      procedure TMainForm.CustomerAlertMaxPriceKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.CustomerAlertMaxPriceKeyDown(Sender: TObject;
+        var Key: Word; Shift: TShiftState);
       var
         ExactMatch: Boolean;
         ANotifyServer: TNotifyServer;
       begin
         if Key = 13 then
         begin
-          if RemoteDB.netshop_customers_alerts.Locate('customers_alerts_customers_nbr;customers_alerts_products_model',
-            Vararrayof([RemoteDB.CustomersCustomers_nbr.AsString, RemoteDB.Productsproducts_model.AsString]), [locaseinsensitive]) then
+          if RemoteDB.netshop_customers_alerts.Locate
+            ('customers_alerts_customers_nbr;customers_alerts_products_model',
+            Vararrayof([RemoteDB.CustomersCustomers_nbr.AsString,
+            RemoteDB.Productsproducts_model.AsString]), [locaseinsensitive])
+          then
           begin
             ShowMessage('Ce client est deja inscrit pour ce produit');
             exit;
@@ -8266,26 +9720,47 @@ procedure TMainForm.OnUSBCDDeviceChange;
           if ExactMatch then
           begin
             RemoteDB.netshop_customers_alerts.Append;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := RemoteDB.Productsproducts_model.AsString;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString :=
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_customers_nbr').AsString :=
+              RemoteDB.CustomersCustomers_nbr.AsString;
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_products_model').AsString :=
+              RemoteDB.Productsproducts_model.AsString;
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_products_name').AsString :=
               RemoteDB.Products.FieldByName('products_intername').AsString;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := RemoteDB.Productsproducts_root_category_name.AsString;
-            RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := Round(StrtoInt(CustomerAlertMaxPrice.Text));
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_products_cat').AsString :=
+              RemoteDB.Productsproducts_root_category_name.AsString;
+            RemoteDB.netshop_customers_alerts.FieldByName
+              ('customers_alerts_used').Value :=
+              Round(StrtoInt(CustomerAlertMaxPrice.Text));
             RemoteDB.netshop_customers_alerts.Post;
             if UserType = 1 then
             begin
-              ANotifyServer := TNotifyServer.Create('smsalert', RemoteDB.Customerscustomers_email_address.AsString, '', NOTIFYURL);
+              ANotifyServer := TNotifyServer.Create('smsalert',
+                RemoteDB.Customerscustomers_email_address.AsString, '',
+                NOTIFYURL);
             end;
 
-          end else begin
-            if messagedlg('Attention pas de reference dans la DB cette commande ne generera pas de SMS', mtwarning, [mbok, mbCancel], 0) = mrOK then
+          end
+          else
+          begin
+            if messagedlg
+              ('Attention pas de reference dans la DB cette commande ne generera pas de SMS',
+              mtwarning, [mbok, mbCancel], 0) = mrOK then
             begin
               RemoteDB.netshop_customers_alerts.Append;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := 'NILL';
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString := Edsearch.Text;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := RemoteDB.Productsproducts_root_category_name.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_customers_nbr').AsString :=
+                RemoteDB.CustomersCustomers_nbr.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_model').AsString := 'NILL';
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_name').AsString := Edsearch.Text;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_cat').AsString :=
+                RemoteDB.Productsproducts_root_category_name.AsString;
               RemoteDB.netshop_customers_alerts.Post;
             end;
           end;
@@ -8296,27 +9771,36 @@ procedure TMainForm.OnUSBCDDeviceChange;
       var
         aInvoicesCancelItemForm: TInvoicesCancelItemForm;
       begin
-        if not(RemoteDB.netshop_invoices.Bof and RemoteDB.netshop_invoices.Eof) then
+        if not(RemoteDB.netshop_invoices.Bof and RemoteDB.netshop_invoices.Eof)
+        then
         begin
-          if not(RemoteDB.netshop_invoices_items.Eof and RemoteDB.netshop_invoices_items.Bof) then
+          if not(RemoteDB.netshop_invoices_items.Eof and
+            RemoteDB.netshop_invoices_items.Bof) then
           begin
-            if RemoteDB.netshop_invoices.FieldByName('invoices_closed').Value <> 1 then
+            if RemoteDB.netshop_invoices.FieldByName('invoices_closed').Value <> 1
+            then
             begin
-              aInvoicesCancelItemForm := TInvoicesCancelItemForm.Create(self);
+              aInvoicesCancelItemForm := TInvoicesCancelItemForm.Create(Self);
               try
                 aInvoicesCancelItemForm.ShowModal;
               finally
                 aInvoicesCancelItemForm.Free;
               end;
-            end else begin
+            end
+            else
+            begin
               // Invoice Closed
               messagedlg('La facture est cloturée', mtwarning, [mbok], 0);
             end;
-          end else begin
+          end
+          else
+          begin
             // No invoices Items
             messagedlg('La facture est vide', mtwarning, [mbok], 0);
           end;
-        end else begin
+        end
+        else
+        begin
           // No invoice
           messagedlg('Aucune facture disponnible', mtwarning, [mbok], 0);
         end;
@@ -8332,22 +9816,28 @@ procedure TMainForm.OnUSBCDDeviceChange;
         aReportSQL: TReportSQL;
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Rapport invendus depot';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Rapport invendus depot';
         RemoteDB.CDSActions.Post;
         with RemoteDB.SQLQuery do
         begin
-          CommandText := 'SELECT products_root_category_name as Plateforme, product_model as Modele,';
-          CommandText := CommandText + ' product_name as Nom , product_owner_id as Proprio, product_price_stock as PStock, product_date_in as DateIn ';
+          CommandText :=
+            'SELECT products_root_category_name as Plateforme, product_model as Modele,';
+          CommandText := CommandText +
+            ' product_name as Nom , product_owner_id as Proprio, product_price_stock as PStock, product_date_in as DateIn ';
           CommandText := CommandText +
             ' FROM netshop_stock inner join products on products.products_model=netshop_stock.product_model WHERE `product_owner_id` >= 100000 AND `product_location` =  '
             + inttostr(ConnectedShop);
-          CommandText := CommandText + ' and product_date_in < ' + VCLToOSCDate(Now - 365);
-          CommandText := CommandText + ' order by products_root_category_name, product_date_in';
+          CommandText := CommandText + ' and product_date_in < ' +
+            VCLToOSCDate(Now - 365);
+          CommandText := CommandText +
+            ' order by products_root_category_name, product_date_in';
         end;
-        aReportSQL := TReportSQL.Create(self);
+        aReportSQL := TReportSQL.Create(Self);
         try
           aReportSQL.CDSReport.Open;
-          aReportSQL.cxGridReportDBTableViewReport.DataController.CreateAllItems(True);
+          aReportSQL.cxGridReportDBTableViewReport.DataController.
+            CreateAllItems(True);
           aReportSQL.ShowModal;
         finally
           aReportSQL.Free;
@@ -8360,31 +9850,41 @@ procedure TMainForm.OnUSBCDDeviceChange;
         i, j, InStock, OutStock: Integer;
       begin
         AdvPageControlBrowser.ActivePage := AdvTabSheetBrowserCLD;
-        self.WebBrowserCLD.Navigate('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID=' + GlobalsUnit.CLDLogin + '&C_PW='+GlobalsUnit.CLDPass);
-        aReorderForm                     := TReorderForm.Create(self);
+        Self.WebBrowserCLD.Navigate
+          ('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID='
+          + GlobalsUnit.CLDLogin + '&C_PW=' + GlobalsUnit.CLDPass);
+        aReorderForm := TReorderForm.Create(Self);
 
         try
           RemoteDB.SetItemstoSales;
           RemoteDB.netshop_sales.IndexName := 'SalesIXLocationId';
-          RemoteDB.netshop_sales.Filter    := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< sales_date_time and sales_date_time < ' +
-            FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
-          RemoteDB.netshop_sales.Filtered       := True;
+          RemoteDB.netshop_sales.Filter := '(' +
+            FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+            '< sales_date_time and sales_date_time < ' +
+            FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+            ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
+          RemoteDB.netshop_sales.Filtered := True;
           RemoteDB.netshop_items_sold.IndexName := 'ItemsIXLocationId';
           RemoteDB.netshop_items_sold.DisableControls;
           RemoteDB.Products.IndexName := 'ProductsIXModel';
-          RemoteDB.Products.Filtered  := False;
+          RemoteDB.Products.Filtered := False;
 
           RemoteDB.netshop_stock.IndexName := 'StockIXModelLocation';
-          RemoteDB.netshop_stock.Filter    := 'product_owner_id<100000 and product_supplier_id<100000';
-          RemoteDB.netshop_stock.Filtered  := True;
+          RemoteDB.netshop_stock.Filter :=
+            'product_owner_id<100000 and product_supplier_id<100000';
+          RemoteDB.netshop_stock.Filtered := True;
 
-          RemoteDB.Transferout.Filter := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< date_time and date_time < ' +
-            FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (product_origin = ' + inttostr(ConnectedShop) + ')';
+          RemoteDB.Transferout.Filter := '(' +
+            FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+            '< date_time and date_time < ' +
+            FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+            ') and (product_origin = ' + inttostr(ConnectedShop) + ')';
           RemoteDB.Transferout.Filtered := True;
 
           ProgressBar.Visible := True;
-          i                   := 0;
-          j                   := RemoteDB.netshop_sales.RecordCount + RemoteDB.Transferout.RecordCount;
+          i := 0;
+          j := RemoteDB.netshop_sales.RecordCount +
+            RemoteDB.Transferout.RecordCount;
           if j > 0 then
             ProgressBar.Position := (i / (j) * 100);
           aReorderForm.TableData.Close;
@@ -8396,42 +9896,66 @@ procedure TMainForm.OnUSBCDDeviceChange;
             RemoteDB.netshop_items_sold.First;
             while not RemoteDB.netshop_items_sold.Eof do
             begin
-              if ((RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger < 10000) and
-                (RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsInteger < 10000)) then
+              if ((RemoteDB.netshop_items_sold.FieldByName
+                ('items_sold_owner_id').AsInteger < 10000) and
+                (RemoteDB.netshop_items_sold.FieldByName
+                ('items_sold_supplier_id').AsInteger < 10000)) then
               begin
-                if not RemoteDB.netshop_stock.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value, ConnectedShop]) then
+                if not RemoteDB.netshop_stock.FindKey
+                  ([RemoteDB.netshop_items_sold.FieldByName('items_sold_model')
+                  .Value, ConnectedShop]) then
                 begin
-                  RemoteDB.Products.FindKey([RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value]);
-                  if RemoteDB.Products.FieldByName('products_esd').AsInteger = 0 then
+                  RemoteDB.Products.FindKey
+                    ([RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_model').Value]);
+                  if RemoteDB.Products.FieldByName('products_esd').AsInteger = 0
+                  then
 
-                    if not aReorderForm.TableData.Locate('EAN', RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value, [locaseinsensitive]) then
+                    if not aReorderForm.TableData.Locate('EAN',
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_model').Value, [locaseinsensitive]) then
                     begin
                       aReorderForm.TableData.Append;
-                      aReorderForm.TableDataEAN.Value := RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value;
-                      aReorderForm.TableDataNom.Value := RemoteDB.Products.FieldByName('products_intername').AsString;
-                      aReorderForm.TableDataRootCategoryName.Value := RemoteDB.Productsproducts_root_category_name.Value;
+                      aReorderForm.TableDataEAN.Value :=
+                        RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_model').Value;
+                      aReorderForm.TableDataNom.Value :=
+                        RemoteDB.Products.FieldByName
+                        ('products_intername').AsString;
+                      aReorderForm.TableDataRootCategoryName.Value :=
+                        RemoteDB.Productsproducts_root_category_name.Value;
                       aReorderForm.TableDataQuantity.Value := 0;
                       aReorderForm.TableDataQSTOCK.Value := 0;
-                      if not VarIsNull(RemoteDB.Products.FieldByName('products_CLD_id').Value) then
+                      if not VarIsNull
+                        (RemoteDB.Products.FieldByName('products_CLD_id').Value)
+                      then
                       begin
                         aReorderForm.TableDataConfirmBO.Value := True;
-                        aReorderForm.TableDataIDART.Value := RemoteDB.Productsproducts_CLD_id.AsString;
-                      end else begin
+                        aReorderForm.TableDataIDART.Value :=
+                          RemoteDB.Productsproducts_CLD_id.AsString;
+                      end
+                      else
+                      begin
                         aReorderForm.TableDataIDART.AsString := '00000';
                         aReorderForm.TableDataConfirmBO.Value := False;
                       end;
-                      RemoteDB.CheckExtStock(RemoteDB.netshop_items_sold.FieldByName('items_sold_model').Value, InStock, OutStock);
+                      RemoteDB.CheckExtStock
+                        (RemoteDB.netshop_items_sold.FieldByName
+                        ('items_sold_model').Value, InStock, OutStock);
                       aReorderForm.TableDataGroupAvailable.AsInteger := InStock;
                       aReorderForm.TableDataAvailable.AsInteger := OutStock;
-                      aReorderForm.TableData.FieldByName('QCLD').AsInteger := RemoteDB.Products.FieldByName('products_cld_stock').Value;
+                      aReorderForm.TableData.FieldByName('QCLD').AsInteger :=
+                        RemoteDB.Products.FieldByName
+                        ('products_cld_stock').Value;
                       aReorderForm.TableData.Post;
                     end;
                 end;
               end;
               RemoteDB.netshop_items_sold.Next;
             end;
-            i                    := i + 1;
-            ProgressBar.Position := (i / (RemoteDB.netshop_sales.RecordCount) * 100);
+            i := i + 1;
+            ProgressBar.Position :=
+              (i / (RemoteDB.netshop_sales.RecordCount) * 100);
             Application.ProcessMessages;
             RemoteDB.netshop_sales.Next;
           end;
@@ -8442,25 +9966,36 @@ procedure TMainForm.OnUSBCDDeviceChange;
           while not RemoteDB.Transferout.Eof do
           begin
 
-            if not RemoteDB.netshop_stock.FindKey([RemoteDB.transferOutproduct_model.Value, ConnectedShop]) then
+            if not RemoteDB.netshop_stock.FindKey
+              ([RemoteDB.transferOutproduct_model.Value, ConnectedShop]) then
             begin
-              RemoteDB.Products.FindKey([RemoteDB.transferOutproduct_model.Value]);
-              if not aReorderForm.TableData.Locate('EAN', RemoteDB.transferOutproduct_model.Value, [locaseinsensitive]) then
+              RemoteDB.Products.FindKey
+                ([RemoteDB.transferOutproduct_model.Value]);
+              if not aReorderForm.TableData.Locate('EAN',
+                RemoteDB.transferOutproduct_model.Value, [locaseinsensitive])
+              then
               begin
                 aReorderForm.TableData.Append;
-                aReorderForm.TableDataEAN.Value := RemoteDB.transferOutproduct_model.Value;
-                aReorderForm.TableDataNom.Value := RemoteDB.Products.FieldByName('products_intername').AsString;
-                aReorderForm.TableDataRootCategoryName.Value := RemoteDB.Productsproducts_root_category_name.Value;
+                aReorderForm.TableDataEAN.Value :=
+                  RemoteDB.transferOutproduct_model.Value;
+                aReorderForm.TableDataNom.Value := RemoteDB.Products.FieldByName
+                  ('products_intername').AsString;
+                aReorderForm.TableDataRootCategoryName.Value :=
+                  RemoteDB.Productsproducts_root_category_name.Value;
                 aReorderForm.TableDataQuantity.Value := 0;
                 if not VarIsNull(RemoteDB.Productsproducts_CLD_id.Value) then
                 begin
                   aReorderForm.TableDataConfirmBO.Value := True;
-                  aReorderForm.TableDataIDART.Value     := RemoteDB.Productsproducts_CLD_id.AsString;
-                end else begin
-                  ReorderForm.TableDataIDART.AsString   := '00000';
+                  aReorderForm.TableDataIDART.Value :=
+                    RemoteDB.Productsproducts_CLD_id.AsString;
+                end
+                else
+                begin
+                  ReorderForm.TableDataIDART.AsString := '00000';
                   aReorderForm.TableDataConfirmBO.Value := False;
                 end;
-                RemoteDB.CheckExtStock(RemoteDB.transferOutproduct_model.Value, InStock, OutStock);
+                RemoteDB.CheckExtStock(RemoteDB.transferOutproduct_model.Value,
+                  InStock, OutStock);
                 aReorderForm.TableDataGroupAvailable.AsInteger := InStock;
                 aReorderForm.TableDataAvailable.AsInteger := OutStock;
                 aReorderForm.TableData.Post;
@@ -8473,103 +10008,126 @@ procedure TMainForm.OnUSBCDDeviceChange;
 
           aReorderForm.ShowModal;
           RemoteDB.CDSActions.Append;
-          RemoteDB.CDSActions.FieldByName('action').AsString := 'Action reassort';
+          RemoteDB.CDSActions.FieldByName('action').AsString :=
+            'Action reassort';
           RemoteDB.CDSActions.Post;
         finally
-          RemoteDB.netshop_sales.Filtered      := False;
-          RemoteDB.netshop_sales.Filter        := '';
+          RemoteDB.netshop_sales.Filtered := False;
+          RemoteDB.netshop_sales.Filter := '';
           RemoteDB.netshop_items_sold.Filtered := False;
-          RemoteDB.netshop_items_sold.Filter   := '';
+          RemoteDB.netshop_items_sold.Filter := '';
           RemoteDB.netshop_items_sold.EnableControls;
-          RemoteDB.Transferout.Filtered   := False;
-          RemoteDB.Transferout.Filter     := '';
-          RemoteDB.netshop_stock.Filter   := '';
+          RemoteDB.Transferout.Filtered := False;
+          RemoteDB.Transferout.Filter := '';
+          RemoteDB.netshop_stock.Filter := '';
           RemoteDB.netshop_stock.Filtered := False;
-          ProgressBar.Visible             := False;
+          ProgressBar.Visible := False;
           aReorderForm.Free
         end;
         ActionWebInfo.Execute;
       end;
 
-      procedure TMainForm.JvLookOutButtonReorderTopSellersClick(Sender: TObject);
+      procedure TMainForm.JvLookOutButtonReorderTopSellersClick
+        (Sender: TObject);
       var
         aReorderForm: TReorderForm;
         i, j, InStock, OutStock: Integer;
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Action reassort bestsellers';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Action reassort bestsellers';
         RemoteDB.CDSActions.Post;
-        self.WebBrowserCLD.Navigate('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID=' + GlobalsUnit.CLDLogin + '&C_PW='+GlobalsUnit.CLDPass );
+        Self.WebBrowserCLD.Navigate
+          ('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID='
+          + GlobalsUnit.CLDLogin + '&C_PW=' + GlobalsUnit.CLDPass);
         AdvPageControlBrowser.ActivePage := AdvTabSheetBrowserCLD;
-        aReorderForm                     := TReorderForm.Create(self);
+        aReorderForm := TReorderForm.Create(Self);
 
         try
 
           with RemoteDB.SQLQuery do
           begin
-            CommandText := 'call TopSellersToOrderByShop(' + inttostr(ConnectedShop) +')';
+            CommandText := 'call TopSellersToOrderByShop(' +
+              inttostr(ConnectedShop) + ')';
           end;
           RemoteDB.CDSQuery.Open;
 
           ProgressBar.Visible := True;
-          i                   := 0;
-          j                   := RemoteDB.CDSQuery.RecordCount;
+          i := 0;
+          j := RemoteDB.CDSQuery.RecordCount;
           if j > 0 then
-          ProgressBar.Position := (i / (j) * 100);
+            ProgressBar.Position := (i / (j) * 100);
           aReorderForm.TableData.Close;
           aReorderForm.TableData.Open;
 
           // Parse the sales of the day
           while not RemoteDB.CDSQuery.Eof do
           begin
-            RemoteDB.Products.FindKey([RemoteDB.CDSQuery.FieldByName('products_model').Value]);
+            RemoteDB.Products.FindKey
+              ([RemoteDB.CDSQuery.FieldByName('products_model').Value]);
 
-                    if not aReorderForm.TableData.Locate('EAN', RemoteDB.CDSQuery.FieldByName('products_model').Value, [locaseinsensitive]) then
-                    begin
-                      aReorderForm.TableData.Append;
-                      aReorderForm.TableData.FieldByName('EAN').Value := RemoteDB.CDSQuery.FieldByName('products_model').Value;
-                      aReorderForm.TableData.FieldByName('Name').Value := RemoteDB.CDSQuery.FieldByName('products_name').AsString;
-                      aReorderForm.TableData.FieldByName('RootCategoryName').Value := RemoteDB.CDSQuery.FieldByName('products_root_category_name').AsString;
-                      aReorderForm.TableData.FieldByName('Quantity').Value := RemoteDB.CDSQuery.FieldByName('TOORDER').Value;
-                      aReorderForm.TableData.FieldByName('QSTOCK').Value := RemoteDB.CDSQuery.FieldByName('STOCK').Value;
+            if not aReorderForm.TableData.Locate('EAN',
+              RemoteDB.CDSQuery.FieldByName('products_model').Value,
+              [locaseinsensitive]) then
+            begin
+              aReorderForm.TableData.Append;
+              aReorderForm.TableData.FieldByName('EAN').Value :=
+                RemoteDB.CDSQuery.FieldByName('products_model').Value;
+              aReorderForm.TableData.FieldByName('Name').Value :=
+                RemoteDB.CDSQuery.FieldByName('products_name').AsString;
+              aReorderForm.TableData.FieldByName('RootCategoryName').Value :=
+                RemoteDB.CDSQuery.FieldByName
+                ('products_root_category_name').AsString;
+              aReorderForm.TableData.FieldByName('Quantity').Value :=
+                RemoteDB.CDSQuery.FieldByName('TOORDER').Value;
+              aReorderForm.TableData.FieldByName('QSTOCK').Value :=
+                RemoteDB.CDSQuery.FieldByName('STOCK').Value;
 
-                      if not VarIsNull(RemoteDB.Products.FieldByName('products_CLD_id').Value) then
-                      begin
-                        aReorderForm.TableData.FieldByName('ConfirmBO').Value := True;
-                        aReorderForm.TableData.FieldByName('IDART').Value := RemoteDB.Productsproducts_CLD_id.AsString;
-                      end else begin
-                        aReorderForm.TableData.FieldByName('IDART').AsString := '00000';
-                        aReorderForm.TableData.FieldByName('ConfirmBO').Value := False;
-                      end;
-                      RemoteDB.CheckExtStock(RemoteDB.CDSQuery.FieldByName('products_model').Value, InStock, OutStock);
-                      aReorderForm.TableData.FieldByName('GroupAvailable').AsInteger := InStock;
-                      aReorderForm.TableData.FieldByName('Available').AsInteger := OutStock;
-                      aReorderForm.TableData.FieldByName('QCLD').AsInteger := RemoteDB.Products.FieldByName('products_cld_stock').Value;
-                      aReorderForm.TableData.Post;
-                    end;
-            i                    := i + 1;
+              if not VarIsNull(RemoteDB.Products.FieldByName('products_CLD_id')
+                .Value) then
+              begin
+                aReorderForm.TableData.FieldByName('ConfirmBO').Value := True;
+                aReorderForm.TableData.FieldByName('IDART').Value :=
+                  RemoteDB.Productsproducts_CLD_id.AsString;
+              end
+              else
+              begin
+                aReorderForm.TableData.FieldByName('IDART').AsString := '00000';
+                aReorderForm.TableData.FieldByName('ConfirmBO').Value := False;
+              end;
+              RemoteDB.CheckExtStock
+                (RemoteDB.CDSQuery.FieldByName('products_model').Value, InStock,
+                OutStock);
+              aReorderForm.TableData.FieldByName('GroupAvailable').AsInteger
+                := InStock;
+              aReorderForm.TableData.FieldByName('Available').AsInteger
+                := OutStock;
+              aReorderForm.TableData.FieldByName('QCLD').AsInteger :=
+                RemoteDB.Products.FieldByName('products_cld_stock').Value;
+              aReorderForm.TableData.Post;
+            end;
+            i := i + 1;
             ProgressBar.Position := (i / (RemoteDB.CDSQuery.RecordCount) * 100);
             Application.ProcessMessages;
             RemoteDB.CDSQuery.Next;
           end;
 
-
-
           aReorderForm.ShowModal;
         finally
           RemoteDB.CDSQuery.Close;
-          ProgressBar.Visible             := False;
+          ProgressBar.Visible := False;
           aReorderForm.Free
         end;
         ActionWebInfo.Execute;
-end;
+      end;
 
-procedure TMainForm.JvLookOutButtonReassortBestsellers(Sender: TObject);
-begin
-end;
+      procedure TMainForm.JvLookOutButtonReassortBestsellers(Sender: TObject);
+      begin
+      end;
 
-procedure TMainForm.JvLookOutButtonReassortBestsellersClick(Sender: TObject);
-begin
+      procedure TMainForm.JvLookOutButtonReassortBestsellersClick
+        (Sender: TObject);
+      begin
       end;
 
       procedure TMainForm.JvLookOutButton6Click(Sender: TObject);
@@ -8578,15 +10136,15 @@ begin
         i: Integer;
         DayCashierSummary: TDayCashierSummary;
         AFormCashRegister: TFormCashRegister;
-        Accu: Double;
+        Accu: double;
         UpdateStatus: Boolean;
 
       begin
 
-        AFormCashRegister := TFormCashRegister.Create(self);
+        AFormCashRegister := TFormCashRegister.Create(Self);
         AFormCashRegister.Show;
         AFormCashRegister.Enabled := False;
-        Screen.Cursor             := crHourglass;
+        Screen.Cursor := crHourglass;
         Application.ProcessMessages;
         RemoteDB.SetItemstoSales;
 
@@ -8595,8 +10153,9 @@ begin
           if not RemoteDB.IsUpdating then
             RemoteDB.IsUpdating := True;
 
-          Accu  := StartValue.Value;
-          for i := trunc(MonthCalendarAdminSales.Date) to trunc(MonthCalendarAdminSalesEnd.Date) do
+          Accu := StartValue.Value;
+          for i := Trunc(MonthCalendarAdminSales.Date)
+            to Trunc(MonthCalendarAdminSalesEnd.Date) do
           begin
             DayCashierSummary := RemoteDB.CalcDayCahsierSummary(i, i);
             if DayCashierSummary.Open then
@@ -8608,40 +10167,65 @@ begin
               /// Population Grid
               ///
               AFormCashRegister.CashData.Append;
-              AFormCashRegister.CashData.FieldByName('Nbr').Value := AFormCashRegister.CashData.FieldByName('Nbr').Value + 1;
+              AFormCashRegister.CashData.FieldByName('Nbr').Value :=
+                AFormCashRegister.CashData.FieldByName('Nbr').Value + 1;
               AFormCashRegister.CashData.FieldByName('Date').Value := i;
-              AFormCashRegister.CashData.FieldByName('NEW-0').Value := DayCashierSummary.New0;
-              AFormCashRegister.CashData.FieldByName('NEW-6').Value := DayCashierSummary.New6;
-              AFormCashRegister.CashData.FieldByName('NEW-21').Value := DayCashierSummary.New21;
-              AFormCashRegister.CashData.FieldByName('New').Value := DayCashierSummary.New + DayCashierSummary.NoMargin;
-              AFormCashRegister.CashData.FieldByName('SH').Value := DayCashierSummary.SH;
-              AFormCashRegister.CashData.FieldByName('Depot').Value := DayCashierSummary.SHDeposit;
-              AFormCashRegister.CashData.FieldByName('Rachat').Value := DayCashierSummary.SHBought;
-              AFormCashRegister.CashData.FieldByName('CostOfBought').Value := DayCashierSummary.SHCostOfBought;
-              AFormCashRegister.CashData.FieldByName('Serv').Value := DayCashierSummary.Service;
-              AFormCashRegister.CashData.FieldByName('Returns').Value := DayCashierSummary.Returns;
-              AFormCashRegister.CashData.FieldByName('Total').Value := DayCashierSummary.TotalNature;
-              AFormCashRegister.CashData.FieldByName('Cash').Value := DayCashierSummary.Cash;
-              AFormCashRegister.CashData.FieldByName('Bct').Value := DayCashierSummary.BCT;
-              AFormCashRegister.CashData.FieldByName('Visa').Value := DayCashierSummary.Visa;
-              AFormCashRegister.CashData.FieldByName('Proton').Value := DayCashierSummary.Proton;
-              AFormCashRegister.CashData.FieldByName('Voucher').Value := DayCashierSummary.Voucher;
-              AFormCashRegister.CashData.FieldByName('Refunds').Value := DayCashierSummary.Refunds;
-              AFormCashRegister.CashData.FieldByName('Purchased').Value := DayCashierSummary.Purchased;
-              AFormCashRegister.CashData.FieldByName('TotalPay').Value := DayCashierSummary.TotalPay;
+              AFormCashRegister.CashData.FieldByName('NEW-0').Value :=
+                DayCashierSummary.New0;
+              AFormCashRegister.CashData.FieldByName('NEW-6').Value :=
+                DayCashierSummary.New6;
+              AFormCashRegister.CashData.FieldByName('NEW-21').Value :=
+                DayCashierSummary.New21;
+              AFormCashRegister.CashData.FieldByName('New').Value :=
+                DayCashierSummary.New + DayCashierSummary.NoMargin;
+              AFormCashRegister.CashData.FieldByName('SH').Value :=
+                DayCashierSummary.SH;
+              AFormCashRegister.CashData.FieldByName('Depot').Value :=
+                DayCashierSummary.SHDeposit;
+              AFormCashRegister.CashData.FieldByName('Rachat').Value :=
+                DayCashierSummary.SHBought;
+              AFormCashRegister.CashData.FieldByName('CostOfBought').Value :=
+                DayCashierSummary.SHCostOfBought;
+              AFormCashRegister.CashData.FieldByName('Serv').Value :=
+                DayCashierSummary.Service;
+              AFormCashRegister.CashData.FieldByName('Returns').Value :=
+                DayCashierSummary.Returns;
+              AFormCashRegister.CashData.FieldByName('Total').Value :=
+                DayCashierSummary.TotalNature;
+              AFormCashRegister.CashData.FieldByName('Cash').Value :=
+                DayCashierSummary.Cash;
+              AFormCashRegister.CashData.FieldByName('Bct').Value :=
+                DayCashierSummary.BCT;
+              AFormCashRegister.CashData.FieldByName('Visa').Value :=
+                DayCashierSummary.Visa;
+              AFormCashRegister.CashData.FieldByName('Proton').Value :=
+                DayCashierSummary.Proton;
+              AFormCashRegister.CashData.FieldByName('Voucher').Value :=
+                DayCashierSummary.Voucher;
+              AFormCashRegister.CashData.FieldByName('Refunds').Value :=
+                DayCashierSummary.Refunds;
+              AFormCashRegister.CashData.FieldByName('Purchased').Value :=
+                DayCashierSummary.Purchased;
+              AFormCashRegister.CashData.FieldByName('TotalPay').Value :=
+                DayCashierSummary.TotalPay;
               AFormCashRegister.CashData.FieldByName('CaisseTot').Value := Accu;
-              AFormCashRegister.CashData.FieldByName('Expenses').Value := DayCashierSummary.Expenses;
-              AFormCashRegister.CashData.FieldByName('ExpensesDesc').Value := DayCashierSummary.ExpensesDesc;
-              AFormCashRegister.CashData.FieldByName('INV-21').Value := DayCashierSummary.Invoice21;
-              AFormCashRegister.CashData.FieldByName('INV-6').Value := DayCashierSummary.Invoice6;
-              AFormCashRegister.CashData.FieldByName('INV-0').Value := DayCashierSummary.Invoice0;
+              AFormCashRegister.CashData.FieldByName('Expenses').Value :=
+                DayCashierSummary.Expenses;
+              AFormCashRegister.CashData.FieldByName('ExpensesDesc').Value :=
+                DayCashierSummary.ExpensesDesc;
+              AFormCashRegister.CashData.FieldByName('INV-21').Value :=
+                DayCashierSummary.Invoice21;
+              AFormCashRegister.CashData.FieldByName('INV-6').Value :=
+                DayCashierSummary.Invoice6;
+              AFormCashRegister.CashData.FieldByName('INV-0').Value :=
+                DayCashierSummary.Invoice0;
               AFormCashRegister.CashData.Post;
               Application.ProcessMessages;
             end;
           end;
         finally
-          Screen.Cursor             := crDefault;
-          RemoteDB.IsUpdating       := UpdateStatus;
+          Screen.Cursor := crDefault;
+          RemoteDB.IsUpdating := UpdateStatus;
           AFormCashRegister.Enabled := True;
         end;
         AFormCashRegister.Show;
@@ -8650,8 +10234,9 @@ begin
 
       procedure TMainForm.JvExpressButtonWebOrdersEraseClick(Sender: TObject);
       begin
-        if messagedlg('Confirmez vous la suppression de la commade ' + RemoteDB.WebOrdersproducts_name.AsString + ' ?', mtwarning, [mbyes, mbno], 0) = mryes
-        then
+        if messagedlg('Confirmez vous la suppression de la commade ' +
+          RemoteDB.WebOrdersproducts_name.AsString + ' ?', mtwarning,
+          [mbyes, mbno], 0) = mryes then
         begin
           RemoteDB.WebOrders.Edit;
           RemoteDB.WebOrdersorders_status_id.AsInteger := 12;
@@ -8668,26 +10253,35 @@ begin
         ANotifyServer: TNotifyServer;
       begin
         processed := False;
-        if RemoteDB.Customers.Locate('customers_nbr', RemoteDB.WebOrderscustomers_id.AsString, []) then
+        if RemoteDB.Customers.Locate('customers_nbr',
+          RemoteDB.WebOrderscustomers_id.AsString, []) then
         begin
-          if RemoteDB.netshop_stock.Locate('product_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]) then
+          if RemoteDB.netshop_stock.Locate('product_model',
+            RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]) then
           begin
-            if messagedlg('Produit en stock ! Le stock est-il disponnible ?', mtwarning, [mbyes, mbno], 0) = mryes then
+            if messagedlg('Produit en stock ! Le stock est-il disponnible ?',
+              mtwarning, [mbyes, mbno], 0) = mryes then
             begin
-              RemoteDB.Products.Locate('products_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]);
+              RemoteDB.Products.Locate('products_model',
+                RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]);
               //
               // Print Sticker
               //
               aLabelAddress := TLabelAddress.Create;
-              Address       := TStringList.Create;
+              Address := TStringList.Create;
               try
-                aLabelAddress.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-                Address.Add('Client # ' + RemoteDB.CustomersCustomers_nbr.AsString);
-                Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
-                Address.Add(RemoteDB.Products.FieldByName('products_intername').AsString + ' ' + RemoteDB.Products.FieldByName('products_root_category_name')
-                  .AsString);
+                aLabelAddress.LabelPrinter :=
+                  (Self.Parameter['PrintersLabelPrinter']);
+                Address.Add('Client # ' +
+                  RemoteDB.CustomersCustomers_nbr.AsString);
+                Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' '
+                  + RemoteDB.CustomersCustomers_Lastname.AsString);
+                Address.Add(RemoteDB.Products.FieldByName('products_intername')
+                  .AsString + ' ' + RemoteDB.Products.FieldByName
+                  ('products_root_category_name').AsString);
                 Address.Add('Rés: ' + DateToStr(Now));
-                aLabelAddress.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+                aLabelAddress.Print(Address,
+                  (StrToBool(Self.Parameter['PrintersLabelDialog'])));
               finally
                 aLabelAddress.Free;
                 Address.Free;
@@ -8696,20 +10290,33 @@ begin
               /// Ajouter dans les réservations
               ///
               RemoteDB.netshop_customers_alerts.Append;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := RemoteDB.Productsproducts_model.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString := RemoteDB.Products.FieldByName('products_intername').AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := RemoteDB.Productsproducts_root_category_name.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := 0;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 2;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date_notified').AsFloat := Now;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_customers_nbr').AsString :=
+                RemoteDB.CustomersCustomers_nbr.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_model').AsString :=
+                RemoteDB.Productsproducts_model.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_name').AsString :=
+                RemoteDB.Products.FieldByName('products_intername').AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_cat').AsString :=
+                RemoteDB.Productsproducts_root_category_name.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_used').Value := 0;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_status').Value := 2;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_date_notified').AsFloat := Now;
               RemoteDB.netshop_customers_alerts.Post;
               ///
               /// Notify customer
               ///
               if UserType = 1 then
               begin
-                ANotifyServer := TNotifyServer.Create('stockalert', RemoteDB.Products.FieldByName('products_id').AsString, '', NOTIFYURL);
+                ANotifyServer := TNotifyServer.Create('stockalert',
+                  RemoteDB.Products.FieldByName('products_id').AsString, '',
+                  NOTIFYURL);
               end;
               ///
               /// Change Status
@@ -8717,8 +10324,12 @@ begin
               RemoteDB.WebOrders.Edit;
               RemoteDB.WebOrdersorders_status_id.AsInteger := 12;
               RemoteDB.WebOrders.Post;
-            end else begin // MessageDLG produit en stock mais non dispo
-              setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+            end
+            else
+            begin // MessageDLG produit en stock mais non dispo
+              setresult := RemoteDB.SetAlert
+                (RemoteDB.CustomersCustomers_nbr.AsInteger,
+                RemoteDB.WebOrdersproducts_quantity.AsInteger,
                 RemoteDB.WebOrdersproducts_model.AsString);
               if not setresult then
               begin
@@ -8726,13 +10337,19 @@ begin
                 RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
                 RemoteDB.WebOrders.Post;
                 ShowMessage('Réservation enregistrée');
-              end else begin
+              end
+              else
+              begin
                 ShowMessage('Problème lors de la réservation');
               end;
             end; // Fin MessDLG
 
-          end else begin // Si produit pas de stock
-            setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+          end
+          else
+          begin // Si produit pas de stock
+            setresult := RemoteDB.SetAlert
+              (RemoteDB.CustomersCustomers_nbr.AsInteger,
+              RemoteDB.WebOrdersproducts_quantity.AsInteger,
               RemoteDB.WebOrdersproducts_model.AsString);
             if not setresult then
             begin
@@ -8740,36 +10357,48 @@ begin
               RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
               RemoteDB.WebOrders.Post;
               ShowMessage('Réservation enregistrée');
-            end else begin
+            end
+            else
+            begin
               ShowMessage('Problème lors de la réservation');
             end;
           end;
           processed := True;
         end;
 
-        if ((not processed) and (RemoteDB.Customers.Locate('customers_email_address', RemoteDB.WebOrderscustomers_email_address.AsString,
+        if ((not processed) and
+          (RemoteDB.Customers.Locate('customers_email_address',
+          RemoteDB.WebOrderscustomers_email_address.AsString,
           [locaseinsensitive, loPartialKey]))) then
         begin
 
-          if RemoteDB.netshop_stock.Locate('product_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]) then
+          if RemoteDB.netshop_stock.Locate('product_model',
+            RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]) then
           begin
-            if messagedlg('Produit en stock ! Le stock est-il disponnible ?', mtwarning, [mbyes, mbno], 0) = mryes then
+            if messagedlg('Produit en stock ! Le stock est-il disponnible ?',
+              mtwarning, [mbyes, mbno], 0) = mryes then
             begin
 
-              RemoteDB.Products.Locate('products_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]);
+              RemoteDB.Products.Locate('products_model',
+                RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]);
               //
               // Print Sticker
               //
               aLabelAddress := TLabelAddress.Create;
-              Address       := TStringList.Create;
+              Address := TStringList.Create;
               try
-                aLabelAddress.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-                Address.Add('Client # ' + RemoteDB.CustomersCustomers_nbr.AsString);
-                Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
-                Address.Add(RemoteDB.Products.FieldByName('products_intername').AsString + ' ' + RemoteDB.Products.FieldByName('products_root_category_name')
-                  .AsString);
+                aLabelAddress.LabelPrinter :=
+                  (Self.Parameter['PrintersLabelPrinter']);
+                Address.Add('Client # ' +
+                  RemoteDB.CustomersCustomers_nbr.AsString);
+                Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' '
+                  + RemoteDB.CustomersCustomers_Lastname.AsString);
+                Address.Add(RemoteDB.Products.FieldByName('products_intername')
+                  .AsString + ' ' + RemoteDB.Products.FieldByName
+                  ('products_root_category_name').AsString);
                 Address.Add('Rés: ' + DateToStr(Now));
-                aLabelAddress.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+                aLabelAddress.Print(Address,
+                  (StrToBool(Self.Parameter['PrintersLabelDialog'])));
               finally
                 aLabelAddress.Free;
                 Address.Free;
@@ -8778,21 +10407,33 @@ begin
               /// Ajouter dans les réservations
               ///
               RemoteDB.netshop_customers_alerts.Append;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := RemoteDB.Productsproducts_model.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString :=
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_customers_nbr').AsString :=
+                RemoteDB.CustomersCustomers_nbr.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_model').AsString :=
+                RemoteDB.Productsproducts_model.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_name').AsString :=
                 RemoteDB.Products.FieldByName('products_intername').AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := RemoteDB.Productsproducts_root_category_name.AsString;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := 0;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 2;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date_notified').AsFloat := Now;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_products_cat').AsString :=
+                RemoteDB.Productsproducts_root_category_name.AsString;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_used').Value := 0;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_status').Value := 2;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_date_notified').AsFloat := Now;
               RemoteDB.netshop_customers_alerts.Post;
               ///
               /// Notify customer
               ///
               if UserType = 1 then
               begin
-                ANotifyServer := TNotifyServer.Create('stockalert', RemoteDB.Products.FieldByName('products_id').AsString, '', NOTIFYURL);
+                ANotifyServer := TNotifyServer.Create('stockalert',
+                  RemoteDB.Products.FieldByName('products_id').AsString, '',
+                  NOTIFYURL);
               end;
               ///
               /// Change Status
@@ -8800,8 +10441,12 @@ begin
               RemoteDB.WebOrders.Edit;
               RemoteDB.WebOrdersorders_status_id.AsInteger := 12;
               RemoteDB.WebOrders.Post;
-            end else begin // MessageDLG produit en stock mais non dispo
-              setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+            end
+            else
+            begin // MessageDLG produit en stock mais non dispo
+              setresult := RemoteDB.SetAlert
+                (RemoteDB.CustomersCustomers_nbr.AsInteger,
+                RemoteDB.WebOrdersproducts_quantity.AsInteger,
                 RemoteDB.WebOrdersproducts_model.AsString);
               if not setresult then
               begin
@@ -8809,13 +10454,19 @@ begin
                 RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
                 RemoteDB.WebOrders.Post;
                 ShowMessage('Réservation enregistrée');
-              end else begin
+              end
+              else
+              begin
                 ShowMessage('Problème lors de la réservation');
               end;
             end; // Fin MessDLG
 
-          end else begin // Si produit pas de stock
-            setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+          end
+          else
+          begin // Si produit pas de stock
+            setresult := RemoteDB.SetAlert
+              (RemoteDB.CustomersCustomers_nbr.AsInteger,
+              RemoteDB.WebOrdersproducts_quantity.AsInteger,
               RemoteDB.WebOrdersproducts_model.AsString);
             if not setresult then
             begin
@@ -8823,7 +10474,9 @@ begin
               RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
               RemoteDB.WebOrders.Post;
               ShowMessage('Réservation enregistrée');
-            end else begin
+            end
+            else
+            begin
               ShowMessage('Problème lors de la réservation');
             end;
           end;
@@ -8833,7 +10486,9 @@ begin
 
         if not processed then
         begin
-          if messagedlg('Client non trouvé, voulez-vous le rajouter à votre fichier ?', mtwarning, [mbyes, mbno], 0) = mryes then
+          if messagedlg
+            ('Client non trouvé, voulez-vous le rajouter à votre fichier ?',
+            mtwarning, [mbyes, mbno], 0) = mryes then
           begin
             // Add customer
             if RemoteDB.WebOrderscustomers_id.Value >= 100000 then
@@ -8845,35 +10500,58 @@ begin
               begin
 
                 RemoteDB.Customers.Append;
-                RemoteDB.Customerscustomers_firstname.Value := RemoteDB.WebOrderscustomers_firstname.Value;
-                RemoteDB.CustomersCustomers_Lastname.Value := RemoteDB.WebOrderscustomers_lastname.Value;
-                RemoteDB.Customerscustomers_dob.Value := RemoteDB.WebOrderscustomers_dob.Value;
-                if LeftStr(RemoteDB.WebOrderscustomers_fax.AsString, 3) <> '+32' then
+                RemoteDB.Customerscustomers_firstname.Value :=
+                  RemoteDB.WebOrderscustomers_firstname.Value;
+                RemoteDB.CustomersCustomers_Lastname.Value :=
+                  RemoteDB.WebOrderscustomers_lastname.Value;
+                RemoteDB.Customerscustomers_dob.Value :=
+                  RemoteDB.WebOrderscustomers_dob.Value;
+                if LeftStr(RemoteDB.WebOrderscustomers_fax.AsString, 3) <> '+32'
+                then
                 begin
-                  RemoteDB.Customerscustomers_fax.Value := InputBox('Le préfixe pays semble-t-il correct ? Si non corriger.', 'N° de GSM',
+                  RemoteDB.Customerscustomers_fax.Value :=
+                    InputBox('Le préfixe pays semble-t-il correct ? Si non corriger.',
+                    'N° de GSM',
                     '+32' + RemoteDB.WebOrderscustomers_fax.AsString);
-                end else begin
-                  RemoteDB.Customerscustomers_fax.Value := RemoteDB.WebOrderscustomers_fax.Value;
+                end
+                else
+                begin
+                  RemoteDB.Customerscustomers_fax.Value :=
+                    RemoteDB.WebOrderscustomers_fax.Value;
                 end;
-                RemoteDB.Customerscustomers_telephone.Value := RemoteDB.WebOrderscustomers_telephone.Value;
-                RemoteDB.Customerscustomers_gender.Value := RemoteDB.WebOrderscustomers_gender.Value;
+                RemoteDB.Customerscustomers_telephone.Value :=
+                  RemoteDB.WebOrderscustomers_telephone.Value;
+                RemoteDB.Customerscustomers_gender.Value :=
+                  RemoteDB.WebOrderscustomers_gender.Value;
                 // RemoteDB.Customerscustomers_password.Value:=RemoteDB.WebOrderscustomers_password.Value;
                 // remoteDB.Customerscustomers_email_address.Value:=RemoteDB.WebOrderscustomers_email_address.Value;
 
                 // RemoteDB.Address_Book.Append;
                 // Déjà dans la procédure on new record;
                 RemoteDB.Address_Book.Edit;
-                RemoteDB.Address_Bookentry_gender.Value    := RemoteDB.WebOrderscustomers_gender.Value;
-                RemoteDB.Address_Bookentry_company.Value   := RemoteDB.WebOrderscustomers_company.Value;
-                RemoteDB.Address_Bookentry_firstname.Value := RemoteDB.WebOrderscustomers_firstname.Value;
-                RemoteDB.Address_Bookentry_lastname.Value  := RemoteDB.WebOrderscustomers_lastname.Value;
-                RemoteDB.Address_Bookentry_street_address.Value := RemoteDB.WebOrderscustomers_street_address.Value;
-                RemoteDB.Address_Bookentry_suburb.Value   := RemoteDB.WebOrderscustomers_suburb.Value;
-                RemoteDB.Address_Bookentry_postcode.Value := RemoteDB.WebOrderscustomers_postcode.Value;
-                RemoteDB.Address_Bookentry_city.Value     := RemoteDB.WebOrderscustomers_city.Value;
-                RemoteDB.Address_Bookentry_state.Value    := RemoteDB.WebOrderscustomers_state.Value;
-                if RemoteDB.countries.Locate('countries_name', RemoteDB.WebOrderscustomers_country.AsString, [locaseinsensitive]) then
-                  RemoteDB.Address_Bookentry_country_id.Value := RemoteDB.Countriescountries_id.Value;
+                RemoteDB.Address_Bookentry_gender.Value :=
+                  RemoteDB.WebOrderscustomers_gender.Value;
+                RemoteDB.Address_Bookentry_company.Value :=
+                  RemoteDB.WebOrderscustomers_company.Value;
+                RemoteDB.Address_Bookentry_firstname.Value :=
+                  RemoteDB.WebOrderscustomers_firstname.Value;
+                RemoteDB.Address_Bookentry_lastname.Value :=
+                  RemoteDB.WebOrderscustomers_lastname.Value;
+                RemoteDB.Address_Bookentry_street_address.Value :=
+                  RemoteDB.WebOrderscustomers_street_address.Value;
+                RemoteDB.Address_Bookentry_suburb.Value :=
+                  RemoteDB.WebOrderscustomers_suburb.Value;
+                RemoteDB.Address_Bookentry_postcode.Value :=
+                  RemoteDB.WebOrderscustomers_postcode.Value;
+                RemoteDB.Address_Bookentry_city.Value :=
+                  RemoteDB.WebOrderscustomers_city.Value;
+                RemoteDB.Address_Bookentry_state.Value :=
+                  RemoteDB.WebOrderscustomers_state.Value;
+                if RemoteDB.countries.Locate('countries_name',
+                  RemoteDB.WebOrderscustomers_country.AsString,
+                  [locaseinsensitive]) then
+                  RemoteDB.Address_Bookentry_country_id.Value :=
+                    RemoteDB.Countriescountries_id.Value;
                 RemoteDB.Address_Book.Post;
 
                 RemoteDB.Customers.Post;
@@ -8881,24 +10559,37 @@ begin
                 // Todo Delete original customer
                 //
 
-                if RemoteDB.netshop_stock.Locate('product_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]) then
+                if RemoteDB.netshop_stock.Locate('product_model',
+                  RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive])
+                then
                 begin
-                  if messagedlg('Produit en stock ! Le stock est-il disponnible ?', mtwarning, [mbyes, mbno], 0) = mryes then
+                  if messagedlg
+                    ('Produit en stock ! Le stock est-il disponnible ?',
+                    mtwarning, [mbyes, mbno], 0) = mryes then
                   begin
-                    RemoteDB.Products.Locate('products_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]);
+                    RemoteDB.Products.Locate('products_model',
+                      RemoteDB.WebOrdersproducts_model.AsString,
+                      [locaseinsensitive]);
                     //
                     // Print Sticker
                     //
                     aLabelAddress := TLabelAddress.Create;
-                    Address       := TStringList.Create;
+                    Address := TStringList.Create;
                     try
-                      aLabelAddress.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-                      Address.Add('Client # ' + RemoteDB.CustomersCustomers_nbr.AsString);
-                      Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
-                      Address.Add(RemoteDB.Products.FieldByName('products_intername').AsString + ' ' +
-                        RemoteDB.Products.FieldByName('products_root_category_name').AsString);
+                      aLabelAddress.LabelPrinter :=
+                        (Self.Parameter['PrintersLabelPrinter']);
+                      Address.Add
+                        ('Client # ' + RemoteDB.CustomersCustomers_nbr.
+                        AsString);
+                      Address.Add(RemoteDB.Customerscustomers_firstname.AsString
+                        + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
+                      Address.Add
+                        (RemoteDB.Products.FieldByName('products_intername')
+                        .AsString + ' ' + RemoteDB.Products.FieldByName
+                        ('products_root_category_name').AsString);
                       Address.Add('Rés: ' + DateToStr(Now));
-                      aLabelAddress.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+                      aLabelAddress.Print(Address,
+                        (StrToBool(Self.Parameter['PrintersLabelDialog'])));
                     finally
                       aLabelAddress.Free;
                       Address.Free;
@@ -8907,22 +10598,34 @@ begin
                     /// Ajouter dans les réservations
                     ///
                     RemoteDB.netshop_customers_alerts.Append;
-                    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-                    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := RemoteDB.Productsproducts_model.AsString;
-                    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString :=
-                      RemoteDB.Products.FieldByName('products_intername').AsString;
-                    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString :=
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                      ('customers_alerts_customers_nbr').AsString :=
+                      RemoteDB.CustomersCustomers_nbr.AsString;
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                      ('customers_alerts_products_model').AsString :=
+                      RemoteDB.Productsproducts_model.AsString;
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                      ('customers_alerts_products_name').AsString :=
+                      RemoteDB.Products.FieldByName
+                      ('products_intername').AsString;
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                      ('customers_alerts_products_cat').AsString :=
                       RemoteDB.Productsproducts_root_category_name.AsString;
-                    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := 0;
-                    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 2;
-                    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date_notified').AsFloat := Now;
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                      ('customers_alerts_used').Value := 0;
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                      ('customers_alerts_status').Value := 2;
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                      ('customers_alerts_date_notified').AsFloat := Now;
                     RemoteDB.netshop_customers_alerts.Post;
                     ///
                     /// Notify customer
                     ///
                     if UserType = 1 then
                     begin
-                      ANotifyServer := TNotifyServer.Create('stockalert', RemoteDB.Products.FieldByName('products_id').AsString, '', NOTIFYURL);
+                      ANotifyServer := TNotifyServer.Create('stockalert',
+                        RemoteDB.Products.FieldByName('products_id').AsString,
+                        '', NOTIFYURL);
                     end;
                     ///
                     /// Change Status
@@ -8930,8 +10633,13 @@ begin
                     RemoteDB.WebOrders.Edit;
                     RemoteDB.WebOrdersorders_status_id.AsInteger := 12;
                     RemoteDB.WebOrders.Post;
-                  end else begin // MessageDLG produit en stock mais non dispo
-                    setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+                  end
+                  else
+                  begin // MessageDLG produit en stock mais non dispo
+                    setresult :=
+                      RemoteDB.SetAlert
+                      (RemoteDB.CustomersCustomers_nbr.AsInteger,
+                      RemoteDB.WebOrdersproducts_quantity.AsInteger,
                       RemoteDB.WebOrdersproducts_model.AsString);
                     if not setresult then
                     begin
@@ -8939,13 +10647,19 @@ begin
                       RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
                       RemoteDB.WebOrders.Post;
                       ShowMessage('Réservation enregistrée');
-                    end else begin
+                    end
+                    else
+                    begin
                       ShowMessage('Problème lors de la réservation');
                     end;
                   end; // Fin MessDLG
 
-                end else begin // Si produit pas de stock
-                  setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+                end
+                else
+                begin // Si produit pas de stock
+                  setresult := RemoteDB.SetAlert
+                    (RemoteDB.CustomersCustomers_nbr.AsInteger,
+                    RemoteDB.WebOrdersproducts_quantity.AsInteger,
                     RemoteDB.WebOrdersproducts_model.AsString);
                   if not setresult then
                   begin
@@ -8953,7 +10667,9 @@ begin
                     RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
                     RemoteDB.WebOrders.Post;
                     ShowMessage('Réservation enregistrée');
-                  end else begin
+                  end
+                  else
+                  begin
                     ShowMessage('Problème lors de la réservation');
                   end;
                 end;
@@ -8961,56 +10677,90 @@ begin
 
               end;
 
-            end else begin
+            end
+            else
+            begin
 
               RemoteDB.Customers.Append;
-              RemoteDB.Customerscustomers_firstname.Value := RemoteDB.WebOrderscustomers_firstname.Value;
-              RemoteDB.CustomersCustomers_Lastname.Value  := RemoteDB.WebOrderscustomers_lastname.Value;
-              RemoteDB.Customerscustomers_dob.Value       := RemoteDB.WebOrderscustomers_dob.Value;
-              RemoteDB.Customerscustomers_fax.Value       := RemoteDB.WebOrderscustomers_fax.Value;
-              RemoteDB.Customerscustomers_telephone.Value := RemoteDB.WebOrderscustomers_telephone.Value;
-              RemoteDB.Customerscustomers_gender.Value    := RemoteDB.WebOrderscustomers_gender.Value;
-              RemoteDB.Customerscustomers_password.Value  := RemoteDB.WebOrderscustomers_password.Value;
-              RemoteDB.Customerscustomers_email_address.Value := RemoteDB.WebOrderscustomers_email_address.Value;
+              RemoteDB.Customerscustomers_firstname.Value :=
+                RemoteDB.WebOrderscustomers_firstname.Value;
+              RemoteDB.CustomersCustomers_Lastname.Value :=
+                RemoteDB.WebOrderscustomers_lastname.Value;
+              RemoteDB.Customerscustomers_dob.Value :=
+                RemoteDB.WebOrderscustomers_dob.Value;
+              RemoteDB.Customerscustomers_fax.Value :=
+                RemoteDB.WebOrderscustomers_fax.Value;
+              RemoteDB.Customerscustomers_telephone.Value :=
+                RemoteDB.WebOrderscustomers_telephone.Value;
+              RemoteDB.Customerscustomers_gender.Value :=
+                RemoteDB.WebOrderscustomers_gender.Value;
+              RemoteDB.Customerscustomers_password.Value :=
+                RemoteDB.WebOrderscustomers_password.Value;
+              RemoteDB.Customerscustomers_email_address.Value :=
+                RemoteDB.WebOrderscustomers_email_address.Value;
 
               // RemoteDB.Address_Book.Append;
               // Déjà dans la procédure on new record;
               RemoteDB.Address_Book.Edit;
-              RemoteDB.Address_Bookentry_gender.Value    := RemoteDB.WebOrderscustomers_gender.Value;
-              RemoteDB.Address_Bookentry_company.Value   := RemoteDB.WebOrderscustomers_company.Value;
-              RemoteDB.Address_Bookentry_firstname.Value := RemoteDB.WebOrderscustomers_firstname.Value;
-              RemoteDB.Address_Bookentry_lastname.Value  := RemoteDB.WebOrderscustomers_lastname.Value;
-              RemoteDB.Address_Bookentry_street_address.Value := RemoteDB.WebOrderscustomers_street_address.Value;
-              RemoteDB.Address_Bookentry_suburb.Value   := RemoteDB.WebOrderscustomers_suburb.Value;
-              RemoteDB.Address_Bookentry_postcode.Value := RemoteDB.WebOrderscustomers_postcode.Value;
-              RemoteDB.Address_Bookentry_city.Value     := RemoteDB.WebOrderscustomers_city.Value;
-              RemoteDB.Address_Bookentry_state.Value    := RemoteDB.WebOrderscustomers_state.Value;
-              if RemoteDB.countries.Locate('countries_name', RemoteDB.WebOrderscustomers_country.AsString, [locaseinsensitive]) then
-                RemoteDB.Address_Bookentry_country_id.Value := RemoteDB.Countriescountries_id.Value;
+              RemoteDB.Address_Bookentry_gender.Value :=
+                RemoteDB.WebOrderscustomers_gender.Value;
+              RemoteDB.Address_Bookentry_company.Value :=
+                RemoteDB.WebOrderscustomers_company.Value;
+              RemoteDB.Address_Bookentry_firstname.Value :=
+                RemoteDB.WebOrderscustomers_firstname.Value;
+              RemoteDB.Address_Bookentry_lastname.Value :=
+                RemoteDB.WebOrderscustomers_lastname.Value;
+              RemoteDB.Address_Bookentry_street_address.Value :=
+                RemoteDB.WebOrderscustomers_street_address.Value;
+              RemoteDB.Address_Bookentry_suburb.Value :=
+                RemoteDB.WebOrderscustomers_suburb.Value;
+              RemoteDB.Address_Bookentry_postcode.Value :=
+                RemoteDB.WebOrderscustomers_postcode.Value;
+              RemoteDB.Address_Bookentry_city.Value :=
+                RemoteDB.WebOrderscustomers_city.Value;
+              RemoteDB.Address_Bookentry_state.Value :=
+                RemoteDB.WebOrderscustomers_state.Value;
+              if RemoteDB.countries.Locate('countries_name',
+                RemoteDB.WebOrderscustomers_country.AsString,
+                [locaseinsensitive]) then
+                RemoteDB.Address_Bookentry_country_id.Value :=
+                  RemoteDB.Countriescountries_id.Value;
               RemoteDB.Address_Book.Post;
 
               RemoteDB.Customers.Post;
               //
               // Todo Delete original customer
               //
-              if RemoteDB.netshop_stock.Locate('product_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]) then
+              if RemoteDB.netshop_stock.Locate('product_model',
+                RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive])
+              then
               begin
-                if messagedlg('Produit en stock ! Le stock est-il disponnible ?', mtwarning, [mbyes, mbno], 0) = mryes then
+                if messagedlg
+                  ('Produit en stock ! Le stock est-il disponnible ?',
+                  mtwarning, [mbyes, mbno], 0) = mryes then
                 begin
-                  RemoteDB.Products.Locate('products_model', RemoteDB.WebOrdersproducts_model.AsString, [locaseinsensitive]);
+                  RemoteDB.Products.Locate('products_model',
+                    RemoteDB.WebOrdersproducts_model.AsString,
+                    [locaseinsensitive]);
                   //
                   // Print Sticker
                   //
                   aLabelAddress := TLabelAddress.Create;
-                  Address       := TStringList.Create;
+                  Address := TStringList.Create;
                   try
-                    aLabelAddress.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-                    Address.Add('Client # ' + RemoteDB.CustomersCustomers_nbr.AsString);
-                    Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
-                    Address.Add(RemoteDB.Products.FieldByName('products_intername').AsString + ' ' +
-                      RemoteDB.Products.FieldByName('products_root_category_name').AsString);
+                    aLabelAddress.LabelPrinter :=
+                      (Self.Parameter['PrintersLabelPrinter']);
+                    Address.Add('Client # ' +
+                      RemoteDB.CustomersCustomers_nbr.AsString);
+                    Address.Add(RemoteDB.Customerscustomers_firstname.AsString +
+                      ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
+                    Address.Add
+                      (RemoteDB.Products.FieldByName('products_intername')
+                      .AsString + ' ' + RemoteDB.Products.FieldByName
+                      ('products_root_category_name').AsString);
                     Address.Add('Rés: ' + DateToStr(Now));
-                    aLabelAddress.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+                    aLabelAddress.Print(Address,
+                      (StrToBool(Self.Parameter['PrintersLabelDialog'])));
                   finally
                     aLabelAddress.Free;
                     Address.Free;
@@ -9019,22 +10769,34 @@ begin
                   /// Ajouter dans les réservations
                   ///
                   RemoteDB.netshop_customers_alerts.Append;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := RemoteDB.Productsproducts_model.AsString;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString :=
-                    RemoteDB.Products.FieldByName('products_intername').AsString;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString :=
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_customers_nbr').AsString :=
+                    RemoteDB.CustomersCustomers_nbr.AsString;
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_products_model').AsString :=
+                    RemoteDB.Productsproducts_model.AsString;
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_products_name').AsString :=
+                    RemoteDB.Products.FieldByName('products_intername')
+                    .AsString;
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_products_cat').AsString :=
                     RemoteDB.Productsproducts_root_category_name.AsString;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := 0;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 2;
-                  RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date_notified').AsFloat := Now;
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_used').Value := 0;
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_status').Value := 2;
+                  RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_date_notified').AsFloat := Now;
                   RemoteDB.netshop_customers_alerts.Post;
                   ///
                   /// Notify customer
                   ///
                   if UserType = 1 then
                   begin
-                    ANotifyServer := TNotifyServer.Create('stockalert', RemoteDB.Products.FieldByName('products_id').AsString, '', NOTIFYURL);
+                    ANotifyServer := TNotifyServer.Create('stockalert',
+                      RemoteDB.Products.FieldByName('products_id').AsString, '',
+                      NOTIFYURL);
                   end;
                   ///
                   /// Change Status
@@ -9042,8 +10804,12 @@ begin
                   RemoteDB.WebOrders.Edit;
                   RemoteDB.WebOrdersorders_status_id.AsInteger := 12;
                   RemoteDB.WebOrders.Post;
-                end else begin // MessageDLG produit en stock mais non dispo
-                  setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+                end
+                else
+                begin // MessageDLG produit en stock mais non dispo
+                  setresult := RemoteDB.SetAlert
+                    (RemoteDB.CustomersCustomers_nbr.AsInteger,
+                    RemoteDB.WebOrdersproducts_quantity.AsInteger,
                     RemoteDB.WebOrdersproducts_model.AsString);
                   if not setresult then
                   begin
@@ -9051,13 +10817,19 @@ begin
                     RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
                     RemoteDB.WebOrders.Post;
                     ShowMessage('Réservation enregistrée');
-                  end else begin
+                  end
+                  else
+                  begin
                     ShowMessage('Problème lors de la réservation');
                   end;
                 end; // Fin MessDLG
 
-              end else begin // Si produit pas de stock
-                setresult := RemoteDB.SetAlert(RemoteDB.CustomersCustomers_nbr.AsInteger, RemoteDB.WebOrdersproducts_quantity.AsInteger,
+              end
+              else
+              begin // Si produit pas de stock
+                setresult := RemoteDB.SetAlert
+                  (RemoteDB.CustomersCustomers_nbr.AsInteger,
+                  RemoteDB.WebOrdersproducts_quantity.AsInteger,
                   RemoteDB.WebOrdersproducts_model.AsString);
                 if not setresult then
                 begin
@@ -9065,7 +10837,9 @@ begin
                   RemoteDB.WebOrdersorders_status_id.AsInteger := 11;
                   RemoteDB.WebOrders.Post;
                   ShowMessage('Réservation enregistrée');
-                end else begin
+                end
+                else
+                begin
                   ShowMessage('Problème lors de la réservation');
                 end;
               end;
@@ -9087,7 +10861,6 @@ begin
         end;
       end;
 
-
       procedure TMainForm.JvLookOutButtonAdminDayCashClick(Sender: TObject);
       var
         FirstSalesId, LastSalesId: Integer;
@@ -9095,26 +10868,35 @@ begin
         RemoteDB.Shops.IndexName := 'ShopsIXId';
         RemoteDB.Shops.FindKey([ConnectedShop]);
         RemoteDB.FreeItemsTo;
-        RemoteDB.netshop_refunds.Filter := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< refunds_date_time and refunds_date_time < ' +
-          FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (refunds_shop_id = ' + inttostr(ConnectedShop) + ')';
+        RemoteDB.netshop_refunds.Filter := '(' +
+          FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+          '< refunds_date_time and refunds_date_time < ' +
+          FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+          ') and (refunds_shop_id = ' + inttostr(ConnectedShop) + ')';
         RemoteDB.netshop_refunds.Filtered := True;
-        RemoteDB.netshop_sales.Filter     := '(' + FloatToStr(trunc(MonthCalendarAdminSales.Date)) + '< sales_date_time and sales_date_time < ' +
-          FloatToStr(trunc(MonthCalendarAdminSalesEnd.Date) + 1) + ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
+        RemoteDB.netshop_sales.Filter := '(' +
+          FloatToStr(Trunc(MonthCalendarAdminSales.Date)) +
+          '< sales_date_time and sales_date_time < ' +
+          FloatToStr(Trunc(MonthCalendarAdminSalesEnd.Date) + 1) +
+          ') and (sales_location = ' + inttostr(ConnectedShop) + ')';
         RemoteDB.netshop_sales.Filtered := True;
         RemoteDB.netshop_sales.First;
-        FirstSalesId := RemoteDB.netshop_sales.FieldByName('sales_id').AsInteger;
+        FirstSalesId := RemoteDB.netshop_sales.FieldByName('sales_id')
+          .AsInteger;
         RemoteDB.netshop_sales.Last;
-        LastSalesId                        := RemoteDB.netshop_sales.FieldByName('sales_id').AsInteger;
-        RemoteDB.netshop_items_sold.Filter := '(items_sold_sales_id <= ' + inttostr(LastSalesId) + ') and (items_sold_sales_id >= ' +
+        LastSalesId := RemoteDB.netshop_sales.FieldByName('sales_id').AsInteger;
+        RemoteDB.netshop_items_sold.Filter := '(items_sold_sales_id <= ' +
+          inttostr(LastSalesId) + ') and (items_sold_sales_id >= ' +
           inttostr(FirstSalesId) + ')';
         RemoteDB.netshop_items_sold.Filtered := True;
 
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportDaySales', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
-        ReportModule.RvSystem.DefaultDest    := rdpreview;
+        ReportModule.RvSystem.DefaultDest := rdpreview;
         ReportModule.RvSystem.DoNativeOutput := True;
-        ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          - [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
 
         ReportModule.RvProject.Execute;
@@ -9129,38 +10911,44 @@ begin
         aSqlCon: TSqlConnection;
         aSqlDataset: TSqlDataset;
       begin
-        aReorderForm         := TReorderForm.Create(self);
+        aReorderForm := TReorderForm.Create(Self);
         aReorderForm.Caption := 'CLD Push';
         try
-          i          := 1;
-          StockClone := TClientDataset.Create(self);
+          i := 1;
+          StockClone := TClientDataset.Create(Self);
           StockClone.CloneCursor(RemoteDB.netshop_stock, False, False);
-          ProductsClone := TClientDataset.Create(self);
+          ProductsClone := TClientDataset.Create(Self);
           ProductsClone.CloneCursor(RemoteDB.Products, False, False);
 
           StockClone.IndexFieldNames := 'product_model;product_location';
 
-          aSqlCon := TSqlConnection.Create(self);
+          aSqlCon := TSqlConnection.Create(Self);
           with aSqlCon do
           begin
-            DriverName    := RemoteDB.SQLConnection.DriverName;
+            DriverName := RemoteDB.SQLConnection.DriverName;
             GetDriverFunc := RemoteDB.SQLConnection.GetDriverFunc;
-            LibraryName   := RemoteDB.SQLConnection.LibraryName;
-            VendorLib     := RemoteDB.SQLConnection.VendorLib;
-            aSqlCon.Params.Values['Database'] := RemoteDB.SQLConnection.Params.values['Database'];
-            aSqlCon.Params.Values['User_Name'] := RemoteDB.SQLConnection.Params.values['User_Name'];
-            aSqlCon.Params.Values['Password'] := RemoteDB.SQLConnection.Params.values['Password'];
-            aSqlCon.Params.Values['HostName'] := RemoteDB.SQLConnection.Params.values['Hostname'];
-            aSqlCon.Params.Values['Compressed'] := RemoteDB.SQLConnection.Params.values['Compressed'];
+            LibraryName := RemoteDB.SQLConnection.LibraryName;
+            VendorLib := RemoteDB.SQLConnection.VendorLib;
+            aSqlCon.Params.values['Database'] :=
+              RemoteDB.SQLConnection.Params.values['Database'];
+            aSqlCon.Params.values['User_Name'] :=
+              RemoteDB.SQLConnection.Params.values['User_Name'];
+            aSqlCon.Params.values['Password'] :=
+              RemoteDB.SQLConnection.Params.values['Password'];
+            aSqlCon.Params.values['HostName'] :=
+              RemoteDB.SQLConnection.Params.values['Hostname'];
+            aSqlCon.Params.values['Compressed'] :=
+              RemoteDB.SQLConnection.Params.values['Compressed'];
 
             LoginPrompt := False;
             Open;
           end;
 
-          aSqlDataset               := TSqlDataset.Create(self);
+          aSqlDataset := TSqlDataset.Create(Self);
           aSqlDataset.SQLConnection := aSqlCon;
-          aSqlDataset.CommandType   := ctQuery;
-          aSqlDataset.CommandText   := 'SELECT products_model, products_cld_stock from products where products_cld_stock > 0';
+          aSqlDataset.CommandType := ctQuery;
+          aSqlDataset.CommandText :=
+            'SELECT products_model, products_cld_stock from products where products_cld_stock > 0';
           aSqlDataset.Open;
 
           aReorderForm.TableData.DisableControls;
@@ -9168,44 +10956,61 @@ begin
           StockClone.DisableControls;
           aReorderForm.TableData.Open;
 
-          ProgressBar.Visible       := True;
-          ProgressBar.Position      := (i / (aSqlDataset.RecordCount) * 100);
+          ProgressBar.Visible := True;
+          ProgressBar.Position := (i / (aSqlDataset.RecordCount) * 100);
           StatusLine.Panels[3].Text := 'Création de la liste push';
           aSqlDataset.First;
           while (not aSqlDataset.Eof) and (True) do
           begin
-            StatusLine.Panels[3].Text := 'Produit : ' + ProductsClone.FieldByName('products_CLD_id').AsString;
-            if not StockClone.FindKey([aSqlDataset.FieldByName('products_model').AsString, ConnectedShop]) then
+            StatusLine.Panels[3].Text := 'Produit : ' +
+              ProductsClone.FieldByName('products_CLD_id').AsString;
+            if not StockClone.FindKey
+              ([aSqlDataset.FieldByName('products_model').AsString,
+              ConnectedShop]) then
             begin
-              if ProductsClone.FindKey([aSqlDataset.FieldByName('Products_model').AsString]) then
+              if ProductsClone.FindKey
+                ([aSqlDataset.FieldByName('Products_model').AsString]) then
               begin
-                if not aReorderForm.TableData.Locate('EAN', aSqlDataset.FieldByName('Products_model').AsString, [locaseinsensitive]) then
+                if not aReorderForm.TableData.Locate('EAN',
+                  aSqlDataset.FieldByName('Products_model').AsString,
+                  [locaseinsensitive]) then
                 begin
                   aReorderForm.TableData.Append;
-                  aReorderForm.TableDataEAN.Value    := aSqlDataset.FieldByName('Products_model').AsString;
-                  aReorderForm.TableDataNom.AsString := ProductsClone.FieldByName('products_intername').AsString;
-                  aReorderForm.TableDataRootCategoryName.Value := ProductsClone.FieldByName('products_root_category_name').Value;
+                  aReorderForm.TableDataEAN.Value :=
+                    aSqlDataset.FieldByName('Products_model').AsString;
+                  aReorderForm.TableDataNom.AsString :=
+                    ProductsClone.FieldByName('products_intername').AsString;
+                  aReorderForm.TableDataRootCategoryName.Value :=
+                    ProductsClone.FieldByName
+                    ('products_root_category_name').Value;
                   aReorderForm.TableDataQuantity.Value := 0;
 
-                  if not VarIsNull(ProductsClone.FieldByName('products_CLD_id').Value) then
+                  if not VarIsNull(ProductsClone.FieldByName('products_CLD_id')
+                    .Value) then
                   begin
                     aReorderForm.TableDataConfirmBO.Value := True;
-                    aReorderForm.TableDataIDART.Value     := ProductsClone.FieldByName('products_CLD_id').AsString;
+                    aReorderForm.TableDataIDART.Value :=
+                      ProductsClone.FieldByName('products_CLD_id').AsString;
 
-                  end else begin
+                  end
+                  else
+                  begin
                     aReorderForm.TableDataIDART.AsInteger := 0;
                     aReorderForm.TableDataConfirmBO.Value := False;
                   end;
 
-                  RemoteDB.CheckExtStock(aSqlDataset.FieldByName('Products_model').AsString, InStock, OutStock);
+                  RemoteDB.CheckExtStock
+                    (aSqlDataset.FieldByName('Products_model').AsString,
+                    InStock, OutStock);
                   aReorderForm.TableDataGroupAvailable.AsInteger := InStock;
                   aReorderForm.TableDataAvailable.AsInteger := OutStock;
-                  aReorderForm.TableDataQCLD.AsInteger := aSqlDataset.FieldByName('products_cld_stock').AsInteger;
+                  aReorderForm.TableDataQCLD.AsInteger :=
+                    aSqlDataset.FieldByName('products_cld_stock').AsInteger;
                   aReorderForm.TableData.Post;
                 end;
               end;
             end;
-            i                    := i + 1;
+            i := i + 1;
             ProgressBar.Position := (i / (aSqlDataset.RecordCount) * 100);
 
             Application.ProcessMessages;
@@ -9215,7 +11020,7 @@ begin
           aReorderForm.Show;
         finally
           StatusLine.Panels[3].Text := '';
-          ProgressBar.Visible       := False;
+          ProgressBar.Visible := False;
           aSqlDataset.Close;
           aSqlCon.Close;
           aSqlDataset.Free;
@@ -9233,71 +11038,100 @@ begin
       var
         aFormCashClose: TFormCashClose;
         DayCashierSummary: TDayCashierSummary;
-        CashClosePreviousAmount, CashClosePreviousDate: Double;
+        CashClosePreviousAmount, CashClosePreviousDate: double;
         Labelstoprint: TLabelAddress;
         i: Integer;
         Address: Tstrings;
       begin
 
-      RemoteDB.CDSActions.Filter :=  'action = ' + QuotedStr('Action reassort');
-      RemoteDB.CDSActions.Filtered := True;
-      RemoteDB.CDSActions.First;
+        RemoteDB.CDSActions.Filter := 'action = ' +
+          QuotedStr('Action reassort');
+        RemoteDB.CDSActions.Filtered := True;
+        RemoteDB.CDSActions.First;
 
-      if (RemoteDB.CDSActions.FieldByName('datetime').AsDateTime<(Now()-0.5)) then begin
-        ShowMessage('Réassort non fait');
-        Exit;
+        if (RemoteDB.CDSActions.FieldByName('datetime').AsDateTime <
+          (Now() - 0.5)) then
+        begin
+          ShowMessage('Réassort non fait');
+          exit;
+          RemoteDB.CDSActions.Filtered := False;
+        end;
         RemoteDB.CDSActions.Filtered := False;
-      end;
-      RemoteDB.CDSActions.Filtered := False;
 
-
-      if RemoteDB.ChangeCount>0 then begin
-        ShowMessage('Mise à jour partielle de la DB');
-        RemoteDB.ApplyUpdates;
-      end;
+        if RemoteDB.ChangeCount > 0 then
+        begin
+          ShowMessage('Mise à jour partielle de la DB');
+          RemoteDB.ApplyUpdates;
+        end;
 
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Action cloture caisse';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Action cloture caisse';
         RemoteDB.CDSActions.Post;
         RemoteDB.netshop_cashclose.First;
-        if trunc(RemoteDB.netshop_cashclose.FieldByName('cashclose_datetime').AsFloat) >= trunc(Now) then
+        if Trunc(RemoteDB.netshop_cashclose.FieldByName('cashclose_datetime')
+          .AsFloat) >= Trunc(Now) then
         begin
           ShowMessage('Caisse déjà cloturée');
-        end else begin
-          aFormCashClose := TFormCashClose.Create(self);
+        end
+        else
+        begin
+          aFormCashClose := TFormCashClose.Create(Self);
           try
-            aFormCashClose.PreviousAmount := RemoteDB.netshop_cashclose.FieldByName('cashclose_amountleft').AsFloat;
-            CashClosePreviousDate         := RemoteDB.netshop_cashclose.FieldByName('cashclose_datetime').AsFloat;
+            aFormCashClose.PreviousAmount :=
+              RemoteDB.netshop_cashclose.FieldByName
+              ('cashclose_amountleft').AsFloat;
+            CashClosePreviousDate := RemoteDB.netshop_cashclose.FieldByName
+              ('cashclose_datetime').AsFloat;
             RemoteDB.netshop_cashclose.Append;
 
-            DayCashierSummary := RemoteDB.CalcDayCahsierSummary(trunc(CashClosePreviousDate + 1), trunc(Now));
+            DayCashierSummary := RemoteDB.CalcDayCahsierSummary
+              (Trunc(CashClosePreviousDate + 1), Trunc(Now));
 
-            aFormCashClose.LabelStatDate.Caption         := DateToStr(trunc(CashClosePreviousDate));
-            aFormCashClose.LabelEndDate.Caption          := DateToStr(trunc(Now));
-            aFormCashClose.cxCurrencyEditNew.Value       := DayCashierSummary.New;
-            aFormCashClose.cxCurrencyEditBought.Value    := DayCashierSummary.SHBought;
-            aFormCashClose.cxCurrencyEditDeposit.Value   := DayCashierSummary.SHDeposit;
-            aFormCashClose.cxCurrencyEditReturn.Value    := DayCashierSummary.Returns;
-            aFormCashClose.cxCurrencyEditTotalIn.Value   := DayCashierSummary.TotalNature;
-            aFormCashClose.cxCurrencyEditBCT.Value       := DayCashierSummary.BCT;
-            aFormCashClose.cxCurrencyEditBANK.Value      := DayCashierSummary.Proton;
-            aFormCashClose.cxCurrencyEditVISA.Value      := DayCashierSummary.Visa;
-            aFormCashClose.cxCurrencyEditVOUCHER.Value   := DayCashierSummary.Voucher;
-            aFormCashClose.cxCurrencyEditREFUNDS.Value   := DayCashierSummary.Refunds;
-            aFormCashClose.cxCurrencyEditPurchased.Value := DayCashierSummary.Purchased;
-            aFormCashClose.cxCurrencyEditEXPENSES.Value  := DayCashierSummary.Expenses;
-            aFormCashClose.cxCurrencyEditTotalCash.Value := DayCashierSummary.TotalPay;
-            aFormCashClose.cxCurrencyEditTotalOut.Value  := DayCashierSummary.Expenses + DayCashierSummary.Refunds + DayCashierSummary.Purchased +
-              DayCashierSummary.Voucher + DayCashierSummary.Visa + DayCashierSummary.Proton + DayCashierSummary.BCT;
-            RemoteDB.netshop_cashclose.FieldByName('cashclose_amountout').AsInteger := Round(DayCashierSummary.TotalPay / 5) * 5;
-            aFormCashClose.cxCurrencyEditCashLeft.Value := aFormCashClose.PreviousAmount - aFormCashClose.cxCurrencyEditToTake.Value +
+            aFormCashClose.LabelStatDate.Caption :=
+              DateToStr(Trunc(CashClosePreviousDate));
+            aFormCashClose.LabelEndDate.Caption := DateToStr(Trunc(Now));
+            aFormCashClose.cxCurrencyEditNew.Value := DayCashierSummary.New;
+            aFormCashClose.cxCurrencyEditBought.Value :=
+              DayCashierSummary.SHBought;
+            aFormCashClose.cxCurrencyEditDeposit.Value :=
+              DayCashierSummary.SHDeposit;
+            aFormCashClose.cxCurrencyEditReturn.Value :=
+              DayCashierSummary.Returns;
+            aFormCashClose.cxCurrencyEditTotalIn.Value :=
+              DayCashierSummary.TotalNature;
+            aFormCashClose.cxCurrencyEditBCT.Value := DayCashierSummary.BCT;
+            aFormCashClose.cxCurrencyEditBANK.Value := DayCashierSummary.Proton;
+            aFormCashClose.cxCurrencyEditVISA.Value := DayCashierSummary.Visa;
+            aFormCashClose.cxCurrencyEditVOUCHER.Value :=
+              DayCashierSummary.Voucher;
+            aFormCashClose.cxCurrencyEditREFUNDS.Value :=
+              DayCashierSummary.Refunds;
+            aFormCashClose.cxCurrencyEditPurchased.Value :=
+              DayCashierSummary.Purchased;
+            aFormCashClose.cxCurrencyEditEXPENSES.Value :=
+              DayCashierSummary.Expenses;
+            aFormCashClose.cxCurrencyEditTotalCash.Value :=
+              DayCashierSummary.TotalPay;
+            aFormCashClose.cxCurrencyEditTotalOut.Value :=
+              DayCashierSummary.Expenses + DayCashierSummary.Refunds +
+              DayCashierSummary.Purchased + DayCashierSummary.Voucher +
+              DayCashierSummary.Visa + DayCashierSummary.Proton +
+              DayCashierSummary.BCT;
+            RemoteDB.netshop_cashclose.FieldByName('cashclose_amountout')
+              .AsInteger := Round(DayCashierSummary.TotalPay / 5) * 5;
+            aFormCashClose.cxCurrencyEditCashLeft.Value :=
+              aFormCashClose.PreviousAmount -
+              aFormCashClose.cxCurrencyEditToTake.Value +
               DayCashierSummary.TotalPay;
             if aFormCashClose.ShowModal <> mrOK then
             begin
               RemoteDB.netshop_cashclose.Cancel
-            end else begin
+            end
+            else
+            begin
               RemoteDB.netshop_cashclose.Post;
-              for i := trunc(CashClosePreviousDate + 1) to trunc(Now) do
+              for i := Trunc(CashClosePreviousDate + 1) to Trunc(Now) do
               begin
                 DayCashierSummary := RemoteDB.CalcDayCahsierSummary(i, i);
                 if DayCashierSummary.Open then
@@ -9305,23 +11139,31 @@ begin
                   if (MainForm.Parameter['PrintersLabelEnabled'] = 'TRUE') then
                   begin
                     Labelstoprint := TLabelAddress.Create;
-                    Address       := TStringList.Create;
+                    Address := TStringList.Create;
                     try
                       Address.Add(DateToStr(i));
-                      Address.Add('Neuf : ' + FloatToStr(DayCashierSummary.New + DayCashierSummary.NoMargin));
-                      Address.Add('Occasion : ' + FloatToStr(DayCashierSummary.SH));
-                      Address.Add('Retours : ' + FloatToStr(DayCashierSummary.Returns));
-                      Address.Add('Bons : ' + FloatToStr(DayCashierSummary.Voucher));
-                      Address.Add('Rembours : ' + FloatToStr(DayCashierSummary.Refunds));
-                      Labelstoprint.LabelPrinter := (MainForm.Parameter['PrintersLabelPrinter']);
-                      Labelstoprint.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+                      Address.Add('Neuf : ' + FloatToStr(DayCashierSummary.New +
+                        DayCashierSummary.NoMargin));
+                      Address.Add('Occasion : ' +
+                        FloatToStr(DayCashierSummary.SH));
+                      Address.Add('Retours : ' +
+                        FloatToStr(DayCashierSummary.Returns));
+                      Address.Add
+                        ('Bons : ' + FloatToStr(DayCashierSummary.Voucher));
+                      Address.Add('Rembours : ' +
+                        FloatToStr(DayCashierSummary.Refunds));
+                      Labelstoprint.LabelPrinter :=
+                        (MainForm.Parameter['PrintersLabelPrinter']);
+                      Labelstoprint.Print(Address,
+                        (StrToBool(Self.Parameter['PrintersLabelDialog'])));
                     finally
                       Labelstoprint.Free;
                       Address.Free;
                     end;
                   end
                   else
-                    messagedlg('Imprimante à étiquettes non activée', mtwarning, [mbok], 0);
+                    messagedlg('Imprimante à étiquettes non activée', mtwarning,
+                      [mbok], 0);
                   Application.ProcessMessages;
                 end;
               end;
@@ -9339,21 +11181,26 @@ begin
       begin
         for i := 0 to StringGridFigures.RowCount - 1 do
         begin
-          StringGridFigures.RowHeights[i]    := StringGridFigures.ClientHeight div StringGridFigures.RowCount;
+          StringGridFigures.RowHeights[i] :=
+            StringGridFigures.ClientHeight div StringGridFigures.RowCount;
           StringGridFigures.Alignments[0, i] := taCenter;
           StringGridFigures.Alignments[2, i] := taCenter;
         end;
-        StringGridFigures.RowHeights[StringGridFigures.RowCount - 1] := StringGridFigures.RowHeights[StringGridFigures.RowCount - 1] +
+        StringGridFigures.RowHeights[StringGridFigures.RowCount - 1] :=
+          StringGridFigures.RowHeights[StringGridFigures.RowCount - 1] +
           StringGridFigures.ClientHeight mod StringGridFigures.RowCount;
         for i := 0 to StringGridFigures.ColCount - 1 do
         begin
-          StringGridFigures.ColWidths[i] := StringGridFigures.ClientWidth div StringGridFigures.ColCount;
+          StringGridFigures.ColWidths[i] :=
+            StringGridFigures.ClientWidth div StringGridFigures.ColCount;
         end;
-        StringGridFigures.ColWidths[StringGridFigures.ColCount - 1] := StringGridFigures.ColWidths[StringGridFigures.ColCount - 1] +
+        StringGridFigures.ColWidths[StringGridFigures.ColCount - 1] :=
+          StringGridFigures.ColWidths[StringGridFigures.ColCount - 1] +
           StringGridFigures.ClientWidth mod StringGridFigures.ColCount;
       end;
 
-      procedure TMainForm.ParamTreeParamList(Sender: TObject; ANode: TTreeNode; href: string; values: TStringList; var DoPopup: Boolean);
+      procedure TMainForm.ParamTreeParamList(Sender: TObject; ANode: TTreeNode;
+        href: string; values: TStringList; var DoPopup: Boolean);
       begin
         if href = 'PrintersTicketPrinter' then
         begin
@@ -9377,8 +11224,8 @@ begin
       end;
 
       procedure TMainForm.ParamTreeParamPopup(Sender: TObject; ANode: TTreeNode;
-  href: string; values: TStringList; var DoPopup: Boolean);
-begin
+        href: string; values: TStringList; var DoPopup: Boolean);
+      begin
         if href = 'PrintersTicketPrinter' then
         begin
           values.Assign(Printer.Printers);
@@ -9398,81 +11245,106 @@ begin
           values.Add('Betamax');
           values.Add('OVH');
         end;
-end;
+      end;
 
-procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
+      procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
       begin
         PhidgetRFID.AntennaOn := True;
       end;
 
-      procedure TMainForm.PhidgetRFIDOutputChange(ASender: TObject; Index: Integer; NewState: WordBool);
+      procedure TMainForm.PhidgetRFIDOutputChange(ASender: TObject;
+        Index: Integer; NewState: WordBool);
       begin
         PhidgetRFID.AntennaOn := True;
       end;
 
-      procedure TMainForm.PhidgetRFIDTag(ASender: TObject; const TagNumber: WideString);
+      procedure TMainForm.PhidgetRFIDTag(ASender: TObject;
+        const TagNumber: WideString);
       var
         ADroppedDown: Boolean;
       begin
         if POSBANK then
         begin
-          if RemoteDB.CloneDSCustomers.Locate('customers_rfid', TagNumber, [locaseinsensitive]) then
+          if RemoteDB.CloneDSCustomers.Locate('customers_rfid', TagNumber,
+            [locaseinsensitive]) then
           begin
 
-            if RemoteDB.CloneDSCustomers.FieldByName('customers_nbr').Value >= 100000 then
+            if RemoteDB.CloneDSCustomers.FieldByName('customers_nbr').Value >= 100000
+            then
             begin
               if AllowMRUClientAccess then
-                dxBarMRUListItemCustomers.AddItem(RemoteDB.CloneDSCustomers.FieldByName('customers_nbr').AsString + ' - ' +
-                  RemoteDB.CloneDSCustomers.FieldByName('customers_firstname').AsString + ' ' + RemoteDB.CloneDSCustomers.FieldByName('customers_lastname')
+                dxBarMRUListItemCustomers.AddItem
+                  (RemoteDB.CloneDSCustomers.FieldByName('customers_nbr')
+                  .AsString + ' - ' + RemoteDB.CloneDSCustomers.FieldByName
+                  ('customers_firstname').AsString + ' ' +
+                  RemoteDB.CloneDSCustomers.FieldByName('customers_lastname')
                   .AsString, nil);
             end;
-            ACustomerDisplay.PanelAdvert.Visible       := False;
+            ACustomerDisplay.PanelAdvert.Visible := False;
             ACustomerDisplay.PanelCustomerSale.Visible := False;
             ACustomerDisplay.PanelCustomerData.Visible := True;
 
-            ACustomerDisplay.LabelCustomerSold.Caption := 'Dépôt vendus : ' + #13#10;
-            RemoteDB.CloneDSItems_Sold.Filter          := 'items_sold_owner_id=' + RemoteDB.CloneDSCustomers.FieldByName('customers_nbr').AsString +
+            ACustomerDisplay.LabelCustomerSold.Caption :=
+              'Dépôt vendus : ' + #13#10;
+            RemoteDB.CloneDSItems_Sold.Filter := 'items_sold_owner_id=' +
+              RemoteDB.CloneDSCustomers.FieldByName('customers_nbr').AsString +
               ' AND items_refunded=0';
             RemoteDB.CloneDSItems_Sold.Filtered := True;
             RemoteDB.CloneDSItems_Sold.First;
             while not RemoteDB.CloneDSItems_Sold.Eof do
             begin
-              ACustomerDisplay.LabelCustomerSold.Caption := ACustomerDisplay.LabelCustomerSold.Caption + #13#10 +
-                RemoteDB.CloneDSItems_Sold.FieldByName('items_sold_name').AsString + ' à ' + RemoteDB.CloneDSItems_Sold.FieldByName('items_sold_price_stock')
-                .AsString + ' €';
+              ACustomerDisplay.LabelCustomerSold.Caption :=
+                ACustomerDisplay.LabelCustomerSold.Caption + #13#10 +
+                RemoteDB.CloneDSItems_Sold.FieldByName('items_sold_name')
+                .AsString + ' à ' + RemoteDB.CloneDSItems_Sold.FieldByName
+                ('items_sold_price_stock').AsString + ' €';
               RemoteDB.CloneDSItems_Sold.Next;
             end;
 
-            ACustomerDisplay.LabelCustomerOrder.Caption := 'Jeux commandés : ' + #13#10;
-            RemoteDB.CloneDSAlerts.Filter               := 'customers_alerts_status=0 and customers_alerts_customers_nbr=' +
+            ACustomerDisplay.LabelCustomerOrder.Caption :=
+              'Jeux commandés : ' + #13#10;
+            RemoteDB.CloneDSAlerts.Filter :=
+              'customers_alerts_status=0 and customers_alerts_customers_nbr=' +
               RemoteDB.CloneDSCustomers.FieldByName('customers_nbr').AsString;
             RemoteDB.CloneDSAlerts.Filtered := True;
             RemoteDB.CloneDSAlerts.First;
             while not RemoteDB.CloneDSAlerts.Eof do
             begin
-              ACustomerDisplay.LabelCustomerOrder.Caption := ACustomerDisplay.LabelCustomerOrder.Caption + #13#10 +
-                RemoteDB.CloneDSAlerts.FieldByName('customers_alerts_products_name').AsString;
+              ACustomerDisplay.LabelCustomerOrder.Caption :=
+                ACustomerDisplay.LabelCustomerOrder.Caption + #13#10 +
+                RemoteDB.CloneDSAlerts.FieldByName
+                ('customers_alerts_products_name').AsString;
               RemoteDB.CloneDSAlerts.Next;
             end;
 
-            ACustomerDisplay.LabelCustomerName.Caption := 'Nom : ' + RemoteDB.CloneDSCustomers.FieldByName('customers_firstname').AsString + ' ' +
-              RemoteDB.CloneDSCustomers.FieldByName('customers_lastname').AsString;
-            ACustomerDisplay.LabelCustomerVoucher.Caption := 'Bon : ' + RemoteDB.CloneDSCustomers.FieldByName('customers_credit').AsString + ' €';
+            ACustomerDisplay.LabelCustomerName.Caption := 'Nom : ' +
+              RemoteDB.CloneDSCustomers.FieldByName('customers_firstname')
+              .AsString + ' ' + RemoteDB.CloneDSCustomers.FieldByName
+              ('customers_lastname').AsString;
+            ACustomerDisplay.LabelCustomerVoucher.Caption := 'Bon : ' +
+              RemoteDB.CloneDSCustomers.FieldByName('customers_credit')
+              .AsString + ' €';
 
-          end else begin
-            if (PageControlMainForm.ActivePage = TabSheetCustomers) and ((RemoteDB.Customers.State = dsEdit) or (RemoteDB.Customers.State = dsInsert)) then
+          end
+          else
+          begin
+            if (PageControlMainForm.ActivePage = TabSheetCustomers) and
+              ((RemoteDB.Customers.State = dsEdit) or
+              (RemoteDB.Customers.State = dsInsert)) then
             begin
-              RemoteDB.Customers.FieldByName('customers_rfid').AsString := TagNumber;
+              RemoteDB.Customers.FieldByName('customers_rfid').AsString :=
+                TagNumber;
             end;
           end;
         end;
       end;
 
-      procedure TMainForm.PhidgetRFIDTagLost(ASender: TObject; const TagNumber: WideString);
+      procedure TMainForm.PhidgetRFIDTagLost(ASender: TObject;
+        const TagNumber: WideString);
       begin
         if POSBANK then
         begin
-          ACustomerDisplay.PanelAdvert.Visible       := True;
+          ACustomerDisplay.PanelAdvert.Visible := True;
           ACustomerDisplay.PanelCustomerData.Visible := False;
           ACustomerDisplay.PanelCustomerSale.Visible := False;
           ACustomerDisplay.LabelCustomerName.Caption := 'Nom : ';
@@ -9483,7 +11355,7 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
       var
         TmpStr: string;
       begin
-        TmpStr := Trim(self.ParamTree.Parameter[name]);
+        TmpStr := Trim(Self.ParamTree.Parameter[name]);
         Result := TmpStr;
         if TmpStr = 'Oui' then
           Result := 'TRUE';
@@ -9495,25 +11367,25 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
       var
         TmpStr: string;
       begin
-        self.ParamTree.Parameter[name] := Value;
+        Self.ParamTree.Parameter[name] := Value;
       end;
 
       procedure TMainForm.AutoColWidth(TheGrid: TAdvStringGrid);
       var
         i, a, t: Integer;
-        nw: Double;
+        nw: double;
       begin
         a := 0;
         t := 0;
         with TheGrid do
         begin
           for i := 0 to ColCount - 1 do
-            t   := t + ColWidths[i];
+            t := t + ColWidths[i];
           for i := 0 to ColCount - 1 do
           begin
-            nw           := ColWidths[i] / t * ClientWidth;
+            nw := ColWidths[i] / t * ClientWidth;
             ColWidths[i] := Round(nw);
-            a            := a + ColWidths[i]
+            a := a + ColWidths[i]
           end;
           ColWidths[ColCount - 1] := ColWidths[ColCount - 1] + a - ClientWidth;
         end;
@@ -9528,13 +11400,14 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
       begin
         AWB := CreateOleObject('WinbooksOfficeApi.WinbooksObject');
         try
-          MainForm.Enabled          := False;
+          MainForm.Enabled := False;
           StatusLine.Panels[3].Text := 'Initialisation Winbooks';
-          i                         := AWB.init;
+          i := AWB.init;
 
           if i <> 0 then
           begin
-            ShowMessage('Initialisation de Winbooks impossible. Erreur #' + inttostr(i) + AWB.LastErrorMessage);
+            ShowMessage('Initialisation de Winbooks impossible. Erreur #' +
+              inttostr(i) + AWB.LastErrorMessage);
             AWB.CloseDossier;
             AWB := Unassigned;
             exit;
@@ -9547,7 +11420,8 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           StatusLine.Panels[3].Text := 'Login Winbooks';
           if AWB.Login(WBSTR1, WBSTR2, WBSTR3) <> 0 then
           begin
-            ShowMessage('Impossible de se connecter à Winbooks avec la login "' + WBSTR1 + '" et le môt de passe "' + WBSTR2 + '". Erreur #' +
+            ShowMessage('Impossible de se connecter à Winbooks avec la login "'
+              + WBSTR1 + '" et le môt de passe "' + WBSTR2 + '". Erreur #' +
               AWB.LastErrorMessage);
             AWB.CloseDossier;
             AWB := Unassigned;
@@ -9555,20 +11429,22 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           end;
 
           StatusLine.Panels[3].Text := 'Ouverture dossier Winbooks';
-          WBSTR1                    := MainForm.Parameter['WBDossier'];
+          WBSTR1 := MainForm.Parameter['WBDossier'];
           if AWB.OpenDossier(WBSTR1) <> 0 then
           begin
-            ShowMessage('Impossible de rentrer dans le dossier "' + WBSTR1 + '". Erreur #' + AWB.LastErrorMessage);
+            ShowMessage('Impossible de rentrer dans le dossier "' + WBSTR1 +
+              '". Erreur #' + AWB.LastErrorMessage);
             AWB.CloseDossier;
             AWB := Unassigned;
             exit;
           end;
 
           StatusLine.Panels[3].Text := 'Ouverture exercice Winbooks';
-          WBSTR1                    := MainForm.Parameter['WBBookYear'];
+          WBSTR1 := MainForm.Parameter['WBBookYear'];
           if AWB.OpenBookYear(WBSTR1) <> 0 then
           begin
-            ShowMessage('Impossible de trouver la période "' + WBSTR1 + '" dans le dossier. Erreur #' + AWB.LastErrorMessage);
+            ShowMessage('Impossible de trouver la période "' + WBSTR1 +
+              '" dans le dossier. Erreur #' + AWB.LastErrorMessage);
             AWB.CloseDossier;
             AWB := Unassigned;
             exit;
@@ -9584,7 +11460,8 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           end;
 
           StatusLine.Panels[3].Text := 'Ouverture répertoire export';
-          if AWB.Import.Directory(ExtractFilePath(ParamStr(0)) + 'export') = False then
+          if AWB.Import.Directory(ExtractFilePath(ParamStr(0)) + 'export') = False
+          then
           begin
             ShowMessage(AWB.LastErrorMessage);
             AWB.CloseDossier;
@@ -9595,13 +11472,16 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           AWB.Import.Linkformat := wbWinbooks;
 
           StatusLine.Panels[3].Text := 'Création backup données export';
-          if AWB.Import.Backup(ExtractFilePath(ParamStr(0)) + 'export/backup') = False then
+          if AWB.Import.Backup(ExtractFilePath(ParamStr(0)) + 'export/backup') = False
+          then
           begin
             ShowMessage(AWB.LastErrorMessage);
           end;
 
-          StatusLine.Panels[3].Text := 'Valeurs par défaut et traitement des erreurs';
-          if AWB.Import.SetDefaultPeriod(AWB.Param.PeriodInternalCode('01/01/2009')) = False then
+          StatusLine.Panels[3].Text :=
+            'Valeurs par défaut et traitement des erreurs';
+          if AWB.Import.SetDefaultPeriod
+            (AWB.Param.PeriodInternalCode('01/01/2009')) = False then
           begin
             ShowMessage(AWB.LastErrorMessage);
             AWB.CloseDossier;
@@ -9612,7 +11492,8 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           // Traitement des erreurs
           begin
             // Compte manquant -> fiche blanche
-            AWB.Import.ErrorCodes.Item('ACC_MISS').SetResolution := wbBlankRecord;
+            AWB.Import.ErrorCodes.Item('ACC_MISS').SetResolution :=
+              wbBlankRecord;
             // Memo changé : remplacer par le mémo importé
             AWB.Import.ErrorCodes.Item('MEM_DIFF').SetResolution := wbReplace;
             // Fiche modifiée : prendre le contenu de la fiche importée
@@ -9638,7 +11519,8 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           StatusLine.Panels[3].Text := 'Début procédure de test Winbooks';
           if not(AWB.Import.Test) then
           begin
-            ShowMessage('Erreur lors de la procedure de test. Erreur #' + AWB.LastErrorMessage);
+            ShowMessage('Erreur lors de la procedure de test. Erreur #' +
+              AWB.LastErrorMessage);
             AWB.CloseDossier;
             AWB := Unassigned;
             exit;
@@ -9648,13 +11530,15 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           begin
             if AWB.Import.Warnings.Item(i).GetResolution = 0 then
             begin
-              ShowMessage('Toutes les alertes ne sont pas corrigés (' + AWB.Import.Warnings.Item(i).code + ')');
+              ShowMessage('Toutes les alertes ne sont pas corrigés (' +
+                AWB.Import.Warnings.Item(i).code + ')');
             end;
           end;
 
           if AWB.Import.FatalErrors.Count > 0 then
           begin
-            ShowMessage('Erreurs fatales dans les fichiers d' + chr(39) + 'importation. Impossible de poursuivre !');
+            ShowMessage('Erreurs fatales dans les fichiers d' + chr(39) +
+              'importation. Impossible de poursuivre !');
             AWB.CloseDossier;
             AWB := Unassigned;
             exit;
@@ -9662,8 +11546,9 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
 
           if AWB.Import.Warnings.Count > 0 then
           begin
-            if messagedlg('Erreurs de type warning dans les fichiers d' + chr(39) + 'importation. Voulez-vous continuer ?', mtwarning, [mbok, mbCancel], 0) = mrcancel
-            then
+            if messagedlg('Erreurs de type warning dans les fichiers d' +
+              chr(39) + 'importation. Voulez-vous continuer ?', mtwarning,
+              [mbok, mbCancel], 0) = mrcancel then
               exit;
           end;
 
@@ -9678,7 +11563,7 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
 
           StatusLine.Panels[3].Text := '';
         finally
-          AWB              := Unassigned;
+          AWB := Unassigned;
           MainForm.Enabled := True;
         end;
 
@@ -9695,30 +11580,31 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         AFtpUp: TFtpUp;
 
       begin
-        RejectedCategories := 'Import' + 'Cinema' + 'Figurines' + 'Trading Card';
+        RejectedCategories := 'Import' + 'Cinema' + 'Figurines' +
+          'Trading Card';
         // Self.Enabled:=False;
-        ExportGrid             := TAdvStringGrid.Create(self);
-        ExportGrid.ColCount    := 12;
-        ExportGrid.RowCount    := 2;
-        ExportGrid.FixedCols   := 0;
+        ExportGrid := TAdvStringGrid.Create(Self);
+        ExportGrid.ColCount := 12;
+        ExportGrid.RowCount := 2;
+        ExportGrid.FixedCols := 0;
         ExportGrid.FloatFormat := '%.2f';
-        SaveDialog             := TsaveDialog.Create(self);
-        InventoryFields        := TStringList.Create;
-        StockClone             := TClientDataset.Create(self);
+        SaveDialog := TsaveDialog.Create(Self);
+        InventoryFields := TStringList.Create;
+        StockClone := TClientDataset.Create(Self);
         StockClone.CloneCursor(RemoteDB.netshop_stock, False, False);
-        ProductsClone := TClientDataset.Create(self);
+        ProductsClone := TClientDataset.Create(Self);
         ProductsClone.CloneCursor(RemoteDB.Products, False, False);
         try
-          ExportGrid.Cells[0, ExportGrid.RowCount - 1]  := 'Code_barre';
-          ExportGrid.Cells[1, ExportGrid.RowCount - 1]  := 'Prix';
-          ExportGrid.Cells[2, ExportGrid.RowCount - 1]  := 'Pays';
-          ExportGrid.Cells[3, ExportGrid.RowCount - 1]  := 'Quantite';
-          ExportGrid.Cells[4, ExportGrid.RowCount - 1]  := 'Commentaire';
-          ExportGrid.Cells[5, ExportGrid.RowCount - 1]  := 'Mode_envoi';
-          ExportGrid.Cells[6, ExportGrid.RowCount - 1]  := 'Type';
-          ExportGrid.Cells[7, ExportGrid.RowCount - 1]  := 'Catégorie_console';
-          ExportGrid.Cells[8, ExportGrid.RowCount - 1]  := 'Etat';
-          ExportGrid.Cells[9, ExportGrid.RowCount - 1]  := 'Titre';
+          ExportGrid.Cells[0, ExportGrid.RowCount - 1] := 'Code_barre';
+          ExportGrid.Cells[1, ExportGrid.RowCount - 1] := 'Prix';
+          ExportGrid.Cells[2, ExportGrid.RowCount - 1] := 'Pays';
+          ExportGrid.Cells[3, ExportGrid.RowCount - 1] := 'Quantite';
+          ExportGrid.Cells[4, ExportGrid.RowCount - 1] := 'Commentaire';
+          ExportGrid.Cells[5, ExportGrid.RowCount - 1] := 'Mode_envoi';
+          ExportGrid.Cells[6, ExportGrid.RowCount - 1] := 'Type';
+          ExportGrid.Cells[7, ExportGrid.RowCount - 1] := 'Catégorie_console';
+          ExportGrid.Cells[8, ExportGrid.RowCount - 1] := 'Etat';
+          ExportGrid.Cells[9, ExportGrid.RowCount - 1] := 'Titre';
           ExportGrid.Cells[10, ExportGrid.RowCount - 1] := 'Description';
           ExportGrid.Cells[11, ExportGrid.RowCount - 1] := 'Image_URL';
 
@@ -9729,77 +11615,103 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
             InventoryFields.Add(ExportGrid.Cells[i, ExportGrid.RowCount - 1]);
           end;
 
-          i                   := 0;
-          StockClone.Filter   := 'product_owner_id = ' + inttostr(ConnectedShop) + ' and product_supplier_id>=100000';
+          i := 0;
+          StockClone.Filter := 'product_owner_id = ' + inttostr(ConnectedShop) +
+            ' and product_supplier_id>=100000';
           StockClone.Filtered := True;
-          j                   := StockClone.RecordCount;
+          j := StockClone.RecordCount;
 
-          StockClone.Filter   := 'product_owner_id = ' + inttostr(ConnectedShop) + ' and product_supplier_id<100000';
+          StockClone.Filter := 'product_owner_id = ' + inttostr(ConnectedShop) +
+            ' and product_supplier_id<100000';
           StockClone.Filtered := True;
-          j                   := j + StockClone.RecordCount;
+          j := j + StockClone.RecordCount;
 
-          ProgressBar.Visible       := True;
-          ProgressBar.Position      := (i / (j) * 100);
+          ProgressBar.Visible := True;
+          ProgressBar.Position := (i / (j) * 100);
           StatusLine.Panels[3].Text := 'Exportation marketplace en cours';
           Application.ProcessMessages;
 
-          StockClone.Filter   := 'product_owner_id = ' + inttostr(ConnectedShop) + ' and product_price_stock>0 and product_supplier_id>=100000';
+          StockClone.Filter := 'product_owner_id = ' + inttostr(ConnectedShop) +
+            ' and product_price_stock>0 and product_supplier_id>=100000';
           StockClone.Filtered := True;
           StockClone.First;
           while not StockClone.Eof do
           begin
-            if ProductsClone.Locate('products_model', StockClone.FieldByName('product_model').AsString, []) then
+            if ProductsClone.Locate('products_model',
+              StockClone.FieldByName('product_model').AsString, []) then
             begin
-              if Pos(ProductsClone.FieldByName('products_root_category_name').AsString, RejectedCategories) = 0 then
+              if Pos(ProductsClone.FieldByName('products_root_category_name')
+                .AsString, RejectedCategories) = 0 then
               begin
-                ExportGrid.Cells[0, ExportGrid.RowCount - 2] := StockClone.FieldByName('product_model').AsString;
-                ExportGrid.Cells[1, ExportGrid.RowCount - 2] := FloatToStrF(StockClone.FieldByName('product_price_stock').AsFloat * 1.15, fffixed, 7, 2);
+                ExportGrid.Cells[0, ExportGrid.RowCount - 2] :=
+                  StockClone.FieldByName('product_model').AsString;
+                ExportGrid.Cells[1, ExportGrid.RowCount - 2] :=
+                  FloatToStrF(StockClone.FieldByName('product_price_stock')
+                  .AsFloat * 1.15, fffixed, 7, 2);
                 ExportGrid.Cells[2, ExportGrid.RowCount - 2] := 'BE';
                 ExportGrid.Cells[3, ExportGrid.RowCount - 2] := '1';
-                ExportGrid.Cells[4, ExportGrid.RowCount - 2] := 'Envoi Rapide sous Bulles - Versions ';
-                ExportGrid.Cells[5, ExportGrid.RowCount - 2] := 'Normal Recommandé';
+                ExportGrid.Cells[4, ExportGrid.RowCount - 2] :=
+                  'Envoi Rapide sous Bulles - Versions ';
+                ExportGrid.Cells[5, ExportGrid.RowCount - 2] :=
+                  'Normal Recommandé';
                 ExportGrid.Cells[6, ExportGrid.RowCount - 2] := 'Jeux-video';
-                ExportGrid.Cells[7, ExportGrid.RowCount - 2] := ProductsClone.FieldByName('products_root_category_name').Value;
+                ExportGrid.Cells[7, ExportGrid.RowCount - 2] :=
+                  ProductsClone.FieldByName
+                  ('products_root_category_name').Value;
                 ExportGrid.Cells[8, ExportGrid.RowCount - 2] := '3';
-                ExportGrid.Cells[9, ExportGrid.RowCount - 2] := ProductsClone.FieldByName('products_intername').AsString;
-                ExportGrid.Cells[10, ExportGrid.RowCount - 2] := ProductsClone.FieldByName('products_description').AsString;
-                ExportGrid.Cells[11, ExportGrid.RowCount - 2] := ProductImageURL + ProductsClone.FieldByName('products_image')
-                  .AsString;
+                ExportGrid.Cells[9, ExportGrid.RowCount - 2] :=
+                  ProductsClone.FieldByName('products_intername').AsString;
+                ExportGrid.Cells[10, ExportGrid.RowCount - 2] :=
+                  ProductsClone.FieldByName('products_description').AsString;
+                ExportGrid.Cells[11, ExportGrid.RowCount - 2] := ProductImageURL
+                  + ProductsClone.FieldByName('products_image').AsString;
                 ExportGrid.AddRow;
               end;
             end;
-            i                    := i + 1;
+            i := i + 1;
             ProgressBar.Position := (i / (j) * 100);
             Application.ProcessMessages;
             StockClone.Next;
           end;
 
-          StockClone.Filter   := 'product_owner_id = ' + inttostr(ConnectedShop) + ' and product_price_stock>0 and product_supplier_id<100000';
+          StockClone.Filter := 'product_owner_id = ' + inttostr(ConnectedShop) +
+            ' and product_price_stock>0 and product_supplier_id<100000';
           StockClone.Filtered := True;
           StockClone.First;
           while not StockClone.Eof do
           begin
-            if ProductsClone.Locate('products_model', StockClone.FieldByName('product_model').AsString, []) then
+            if ProductsClone.Locate('products_model',
+              StockClone.FieldByName('product_model').AsString, []) then
             begin
-              if Pos(ProductsClone.FieldByName('products_root_category_name').AsString, RejectedCategories) = 0 then
+              if Pos(ProductsClone.FieldByName('products_root_category_name')
+                .AsString, RejectedCategories) = 0 then
               begin
-                ExportGrid.Cells[0, ExportGrid.RowCount - 2] := StockClone.FieldByName('product_model').AsString;
-                ExportGrid.Cells[1, ExportGrid.RowCount - 2] := FloatToStrF(StockClone.FieldByName('product_price_stock').AsFloat, fffixed, 7, 2);
+                ExportGrid.Cells[0, ExportGrid.RowCount - 2] :=
+                  StockClone.FieldByName('product_model').AsString;
+                ExportGrid.Cells[1, ExportGrid.RowCount - 2] :=
+                  FloatToStrF(StockClone.FieldByName('product_price_stock')
+                  .AsFloat, fffixed, 7, 2);
                 ExportGrid.Cells[2, ExportGrid.RowCount - 2] := 'N';
                 ExportGrid.Cells[3, ExportGrid.RowCount - 2] := '1';
-                ExportGrid.Cells[4, ExportGrid.RowCount - 2] := 'Envoi Rapide sous Bulles - Versions Francaises';
-                ExportGrid.Cells[5, ExportGrid.RowCount - 2] := 'Normal Recommandé';
+                ExportGrid.Cells[4, ExportGrid.RowCount - 2] :=
+                  'Envoi Rapide sous Bulles - Versions Francaises';
+                ExportGrid.Cells[5, ExportGrid.RowCount - 2] :=
+                  'Normal Recommandé';
                 ExportGrid.Cells[6, ExportGrid.RowCount - 2] := 'Jeux-video';
-                ExportGrid.Cells[7, ExportGrid.RowCount - 2] := ProductsClone.FieldByName('products_root_category_name').Value;
+                ExportGrid.Cells[7, ExportGrid.RowCount - 2] :=
+                  ProductsClone.FieldByName
+                  ('products_root_category_name').Value;
                 ExportGrid.Cells[8, ExportGrid.RowCount - 2] := '0';
-                ExportGrid.Cells[9, ExportGrid.RowCount - 2] := ProductsClone.FieldByName('products_intername').AsString;
-                ExportGrid.Cells[10, ExportGrid.RowCount - 2] := ProductsClone.FieldByName('products_description').AsString;
-                ExportGrid.Cells[11, ExportGrid.RowCount - 2] := ProductImageURL + ProductsClone.FieldByName('products_image')
-                  .AsString;
+                ExportGrid.Cells[9, ExportGrid.RowCount - 2] :=
+                  ProductsClone.FieldByName('products_intername').AsString;
+                ExportGrid.Cells[10, ExportGrid.RowCount - 2] :=
+                  ProductsClone.FieldByName('products_description').AsString;
+                ExportGrid.Cells[11, ExportGrid.RowCount - 2] := ProductImageURL
+                  + ProductsClone.FieldByName('products_image').AsString;
                 ExportGrid.AddRow;
               end;
             end;
-            i                    := i + 1;
+            i := i + 1;
             ProgressBar.Position := (i / (j) * 100);
             Application.ProcessMessages;
             StockClone.Next;
@@ -9812,17 +11724,21 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           end;
           ChDir(ExtractFilePath(ParamStr(0)) + '/export');
 
-          SaveDialog.FileName := ExtractFilePath(ParamStr(0)) + 'export\' + 'marketplace.xml';
+          SaveDialog.FileName := ExtractFilePath(ParamStr(0)) + 'export\' +
+            'marketplace.xml';
           // if SaveDialog.Execute then begin
-          ExportGrid.SaveToXml(SaveDialog.FileName, 'invetory', 'inventory_lines', InventoryFields);
+          ExportGrid.SaveToXml(SaveDialog.FileName, 'invetory',
+            'inventory_lines', InventoryFields);
           // end;
 
-          AFtpUp := TFtpUp.Create(SaveDialog.FileName, './' + ExtractFileName(SaveDialog.FileName), self.Parameter['M2XHost'], self.Parameter['M2XLogin'],
-            self.Parameter['M2XPass'])
+          AFtpUp := TFtpUp.Create(SaveDialog.FileName,
+            './' + ExtractFileName(SaveDialog.FileName),
+            Self.Parameter['M2XHost'], Self.Parameter['M2XLogin'],
+            Self.Parameter['M2XPass'])
 
         finally
           StatusLine.Panels[3].Text := '';
-          ProgressBar.Visible       := False;
+          ProgressBar.Visible := False;
           SaveDialog.Free;
           ExportGrid.Free;
           InventoryFields.Free;
@@ -9840,7 +11756,7 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           begin
             EditSalesCustomerNbr.Text := inttostr(ConnectedShop);
             RemoteDB.Customers.FindKey([inttostr(ConnectedShop)]);
-            self.SBNewSalesCaddyClick(self);
+            Self.SBNewSalesCaddyClick(Self);
           end;
         end;
       end;
@@ -9878,31 +11794,37 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         if StockinType = 'Neuf' then
         begin
           cxEditStockinPriceGross.Enabled := True;
-          cxEditStockinPrice.Enabled      := False;
+          cxEditStockinPrice.Enabled := False;
         end;
         if StockinType = 'Achat' then
         begin
           cxEditStockinPriceGross.Enabled := True;
-          cxEditStockinPrice.Enabled      := True;
+          cxEditStockinPrice.Enabled := True;
         end;
         if StockinType = 'Dépôt' then
         begin
           cxEditStockinPriceGross.Enabled := False;
-          cxEditStockinPrice.Enabled      := True;
+          cxEditStockinPrice.Enabled := True;
         end;
 
       end;
 
       procedure TMainForm.DBComboCustomerCountryExit(Sender: TObject);
       begin
-        if not RemoteDB.countries.Locate('countries_id', RemoteDB.Address_Book.FieldByName('entry_country_id').Value, []) then
+        if not RemoteDB.countries.Locate('countries_id',
+          RemoteDB.Address_Book.FieldByName('entry_country_id').Value, []) then
           exit;
-        if RemoteDB.Countries_To_Vat.Locate('countries_to_vat_iso', RemoteDB.countries.FieldByName('countries_iso_code_2').Value, []) then
+        if RemoteDB.Countries_To_Vat.Locate('countries_to_vat_iso',
+          RemoteDB.countries.FieldByName('countries_iso_code_2').Value, []) then
         begin
           // if Customers.State=dsBrowse then Customers.Edit;
           // RemoteDB.Customerscustomers_TVA.Value:='';
-          DBEditCustomerVAT.Properties.EditMask := RemoteDB.Countries_To_Vat.FieldByName('countries_to_vat_mask').Value;
-        end else begin
+          DBEditCustomerVAT.Properties.EditMask :=
+            RemoteDB.Countries_To_Vat.FieldByName
+            ('countries_to_vat_mask').Value;
+        end
+        else
+        begin
           DBEditCustomerVAT.Properties.EditMask := '';
         end;
       end;
@@ -9927,7 +11849,8 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         RemoteDB.IsUpdating := False;
       end;
 
-      procedure TMainForm.ParamTreeParamChanged(Sender: TObject; ANode: TTreeNode; href, oldvalue, newvalue: string);
+      procedure TMainForm.ParamTreeParamChanged(Sender: TObject;
+        ANode: TTreeNode; href, oldvalue, newvalue: string);
       begin
         if href = 'SyncAutoEnabled' then
         begin
@@ -9940,9 +11863,9 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         begin
           if StrtoInt(newvalue) < 15 then
           begin
-            newvalue                              := '15';
-            oldvalue                              := '15';
-            self.ParamTree.Parameter['SyncDelay'] := '15';
+            newvalue := '15';
+            oldvalue := '15';
+            Self.ParamTree.Parameter['SyncDelay'] := '15';
           end;
           MainForm.TimerDBupdate.Interval := StrtoInt(newvalue) * 60000;
         end;
@@ -9953,7 +11876,8 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         MousePos: TPoint;
       begin
         // RemoteDB.Products.Filtered:=False;
-        RemoteDB.Products.Filter   := 'categories_id = ' + inttostr(RemoteDB.Productscategories_id.Value);
+        RemoteDB.Products.Filter := 'categories_id = ' +
+          inttostr(RemoteDB.Productscategories_id.Value);
         RemoteDB.Products.Filtered := True;
       end;
 
@@ -9967,33 +11891,36 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
 
         Headers := 'Content-Type: application/x-www-form-urlencoded' + #10#13;
 
-        strData := 'email=' + HTTPEncode(self.Parameter['BEMSLogin']) + '&' + 'password=' + HTTPEncode(self.Parameter['BEMSPass']) + '&' + 'etap=' +
+        strData := 'email=' + HTTPEncode(Self.Parameter['BEMSLogin']) + '&' +
+          'password=' + HTTPEncode(Self.Parameter['BEMSPass']) + '&' + 'etap=' +
           HTTPEncode('6') + '&' + '=' + HTTPEncode('Login');
 
         PostData := VarArrayCreate([0, Length(strData) - 1], varByte);
 
-        for i             := 1 to Length(strData) do
+        for i := 1 to Length(strData) do
           PostData[i - 1] := Ord(strData[i]);
 
-
         WebBrowserCLDReady := False;
-        self.WebBrowserCLD.Navigate('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID=' + GlobalsUnit.CLDLogin + '&C_PW=' +
-          GlobalsUnit.CLDPass);
+        Self.WebBrowserCLD.Navigate
+          ('http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID='
+          + GlobalsUnit.CLDLogin + '&C_PW=' + GlobalsUnit.CLDPass);
         while WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE do
           Application.ProcessMessages;
-        self.WebBrowserCLD.Navigate('http://www.cld.be/SearchResults.aspx?Cle=' + HTTPEncode(product) + '&Platform=%25&Rayon=%25');
+        Self.WebBrowserCLD.Navigate('http://www.cld.be/SearchResults.aspx?Cle='
+          + HTTPEncode(product) + '&Platform=%25&Rayon=%25');
       end;
 
       procedure TMainForm.Supprimerfiltre1Click(Sender: TObject);
       begin
         RemoteDB.Products.Filtered := False;
-        RemoteDB.Products.Filter   := '';
+        RemoteDB.Products.Filter := '';
       end;
 
       procedure TMainForm.MenuItem1Click(Sender: TObject);
       begin
         // RemoteDB.Products.Filtered:=False;
-        RemoteDB.Products.Filter   := 'manufacturers_id = ' + inttostr(RemoteDB.Productsmanufacturers_id.Value);
+        RemoteDB.Products.Filter := 'manufacturers_id = ' +
+          inttostr(RemoteDB.Productsmanufacturers_id.Value);
         RemoteDB.Products.Filtered := True;
       end;
 
@@ -10010,52 +11937,66 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
       procedure TMainForm.WebbrowserCLDAddItems(QueryString: WideString);
       var
         FStartTime: TTime;
-        Request   : String;
+        Request: String;
       begin
-        FStartTime         := Now;
+        FStartTime := Now;
         WebBrowserCLDReady := False;
-        Request :=  'http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID=' + GlobalsUnit.CLDLogin + '&C_PW=' +
-          GlobalsUnit.CLDPass  ;
-        self.WebBrowserCLD.Navigate(Request);
-        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and ((FStartTime - Now) > -5) do
+        Request :=
+          'http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID='
+          + GlobalsUnit.CLDLogin + '&C_PW=' + GlobalsUnit.CLDPass;
+        Self.WebBrowserCLD.Navigate(Request);
+        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and
+          ((FStartTime - Now) > -5) do
           Application.ProcessMessages;
         // ShowMessage( FloatToStr(( FStartTime-now )));
-        self.WebBrowserCLD.Navigate('http://www.cld.be/GM_callishop.aspx?ishopmethod=addItems&' + 'id_art=0&q=0' + QueryString + '');
-        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and ((FStartTime - Now) > -10) do
+        Self.WebBrowserCLD.Navigate
+          ('http://www.cld.be/GM_callishop.aspx?ishopmethod=addItems&' +
+          'id_art=0&q=0' + QueryString + '');
+        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and
+          ((FStartTime - Now) > -10) do
           Application.ProcessMessages;
         // ShowMessage( FloatToStr(( FStartTime-now )));
-        self.WebBrowserCLD.Navigate('http://www.cld.be/GM_ShowCaddie.aspx');
-        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and ((FStartTime - Now) > -15) do
-          Application.ProcessMessages;
-      end;
-      procedure TMainForm.WebbrowserCLDAddReturnItems(QueryString: WideString);
-      var
-        FStartTime: TTime;
-        Request   : String;
-      begin
-        FStartTime         := Now;
-        WebBrowserCLDReady := False;
-        Request :=  'http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID=' + GlobalsUnit.CLDLogin + '&C_PW=' +
-          GlobalsUnit.CLDPass  ;
-        self.WebBrowserCLD.Navigate(Request);
-        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and ((FStartTime - Now) > -5) do
-          Application.ProcessMessages;
-        // ShowMessage( FloatToStr(( FStartTime-now )));
-        self.WebBrowserCLD.Navigate('http://www.cld.be/GM_callishop.aspx?ishopmethod=returnadditems&' + 'id_art=0&q=0' + QueryString + '');
-        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and ((FStartTime - Now) > -10) do
-          Application.ProcessMessages;
-        // ShowMessage( FloatToStr(( FStartTime-now )));
-        self.WebBrowserCLD.Navigate('http://www.cld.be/GM_ShowReturnCaddie.aspx');
-        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and ((FStartTime - Now) > -15) do
+        Self.WebBrowserCLD.Navigate('http://www.cld.be/GM_ShowCaddie.aspx');
+        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and
+          ((FStartTime - Now) > -15) do
           Application.ProcessMessages;
       end;
 
+      procedure TMainForm.WebbrowserCLDAddReturnItems(QueryString: WideString);
+      var
+        FStartTime: TTime;
+        Request: String;
+      begin
+        FStartTime := Now;
+        WebBrowserCLDReady := False;
+        Request :=
+          'http://www.cld.be/GM_callishop.aspx?ishopmethod=loginCustomer2&C_ID='
+          + GlobalsUnit.CLDLogin + '&C_PW=' + GlobalsUnit.CLDPass;
+        Self.WebBrowserCLD.Navigate(Request);
+        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and
+          ((FStartTime - Now) > -5) do
+          Application.ProcessMessages;
+        // ShowMessage( FloatToStr(( FStartTime-now )));
+        Self.WebBrowserCLD.Navigate
+          ('http://www.cld.be/GM_callishop.aspx?ishopmethod=returnadditems&' +
+          'id_art=0&q=0' + QueryString + '');
+        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and
+          ((FStartTime - Now) > -10) do
+          Application.ProcessMessages;
+        // ShowMessage( FloatToStr(( FStartTime-now )));
+        Self.WebBrowserCLD.Navigate
+          ('http://www.cld.be/GM_ShowReturnCaddie.aspx');
+        while (WebBrowserCLD.ReadyState <> READYSTATE_COMPLETE) and
+          ((FStartTime - Now) > -15) do
+          Application.ProcessMessages;
+      end;
 
       procedure TMainForm.WebbrowserCLDAddItem(productmodel: string);
       begin
       end;
 
-      procedure TMainForm.WebBrowserCLDDocumentComplete(ASender: TObject; const pDisp: IDispatch; var URL: OleVariant);
+      procedure TMainForm.WebBrowserCLDDocumentComplete(ASender: TObject;
+        const pDisp: IDispatch; var URL: OleVariant);
       begin
         WebBrowserCLDReady := True;
       end;
@@ -10065,7 +12006,8 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         // showmessage('Comptet');
       end;
 
-      procedure TMainForm.EdsearchEditing(Sender: TObject; var CanEdit: Boolean);
+      procedure TMainForm.EdsearchEditing(Sender: TObject;
+        var CanEdit: Boolean);
       var
         txt, sfind: string;
         len: Integer;
@@ -10095,17 +12037,18 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
 
         // calculate what part of text should be selected
         sfind := RemoteDB.Products.FieldByName('products_intername').AsString;
-        len   := Length(sfind) - Length(txt);
+        len := Length(sfind) - Length(txt);
         if len > 0 then
         begin
-          edfromcode         := True;
-          Edsearch.Text      := sfind;
-          Edsearch.SelStart  := Length(txt);
+          edfromcode := True;
+          Edsearch.Text := sfind;
+          Edsearch.SelStart := Length(txt);
           Edsearch.SelLength := len;
         end;
       end;
 
-      procedure TMainForm.EdsearchKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.EdsearchKeyUp(Sender: TObject; var Key: Word;
+        Shift: TShiftState);
       var
         txt, sfind: string;
         len: Integer;
@@ -10135,14 +12078,15 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
 
         // calculate what part of text should be selected
         sfind := RemoteDB.Products.FieldByName('products_intername').AsString;
-        len   := Length(sfind) - Length(txt);
+        len := Length(sfind) - Length(txt);
         if len > 0 then
         begin
-          if UpperCase(LeftStr(sfind, Length(txt))) = UpperCase(Edsearch.Text) then
+          if UpperCase(LeftStr(sfind, Length(txt))) = UpperCase(Edsearch.Text)
+          then
           begin
-            edfromcode         := True;
-            Edsearch.Text      := sfind;
-            Edsearch.SelStart  := Length(txt);
+            edfromcode := True;
+            Edsearch.Text := sfind;
+            Edsearch.SelStart := Length(txt);
             Edsearch.SelLength := len;
           end;
         end;
@@ -10151,18 +12095,19 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
 
       procedure TMainForm.DBGridOrdersCellClick(Column: TColumn);
       begin
-        Edsearch.Text := RemoteDB.Products.FieldByName('products_intername').AsString;
+        Edsearch.Text := RemoteDB.Products.FieldByName
+          ('products_intername').AsString;
       end;
 
       procedure TMainForm.dxBarButtonCheckDacalClick(Sender: TObject);
       var
         AFormCheckLib: TFormCheckLib;
       begin
-        RemoteDB.Products.Filtered:=False;
+        RemoteDB.Products.Filtered := False;
         RemoteDB.CDSActions.Append;
         RemoteDB.CDSActions.FieldByName('action').AsString := 'Verifier Dacal';
         RemoteDB.CDSActions.Post;
-        AFormCheckLib := TFormCheckLib.Create(self);
+        AFormCheckLib := TFormCheckLib.Create(Self);
         AFormCheckLib.Show;
       end;
 
@@ -10171,42 +12116,49 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         Labelstoprint: TLabelAddress;
         Address: Tstrings;
       begin
-        if (self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
+        if (Self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
         begin
           Labelstoprint := TLabelAddress.Create;
-          Address       := TStringList.Create;
+          Address := TStringList.Create;
           try
-            Labelstoprint.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
+            Labelstoprint.LabelPrinter :=
+              (Self.Parameter['PrintersLabelPrinter']);
             Address.Add('Client : ' + RemoteDB.CustomersCustomers_nbr.AsString);
-            Address.Add(RemoteDB.Customers.FieldByName('customers_firstname').AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
+            Address.Add(RemoteDB.Customers.FieldByName('customers_firstname')
+              .AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
             Address.Add(RemoteDB.Customerscustomers_fax.AsString);
             Address.Add(DateToStr(Now()));
-            Labelstoprint.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+            Labelstoprint.Print(Address,
+              (StrToBool(Self.Parameter['PrintersLabelDialog'])));
           finally
             Labelstoprint.Free;
             Address.Free;
           end;
         end
         else
-          messagedlg('Imprimante à étiquettes non activée', mtwarning, [mbok], 0);
+          messagedlg('Imprimante à étiquettes non activée', mtwarning,
+            [mbok], 0);
       end;
 
       procedure TMainForm.cxButtonAdminDateRangeDayClick(Sender: TObject);
       begin
-        MonthCalendarAdminSales.Date    := Now;
+        MonthCalendarAdminSales.Date := Now;
         MonthCalendarAdminSalesEnd.Date := Now;
       end;
 
       procedure TMainForm.cxButtonAdminDateRangeMonthClick(Sender: TObject);
       begin
-        MonthCalendarAdminSalesEnd.Date := EndOfTheMonth(MonthCalendarAdminSales.Date);
-        MonthCalendarAdminSales.Date    := EndOfTheMonth(MonthCalendarAdminSalesEnd.Date - 32) + 1;
+        MonthCalendarAdminSalesEnd.Date :=
+          EndOfTheMonth(MonthCalendarAdminSales.Date);
+        MonthCalendarAdminSales.Date :=
+          EndOfTheMonth(MonthCalendarAdminSalesEnd.Date - 32) + 1;
       end;
 
       procedure TMainForm.cxButtonAdminDateRangeWeekClick(Sender: TObject);
       begin
-        MonthCalendarAdminSalesEnd.Date := Endoftheweek(MonthCalendarAdminSales.Date);
-        MonthCalendarAdminSales.Date    := MonthCalendarAdminSalesEnd.Date - 6;
+        MonthCalendarAdminSalesEnd.Date :=
+          Endoftheweek(MonthCalendarAdminSales.Date);
+        MonthCalendarAdminSales.Date := MonthCalendarAdminSalesEnd.Date - 6;
       end;
 
       procedure TMainForm.cxEditStockinModelExit(Sender: TObject);
@@ -10214,14 +12166,14 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
         i: Integer;
         StockinType: string;
         suppliername: string;
-        MinPrice, MinPriceDP, MinPriceSH: Double;
+        MinPrice, MinPriceDP, MinPriceSH: double;
         DispoDP, DispoSH, Dispo: Integer;
       label Procend;
       begin
         cxEditStockinPriceGross.Value := 0;
-        CxEditStockinQuantity.Text    := '1';
-        LabelStockinWarning.Caption   := '';
-        cxEditStockinModel.Text       := Trim(UpperCase(cxEditStockinModel.Text));
+        CxEditStockinQuantity.Text := '1';
+        LabelStockinWarning.Caption := '';
+        cxEditStockinModel.Text := Trim(UpperCase(cxEditStockinModel.Text));
 
         if cxEditStockinModel.Text = '' then
         begin
@@ -10230,19 +12182,28 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
 
         if PageControlStockinCaddy.ActivePage <> nil then
         begin
-          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+            .ControlCount - 1 do
           begin
-            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 10 then
+            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+              .Tag = 10 then
             begin
-              StockinType := TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]).Caption;
+              StockinType :=
+                TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+                .Controls[i]).Caption;
             end;
 
-            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 95 then
+            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+              .Tag = 95 then
             begin
-              suppliername := TEdit(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]).Text;
+              suppliername :=
+                TEdit(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+                .Controls[i]).Text;
             end;
           end;
-        end else begin
+        end
+        else
+        begin
           ShowMessage('Veuillez créer un caddy');
           goto Procend;
         end;
@@ -10264,23 +12225,29 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
             begin
 
               // Population de la listbox owner et recherche du prix min
-              MinPrice   := 9999999;
+              MinPrice := 9999999;
               MinPriceDP := 9999999;
               MinPriceSH := 9999999;
-              DispoDP    := 0;
-              DispoSH    := 0;
-              Dispo      := 0;
+              DispoDP := 0;
+              DispoSH := 0;
+              Dispo := 0;
 
               repeat
-                if RemoteDB.netshop_stock.FieldByName('product_model').Text = cxEditStockinModel.Text then
+                if RemoteDB.netshop_stock.FieldByName('product_model')
+                  .Text = cxEditStockinModel.Text then
                 begin
                   // Jeu Neuf
-                  if ((RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger < 100000) and
-                    (RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger < 100000)) then
+                  if ((RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                    .AsInteger < 100000) and
+                    (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                    .AsInteger < 100000)) then
                   begin
-                    Dispo := Dispo + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-                    if RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat < MinPrice then
-                      MinPrice := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+                    Dispo := Dispo + RemoteDB.netshop_stock.FieldByName
+                      ('product_quantity').AsInteger;
+                    if RemoteDB.netshop_stock.FieldByName('product_price_stock')
+                      .AsFloat < MinPrice then
+                      MinPrice := RemoteDB.netshop_stock.FieldByName
+                        ('product_price_stock').AsFloat;
                   end;
                 end;
                 if (Dispo) > 0 then
@@ -10288,21 +12255,30 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
                   LabelStockinWarning.Caption := 'Déjà ';
                   if Dispo > 0 then
                   begin
-                    LabelStockinWarning.Caption := LabelStockinWarning.Caption + inttostr(Dispo) + ' neuf(s) à ' + FloatToStr(MinPrice) + ' - ';
+                    LabelStockinWarning.Caption := LabelStockinWarning.Caption +
+                      inttostr(Dispo) + ' neuf(s) à ' +
+                      FloatToStr(MinPrice) + ' - ';
                   end;
                   LabelStockinWarning.Visible := True;
-                end else begin
+                end
+                else
+                begin
                   LabelStockinWarning.Caption := '';
                   LabelStockinWarning.Visible := False;
                 end;
                 RemoteDB.netshop_stock.Next;
-              until (RemoteDB.netshop_stock.FieldByName('product_model').AsString <> cxEditStockinModel.Text) or RemoteDB.netshop_stock.Eof;
+              until (RemoteDB.netshop_stock.FieldByName('product_model')
+                .AsString <> cxEditStockinModel.Text) or
+                RemoteDB.netshop_stock.Eof;
             end
           end;
           if RemoteDB.Products.FieldByName('products_cldprice').AsFloat > 0 then
           begin
-            cxEditStockinPriceGross.Value := RemoteDB.Products.FieldByName('products_cldprice').AsFloat
-          end else begin
+            cxEditStockinPriceGross.Value := RemoteDB.Products.FieldByName
+              ('products_cldprice').AsFloat
+          end
+          else
+          begin
             cxEditStockinPriceGross.Value := 0;
           end;
         end;
@@ -10318,9 +12294,11 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           // end else cxEditStockinPriceGross.Value:=0;
           if RemoteDB.Products.FindKey([cxEditStockinModel.Text]) then
           begin
-            if RemoteDB.Products.FieldByName('products_used_price').AsFloat > 0 then
+            if RemoteDB.Products.FieldByName('products_used_price').AsFloat > 0
+            then
             begin
-              cxEditStockinPrice.Value := RemoteDB.Products.FieldByName('products_used_price').AsFloat
+              cxEditStockinPrice.Value := RemoteDB.Products.FieldByName
+                ('products_used_price').AsFloat
             end
             else
               cxEditStockinPrice.Value := 0;
@@ -10332,38 +12310,53 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
           begin
 
             // Population de la listbox owner et recherche du prix min
-            MinPrice   := 9999999;
+            MinPrice := 9999999;
             MinPriceDP := 9999999;
             MinPriceSH := 9999999;
-            DispoDP    := 0;
-            DispoSH    := 0;
-            Dispo      := 0;
+            DispoDP := 0;
+            DispoSH := 0;
+            Dispo := 0;
 
             repeat
-              if RemoteDB.netshop_stock.FieldByName('product_model').Text = cxEditStockinModel.Text then
+              if RemoteDB.netshop_stock.FieldByName('product_model')
+                .Text = cxEditStockinModel.Text then
               begin
                 // Jeu Neuf
-                if ((RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger < 100000) and
-                  (RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger < 100000)) then
+                if ((RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                  .AsInteger < 100000) and
+                  (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                  .AsInteger < 100000)) then
                 begin
-                  Dispo := Dispo + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-                  if RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat < MinPrice then
-                    MinPrice := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+                  Dispo := Dispo + RemoteDB.netshop_stock.FieldByName
+                    ('product_quantity').AsInteger;
+                  if RemoteDB.netshop_stock.FieldByName('product_price_stock')
+                    .AsFloat < MinPrice then
+                    MinPrice := RemoteDB.netshop_stock.FieldByName
+                      ('product_price_stock').AsFloat;
                 end;
                 // Jeu occase
-                if ((RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger >= 100000) and
-                  (RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger < 100000)) then
+                if ((RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                  .AsInteger >= 100000) and
+                  (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                  .AsInteger < 100000)) then
                 begin
-                  DispoSH := DispoSH + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-                  if RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat < MinPriceSH then
-                    MinPriceSH := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+                  DispoSH := DispoSH + RemoteDB.netshop_stock.FieldByName
+                    ('product_quantity').AsInteger;
+                  if RemoteDB.netshop_stock.FieldByName('product_price_stock')
+                    .AsFloat < MinPriceSH then
+                    MinPriceSH := RemoteDB.netshop_stock.FieldByName
+                      ('product_price_stock').AsFloat;
                 end;
                 // Jeu dépôt
-                if RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger >= 100000 then
+                if RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                  .AsInteger >= 100000 then
                 begin
-                  DispoDP := DispoDP + RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-                  if RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat < MinPriceDP then
-                    MinPriceDP := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
+                  DispoDP := DispoDP + RemoteDB.netshop_stock.FieldByName
+                    ('product_quantity').AsInteger;
+                  if RemoteDB.netshop_stock.FieldByName('product_price_stock')
+                    .AsFloat < MinPriceDP then
+                    MinPriceDP := RemoteDB.netshop_stock.FieldByName
+                      ('product_price_stock').AsFloat;
                 end;
               end;
               if (Dispo + DispoSH + DispoDP) > 0 then
@@ -10371,64 +12364,84 @@ procedure TMainForm.PhidgetRFIDAttach(Sender: TObject);
                 LabelStockinWarning.Caption := 'Déjà ';
                 if Dispo > 0 then
                 begin
-                  LabelStockinWarning.Caption := LabelStockinWarning.Caption + inttostr(Dispo) + ' neuf(s) à ' + FloatToStr(MinPrice) + ' - ';
+                  LabelStockinWarning.Caption := LabelStockinWarning.Caption +
+                    inttostr(Dispo) + ' neuf(s) à ' +
+                    FloatToStr(MinPrice) + ' - ';
                 end;
                 if DispoSH > 0 then
                 begin
-                  LabelStockinWarning.Caption := LabelStockinWarning.Caption + inttostr(DispoSH) + ' rachat(s) à ' + FloatToStr(MinPriceSH) + ' - ';
+                  LabelStockinWarning.Caption := LabelStockinWarning.Caption +
+                    inttostr(DispoSH) + ' rachat(s) à ' +
+                    FloatToStr(MinPriceSH) + ' - ';
                 end;
                 if DispoDP > 0 then
                 begin
-                  LabelStockinWarning.Caption := LabelStockinWarning.Caption + inttostr(DispoDP) + ' dépôt(s) à ' + FloatToStr(MinPriceDP) + ' - ';
+                  LabelStockinWarning.Caption := LabelStockinWarning.Caption +
+                    inttostr(DispoDP) + ' dépôt(s) à ' +
+                    FloatToStr(MinPriceDP) + ' - ';
                 end;
                 LabelStockinWarning.Visible := True;
-              end else begin
+              end
+              else
+              begin
                 LabelStockinWarning.Caption := '';
                 LabelStockinWarning.Visible := False;
               end;
               RemoteDB.netshop_stock.Next;
-            until (RemoteDB.netshop_stock.FieldByName('product_model').AsString <> cxEditStockinModel.Text) or RemoteDB.netshop_stock.Eof;
+            until (RemoteDB.netshop_stock.FieldByName('product_model').AsString
+              <> cxEditStockinModel.Text) or RemoteDB.netshop_stock.Eof;
           end
         end;
 
       Procend:
       end;
 
-      procedure TMainForm.cxGridDBTableViewCustomersOrdersDblClick(Sender: TObject);
+      procedure TMainForm.cxGridDBTableViewCustomersOrdersDblClick
+        (Sender: TObject);
       var
         aTransferRequestForm: TTransferRequestForm;
       begin
-        aTransferRequestForm                        := TTransferRequestForm.Create(self);
-        aTransferRequestForm.products_model         := RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString;
-        aTransferRequestForm.products_name          := RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString;
-        aTransferRequestForm.products_root_category := RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString;
+        aTransferRequestForm := TTransferRequestForm.Create(Self);
+        aTransferRequestForm.products_model :=
+          RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_model').AsString;
+        aTransferRequestForm.products_name :=
+          RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_name').AsString;
+        aTransferRequestForm.products_root_category :=
+          RemoteDB.netshop_customers_alerts.FieldByName
+          ('customers_alerts_products_cat').AsString;
         aTransferRequestForm.Show;
       end;
 
-      procedure TMainForm.cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyl(
-  Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
-  AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
+      procedure TMainForm.
+        cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyl
+        (Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
+        AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
       var
         AColumn: TcxCustomGridTableItem;
       begin
-        AColumn := (Sender as TcxGridDBTableView).GetColumnByFieldName('product_isdefect');
+        AColumn := (Sender as TcxGridDBTableView).GetColumnByFieldName
+          ('product_isdefect');
         if VarToStr(ARecord.values[AColumn.Index]) = '1' then
           AStyle := StyleError;
       end;
 
-procedure TMainForm.cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyle(
-  Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
-  AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
+      procedure TMainForm.
+        cxGridViewRepositoryDBTableViewSalesDepositStylesGetContentStyle
+        (Sender: TcxCustomGridTableView; ARecord: TcxCustomGridRecord;
+        AItem: TcxCustomGridTableItem; var AStyle: TcxStyle);
       var
         AColumn: TcxCustomGridTableItem;
       begin
-        AColumn := (Sender as TcxGridDBTableView).GetColumnByFieldName('product_isdefect');
+        AColumn := (Sender as TcxGridDBTableView).GetColumnByFieldName
+          ('product_isdefect');
         if VarToStr(ARecord.values[AColumn.Index]) = '1' then
           AStyle := StyleError;
       end;
 
-procedure TMainForm.cxtxtdtEanKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+      procedure TMainForm.cxtxtdtEanKeyUp(Sender: TObject; var Key: Word;
+        Shift: TShiftState);
       var
         txt, sfind: string;
         len: Integer;
@@ -10458,20 +12471,22 @@ procedure TMainForm.cxtxtdtEanKeyUp(Sender: TObject; var Key: Word;
 
         // calculate what part of text should be selected
         sfind := RemoteDB.Products.FieldByName('products_model').AsString;
-        len   := Length(sfind) - Length(txt);
+        len := Length(sfind) - Length(txt);
         if len > 0 then
         begin
-          if UpperCase(LeftStr(sfind, Length(txt))) = UpperCase(cxtxtdtEan.Text) then
+          if UpperCase(LeftStr(sfind, Length(txt))) = UpperCase(cxtxtdtEan.Text)
+          then
           begin
-            edfromcode         := True;
-            cxtxtdtEan.Text      := sfind;
-            cxtxtdtEan.SelStart  := Length(txt);
+            edfromcode := True;
+            cxtxtdtEan.Text := sfind;
+            cxtxtdtEan.SelStart := Length(txt);
             cxtxtdtEan.SelLength := len;
           end;
         end;
-end;
+      end;
 
-procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char);
+      procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject;
+        var Key: Char);
       const
         backspace = #8; { key code for backspace character }
       begin
@@ -10483,19 +12498,25 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         Key := #0;
       end;
 
-      procedure TMainForm.EditStockinCustomerIdKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.EditStockinCustomerIdKeyUp(Sender: TObject;
+        var Key: Word; Shift: TShiftState);
       begin
-        if (EditStockinCustomerNbr.Text > '0') and (EditStockinCustomerNbr.Text < '99999999') then
+        if (EditStockinCustomerNbr.Text > '0') and
+          (EditStockinCustomerNbr.Text < '99999999') then
         begin
-          if not RemoteDB.Customers.Locate('Customers_nbr', EditStockinCustomerNbr.Text, [locaseinsensitive]) then
+          if not RemoteDB.Customers.Locate('Customers_nbr',
+            EditStockinCustomerNbr.Text, [locaseinsensitive]) then
             RemoteDB.Customers.First;
-        end else begin
+        end
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
           EditStockinCustomerNbr.Text := inttostr(ConnectedShop);
         end;
       end;
 
-      procedure TMainForm.EditStockinCustomerNbrKeyPress(Sender: TObject; var Key: Char);
+      procedure TMainForm.EditStockinCustomerNbrKeyPress(Sender: TObject;
+        var Key: Char);
       const
         backspace = #8; { key code for backspace character }
       begin
@@ -10506,25 +12527,33 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
             exit;
           end;
           Key := #0;
-        end else begin
+        end
+        else
+        begin
           if Key <> #8 then
             Key := #0;
         end;
       end;
 
-      procedure TMainForm.EditStockinCustomerNbrKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.EditStockinCustomerNbrKeyUp(Sender: TObject;
+        var Key: Word; Shift: TShiftState);
       begin
-        if (EditStockinCustomerNbr.Text > '0') and (EditStockinCustomerNbr.Text < '99999999') then
+        if (EditStockinCustomerNbr.Text > '0') and
+          (EditStockinCustomerNbr.Text < '99999999') then
         begin
-          if not RemoteDB.Customers.Locate('Customers_nbr', EditStockinCustomerNbr.Text, [locaseinsensitive]) then
+          if not RemoteDB.Customers.Locate('Customers_nbr',
+            EditStockinCustomerNbr.Text, [locaseinsensitive]) then
             RemoteDB.Customers.First;
-        end else begin
+        end
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
           EditStockinCustomerNbr.Text := inttostr(ConnectedShop);
         end;
       end;
 
-      procedure TMainForm.EditSalesCustomerNbrKeyPress(Sender: TObject; var Key: Char);
+      procedure TMainForm.EditSalesCustomerNbrKeyPress(Sender: TObject;
+        var Key: Char);
       const
         backspace = #8; { key code for backspace character }
       begin
@@ -10540,13 +12569,18 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         EditSalesCustomerNbr.SelectAll;
       end;
 
-      procedure TMainForm.EditSalesCustomerNbrKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.EditSalesCustomerNbrKeyUp(Sender: TObject;
+        var Key: Word; Shift: TShiftState);
       begin
-        if (EditSalesCustomerNbr.Text > '0') and (EditSalesCustomerNbr.Text < '99999999') then
+        if (EditSalesCustomerNbr.Text > '0') and
+          (EditSalesCustomerNbr.Text < '99999999') then
         begin
-          if not RemoteDB.Customers.Locate('Customers_nbr', EditSalesCustomerNbr.Text, [locaseinsensitive]) then
+          if not RemoteDB.Customers.Locate('Customers_nbr',
+            EditSalesCustomerNbr.Text, [locaseinsensitive]) then
             RemoteDB.Customers.First;
-        end else begin
+        end
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
           EditSalesCustomerNbr.Text := inttostr(ConnectedShop);
         end;
@@ -10556,17 +12590,19 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
       var
         aFormProductSaleHistory: TFormProductSaleHistory;
       begin
-        RemoteDB.netshop_items_sold.Filter   := 'items_sold_model = ' + QuotedStr(RemoteDB.Productsproducts_model.AsString);
+        RemoteDB.netshop_items_sold.Filter := 'items_sold_model = ' +
+          QuotedStr(RemoteDB.Productsproducts_model.AsString);
         RemoteDB.netshop_items_sold.Filtered := True;
-        RemoteDB.IsUpdating                  := True;
-        aFormProductSaleHistory              := TFormProductSaleHistory.Create(self);
-        aFormProductSaleHistory.Model        := QuotedStr(RemoteDB.Productsproducts_model.AsString);
+        RemoteDB.IsUpdating := True;
+        aFormProductSaleHistory := TFormProductSaleHistory.Create(Self);
+        aFormProductSaleHistory.Model :=
+          QuotedStr(RemoteDB.Productsproducts_model.AsString);
         try
           aFormProductSaleHistory.ShowModal
         finally
-          RemoteDB.IsUpdating                  := False;
+          RemoteDB.IsUpdating := False;
           RemoteDB.netshop_items_sold.Filtered := False;
-          RemoteDB.netshop_items_sold.Filter   := '';
+          RemoteDB.netshop_items_sold.Filter := '';
           aFormProductSaleHistory.Free;
         end;
       end;
@@ -10575,7 +12611,7 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
       var
         DebugForm: TDebug;
       begin
-        DebugForm := TDebug.Create(self);
+        DebugForm := TDebug.Create(Self);
         try
           RemoteDB.IsUpdating := True;
           DebugForm.ShowModal();
@@ -10604,30 +12640,47 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         ANotifyServer: TNotifyServer;
       begin
         begin
-          if RemoteDB.netshop_customers_alerts.Locate('customers_alerts_customers_nbr;customers_alerts_products_model',
-            Vararrayof([RemoteDB.CustomersCustomers_nbr.AsString, RemoteDB.Productsproducts_model.AsString]), [locaseinsensitive]) then
+          if RemoteDB.netshop_customers_alerts.Locate
+            ('customers_alerts_customers_nbr;customers_alerts_products_model',
+            Vararrayof([RemoteDB.CustomersCustomers_nbr.AsString,
+            RemoteDB.Productsproducts_model.AsString]), [locaseinsensitive])
+          then
           begin
-            if messagedlg('Client déjà inscrit ? Voulez-vous rajouter un article supplémentaire ?', mtwarning, [mbyes, mbno], 0, mbno) = mryes then
+            if messagedlg
+              ('Client déjà inscrit ? Voulez-vous rajouter un article supplémentaire ?',
+              mtwarning, [mbyes, mbno], 0, mbno) = mryes then
             begin
               RemoteDB.netshop_customers_alerts.Edit;
-              RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger :=
-                RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger + 1;
+              RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_quantity').AsInteger :=
+                RemoteDB.netshop_customers_alerts.FieldByName
+                ('customers_alerts_quantity').AsInteger + 1;
               RemoteDB.netshop_customers_alerts.Post;
             end;
             exit;
           end;
           RemoteDB.netshop_customers_alerts.Append;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.CustomersCustomers_nbr.AsString;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := RemoteDB.Productsproducts_model.AsString;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString :=
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_customers_nbr').AsString :=
+            RemoteDB.CustomersCustomers_nbr.AsString;
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_products_model').AsString :=
+            RemoteDB.Productsproducts_model.AsString;
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_products_name').AsString :=
             RemoteDB.Products.FieldByName('products_intername').AsString;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_cat').AsString := RemoteDB.Productsproducts_root_category_name.AsString;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := Round(StrtoInt(CustomerAlertMaxPrice.Text));
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_products_cat').AsString :=
+            RemoteDB.Productsproducts_root_category_name.AsString;
+          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used')
+            .Value := Round(StrtoInt(CustomerAlertMaxPrice.Text));
           RemoteDB.netshop_customers_alerts.Post;
 
           if UserType = 1 then
           begin
-            ANotifyServer := TNotifyServer.Create('smsalert', RemoteDB.Customerscustomers_email_address.AsString, '', NOTIFYURL);
+            ANotifyServer := TNotifyServer.Create('smsalert',
+              RemoteDB.Customerscustomers_email_address.AsString, '',
+              NOTIFYURL);
           end;
 
           CustomerAlertMaxPrice.Text := '0';
@@ -10639,24 +12692,27 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         Filter: string;
         FilterState: Boolean;
       begin
-        Filter                          := RemoteDB.netshop_stock.Filter;
-        FilterState                     := RemoteDB.netshop_stock.Filtered;
-        RemoteDB.netshop_stock.Filter   := 'product_supplier_id<100000 and product_owner_id = ' + inttostr(ConnectedShop);
+        Filter := RemoteDB.netshop_stock.Filter;
+        FilterState := RemoteDB.netshop_stock.Filtered;
+        RemoteDB.netshop_stock.Filter :=
+          'product_supplier_id<100000 and product_owner_id = ' +
+          inttostr(ConnectedShop);
         RemoteDB.netshop_stock.Filtered := True;
         try
           RemoteDB.Shops.FindKey([ConnectedShop]);
           ReportModule.RvProject.Open;
           ReportModule.RvProject.SelectReport('ReportStock', True);
           ReportModule.RvProject.SetParam('URL', WEBURL);
-          ReportModule.RvSystem.DefaultDest    := rdpreview;
+          ReportModule.RvSystem.DefaultDest := rdpreview;
           ReportModule.RvSystem.DoNativeOutput := True;
-          ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
           // ReportModule.RvSystem.Execute;
 
           ReportModule.RvProject.Execute;
           ReportModule.RvProject.Close;
         finally
-          RemoteDB.netshop_stock.Filter   := Filter;
+          RemoteDB.netshop_stock.Filter := Filter;
           RemoteDB.netshop_stock.Filtered := FilterState;
         end;
       end;
@@ -10672,7 +12728,8 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         originalIndex: string;
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Rapport commandes';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Rapport commandes';
         RemoteDB.CDSActions.Post;
         ChDir(ExtractFilePath(ParamStr(0)));
         originalIndex := RemoteDB.netshop_customers_alerts.IndexName;
@@ -10683,9 +12740,10 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         ReportModule.RvProject.SelectReport('ReportAlerts', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
 
-        ReportModule.RvSystem.DefaultDest    := rdpreview;
+        ReportModule.RvSystem.DefaultDest := rdpreview;
         ReportModule.RvSystem.DoNativeOutput := True;
-        ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          + [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
 
         ReportModule.RvProject.Execute;
@@ -10699,51 +12757,55 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         Filter: string;
         FilterState: Boolean;
       begin
-        Filter                      := RemoteDB.Customers.Filter;
-        FilterState                 := RemoteDB.Customers.Filtered;
-        RemoteDB.Customers.Filter   := 'customers_credit>0';
+        Filter := RemoteDB.Customers.Filter;
+        FilterState := RemoteDB.Customers.Filtered;
+        RemoteDB.Customers.Filter := 'customers_credit>0';
         RemoteDB.Customers.Filtered := True;
         try
           RemoteDB.Shops.FindKey([ConnectedShop]);
           ReportModule.RvProject.Open;
           ReportModule.RvProject.SelectReport('ReportCustomerCredit', True);
           ReportModule.RvProject.SetParam('URL', WEBURL);
-          ReportModule.RvSystem.DefaultDest    := rdpreview;
+          ReportModule.RvSystem.DefaultDest := rdpreview;
           ReportModule.RvSystem.DoNativeOutput := True;
-          ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
           // ReportModule.RvSystem.Execute;
 
           ReportModule.RvProject.Execute;
           ReportModule.RvProject.Close;
         finally
-          RemoteDB.Customers.Filter   := Filter;
+          RemoteDB.Customers.Filter := Filter;
           RemoteDB.Customers.Filtered := FilterState;
         end;
       end;
 
-      procedure TMainForm.dxBarButtonReportDepositNonRefundedClick(Sender: TObject);
+      procedure TMainForm.dxBarButtonReportDepositNonRefundedClick
+        (Sender: TObject);
       var
         Filter: string;
         FilterState: Boolean;
       begin
-        Filter                               := RemoteDB.netshop_items_sold.Filter;
-        FilterState                          := RemoteDB.netshop_items_sold.Filtered;
-        RemoteDB.netshop_items_sold.Filter   := 'items_sold_owner_id>=100000 AND items_refunded=0';
+        Filter := RemoteDB.netshop_items_sold.Filter;
+        FilterState := RemoteDB.netshop_items_sold.Filtered;
+        RemoteDB.netshop_items_sold.Filter :=
+          'items_sold_owner_id>=100000 AND items_refunded=0';
         RemoteDB.netshop_items_sold.Filtered := True;
         try
           RemoteDB.Shops.FindKey([ConnectedShop]);
           ReportModule.RvProject.Open;
           ReportModule.RvProject.SelectReport('ReportCustomerStockSold', True);
           ReportModule.RvProject.SetParam('URL', WEBURL);
-          ReportModule.RvSystem.DefaultDest    := rdpreview;
+          ReportModule.RvSystem.DefaultDest := rdpreview;
           ReportModule.RvSystem.DoNativeOutput := True;
-          ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
           // ReportModule.RvSystem.Execute;
 
           ReportModule.RvProject.Execute;
           ReportModule.RvProject.Close;
         finally
-          RemoteDB.netshop_items_sold.Filter   := Filter;
+          RemoteDB.netshop_items_sold.Filter := Filter;
           RemoteDB.netshop_items_sold.Filtered := FilterState;
         end;
       end;
@@ -10752,7 +12814,7 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
       var
         aInvoiceBatchPrintForm: TInvoiceBatchPrintForm;
       begin
-        aInvoiceBatchPrintForm := TInvoiceBatchPrintForm.Create(self);
+        aInvoiceBatchPrintForm := TInvoiceBatchPrintForm.Create(Self);
         try
           aInvoiceBatchPrintForm.ShowModal;
         finally
@@ -10766,24 +12828,26 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         Filter: string;
         FilterState: Boolean;
       begin
-        Filter                           := RemoteDB.netshop_repair.Filter;
-        FilterState                      := RemoteDB.netshop_repair.Filtered;
-        RemoteDB.netshop_repair.Filter   := 'repair_returned = ' + QuotedStr('false');
+        Filter := RemoteDB.netshop_repair.Filter;
+        FilterState := RemoteDB.netshop_repair.Filtered;
+        RemoteDB.netshop_repair.Filter := 'repair_returned = ' +
+          QuotedStr('false');
         RemoteDB.netshop_repair.Filtered := True;
         try
           RemoteDB.Shops.FindKey([ConnectedShop]);
           ReportModule.RvProject.Open;
           ReportModule.RvProject.SelectReport('ReportRepair', True);
           ReportModule.RvProject.SetParam('URL', WEBURL);
-          ReportModule.RvSystem.DefaultDest    := rdpreview;
+          ReportModule.RvSystem.DefaultDest := rdpreview;
           ReportModule.RvSystem.DoNativeOutput := True;
-          ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
           // ReportModule.RvSystem.Execute;
 
           ReportModule.RvProject.Execute;
           ReportModule.RvProject.Close;
         finally
-          RemoteDB.netshop_repair.Filter   := Filter;
+          RemoteDB.netshop_repair.Filter := Filter;
           RemoteDB.netshop_repair.Filtered := FilterState;
         end;
       end;
@@ -10793,38 +12857,41 @@ procedure TMainForm.EditStockinCustomerIdKeyPress(Sender: TObject; var Key: Char
         Filter: string;
         FilterState: Boolean;
       begin
-        Filter                          := RemoteDB.netshop_stock.Filter;
-        FilterState                     := RemoteDB.netshop_stock.Filtered;
-        RemoteDB.netshop_stock.Filter   := 'product_supplier_id>=100000 and product_owner_id = ' + inttostr(ConnectedShop);
+        Filter := RemoteDB.netshop_stock.Filter;
+        FilterState := RemoteDB.netshop_stock.Filtered;
+        RemoteDB.netshop_stock.Filter :=
+          'product_supplier_id>=100000 and product_owner_id = ' +
+          inttostr(ConnectedShop);
         RemoteDB.netshop_stock.Filtered := True;
         try
           RemoteDB.Shops.FindKey([ConnectedShop]);
           ReportModule.RvProject.Open;
           ReportModule.RvProject.SelectReport('ReportStock', True);
           ReportModule.RvProject.SetParam('URL', WEBURL);
-          ReportModule.RvSystem.DefaultDest    := rdpreview;
+          ReportModule.RvSystem.DefaultDest := rdpreview;
           ReportModule.RvSystem.DoNativeOutput := True;
-          ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups - [ssAllowSetup];
           // ReportModule.RvSystem.Execute;
 
           ReportModule.RvProject.Execute;
           ReportModule.RvProject.Close;
         finally
-          RemoteDB.netshop_stock.Filter   := Filter;
+          RemoteDB.netshop_stock.Filter := Filter;
           RemoteDB.netshop_stock.Filtered := FilterState;
         end;
       end;
 
       procedure TMainForm.dxBarButtonScanDacalClick(Sender: TObject);
-begin
-OnUSBCDDeviceChange;
-end;
+      begin
+        OnUSBCDDeviceChange;
+      end;
 
-procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
+      procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       begin
         ActionWebInfo.Execute;
         AdvPageControlBrowser.ActivePage := AdvTabSheetBrowserCLD;
-        self.dxBarButtonSearchLocalClick(nil);
+        Self.dxBarButtonSearchLocalClick(nil);
       end;
 
       procedure TMainForm.dxBarButtonSearchLocalClick(Sender: TObject);
@@ -10835,7 +12902,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         if lowercase(searchstring.Text) = LastSearchString then
           followup := True
         else
-          followup       := False;
+          followup := False;
         LastSearchString := lowercase(searchstring.Text);
 
         case PageControlMainForm.ActivePageIndex of
@@ -10849,11 +12916,15 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                   RemoteDB.Products.Next;
                 while (not Found) and (not RemoteDB.Products.Eof) do
                 begin
-                  if Pos(lowercase(searchstring.Text), lowercase(RemoteDB.Products.FieldByName('products_model').AsString)) <> 0 then
+                  if Pos(lowercase(searchstring.Text),
+                    lowercase(RemoteDB.Products.FieldByName('products_model')
+                    .AsString)) <> 0 then
                   begin
                     Found := True;
                   end;
-                  if Pos(lowercase(searchstring.Text), lowercase(RemoteDB.Products.FieldByName('products_intername').AsString)) <> 0 then
+                  if Pos(lowercase(searchstring.Text),
+                    lowercase(RemoteDB.Products.FieldByName
+                    ('products_intername').AsString)) <> 0 then
                   begin
                     Found := True;
                   end;
@@ -10881,19 +12952,27 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                   RemoteDB.Customers.Next;
                 while (not Found) and (not RemoteDB.Customers.Eof) do
                 begin
-                  if Pos(lowercase(searchstring.Text), lowercase(RemoteDB.Customers.FieldByName('customers_nbr').AsString)) <> 0 then
+                  if Pos(lowercase(searchstring.Text),
+                    lowercase(RemoteDB.Customers.FieldByName('customers_nbr')
+                    .AsString)) <> 0 then
                   begin
                     Found := True;
                   end;
-                  if Pos(lowercase(searchstring.Text), lowercase(RemoteDB.Customers.FieldByName('customers_firstname').AsString)) <> 0 then
+                  if Pos(lowercase(searchstring.Text),
+                    lowercase(RemoteDB.Customers.FieldByName
+                    ('customers_firstname').AsString)) <> 0 then
                   begin
                     Found := True;
                   end;
-                  if Pos(lowercase(searchstring.Text), lowercase(RemoteDB.Customers.FieldByName('customers_lastname').AsString)) <> 0 then
+                  if Pos(lowercase(searchstring.Text),
+                    lowercase(RemoteDB.Customers.FieldByName
+                    ('customers_lastname').AsString)) <> 0 then
                   begin
                     Found := True;
                   end;
-                  if Pos(lowercase(searchstring.Text), lowercase(RemoteDB.Customers.FieldByName('customers_email_address').AsString)) <> 0 then
+                  if Pos(lowercase(searchstring.Text),
+                    lowercase(RemoteDB.Customers.FieldByName
+                    ('customers_email_address').AsString)) <> 0 then
                   begin
                     Found := True;
                   end;
@@ -10919,69 +12998,84 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
       end;
 
-
       procedure TMainForm.dxBarButtonStock0valComputeClick(Sender: TObject);
       var
-        MinPrice, PriceCat: Double;
+        MinPrice, PriceCat: double;
         Position, RecordCount, margin: Integer;
 
       begin
-        RemoteDB.IsUpdating             := True;
-        RemoteDB.netshop_stock.Filter   := 'product_price_gross=0 and product_supplier_id<100000 and product_owner_id = ' + inttostr(ConnectedShop);
+        RemoteDB.IsUpdating := True;
+        RemoteDB.netshop_stock.Filter :=
+          'product_price_gross=0 and product_supplier_id<100000 and product_owner_id = '
+          + inttostr(ConnectedShop);
         RemoteDB.netshop_stock.Filtered := True;
-        RecordCount                     := RemoteDB.netshop_stock.RecordCount;
-        ProgressBar.Position            := 0;
-        ProgressBar.Visible             := True;
-        Position                        := 0;
+        RecordCount := RemoteDB.netshop_stock.RecordCount;
+        ProgressBar.Position := 0;
+        ProgressBar.Visible := True;
+        Position := 0;
 
         try
           RemoteDB.netshop_stock.First;
           while not RemoteDB.netshop_stock.Eof do
           begin
-            if RemoteDB.Products.FindKey([RemoteDB.netshop_stock.FieldByName('product_model').AsString]) and (RemoteDB.ProductsProducts_Price.AsFloat > 0) then
+            if RemoteDB.Products.FindKey
+              ([RemoteDB.netshop_stock.FieldByName('product_model').AsString])
+              and (RemoteDB.ProductsProducts_Price.AsFloat > 0) then
             begin
               RemoteDB.netshop_stock.Edit;
 
-              if ((RemoteDB.netshop_stock.FieldByName('product_model').AsString = 'MICRO') or
-                (RemoteDB.netshop_stock.FieldByName('product_model').AsString = 'REPA') or (RemoteDB.Productsproducts_posa.AsInteger=1)) then
+              if ((RemoteDB.netshop_stock.FieldByName('product_model')
+                .AsString = 'MICRO') or
+                (RemoteDB.netshop_stock.FieldByName('product_model')
+                .AsString = 'REPA') or
+                (RemoteDB.Productsproducts_posa.AsInteger = 1)) then
               begin
-                RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat := 0;
+                RemoteDB.netshop_stock.FieldByName('product_price_gross')
+                  .AsFloat := 0;
 
               end
               else
-                RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat :=
-                  Round(RemoteDB.ProductsProducts_Price.AsFloat / (1 + (MarginNew / 100)) * 100) / 100;;
+                RemoteDB.netshop_stock.FieldByName('product_price_gross')
+                  .AsFloat := Round(RemoteDB.ProductsProducts_Price.AsFloat /
+                  (1 + (MarginNew / 100)) * 100) / 100;;
               if RemoteDB.netshop_stock.State = dsEdit then
                 RemoteDB.netshop_stock.Post;
 
-            end else begin
+            end
+            else
+            begin
               RemoteDB.netshop_stock.Edit;
 
-              if ((RemoteDB.netshop_stock.FieldByName('product_model').AsString = 'MICRO') or
-                (RemoteDB.netshop_stock.FieldByName('product_model').AsString = 'REPA')) then
+              if ((RemoteDB.netshop_stock.FieldByName('product_model')
+                .AsString = 'MICRO') or
+                (RemoteDB.netshop_stock.FieldByName('product_model')
+                .AsString = 'REPA')) then
               begin
-                RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat := 0;
+                RemoteDB.netshop_stock.FieldByName('product_price_gross')
+                  .AsFloat := 0;
 
               end
               else
-                RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat :=
-                  Round(RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat / (1 + (MarginNew / 1.21 / 100)) *
-                  100) / 100;;
+                RemoteDB.netshop_stock.FieldByName('product_price_gross')
+                  .AsFloat :=
+                  Round(RemoteDB.netshop_stock.FieldByName
+                  ('product_price_stock').AsFloat /
+                  (1 + (MarginNew / 1.21 / 100)) * 100) / 100;;
 
               if RemoteDB.netshop_stock.State = dsEdit then
                 RemoteDB.netshop_stock.Post;
             end;
-            Position             := Position + 1;
+            Position := Position + 1;
             ProgressBar.Position := (Position / RecordCount * 100);
             RemoteDB.netshop_stock.Next;
             Application.ProcessMessages;
           end;
         finally
           RemoteDB.netshop_stock.Filtered := False;
-          RemoteDB.netshop_stock.Filter   := '';
-          ProgressBar.Visible             := False;
-          ProgressBar.Position            := 0;
-          RemoteDB.IsUpdating             := False;
+          RemoteDB.netshop_stock.Filter := '';
+          ProgressBar.Visible := False;
+          ProgressBar.Position := 0;
+          RemoteDB.IsUpdating := False;
         end;
 
       end;
@@ -10991,22 +13085,27 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         aReportSQL: TReportSQL;
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Rapport stock occasion par plateforme';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Rapport stock occasion par plateforme';
         RemoteDB.CDSActions.Post;
         with RemoteDB.SQLQuery do
         begin
           CommandText :=
             'SELECT p.products_root_category_name as Platform,ns.product_name as Product, ns.product_quantity as Q, ns.product_owner_id as Owner, ns.product_supplier_id as Supplier, ns.product_price_stock as Price ';
-          CommandText := CommandText + ' FROM netshop_stock ns inner join products p on p.products_model=ns.product_model';
-          CommandText := CommandText + ' WHERE ns.product_location=' + inttostr(ConnectedShop) +
+          CommandText := CommandText +
+            ' FROM netshop_stock ns inner join products p on p.products_model=ns.product_model';
+          CommandText := CommandText + ' WHERE ns.product_location=' +
+            inttostr(ConnectedShop) +
             ' and (ns.product_owner_id>=100000 or ns.product_supplier_id>=100000)';
-          CommandText := CommandText + ' ORDER BY p.products_root_category_name,ns.product_price_stock';
+          CommandText := CommandText +
+            ' ORDER BY p.products_root_category_name,ns.product_price_stock';
         end;
 
-        aReportSQL := TReportSQL.Create(self);
+        aReportSQL := TReportSQL.Create(Self);
         try
           aReportSQL.CDSReport.Open;
-          aReportSQL.cxGridReportDBTableViewReport.DataController.CreateAllItems(True);
+          aReportSQL.cxGridReportDBTableViewReport.DataController.
+            CreateAllItems(True);
           aReportSQL.ShowModal;
         finally
           aReportSQL.Free;
@@ -11015,36 +13114,39 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
       procedure TMainForm.dxBarButtonStockClearValueClick(Sender: TObject);
       var
-        MinPrice, PriceCat: Double;
+        MinPrice, PriceCat: double;
         Position, RecordCount, margin: Integer;
 
       begin
-        RemoteDB.IsUpdating             := True;
-        RemoteDB.netshop_stock.Filter   := 'product_supplier_id<100000 and product_owner_id = ' + inttostr(ConnectedShop);
+        RemoteDB.IsUpdating := True;
+        RemoteDB.netshop_stock.Filter :=
+          'product_supplier_id<100000 and product_owner_id = ' +
+          inttostr(ConnectedShop);
         RemoteDB.netshop_stock.Filtered := True;
-        RecordCount                     := RemoteDB.netshop_stock.RecordCount;
-        ProgressBar.Position            := 0;
-        ProgressBar.Visible             := True;
-        Position                        := 0;
+        RecordCount := RemoteDB.netshop_stock.RecordCount;
+        ProgressBar.Position := 0;
+        ProgressBar.Visible := True;
+        Position := 0;
 
         try
           RemoteDB.netshop_stock.First;
           while not RemoteDB.netshop_stock.Eof do
           begin
             RemoteDB.netshop_stock.Edit;
-            RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat := 0;
+            RemoteDB.netshop_stock.FieldByName('product_price_gross')
+              .AsFloat := 0;
             RemoteDB.netshop_stock.Post;
-            Position             := Position + 1;
+            Position := Position + 1;
             ProgressBar.Position := (Position / RecordCount * 100);
             Application.ProcessMessages;
             RemoteDB.netshop_stock.Next;
           end;
         finally
           RemoteDB.netshop_stock.Filtered := False;
-          RemoteDB.netshop_stock.Filter   := '';
-          ProgressBar.Visible             := False;
-          ProgressBar.Position            := 0;
-          RemoteDB.IsUpdating             := False;
+          RemoteDB.netshop_stock.Filter := '';
+          ProgressBar.Visible := False;
+          ProgressBar.Position := 0;
+          RemoteDB.IsUpdating := False;
         end;
       end;
 
@@ -11052,9 +13154,11 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         AEnterLib: TFormEnterLibrary;
       begin
-        AEnterLib := TFormEnterLibrary.Create(self);
+        AEnterLib := TFormEnterLibrary.Create(Self);
         try
-          AEnterLib.Enter(RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString, RemoteDB.netshop_stock.FieldByName('product_model').AsString);
+          AEnterLib.Enter(RemoteDB.netshop_stock.FieldByName('product_owner_id')
+            .AsString, RemoteDB.netshop_stock.FieldByName('product_model')
+            .AsString);
         finally
           AEnterLib.Free;
         end;
@@ -11066,7 +13170,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         EditRentCustomerId.SelectAll
       end;
 
-      procedure TMainForm.EditRentCustomerIdOldKeyPress(Sender: TObject; var Key: Char);
+      procedure TMainForm.EditRentCustomerIdOldKeyPress(Sender: TObject;
+        var Key: Char);
       const
         backspace = #8; { key code for backspace character }
       begin
@@ -11078,13 +13183,18 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         Key := #0;
       end;
 
-      procedure TMainForm.EditRentCustomerIdOldKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.EditRentCustomerIdOldKeyUp(Sender: TObject;
+        var Key: Word; Shift: TShiftState);
       begin
-        if (EditRentCustomerId.Text > '0') and (EditRentCustomerId.Text < '99999999') then
+        if (EditRentCustomerId.Text > '0') and
+          (EditRentCustomerId.Text < '99999999') then
         begin
-          if not RemoteDB.Customers.Locate('Customers_nbr', EditRentCustomerId.Text, [locaseinsensitive]) then
+          if not RemoteDB.Customers.Locate('Customers_nbr',
+            EditRentCustomerId.Text, [locaseinsensitive]) then
             RemoteDB.Customers.First;
-        end else begin
+        end
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
           EditRentCustomerId.Text := inttostr(ConnectedShop);
         end;
@@ -11096,14 +13206,16 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
       begin
         // Find Customer Caddy
-        page  := -1;
-        for i := 0 to self.PageControlSalesCaddy.PageCount - 1 do
+        page := -1;
+        for i := 0 to Self.PageControlSalesCaddy.PageCount - 1 do
         begin
-          for j := 0 to TAdvTabSheet(self.PageControlSalesCaddy.Pages[i]).ControlCount - 1 do
+          for j := 0 to TAdvTabSheet(Self.PageControlSalesCaddy.Pages[i])
+            .ControlCount - 1 do
           begin
-            if self.PageControlSalesCaddy.Pages[i].Controls[j].Tag = 100 then
+            if Self.PageControlSalesCaddy.Pages[i].Controls[j].Tag = 100 then
             begin
-              if TEdit(self.PageControlSalesCaddy.Pages[i].Controls[j]).Text = RemoteDB.CustomersCustomers_nbr.AsString then
+              if TEdit(Self.PageControlSalesCaddy.Pages[i].Controls[j])
+                .Text = RemoteDB.CustomersCustomers_nbr.AsString then
               begin
                 page := i;
               end;
@@ -11114,21 +13226,24 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         // Create New caddy if not found
         if page = -1 then
         begin
-          SBNewSalesCaddyClick(self);
-          page := self.PageControlSalesCaddy.ActivePageIndex;
+          SBNewSalesCaddyClick(Self);
+          page := Self.PageControlSalesCaddy.ActivePageIndex;
         end;
 
         // Find Grid and populate
-        for i := 0 to TAdvTabSheet(self.PageControlSalesCaddy.Pages[page]).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(Self.PageControlSalesCaddy.Pages[page])
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(self.PageControlSalesCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+          if TAdvTabSheet(Self.PageControlSalesCaddy.ActivePage).Controls[i]
+            .ClassType = TAdvStringGrid then
           begin
             index := i;
           end;
         end;
-        with TAdvStringGrid(TAdvTabSheet(self.PageControlSalesCaddy.Pages[page]).Controls[index]) do
+        with TAdvStringGrid(TAdvTabSheet(Self.PageControlSalesCaddy.Pages[page])
+          .Controls[index]) do
         begin
-          Nowrow           := RowCount - 1;
+          Nowrow := RowCount - 1;
           Cells[0, Nowrow] := 'LOCA';
           Cells[1, Nowrow] := 'Activation';
           Cells[2, Nowrow] := '1';
@@ -11138,7 +13253,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           Cells[6, Nowrow] := DateToStr(Now);
           Cells[7, Nowrow] := inttostr(ConnectedShop);
           Cells[8, Nowrow] := '0';
-          RowCount         := Nowrow + 2;
+          RowCount := Nowrow + 2;
         end;
       end;
 
@@ -11148,7 +13263,9 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         CustArray: array of Integer;
 
       begin
-        RemoteDB.netshop_rent_transaction.Filter   := 'rent_transaction_returned=0 and rent_transaction_due_date < ' + FloatToStr(Round(Now));
+        RemoteDB.netshop_rent_transaction.Filter :=
+          'rent_transaction_returned=0 and rent_transaction_due_date < ' +
+          FloatToStr(Round(Now));
         RemoteDB.netshop_rent_transaction.Filtered := True;
         RemoteDB.netshop_rent_transaction.First;
         try
@@ -11158,40 +13275,58 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           while not RemoteDB.netshop_rent_transaction.Eof do
           begin
             RemoteDB.Rent_late.Append;
-            RemoteDB.Rent_lateCustomer_Nbr.Value  := RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_customer_nbr').AsInteger;
-            RemoteDB.Rent_lateProduct_Model.Value := RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_product_model').Value;
-            RemoteDB.Rent_lateDate_Out.Value      := RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_start_date').Value;
-            RemoteDB.Rent_lateDate_Due.Value      := RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_due_date').Value;
-            RemoteDB.Rent_lateProduct_Name.Value  := RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_product_name').Value;
-            RemoteDB.Rent_lateOverdue_Days.Value  := trunc(Now - RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_due_date').Value);
-            if not RemoteDB.netshop_rent_schemes.FindKey([RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_scheme_id').Value]) then
+            RemoteDB.Rent_lateCustomer_Nbr.Value :=
+              RemoteDB.netshop_rent_transaction.FieldByName
+              ('rent_transaction_customer_nbr').AsInteger;
+            RemoteDB.Rent_lateProduct_Model.Value :=
+              RemoteDB.netshop_rent_transaction.FieldByName
+              ('rent_transaction_product_model').Value;
+            RemoteDB.Rent_lateDate_Out.Value :=
+              RemoteDB.netshop_rent_transaction.FieldByName
+              ('rent_transaction_start_date').Value;
+            RemoteDB.Rent_lateDate_Due.Value :=
+              RemoteDB.netshop_rent_transaction.FieldByName
+              ('rent_transaction_due_date').Value;
+            RemoteDB.Rent_lateProduct_Name.Value :=
+              RemoteDB.netshop_rent_transaction.FieldByName
+              ('rent_transaction_product_name').Value;
+            RemoteDB.Rent_lateOverdue_Days.Value :=
+              Trunc(Now - RemoteDB.netshop_rent_transaction.FieldByName
+              ('rent_transaction_due_date').Value);
+            if not RemoteDB.netshop_rent_schemes.FindKey
+              ([RemoteDB.netshop_rent_transaction.FieldByName
+              ('rent_transaction_scheme_id').Value]) then
             begin
               ShowMessage('Rent Scheme not found');
               RemoteDB.netshop_rent_transaction.Filtered := False;
               exit;
             end;
-            RemoteDB.Rent_lateOverdue_Amont.Value := RemoteDB.Rent_lateOverdue_Days.Value * RemoteDB.netshop_rent_schemes.FieldByName
+            RemoteDB.Rent_lateOverdue_Amont.Value :=
+              RemoteDB.Rent_lateOverdue_Days.Value *
+              RemoteDB.netshop_rent_schemes.FieldByName
               ('rent_scheme_extra_price').Value;
             RemoteDB.Rent_late.Post;
             RemoteDB.netshop_rent_transaction.Next;
           end;
         finally
-          RemoteDB.netshop_rent_transaction.Filter   := '';
+          RemoteDB.netshop_rent_transaction.Filter := '';
           RemoteDB.netshop_rent_transaction.Filtered := False;
         end;
 
         RemoteDB.SetAddress_bookToCustomers;
         ChDir(ExtractFilePath(ParamStr(0)));
-        Pindex := Printer.Printers.IndexOf((self.Parameter['PrintersRapportPrinter']));
+        Pindex := Printer.Printers.IndexOf
+          ((Self.Parameter['PrintersRapportPrinter']));
         RemoteDB.Shops.FindKey([ConnectedShop]);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportRentLate', True);
         ReportModule.RvProject.SetParam('URL', WEBURL);
-        ReportModule.RvProject.SetParam('Date', DateToStr(trunc(Now)));
+        ReportModule.RvProject.SetParam('Date', DateToStr(Trunc(Now)));
         ReportModule.RvProject.SetParam('Conditions', '');
-        ReportModule.RvSystem.DefaultDest             := rdPrinter;
-        ReportModule.RvSystem.SystemSetups            := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
-        ReportModule.RvNDRWriter.PrinterIndex         := Pindex;
+        ReportModule.RvSystem.DefaultDest := rdPrinter;
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          + [ssAllowSetup];
+        ReportModule.RvNDRWriter.PrinterIndex := Pindex;
         ReportModule.RvSystem.SystemPreview.FormState := wsMaximized;
 
         RemoteDB.Rent_late.IndexFieldNames := 'customer_nbr';
@@ -11211,7 +13346,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         for i := 0 to high(CustArray) do
         begin
           RemoteDB.Customers.FindKey([CustArray[i]]);
-          RemoteDB.Rent_late.Filter   := 'Customer_Nbr = ' + inttostr(CustArray[i]);
+          RemoteDB.Rent_late.Filter := 'Customer_Nbr = ' +
+            inttostr(CustArray[i]);
           RemoteDB.Rent_late.Filtered := True;
           ReportModule.RvProject.Execute;
         end;
@@ -11224,7 +13360,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         AFormExportWinbooks: TFormExportWinbooks;
       begin
-        AFormExportWinbooks := TFormExportWinbooks.Create(self);
+        AFormExportWinbooks := TFormExportWinbooks.Create(Self);
         try
           AFormExportWinbooks.ShowModal;
         finally
@@ -11241,27 +13377,31 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         i: Integer;
       begin
-        ProduitsExecute(self);
+        ProduitsExecute(Self);
         RemoteDB.CDSActions.Append;
         RemoteDB.CDSActions.FieldByName('action').AsString := 'Purger DB';
         RemoteDB.CDSActions.Post;
         try
-          i                   := 0;
+          i := 0;
           RemoteDB.IsUpdating := True;
           RemoteDB.Products.DisableControls;
           RemoteDB.netshop_stock.DisableControls;
           RemoteDB.netshop_stock.First;
           ProgressBar.Visible := True;
-          self.Enabled        := False;
+          Self.Enabled := False;
           if RemoteDB.netshop_stock.RecordCount > 0 then
-            ProgressBar.Position := i / (RemoteDB.netshop_stock.RecordCount) * 100;
+            ProgressBar.Position :=
+              i / (RemoteDB.netshop_stock.RecordCount) * 100;
           while not RemoteDB.netshop_stock.Eof do
           begin
 
-            if not RemoteDB.Products.Locate('products_model', RemoteDB.netshop_stock.FieldByName('product_model').AsString, [locaseinsensitive]) then
+            if not RemoteDB.Products.Locate('products_model',
+              RemoteDB.netshop_stock.FieldByName('product_model').AsString,
+              [locaseinsensitive]) then
             begin
-              if messagedlg('Le produit ' + RemoteDB.netshop_stock.FieldByName('product_name').AsString + ' va être supprimé du stock', mtwarning,
-                [mbyes, mbno], 0) = mryes then
+              if messagedlg('Le produit ' + RemoteDB.netshop_stock.FieldByName
+                ('product_name').AsString + ' va être supprimé du stock',
+                mtwarning, [mbyes, mbno], 0) = mryes then
               begin
                 RemoteDB.netshop_stock.delete;
               end
@@ -11271,8 +13411,9 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             end
             else
               RemoteDB.netshop_stock.Next;
-            i                    := i + 1;
-            ProgressBar.Position := i / (RemoteDB.netshop_stock.RecordCount) * 100;
+            i := i + 1;
+            ProgressBar.Position :=
+              i / (RemoteDB.netshop_stock.RecordCount) * 100;
             Application.ProcessMessages;
           end;
         finally
@@ -11280,14 +13421,14 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           RemoteDB.Products.EnableControls;
           RemoteDB.netshop_stock.EnableControls;
           ProgressBar.Visible := False;
-          self.Enabled        := True;
+          Self.Enabled := True;
         end;
       end;
 
       procedure TMainForm.dxBarButtonClientsClick(Sender: TObject);
       begin
         Clients.Execute;
-        self.dxBarButtonSearchLocalClick(nil);
+        Self.dxBarButtonSearchLocalClick(nil);
       end;
 
       procedure TMainForm.dxBarButton11Click(Sender: TObject);
@@ -11295,46 +13436,49 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         Filter: string;
         FilterState: Boolean;
       begin
-        Filter                          := RemoteDB.netshop_stock.Filter;
-        FilterState                     := RemoteDB.netshop_stock.Filtered;
-        RemoteDB.netshop_stock.Filter   := 'product_owner_id >= 100000';
+        Filter := RemoteDB.netshop_stock.Filter;
+        FilterState := RemoteDB.netshop_stock.Filtered;
+        RemoteDB.netshop_stock.Filter := 'product_owner_id >= 100000';
         RemoteDB.netshop_stock.Filtered := True;
         try
           RemoteDB.Shops.FindKey([ConnectedShop]);
           ReportModule.RvProject.Open;
           ReportModule.RvProject.SelectReport('ReportStock', True);
           ReportModule.RvProject.SetParam('URL', WEBURL);
-          ReportModule.RvSystem.DefaultDest    := rdpreview;
+          ReportModule.RvSystem.DefaultDest := rdpreview;
           ReportModule.RvSystem.DoNativeOutput := True;
-          ReportModule.RvSystem.SystemSetups   := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+          ReportModule.RvSystem.SystemSetups :=
+            ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
           // ReportModule.RvSystem.Execute;
 
           ReportModule.RvProject.Execute;
           ReportModule.RvProject.Close;
         finally
-          RemoteDB.netshop_stock.Filter   := Filter;
+          RemoteDB.netshop_stock.Filter := Filter;
           RemoteDB.netshop_stock.Filtered := FilterState;
         end;
       end;
 
       procedure TMainForm.dxBarButton14Click(Sender: TObject);
       begin
-        self.WebbrowserCLDAddItem(searchstring.Text);
+        Self.WebbrowserCLDAddItem(searchstring.Text);
       end;
 
       procedure TMainForm.dxBarButton1Click(Sender: TObject);
       var
-        MinPrice, PriceCat: Double;
+        MinPrice, PriceCat: double;
         Position, RecordCount, margin: Integer;
 
       begin
-        RemoteDB.IsUpdating             := True;
-        RemoteDB.netshop_stock.Filter   := 'product_supplier_id<100000 and product_owner_id = ' + inttostr(ConnectedShop);
+        RemoteDB.IsUpdating := True;
+        RemoteDB.netshop_stock.Filter :=
+          'product_supplier_id<100000 and product_owner_id = ' +
+          inttostr(ConnectedShop);
         RemoteDB.netshop_stock.Filtered := True;
-        RecordCount                     := RemoteDB.netshop_stock.RecordCount;
-        ProgressBar.Position            := 0;
-        ProgressBar.Visible             := True;
-        Position                        := 0;
+        RecordCount := RemoteDB.netshop_stock.RecordCount;
+        ProgressBar.Position := 0;
+        ProgressBar.Visible := True;
+        Position := 0;
 
         try
           RemoteDB.netshop_stock.First;
@@ -11346,23 +13490,37 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             // RemoteDB.netshop_stock.FieldByName('.Post;
             // end;
 
-            if RemoteDB.Products.Locate('products_model', UpperCase(RemoteDB.netshop_stock.FieldByName('product_model').AsString), [locaseinsensitive]) then
+            if RemoteDB.Products.Locate('products_model',
+              UpperCase(RemoteDB.netshop_stock.FieldByName('product_model')
+              .AsString), [locaseinsensitive]) then
             begin
               RemoteDB.netshop_stock.Edit;
-              if RemoteDB.Productsproducts_posa.AsInteger=1 then  begin
-                RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat := 0;
-              end else begin
-              if ((RemoteDB.Products.FieldByName('products_price').AsFloat) < (RemoteDB.Products.FieldByName('products_cldprice').AsFloat * 1.0)) then
+              if RemoteDB.Productsproducts_posa.AsInteger = 1 then
               begin
-                RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat := (RemoteDB.Products.FieldByName('products_price').AsFloat / 1.1);
-              end else begin
-                RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat := RemoteDB.Products.FieldByName('products_cldprice').AsFloat;
-              end;
+                RemoteDB.netshop_stock.FieldByName('product_price_gross')
+                  .AsFloat := 0;
+              end
+              else
+              begin
+                if ((RemoteDB.Products.FieldByName('products_price').AsFloat) <
+                  (RemoteDB.Products.FieldByName('products_cldprice').AsFloat *
+                  1.0)) then
+                begin
+                  RemoteDB.netshop_stock.FieldByName('product_price_gross')
+                    .AsFloat := (RemoteDB.Products.FieldByName('products_price')
+                    .AsFloat / 1.1);
+                end
+                else
+                begin
+                  RemoteDB.netshop_stock.FieldByName('product_price_gross')
+                    .AsFloat := RemoteDB.Products.FieldByName
+                    ('products_cldprice').AsFloat;
+                end;
               end;
               RemoteDB.netshop_stock.Post;
             end;
 
-            Position             := Position + 1;
+            Position := Position + 1;
             ProgressBar.Position := (Position / RecordCount * 100);
             Application.ProcessMessages;
             RemoteDB.netshop_stock.Next;
@@ -11370,95 +13528,97 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
         finally
           RemoteDB.netshop_stock.Filtered := False;
-          RemoteDB.netshop_stock.Filter   := '';
-          ProgressBar.Visible             := False;
-          ProgressBar.Position            := 0;
-          RemoteDB.IsUpdating             := False;
+          RemoteDB.netshop_stock.Filter := '';
+          ProgressBar.Visible := False;
+          ProgressBar.Position := 0;
+          RemoteDB.IsUpdating := False;
         end;
 
       end;
 
       procedure TMainForm.SBReadEIDClick(Sender: TObject);
       var
-        Identity : TEIDIdentity;
-        Address : TEIDAddress;
-        Pic : TEIDPicture;
-        MS : TMemoryStream;
-        Img : TJPEGImage;
+        Identity: TEIDIdentity;
+        Address: TEIDAddress;
+        Pic: TEIDPicture;
+        MS: TMemoryStream;
+        Img: TJpegImage;
         Picture: Variant;
         ReadIdentity, ReadNationalNumber, ReadGender: WideString;
         IsUpdate: Boolean;
 
       begin
 
-   if not IsEIDCard then
-   begin
-         ShowMessage('La carte détectée dans le lecteur n''est pas une carte d''identité Belge');
-         Exit;
-   end;
+        if not IsEIDCard then
+        begin
+          ShowMessage
+            ('La carte détectée dans le lecteur n''est pas une carte d''identité Belge');
+          exit;
+        end;
 
-    FillChar(Identity, sizeof(TEIDIdentity), 0);
+        FillChar(Identity, sizeof(TEIDIdentity), 0);
 
-   if ReadIDData(@Identity) then
-   begin
-     FillChar(Address, sizeof(TEIDAddress), 0);
-     ReadAddress(@Address);
+        if ReadIDData(@Identity) then
+        begin
+          FillChar(Address, sizeof(TEIDAddress), 0);
+          ReadAddress(@Address);
 
-      ReadIdentity := Identity.cardNumber;
-      ReadNationalNumber := Identity.nationalNumber;
-      ReadGender := Identity.sex;
+          ReadIdentity := Identity.cardNumber;
+          ReadNationalNumber := Identity.nationalNumber;
+          ReadGender := Identity.sex;
 
-                    if RemoteDB.Customers.Locate('customers_identity', ReadIdentity, [locaseinsensitive]) then
-              begin
-                IsUpdate := True;
-              end else begin
-                IsUpdate := False;
-              end;
+          if RemoteDB.Customers.Locate('customers_identity', ReadIdentity,
+            [locaseinsensitive]) then
+          begin
+            IsUpdate := True;
+          end
+          else
+          begin
+            IsUpdate := False;
+          end;
 
-              if IsUpdate then
-                RemoteDB.Customers.Edit
-              else
-                RemoteDB.Customers.Append;
+          if IsUpdate then
+            RemoteDB.Customers.Edit
+          else
+            RemoteDB.Customers.Append;
 
-              RemoteDB.Customers.FieldByName('customers_firstname').AsString := Identity.firstName1;
-              RemoteDB.Customers.FieldByName('customers_Lastname').AsString := Identity.name;
-              RemoteDB.Customers.FieldByName('customers_nationalnbr').AsString := ReadNationalNumber;
-              RemoteDB.Customers.FieldByName('customers_identity').AsString := ReadIdentity;
-              RemoteDB.Customers.FieldByName('customers_gender').AsString := ReadGender;
-              RemoteDB.Customers.FieldByName('customers_dob').AsDateTime :=
-              InvFormatDatetime(Identity.birthDate,'yyyymmdd');
-              RemoteDB.Customers.Post;
+          RemoteDB.Customers.FieldByName('customers_firstname').AsString :=
+            Identity.firstName1;
+          RemoteDB.Customers.FieldByName('customers_Lastname').AsString :=
+            Identity.Name;
+          RemoteDB.Customers.FieldByName('customers_nationalnbr').AsString :=
+            ReadNationalNumber;
+          RemoteDB.Customers.FieldByName('customers_identity').AsString :=
+            ReadIdentity;
+          RemoteDB.Customers.FieldByName('customers_gender').AsString :=
+            ReadGender;
+          RemoteDB.Customers.FieldByName('customers_dob').AsDateTime :=
+            InvFormatDatetime(Identity.birthDate, 'yyyymmdd');
+          RemoteDB.Customers.Post;
 
+          if IsUpdate then
+            RemoteDB.Address_Book.Edit
+          else
+            RemoteDB.Address_Book.Append;
+          RemoteDB.Address_Bookentry_street_address.AsString :=
+            Trim(Address.Street);
+          RemoteDB.Address_Bookentry_postcode.Value := Address.zip;
 
-                if IsUpdate then
-                  RemoteDB.Address_Book.Edit
-                else
-                  RemoteDB.Address_Book.Append;
-                RemoteDB.Address_Bookentry_street_address.AsString :=  Trim(Address.Street);
-                RemoteDB.Address_Bookentry_postcode.Value := Address.zip;
+          RemoteDB.Address_Bookentry_city.Value := Address.municipality;
 
-                RemoteDB.Address_Bookentry_city.Value := Address.municipality;
+        end;
 
-
-
-   end;
-
-
-   if ReadPictureEx(@Pic) then
-    begin
-       MS := TMemoryStream.Create;
-       MS.Write(Pic.picture, Pic.pictureLength);
-       MS.Position := 0;
-       Img := TJPEGImage.Create;
-       Img.LoadFromStream(MS);
-       // TODO store image in DB
-       Img.Free;
-       MS.Free;
-    end;
-
-
-
-
+        if ReadPictureEx(@Pic) then
+        begin
+          MS := TMemoryStream.Create;
+          MS.Write(Pic.Picture, Pic.pictureLength);
+          MS.Position := 0;
+          Img := TJpegImage.Create;
+          Img.LoadFromStream(MS);
+          // TODO store image in DB
+          Img.Free;
+          MS.Free;
+        end;
 
       end;
 
@@ -11484,56 +13644,56 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           end;
         end;
         DatetimeToString(Date, 'dd/mm-hh:mm', Now);
-        NewPanel  := TAdvTabSheet.Create(self);
+        NewPanel := TAdvTabSheet.Create(Self);
         TopLabels := 37;
         with NewPanel do
         begin
           AdvPageControl := PageControlStockinCaddy;
-          Caption        := Date;
-          ImageIndex     := 34;
-          NewName        := name;
-          ShowClose      := True;
-          OnClose        := StockinCaddyClose;
-          OnShow         := StockinCaddyShow;
+          Caption := Date;
+          ImageIndex := 34;
+          NewName := name;
+          ShowClose := True;
+          OnClose := StockinCaddyClose;
+          OnShow := StockinCaddyShow;
 
         end;
-        NewGrid := TAdvStringGrid.Create(self);
+        NewGrid := TAdvStringGrid.Create(Self);
         with NewGrid do
         begin
-          Parent                   := NewPanel;
-          Look                     := glXP;
-          ScrollBarAlways          := SaVert;
-          ScrollBars               := ssBoth;
-          SelectionColor           := clBtnFace;
-          SelectionTextColor       := clBlack;
-          ColumnSize.Stretch       := True;
+          Parent := NewPanel;
+          Look := glXP;
+          ScrollBarAlways := SaVert;
+          ScrollBars := ssBoth;
+          SelectionColor := clBtnFace;
+          SelectionTextColor := clBlack;
+          ColumnSize.Stretch := True;
           ColumnSize.StretchColumn := 1;
-          PopupMenu                := PopupStringGrid;
-          OnEditingDone            := StringGridStockinEditingDone;
-          Align                    := alBottom;
-          Height                   := Parent.ClientHeight - 80;
-          Anchors                  := Anchors + [AkTop];
-          FixedCols                := 0;
-          FixedFooters             := 0;
-          FixedRows                := 1;
-          StdGridWidth             := 85;
-          RowCount                 := 2;
-          ColCount                 := 9;
-          NewGrid.options          := options + [gorowselect];
-          Flat                     := False;
-          AutoNumAlign             := True;
-          AutoThemeAdapt           := True;
-          FloatFormat              := '&.2f';
-          Cells[0, 0]              := 'Modèle';
-          Cells[1, 0]              := 'Description';
-          Cells[2, 0]              := 'Quantité';
-          Cells[3, 0]              := 'PHT catalogue';
-          Cells[4, 0]              := 'PTTC stock';
-          Cells[5, 0]              := 'PHT achat';
-          Cells[6, 0]              := 'Date entrée';
-          Cells[7, 0]              := 'Propriétaire';
-          Cells[8, 0]              := 'Fournisseur';
-          for Count                := 0 to ColCount - 1 do
+          PopupMenu := PopupStringGrid;
+          OnEditingDone := StringGridStockinEditingDone;
+          Align := alBottom;
+          Height := Parent.ClientHeight - 80;
+          Anchors := Anchors + [AkTop];
+          FixedCols := 0;
+          FixedFooters := 0;
+          FixedRows := 1;
+          StdGridWidth := 85;
+          RowCount := 2;
+          ColCount := 9;
+          NewGrid.options := options + [gorowselect];
+          Flat := False;
+          AutoNumAlign := True;
+          AutoThemeAdapt := True;
+          FloatFormat := '&.2f';
+          Cells[0, 0] := 'Modèle';
+          Cells[1, 0] := 'Description';
+          Cells[2, 0] := 'Quantité';
+          Cells[3, 0] := 'PHT catalogue';
+          Cells[4, 0] := 'PTTC stock';
+          Cells[5, 0] := 'PHT achat';
+          Cells[6, 0] := 'Date entrée';
+          Cells[7, 0] := 'Propriétaire';
+          Cells[8, 0] := 'Fournisseur';
+          for Count := 0 to ColCount - 1 do
           begin
             ColWidths[Count] := StdGridWidth;
           end;
@@ -11541,257 +13701,258 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           Refresh;
           Repaint;
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 97;
-          Parent    := NewPanel;
+          Tag := 97;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := TopLabels;
-          Left      := Parent.ClientWidth - 100;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := TopLabels;
+          Left := Parent.ClientWidth - 100;
           Font.Size := 25;
-          Caption   := '0.00';
+          Caption := '0.00';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 98;
-          Parent    := NewPanel;
+          Tag := 98;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := TopLabels;
-          Left      := Parent.ClientWidth - 300;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := TopLabels;
+          Left := Parent.ClientWidth - 300;
           Font.Size := 25;
-          Caption   := '0.00';
+          Caption := '0.00';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 99;
-          Parent    := NewPanel;
+          Tag := 99;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := TopLabels;
-          Left      := Parent.ClientWidth - 500;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := TopLabels;
+          Left := Parent.ClientWidth - 500;
           Font.Size := 25;
-          Caption   := '0';
+          Caption := '0';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := TopLabels;
-          Left      := Parent.ClientWidth - 80;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := TopLabels;
+          Left := Parent.ClientWidth - 80;
           Font.Size := 10;
-          Caption   := 'P. TTC';
+          Caption := 'P. TTC';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := TopLabels;
-          Left      := Parent.ClientWidth - 280;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := TopLabels;
+          Left := Parent.ClientWidth - 280;
           Font.Size := 10;
-          Caption   := 'P. HT';
+          Caption := 'P. HT';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := TopLabels;
-          Left      := Parent.ClientWidth - 480;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := TopLabels;
+          Left := Parent.ClientWidth - 480;
           Font.Size := 10;
-          Caption   := 'Pcs';
+          Caption := 'Pcs';
         end;
 
         if StockinType = 'DEPOSIT' then
         begin
 
-          with TLabel.Create(self) do
+          with TLabel.Create(Self) do
           begin
-            Tag       := 10;
-            Parent    := NewPanel;
-            Anchors   := Anchors - [akleft] + [akright];
-            Top       := 9;
-            Left      := 230;
+            Tag := 10;
+            Parent := NewPanel;
+            Anchors := Anchors - [akleft] + [akright];
+            Top := 9;
+            Left := 230;
             Font.Size := 15;
-            Caption   := 'Dépôt';
+            Caption := 'Dépôt';
           end;
 
-          with TLabel.Create(self) do
+          with TLabel.Create(Self) do
           begin
-            Tag       := 1;
-            Parent    := NewPanel;
-            Anchors   := Anchors + [akleft] - [akright];
-            Top       := 13;
-            Left      := 10;
-            Font.Size := 10;
-            Caption   := 'Numero';
-          end;
-          with TLabel.Create(self) do
-          begin
-            Tag       := 1;
-            Parent    := NewPanel;
-            Anchors   := Anchors + [akleft] - [akright];
-            Top       := 33;
-            Left      := 10;
-            Font.Size := 10;
-            Caption   := 'Nom';
-          end;
-          with TLabel.Create(self) do
-          begin
-            Tag       := 1;
-            Parent    := NewPanel;
-            Anchors   := Anchors + [akleft] - [akright];
-            Top       := 53;
-            Left      := 10;
-            Font.Size := 10;
-            Caption   := 'Prenom';
-          end;
-          with TEdit.Create(self) do
-          begin
-            Tag    := 95;
+            Tag := 1;
             Parent := NewPanel;
-            Top    := 10;
-            Left   := 100;
+            Anchors := Anchors + [akleft] - [akright];
+            Top := 13;
+            Left := 10;
+            Font.Size := 10;
+            Caption := 'Numero';
+          end;
+          with TLabel.Create(Self) do
+          begin
+            Tag := 1;
+            Parent := NewPanel;
+            Anchors := Anchors + [akleft] - [akright];
+            Top := 33;
+            Left := 10;
+            Font.Size := 10;
+            Caption := 'Nom';
+          end;
+          with TLabel.Create(Self) do
+          begin
+            Tag := 1;
+            Parent := NewPanel;
+            Anchors := Anchors + [akleft] - [akright];
+            Top := 53;
+            Left := 10;
+            Font.Size := 10;
+            Caption := 'Prenom';
+          end;
+          with TEdit.Create(Self) do
+          begin
+            Tag := 95;
+            Parent := NewPanel;
+            Top := 10;
+            Left := 100;
             // Border:=0;
             readonly := True;
-            Text     := RemoteDB.CustomersCustomers_nbr.AsString;
+            Text := RemoteDB.CustomersCustomers_nbr.AsString;
           end;
-          with TEdit.Create(self) do
+          with TEdit.Create(Self) do
           begin
-            Tag    := 1;
+            Tag := 1;
             Parent := NewPanel;
-            Top    := 30;
-            Left   := 100;
+            Top := 30;
+            Left := 100;
             // Border:=0;
             readonly := True;
-            Text     := RemoteDB.CustomersCustomers_Lastname.AsString;
+            Text := RemoteDB.CustomersCustomers_Lastname.AsString;
           end;
-          with TEdit.Create(self) do
+          with TEdit.Create(Self) do
           begin
-            Tag    := 1;
+            Tag := 1;
             Parent := NewPanel;
-            Top    := 50;
-            Left   := 100;
+            Top := 50;
+            Left := 100;
             // Border:=0;
             readonly := True;
-            Text     := RemoteDB.Customerscustomers_firstname.AsString;
+            Text := RemoteDB.Customerscustomers_firstname.AsString;
           end;
         end;
 
         if StockinType = 'BOUGHT' then
         begin
 
-          with TLabel.Create(self) do
+          with TLabel.Create(Self) do
           begin
-            Tag       := 10;
-            Parent    := NewPanel;
-            Anchors   := Anchors - [akleft] + [akright];
-            Top       := 9;
-            Left      := 230;
+            Tag := 10;
+            Parent := NewPanel;
+            Anchors := Anchors - [akleft] + [akright];
+            Top := 9;
+            Left := 230;
             Font.Size := 15;
-            Caption   := 'Achat';
+            Caption := 'Achat';
           end;
 
-          with TLabel.Create(self) do
+          with TLabel.Create(Self) do
           begin
-            Tag       := 1;
-            Parent    := NewPanel;
-            Anchors   := Anchors + [akleft] - [akright];
-            Top       := 13;
-            Left      := 10;
-            Font.Size := 10;
-            Caption   := 'Numero';
-          end;
-          with TLabel.Create(self) do
-          begin
-            Tag       := 1;
-            Parent    := NewPanel;
-            Anchors   := Anchors + [akleft] - [akright];
-            Top       := 33;
-            Left      := 10;
-            Font.Size := 10;
-            Caption   := 'Nom';
-          end;
-          with TLabel.Create(self) do
-          begin
-            Tag       := 1;
-            Parent    := NewPanel;
-            Anchors   := Anchors + [akleft] - [akright];
-            Top       := 53;
-            Left      := 10;
-            Font.Size := 10;
-            Caption   := 'Prenom';
-          end;
-          with TEdit.Create(self) do
-          begin
-            Tag    := 95;
+            Tag := 1;
             Parent := NewPanel;
-            Top    := 10;
-            Left   := 100;
+            Anchors := Anchors + [akleft] - [akright];
+            Top := 13;
+            Left := 10;
+            Font.Size := 10;
+            Caption := 'Numero';
+          end;
+          with TLabel.Create(Self) do
+          begin
+            Tag := 1;
+            Parent := NewPanel;
+            Anchors := Anchors + [akleft] - [akright];
+            Top := 33;
+            Left := 10;
+            Font.Size := 10;
+            Caption := 'Nom';
+          end;
+          with TLabel.Create(Self) do
+          begin
+            Tag := 1;
+            Parent := NewPanel;
+            Anchors := Anchors + [akleft] - [akright];
+            Top := 53;
+            Left := 10;
+            Font.Size := 10;
+            Caption := 'Prenom';
+          end;
+          with TEdit.Create(Self) do
+          begin
+            Tag := 95;
+            Parent := NewPanel;
+            Top := 10;
+            Left := 100;
             // Border:=0;
             readonly := True;
-            Text     := RemoteDB.CustomersCustomers_nbr.AsString;
+            Text := RemoteDB.CustomersCustomers_nbr.AsString;
           end;
-          with TEdit.Create(self) do
+          with TEdit.Create(Self) do
           begin
-            Tag    := 1;
+            Tag := 1;
             Parent := NewPanel;
-            Top    := 30;
-            Left   := 100;
+            Top := 30;
+            Left := 100;
             // Border:=0;
             readonly := True;
-            Text     := RemoteDB.CustomersCustomers_Lastname.AsString;
+            Text := RemoteDB.CustomersCustomers_Lastname.AsString;
           end;
-          with TEdit.Create(self) do
+          with TEdit.Create(Self) do
           begin
-            Tag    := 1;
+            Tag := 1;
             Parent := NewPanel;
-            Top    := 50;
-            Left   := 100;
+            Top := 50;
+            Left := 100;
             // Border:=0;
             readonly := True;
-            Text     := RemoteDB.Customerscustomers_firstname.AsString;
+            Text := RemoteDB.Customerscustomers_firstname.AsString;
           end;
         end;
 
         if StockinType = 'NEW' then
         begin
 
-          with TLabel.Create(self) do
+          with TLabel.Create(Self) do
           begin
-            Tag       := 10;
-            Parent    := NewPanel;
-            Anchors   := Anchors - [akleft] + [akright];
-            Top       := 9;
-            Left      := 230;
+            Tag := 10;
+            Parent := NewPanel;
+            Anchors := Anchors - [akleft] + [akright];
+            Top := 9;
+            Left := 230;
             Font.Size := 15;
-            Caption   := 'Neuf';
+            Caption := 'Neuf';
           end;
 
-          with TLabel.Create(self) do
+          with TLabel.Create(Self) do
           begin
-            Tag       := 1;
-            Parent    := NewPanel;
-            Anchors   := Anchors + [akleft] - [akright];
-            Top       := 13;
-            Left      := 10;
+            Tag := 1;
+            Parent := NewPanel;
+            Anchors := Anchors + [akleft] - [akright];
+            Top := 13;
+            Left := 10;
             Font.Size := 10;
-            Caption   := 'Fournisseur';
+            Caption := 'Fournisseur';
           end;
 
           RemoteDB.netshop_suppliers.FindKey([SupplierId]);
-          with TEdit.Create(self) do
+          with TEdit.Create(Self) do
           begin
-            Tag    := 95;
+            Tag := 95;
             Parent := NewPanel;
-            Top    := 10;
-            Left   := 100;
+            Top := 10;
+            Left := 100;
             // Border:=0;
             readonly := True;
-            Text     := RemoteDB.netshop_suppliers.FieldByName('Suppliers_Name').AsString;
+            Text := RemoteDB.netshop_suppliers.FieldByName
+              ('Suppliers_Name').AsString;
           end;
 
         end;
@@ -11816,7 +13977,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         begin
           if StrtoInt(EditStockinCustomerNbr.Text) >= 100000 then
           begin
-            NewStockinCaddy(ConnectedShop, RemoteDB.CustomersCustomers_nbr.AsInteger);
+            NewStockinCaddy(ConnectedShop,
+              RemoteDB.CustomersCustomers_nbr.AsInteger);
           end
           else
             ShowMessage('Client non valide');
@@ -11830,15 +13992,19 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         SupplierId: Integer;
       begin
-        if RemoteDB.netshop_suppliers.Locate('suppliers_name', ComboBoxSupplier.Text, [locaseinsensitive]) then
+        if RemoteDB.netshop_suppliers.Locate('suppliers_name',
+          ComboBoxSupplier.Text, [locaseinsensitive]) then
         begin
           if RemoteDB.Customers.FindKey([ConnectedShop]) then
           begin
-            NewStockinCaddy(ConnectedShop, RemoteDB.netshop_suppliers.FieldByName('Suppliers_id').AsInteger);
+            NewStockinCaddy(ConnectedShop,
+              RemoteDB.netshop_suppliers.FieldByName('Suppliers_id').AsInteger);
           end
           else
             ShowMessage('Client magasin non trouvé');
-        end else begin
+        end
+        else
+        begin
           ShowMessage('Fournisseur non valide');
         end;
       end;
@@ -11865,7 +14031,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         RemoteDB.Products.IndexFieldNames := 'products_status';
       end;
 
-      procedure TMainForm.EditStockinNewKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.EditStockinNewKeyUp(Sender: TObject; var Key: Word;
+        Shift: TShiftState);
 
       var
         Nowrow, quantitypresent, i, GridIndex, indexnbr, IndexType: Integer;
@@ -11901,10 +14068,11 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               // creation d'un nouvel enregistrement dans la base de donnés produits
               RemoteDB.IsUpdating := True;
               RemoteDB.Products.Append;
-              RemoteDB.Productsproducts_model.Text    := cxEditStockinModel.Text;
+              RemoteDB.Productsproducts_model.Text := cxEditStockinModel.Text;
               RemoteDB.ProductsProducts_Price.AsFloat :=
-                ((Round(cxEditStockinPriceGross.Value * 100) / 100 * (1 + (MarginNew / 100))));
-              ANewProductForm := TNewproductForm.Create(self);
+                ((Round(cxEditStockinPriceGross.Value * 100) / 100 *
+                (1 + (MarginNew / 100))));
+              ANewProductForm := TNewproductForm.Create(Self);
               try
                 ANewProductForm.ThumbImg.Picture.Bitmap.Assign(nil);
                 NewProductResult := ANewProductForm.ShowModal;
@@ -11921,50 +14089,66 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               end;
               if NewProductResult <> mrOK then
                 goto Procend;
-            end else begin
+            end
+            else
+            begin
               StockinClearEdit;
               if cxEditStockinModel.Visible then
                 cxEditStockinModel.SetFocus;
               goto Procend;
             end;
-          end else begin
+          end
+          else
+          begin
 
-            if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'True') then
+            if (RemoteDB.Products.FieldByName('products_stock_managed')
+              .Text = 'True') then
             begin
 
-            end else begin
+            end
+            else
+            begin
               ShowMessage('Produit non géré en stock');
               goto Procend;
             end;
 
           end;
 
-          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+            .ControlCount - 1 do
           begin
-            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+              .ClassType = TAdvStringGrid then
             begin
               // Index de la grille
               GridIndex := i;
             end;
           end;
 
-          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+            .ControlCount - 1 do
           begin
-            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 95 then
+            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+              .Tag = 95 then
             begin
               // Index du premier champs (Nom fourn / ou Num Client)
               indexnbr := i;
-              NbrData  := TEdit(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]).Text;
+              NbrData := TEdit(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+                .Controls[i]).Text;
             end;
           end;
 
-          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage).ControlCount - 1 do
+          for i := 0 to TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+            .ControlCount - 1 do
           begin
-            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i].Tag = 10 then
+            if TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]
+              .Tag = 10 then
             begin
               // Index du type de transaction
-              IndexType   := i;
-              StockinType := TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[i]).Caption;
+              IndexType := i;
+              StockinType :=
+                TLabel(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+                .Controls[i]).Caption;
             end;
           end;
 
@@ -11974,30 +14158,40 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             begin
               // RemoteDB.SetSupplierPrice(cxEditStockinPriceGross.Value,TEdit(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[indexNbr]).Text,cxEditStockinModel.Text);
             end;
-            if not RemoteDB.netshop_suppliers.Locate('suppliers_name', NbrData, [locaseinsensitive]) then
+            if not RemoteDB.netshop_suppliers.Locate('suppliers_name', NbrData,
+              [locaseinsensitive]) then
             begin
               ShowMessage('Fournisseur non trouvé');
               goto Procend;
             end;
-            with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+            with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+              .Controls[GridIndex]) do
             begin
-              Nowrow           := RowCount - 1;
+              Nowrow := RowCount - 1;
               Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
-              Cells[1, Nowrow] := RemoteDB.Products.FieldByName('products_intername').Text;
+              Cells[1, Nowrow] := RemoteDB.Products.FieldByName
+                ('products_intername').Text;
               Cells[2, Nowrow] := CxEditStockinQuantity.Text;
 
-              Cells[3, Nowrow] := FloatToStrF(RemoteDB.Products.FieldByName('products_price').AsFloat, fffixed, 7, 2);
+              Cells[3, Nowrow] :=
+                FloatToStrF(RemoteDB.Products.FieldByName('products_price')
+                .AsFloat, fffixed, 7, 2);
 
               if cxEditStockinPrice.Value <> 0 then
-                Cells[4, Nowrow] := FloatToStrF(cxEditStockinPrice.Value, fffixed, 7, 2)
+                Cells[4, Nowrow] := FloatToStrF(cxEditStockinPrice.Value,
+                  fffixed, 7, 2)
               else
-                Cells[4, Nowrow] := FloatToStrF(RemoteDB.Products.FieldByName('products_price_allin').AsFloat, fffixed, 7, 2);
+                Cells[4, Nowrow] :=
+                  FloatToStrF(RemoteDB.Products.FieldByName
+                  ('products_price_allin').AsFloat, fffixed, 7, 2);
 
-              Cells[5, Nowrow] := FloatToStrF(cxEditStockinPriceGross.Value, fffixed, 7, 2);
+              Cells[5, Nowrow] := FloatToStrF(cxEditStockinPriceGross.Value,
+                fffixed, 7, 2);
               Cells[6, Nowrow] := Formatdatetime('yyyymmdd', Now);
               Cells[7, Nowrow] := inttostr(ConnectedShop);
-              Cells[8, Nowrow] := RemoteDB.netshop_suppliers.FieldByName('Suppliers_id').Text;
-              RowCount         := Nowrow + 2;
+              Cells[8, Nowrow] := RemoteDB.netshop_suppliers.FieldByName
+                ('Suppliers_id').Text;
+              RowCount := Nowrow + 2;
             end;
             StockinClearEdit;
             cxEditStockinModel.SetFocus;
@@ -12014,33 +14208,40 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               goto Procend;
             end;
             // Entrée en Dacal
-            if (self.Parameter['MiscCDLibUse'] = 'TRUE') then
+            if (Self.Parameter['MiscCDLibUse'] = 'TRUE') then
             begin
-              AEnterLib := TFormEnterLibrary.Create(self);
+              AEnterLib := TFormEnterLibrary.Create(Self);
               try
-                AEnterLib.Enter(inttostr(ConnectedShop), RemoteDB.Products.FieldByName('Products_model').AsString);
+                AEnterLib.Enter(inttostr(ConnectedShop),
+                  RemoteDB.Products.FieldByName('Products_model').AsString);
               finally
                 AEnterLib.Free;
               end;
             end;
 
             // Descente en String Grid
-            with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+            with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+              .Controls[GridIndex]) do
             begin
-              Nowrow           := RowCount - 1;
+              Nowrow := RowCount - 1;
               Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
-              Cells[1, Nowrow] := RemoteDB.Products.FieldByName('products_intername').Text;
+              Cells[1, Nowrow] := RemoteDB.Products.FieldByName
+                ('products_intername').Text;
               Cells[2, Nowrow] := CxEditStockinQuantity.Text;
 
-              Cells[3, Nowrow] := FloatToStrF(RemoteDB.Products.FieldByName('products_price').AsFloat, fffixed, 7, 2);
+              Cells[3, Nowrow] :=
+                FloatToStrF(RemoteDB.Products.FieldByName('products_price')
+                .AsFloat, fffixed, 7, 2);
 
-              Cells[4, Nowrow] := FloatToStrF(cxEditStockinPrice.Value, fffixed, 7, 2);
+              Cells[4, Nowrow] := FloatToStrF(cxEditStockinPrice.Value,
+                fffixed, 7, 2);
 
-              Cells[5, Nowrow] := FloatToStrF(cxEditStockinPriceGross.Value, fffixed, 7, 2);
+              Cells[5, Nowrow] := FloatToStrF(cxEditStockinPriceGross.Value,
+                fffixed, 7, 2);
               Cells[6, Nowrow] := Formatdatetime('yyyymmdd', Now);
               Cells[7, Nowrow] := inttostr(ConnectedShop);
               Cells[8, Nowrow] := NbrData;
-              RowCount         := Nowrow + 2;
+              RowCount := Nowrow + 2;
             end;
             StockinClearEdit;
             cxEditStockinModel.SetFocus;
@@ -12051,33 +14252,39 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           if StockinType = 'Dépôt' then
           begin
             // Entrée en Dacal
-            if (self.Parameter['MiscCDLibUse'] = 'TRUE') then
+            if (Self.Parameter['MiscCDLibUse'] = 'TRUE') then
             begin
-              AEnterLib := TFormEnterLibrary.Create(self);
+              AEnterLib := TFormEnterLibrary.Create(Self);
               try
-                AEnterLib.Enter(NbrData, RemoteDB.Products.FieldByName('products_model').AsString);
+                AEnterLib.Enter(NbrData,
+                  RemoteDB.Products.FieldByName('products_model').AsString);
               finally
                 AEnterLib.Free;
               end;
             end;
 
             // Descente en String Grid
-            with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage).Controls[GridIndex]) do
+            with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+              .Controls[GridIndex]) do
             begin
-              Nowrow           := RowCount - 1;
+              Nowrow := RowCount - 1;
               Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
-              Cells[1, Nowrow] := RemoteDB.Products.FieldByName('products_intername').Text;
+              Cells[1, Nowrow] := RemoteDB.Products.FieldByName
+                ('products_intername').Text;
               Cells[2, Nowrow] := CxEditStockinQuantity.Text;
 
-              Cells[3, Nowrow] := FloatToStrF(RemoteDB.Products.FieldByName('products_price').AsFloat, fffixed, 7, 2);
+              Cells[3, Nowrow] :=
+                FloatToStrF(RemoteDB.Products.FieldByName('products_price')
+                .AsFloat, fffixed, 7, 2);
 
-              Cells[4, Nowrow] := FloatToStrF(cxEditStockinPrice.Value, fffixed, 7, 2);
+              Cells[4, Nowrow] := FloatToStrF(cxEditStockinPrice.Value,
+                fffixed, 7, 2);
 
               Cells[5, Nowrow] := '0';
               Cells[6, Nowrow] := Formatdatetime('yyyymmdd', Now);
               Cells[7, Nowrow] := NbrData;
               Cells[8, Nowrow] := NbrData;
-              RowCount         := Nowrow + 2;
+              RowCount := Nowrow + 2;
             end;
             StockinClearEdit;
             cxEditStockinModel.SetFocus;
@@ -12085,7 +14292,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
           end;
         Procend:
-          StringGridStockinEditingDone(self);
+          StringGridStockinEditingDone(Self);
         end; { endif chr(13) }
 
       end;
@@ -12096,7 +14303,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         SRCSHOP: Integer;
       begin
-        RemoteDB.AllShops.Locate('shops_name', ComboBoxSuggest.Text, [locaseinsensitive]);
+        RemoteDB.AllShops.Locate('shops_name', ComboBoxSuggest.Text,
+          [locaseinsensitive]);
         SRCSHOP := RemoteDB.AllShops.FieldByName('shops_id').Value;
 
         if (SRCSHOP = ConnectedShop) and (ComboBoxSuggest.ItemIndex = -1) then
@@ -12106,16 +14314,17 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         end;
 
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Transfert IN ' + ComboBoxSuggest.Text;
+        RemoteDB.CDSActions.FieldByName('action').AsString := 'Transfert IN ' +
+          ComboBoxSuggest.Text;
         RemoteDB.CDSActions.Post;
 
-        with TTransferSuggest.Create(self) do
+        with TTransferSuggest.Create(Self) do
         begin
           if CheckBoxEmptyStock.Checked then
             Empty := True
           else
-            Empty    := False;
-          Direction  := 'in';
+            Empty := False;
+          Direction := 'in';
           TargetShop := SRCSHOP;
           Show;
         end;
@@ -12127,7 +14336,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         DESTSHOP: Integer;
       begin
-        RemoteDB.AllShops.Locate('shops_name', ComboBoxSuggest.Text, [locaseinsensitive]);
+        RemoteDB.AllShops.Locate('shops_name', ComboBoxSuggest.Text,
+          [locaseinsensitive]);
         DESTSHOP := RemoteDB.AllShops.FieldByName('shops_id').Value;
 
         if (DESTSHOP = ConnectedShop) and (ComboBoxSuggest.ItemIndex = -1) then
@@ -12137,16 +14347,17 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         end;
 
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Transfert OUT ' + ComboBoxSuggest.Text;
+        RemoteDB.CDSActions.FieldByName('action').AsString := 'Transfert OUT ' +
+          ComboBoxSuggest.Text;
         RemoteDB.CDSActions.Post;
 
-        with TTransferSuggest.Create(self) do
+        with TTransferSuggest.Create(Self) do
         begin
           Direction := 'out';
           if CheckBoxEmptyStock.Checked then
             Empty := True
           else
-            Empty    := False;
+            Empty := False;
           TargetShop := DESTSHOP;
           Show;
         end;
@@ -12160,7 +14371,9 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         begin
           RemoteDB.Customers.Edit;
           WasdsBrowse := True;
-        end else begin
+        end
+        else
+        begin
           WasdsBrowse := False;
         end;
 
@@ -12172,7 +14385,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
       procedure TMainForm.SBCustomersSalesShortcutClick(Sender: TObject);
       begin
-        self.SBNewSalesCaddyClick(self);
+        Self.SBNewSalesCaddyClick(Self);
         Vente.Execute;
       end;
 
@@ -12196,60 +14409,62 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         StdGridWidth: Integer;
       begin
         if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
-          dxBarMRUListItemCustomers.AddItem(RemoteDB.CustomersCustomers_nbr.AsString + ' - ' + RemoteDB.Customerscustomers_firstname.AsString + ' ' +
+          dxBarMRUListItemCustomers.AddItem
+            (RemoteDB.CustomersCustomers_nbr.AsString + ' - ' +
+            RemoteDB.Customerscustomers_firstname.AsString + ' ' +
             RemoteDB.CustomersCustomers_Lastname.AsString, nil);
 
         DatetimeToString(Date, 'dd/mm-hh:mm', Now);
-        NewPanel := TAdvTabSheet.Create(self);
+        NewPanel := TAdvTabSheet.Create(Self);
 
         with NewPanel do
         begin
           AdvPageControl := PageControlSalesCaddy;
-          Caption        := Date;
-          ImageIndex     := 34;
-          NewName        := name;
-          ShowClose      := True;
-          OnClose        := SalesCaddyClose;
+          Caption := Date;
+          ImageIndex := 34;
+          NewName := name;
+          ShowClose := True;
+          OnClose := SalesCaddyClose;
         end;
-        NewGrid := TAdvStringGrid.Create(self);
+        NewGrid := TAdvStringGrid.Create(Self);
         with NewGrid do
         begin
-          Parent                   := NewPanel;
-          Look                     := glOffice2007;
-          ScrollBarAlways          := SaVert;
-          ScrollBars               := ssBoth;
-          SelectionColor           := clBtnFace;
-          SelectionTextColor       := clBlack;
-          ColumnSize.Stretch       := True;
+          Parent := NewPanel;
+          Look := glOffice2007;
+          ScrollBarAlways := SaVert;
+          ScrollBars := ssBoth;
+          SelectionColor := clBtnFace;
+          SelectionTextColor := clBlack;
+          ColumnSize.Stretch := True;
           ColumnSize.StretchColumn := 1;
-          PopupMenu                := PopupStringGrid;
-          OnEditingDone            := StringGridSalesEditingDone;
-          Align                    := alBottom;
-          Height                   := Parent.ClientHeight - 80;
-          Anchors                  := Anchors + [AkTop];
-          FixedCols                := 0;
-          FixedFooters             := 0;
-          FixedRows                := 1;
-          StdGridWidth             := 85;
-          RowCount                 := 2;
-          ColCount                 := 11;
-          NewGrid.options          := options + [gorowselect];
-          Flat                     := False;
-          AutoNumAlign             := True;
-          AutoThemeAdapt           := True;
-          FloatFormat              := '&.2f';
-          Cells[0, 0]              := 'Modèle';
-          Cells[1, 0]              := 'Description';
-          Cells[2, 0]              := 'Quantité';
-          Cells[3, 0]              := 'PHT catalogue';
-          Cells[4, 0]              := 'PTTC stock';
-          Cells[5, 0]              := 'PHT achat';
-          Cells[6, 0]              := 'Date entrée';
-          Cells[7, 0]              := 'Propriétaire';
-          Cells[8, 0]              := 'Fournisseur';
-          Cells[9, 0]              := 'Esd guid';
-          Cells[10, 0]              := 'Link ID';
-          for Count                := 0 to ColCount - 1 do
+          PopupMenu := PopupStringGrid;
+          OnEditingDone := StringGridSalesEditingDone;
+          Align := alBottom;
+          Height := Parent.ClientHeight - 80;
+          Anchors := Anchors + [AkTop];
+          FixedCols := 0;
+          FixedFooters := 0;
+          FixedRows := 1;
+          StdGridWidth := 85;
+          RowCount := 2;
+          ColCount := 11;
+          NewGrid.options := options + [gorowselect];
+          Flat := False;
+          AutoNumAlign := True;
+          AutoThemeAdapt := True;
+          FloatFormat := '&.2f';
+          Cells[0, 0] := 'Modèle';
+          Cells[1, 0] := 'Description';
+          Cells[2, 0] := 'Quantité';
+          Cells[3, 0] := 'PHT catalogue';
+          Cells[4, 0] := 'PTTC stock';
+          Cells[5, 0] := 'PHT achat';
+          Cells[6, 0] := 'Date entrée';
+          Cells[7, 0] := 'Propriétaire';
+          Cells[8, 0] := 'Fournisseur';
+          Cells[9, 0] := 'Esd guid';
+          Cells[10, 0] := 'Link ID';
+          for Count := 0 to ColCount - 1 do
           begin
             ColWidths[Count] := StdGridWidth;
           end;
@@ -12259,127 +14474,127 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           Refresh;
           Repaint;
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 97;
-          Parent    := NewPanel;
+          Tag := 97;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 100;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 100;
           Font.Size := 25;
-          Caption   := '0.00';
+          Caption := '0.00';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 98;
-          Parent    := NewPanel;
+          Tag := 98;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 300;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 300;
           Font.Size := 25;
-          Caption   := '0.00';
+          Caption := '0.00';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 99;
-          Parent    := NewPanel;
+          Tag := 99;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 550;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 550;
           Font.Size := 25;
-          Caption   := '0';
+          Caption := '0';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 80;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 80;
           Font.Size := 10;
-          Caption   := 'P. TTC';
+          Caption := 'P. TTC';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 280;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 280;
           Font.Size := 10;
-          Caption   := 'P. HT';
+          Caption := 'P. HT';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 528;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 528;
           Font.Size := 10;
-          Caption   := 'Pcs';
+          Caption := 'Pcs';
         end;
 
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors + [akleft] - [akright];
-          Top       := 13;
-          Left      := 10;
-          Font.Size := 10;
-          Caption   := 'Numero';
-        end;
-        with TLabel.Create(self) do
-        begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors + [akleft] - [akright];
-          Top       := 33;
-          Left      := 10;
-          Font.Size := 10;
-          Caption   := 'Nom';
-        end;
-        with TLabel.Create(self) do
-        begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors + [akleft] - [akright];
-          Top       := 53;
-          Left      := 10;
-          Font.Size := 10;
-          Caption   := 'Prenom';
-        end;
-        with TEdit.Create(self) do
-        begin
-          Tag    := 95;
+          Tag := 1;
           Parent := NewPanel;
-          Top    := 10;
-          Left   := 100;
+          Anchors := Anchors + [akleft] - [akright];
+          Top := 13;
+          Left := 10;
+          Font.Size := 10;
+          Caption := 'Numero';
+        end;
+        with TLabel.Create(Self) do
+        begin
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors + [akleft] - [akright];
+          Top := 33;
+          Left := 10;
+          Font.Size := 10;
+          Caption := 'Nom';
+        end;
+        with TLabel.Create(Self) do
+        begin
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors + [akleft] - [akright];
+          Top := 53;
+          Left := 10;
+          Font.Size := 10;
+          Caption := 'Prenom';
+        end;
+        with TEdit.Create(Self) do
+        begin
+          Tag := 95;
+          Parent := NewPanel;
+          Top := 10;
+          Left := 100;
           // Border:=0;
           readonly := True;
-          Text     := RemoteDB.CustomersCustomers_nbr.AsString;
+          Text := RemoteDB.CustomersCustomers_nbr.AsString;
         end;
-        with TEdit.Create(self) do
+        with TEdit.Create(Self) do
         begin
           Parent := NewPanel;
-          Top    := 30;
-          Left   := 100;
+          Top := 30;
+          Left := 100;
           // Border:=0;
           readonly := True;
-          Text     := RemoteDB.CustomersCustomers_Lastname.AsString;
+          Text := RemoteDB.CustomersCustomers_Lastname.AsString;
         end;
-        with TEdit.Create(self) do
+        with TEdit.Create(Self) do
         begin
           Parent := NewPanel;
-          Top    := 50;
-          Left   := 100;
+          Top := 50;
+          Left := 100;
           // Border:=0;
           readonly := True;
-          Text     := RemoteDB.Customerscustomers_firstname.AsString;
+          Text := RemoteDB.Customerscustomers_firstname.AsString;
         end;
         PageControlSalesCaddy.ActivePage := NewPanel;
       end;
@@ -12388,9 +14603,11 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         myFile: TextFile;
         line, line2, Line3: string;
-        PreviousOperationID, OperationID, i, nbrint, thepos, j, k, Pos, ln: Integer;
-        AmountGross, AmountDisc, AmountNet: Double;
-        Comment, Comment2, PartyID, ShopAccount, OpCode, Nbr, Location, CustNbr, StrAmt: string;
+        PreviousOperationID, OperationID, i, nbrint, thepos, j, k, Pos,
+          ln: Integer;
+        AmountGross, AmountDisc, AmountNet: double;
+        Comment, Comment2, PartyID, ShopAccount, OpCode, Nbr, Location, CustNbr,
+          StrAmt: string;
         DateExec, DateDoc, DateVal: TDateTime;
         AACTDBBANK: TACTDBBANK;
         processed, InCustNbr: Boolean;
@@ -12399,17 +14616,18 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       begin
         if OpenDialog.Execute then
         begin
-          decSep                                          := System.SysUtils.FormatSettings.DecimalSeparator;
+          decSep := System.SysUtils.FormatSettings.DecimalSeparator;
           System.SysUtils.FormatSettings.DecimalSeparator := '.';
-          AACTDBBANK                                      := TACTDBBANK.Create(RemoteDB);
+          AACTDBBANK := TACTDBBANK.Create(RemoteDB);
           try
             // Try to open the Test.txt file for writing to
             ProgressBar.Position := 0;
-            ProgressBar.Visible  := True;
-            for i                := 0 to OpenDialog.Files.Count - 1 do
+            ProgressBar.Visible := True;
+            for i := 0 to OpenDialog.Files.Count - 1 do
             begin
               if OpenDialog.Files.Count > 1 then
-                ProgressBar.Position := i / (OpenDialog.Files.Count * 2 - 1) * 100;
+                ProgressBar.Position :=
+                  i / (OpenDialog.Files.Count * 2 - 1) * 100;
               Application.ProcessMessages;
               AssignFile(myFile, OpenDialog.Files[i]);
 
@@ -12436,23 +14654,23 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                   begin
                     // New Operation
                     PreviousOperationID := OperationID;
-                    processed           := False;
-                    line2               := '';
-                    Line3               := '';
-                    StrAmt              := MidStr(line, 33, 15);
-                    AmountGross         := StrtoInt(StrAmt) / 1000;
+                    processed := False;
+                    line2 := '';
+                    Line3 := '';
+                    StrAmt := MidStr(line, 33, 15);
+                    AmountGross := StrtoInt(StrAmt) / 1000;
                     if StrtoInt(line[32]) = 1 then
                       AmountGross := -AmountGross;
-                    DateVal       := BankToVCLDate(MidStr(line, 48, 6));
-                    Comment       := MidStr(line, 63, 53);
-                    PartyID       := MidStr(line, 63, 53);
-                    DateDoc       := BankToVCLDate(MidStr(line, 116, 6));
-                    Nbr           := inttostr(Yearof(DateDoc));
-                    Nbr           := Nbr + '0000';
-                    nbrint        := StrtoInt(Nbr);
-                    nbrint        := nbrint + StrtoInt((MidStr(line, 122, 3)));
-                    Nbr           := inttostr(nbrint);
-                    OpCode        := MidStr(line, 55, 7);
+                    DateVal := BankToVCLDate(MidStr(line, 48, 6));
+                    Comment := MidStr(line, 63, 53);
+                    PartyID := MidStr(line, 63, 53);
+                    DateDoc := BankToVCLDate(MidStr(line, 116, 6));
+                    Nbr := inttostr(Yearof(DateDoc));
+                    Nbr := Nbr + '0000';
+                    nbrint := StrtoInt(Nbr);
+                    nbrint := nbrint + StrtoInt((MidStr(line, 122, 3)));
+                    Nbr := inttostr(nbrint);
+                    OpCode := MidStr(line, 55, 7);
 
 
                     // StatusLine.Panels[3].Text := StatusLine.Panels[3].Text + ' '+OpCode;
@@ -12461,13 +14679,16 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // Virement in
                       ShopAccount := '499000';
-                      if (ansipos('MC', Comment) = 18) or (ansipos('VI', Comment) = 18) then
+                      if (ansipos('MC', Comment) = 18) or
+                        (ansipos('VI', Comment) = 18) then
                       begin
                         // Visa MC
                         ReadLn(myFile, line);
-                        DateExec    := BankToVCLShortDate(MidStr(line, 59, 5));
-                        AmountGross := StrToFloat(ConvertToPoint(MidStr(line, 15, 10)));
-                        AmountDisc  := StrToFloat(ConvertToPoint(MidStr(line, 31, 8)));
+                        DateExec := BankToVCLShortDate(MidStr(line, 59, 5));
+                        AmountGross :=
+                          StrToFloat(ConvertToPoint(MidStr(line, 15, 10)));
+                        AmountDisc :=
+                          StrToFloat(ConvertToPoint(MidStr(line, 31, 8)));
                         if ansipos('16630899', Comment) > 0 then
                           ShopAccount := '580101'; // WAVRE
                         if ansipos('16630907', Comment) > 0 then
@@ -12488,7 +14709,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                           ShopAccount := '580187'; // JODOIGNE
                         if ansipos('28671774', Comment) > 0 then
                           ShopAccount := '580179'; // HANNUT
-                        AACTDBBANK.AddVisaIn(DateExec, DateDoc, Nbr, ShopAccount, AmountGross, AmountDisc, Comment);
+                        AACTDBBANK.AddVisaIn(DateExec, DateDoc, Nbr,
+                          ShopAccount, AmountGross, AmountDisc, Comment);
                         processed := True;
                       end;
                       if (ansipos('AX', Comment) = 18) then
@@ -12496,8 +14718,10 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                         // AMEX
                         DateExec := BankToVCLShortDate(MidStr(line, 74, 5));
                         ReadLn(myFile, line);
-                        AmountGross := StrToFloat(ConvertToPoint(MidStr(line, 15, 11)));
-                        AmountDisc  := StrToFloat(ConvertToPoint(MidStr(line, 29, 10)));
+                        AmountGross :=
+                          StrToFloat(ConvertToPoint(MidStr(line, 15, 11)));
+                        AmountDisc :=
+                          StrToFloat(ConvertToPoint(MidStr(line, 29, 10)));
                         if ansipos('16630899', Comment) > 0 then
                           ShopAccount := '580101'; // WAVRE
                         if ansipos('16630907', Comment) > 0 then
@@ -12518,25 +14742,28 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                           ShopAccount := '580187'; // JODOIGNE
                         if ansipos('28671774', Comment) > 0 then
                           ShopAccount := '580179'; // HANNUT
-                        AACTDBBANK.AddVisaIn(DateExec, DateDoc, Nbr, ShopAccount, AmountGross, AmountDisc, Comment);
+                        AACTDBBANK.AddVisaIn(DateExec, DateDoc, Nbr,
+                          ShopAccount, AmountGross, AmountDisc, Comment);
                         processed := True;
                       end;
 
                       thepos := ansipos('EBAY', Comment);
                       if (thepos <> 0) then
                       begin
-                        AACTDBBANK.AddCustomerIn(DateDoc, DateDoc, Nbr, 'NET       ', AmountGross, Comment);
+                        AACTDBBANK.AddCustomerIn(DateDoc, DateDoc, Nbr,
+                          'NET       ', AmountGross, Comment);
                         processed := True;
                       end;
 
-                      if (ansipos('SMARTFACT', ansiuppercase(Comment)) <> 0) then
+                      if (ansipos('SMARTFACT', ansiuppercase(Comment)) <> 0)
+                      then
                       begin
                         // Facture Client
                         CustNbr := '';
-                        k       := ansipos('SMARTFACT', ansiuppercase(Comment));
+                        k := ansipos('SMARTFACT', ansiuppercase(Comment));
 
                         InCustNbr := False;
-                        for j     := k + 9 to Length(Comment) do
+                        for j := k + 9 to Length(Comment) do
                         begin
                           if IsStrIntNum(Comment[j]) then
                           begin
@@ -12550,13 +14777,15 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                             CustNbr := CustNbr + Comment[j];
                         end;
 
-                        AACTDBBANK.AddCustomerIn(DateDoc, DateDoc, Nbr, CustNbr, AmountGross, Comment);
+                        AACTDBBANK.AddCustomerIn(DateDoc, DateDoc, Nbr, CustNbr,
+                          AmountGross, Comment);
                         processed := True;
                       end;
 
                       if not processed then
                       begin
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, Comment);
                         processed := True;
                       end;
 
@@ -12573,7 +14802,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       if (ansipos('10703875765970', PartyID) > 0) then
                       begin
                         // LUMINUS
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'LUMINUS   ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'LUMINUS   ', AmountGross, Comment);
                         processed := True;
                       end;
 
@@ -12582,71 +14812,84 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       if (Pos > 0) then
                       begin
                         // EDP
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'EDPNET    ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'EDPNET    ', AmountGross, Comment);
                         processed := True;
                       end;
 
-                      if (ansipos('1070487822660570311', PartyID) > 0) or (ansipos('1070487822660570610', PartyID) > 0) then
+                      if (ansipos('1070487822660570311', PartyID) > 0) or
+                        (ansipos('1070487822660570610', PartyID) > 0) then
                       begin
                         // PSA
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'PSA       ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'PSA       ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       // 1070486194151812310 Banksys 10703874426703220041
-                      if (ansipos('107048619415181', PartyID) > 0) or (ansipos('107038744267032', PartyID) > 0) or (ansipos('107038736744276', PartyID) > 0)
-                      then
+                      if (ansipos('107048619415181', PartyID) > 0) or
+                        (ansipos('107038744267032', PartyID) > 0) or
+                        (ansipos('107038736744276', PartyID) > 0) then
                       begin
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'BANK      ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'BANK      ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       // 107038736094780 Lampiris
                       if (ansipos('107038736094780', PartyID) > 0) then
                       begin
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'LAMPIRIS  ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'LAMPIRIS  ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       // 107038946067953 FUELCard
                       if (ansipos('107038946067953', PartyID) > 0) then
                       begin
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'FUELCARD  ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'FUELCARD  ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       // ISABELL 10704896843755
                       if (ansipos('10704896843755', PartyID) > 0) then
                       begin
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'ISABEL    ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'ISABEL    ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       // Partena 107038521737817 OR 107048968437551
                       if (ansipos('107038521737817', PartyID) > 0) then
                       begin
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'PARTENA   ', AmountGross, PartyID);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'PARTENA   ', AmountGross, PartyID);
                         processed := True;
                       end;
 
                       // BELGACOM 107048613932257
                       if (ansipos('107048613932257', PartyID) > 0) then
                       begin
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'BEL       ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'BEL       ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       // BELGACOM 1070388457074
                       if (ansipos('1070388457074', PartyID) > 0) then
                       begin
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'PROX      ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'PROX      ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       if not processed then
                       begin
-                        Comment := Trim(Trim(MidStr(Line3, 48, 32)) + ' ' + Comment);
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '499000', AmountGross, Comment);
+                        Comment :=
+                          Trim(Trim(MidStr(Line3, 48, 32)) + ' ' + Comment);
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '499000',
+                          AmountGross, Comment);
                         processed := True;
                       end;
 
@@ -12658,8 +14901,10 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       // Paiement par carte de banque
                       ReadLn(myFile, line2);
                       // Essence
-                      if (ansipos('11304127002750100041', Comment) <> 0) or (ansipos('11304127002699200021', Comment) <> 0) or
-                        (ansipos('11304126927443600021', Comment) <> 0) or (ansipos('11304127002729500071', Comment) <> 0) or
+                      if (ansipos('11304127002750100041', Comment) <> 0) or
+                        (ansipos('11304127002699200021', Comment) <> 0) or
+                        (ansipos('11304126927443600021', Comment) <> 0) or
+                        (ansipos('11304127002729500071', Comment) <> 0) or
 
                       // Raphael Pluta
                         (ansipos('11304140089272600031', Comment) <> 0) or
@@ -12672,14 +14917,16 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       begin
                         // ESSENCE
                         Comment := Trim(MidStr(Line3, 48, 32)) + ' ' + Comment;
-                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr, 'ESS       ', AmountGross, Comment);
+                        AACTDBBANK.AddSupplierOut(DateDoc, DateDoc, Nbr,
+                          'ESS       ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       if not processed then
                       begin
                         Comment := Trim(MidStr(Line3, 48, 32)) + ' ' + Comment;
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '499000', AmountGross, Comment);
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '499000',
+                          AmountGross, Comment);
                         processed := True;
                       end;
 
@@ -12690,17 +14937,19 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // Virement vers compte
                       ReadLn(myFile, line2);
-                      Comment     := Trim(MidStr(line, 63, 64));
+                      Comment := Trim(MidStr(line, 63, 64));
                       ShopAccount := '499000';
                       if (ansipos('REMB CMDE', Comment) > 0) then
                       begin
-                        AACTDBBANK.AddCustomerIn(DateDoc, DateDoc, Nbr, 'NET       ', AmountGross, Comment);
+                        AACTDBBANK.AddCustomerIn(DateDoc, DateDoc, Nbr,
+                          'NET       ', AmountGross, Comment);
                         processed := True;
                       end;
 
                       if not processed then
                       begin
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, Comment);
                         processed := True;
                       end;
                     end;
@@ -12714,56 +14963,64 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       if (ansipos('208221', PartyID) > 0) then
                       begin
                         ShopAccount := '580001';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       // Bruxelles
                       if (ansipos('209223', PartyID) > 0) then
                       begin
                         ShopAccount := '580002';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       // Uccle
                       if (ansipos('209193', PartyID) > 0) then
                       begin
                         ShopAccount := '580004';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       // Woluwe
                       if (ansipos('245220', PartyID) > 0) then
                       begin
                         ShopAccount := '580006';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       // Soignies
                       if (ansipos('336344', PartyID) > 0) then
                       begin
                         ShopAccount := '580007';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       // Verviers
                       if (ansipos('336085', PartyID) > 0) then
                       begin
                         ShopAccount := '580025';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       // Jodoigne
                       if (ansipos('610442', PartyID) > 0) then
                       begin
                         ShopAccount := '580087';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       // Hannut
                       if (ansipos('610439', PartyID) > 0) then
                       begin
                         ShopAccount := '580079';
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, 'PROTON');
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, 'PROTON');
                         processed := True;
                       end;
                       processed := True;
@@ -12774,81 +15031,83 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // Globalisation BCT
                       ShopAccount := '499000';
-                      DateExec    := BankToVCLDate(MidStr(line, 82, 6));
-                      Location    := '';
+                      DateExec := BankToVCLDate(MidStr(line, 82, 6));
+                      Location := '';
 
                       if ansipos('101607', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580104';
-                        Location    := 'C04';
+                        Location := 'C04';
                       end;
                       if ansipos('513737', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580102';
-                        Location    := 'C02';
+                        Location := 'C02';
                       end;
                       if ansipos('189042', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '5800101';
-                        Location    := 'C01';
+                        Location := 'C01';
                       end;
                       if ansipos('209193', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580104';
-                        Location    := 'C04';
+                        Location := 'C04';
                       end;
                       if ansipos('209223', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580102';
-                        Location    := 'C02';
+                        Location := 'C02';
                       end;
                       if ansipos('245220', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580106';
-                        Location    := 'C06';
+                        Location := 'C06';
                       end;
                       if ansipos('208221', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580101';
-                        Location    := 'C01';
+                        Location := 'C01';
                       end;
                       if ansipos('336085', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580125';
-                        Location    := 'C25';
+                        Location := 'C25';
                       end;
                       if ansipos('1610439', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580179';
-                        Location    := 'C79';
+                        Location := 'C79';
                       end;
                       if ansipos('1610442', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580187';
-                        Location    := 'C87';
+                        Location := 'C87';
                       end;
                       if ansipos('1211085', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580199';
-                        Location    := 'C99';
+                        Location := 'C99';
                       end;
                       if ansipos('336344', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580107';
-                        Location    := 'C07';
+                        Location := 'C07';
                       end;
                       if ansipos('011346', UpperCase(Comment)) > 0 then
                       begin
                         ShopAccount := '580100';
-                        Location    := 'NET';
+                        Location := 'NET';
                       end;
                       if Location = '' then
                       begin
                         ShopAccount := '580103';
-                        Location    := 'INCONNU';
+                        Location := 'INCONNU';
                       end;
-                      Comment := 'Globalisation ' + Location + ' ' + MidStr(line, 82, 6);
-                      AACTDBBANK.AddBCTIn(DateExec, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      Comment := 'Globalisation ' + Location + ' ' +
+                        MidStr(line, 82, 6);
+                      AACTDBBANK.AddBCTIn(DateExec, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 {$ENDREGION}
@@ -12857,11 +15116,13 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // Versement
                       ShopAccount := '499000';
-                      if (ansipos('UCC', UpperCase(Comment)) > 0) or (ansipos('UKK', UpperCase(Comment)) > 0) then
+                      if (ansipos('UCC', UpperCase(Comment)) > 0) or
+                        (ansipos('UKK', UpperCase(Comment)) > 0) then
                         ShopAccount := '580004';
                       if ansipos('WAV', UpperCase(Comment)) > 0 then
                         ShopAccount := '580001';
-                      if (ansipos('BRU', UpperCase(Comment)) > 0) or (ansipos('BXL', UpperCase(Comment)) > 0) then
+                      if (ansipos('BRU', UpperCase(Comment)) > 0) or
+                        (ansipos('BXL', UpperCase(Comment)) > 0) then
                         ShopAccount := '580002';
                       if ansipos('VER', UpperCase(Comment)) > 0 then
                         ShopAccount := '580025';
@@ -12875,7 +15136,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                         ShopAccount := '580079';
                       if ansipos('JOD', UpperCase(Comment)) > 0 then
                         ShopAccount := '580087';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12884,13 +15146,16 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       // Versement
                       ReadLn(myFile, line2);
                       ReadLn(myFile, Line3);
-                      Comment     := Trim(MidStr(line2, 54, 16)) + Trim(MidStr(Line3, 83, 42));
+                      Comment := Trim(MidStr(line2, 54, 16)) +
+                        Trim(MidStr(Line3, 83, 42));
                       ShopAccount := '499000';
-                      if (ansipos('UCC', UpperCase(Comment)) > 0) or (ansipos('UKK', UpperCase(Comment)) > 0) then
+                      if (ansipos('UCC', UpperCase(Comment)) > 0) or
+                        (ansipos('UKK', UpperCase(Comment)) > 0) then
                         ShopAccount := '580004';
                       if ansipos('WAV', UpperCase(Comment)) > 0 then
                         ShopAccount := '580001';
-                      if (ansipos('BRU', UpperCase(Comment)) > 0) or (ansipos('BXL', UpperCase(Comment)) > 0) then
+                      if (ansipos('BRU', UpperCase(Comment)) > 0) or
+                        (ansipos('BXL', UpperCase(Comment)) > 0) then
                         ShopAccount := '580002';
                       if ansipos('SOI', UpperCase(Comment)) > 0 then
                         ShopAccount := '580007';
@@ -12904,7 +15169,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                         ShopAccount := '580087';
                       if ansipos('NIV', UpperCase(Comment)) > 0 then
                         ShopAccount := '580099';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 {$ENDREGION}
@@ -12913,10 +15179,11 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       // Paiements
                       ReadLn(myFile, line2);
                       ReadLn(myFile, Line3);
-                      Comment     := MidStr(Line3, 48, 32);
+                      Comment := MidStr(Line3, 48, 32);
                       ShopAccount := '499999';
 
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12924,10 +15191,11 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // Enveloppe de virements
                       ReadLn(myFile, line2);
-                      Comment     := MidStr(line2, 63, 64);
+                      Comment := MidStr(line2, 63, 64);
                       ShopAccount := '581000';
 
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12935,9 +15203,10 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // Virement depuis compte
                       ReadLn(myFile, line2);
-                      Comment     := MidStr(line, 48, 32);
+                      Comment := MidStr(line, 48, 32);
                       ShopAccount := '499000';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12945,7 +15214,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // prelevement visa
                       ShopAccount := '416100';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12953,7 +15223,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // prelevement Salaires
                       ShopAccount := '455000';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12961,7 +15232,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     begin
                       // prelevement Salaires
                       ShopAccount := '65600';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12975,20 +15247,24 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                         AmountDisc := -AmountDisc;
 
                       AmountGross := AmountGross - AmountDisc;
-                      Comment     := Comment + ' K: ' + FloatToStr(AmountDisc) + ' Int.: ' + FloatToStr(AmountGross);
+                      Comment := Comment + ' K: ' + FloatToStr(AmountDisc) +
+                        ' Int.: ' + FloatToStr(AmountGross);
                       ShopAccount := '650000';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       ShopAccount := '420000';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountDisc, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountDisc, Comment);
                       processed := True;
                     end;
 
                     if OpCode = '8015000' then
                     begin
                       // Remboursememnt Emprunt
-                      Comment     := 'Remb.: ' + FloatToStr(AmountGross);
+                      Comment := 'Remb.: ' + FloatToStr(AmountGross);
                       ShopAccount := '656000';
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                        AmountGross, Comment);
                       processed := True;
                     end;
 
@@ -12996,42 +15272,50 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 {$REGION 'Loyers'}
                     if ansipos('CAVE BOXEUR', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '710000', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '710000',
+                        AmountGross, Comment);
                       processed := True;
                     end;
                     if ansipos('LOYER RDC BORGVAL 7', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610002', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610002',
+                        AmountGross, Comment);
                       processed := True;
                     end;
                     if ansipos('LOYER CH ALSEMBER 622', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610004', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610004',
+                        AmountGross, Comment);
                       processed := True;
                     end;
                     if ansipos('LOYER RDC HENRI 367', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610006', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610006',
+                        AmountGross, Comment);
                       processed := True;
                     end;
                     if ansipos('LOYER HARMONIE 28', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610025', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610025',
+                        AmountGross, Comment);
                       processed := True;
                     end;
                     if ansipos('LOYER ALBER1 37 RDC', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610079', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610079',
+                        AmountGross, Comment);
                       processed := True;
                     end;
                     if ansipos('LOYER RDC PL VICTOIRE 6A', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610087', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610087',
+                        AmountGross, Comment);
                       processed := True;
                     end;
                     if ansipos('LOYER NIVELLES R DU GEANT', Comment) > 0 then
                     begin
-                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610099', AmountGross, Comment);
+                      AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, '610099',
+                        AmountGross, Comment);
                       processed := True;
                     end;
 {$ENDREGION}
@@ -13042,10 +15326,13 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       ShopAccount := '499000';
 
                       if not processed then
-                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount, AmountGross, Comment);
+                        AACTDBBANK.AddBCTIn(DateDoc, DateDoc, Nbr, ShopAccount,
+                          AmountGross, Comment);
                     end;
 
-                  end else begin
+                  end
+                  else
+                  begin
                     // Sequel to previous Operation
                   end;
                   if line[2] = '1' then
@@ -13078,9 +15365,12 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             //
             for i := 0 to OpenDialog.Files.Count - 1 do
             begin
-              ProgressBar.Position := (i + OpenDialog.Files.Count) / (OpenDialog.Files.Count * 2 - 1) * 100;
+              ProgressBar.Position := (i + OpenDialog.Files.Count) /
+                (OpenDialog.Files.Count * 2 - 1) * 100;
               Application.ProcessMessages;
-              scShellMoveFile(self.Handle, OpenDialog.Files[i], ExtractFilePath(OpenDialog.Files[i]) + 'PROCESSED\' + ExtractFileName(OpenDialog.Files[i]));
+              scShellMoveFile(Self.Handle, OpenDialog.Files[i],
+                ExtractFilePath(OpenDialog.Files[i]) + 'PROCESSED\' +
+                ExtractFileName(OpenDialog.Files[i]));
             end;
 
           finally
@@ -13098,7 +15388,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         aFormDacalSearch: TFormDacalSearch;
       begin
 
-        aFormDacalSearch := TFormDacalSearch.Create(self);
+        aFormDacalSearch := TFormDacalSearch.Create(Self);
         try
           aFormDacalSearch.ShowModal;
         finally
@@ -13112,27 +15402,35 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         aReportSQL: TReportSQL;
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Rapport prix a baissr depôt';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Rapport prix a baissr depôt';
         RemoteDB.CDSActions.Post;
         with RemoteDB.SQLQuery do
         begin
           CommandText :=
             'SELECT products_root_category_name as Plateforme, `product_model` as Modele , `product_name` as Nom , `product_owner_id` As Porprio , `product_price_stock` as PStock , ROUND(p.`products_price` *(1+tr.`tax_rate`/100),2) AS PNEW ';
           CommandText := CommandText + ' FROM netshop_stock ns';
-          CommandText := CommandText + ' INNER JOIN products p ON p.products_model = ns.product_model';
-          CommandText := CommandText + ' INNER JOIN tax_rates tr ON tr.`tax_class_id`=p.`products_tax_class_id` ';
+          CommandText := CommandText +
+            ' INNER JOIN products p ON p.products_model = ns.product_model';
+          CommandText := CommandText +
+            ' INNER JOIN tax_rates tr ON tr.`tax_class_id`=p.`products_tax_class_id` ';
           CommandText := CommandText + ' WHERE `product_owner_id` >=100000 ';
-          CommandText := CommandText + ' AND `product_location` = ' + inttostr(ConnectedShop);
-          CommandText := CommandText + ' AND tax_zone_id='+inttostr(GeoZoneTaxId);
-          CommandText := CommandText + ' AND p.`products_price` *(1+tr.`tax_rate`/100)*0.85<product_price_stock ';
-          CommandText := CommandText + ' ORDER BY products_root_category_name, product_date_in ';
+          CommandText := CommandText + ' AND `product_location` = ' +
+            inttostr(ConnectedShop);
+          CommandText := CommandText + ' AND tax_zone_id=' +
+            inttostr(GeoZoneTaxId);
+          CommandText := CommandText +
+            ' AND p.`products_price` *(1+tr.`tax_rate`/100)*0.85<product_price_stock ';
+          CommandText := CommandText +
+            ' ORDER BY products_root_category_name, product_date_in ';
 
         end;
 
-        aReportSQL := TReportSQL.Create(self);
+        aReportSQL := TReportSQL.Create(Self);
         try
           aReportSQL.CDSReport.Open;
-          aReportSQL.cxGridReportDBTableViewReport.DataController.CreateAllItems(True);
+          aReportSQL.cxGridReportDBTableViewReport.DataController.
+            CreateAllItems(True);
           aReportSQL.ShowModal;
         finally
           aReportSQL.Free;
@@ -13144,9 +15442,10 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         AFormCheckLib: TFormDacalEmptyUnsold;
       begin
         RemoteDB.CDSActions.Append;
-        RemoteDB.CDSActions.FieldByName('action').AsString := 'Verifier Invendus Dacal';
+        RemoteDB.CDSActions.FieldByName('action').AsString :=
+          'Verifier Invendus Dacal';
         RemoteDB.CDSActions.Post;
-        AFormCheckLib := TFormDacalEmptyUnsold.Create(self);
+        AFormCheckLib := TFormDacalEmptyUnsold.Create(Self);
         AFormCheckLib.Show;
       end;
 
@@ -13159,16 +15458,23 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         ActionCustomerRentPendingExecute(nil);
         if ((MainForm.Parameter['PrintersTicketEnabled'] = 'TRUE')) then
         begin
-          TicketToPrint := TTicketJob.Create(self);
+          TicketToPrint := TTicketJob.Create(Self);
           try
-            TicketToPrint.Printer := MainForm.Parameter['PrintersTicketPrinter'];
-            TicketToPrint.Logo    := PrintLogo;
-            TicketToPrint.URL     := WEBURL;
-            TicketToPrint.ID := RemoteDB.netshop_sales.FieldByName('sales_location').AsString + '-' + RemoteDB.netshop_sales.FieldByName('sales_id').AsString;
-            if ShopdataList <> nil then begin
+            TicketToPrint.Printer := MainForm.Parameter
+              ['PrintersTicketPrinter'];
+            TicketToPrint.Logo := PrintLogo;
+            TicketToPrint.URL := WEBURL;
+            TicketToPrint.ID := RemoteDB.netshop_sales.FieldByName
+              ('sales_location').AsString + '-' +
+              RemoteDB.netshop_sales.FieldByName('sales_id').AsString;
+            if ShopdataList <> nil then
+            begin
               TicketToPrint.ShopData := ShopdataList;
-            end else begin
-              ShowMessage('Les données tickets du magasin ne sont pas correctes');
+            end
+            else
+            begin
+              ShowMessage
+                ('Les données tickets du magasin ne sont pas correctes');
             end;
             if MainForm.Parameter['PrintersTicketContinuous'] = 'TRUE' then
               TicketToPrint.Model := TmContinuous;
@@ -13177,21 +15483,30 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             RemoteDB.netshop_rent_transaction.First;
             while not RemoteDB.netshop_rent_transaction.Eof do
             begin
-              TicketToPrint.AddLine(RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_product_name').AsString, '', '', 'Location');
-              TicketToPrint.AddLine('Du ' + DateToStr(RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_start_date').AsFloat) + ' Au ' +
-                DateToStr(RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_due_date').AsFloat), '', '', 'Location');
+              TicketToPrint.AddLine
+                (RemoteDB.netshop_rent_transaction.FieldByName
+                ('rent_transaction_product_name').AsString, '', '', 'Location');
+              TicketToPrint.AddLine
+                ('Du ' + DateToStr(RemoteDB.netshop_rent_transaction.FieldByName
+                ('rent_transaction_start_date').AsFloat) + ' Au ' +
+                DateToStr(RemoteDB.netshop_rent_transaction.FieldByName
+                ('rent_transaction_due_date').AsFloat), '', '', 'Location');
               RemoteDB.netshop_rent_transaction.Next;
             end;
             if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
             begin
-              TicketToPrint.AddCustomerLine('Client # : ', RemoteDB.CustomersCustomers_nbr.Text);
-              TicketToPrint.AddCustomerLine('Nom : ', RemoteDB.CustomersCustomers_Lastname.Text);
-              TicketToPrint.AddCustomerLine('Prenom : ', RemoteDB.Customerscustomers_firstname.Text);
-              TicketToPrint.AddCustomerLine('CI : ', RemoteDB.Customerscustomers_identity.Text);
+              TicketToPrint.AddCustomerLine('Client # : ',
+                RemoteDB.CustomersCustomers_nbr.Text);
+              TicketToPrint.AddCustomerLine('Nom : ',
+                RemoteDB.CustomersCustomers_Lastname.Text);
+              TicketToPrint.AddCustomerLine('Prenom : ',
+                RemoteDB.Customerscustomers_firstname.Text);
+              TicketToPrint.AddCustomerLine('CI : ',
+                RemoteDB.Customerscustomers_identity.Text);
               TicketToPrint.AddCustomerLine('SIGNATURE', '');
             end;
 
-            if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+            if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
               TicketToPrint.PrintOpos
             else
               TicketToPrint.Print;
@@ -13209,11 +15524,13 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       begin
         if RadioButtonCustomerRentPending.Enabled then
         begin
-          if cxGridViewRepositoryDBTableViewCustRent.Controller.SelectedRowCount > 0 then
+          if cxGridViewRepositoryDBTableViewCustRent.Controller.
+            SelectedRowCount > 0 then
           begin
-            aFormRentExtend := TFormRentExtend.Create(self);
+            aFormRentExtend := TFormRentExtend.Create(Self);
             try
-              for i := 0 to cxGridViewRepositoryDBTableViewCustRent.Controller.SelectedRowCount - 1 do
+              for i := 0 to cxGridViewRepositoryDBTableViewCustRent.Controller.
+                SelectedRowCount - 1 do
               begin
                 // GotoBookmark (pointer(cxGridViewRepositoryDBTableViewCustRent.DataController.GetSelectedBookmark(i)));
                 if aFormRentExtend.ShowModal = mrOK then
@@ -13224,11 +15541,16 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             finally
               aFormRentExtend.Free;
             end;
-          end else begin
+          end
+          else
+          begin
             ShowMessage('Veuillez sélectionner une transaction à étendre');
           end;
-        end else begin
-          ShowMessage('Veuillez activer le filtre "non-retourné" et sélectionner la transaction à étendre');
+        end
+        else
+        begin
+          ShowMessage
+            ('Veuillez activer le filtre "non-retourné" et sélectionner la transaction à étendre');
         end;
 
       end;
@@ -13238,9 +15560,12 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
         if RemoteDB.CustomersCustomers_nbr.AsInteger >= 100000 then
         begin
-          dxBarMRUListItemCustomers.AddItem(RemoteDB.CustomersCustomers_nbr.AsString + ' - ' + RemoteDB.Customerscustomers_firstname.AsString + ' ' +
+          dxBarMRUListItemCustomers.AddItem
+            (RemoteDB.CustomersCustomers_nbr.AsString + ' - ' +
+            RemoteDB.Customerscustomers_firstname.AsString + ' ' +
             RemoteDB.CustomersCustomers_Lastname.AsString, nil);
-          NewStockinCaddy(ConnectedShop, RemoteDB.CustomersCustomers_nbr.AsInteger);
+          NewStockinCaddy(ConnectedShop,
+            RemoteDB.CustomersCustomers_nbr.AsInteger);
         end
         else
           ShowMessage('Client non valide');
@@ -13253,7 +15578,9 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
         if RemoteDB.CustomersCustomers_nbr.AsInteger >= 100000 then
         begin
-          dxBarMRUListItemCustomers.AddItem(RemoteDB.CustomersCustomers_nbr.AsString + ' - ' + RemoteDB.Customerscustomers_firstname.AsString + ' ' +
+          dxBarMRUListItemCustomers.AddItem
+            (RemoteDB.CustomersCustomers_nbr.AsString + ' - ' +
+            RemoteDB.Customerscustomers_firstname.AsString + ' ' +
             RemoteDB.CustomersCustomers_Lastname.AsString, nil);
           NewStockinCaddy(RemoteDB.CustomersCustomers_nbr.AsInteger, 0);
         end
@@ -13291,7 +15618,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
       procedure TMainForm.BitBtnRentClearClick(Sender: TObject);
       begin
-        RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop), [locaseinsensitive]);
+        RemoteDB.Customers.Locate('Customers_nbr', inttostr(ConnectedShop),
+          [locaseinsensitive]);
         EditRentCustomerId.Text := inttostr(ConnectedShop);
         PageControlRentCaddy.ActivePage.Free;
         PageControlRentCaddyChange(nil);
@@ -13303,18 +15631,21 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         AFormProcessRent: TFormProcessRent;
         i, GridIndex, indexnbr: Integer;
         j, page, Nowrow, nowrowsales, overduedays: Integer;
-        overdueamount: Double;
+        overdueamount: double;
         ARentOperation: TRentOperation;
       begin
-        for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+          if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i]
+            .ClassType = TAdvStringGrid then
           begin
             GridIndex := i;
           end;
         end;
 
-        with TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex]) do
+        with TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage)
+          .Controls[GridIndex]) do
         begin
           if RowCount <= 2 then
             exit;
@@ -13322,8 +15653,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
         ARentOperation := GetRentCaddyType;
 
-        RemoteDB.IsUpdating            := True;
-        AFormProcessRent               := TFormProcessRent.Create(self);
+        RemoteDB.IsUpdating := True;
+        AFormProcessRent := TFormProcessRent.Create(Self);
         AFormProcessRent.RentOperation := ARentOperation;
         try
           if AFormProcessRent.ShowModal = mrOK then
@@ -13346,7 +15677,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         EditSalesCustomerNbr.SelectAll;
       end;
 
-      procedure TMainForm.EditRentCustomerIdKeyPress(Sender: TObject; var Key: Char);
+      procedure TMainForm.EditRentCustomerIdKeyPress(Sender: TObject;
+        var Key: Char);
       const
         backspace = #8; { key code for backspace character }
       begin
@@ -13357,19 +15689,25 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         Key := #0;
       end;
 
-      procedure TMainForm.EditRentCustomerIdKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.EditRentCustomerIdKeyUp(Sender: TObject;
+        var Key: Word; Shift: TShiftState);
       begin
-        if (EditRentCustomerId.Text > '0') and (EditRentCustomerId.Text < '99999999') then
+        if (EditRentCustomerId.Text > '0') and
+          (EditRentCustomerId.Text < '99999999') then
         begin
-          if not RemoteDB.Customers.Locate('Customers_nbr', EditRentCustomerId.Text, [locaseinsensitive]) then
+          if not RemoteDB.Customers.Locate('Customers_nbr',
+            EditRentCustomerId.Text, [locaseinsensitive]) then
             RemoteDB.Customers.First;
-        end else begin
+        end
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
           EditRentCustomerId.Text := inttostr(ConnectedShop);
         end;
       end;
 
-      procedure TMainForm.NewRentCaddyClick(Sender: TObject; TransactionType: TRentOperation);
+      procedure TMainForm.NewRentCaddyClick(Sender: TObject;
+        TransactionType: TRentOperation);
       var
         Date: string;
         NewName: string;
@@ -13379,51 +15717,51 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         StdGridWidth: Integer;
       begin
         DatetimeToString(Date, 'dd/mm-hh:mm', Now);
-        NewPanel := TAdvTabSheet.Create(self);
+        NewPanel := TAdvTabSheet.Create(Self);
         with NewPanel do
         begin
           AdvPageControl := PageControlRentCaddy;
-          Caption        := Date;
-          ImageIndex     := 34;
-          NewName        := name;
-          ShowClose      := True;
-          OnClose        := RentCaddyClose;
+          Caption := Date;
+          ImageIndex := 34;
+          NewName := name;
+          ShowClose := True;
+          OnClose := RentCaddyClose;
         end;
-        NewGrid := TAdvStringGrid.Create(self);
+        NewGrid := TAdvStringGrid.Create(Self);
         with NewGrid do
         begin
-          Parent                   := NewPanel;
-          Look                     := glXP;
-          SelectionColor           := clBtnFace;
-          SelectionTextColor       := clBlack;
-          ScrollBars               := ssBoth;
-          ScrollBarAlways          := SaVert;
-          ColumnSize.Stretch       := True;
+          Parent := NewPanel;
+          Look := glXP;
+          SelectionColor := clBtnFace;
+          SelectionTextColor := clBlack;
+          ScrollBars := ssBoth;
+          ScrollBarAlways := SaVert;
+          ColumnSize.Stretch := True;
           ColumnSize.StretchColumn := 1;
-          PopupMenu                := PopupStringGrid;
-          Align                    := alBottom;
-          Height                   := Parent.ClientHeight - 80;
-          Anchors                  := Anchors + [AkTop];
-          FixedCols                := 0;
-          FixedFooters             := 0;
-          FixedRows                := 1;
-          StdGridWidth             := 85;
-          RowCount                 := 2;
-          ColCount                 := 8;
-          NewGrid.options          := options + [gorowselect];
-          Flat                     := False;
-          AutoNumAlign             := True;
-          AutoThemeAdapt           := True;
-          FloatFormat              := '&.2f';
-          Cells[0, 0]              := 'Modèle';
-          Cells[1, 0]              := 'Description';
-          Cells[2, 0]              := 'Quantité';
-          Cells[3, 0]              := 'Départ';
-          Cells[4, 0]              := 'Retour';
-          Cells[5, 0]              := 'Forfait';
-          Cells[6, 0]              := 'Extra';
-          Cells[7, 0]              := 'Valeur';
-          for Count                := 0 to ColCount - 1 do
+          PopupMenu := PopupStringGrid;
+          Align := alBottom;
+          Height := Parent.ClientHeight - 80;
+          Anchors := Anchors + [AkTop];
+          FixedCols := 0;
+          FixedFooters := 0;
+          FixedRows := 1;
+          StdGridWidth := 85;
+          RowCount := 2;
+          ColCount := 8;
+          NewGrid.options := options + [gorowselect];
+          Flat := False;
+          AutoNumAlign := True;
+          AutoThemeAdapt := True;
+          FloatFormat := '&.2f';
+          Cells[0, 0] := 'Modèle';
+          Cells[1, 0] := 'Description';
+          Cells[2, 0] := 'Quantité';
+          Cells[3, 0] := 'Départ';
+          Cells[4, 0] := 'Retour';
+          Cells[5, 0] := 'Forfait';
+          Cells[6, 0] := 'Extra';
+          Cells[7, 0] := 'Valeur';
+          for Count := 0 to ColCount - 1 do
           begin
             ColWidths[Count] := StdGridWidth;
           end;
@@ -13433,102 +15771,104 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         end;
 
         /// OUT / IN
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 96;
-          Parent    := NewPanel;
+          Tag := 96;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 450;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 450;
           Font.Size := 25;
           if TransactionType = RentIn then
           begin
-            Caption              := 'IN';
+            Caption := 'IN';
             ComboBoxRent.Enabled := False;
-          end else begin
+          end
+          else
+          begin
             ComboBoxRent.Enabled := True;
-            Caption              := 'OUT';
+            Caption := 'OUT';
           end;
         end;
 
         // Pièces
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 99;
-          Parent    := NewPanel;
+          Tag := 99;
+          Parent := NewPanel;
           Alignment := TaRightJustify;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 250;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 250;
           Font.Size := 25;
-          Caption   := '0';
+          Caption := '0';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors - [akleft] + [akright];
-          Top       := 15;
-          Left      := Parent.ClientWidth - 228;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors - [akleft] + [akright];
+          Top := 15;
+          Left := Parent.ClientWidth - 228;
           Font.Size := 10;
-          Caption   := 'Pcs';
+          Caption := 'Pcs';
         end;
 
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors + [akleft] - [akright];
-          Top       := 13;
-          Left      := 10;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors + [akleft] - [akright];
+          Top := 13;
+          Left := 10;
           Font.Size := 10;
-          Caption   := 'Numero';
+          Caption := 'Numero';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors + [akleft] - [akright];
-          Top       := 33;
-          Left      := 10;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors + [akleft] - [akright];
+          Top := 33;
+          Left := 10;
           Font.Size := 10;
-          Caption   := 'Nom';
+          Caption := 'Nom';
         end;
-        with TLabel.Create(self) do
+        with TLabel.Create(Self) do
         begin
-          Tag       := 1;
-          Parent    := NewPanel;
-          Anchors   := Anchors + [akleft] - [akright];
-          Top       := 53;
-          Left      := 10;
+          Tag := 1;
+          Parent := NewPanel;
+          Anchors := Anchors + [akleft] - [akright];
+          Top := 53;
+          Left := 10;
           Font.Size := 10;
-          Caption   := 'Prenom';
+          Caption := 'Prenom';
         end;
-        with TEdit.Create(self) do
+        with TEdit.Create(Self) do
         begin
-          Tag      := 95;
-          Parent   := NewPanel;
-          Top      := 10;
-          Left     := 100;
+          Tag := 95;
+          Parent := NewPanel;
+          Top := 10;
+          Left := 100;
           readonly := True;
-          Text     := RemoteDB.CustomersCustomers_nbr.AsString;
+          Text := RemoteDB.CustomersCustomers_nbr.AsString;
         end;
-        with TEdit.Create(self) do
+        with TEdit.Create(Self) do
         begin
-          Parent   := NewPanel;
-          Top      := 30;
-          Left     := 100;
+          Parent := NewPanel;
+          Top := 30;
+          Left := 100;
           readonly := True;
-          Text     := RemoteDB.CustomersCustomers_Lastname.AsString;
+          Text := RemoteDB.CustomersCustomers_Lastname.AsString;
         end;
-        with TEdit.Create(self) do
+        with TEdit.Create(Self) do
         begin
-          Parent   := NewPanel;
-          Top      := 50;
-          Left     := 100;
+          Parent := NewPanel;
+          Top := 50;
+          Left := 100;
           readonly := True;
-          Text     := RemoteDB.Customerscustomers_firstname.AsString;
+          Text := RemoteDB.Customerscustomers_firstname.AsString;
         end;
         PageControlRentCaddy.ActivePage := NewPanel;
       end;
@@ -13553,33 +15893,45 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         if EditRentModel.Text <> '' then
         begin
           EditRentModel.Text := UpperCase(EditRentModel.Text);
-          if RemoteDB.Products.Locate('products_model', EditRentModel.Text, [locaseinsensitive]) then
+          if RemoteDB.Products.Locate('products_model', EditRentModel.Text,
+            [locaseinsensitive]) then
           begin
 
             if TransactionType = RentOut then
             begin
               // Verification Présence en Stock Location
-              if RemoteDB.netshop_rent_stock.Locate('rent_stock_product_model;rent_stock_state',
-                Vararrayof([RemoteDB.Products.FieldByName('products_model').Value, 1]), [locaseinsensitive]) then
+              if RemoteDB.netshop_rent_stock.Locate
+                ('rent_stock_product_model;rent_stock_state',
+                Vararrayof([RemoteDB.Products.FieldByName('products_model')
+                .Value, 1]), [locaseinsensitive]) then
               begin
                 // Recherche du prix Neuf et Nom
-                EditRentName.Text   := RemoteDB.netshop_rent_stock.FieldByName('rent_stock_name').Value;
-                EditRentPrice.Text  := RemoteDB.Products.FieldByName('products_price').AsString;
-                EditRentDateIn.Text := DateToStr(RemoteDB.netshop_rent_stock.FieldByName('rent_stock_date_added').Value);
+                EditRentName.Text := RemoteDB.netshop_rent_stock.FieldByName
+                  ('rent_stock_name').Value;
+                EditRentPrice.Text := RemoteDB.Products.FieldByName
+                  ('products_price').AsString;
+                EditRentDateIn.Text :=
+                  DateToStr(RemoteDB.netshop_rent_stock.FieldByName
+                  ('rent_stock_date_added').Value);
 
                 // Calcul des quantités dispo
-                EditRentAvailable.Text             := '0';
-                RemoteDB.netshop_rent_stock.Filter := '(rent_stock_product_model = ' + QuotedStr(RemoteDB.Products.FieldByName('products_model').AsString) +
-                  ') and (rent_stock_state= 1)';
+                EditRentAvailable.Text := '0';
+                RemoteDB.netshop_rent_stock.Filter :=
+                  '(rent_stock_product_model = ' +
+                  QuotedStr(RemoteDB.Products.FieldByName('products_model')
+                  .AsString) + ') and (rent_stock_state= 1)';
                 RemoteDB.netshop_rent_stock.Filtered := True;
                 RemoteDB.netshop_rent_stock.First;
                 while not RemoteDB.netshop_rent_stock.Eof do
                 begin
-                  EditRentAvailable.Text := inttostr(StrtoInt(EditRentAvailable.Text) + 1);
+                  EditRentAvailable.Text :=
+                    inttostr(StrtoInt(EditRentAvailable.Text) + 1);
                   RemoteDB.netshop_rent_stock.Next;
                 end;
                 RemoteDB.netshop_rent_stock.Filtered := False;
-              end else begin
+              end
+              else
+              begin
                 messagedlg('Plus disponible en location', mtwarning, [mbok], 0);
                 RentClearEdit;
               end;
@@ -13593,13 +15945,17 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               EditRentAvailable.Text := '0';
               with RemoteDB.netshop_rent_transaction do
               begin
-                Filter := '(rent_transaction_product_model =' + QuotedStr(RemoteDB.Products.FieldByName('products_model').AsString) +
-                  ' ) and ( rent_transaction_returned = 0 ) and (rent_transaction_customer_nbr = ' + inttostr(GetRentCaddyCustomerNbr) + ' )';
+                Filter := '(rent_transaction_product_model =' +
+                  QuotedStr(RemoteDB.Products.FieldByName('products_model')
+                  .AsString) +
+                  ' ) and ( rent_transaction_returned = 0 ) and (rent_transaction_customer_nbr = '
+                  + inttostr(GetRentCaddyCustomerNbr) + ' )';
                 Filtered := True;
                 if not(Eof and Bof) then
                   while not Eof do
                   begin
-                    EditRentAvailable.Text := inttostr(StrtoInt(EditRentAvailable.Text) + 1);
+                    EditRentAvailable.Text :=
+                      inttostr(StrtoInt(EditRentAvailable.Text) + 1);
                     Next;
                   end;
                 Filtered := False;
@@ -13609,17 +15965,23 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               begin
 
                 // Recherche du prix Neuf et Nom
-                EditRentName.Text   := RemoteDB.Products.FieldByName('products_intername').Text;
-                EditRentPrice.Text  := RemoteDB.Products.FieldByName('products_price').AsString;
+                EditRentName.Text := RemoteDB.Products.FieldByName
+                  ('products_intername').Text;
+                EditRentPrice.Text := RemoteDB.Products.FieldByName
+                  ('products_price').AsString;
                 EditRentDateIn.Text := DateToStr(Now);
 
-              end else begin
+              end
+              else
+              begin
                 messagedlg('Pas en location', mtwarning, [mbok], 0);
                 RentClearEdit;
               end;
             end;
             // Product model non valide
-          end else begin
+          end
+          else
+          begin
             messagedlg('Code article invalide', mtwarning, [mbok], 0);
             RentClearEdit;
           end;
@@ -13631,7 +15993,9 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
         begin
           NewRentCaddyClick(Sender, RentOut);
-        end else begin
+        end
+        else
+        begin
           ShowMessage('Veuillez choisir un client valide');
         end;
       end;
@@ -13641,7 +16005,9 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
         begin
           NewRentCaddyClick(Sender, RentIn);
-        end else begin
+        end
+        else
+        begin
           ShowMessage('Veuillez choisir un client valide');
         end;
       end;
@@ -13660,11 +16026,15 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         i: Integer;
       begin
-        for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i].Tag = 95 then
+          if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i].Tag = 95
+          then
           begin
-            Result := StrtoInt(TEdit(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i]).Text);
+            Result := StrtoInt
+              (TEdit(TAdvTabSheet(PageControlRentCaddy.ActivePage)
+              .Controls[i]).Text);
           end;
         end;
       end;
@@ -13673,34 +16043,42 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       var
         i: Integer;
       begin
-        for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage).ControlCount - 1 do
+        for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage)
+          .ControlCount - 1 do
         begin
-          if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i].Tag = 96 then
+          if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i].Tag = 96
+          then
           begin
-            if TLabel(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i]).Caption = 'IN' then
+            if TLabel(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i])
+              .Caption = 'IN' then
             begin
               Result := RentIn;
-            end else begin
+            end
+            else
+            begin
               Result := RentOut;
             end;
           end;
         end;
       end;
 
-      procedure TMainForm.NEditRentAvailableKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+      procedure TMainForm.NEditRentAvailableKeyDown(Sender: TObject;
+        var Key: Word; Shift: TShiftState);
       var
         i, Nowrow, rowpresent, quantitypresent, GridIndex: Integer;
         ProductPresent: Boolean;
         TransactionType: TRentOperation;
       begin
         RemoteDB.Products.IndexName := 'ProductsIXModel';
-        quantitypresent             := 0;
+        quantitypresent := 0;
         if Key = VK_RETURN then
         begin
 
-          for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage).ControlCount - 1 do
+          for i := 0 to TAdvTabSheet(PageControlRentCaddy.ActivePage)
+            .ControlCount - 1 do
           begin
-            if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i].ClassType = TAdvStringGrid then
+            if TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[i]
+              .ClassType = TAdvStringGrid then
             begin
               GridIndex := i;
             end;
@@ -13719,25 +16097,33 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               begin
 
                 { Rechercher dans le Rent grid pour la meme occurence owner id & product model }
-                ProductPresent  := False;
-                rowpresent      := -1;
+                ProductPresent := False;
+                rowpresent := -1;
                 quantitypresent := 0;
 
-                for Nowrow := 1 to TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex]).RowCount - 2 do
+                for Nowrow := 1 to TAdvStringGrid
+                  (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                  .Controls[GridIndex]).RowCount - 2 do
                 begin
-                  if (TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex]).Cells[0, Nowrow] = EditRentModel.Text) then
+                  if (TAdvStringGrid
+                    (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                    .Controls[GridIndex]).Cells[0, Nowrow] = EditRentModel.Text)
+                  then
                   begin
-                    quantitypresent := quantitypresent + StrtoInt(TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex])
-                      .Cells[2, Nowrow]);
+                    quantitypresent := quantitypresent +
+                      StrtoInt(TAdvStringGrid
+                      (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                      .Controls[GridIndex]).Cells[2, Nowrow]);
                     ProductPresent := True;
-                    rowpresent     := Nowrow;
+                    rowpresent := Nowrow;
                   end;
                 end;
 
 
                 // Selection du Rent Scheme
 
-                if not RemoteDB.netshop_rent_schemes.Locate('rent_scheme_name', ComboBoxRent.Text, []) then
+                if not RemoteDB.netshop_rent_schemes.Locate('rent_scheme_name',
+                  ComboBoxRent.Text, []) then
                 begin
                   ShowMessage('Veuillez sélectionner un schéma de location');
                   exit;
@@ -13747,31 +16133,47 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                 begin
 
                   { Ajouter d'une ligne dans le Rent grid }
-                  RemoteDB.netshop_rent_stock.Locate('rent_stock_product_model', EditRentModel.Text, []);
+                  RemoteDB.netshop_rent_stock.Locate('rent_stock_product_model',
+                    EditRentModel.Text, []);
 
-                  with TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex]) do
+                  with TAdvStringGrid
+                    (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                    .Controls[GridIndex]) do
                   begin
-                    Nowrow           := RowCount - 1;
+                    Nowrow := RowCount - 1;
                     Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
-                    Cells[1, Nowrow] := RemoteDB.netshop_rent_stock.FieldByName('rent_stock_name').Value;
+                    Cells[1, Nowrow] := RemoteDB.netshop_rent_stock.FieldByName
+                      ('rent_stock_name').Value;
                     // CDSProDescFR.FieldByName('products_name').Text;
                     Cells[2, Nowrow] := '1';
                     Cells[3, Nowrow] := DateToStr(Now);
-                    Cells[4, Nowrow] := DateToStr(Now + RemoteDB.netshop_rent_schemes.FieldByName('rent_scheme_base_days').Value);
-                    Cells[5, Nowrow] := RemoteDB.netshop_rent_schemes.FieldByName('rent_scheme_base_price').AsString;
-                    Cells[6, Nowrow] := RemoteDB.netshop_rent_schemes.FieldByName('rent_scheme_extra_price').AsString;
-                    Cells[7, Nowrow] := FloatToStrF(RemoteDB.ProductsProducts_Price.AsFloat, fffixed, 7, 2);
-                    RowCount         := Nowrow + 2;
+                    Cells[4, Nowrow] :=
+                      DateToStr(Now + RemoteDB.netshop_rent_schemes.FieldByName
+                      ('rent_scheme_base_days').Value);
+                    Cells[5, Nowrow] :=
+                      RemoteDB.netshop_rent_schemes.FieldByName
+                      ('rent_scheme_base_price').AsString;
+                    Cells[6, Nowrow] :=
+                      RemoteDB.netshop_rent_schemes.FieldByName
+                      ('rent_scheme_extra_price').AsString;
+                    Cells[7, Nowrow] :=
+                      FloatToStrF(RemoteDB.ProductsProducts_Price.AsFloat,
+                      fffixed, 7, 2);
+                    RowCount := Nowrow + 2;
                   end;
 
                   { Reinitialisation de la barre de selection }
                   RentClearEdit;
                   EditRentModel.SetFocus;
 
-                end else begin
+                end
+                else
+                begin
                   messagedlg('Quantité indisponnible', mtwarning, [mbok], 0);
                 end;
-              end else begin { quantité farfelue }
+              end
+              else
+              begin { quantité farfelue }
                 messagedlg('Quantité indisponnible', mtwarning, [mbok], 0);
               end;
             end;
@@ -13782,17 +16184,24 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               if StrtoInt(EditRentAvailable.Text) > 0 then
               begin
                 { Rechercher dans le Rent grid pour la meme occurence owner id & product model }
-                ProductPresent  := False;
-                rowpresent      := -1;
+                ProductPresent := False;
+                rowpresent := -1;
                 quantitypresent := 0;
-                for Nowrow      := 1 to TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex]).RowCount - 2 do
+                for Nowrow := 1 to TAdvStringGrid
+                  (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                  .Controls[GridIndex]).RowCount - 2 do
                 begin
-                  if (TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex]).Cells[0, Nowrow] = EditRentModel.Text) then
+                  if (TAdvStringGrid
+                    (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                    .Controls[GridIndex]).Cells[0, Nowrow] = EditRentModel.Text)
+                  then
                   begin
-                    quantitypresent := quantitypresent + StrtoInt(TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex])
-                      .Cells[2, Nowrow]);
+                    quantitypresent := quantitypresent +
+                      StrtoInt(TAdvStringGrid
+                      (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                      .Controls[GridIndex]).Cells[2, Nowrow]);
                     ProductPresent := True;
-                    rowpresent     := Nowrow;
+                    rowpresent := Nowrow;
                   end;
                 end;
 
@@ -13803,40 +16212,65 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
                   with RemoteDB.netshop_rent_transaction do
                   begin
-                    Filter := '(rent_transaction_product_model = ' + QuotedStr(RemoteDB.Products.FieldByName('products_model').AsString) +
-                      ' ) and ( rent_transaction_returned = 0 ) and ( rent_transaction_customer_nbr = ' + RemoteDB.CustomersCustomers_nbr.AsString + ' )';
+                    Filter := '(rent_transaction_product_model = ' +
+                      QuotedStr(RemoteDB.Products.FieldByName('products_model')
+                      .AsString) +
+                      ' ) and ( rent_transaction_returned = 0 ) and ( rent_transaction_customer_nbr = '
+                      + RemoteDB.CustomersCustomers_nbr.AsString + ' )';
                     Filtered := True;
                   end;
 
-                  RemoteDB.netshop_rent_schemes.Locate('Rent_scheme_id', RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_scheme_id').Value, []);
+                  RemoteDB.netshop_rent_schemes.Locate('Rent_scheme_id',
+                    RemoteDB.netshop_rent_transaction.FieldByName
+                    ('rent_transaction_scheme_id').Value, []);
 
-                  with TAdvStringGrid(TAdvTabSheet(PageControlRentCaddy.ActivePage).Controls[GridIndex]) do
+                  with TAdvStringGrid
+                    (TAdvTabSheet(PageControlRentCaddy.ActivePage)
+                    .Controls[GridIndex]) do
                   begin
-                    Nowrow           := RowCount - 1;
+                    Nowrow := RowCount - 1;
                     Cells[0, Nowrow] := RemoteDB.Productsproducts_model.Text;
-                    Cells[1, Nowrow] := RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_product_name').Value;
+                    Cells[1, Nowrow] :=
+                      RemoteDB.netshop_rent_transaction.FieldByName
+                      ('rent_transaction_product_name').Value;
                     // CDSProDescFR.FieldByName('products_name').Text;
                     Cells[2, Nowrow] := '1';
-                    Cells[3, Nowrow] := DateToStr(RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_start_date').Value);
-                    Cells[4, Nowrow] := DateToStr(RemoteDB.netshop_rent_transaction.FieldByName('rent_transaction_due_date').Value);
-                    Cells[5, Nowrow] := RemoteDB.netshop_rent_schemes.FieldByName('rent_scheme_base_price').AsString;
-                    Cells[6, Nowrow] := RemoteDB.netshop_rent_schemes.FieldByName('rent_scheme_extra_price').AsString;
-                    Cells[7, Nowrow] := FloatToStrF(RemoteDB.ProductsProducts_Price.AsFloat, fffixed, 7, 2);
-                    RowCount         := Nowrow + 2;
+                    Cells[3, Nowrow] :=
+                      DateToStr(RemoteDB.netshop_rent_transaction.FieldByName
+                      ('rent_transaction_start_date').Value);
+                    Cells[4, Nowrow] :=
+                      DateToStr(RemoteDB.netshop_rent_transaction.FieldByName
+                      ('rent_transaction_due_date').Value);
+                    Cells[5, Nowrow] :=
+                      RemoteDB.netshop_rent_schemes.FieldByName
+                      ('rent_scheme_base_price').AsString;
+                    Cells[6, Nowrow] :=
+                      RemoteDB.netshop_rent_schemes.FieldByName
+                      ('rent_scheme_extra_price').AsString;
+                    Cells[7, Nowrow] :=
+                      FloatToStrF(RemoteDB.ProductsProducts_Price.AsFloat,
+                      fffixed, 7, 2);
+                    RowCount := Nowrow + 2;
                   end;
 
                   { Reinitialisation de la barre de selection }
                   RentClearEdit;
                   EditRentModel.SetFocus;
 
-                end else begin
+                end
+                else
+                begin
                   messagedlg('Quantité indisponnible', mtwarning, [mbok], 0);
                 end;
-              end else begin { quantité farfelue }
+              end
+              else
+              begin { quantité farfelue }
                 messagedlg('Quantité indisponnible', mtwarning, [mbok], 0);
               end;
             end;
-          end else begin { Product model non localisé }
+          end
+          else
+          begin { Product model non localisé }
             messagedlg('Modèle non valide', mtwarning, [mbok], 0);
             RentClearEdit;
           end;
@@ -13852,12 +16286,13 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         ///
         if RemoteDB.Customers.FieldByName('customers_nbr').Value >= 100000 then
           try
-            ThisAddFundForm     := TAddFundForm.Create(self);
+            ThisAddFundForm := TAddFundForm.Create(Self);
             RemoteDB.IsUpdating := True;
             // Self.Enabled:=False;
-            ThisAddFundForm.cxCurrencyEditOldAmount.Value := RemoteDB.Customers.FieldByName('customers_credit').Value;
-            ThisAddFundForm.FnpAmount.Value               := 0;
-            ThisAddFundForm.Edit1.Text                    := '';
+            ThisAddFundForm.cxCurrencyEditOldAmount.Value :=
+              RemoteDB.Customers.FieldByName('customers_credit').Value;
+            ThisAddFundForm.FnpAmount.Value := 0;
+            ThisAddFundForm.Edit1.Text := '';
             if ThisAddFundForm.ShowModal = mrOK then
             begin
             end;
@@ -13866,7 +16301,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             RemoteDB.IsUpdating := False;
             ThisAddFundForm.Free;
           end
-        else begin
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
         end;
       end;
@@ -13892,7 +16328,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             UpdateStatus := RemoteDB.IsUpdating;
             if not RemoteDB.IsUpdating then
               RemoteDB.IsUpdating := True;
-            aRefundForm           := TRefundForm.Create(self);
+            aRefundForm := TRefundForm.Create(Self);
             try
               aRefundForm.ShowModal
             finally
@@ -13902,7 +16338,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             RemoteDB.IsUpdating := UpdateStatus;
             TryApplyChangesToDB();
           end
-        else begin
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
         end;
 
@@ -13912,17 +16349,34 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       begin
         RemoteDB.netshop_stock_returned.Append;
         RemoteDB.netshop_stock_returned.Append;
-        RemoteDB.netshop_stock_returned.FieldByName('product_model').AsString := RemoteDB.netshop_stock.FieldByName('product_model').AsString;
-        RemoteDB.netshop_stock_returned.FieldByName('product_name').Value := RemoteDB.netshop_stock.FieldByName('product_name').Value;
-        RemoteDB.netshop_stock_returned.FieldByName('product_owner_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger;
-        RemoteDB.netshop_stock_returned.FieldByName('product_price_stock').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat;
-        RemoteDB.netshop_stock_returned.FieldByName('product_location').AsInteger := RemoteDB.netshop_stock.FieldByName('product_location').AsInteger;
-        RemoteDB.netshop_stock_returned.FieldByName('product_quantity').AsInteger := RemoteDB.netshop_stock.FieldByName('product_quantity').AsInteger;
-        RemoteDB.netshop_stock_returned.FieldByName('product_supplier_id').AsInteger := RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger;
-        RemoteDB.netshop_stock_returned.FieldByName('product_date_in').Value := RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
-        RemoteDB.netshop_stock_returned.FieldByName('product_price_gross').AsFloat := RemoteDB.netshop_stock.FieldByName('product_price_gross').AsFloat;
-        RemoteDB.netshop_stock_returned.FieldByName('product_isdefect').Value := RemoteDB.netshop_stock.FieldByName('product_isdefect').Value;
-        RemoteDB.netshop_stock_returned.FieldByName('date_returned').Value := Now;
+        RemoteDB.netshop_stock_returned.FieldByName('product_model').AsString :=
+          RemoteDB.netshop_stock.FieldByName('product_model').AsString;
+        RemoteDB.netshop_stock_returned.FieldByName('product_name').Value :=
+          RemoteDB.netshop_stock.FieldByName('product_name').Value;
+        RemoteDB.netshop_stock_returned.FieldByName('product_owner_id')
+          .AsInteger := RemoteDB.netshop_stock.FieldByName('product_owner_id')
+          .AsInteger;
+        RemoteDB.netshop_stock_returned.FieldByName('product_price_stock')
+          .AsFloat := RemoteDB.netshop_stock.FieldByName
+          ('product_price_stock').AsFloat;
+        RemoteDB.netshop_stock_returned.FieldByName('product_location')
+          .AsInteger := RemoteDB.netshop_stock.FieldByName('product_location')
+          .AsInteger;
+        RemoteDB.netshop_stock_returned.FieldByName('product_quantity')
+          .AsInteger := RemoteDB.netshop_stock.FieldByName('product_quantity')
+          .AsInteger;
+        RemoteDB.netshop_stock_returned.FieldByName('product_supplier_id')
+          .AsInteger := RemoteDB.netshop_stock.FieldByName
+          ('product_supplier_id').AsInteger;
+        RemoteDB.netshop_stock_returned.FieldByName('product_date_in').Value :=
+          RemoteDB.netshop_stock.FieldByName('product_date_in').Value;
+        RemoteDB.netshop_stock_returned.FieldByName('product_price_gross')
+          .AsFloat := RemoteDB.netshop_stock.FieldByName
+          ('product_price_gross').AsFloat;
+        RemoteDB.netshop_stock_returned.FieldByName('product_isdefect').Value :=
+          RemoteDB.netshop_stock.FieldByName('product_isdefect').Value;
+        RemoteDB.netshop_stock_returned.FieldByName('date_returned')
+          .Value := Now;
         RemoteDB.netshop_stock_returned.Post;
         RemoteDB.netshop_stock.delete;
       end;
@@ -13941,41 +16395,53 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           try
 
             // Self.Enabled:=False;
-            if not(self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
-              if messagedlg('Imprimante à tickets non activée ! Voulez-vous continuer ?', mtwarning, [mbyes, mbno], 0) = mrno then
+            if not(Self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
+              if messagedlg
+                ('Imprimante à tickets non activée ! Voulez-vous continuer ?',
+                mtwarning, [mbyes, mbno], 0) = mrno then
                 exit;
             begin
-              if (self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
+              if (Self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
               begin
                 TicketToPrint := TTicketJob.Create(nil);
                 try
-                  TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-                  TicketToPrint.Logo     := PrintLogo;
-                  TicketToPrint.URL      := WEBURL;
-                  if ShopdataList <> nil then begin
+                  TicketToPrint.Printer :=
+                    (Self.Parameter['PrintersTicketPrinter']);
+                  TicketToPrint.Logo := PrintLogo;
+                  TicketToPrint.URL := WEBURL;
+                  if ShopdataList <> nil then
+                  begin
                     TicketToPrint.ShopData := ShopdataList;
-                  end else begin
-                    ShowMessage('Les données tickets du magasin ne sont pas correctes');
+                  end
+                  else
+                  begin
+                    ShowMessage
+                      ('Les données tickets du magasin ne sont pas correctes');
                   end;
-                  if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+                  if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
                     TicketToPrint.Model := TmContinuous;
 
                   TicketToPrint.AddBox('Articles restitués', True, bsProd);
                   with RemoteDB.netshop_stock do
 
                   begin
-                    TicketToPrint.AddLine(RemoteDB.netshop_stock.FieldByName('product_quantity').AsString,
-                      RemoteDB.netshop_stock.FieldByName('product_price_stock').AsString, RemoteDB.netshop_stock.FieldByName('product_name').AsString,
-                      'Articles restitués');
+                    TicketToPrint.AddLine
+                      (RemoteDB.netshop_stock.FieldByName('product_quantity')
+                      .AsString, RemoteDB.netshop_stock.FieldByName
+                      ('product_price_stock').AsString,
+                      RemoteDB.netshop_stock.FieldByName('product_name')
+                      .AsString, 'Articles restitués');
                   end;
 
                   if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
                   begin
-                    TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-                    TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
+                    TicketToPrint.AddCustomerLine('Client # :',
+                      RemoteDB.CustomersCustomers_nbr.Text);
+                    TicketToPrint.AddCustomerLine('Nom :',
+                      RemoteDB.CustomersCustomers_Lastname.Text);
                   end;
 
-                  if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+                  if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
                     TicketToPrint.PrintOpos
                   else
                     TicketToPrint.Print;
@@ -13991,40 +16457,58 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                 with RemoteDB.netshop_stock do
                 begin
 
-                  RemoteDB.Products.Locate('products_model', RemoteDB.netshop_stock.FieldByName('product_model').Text, []);
+                  RemoteDB.Products.Locate('products_model',
+                    RemoteDB.netshop_stock.FieldByName('product_model')
+                    .Text, []);
 
                   // Calcul fidélité dépôt négative
-                  RemoteDB.customers.Edit;
-                  RemoteDB.customers.FieldByName('customers_loyalty').AsInteger := RemoteDB.customers.FieldByName('customers_loyalty').AsInteger
-                  - ((Trunc(RemoteDB.netshop_stock.FieldByName('product_price_stock').AsFloat) Div 5)+1) * 2;
-                  RemoteDB.customers.Post;
+                  RemoteDB.Customers.Edit;
+                  RemoteDB.Customers.FieldByName('customers_loyalty').AsInteger
+                    := RemoteDB.Customers.FieldByName('customers_loyalty')
+                    .AsInteger -
+                    ((Trunc(RemoteDB.netshop_stock.FieldByName
+                    ('product_price_stock').AsFloat) Div 5) + 1) * 2;
+                  RemoteDB.Customers.Post;
 
-
-                  if (self.Parameter['MiscCDLibUse'] = 'TRUE') then
+                  if (Self.Parameter['MiscCDLibUse'] = 'TRUE') then
                   begin
                     if RemoteDB.Caroussel.Locate('model;customer_nbr;IsRoot',
-                      Vararrayof([RemoteDB.netshop_stock.FieldByName('product_model').Text, RemoteDB.netshop_stock.FieldByName('product_owner_id').Text, True]
-                      ), []) then
+                      Vararrayof([RemoteDB.netshop_stock.FieldByName
+                      ('product_model').Text,
+                      RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                      .Text, True]), []) then
                     begin
-                      if (((RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger < 100000) and
-                        (RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger >= 100000)) or
-                        (RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger >= 100000)) then
+                      if (((RemoteDB.netshop_stock.FieldByName
+                        ('product_owner_id').AsInteger < 100000) and
+                        (RemoteDB.netshop_stock.FieldByName
+                        ('product_supplier_id').AsInteger >= 100000)) or
+                        (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                        .AsInteger >= 100000)) then
                       begin
-                        ExitLib := TFormExitLibrary.Create(self);
-                        if ExitLib.Enter(RemoteDB.netshop_stock.FieldByName('product_owner_id').Text, RemoteDB.netshop_stock.FieldByName('product_model').Text)
-                          = mrOK then
+                        ExitLib := TFormExitLibrary.Create(Self);
+                        if ExitLib.Enter
+                          (RemoteDB.netshop_stock.FieldByName
+                          ('product_owner_id').Text,
+                          RemoteDB.netshop_stock.FieldByName('product_model')
+                          .Text) = mrOK then
                         begin
                           ReturnStock;
                         end;
                         ExitLib.Free;
                       end;
-                    end else begin
+                    end
+                    else
+                    begin
                       ReturnStock;
                     end;
                   end;
 
-                  if ((self.Parameter['MiscCDLibUse'] = 'FALSE') and (((RemoteDB.netshop_stock.FieldByName('product_owner_id').AsInteger < 100000) and
-                    (RemoteDB.netshop_stock.FieldByName('product_supplier_id').AsInteger >= 100000)) or (RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                  if ((Self.Parameter['MiscCDLibUse'] = 'FALSE') and
+                    (((RemoteDB.netshop_stock.FieldByName('product_owner_id')
+                    .AsInteger < 100000) and
+                    (RemoteDB.netshop_stock.FieldByName('product_supplier_id')
+                    .AsInteger >= 100000)) or
+                    (RemoteDB.netshop_stock.FieldByName('product_owner_id')
                     .AsInteger >= 100000))) then
                   begin
                     ReturnStock;
@@ -14037,16 +16521,17 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
 
           finally
             // Self.Enabled:=True;
-              TryApplyChangesToDB();
+            TryApplyChangesToDB();
           end
-        else begin
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
         end;
       end;
 
       procedure TMainForm.BitBtnCustomerDepositStatusClick(Sender: TObject);
       var
-        Total: Real;
+        total: Real;
         TicketToPrint: TTicketJob;
         Data: WideString;
         Num, LineSpacing: Integer;
@@ -14057,22 +16542,29 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         if RemoteDB.Customers.FieldByName('customers_nbr').Value >= 100000 then
           try
             // Self.Enabled:=False;
-            Total := 0;
-            if not(self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
-              if messagedlg('Imprimante à tickets non activée ! Voulez-vous continuer ?', mtwarning, [mbyes, mbno], 0) = mrno then
+            total := 0;
+            if not(Self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
+              if messagedlg
+                ('Imprimante à tickets non activée ! Voulez-vous continuer ?',
+                mtwarning, [mbyes, mbno], 0) = mrno then
                 exit;
             begin
               TicketToPrint := TTicketJob.Create(nil);
               try
-                TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-                TicketToPrint.Logo     := PrintLogo;
-                TicketToPrint.URL      := WEBURL;
-                if ShopdataList <> nil then begin
+                TicketToPrint.Printer :=
+                  (Self.Parameter['PrintersTicketPrinter']);
+                TicketToPrint.Logo := PrintLogo;
+                TicketToPrint.URL := WEBURL;
+                if ShopdataList <> nil then
+                begin
                   TicketToPrint.ShopData := ShopdataList;
-                end else begin
-                  ShowMessage('Les données tickets du magasin ne sont pas correctes');
+                end
+                else
+                begin
+                  ShowMessage
+                    ('Les données tickets du magasin ne sont pas correctes');
                 end;
-                if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+                if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
                   TicketToPrint.Model := TmContinuous;
 
                 RemoteDB.netshop_stock.First;
@@ -14081,9 +16573,12 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                   TicketToPrint.AddBox('Articles non vendus', True, bsProd);
                   while not RemoteDB.netshop_stock.Eof do
                   begin
-                    TicketToPrint.AddLine(RemoteDB.netshop_stock.FieldByName('product_quantity').AsString,
-                      RemoteDB.netshop_stock.FieldByName('product_price_stock').AsString, RemoteDB.netshop_stock.FieldByName('product_name').AsString,
-                      'Articles non vendus');
+                    TicketToPrint.AddLine
+                      (RemoteDB.netshop_stock.FieldByName('product_quantity')
+                      .AsString, RemoteDB.netshop_stock.FieldByName
+                      ('product_price_stock').AsString,
+                      RemoteDB.netshop_stock.FieldByName('product_name')
+                      .AsString, 'Articles non vendus');
                     RemoteDB.netshop_stock.Next;
                   end;
                 end;
@@ -14092,27 +16587,38 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                 RemoteDB.netshop_items_sold.First;
                 if not RemoteDB.netshop_items_sold.Eof then
                 begin
-                  TicketToPrint.AddBox('Articles vendus en attente', True, bsProd);
+                  TicketToPrint.AddBox('Articles vendus en attente',
+                    True, bsProd);
                   while not RemoteDB.netshop_items_sold.Eof do
                   begin
-                    TicketToPrint.AddLine(RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsString,
-                      RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsString, RemoteDB.netshop_items_sold.FieldByName('items_sold_name')
+                    TicketToPrint.AddLine
+                      (RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_quantity').AsString,
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_price_stock').AsString,
+                      RemoteDB.netshop_items_sold.FieldByName('items_sold_name')
                       .AsString, 'Articles vendus en attente');
-                    Total := Total + RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').Value *
-                      RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat;
+                    total := total + RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_quantity').Value *
+                      RemoteDB.netshop_items_sold.FieldByName
+                      ('items_sold_price_stock').AsFloat;
                     RemoteDB.netshop_items_sold.Next;
                   end;
                 end;
 
                 if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
                 begin
-                  TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-                  TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
-                  TicketToPrint.AddCustomerLine('Crédit :', RemoteDB.CustomersCustomers_credit.Text);
-                  TicketToPrint.AddCustomerLine('Points :', RemoteDB.Customers.FieldByName('customers_loyalty').Text);
+                  TicketToPrint.AddCustomerLine('Client # :',
+                    RemoteDB.CustomersCustomers_nbr.Text);
+                  TicketToPrint.AddCustomerLine('Nom :',
+                    RemoteDB.CustomersCustomers_Lastname.Text);
+                  TicketToPrint.AddCustomerLine('Crédit :',
+                    RemoteDB.CustomersCustomers_credit.Text);
+                  TicketToPrint.AddCustomerLine('Points :',
+                    RemoteDB.Customers.FieldByName('customers_loyalty').Text);
                 end;
 
-                if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+                if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
                   TicketToPrint.PrintOpos
                 else
                   TicketToPrint.Print;
@@ -14123,7 +16629,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           finally
             // Self.Enabled:=True;
           end
-        else begin
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
         end;
 
@@ -14143,12 +16650,18 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               RemoteDB.netshop_items_sold.First;
               while not RemoteDB.netshop_items_sold.Eof do
               begin
-                if RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').Value = RemoteDB.Customers.FieldByName('customers_nbr').Value then
+                if RemoteDB.netshop_items_sold.FieldByName
+                  ('items_sold_owner_id').Value = RemoteDB.Customers.FieldByName
+                  ('customers_nbr').Value then
                 begin
                   RemoteDB.Customers.Edit;
-                  RemoteDB.CustomersCustomers_credit.AsFloat := RemoteDB.CustomersCustomers_credit.AsFloat +
-                    (RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsFloat * RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity')
-                    .AsInteger * (MarginDepositVoucher / 100));
+                  RemoteDB.CustomersCustomers_credit.AsFloat :=
+                    RemoteDB.CustomersCustomers_credit.AsFloat +
+                    (RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_price_stock').AsFloat *
+                    RemoteDB.netshop_items_sold.FieldByName
+                    ('items_sold_quantity').AsInteger *
+                    (MarginDepositVoucher / 100));
                   RemoteDB.Customers.Post;
                 end;
                 RemoteDB.netshop_items_sold.Next;
@@ -14157,10 +16670,13 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
               RemoteDB.netshop_items_sold.First;
               while not RemoteDB.netshop_items_sold.Eof do
               begin
-                if RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsInteger = RemoteDB.Customers.FieldByName('customers_nbr').AsInteger then
+                if RemoteDB.netshop_items_sold.FieldByName
+                  ('items_sold_owner_id').AsInteger = RemoteDB.Customers.
+                  FieldByName('customers_nbr').AsInteger then
                 begin
                   RemoteDB.netshop_items_sold.Edit;
-                  RemoteDB.netshop_items_sold.FieldByName('items_refunded').Value := 1;
+                  RemoteDB.netshop_items_sold.FieldByName('items_refunded')
+                    .Value := 1;
                   RemoteDB.netshop_items_sold.Post;
                 end;
                 // RemoteDB.Items_Sold.Next; NE PAS COMMENTER SINON SORTIE DU FILTRE ET ELEMENTS SAUTES
@@ -14170,7 +16686,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             // Self.Enabled:=True;
             TryApplyChangesToDB();
           end
-        else begin
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
         end;
       end;
@@ -14180,24 +16697,29 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         Body: TStringList;
         aSendEmail: TSmartSendEmail;
       begin
-        aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text, RemoteDB.Customerscustomers_email_address.AsString, MessageSubject.Text, '',
-          MessageBody.Lines);
+        aSendEmail := TSmartSendEmail.Create(ShopData1.Text, ShopData5.Text,
+          RemoteDB.Customerscustomers_email_address.AsString,
+          MessageSubject.Text, '', MessageBody.Lines);
       end;
 
       procedure TMainForm.BitBtnCustomerInvoiceCloseClick(Sender: TObject);
       begin
-        if RemoteDB.netshop_invoices.FieldByName('invoices_closed').Value = 1 then
+        if RemoteDB.netshop_invoices.FieldByName('invoices_closed').Value = 1
+        then
         begin
           messagedlg('Facture déjà cloturée', mtwarning, [mbok], 0);
           exit;
         end;
-        if messagedlg('Confirmez la cloture de la facture, toute modification ultérieure est impossible', mtwarning, [mbok, mbCancel], 0) = mrOK then
+        if messagedlg
+          ('Confirmez la cloture de la facture, toute modification ultérieure est impossible',
+          mtwarning, [mbok, mbCancel], 0) = mrOK then
         begin
           RemoteDB.netshop_invoices.Edit;
           RemoteDB.netshop_invoices.FieldByName('invoices_closed').Value := 1;
-          RemoteDB.netshop_invoices.FieldByName('invoices_date_time').Value := Now;
+          RemoteDB.netshop_invoices.FieldByName('invoices_date_time')
+            .Value := Now;
           RemoteDB.netshop_invoices.Post;
-            TryApplyChangesToDB();
+          TryApplyChangesToDB();
         end;
       end;
 
@@ -14207,16 +16729,21 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         i: Integer;
       begin
         ChDir(ExtractFilePath(ParamStr(0)));
-        Pindex := Printer.Printers.IndexOf((self.Parameter['PrintersRapportPrinter']));
+        Pindex := Printer.Printers.IndexOf
+          ((Self.Parameter['PrintersRapportPrinter']));
         RemoteDB.Shops.FindKey([ConnectedShop]);
         ReportModule.RvProject.Open;
         ReportModule.RvProject.SelectReport('ReportInvoice', True);
-        ReportModule.RvProject.SetParam('TVA6', FloatToStr(RemoteDB.CalcInvoiceTVA(6)));
-        ReportModule.RvProject.SetParam('TVA21', FloatToStr(RemoteDB.CalcInvoiceTVA(21)));
-        ReportModule.RvProject.SetParam('BASE6', FloatToStr(RemoteDB.CalcInvoiceTVABASE(6)));
-        ReportModule.RvProject.SetParam('BASE21', FloatToStr(RemoteDB.CalcInvoiceTVABASE(21)));
+        ReportModule.RvProject.SetParam('TVA6',
+          FloatToStr(RemoteDB.CalcInvoiceTVA(6)));
+        ReportModule.RvProject.SetParam('TVA21',
+          FloatToStr(RemoteDB.CalcInvoiceTVA(21)));
+        ReportModule.RvProject.SetParam('BASE6',
+          FloatToStr(RemoteDB.CalcInvoiceTVABASE(6)));
+        ReportModule.RvProject.SetParam('BASE21',
+          FloatToStr(RemoteDB.CalcInvoiceTVABASE(21)));
         Randomize;
-        i := trunc(Random(RemoteDB.Tips.RecordCount));
+        i := Trunc(Random(RemoteDB.Tips.RecordCount));
         RemoteDB.Tips.First;
         if not RemoteDB.Tips.Eof then
         begin
@@ -14225,24 +16752,32 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
             RemoteDB.Tips.Next;
             i := i - 1;
           end;
-          ReportModule.RvProject.SetParam('Conditions', RemoteDB.TipsTipsText.AsString);
+          ReportModule.RvProject.SetParam('Conditions',
+            RemoteDB.TipsTipsText.AsString);
         end
         else
           ReportModule.RvProject.SetParam('Conditions', '');
 
-        if RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton').AsFloat > 0 then
+        if RemoteDB.netshop_invoices.FieldByName('invoices_paid_proton')
+          .AsFloat > 0 then
         begin
-          ReportModule.RvProject.SetParam('URL', 'COMMUNICATION : SMARTFACT*' + RemoteDB.netshop_invoices.FieldByName('invoices_customer_id').AsString + '*' +
-            RemoteDB.netshop_invoices.FieldByName('invoices_location').AsString + '-' + RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
-        end else begin
+          ReportModule.RvProject.SetParam('URL', 'COMMUNICATION : SMARTFACT*' +
+            RemoteDB.netshop_invoices.FieldByName('invoices_customer_id')
+            .AsString + '*' + RemoteDB.netshop_invoices.FieldByName
+            ('invoices_location').AsString + '-' +
+            RemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
+        end
+        else
+        begin
           ReportModule.RvProject.SetParam('URL', WEBURL);
         end;
 
         ReportModule.RvSystem.DefaultDest := rdPrinter;
         // ReportModule.RvSystem.DoNativeOutput := true;
-        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups + [ssAllowSetup];
+        ReportModule.RvSystem.SystemSetups := ReportModule.RvSystem.SystemSetups
+          + [ssAllowSetup];
         // ReportModule.RvSystem.Execute;
-        ReportModule.RvNDRWriter.PrinterIndex         := Pindex;
+        ReportModule.RvNDRWriter.PrinterIndex := Pindex;
         ReportModule.RvSystem.SystemPreview.FormState := wsMaximized;
         ReportModule.RvProject.Execute;
         ReportModule.RvProject.Close;
@@ -14341,52 +16876,73 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         aRepairNewForm: TRepairNewForm;
       begin
         try
-          if RemoteDB.Customers.FieldByName('customers_nbr').Value >= 100000 then
+          if RemoteDB.Customers.FieldByName('customers_nbr').Value >= 100000
+          then
           begin
             RemoteDB.IsUpdating := True;
             RemoteDB.netshop_repair.Append;
-            aRepairNewForm := TRepairNewForm.Create(self);
+            aRepairNewForm := TRepairNewForm.Create(Self);
             try
               if aRepairNewForm.ShowModal = mrOK then
               begin
                 RemoteDB.netshop_repair.Post;
                 try
                   ActionCustomerRepairAll.Execute;
-                  if not(self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
-                    if messagedlg('Imprimante à tickets non activée ! Voulez-vous continuer ?', mtwarning, [mbyes, mbno], 0) = mrno then
+                  if not(Self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
+                    if messagedlg
+                      ('Imprimante à tickets non activée ! Voulez-vous continuer ?',
+                      mtwarning, [mbyes, mbno], 0) = mrno then
                       exit;
                   begin
                     TicketToPrint := TTicketJob.Create(nil);
                     try
-                      TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-                      TicketToPrint.Logo     := PrintLogo;
-                      TicketToPrint.URL      := WEBURL;
-                      if ShopdataList <> nil then begin
+                      TicketToPrint.Printer :=
+                        (Self.Parameter['PrintersTicketPrinter']);
+                      TicketToPrint.Logo := PrintLogo;
+                      TicketToPrint.URL := WEBURL;
+                      if ShopdataList <> nil then
+                      begin
                         TicketToPrint.ShopData := ShopdataList;
-                      end else begin
-                        ShowMessage('Les données tickets du magasin ne sont pas correctes');
+                      end
+                      else
+                      begin
+                        ShowMessage
+                          ('Les données tickets du magasin ne sont pas correctes');
                       end;
-                      if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+                      if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE')
+                      then
                         TicketToPrint.Model := TmContinuous;
                       TicketToPrint.AddBox('Bon réparation', True, bsProd);
-                      TicketToPrint.AddLine('1', '0', RemoteDB.netshop_repair.FieldByName('repair_products_name').Value, 'Bon réparation');
+                      TicketToPrint.AddLine('1', '0',
+                        RemoteDB.netshop_repair.FieldByName
+                        ('repair_products_name').Value, 'Bon réparation');
 
                       if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
                       begin
-                        TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-                        TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
+                        TicketToPrint.AddCustomerLine('Client # :',
+                          RemoteDB.CustomersCustomers_nbr.Text);
+                        TicketToPrint.AddCustomerLine('Nom :',
+                          RemoteDB.CustomersCustomers_Lastname.Text);
                         if RemoteDB.Customerscustomers_telephone.Text <> '' then
-                          TicketToPrint.AddCustomerLine('Tel :', RemoteDB.Customerscustomers_telephone.Text);
+                          TicketToPrint.AddCustomerLine('Tel :',
+                            RemoteDB.Customerscustomers_telephone.Text);
                         if RemoteDB.Customerscustomers_fax.Text <> '' then
-                          TicketToPrint.AddCustomerLine('GSM :', RemoteDB.Customerscustomers_fax.Text);
-                        TicketToPrint.AddCustomerLine('N° de série :', RemoteDB.netshop_repair.FieldByName('repair_products_serial').Value);
-                        TicketToPrint.AddCustomerLine('Panne :', RemoteDB.netshop_repair.FieldByName('repair_products_problem').Value);
-                        TicketToPrint.Comment := 'Attention !' + chr(10) + chr(13) + '';
-                        TicketToPrint.Comment := TicketToPrint.Comment + DepositWarning;
+                          TicketToPrint.AddCustomerLine('GSM :',
+                            RemoteDB.Customerscustomers_fax.Text);
+                        TicketToPrint.AddCustomerLine('N° de série :',
+                          RemoteDB.netshop_repair.FieldByName
+                          ('repair_products_serial').Value);
+                        TicketToPrint.AddCustomerLine('Panne :',
+                          RemoteDB.netshop_repair.FieldByName
+                          ('repair_products_problem').Value);
+                        TicketToPrint.Comment := 'Attention !' + chr(10) +
+                          chr(13) + '';
+                        TicketToPrint.Comment := TicketToPrint.Comment +
+                          DepositWarning;
 
                       end;
 
-                      if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+                      if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
                         TicketToPrint.PrintOpos
                       else
                         TicketToPrint.Print;
@@ -14396,14 +16952,18 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                   end; // Fin ticket
                 finally
                 end;
-              end else begin
+              end
+              else
+              begin
                 RemoteDB.netshop_repair.Cancel;
               end;
             finally
               aRepairNewForm.Free;
               TryApplyChangesToDB();
             end;
-          end else begin
+          end
+          else
+          begin
             messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
           end;
         finally
@@ -14418,13 +16978,16 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         RemoteDB.IsUpdating := True;
         try
           ActionCustomerRepairAll.Execute;
-          if not(RemoteDB.netshop_repair.Eof and RemoteDB.netshop_repair.Bof) then
+          if not(RemoteDB.netshop_repair.Eof and RemoteDB.netshop_repair.Bof)
+          then
           begin
-            if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000 then
+            if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000
+            then
             begin
-              aRepairFixForm := TRepairFixForm.Create(self);
+              aRepairFixForm := TRepairFixForm.Create(Self);
               try
-                if RemoteDB.netshop_repair.FieldByName('Repair_Fixed').Value = 'false' then
+                if RemoteDB.netshop_repair.FieldByName('Repair_Fixed').Value = 'false'
+                then
                 begin
                   RemoteDB.netshop_repair.Edit;
 
@@ -14434,12 +16997,17 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     /// Inscription réparation dans la DB
                     ///
 
-                    RemoteDB.netshop_repair.FieldByName('repair_fixed').Value := 'true';
-                    RemoteDB.netshop_repair.FieldByName('repair_date_fixed').Value := Now;
+                    RemoteDB.netshop_repair.FieldByName('repair_fixed').Value
+                      := 'true';
+                    RemoteDB.netshop_repair.FieldByName('repair_date_fixed')
+                      .Value := Now;
                   end;
                   RemoteDB.netshop_repair.Post;
-                end else begin
-                  if messagedlg('Article déjà réparé voulez-vous continuer', mtwarning, [mbyes, mbno], 0) = mryes then
+                end
+                else
+                begin
+                  if messagedlg('Article déjà réparé voulez-vous continuer',
+                    mtwarning, [mbyes, mbno], 0) = mryes then
                   begin
                     RemoteDB.netshop_repair.Edit;
                     if RepairFixForm.ShowModal = mrOK then
@@ -14447,20 +17015,26 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       ///
                       /// Inscription modification réparation dans la DB
                       ///
-                      RemoteDB.netshop_repair.FieldByName('repair_fixed').Value := 'true';
-                      RemoteDB.netshop_repair.FieldByName('repair_date_fixed').Value := Now;
+                      RemoteDB.netshop_repair.FieldByName('repair_fixed').Value
+                        := 'true';
+                      RemoteDB.netshop_repair.FieldByName('repair_date_fixed')
+                        .Value := Now;
                     end;
                     RemoteDB.netshop_repair.Post;
                   end;
                 end;
               finally
                 aRepairFixForm.Free;
-                  TryApplyChangesToDB();
+                TryApplyChangesToDB();
               end;
-            end else begin
+            end
+            else
+            begin
               messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
             end;
-          end else begin
+          end
+          else
+          begin
             messagedlg('Aucun article en réparation', mtwarning, [mbok], 0);
           end;
         finally
@@ -14475,13 +17049,16 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
       begin
         try
           RemoteDB.IsUpdating := True;
-          if not(RemoteDB.netshop_repair.Eof and RemoteDB.netshop_repair.Bof) then
+          if not(RemoteDB.netshop_repair.Eof and RemoteDB.netshop_repair.Bof)
+          then
           begin
-            if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000 then
+            if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000
+            then
             begin
               aRepairReturnForm := TRepairReturnForm.Create(nil);
               try
-                if RemoteDB.netshop_repair.FieldByName('Repair_Fixed').Value = 'true' then
+                if RemoteDB.netshop_repair.FieldByName('Repair_Fixed').Value = 'true'
+                then
                 begin
                   if aRepairReturnForm.ShowModal = mrOK then
                   begin
@@ -14489,14 +17066,19 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     /// Restitution Article réparé
                     ///
                     // Find Customer Caddy
-                    page  := -1;
-                    for i := 0 to self.PageControlSalesCaddy.PageCount - 1 do
+                    page := -1;
+                    for i := 0 to Self.PageControlSalesCaddy.PageCount - 1 do
                     begin
-                      for j := 0 to TAdvTabSheet(self.PageControlSalesCaddy.Pages[i]).ControlCount - 1 do
+                      for j := 0 to TAdvTabSheet
+                        (Self.PageControlSalesCaddy.Pages[i])
+                        .ControlCount - 1 do
                       begin
-                        if self.PageControlSalesCaddy.Pages[i].Controls[j].Tag = 100 then
+                        if Self.PageControlSalesCaddy.Pages[i].Controls[j].Tag = 100
+                        then
                         begin
-                          if TEdit(self.PageControlSalesCaddy.Pages[i].Controls[j]).Text = RemoteDB.CustomersCustomers_nbr.AsString then
+                          if TEdit(Self.PageControlSalesCaddy.Pages[i].Controls
+                            [j]).Text = RemoteDB.CustomersCustomers_nbr.AsString
+                          then
                           begin
                             page := i;
                           end;
@@ -14507,38 +17089,53 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                     // Create New caddy if not found
                     if page = -1 then
                     begin
-                      SBNewSalesCaddyClick(self);
-                      page := self.PageControlSalesCaddy.ActivePageIndex;
+                      SBNewSalesCaddyClick(Self);
+                      page := Self.PageControlSalesCaddy.ActivePageIndex;
                     end;
 
-                    for i := 0 to TAdvTabSheet(self.PageControlSalesCaddy.Pages[page]).ControlCount - 1 do
+                    for i := 0 to TAdvTabSheet(Self.PageControlSalesCaddy.Pages
+                      [page]).ControlCount - 1 do
                     begin
-                      if TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page]).Controls[i].ClassType = TAdvStringGrid then
+                      if TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page]
+                        ).Controls[i].ClassType = TAdvStringGrid then
                       begin
                         index := i;
                       end;
                     end;
-                    with TAdvStringGrid(TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page]).Controls[index]) do
+                    with TAdvStringGrid
+                      (TAdvTabSheet(MainForm.PageControlSalesCaddy.Pages[page])
+                      .Controls[index]) do
                     begin
-                      Nowrow           := RowCount - 1;
+                      Nowrow := RowCount - 1;
                       Cells[0, Nowrow] := 'REPA';
-                      Cells[1, Nowrow] := 'Réparation : ' + RemoteDB.netshop_repair.FieldByName('repair_products_problem').AsString;
+                      Cells[1, Nowrow] := 'Réparation : ' +
+                        RemoteDB.netshop_repair.FieldByName
+                        ('repair_products_problem').AsString;
                       Cells[2, Nowrow] := '1';
-                      Cells[3, Nowrow] := RemoteDB.netshop_repair.FieldByName('repair_price').AsString;
-                      Cells[4, Nowrow] := RemoteDB.netshop_repair.FieldByName('repair_price').AsString;
+                      Cells[3, Nowrow] := RemoteDB.netshop_repair.FieldByName
+                        ('repair_price').AsString;
+                      Cells[4, Nowrow] := RemoteDB.netshop_repair.FieldByName
+                        ('repair_price').AsString;
                       Cells[5, Nowrow] := '0';
-                      Cells[6, Nowrow] := VCLToOSCDate(RemoteDB.netshop_repair.FieldByName('repair_date_in_display').AsDateTime);
+                      Cells[6, Nowrow] :=
+                        VCLToOSCDate(RemoteDB.netshop_repair.FieldByName
+                        ('repair_date_in_display').AsDateTime);
                       Cells[7, Nowrow] := inttostr(ConnectedShop);
                       Cells[8, Nowrow] := '0';
-                      RowCount         := Nowrow + 2;
+                      RowCount := Nowrow + 2;
                     end;
                     RemoteDB.netshop_repair.Edit;
-                    RemoteDB.netshop_repair.FieldByName('repair_returned').Value := 'true';
-                    RemoteDB.netshop_repair.FieldByName('repair_date_out').Value := Now;
+                    RemoteDB.netshop_repair.FieldByName('repair_returned').Value
+                      := 'true';
+                    RemoteDB.netshop_repair.FieldByName('repair_date_out')
+                      .Value := Now;
                     RemoteDB.netshop_repair.Post;
                   end;
-                end else begin
-                  if messagedlg('Article non réparé voulez-vous continuer', mtwarning, [mbyes, mbno], 0) = mryes then
+                end
+                else
+                begin
+                  if messagedlg('Article non réparé voulez-vous continuer',
+                    mtwarning, [mbyes, mbno], 0) = mryes then
                   begin
                     if aRepairReturnForm.ShowModal = mrOK then
                     begin
@@ -14546,20 +17143,26 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                       /// Restitution Article non réparé
                       ///
                       RemoteDB.netshop_repair.Edit;
-                      RemoteDB.netshop_repair.FieldByName('repair_returned').Value := 'true';
-                      RemoteDB.netshop_repair.FieldByName('repair_date_out').Value := Now;
+                      RemoteDB.netshop_repair.FieldByName('repair_returned')
+                        .Value := 'true';
+                      RemoteDB.netshop_repair.FieldByName('repair_date_out')
+                        .Value := Now;
                       RemoteDB.netshop_repair.Post;
                     end;
                   end;
                 end;
               finally
                 aRepairReturnForm.Free;
-                  TryApplyChangesToDB();
+                TryApplyChangesToDB();
               end;
-            end else begin
+            end
+            else
+            begin
               messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
             end;
-          end else begin
+          end
+          else
+          begin
             messagedlg('Aucun article à restituer', mtwarning, [mbok], 0);
           end;
         finally
@@ -14573,49 +17176,70 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         Data: WideString;
         Num, LineSpacing, i: Integer;
       begin
-        if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000 then
+        if RemoteDB.Customers.FieldByName('customers_nbr').AsInteger >= 100000
+        then
         begin
           try
             // Self.Enabled:=False;
-            if not(self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
-              if messagedlg('Imprimante à tickets non activée ! Voulez-vous continuer ?', mtwarning, [mbyes, mbno], 0) = mrno then
+            if not(Self.Parameter['PrintersTicketEnabled'] = 'TRUE') then
+              if messagedlg
+                ('Imprimante à tickets non activée ! Voulez-vous continuer ?',
+                mtwarning, [mbyes, mbno], 0) = mrno then
                 exit;
             begin // Non Opos Procedure
               TicketToPrint := TTicketJob.Create(nil);
               try
-                TicketToPrint.Printer  := (self.Parameter['PrintersTicketPrinter']);
-                TicketToPrint.Logo     := PrintLogo;
-                TicketToPrint.URL      := WEBURL;
-                if ShopdataList <> nil then begin
-                    TicketToPrint.ShopData := ShopdataList;
-                end else begin
-                  ShowMessage('Les données tickets du magasin ne sont pas correctes');
+                TicketToPrint.Printer :=
+                  (Self.Parameter['PrintersTicketPrinter']);
+                TicketToPrint.Logo := PrintLogo;
+                TicketToPrint.URL := WEBURL;
+                if ShopdataList <> nil then
+                begin
+                  TicketToPrint.ShopData := ShopdataList;
+                end
+                else
+                begin
+                  ShowMessage
+                    ('Les données tickets du magasin ne sont pas correctes');
                 end;
-                if (self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
+                if (Self.Parameter['PrintersTicketContinuous'] = 'TRUE') then
                   TicketToPrint.Model := TmContinuous;
                 TicketToPrint.AddBox('Bon réparation', True, bsProd);
                 RemoteDB.netshop_repair.First;
                 while not RemoteDB.netshop_repair.Eof do
                 begin
-                  TicketToPrint.AddLine('1', '0', RemoteDB.netshop_repair.FieldByName('repair_products_name').Value, 'Bon réparation');
+                  TicketToPrint.AddLine('1', '0',
+                    RemoteDB.netshop_repair.FieldByName('repair_products_name')
+                    .Value, 'Bon réparation');
                   RemoteDB.netshop_repair.Next;
                 end;
                 if RemoteDB.CustomersCustomers_nbr.Value >= 100000 then
                 begin
-                  TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-                  TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_Lastname.Text);
+                  TicketToPrint.AddCustomerLine('Client # :',
+                    RemoteDB.CustomersCustomers_nbr.Text);
+                  TicketToPrint.AddCustomerLine('Nom :',
+                    RemoteDB.CustomersCustomers_Lastname.Text);
                   if RemoteDB.Customerscustomers_telephone.Text <> '' then
-                    TicketToPrint.AddCustomerLine('Tel :', RemoteDB.Customerscustomers_telephone.Text);
+                    TicketToPrint.AddCustomerLine('Tel :',
+                      RemoteDB.Customerscustomers_telephone.Text);
                   if RemoteDB.Customerscustomers_fax.Text <> '' then
-                    TicketToPrint.AddCustomerLine('GSM :', RemoteDB.Customerscustomers_fax.Text);
-                  TicketToPrint.AddCustomerLine('N° de série :', RemoteDB.netshop_repair.FieldByName('repair_products_serial').Value);
-                  TicketToPrint.AddCustomerLine('Panne :', RemoteDB.netshop_repair.FieldByName('repair_products_problem').Value);
-                  TicketToPrint.AddCustomerLine('Prix :', RemoteDB.netshop_repair.FieldByName('repair_price').Value);
-                  TicketToPrint.Comment := 'Attention !' + chr(10) + chr(13) + '';
-                  TicketToPrint.Comment := TicketToPrint.Comment +  DepositWarning;
+                    TicketToPrint.AddCustomerLine('GSM :',
+                      RemoteDB.Customerscustomers_fax.Text);
+                  TicketToPrint.AddCustomerLine('N° de série :',
+                    RemoteDB.netshop_repair.FieldByName
+                    ('repair_products_serial').Value);
+                  TicketToPrint.AddCustomerLine('Panne :',
+                    RemoteDB.netshop_repair.FieldByName
+                    ('repair_products_problem').Value);
+                  TicketToPrint.AddCustomerLine('Prix :',
+                    RemoteDB.netshop_repair.FieldByName('repair_price').Value);
+                  TicketToPrint.Comment := 'Attention !' + chr(10) +
+                    chr(13) + '';
+                  TicketToPrint.Comment := TicketToPrint.Comment +
+                    DepositWarning;
                 end;
 
-                if self.Parameter['PrintersTicketOpos'] = 'TRUE' then
+                if Self.Parameter['PrintersTicketOpos'] = 'TRUE' then
                   TicketToPrint.PrintOpos
                 else
                   TicketToPrint.Print;
@@ -14626,7 +17250,9 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           finally
             Enabled := True;
           end;
-        end else begin
+        end
+        else
+        begin
           messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
         end;
       end;
@@ -14641,72 +17267,90 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
           exit;
         end;
 
-        Text := Trim(StringReplace(MessageBody.Text, #13#10, ' ', [rfReplaceAll, rfIgnoreCase]));
+        Text := Trim(StringReplace(MessageBody.Text, #13#10, ' ',
+          [rfReplaceAll, rfIgnoreCase]));
 
         if (Length(Text) > 3) then
         begin
           RemoteDB.netshop_customers_alerts.Append;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_model').AsString := 'MICRO';
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_products_name').AsString := 'SMS Message';
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString := RemoteDB.Customers.FieldByName('customers_nbr').AsString;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 1;
-          RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_message').AsString := Text;
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_products_model').AsString := 'MICRO';
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_products_name').AsString := 'SMS Message';
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_customers_nbr').AsString :=
+            RemoteDB.Customers.FieldByName('customers_nbr').AsString;
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_status').Value := 1;
+          RemoteDB.netshop_customers_alerts.FieldByName
+            ('customers_alerts_message').AsString := Text;
           RemoteDB.netshop_customers_alerts.Post;
-        end else begin
+        end
+        else
+        begin
           ShowMessage('Contenu du message trop court, min 4 caractères');
         end;
       end;
 
-      procedure TMainForm.PrintPriceTag(quantity, description, price, owner, supplier: string);
+      procedure TMainForm.PrintPriceTag(quantity, description, price, owner,
+        supplier: string);
       var
         Labelstoprint: Tlabeljob;
         i: Integer;
       begin
-        if (self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
+        if (Self.Parameter['PrintersLabelEnabled'] = 'TRUE') then
         begin
           Labelstoprint := Tlabeljob.Create;
           try
-            Labelstoprint.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-            if (StrtoInt(owner) < 100000) and (StrtoInt(supplier) < 100000) then begin
+            Labelstoprint.LabelPrinter :=
+              (Self.Parameter['PrintersLabelPrinter']);
+            if (StrtoInt(owner) < 100000) and (StrtoInt(supplier) < 100000) then
+            begin
               Labelstoprint.Style := lsNew;
-              Labelstoprint.Logo    := PrintLogo;
+              Labelstoprint.Logo := PrintLogo;
             end;
 
-            if (StrtoInt(owner) < 100000) and (StrtoInt(supplier) >= 100000) then
+            if (StrtoInt(owner) < 100000) and (StrtoInt(supplier) >= 100000)
+            then
             begin
               Labelstoprint.Style := lsSH;
               Labelstoprint.owner := ConnectedShop;
-              Labelstoprint.Logo    := SHLogo;
+              Labelstoprint.Logo := SHLogo;
             end;
             // Deposit
             if (StrtoInt(owner) >= 100000) then
             begin
-              Labelstoprint.Style := lsDP;
+              Labelstoprint.Style := lsDp;
               Labelstoprint.owner := StrtoInt(owner);
             end;
             Labelstoprint.URL := WEBURL;
-            if (self.Parameter['PrintersLabelContinuous'] = 'TRUE') then
+            if (Self.Parameter['PrintersLabelContinuous'] = 'TRUE') then
               Labelstoprint.Model := LmContinuous;
 
-            if (self.Parameter['PrintersLabelMulti'] = 'TRUE') then
+            if (Self.Parameter['PrintersLabelMulti'] = 'TRUE') then
             begin
               for i := 1 to StrtoInt(quantity) do
               begin { plusieurs exemplaires }
                 Labelstoprint.Addlabel(StrToFloat(price), description);
               end;
-            end else begin
+            end
+            else
+            begin
               Labelstoprint.Addlabel(StrToFloat(price), description);
             end;
-            Labelstoprint.Print(StrToBool(self.Parameter['PrintersLabelDialog']));
+            Labelstoprint.Print
+              (StrToBool(Self.Parameter['PrintersLabelDialog']));
           finally
             Labelstoprint.Free;
           end;
         end
         else
-          messagedlg('Imprimante à étiquettes non activée', mtwarning, [mbok], 0);
+          messagedlg('Imprimante à étiquettes non activée', mtwarning,
+            [mbok], 0);
       end;
 
-      procedure TMainForm.ProcessAlert(product_model, product_price_stock, product_owner_id, product_supplier_id, product_quantity: string);
+      procedure TMainForm.ProcessAlert(product_model, product_price_stock,
+        product_owner_id, product_supplier_id, product_quantity: string);
       var
         ANotifyServer: TNotifyServer;
         AlertMessage: string;
@@ -14717,7 +17361,8 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         IsNew: Boolean;
       begin
 
-        if (StrtoInt(product_owner_id) >= 100000) or (StrtoInt(product_supplier_id) >= 100000) then
+        if (StrtoInt(product_owner_id) >= 100000) or
+          (StrtoInt(product_supplier_id) >= 100000) then
         begin
           IsNew := False;
         end
@@ -14727,95 +17372,139 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
         RemoteDB.Products.IndexName := 'ProductsIXModel';
         if RemoteDB.Products.FindKey([product_model]) then
         begin
-          if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'True') then
+          if (RemoteDB.Products.FieldByName('products_stock_managed')
+            .Text = 'True') then
           begin
             if UserType = 1 then
             begin
-              ANotifyServer := TNotifyServer.Create('stockalert', RemoteDB.Products.FieldByName('products_id').AsString, '', NOTIFYURL);
+              ANotifyServer := TNotifyServer.Create('stockalert',
+                RemoteDB.Products.FieldByName('products_id').AsString, '',
+                NOTIFYURL);
             end;
 
             if IsNew then
             begin
-              RemoteDB.netshop_customers_alerts.Filter := '((customers_alerts_products_model=' + QuotedStr(product_model) +
-                ') and (customers_alerts_used=0) and  (customers_alerts_status=0) )';
-            end else begin
-              RemoteDB.netshop_customers_alerts.Filter := '((customers_alerts_products_model = ' + QuotedStr(product_model) +
-                ') and ((customers_alerts_used >= ' + inttostr(Round(StrToFloat(product_price_stock))) +
+              RemoteDB.netshop_customers_alerts.Filter :=
+                '((customers_alerts_products_model=' + QuotedStr(product_model)
+                + ') and (customers_alerts_used=0) and  (customers_alerts_status=0) )';
+            end
+            else
+            begin
+              RemoteDB.netshop_customers_alerts.Filter :=
+                '((customers_alerts_products_model = ' +
+                QuotedStr(product_model) + ') and ((customers_alerts_used >= ' +
+                inttostr(Round(StrToFloat(product_price_stock))) +
                 ') or (customers_alerts_used=0)) and  (customers_alerts_status=0) )';
             end;
             RemoteDB.netshop_customers_alerts.Filtered := True;
 
-            if RemoteDB.netshop_customers_alerts.Locate('customers_alerts_products_model', RemoteDB.Productsproducts_model.AsString, [locaseinsensitive]) then
+            if RemoteDB.netshop_customers_alerts.Locate
+              ('customers_alerts_products_model',
+              RemoteDB.Productsproducts_model.AsString, [locaseinsensitive])
+            then
             begin
 
               if IsNew then
               begin
-                AlertMessage := 'Le produit ' + RemoteDB.Products.FieldByName('products_intername').Text + ' est dispo a ' +
-                  RemoteDB.Productsproducts_price_allin.AsString + ' Eur chez ' + RemoteDB.Shops.FieldByName('shops_title').AsString + ' ' +
-                  RemoteDB.Shops.FieldByName('shops_adress_one').AsString + '. Tel: ' + RemoteDB.Shops.FieldByName('shops_phone').AsString;
-              end else begin
-                AlertMessage := 'Le produit ' + RemoteDB.Products.FieldByName('products_intername').Text + ' est dispo a ' + product_price_stock + ' Eur chez '
-                  + RemoteDB.Shops.FieldByName('shops_title').AsString + ' ' + RemoteDB.Shops.FieldByName('shops_adress_one').AsString + '. Tel: ' +
-                  RemoteDB.Shops.FieldByName('shops_phone').AsString;
+                AlertMessage := 'Le produit ' + RemoteDB.Products.FieldByName
+                  ('products_intername').Text + ' est dispo a ' +
+                  RemoteDB.Productsproducts_price_allin.AsString + ' Eur chez '
+                  + RemoteDB.Shops.FieldByName('shops_title').AsString + ' ' +
+                  RemoteDB.Shops.FieldByName('shops_adress_one').AsString +
+                  '. Tel: ' + RemoteDB.Shops.FieldByName('shops_phone')
+                  .AsString;
+              end
+              else
+              begin
+                AlertMessage := 'Le produit ' + RemoteDB.Products.FieldByName
+                  ('products_intername').Text + ' est dispo a ' +
+                  product_price_stock + ' Eur chez ' +
+                  RemoteDB.Shops.FieldByName('shops_title').AsString + ' ' +
+                  RemoteDB.Shops.FieldByName('shops_adress_one').AsString +
+                  '. Tel: ' + RemoteDB.Shops.FieldByName('shops_phone')
+                  .AsString;
               end;
 
-              ADlgSmsSend := TDlgSmsSend.Create(self);
+              ADlgSmsSend := TDlgSmsSend.Create(Self);
               try
                 RemoteDB.netshop_customers_alerts.First;
                 ADlgSmsSend.Reserved := 0;
                 while not RemoteDB.netshop_customers_alerts.Eof do
                 begin
-                  ADlgSmsSend.Reserved := ADlgSmsSend.Reserved + RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger;
+                  ADlgSmsSend.Reserved := ADlgSmsSend.Reserved +
+                    RemoteDB.netshop_customers_alerts.FieldByName
+                    ('customers_alerts_quantity').AsInteger;
                   RemoteDB.netshop_customers_alerts.Next;
                 end;
 
-                ADlgSmsSend.MemoSmsText.Text          := AlertMessage;
-                ADlgSmsSend.LabelSmsToSend.Caption    := inttostr(ADlgSmsSend.Reserved);
+                ADlgSmsSend.MemoSmsText.Text := AlertMessage;
+                ADlgSmsSend.LabelSmsToSend.Caption :=
+                  inttostr(ADlgSmsSend.Reserved);
                 ADlgSmsSend.LabelSmsAvailable.Caption := product_quantity;
 
                 if ADlgSmsSend.ShowModal = mrOK then
                 begin
                   AlertMessage := ADlgSmsSend.MemoSmsText.Text;
-                  RemoteDB.netshop_customers_alerts.IndexFieldNames := 'customers_alerts_date';
+                  RemoteDB.netshop_customers_alerts.IndexFieldNames :=
+                    'customers_alerts_date';
                   RemoteDB.netshop_customers_alerts.First;
                   try
 
                     j := 0;
                     RemoteDB.netshop_customers_alerts.First;
-                    while ((not RemoteDB.netshop_customers_alerts.Eof) and (j < StrtoInt(ADlgSmsSend.LabelSmsToSend.Caption))) do
+                    while ((not RemoteDB.netshop_customers_alerts.Eof) and
+                      (j < StrtoInt(ADlgSmsSend.LabelSmsToSend.Caption))) do
                     begin
-                      RemoteDB.Customers.Locate('customers_nbr', RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_customers_nbr').AsString,
+                      RemoteDB.Customers.Locate('customers_nbr',
+                        RemoteDB.netshop_customers_alerts.FieldByName
+                        ('customers_alerts_customers_nbr').AsString,
                         [locaseinsensitive]);
 
                       //
                       // Print Sticker
                       //
                       aLabelAddress := TLabelAddress.Create;
-                      Address       := TStringList.Create;
+                      Address := TStringList.Create;
                       try
-                        aLabelAddress.LabelPrinter := (self.Parameter['PrintersLabelPrinter']);
-                        Address.Add('Client # ' + RemoteDB.CustomersCustomers_nbr.AsString);
-                        Address.Add(RemoteDB.Customerscustomers_firstname.AsString + ' ' + RemoteDB.CustomersCustomers_Lastname.AsString);
-                        Address.Add(RemoteDB.Products.FieldByName('products_intername').Text + ' ' + RemoteDB.Productsproducts_root_category_name.Value);
+                        aLabelAddress.LabelPrinter :=
+                          (Self.Parameter['PrintersLabelPrinter']);
+                        Address.Add
+                          ('Client # ' +
+                          RemoteDB.CustomersCustomers_nbr.AsString);
+                        Address.Add
+                          (RemoteDB.Customerscustomers_firstname.AsString + ' '
+                          + RemoteDB.CustomersCustomers_Lastname.AsString);
+                        Address.Add
+                          (RemoteDB.Products.FieldByName('products_intername')
+                          .Text + ' ' +
+                          RemoteDB.Productsproducts_root_category_name.Value);
                         Address.Add('SMS: ' + DateToStr(Now));
-                        for i := 1 to RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger do
-                          aLabelAddress.Print(Address, (StrToBool(self.Parameter['PrintersLabelDialog'])));
+                        for i := 1 to RemoteDB.netshop_customers_alerts.
+                          FieldByName('customers_alerts_quantity').AsInteger do
+                          aLabelAddress.Print(Address,
+                            (StrToBool(Self.Parameter['PrintersLabelDialog'])));
                       finally
                         aLabelAddress.Free;
                         Address.Free;
                       end;
 
                       RemoteDB.netshop_customers_alerts.Edit;
-                      RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_message').AsString := AlertMessage;
-                      RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').Value := 1;
-                      RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_date_notified').AsFloat := Now;
+                      RemoteDB.netshop_customers_alerts.FieldByName
+                        ('customers_alerts_message').AsString := AlertMessage;
+                      RemoteDB.netshop_customers_alerts.FieldByName
+                        ('customers_alerts_status').Value := 1;
+                      RemoteDB.netshop_customers_alerts.FieldByName
+                        ('customers_alerts_date_notified').AsFloat := Now;
                       if not IsNew then
                       begin
-                        RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_used').Value := Round(StrToFloat(product_price_stock));
+                        RemoteDB.netshop_customers_alerts.FieldByName
+                          ('customers_alerts_used').Value :=
+                          Round(StrToFloat(product_price_stock));
                       end;
                       RemoteDB.netshop_customers_alerts.Post;
 
-                      j := j + RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_quantity').AsInteger;
+                      j := j + RemoteDB.netshop_customers_alerts.FieldByName
+                        ('customers_alerts_quantity').AsInteger;
                     end;
                   finally
 
@@ -14825,7 +17514,7 @@ procedure TMainForm.dxBarButtonSearchCLDClick(Sender: TObject);
                 ADlgSmsSend.Free;
               end;
             end; // End if product in alerts
-            RemoteDB.netshop_customers_alerts.Filter   := '';
+            RemoteDB.netshop_customers_alerts.Filter := '';
             RemoteDB.netshop_customers_alerts.Filtered := False;
           end; // if stock managed
         end; // if product found

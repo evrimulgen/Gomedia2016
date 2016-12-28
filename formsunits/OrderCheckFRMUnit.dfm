@@ -326,7 +326,6 @@ object OrderCheckForm: TOrderCheckForm
     Top = 236
   end
   object dxPSEngineController: TdxPSEngineController
-    Active = True
     PreviewDialogStyle = 'Advanced'
     Left = 48
     Top = 180

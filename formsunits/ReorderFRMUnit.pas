@@ -12,9 +12,6 @@ uses
   dxPSDBBasedXplorer, dxPgsDlg, dxPrnDlg, dxPScxCommon, dxBar,
   cxGridExportLink,
 
-
-
-
   dxPScxGridLnk, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, cxStyles,
   cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, cxDBData,
   dxPSGlbl, dxPSUtl, dxPrnPg, dxBkgnd, dxWrap, dxPrnDev, dxPSCompsProvider,
@@ -66,8 +63,9 @@ type
     procedure dxBarButton1Click(Sender: TObject);
     procedure dxBarButtonSaveClick(Sender: TObject);
     procedure dxBarButtonPrintClick(Sender: TObject);
-    procedure GridviewCellDblClick(Sender: TcxCustomGridTableView; ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton; AShift: TShiftState;
-      var AHandled: Boolean);
+    procedure GridviewCellDblClick(Sender: TcxCustomGridTableView;
+      ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
+      AShift: TShiftState; var AHandled: Boolean);
   private
     { Private declarations }
   public
@@ -90,16 +88,19 @@ var
 begin
   TableData.First;
   QueryString := '';
-  i           := 1;
+  i := 1;
   while not TableData.Eof do
   begin
     if TableData.FieldByName('Quantity').AsInteger > 0 then
     begin
-      QueryString := QueryString + '&id_art' + inttostr(i) + '=' + TableData.FieldByName('IDART').AsString;
-      QueryString := QueryString + '&q' + inttostr(i) + '=' + TableData.FieldByName('Quantity').AsString;
-      i           := i + 1;
+      QueryString := QueryString + '&id_art' + inttostr(i) + '=' +
+        TableData.FieldByName('IDART').AsString;
+      QueryString := QueryString + '&q' + inttostr(i) + '=' +
+        TableData.FieldByName('Quantity').AsString;
+      i := i + 1;
     end;
-    if i mod 15 = 0 then begin
+    if i mod 15 = 0 then
+    begin
       MainForm.WebbrowserCLDAddItems(QueryString);
       QueryString := '';
     end;
@@ -118,7 +119,7 @@ procedure TReorderForm.dxBarButtonSaveClick(Sender: TObject);
 var
   Filename: string;
 begin
-  Filename            := 'Order' + '.xls';
+  Filename := 'Order' + '.xls';
   SaveDialog.Filename := Filename;
   if SaveDialog.Execute then
   begin
@@ -126,15 +127,17 @@ begin
   end;
 end;
 
-procedure TReorderForm.GridviewCellDblClick(Sender: TcxCustomGridTableView; ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
+procedure TReorderForm.GridviewCellDblClick(Sender: TcxCustomGridTableView;
+  ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
   AShift: TShiftState; var AHandled: Boolean);
 var
   aTransferRequestForm: TTransferRequestForm;
 begin
-  aTransferRequestForm                        := TTransferRequestForm.Create(self);
-  aTransferRequestForm.products_model         := TableData.FieldByName('EAN').AsString;
-  aTransferRequestForm.products_name          := TableData.FieldByName('Name').AsString;
-  aTransferRequestForm.products_root_category := TableData.FieldByName('RootCategoryName').AsString;
+  aTransferRequestForm := TTransferRequestForm.Create(self);
+  aTransferRequestForm.products_model := TableData.FieldByName('EAN').AsString;
+  aTransferRequestForm.products_name := TableData.FieldByName('Name').AsString;
+  aTransferRequestForm.products_root_category :=
+    TableData.FieldByName('RootCategoryName').AsString;
   aTransferRequestForm.Show;
 end;
 

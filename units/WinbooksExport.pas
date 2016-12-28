@@ -32,10 +32,14 @@ type
   private
   public
   published
-    procedure AddVisaIn(DateExec, DateDoc: tdatetime; Nbr, ShopAccount: string; AmountGross, AmountDisc: double; Comment: string);
-    procedure AddBCTIn(DateExec, DateDoc: tdatetime; Nbr, ShopAccount: string; AmountGross: double; Comment: string);
-    procedure AddSupplierOut(DateExec, DateDoc: tdatetime; Nbr, SupplierAccount: string; AmountGross: double; Comment: string);
-    procedure AddCustomerIn(DateExec, DateDoc: tdatetime; Nbr, CustomerAccount: string; AmountGross: double; Comment: string);
+    procedure AddVisaIn(DateExec, DateDoc: tdatetime; Nbr, ShopAccount: string;
+      AmountGross, AmountDisc: double; Comment: string);
+    procedure AddBCTIn(DateExec, DateDoc: tdatetime; Nbr, ShopAccount: string;
+      AmountGross: double; Comment: string);
+    procedure AddSupplierOut(DateExec, DateDoc: tdatetime;
+      Nbr, SupplierAccount: string; AmountGross: double; Comment: string);
+    procedure AddCustomerIn(DateExec, DateDoc: tdatetime;
+      Nbr, CustomerAccount: string; AmountGross: double; Comment: string);
     procedure AddVarious;
   end;
 
@@ -71,10 +75,13 @@ type
     Base21: double;
     Tax21: double;
     Base0: double;
-    constructor Create(ShopClientCode, ShopBookCode, ShopAccount, ShopEAccount, ShopInvoiceCode, Period: string; RemoteDB: TRemoteDB);
-    procedure AddDaySales(Nbr: integer; Date: Tdate; DayCashier: TDayCashierSummary);
+    constructor Create(ShopClientCode, ShopBookCode, ShopAccount, ShopEAccount,
+      ShopInvoiceCode, Period: string; RemoteDB: TRemoteDB);
+    procedure AddDaySales(Nbr: integer; Date: Tdate;
+      DayCashier: TDayCashierSummary);
     procedure AddDayInvoices(Date: Tdate);
-    procedure WriteVCOInvoice(DOCNUMBER: integer; AMOUNTEUR: double; ACCOUNTRP, Comment: string);
+    procedure WriteVCOInvoice(DOCNUMBER: integer; AMOUNTEUR: double;
+      ACCOUNTRP, Comment: string);
 
   published
   end;
@@ -82,15 +89,16 @@ type
 implementation
 
 { TACTDBCASH }
-constructor TACTDBCASH.Create(ShopClientCode, ShopBookCode, ShopAccount, ShopEAccount, ShopInvoiceCode, Period: string; RemoteDB: TRemoteDB);
+constructor TACTDBCASH.Create(ShopClientCode, ShopBookCode, ShopAccount,
+  ShopEAccount, ShopInvoiceCode, Period: string; RemoteDB: TRemoteDB);
 begin
-  Self.ACTShopClientCode  := ShopClientCode;
-  Self.ACTShopBookCode    := ShopBookCode;
-  Self.ACTShopAccount     := ShopAccount;
-  Self.ACTSHOPEaccount    := ShopEAccount;
+  Self.ACTShopClientCode := ShopClientCode;
+  Self.ACTShopBookCode := ShopBookCode;
+  Self.ACTShopAccount := ShopAccount;
+  Self.ACTSHOPEaccount := ShopEAccount;
   Self.ACTSHOPInvoiceCode := ShopInvoiceCode;
-  Self.ACTPeriod          := Period;
-  Self.aRemoteDB          := RemoteDB;
+  Self.ACTPeriod := Period;
+  Self.aRemoteDB := RemoteDB;
 
   Self.InvoiceData := TclientDataset.Create(nil);
 
@@ -105,10 +113,11 @@ begin
 
 end;
 
-procedure TACTDBCASH.AddDaySales(Nbr: integer; Date: Tdate; DayCashier: TDayCashierSummary);
+procedure TACTDBCASH.AddDaySales(Nbr: integer; Date: Tdate;
+  DayCashier: TDayCashierSummary);
 begin
-  Self.DateProcessing     := Date;
-  Self.NbrProcessing      := Nbr;
+  Self.DateProcessing := Date;
+  Self.NbrProcessing := Nbr;
   Self.ADayCashierSummary := DayCashier;
   AddSales(Date);
   AddInput(Date);
@@ -120,7 +129,8 @@ end;
 
 procedure TACTDBCASH.AddExpenses(Date: Tdate);
 begin
-  aRemoteDB.netshop_expenses.Filter := '(' + floattostr(Trunc(DateProcessing)) + '< expenses_date_time and expenses_date_time < ' +
+  aRemoteDB.netshop_expenses.Filter := '(' + floattostr(Trunc(DateProcessing)) +
+    '< expenses_date_time and expenses_date_time < ' +
     floattostr(Trunc(DateProcessing) + 1) + ')';
   aRemoteDB.netshop_expenses.Filtered := True;
   aRemoteDB.netshop_expenses.DisableControls;
@@ -128,12 +138,14 @@ begin
   try
     while not aRemoteDB.netshop_expenses.Eof do
     begin
-      Self.WriteExpense(aRemoteDB.netshop_expenses.FieldByName('expenses_amount').AsFloat,
-        'Sortie : ' + aRemoteDB.netshop_expenses.FieldByName('expenses_description').AsString);
+      Self.WriteExpense(aRemoteDB.netshop_expenses.FieldByName
+        ('expenses_amount').AsFloat,
+        'Sortie : ' + aRemoteDB.netshop_expenses.FieldByName
+        ('expenses_description').AsString);
       aRemoteDB.netshop_expenses.Next;
     end;
   finally
-    aRemoteDB.netshop_expenses.Filter   := '';
+    aRemoteDB.netshop_expenses.Filter := '';
     aRemoteDB.netshop_expenses.Filtered := False;
     aRemoteDB.netshop_expenses.EnableControls;
   end;
@@ -141,7 +153,8 @@ end;
 
 procedure TACTDBCASH.AddInvoices(Date: Tdate);
 begin
-  aRemoteDB.netshop_invoices.Filter := '(' + floattostr(Trunc(DateProcessing)) + '< invoices_date_time and invoices_date_time < ' +
+  aRemoteDB.netshop_invoices.Filter := '(' + floattostr(Trunc(DateProcessing)) +
+    '< invoices_date_time and invoices_date_time < ' +
     floattostr(Trunc(DateProcessing) + 1) + ')';
   aRemoteDB.netshop_invoices.Filtered := True;
   aRemoteDB.netshop_invoices.DisableControls;
@@ -154,7 +167,9 @@ begin
       aRemoteDB.netshop_invoices.FieldByName('invoices_closed').Value := 1;
       aRemoteDB.netshop_invoices.Post;
     end;
-    if aRemoteDB.Customers.Locate('customers_nbr', aRemoteDB.netshop_invoices.FieldByName('invoices_customer_id').Value, []) then
+    if aRemoteDB.Customers.Locate('customers_nbr',
+      aRemoteDB.netshop_invoices.FieldByName('invoices_customer_id').Value, [])
+    then
       Self.ACSFDB.AddCurrentCustomer;
 
     {
@@ -164,10 +179,13 @@ begin
     }
 
     // Ecriture Transfer du Compte client comptoir vers client id
-    Self.WriteSale(aRemoteDB.netshop_invoices.FieldByName('invoices_paid_TotalTTC').Value, aRemoteDB.netshop_invoices.FieldByName('invoices_customer_id')
-      .AsString, 'Pointe caisse Fact. ' + aRemoteDB.netshop_invoices.FieldByName('invoices_location').AsString + '-' +
-      aRemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
-    Self.WriteSale(-aRemoteDB.netshop_invoices.FieldByName('invoices_paid_TotalTTC').Value, Self.ACTShopClientCode);
+    Self.WriteSale(aRemoteDB.netshop_invoices.FieldByName
+      ('invoices_paid_TotalTTC').Value, aRemoteDB.netshop_invoices.FieldByName
+      ('invoices_customer_id').AsString, 'Pointe caisse Fact. ' +
+      aRemoteDB.netshop_invoices.FieldByName('invoices_location').AsString + '-'
+      + aRemoteDB.netshop_invoices.FieldByName('invoices_id').AsString);
+    Self.WriteSale(-aRemoteDB.netshop_invoices.FieldByName
+      ('invoices_paid_TotalTTC').Value, Self.ACTShopClientCode);
     aRemoteDB.netshop_invoices.Next;
   end;
   aRemoteDB.netshop_invoices.EnableControls;
@@ -183,17 +201,22 @@ begin
     Self.WriteEPayment(ADayCashierSummary.Visa);
   if ADayCashierSummary.Proton <> 0 then
   begin
-    aRemoteDB.netshop_sales.Filter := '(' + floattostr(Date) + '< sales_date_time and sales_date_time < ' + floattostr(Date + 1) + ') and (sales_location = ' +
-      inttoSTR(CONNECTEDSHOP) + ')';
+    aRemoteDB.netshop_sales.Filter := '(' + floattostr(Date) +
+      '< sales_date_time and sales_date_time < ' + floattostr(Date + 1) +
+      ') and (sales_location = ' + inttoSTR(CONNECTEDSHOP) + ')';
     aRemoteDB.netshop_sales.Filtered := True;
     aRemoteDB.netshop_sales.First;
     while not aRemoteDB.netshop_sales.Eof do
     begin
-      if aRemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat > 0 then
+      if aRemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsFloat > 0
+      then
       begin
         if aRemoteDB.netshop_salessales_customer_id.Value = CONNECTEDSHOP then
-          ShowMessage('Paiement par banque authorisé sur le compte client comptoir, vente : ' + aRemoteDB.netshop_salessales_id.AsString);
-        Self.WriteSale(-aRemoteDB.netshop_salessales_paid_proton.AsFloat, aRemoteDB.netshop_salessales_customer_id.AsString,
+          ShowMessage
+            ('Paiement par banque authorisé sur le compte client comptoir, vente : '
+            + aRemoteDB.netshop_salessales_id.AsString);
+        Self.WriteSale(-aRemoteDB.netshop_salessales_paid_proton.AsFloat,
+          aRemoteDB.netshop_salessales_customer_id.AsString,
           'Paiement banque ' + aRemoteDB.netshop_salessales_id.AsString);
       end;
       aRemoteDB.netshop_sales.Next;
@@ -204,34 +227,42 @@ end;
 procedure TACTDBCASH.AddSales(Date: Tdate);
 begin
   if Self.ADayCashierSummary.New + Self.ADayCashierSummary.NoMargin <> 0 then
-    Self.WriteSale(Self.ADayCashierSummary.New + Self.ADayCashierSummary.NoMargin, Self.ACTShopClientCode, 'Ventes neufs');
+    Self.WriteSale(Self.ADayCashierSummary.New +
+      Self.ADayCashierSummary.NoMargin, Self.ACTShopClientCode, 'Ventes neufs');
   if Self.ADayCashierSummary.SH <> 0 then
-    Self.WriteSale(Self.ADayCashierSummary.SH, Self.ACTShopClientCode, 'Ventes occasions');
+    Self.WriteSale(Self.ADayCashierSummary.SH, Self.ACTShopClientCode,
+      'Ventes occasions');
   if Self.ADayCashierSummary.Service <> 0 then
-    Self.WriteSale(Self.ADayCashierSummary.Service, Self.ACTShopClientCode, 'Services');
+    Self.WriteSale(Self.ADayCashierSummary.Service, Self.ACTShopClientCode,
+      'Services');
   if Self.ADayCashierSummary.Returns <> 0 then
-    Self.WriteSale(Self.ADayCashierSummary.Returns, Self.ACTShopClientCode, 'Annulation vente');
+    Self.WriteSale(Self.ADayCashierSummary.Returns, Self.ACTShopClientCode,
+      'Annulation vente');
 end;
 
 procedure TACTDBCASH.AddRefunds;
 begin
   if ADayCashierSummary.Voucher <> 0 then
-    Self.WriteSale(-ADayCashierSummary.Voucher, Self.ACTShopClientCode, 'Bon achat');
+    Self.WriteSale(-ADayCashierSummary.Voucher, Self.ACTShopClientCode,
+      'Bon achat');
   if ADayCashierSummary.Refunds <> 0 then
-    Self.WriteSale(-ADayCashierSummary.Refunds, Self.ACTShopClientCode, 'Rembours');
+    Self.WriteSale(-ADayCashierSummary.Refunds, Self.ACTShopClientCode,
+      'Rembours');
 end;
 
 procedure TACTDBCASH.AddPurchased;
 begin
   if ADayCashierSummary.Purchased <> 0 then
-    Self.WritePurchase(-ADayCashierSummary.Purchased, Self.ACTShopClientCode, 'Achat occasion');
+    Self.WritePurchase(-ADayCashierSummary.Purchased, Self.ACTShopClientCode,
+      'Achat occasion');
 end;
 
 procedure TACTDBCASH.AddDayInvoices(Date: Tdate);
 begin
   Self.DateProcessing := Date;
   aRemoteDB.SetInvoicesItemsToInvoices;
-  aRemoteDB.netshop_invoices.Filter := '(' + floattostr(Trunc(DateProcessing)) + '< invoices_date_time and invoices_date_time < ' +
+  aRemoteDB.netshop_invoices.Filter := '(' + floattostr(Trunc(DateProcessing)) +
+    '< invoices_date_time and invoices_date_time < ' +
     floattostr(Trunc(DateProcessing) + 1) + ')';
   aRemoteDB.netshop_invoices.Filtered := True;
   aRemoteDB.netshop_invoices.First;
@@ -245,23 +276,36 @@ begin
     aRemoteDB.netshop_invoices_items.First;
     while not aRemoteDB.netshop_invoices_items.Eof do
     begin
-      if InvoiceData.Locate('rate', aRemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate').AsFloat, []) then
+      if InvoiceData.Locate('rate', aRemoteDB.netshop_invoices_items.FieldByName
+        ('invoices_items_tva_rate').AsFloat, []) then
       begin
         InvoiceData.Edit;
-        InvoiceData.FieldByName('base').Value := InvoiceData.FieldByName('base').Value + aRemoteDB.netshop_invoices_items.FieldByName
+        InvoiceData.FieldByName('base').Value := InvoiceData.FieldByName('base')
+          .Value + aRemoteDB.netshop_invoices_items.FieldByName
           ('invoices_items_PTOTHT').Value;
-        InvoiceData.FieldByName('tax').Value := InvoiceData.FieldByName('tax').Value + aRemoteDB.netshop_invoices_items.FieldByName
+        InvoiceData.FieldByName('tax').Value := InvoiceData.FieldByName('tax')
+          .Value + aRemoteDB.netshop_invoices_items.FieldByName
           ('invoices_items_PTOTTVA').Value;
-      end else begin
+      end
+      else
+      begin
         InvoiceData.Append;
-        InvoiceData.FieldByName('Rate').Value := aRemoteDB.netshop_invoices_items.FieldByName('invoices_items_tva_rate').AsFloat;
-        InvoiceData.FieldByName('base').Value := aRemoteDB.netshop_invoices_items.FieldByName('invoices_items_PTOTHT').Value;
-        InvoiceData.FieldByName('tax').Value  := aRemoteDB.netshop_invoices_items.FieldByName('invoices_items_PTOTTVA').Value;
+        InvoiceData.FieldByName('Rate').Value :=
+          aRemoteDB.netshop_invoices_items.FieldByName
+          ('invoices_items_tva_rate').AsFloat;
+        InvoiceData.FieldByName('base').Value :=
+          aRemoteDB.netshop_invoices_items.FieldByName
+          ('invoices_items_PTOTHT').Value;
+        InvoiceData.FieldByName('tax').Value :=
+          aRemoteDB.netshop_invoices_items.FieldByName
+          ('invoices_items_PTOTTVA').Value;
         InvoiceData.Post;
       end;
       aRemoteDB.netshop_invoices_items.Next;
     end;
-    Self.WriteInvoice(aRemoteDB.netshop_invoices.FieldByName('invoices_paid_totalTTC').AsFloat, aRemoteDB.netshop_invoices.FieldByName('invoices_customer_id')
+    Self.WriteInvoice(aRemoteDB.netshop_invoices.FieldByName
+      ('invoices_paid_totalTTC').AsFloat,
+      aRemoteDB.netshop_invoices.FieldByName('invoices_customer_id')
       .AsString, '');
     aRemoteDB.netshop_invoices.Next;
   end;
@@ -283,13 +327,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTShopAccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -302,14 +346,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -326,13 +370,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := '400000';
     FieldByName('ACCOUNTRP').AsString := account;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -345,14 +389,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 end;
@@ -372,13 +416,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTShopAccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -391,14 +435,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -415,13 +459,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := '400000';
     FieldByName('ACCOUNTRP').AsString := account;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -434,14 +478,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 end;
@@ -461,13 +505,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTShopAccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -480,14 +524,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -504,13 +548,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := '440000';
     FieldByName('ACCOUNTRP').AsString := account;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -523,14 +567,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 end;
@@ -550,13 +594,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTShopAccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -569,14 +613,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -593,13 +637,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTSHOPEaccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := +amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -612,14 +656,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 end;
@@ -639,13 +683,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTShopAccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -658,14 +702,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -682,13 +726,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTSHOPEaccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := +amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -701,14 +745,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 end;
@@ -731,13 +775,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := Self.ACTShopAccount;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -750,14 +794,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -775,12 +819,12 @@ begin
     if aNSIPos(UpperCase('poste'), UpperCase(Comment)) > 0 then
     begin
       FieldByName('ACCOUNTGL').AsString := '612030';
-      PROCESSED                         := True;
+      PROCESSED := True;
     end;
     if aNSIPos(UpperCase('banque'), UpperCase(Comment)) > 0 then
     begin
       FieldByName('ACCOUNTGL').AsString := '580000';
-      PROCESSED                         := True;
+      PROCESSED := True;
     end;
     if not PROCESSED then
     begin
@@ -788,13 +832,13 @@ begin
     end;
     FieldByName('ACCOUNTRP').AsString := '';
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := +amount;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -807,14 +851,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 end;
@@ -837,19 +881,20 @@ begin
     FieldByName('DOCTYPE').AsString := '1';
     FieldByName('DBKCODE').AsString := Self.ACTSHOPInvoiceCode;
     // FieldByName('DBKTYPE');
-    FieldByName('DOCNUMBER').AsInteger := aRemoteDB.netshop_invoices.FieldByName('invoices_id').AsInteger;
+    FieldByName('DOCNUMBER').AsInteger := aRemoteDB.netshop_invoices.FieldByName
+      ('invoices_id').AsInteger;
     // FieldByName('DOCORDER');
     // FieldByName('OPCODE');
     FieldByName('ACCOUNTGL').AsString := '400000';
     FieldByName('ACCOUNTRP').AsString := account;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := amount;
     FieldByName('VATBASE').AsFloat := BaseTot;
     // FieldByName('VATCODE');
@@ -862,14 +907,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -880,19 +925,20 @@ begin
     FieldByName('DOCTYPE').AsString := '3';
     FieldByName('DBKCODE').AsString := Self.ACTSHOPInvoiceCode;
     // FieldByName('DBKTYPE');
-    FieldByName('DOCNUMBER').AsInteger := aRemoteDB.netshop_invoices.FieldByName('invoices_id').AsInteger;
+    FieldByName('DOCNUMBER').AsInteger := aRemoteDB.netshop_invoices.FieldByName
+      ('invoices_id').AsInteger;
     // FieldByName('DOCORDER');
     // FieldByName('OPCODE');
     FieldByName('ACCOUNTGL').AsString := '700000';
     FieldByName('ACCOUNTRP').AsString := account;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT').AsString:=Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -BaseTot;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -905,14 +951,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
 
     // Imputation des comptes TVA
@@ -925,22 +971,23 @@ begin
         FieldByName('DOCTYPE').AsString := '3';
         FieldByName('DBKCODE').AsString := Self.ACTSHOPInvoiceCode;
         // FieldByName('DBKTYPE');
-        FieldByName('DOCNUMBER').AsInteger := aRemoteDB.netshop_invoices.FieldByName('invoices_id').AsInteger;
+        FieldByName('DOCNUMBER').AsInteger :=
+          aRemoteDB.netshop_invoices.FieldByName('invoices_id').AsInteger;
         // FieldByName('DOCORDER');
         // FieldByName('OPCODE');
         FieldByName('ACCOUNTGL').AsString := '451000';
         FieldByName('ACCOUNTRP').AsString := account;
         // FieldByName('BOOKYEAR');
-        FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-        FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+        FieldByName('PERIOD').AsString := Self.ACTPeriod;
+        FieldByName('DATE').AsDateTime := Self.DateProcessing;
         FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
         // FieldByName('DUEDATE');
         // FieldByName('COMMENT').AsString:=Comment;
         // FieldByName('COMMENTEXT');
-        FieldByName('AMOUNT').Value    := 0;
+        FieldByName('AMOUNT').Value := 0;
         FieldByName('AMOUNTEUR').Value := -InvoiceData.FieldValues['Tax'];
-        FieldByName('VATBASE').Value   := InvoiceData.FieldValues['Base'];
-        FieldByName('VATCODE').Value   := InvoiceData.FieldValues['Rate'];
+        FieldByName('VATBASE').Value := InvoiceData.FieldValues['Base'];
+        FieldByName('VATCODE').Value := InvoiceData.FieldValues['Rate'];
         // FieldByName('CURRAMOUNT');
         // FieldByName('CURRCODE');
         /// FieldByName('CUREURBASE');
@@ -950,14 +997,14 @@ begin
         // FieldByName('REMINDLEV');
         // FieldByName('MATCHNO');
         // FieldByName('OLDDATE');
-        FieldByName('ISMATCHED').Value  := False;
-        FieldByName('ISLOCKED').Value   := False;
+        FieldByName('ISMATCHED').Value := False;
+        FieldByName('ISLOCKED').Value := False;
         FieldByName('ISIMPORTED').Value := False;;
         FieldByName('ISPOSITIVE').Value := False;
-        FieldByName('ISTEMP').Value     := False;
-        FieldByName('MEMOTYPE').Value   := '0';
-        FieldByName('ISDOC').Value      := False;
-        FieldByName('DOCSTATUS').Value  := '0';
+        FieldByName('ISTEMP').Value := False;
+        FieldByName('MEMOTYPE').Value := '0';
+        FieldByName('ISDOC').Value := False;
+        FieldByName('DOCSTATUS').Value := '0';
         Post;
         InvoiceData.Next;
       end;
@@ -965,7 +1012,8 @@ begin
   end;
 end;
 
-procedure TACTDBCASH.WriteVCOInvoice(DOCNUMBER: integer; AMOUNTEUR: double; ACCOUNTRP, Comment: string);
+procedure TACTDBCASH.WriteVCOInvoice(DOCNUMBER: integer; AMOUNTEUR: double;
+  ACCOUNTRP, Comment: string);
 var
   BaseTot: double;
 begin
@@ -989,13 +1037,13 @@ begin
     FieldByName('ACCOUNTGL').AsString := '400000';
     FieldByName('ACCOUNTRP').AsString := ACCOUNTRP;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT');
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := AMOUNTEUR;
     FieldByName('VATBASE').AsFloat := BaseTot;
     // FieldByName('VATCODE');
@@ -1008,14 +1056,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -1036,15 +1084,15 @@ begin
       FieldByName('ACCOUNTGL').AsString := InvoiceData.FieldValues['account'];;
       FieldByName('ACCOUNTRP').AsString := ACCOUNTRP;
       // FieldByName('BOOKYEAR');
-      FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-      FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+      FieldByName('PERIOD').AsString := Self.ACTPeriod;
+      FieldByName('DATE').AsDateTime := Self.DateProcessing;
       FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
       // FieldByName('DUEDATE');
       // FieldByName('COMMENT').AsString:=Comment;
       // FieldByName('COMMENTEXT');
-      FieldByName('AMOUNT').Value    := 0;
+      FieldByName('AMOUNT').Value := 0;
       FieldByName('AMOUNTEUR').Value := -InvoiceData.FieldValues['base'];
-      FieldByName('VATBASE').Value   := -InvoiceData.FieldValues['base'];
+      FieldByName('VATBASE').Value := -InvoiceData.FieldValues['base'];
       // FieldByName('VATCODE');
       // FieldByName('CURRAMOUNT');
       // FieldByName('CURRCODE');
@@ -1058,14 +1106,14 @@ begin
       // FieldByName('REMINDLEV');
       // FieldByName('MATCHNO');
       // FieldByName('OLDDATE');
-      FieldByName('ISMATCHED').Value  := False;
-      FieldByName('ISLOCKED').Value   := False;
+      FieldByName('ISMATCHED').Value := False;
+      FieldByName('ISLOCKED').Value := False;
       FieldByName('ISIMPORTED').Value := False;;
       FieldByName('ISPOSITIVE').Value := False;
-      FieldByName('ISTEMP').Value     := False;
-      FieldByName('MEMOTYPE').Value   := '0';
-      FieldByName('ISDOC').Value      := False;
-      FieldByName('DOCSTATUS').Value  := '0';
+      FieldByName('ISTEMP').Value := False;
+      FieldByName('MEMOTYPE').Value := '0';
+      FieldByName('ISDOC').Value := False;
+      FieldByName('DOCSTATUS').Value := '0';
       Post;
     end;
     InvoiceData.Next;
@@ -1084,16 +1132,16 @@ begin
     FieldByName('ACCOUNTGL').AsString := '451000';
     FieldByName('ACCOUNTRP').AsString := ACCOUNTRP;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT').AsString:=Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -Tax21;
-    FieldByName('VATBASE').Value   := Base21;
-    FieldByName('VATCODE').Value   := 21;
+    FieldByName('VATBASE').Value := Base21;
+    FieldByName('VATCODE').Value := 21;
     // FieldByName('CURRAMOUNT');
     // FieldByName('CURRCODE');
     /// FieldByName('CUREURBASE');
@@ -1103,14 +1151,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -1126,16 +1174,16 @@ begin
     FieldByName('ACCOUNTGL').AsString := '451000';
     FieldByName('ACCOUNTRP').AsString := ACCOUNTRP;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT').AsString:=Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -Tax6;
-    FieldByName('VATBASE').Value   := Base6;
-    FieldByName('VATCODE').Value   := 6;
+    FieldByName('VATBASE').Value := Base6;
+    FieldByName('VATCODE').Value := 6;
     // FieldByName('CURRAMOUNT');
     // FieldByName('CURRCODE');
     /// FieldByName('CUREURBASE');
@@ -1145,14 +1193,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -1168,16 +1216,16 @@ begin
     FieldByName('ACCOUNTGL').AsString := '451000';
     FieldByName('ACCOUNTRP').AsString := ACCOUNTRP;
     // FieldByName('BOOKYEAR');
-    FieldByName('PERIOD').AsString    := Self.ACTPeriod;
-    FieldByName('DATE').AsDateTime    := Self.DateProcessing;
+    FieldByName('PERIOD').AsString := Self.ACTPeriod;
+    FieldByName('DATE').AsDateTime := Self.DateProcessing;
     FieldByName('DATEDOC').AsDateTime := Self.DateProcessing;
     // FieldByName('DUEDATE');
     // FieldByName('COMMENT').AsString:=Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := 0;
-    FieldByName('VATBASE').Value   := Base0;
-    FieldByName('VATCODE').Value   := 0;
+    FieldByName('VATBASE').Value := Base0;
+    FieldByName('VATCODE').Value := 0;
     // FieldByName('CURRAMOUNT');
     // FieldByName('CURRCODE');
     /// FieldByName('CUREURBASE');
@@ -1187,14 +1235,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -1208,37 +1256,48 @@ begin
   begin
     Append;
     FieldByName('NUMBER').AsString := aRemoteDB.Customerscustomers_nbr.AsString;
-    FieldByName('TYPE').AsString   := '1';
+    FieldByName('TYPE').AsString := '1';
     if aRemoteDB.Customerscustomers_Lastname.AsString = '' then
     begin
-      ShowMessage('Nom Obligatoire ! Erreur sur client # ' + inttoSTR(aRemoteDB.Customerscustomers_nbr.AsInteger));
+      ShowMessage('Nom Obligatoire ! Erreur sur client # ' +
+        inttoSTR(aRemoteDB.Customerscustomers_nbr.AsInteger));
       exit;
     end;
-    FieldByName('NAME2').AsString    := aRemoteDB.Customerscustomers_firstname.AsString;
-    FieldByName('NAME1').AsString    := aRemoteDB.Customerscustomers_Lastname.AsString;
+    FieldByName('NAME2').AsString :=
+      aRemoteDB.Customerscustomers_firstname.AsString;
+    FieldByName('NAME1').AsString :=
+      aRemoteDB.Customerscustomers_Lastname.AsString;
     FieldByName('CIVNAME1').AsString := '';
     FieldByName('CIVNAME2').AsString := '';
     // DB2  FieldByName('ADRESS1').AsString:=aRemoteDB.Customersentry_street_address.AsString;
-    FieldByName('ADRESS1').AsString := aRemoteDB.Address_Bookentry_street_address.AsString;
+    FieldByName('ADRESS1').AsString :=
+      aRemoteDB.Address_Bookentry_street_address.AsString;
     FieldByName('ADRESS2').AsString := '';
     if aRemoteDB.Customerscustomers_isTVA.Value = 'True' then
       FieldByName('VATCAT').AsString := '1'
     else
-      FieldByName('VATCAT').AsString  := '0';
-    FieldByName('COUNTRY').AsString   := 'BE';
-    FieldByName('VATNUMBER').AsString := aRemoteDB.Customerscustomers_TVA.AsString;
-    FieldByName('PAYCODE').AsString   := aRemoteDB.Customerscustomers_paycode.AsString;
-    FieldByName('TELNUMBER').AsString := aRemoteDB.Customerscustomers_telephone.AsString;
-    FieldByName('FAXNUMBER').AsString := aRemoteDB.Customerscustomers_fax.AsString;
-    FieldByName('BNKACCNT').AsString  := aRemoteDB.Customerscustomers_bank_account.AsString;
+      FieldByName('VATCAT').AsString := '0';
+    FieldByName('COUNTRY').AsString := 'BE';
+    FieldByName('VATNUMBER').AsString :=
+      aRemoteDB.Customerscustomers_TVA.AsString;
+    FieldByName('PAYCODE').AsString :=
+      aRemoteDB.Customerscustomers_paycode.AsString;
+    FieldByName('TELNUMBER').AsString :=
+      aRemoteDB.Customerscustomers_telephone.AsString;
+    FieldByName('FAXNUMBER').AsString :=
+      aRemoteDB.Customerscustomers_fax.AsString;
+    FieldByName('BNKACCNT').AsString :=
+      aRemoteDB.Customerscustomers_bank_account.AsString;
     // DB2  FieldByName('ZIPCODE').AsString:=aRemoteDB.Customersentry_postcode.AsString;
     // DB2  FieldByName('CITY').AsString:=aRemoteDB.Customersentry_city.AsString;
-    FieldByName('ZIPCODE').AsString   := aRemoteDB.Address_Bookentry_postcode.AsString;
-    FieldByName('CITY').AsString      := aRemoteDB.Address_Bookentry_city.AsString;
-    FieldByName('DEFLTPOST').AsString := aRemoteDB.Customerscustomers_defltpost.AsString;
-    FieldByName('LANG').AsString      := 'F';
-    FieldByName('CENTRAL').AsString   := '';
-    FieldByName('VATCODE').AsString   := '211400';
+    FieldByName('ZIPCODE').AsString :=
+      aRemoteDB.Address_Bookentry_postcode.AsString;
+    FieldByName('CITY').AsString := aRemoteDB.Address_Bookentry_city.AsString;
+    FieldByName('DEFLTPOST').AsString :=
+      aRemoteDB.Customerscustomers_defltpost.AsString;
+    FieldByName('LANG').AsString := 'F';
+    FieldByName('CENTRAL').AsString := '';
+    FieldByName('VATCODE').AsString := '211400';
     Post;
   end;
 end;
@@ -1246,7 +1305,7 @@ end;
 constructor TCSFDB.Create(RemoteDB: TRemoteDB);
 begin
   Self.aRemoteDB := RemoteDB;
-  Self.CSFDS     := TclientDataset.Create(nil);
+  Self.CSFDS := TclientDataset.Create(nil);
   with CSFDS.FieldDefs do
   begin
     Add('NUMBER', ftstring, 10);
@@ -1301,16 +1360,17 @@ begin
     CreateDir('export');
   end;
   ChDir(ExtractFilePath(ParamStr(0)) + '/export');
-  Exporter              := TQexport4DBF.Create(nil);
-  Exporter.FileName     := 'CSF.DBF';
+  Exporter := TQexport4DBF.Create(nil);
+  Exporter.FileName := 'CSF.DBF';
   Exporter.ExportSource := esDataset;
-  Exporter.DataSet      := Self.CSFDS;
+  Exporter.DataSet := Self.CSFDS;
   Exporter.Execute;
 end;
 
 { TACTDB }
 
-procedure TACTDBBANK.AddBCTIn(DateExec, DateDoc: tdatetime; Nbr, ShopAccount: string; AmountGross: double; Comment: string);
+procedure TACTDBBANK.AddBCTIn(DateExec, DateDoc: tdatetime;
+  Nbr, ShopAccount: string; AmountGross: double; Comment: string);
 begin
   // Imputation de la Base
   with ACTDS do
@@ -1335,16 +1395,18 @@ begin
     if (MonthOf(DateDoc) - 3) <= 0 then
     begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) + 9;
-    end else begin
+    end
+    else
+    begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) - 3;
     end;
 
-    FieldByName('DATE').AsDateTime    := DateExec;
+    FieldByName('DATE').AsDateTime := DateExec;
     FieldByName('DATEDOC').AsDateTime := DateDoc;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -AmountGross;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -1357,20 +1419,21 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
   Self.SaveToDbf;
 end;
 
-procedure TACTDBBANK.AddCustomerIn(DateExec, DateDoc: tdatetime; Nbr, CustomerAccount: string; AmountGross: double; Comment: string);
+procedure TACTDBBANK.AddCustomerIn(DateExec, DateDoc: tdatetime;
+  Nbr, CustomerAccount: string; AmountGross: double; Comment: string);
 begin
   // Imputation de la Base
   with ACTDS do
@@ -1395,16 +1458,18 @@ begin
     if (MonthOf(DateDoc) - 3) <= 0 then
     begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) + 9;
-    end else begin
+    end
+    else
+    begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) - 3;
     end;
 
-    FieldByName('DATE').AsDateTime    := DateExec;
+    FieldByName('DATE').AsDateTime := DateExec;
     FieldByName('DATEDOC').AsDateTime := DateDoc;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -AmountGross;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -1417,20 +1482,21 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
   Self.SaveToDbf;
 end;
 
-procedure TACTDBBANK.AddSupplierOut(DateExec, DateDoc: tdatetime; Nbr, SupplierAccount: string; AmountGross: double; Comment: string);
+procedure TACTDBBANK.AddSupplierOut(DateExec, DateDoc: tdatetime;
+  Nbr, SupplierAccount: string; AmountGross: double; Comment: string);
 begin
   // Imputation de la Base
   with ACTDS do
@@ -1455,16 +1521,18 @@ begin
     if (MonthOf(DateDoc) - 3) <= 0 then
     begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) + 9;
-    end else begin
+    end
+    else
+    begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) - 3;
     end;
 
-    FieldByName('DATE').AsDateTime    := DateExec;
+    FieldByName('DATE').AsDateTime := DateExec;
     FieldByName('DATEDOC').AsDateTime := DateDoc;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -AmountGross;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -1477,14 +1545,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
   Self.SaveToDbf;
@@ -1495,7 +1563,8 @@ begin
   Self.SaveToDbf;
 end;
 
-procedure TACTDBBANK.AddVisaIn(DateExec, DateDoc: tdatetime; Nbr, ShopAccount: string; AmountGross, AmountDisc: double; Comment: string);
+procedure TACTDBBANK.AddVisaIn(DateExec, DateDoc: tdatetime;
+  Nbr, ShopAccount: string; AmountGross, AmountDisc: double; Comment: string);
 begin
   // Imputation de la Base
   with ACTDS do
@@ -1520,16 +1589,18 @@ begin
     if (MonthOf(DateDoc) - 3) <= 0 then
     begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) + 9;
-    end else begin
+    end
+    else
+    begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) - 3;
     end;
 
-    FieldByName('DATE').AsDateTime    := DateExec;
+    FieldByName('DATE').AsDateTime := DateExec;
     FieldByName('DATEDOC').AsDateTime := DateDoc;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := -AmountGross;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -1542,14 +1613,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
 
@@ -1576,16 +1647,18 @@ begin
     if (MonthOf(DateDoc) - 3) <= 0 then
     begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) + 9;
-    end else begin
+    end
+    else
+    begin
       FieldByName('PERIOD').AsInteger := MonthOf(DateDoc) - 3;
     end;
 
-    FieldByName('DATE').AsDateTime    := DateExec;
+    FieldByName('DATE').AsDateTime := DateExec;
     FieldByName('DATEDOC').AsDateTime := DateDoc;
     // FieldByName('DUEDATE');
     FieldByName('COMMENT').AsString := 'Escompte : ' + Comment;
     // FieldByName('COMMENTEXT');
-    FieldByName('AMOUNT').Value    := 0;
+    FieldByName('AMOUNT').Value := 0;
     FieldByName('AMOUNTEUR').Value := AmountDisc;
     // FieldByName('VATBASE');
     // FieldByName('VATCODE');
@@ -1598,14 +1671,14 @@ begin
     // FieldByName('REMINDLEV');
     // FieldByName('MATCHNO');
     // FieldByName('OLDDATE');
-    FieldByName('ISMATCHED').Value  := False;
-    FieldByName('ISLOCKED').Value   := False;
+    FieldByName('ISMATCHED').Value := False;
+    FieldByName('ISLOCKED').Value := False;
     FieldByName('ISIMPORTED').Value := False;;
     FieldByName('ISPOSITIVE').Value := False;
-    FieldByName('ISTEMP').Value     := False;
-    FieldByName('MEMOTYPE').Value   := '0';
-    FieldByName('ISDOC').Value      := False;
-    FieldByName('DOCSTATUS').Value  := '0';
+    FieldByName('ISTEMP').Value := False;
+    FieldByName('MEMOTYPE').Value := '0';
+    FieldByName('ISDOC').Value := False;
+    FieldByName('DOCSTATUS').Value := '0';
     Post;
   end;
   Self.SaveToDbf;
@@ -1614,8 +1687,8 @@ end;
 constructor TACTDB.Create(RemoteDB: TRemoteDB);
 begin
   Self.aRemoteDB := RemoteDB;
-  ACSFDB         := TCSFDB.Create(Self.aRemoteDB);
-  ACTDS          := TclientDataset.Create(nil);
+  ACSFDB := TCSFDB.Create(Self.aRemoteDB);
+  ACTDS := TclientDataset.Create(nil);
   with ACTDS.FieldDefs do
   begin
     Add('DOCTYPE', ftstring, 1);
@@ -1645,17 +1718,17 @@ begin
 
     with AddFieldDef do
     begin
-      name      := 'CURRATE';
-      DataType  := ftfloat;
-      //Size      := 8;
-      //Precision := 5;
+      name := 'CURRATE';
+      DataType := ftfloat;
+      // Size      := 8;
+      // Precision := 5;
     end;
     with AddFieldDef do
     begin
-      name     := 'REMINDLEV';
+      name := 'REMINDLEV';
       DataType := ftfloat;
-      //Size      := 8;
-      //Precision := 5;
+      // Size      := 8;
+      // Precision := 5;
     end;
     // Need to adpat the code of the TExport4DBF to allow size change
 
@@ -1686,11 +1759,11 @@ begin
     CreateDir('export');
   end;
   ChDir(ExtractFilePath(ParamStr(0)) + 'export');
-  Exporter                  := TQexport4DBF.Create(nil);
-  Exporter.FileName         := 'ACT.DBF';
+  Exporter := TQexport4DBF.Create(nil);
+  Exporter.FileName := 'ACT.DBF';
   Exporter.DefaultFloatSize := 11;
-  Exporter.ExportSource     := esDataset;
-  Exporter.DataSet          := ACTDS;
+  Exporter.ExportSource := esDataset;
+  Exporter.DataSet := ACTDS;
 
   Exporter.Execute;
 end;

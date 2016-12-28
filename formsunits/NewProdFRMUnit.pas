@@ -121,15 +121,15 @@ uses ClientDMunit, GlobalsUnit;
 
 procedure TNewproductform.FormCreate(Sender: TObject);
 begin
-  TmpBmp                         := TBitmap.Create;
-  NProductImage                  := TBitmap.Create;
+  TmpBmp := TBitmap.Create;
+  NProductImage := TBitmap.Create;
   NProductImage.TransparentColor := clFuchsia;
-  NProductImage.Transparent      := True;
-  NProductImage.TransparentMode  := tmFixed;
-  ThumbImg.Width                 := 0;
-  ThumbImg.Height                := 0;
-  ThumbImg.Width                 := 120;
-  ThumbImg.Height                := 120;
+  NProductImage.Transparent := True;
+  NProductImage.TransparentMode := tmFixed;
+  ThumbImg.Width := 0;
+  ThumbImg.Height := 0;
+  ThumbImg.Width := 120;
+  ThumbImg.Height := 120;
 end;
 
 procedure TNewproductform.FormDestroy(Sender: TObject);
@@ -141,8 +141,9 @@ end;
 
 procedure TNewproductform.SBTBCClick(Sender: TObject);
 begin
-  RemoteDB.Products.FieldByName('products_ispreview').Value           := 'True';
-  RemoteDB.Products.FieldByName('products_date_available').AsDateTime := StrToDate('01/01/3000');
+  RemoteDB.Products.FieldByName('products_ispreview').Value := 'True';
+  RemoteDB.Products.FieldByName('products_date_available').AsDateTime :=
+    StrToDate('01/01/3000');
 end;
 
 procedure TNewproductform.SBtnProductImageOpenClick(Sender: TObject);
@@ -172,7 +173,8 @@ begin
       janfx.SquareFrame(Self.NProductImage, BackGround, 120);
     end;
     ThumbImg.Picture.Assign(Self.NProductImage);
-    RemoteDB.Products.FieldByName('products_image').asstring := 'products/' + RemoteDB.Products.FieldByName('Products_model').asstring + '.' +
+    RemoteDB.Products.FieldByName('products_image').asstring := 'products/' +
+      RemoteDB.Products.FieldByName('Products_model').asstring + '.' +
       ansiuppercase(MainForm.Parameter['ImageFileType']);
   end;
 
@@ -219,7 +221,8 @@ begin
         SquareFrame(Self.NProductImage, BackGround, 120);
       end;
       ThumbImg.Picture.Assign(Self.NProductImage);
-      RemoteDB.Products.FieldByName('products_image').asstring := 'products/' + RemoteDB.Products.FieldByName('Products_model').asstring + '.' +
+      RemoteDB.Products.FieldByName('products_image').asstring := 'products/' +
+        RemoteDB.Products.FieldByName('Products_model').asstring + '.' +
         ansiuppercase(MainForm.Parameter['ImageFileType']);
     end;
   finally
@@ -232,16 +235,16 @@ begin
   inherited CreateParams(Params);
   with Params do
   begin
-    ExStyle   := ExStyle or WS_EX_APPWINDOW;
+    ExStyle := ExStyle or WS_EX_APPWINDOW;
     WndParent := GetDesktopwindow;
   end;
 end;
 
 procedure TNewproductform.SBtnproductimagerotateClick(Sender: TObject);
 begin
-  TmpBmp.Width  := 0;
+  TmpBmp.Width := 0;
   TmpBmp.Height := 0;
-  TmpBmp.Width  := Self.NProductImage.Width;
+  TmpBmp.Width := Self.NProductImage.Width;
   TmpBmp.Height := Self.NProductImage.Height;
   janfx.Turn(Self.NProductImage, TmpBmp);
   Self.NProductImage.Assign(TmpBmp);
@@ -267,12 +270,15 @@ begin
     messagedlg('Modèle du produit non valide', mtwarning, [mbok], 0);
     exit;
   end;
-  if Length(Trim(RemoteDB.Products.FieldByName('products_model').asstring)) < 11 then
+  if Length(Trim(RemoteDB.Products.FieldByName('products_model').asstring)) < 11
+  then
   begin
-    messagedlg('Modèle du produit non valide min 11 charactères', mtwarning, [mbok], 0);
+    messagedlg('Modèle du produit non valide min 11 charactères', mtwarning,
+      [mbok], 0);
     exit;
   end;
-  if (RemoteDB.CDSProDescFR.FieldByName('products_name').asstring = '') and (RemoteDB.CDSProDescNL.FieldByName('products_name').asstring = '') then
+  if (RemoteDB.CDSProDescFR.FieldByName('products_name').asstring = '') and
+    (RemoteDB.CDSProDescNL.FieldByName('products_name').asstring = '') then
   begin
     messagedlg('Nom du produit invalide', mtwarning, [mbok], 0);
     exit;
@@ -284,10 +290,12 @@ begin
   end;
   // Check Categories
   RootCat := RemoteDB.GetRootCategory(RemoteDB.ProductsCategories_id.AsInteger);
-  RemoteDB.Categories.Locate('categories_id', RemoteDB.ProductsCategories_id.AsInteger, [locaseinsensitive]);
+  RemoteDB.Categories.Locate('categories_id',
+    RemoteDB.ProductsCategories_id.AsInteger, [locaseinsensitive]);
   if RemoteDB.Categories.FieldByName('parent_id').Value = 0 then
   begin
-    showMessage('Vous ne pouvez pas insérer de produits dans une catégorie principale, veuillez choisir une sous catégorie');
+    showMessage
+      ('Vous ne pouvez pas insérer de produits dans une catégorie principale, veuillez choisir une sous catégorie');
     exit;
   end;
 
@@ -295,15 +303,19 @@ begin
   begin
     if RootCat <> 116 then
     begin
-      showMessage('Vous ne disposez pas des droits nécessaires pour insérer des produits hors de la catégorie Archives');
+      showMessage
+        ('Vous ne disposez pas des droits nécessaires pour insérer des produits hors de la catégorie Archives');
       exit;
     end;
   end;
 
-  if (RemoteDB.ProductsCategories_id.Value = 206) or (RemoteDB.ProductsCategories_id.Value = 274) then
+  if (RemoteDB.ProductsCategories_id.Value = 206) or
+    (RemoteDB.ProductsCategories_id.Value = 274) then
   begin
     if RemoteDB.Products.FieldByName('products_weight').AsFloat <= 150 then
-      if messagedlg('Poids non adapté pour la catégorie, voulez-vous continuer ?', mtwarning, [mbok, mbcancel], 0) = mrCancel then
+      if messagedlg
+        ('Poids non adapté pour la catégorie, voulez-vous continuer ?',
+        mtwarning, [mbok, mbcancel], 0) = mrCancel then
         exit;
   end;
 
@@ -314,14 +326,18 @@ begin
   end;
   if RemoteDB.Products.FieldByName('products_price_allin').AsFloat = 0 then
   begin
-    if messagedlg('Prix du produit non confirmé ?', mtwarning, [mbok, mbcancel], 0) = mrCancel then
+    if messagedlg('Prix du produit non confirmé ?', mtwarning, [mbok, mbcancel],
+      0) = mrCancel then
       exit;
   end;
 
-  if (RemoteDB.Products.FieldByName('products_image').asstring <> 'products/default.gif') then
+  if (RemoteDB.Products.FieldByName('products_image').asstring <>
+    'products/default.gif') then
   begin
     SbtnProductImageUploadClick(BitBtnCloseOK);
-  end else begin
+  end
+  else
+  begin
     RemoteDB.Products.FieldByName('products_status').Value := 0;
   end;
 
@@ -334,7 +350,7 @@ end;
 procedure TNewproductform.BitBtnCloseCancelClick(Sender: TObject);
 begin
   ThumbImg.Picture.Graphic := nil;
-  Self.ModalResult         := mrCancel
+  Self.ModalResult := mrCancel
 end;
 
 procedure TNewproductform.Button1Click(Sender: TObject);
@@ -372,10 +388,11 @@ begin
     SaveJPG := TJpegImage.Create;
     try
       SaveJPG.CompressionQuality := 80;
-      SaveJPG.Transparent        := True;
+      SaveJPG.Transparent := True;
       SaveJPG.Assign(Self.NProductImage);
       SaveJPG.Compress;
-      SaveJPG.SaveToFile(ExtractFilePath(ParamStr(0)) + '/images/' + RemoteDB.Products.FieldByName('Products_image').Value);
+      SaveJPG.SaveToFile(ExtractFilePath(ParamStr(0)) + '/images/' +
+        RemoteDB.Products.FieldByName('Products_image').Value);
     finally
       SaveJPG.Free;
     end;
@@ -386,10 +403,11 @@ begin
     SavePng := TpngImage.Create;
     try
       SavePng.CompressionLevel := 9;
-      SavePng.Transparent      := True;
+      SavePng.Transparent := True;
       SavePng.TransparentColor := clWhite;
       SavePng.Assign(Self.NProductImage);
-      SavePng.SaveToFile(ExtractFilePath(ParamStr(0)) + '/images/' + RemoteDB.Products.FieldByName('Products_image').Value);
+      SavePng.SaveToFile(ExtractFilePath(ParamStr(0)) + '/images/' +
+        RemoteDB.Products.FieldByName('Products_image').Value);
     finally
       SavePng.Free;
     end;
@@ -397,10 +415,12 @@ begin
 
   // Upload Image
   if Upload then
-    if TdxStatusBarStateIndicatorPanelStyle(MainForm.StatusLine.Panels.Items[1].PanelStyle).Indicators.Items[0].IndicatorType = sitGreen then
+    if TdxStatusBarStateIndicatorPanelStyle(MainForm.StatusLine.Panels.Items[1]
+      .PanelStyle).Indicators.Items[0].IndicatorType = sitGreen then
     begin;
 
-      SrcFile  := (ExtractFilePath(ParamStr(0))) + 'images\' + RemoteDB.Products.FieldByName('products_image').asstring;
+      SrcFile := (ExtractFilePath(ParamStr(0))) + 'images\' +
+        RemoteDB.Products.FieldByName('products_image').asstring;
       DestFile := RemoteDB.Products.FieldByName('products_image').asstring;
 
       // RemoteDB.IdFTP.host:=FTPHost;
@@ -420,9 +440,10 @@ end;
 
 procedure TNewproductform.cxDBDateAvailableExit(Sender: TObject);
 begin
-  if cxDBDateAvailable.Date > Trunc(RemoteDB.Products.FieldByName('products_date_added').AsDateTime) then
+  if cxDBDateAvailable.Date >
+    Trunc(RemoteDB.Products.FieldByName('products_date_added').AsDateTime) then
   begin
-    RemoteDB.Products.FieldByName('products_ispreview').asstring    := 'True';
+    RemoteDB.Products.FieldByName('products_ispreview').asstring := 'True';
     RemoteDB.Products.FieldByName('products_street_block').asstring := 'True';
   end;
 

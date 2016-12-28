@@ -14,7 +14,8 @@ type
     cxDBTextEdit4: TcxDBTextEdit;
     Button1: TButton;
     procedure EditSalesCustomerIdKeyPress(Sender: TObject; var Key: Char);
-    procedure EditSalesCustomerIdKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure EditSalesCustomerIdKeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -30,7 +31,8 @@ uses ClientDMunit, GlobalsUnit, DB;
 
 {$R *.dfm}
 
-procedure TFormChangeInvoice.EditSalesCustomerIdKeyPress(Sender: TObject; var Key: Char);
+procedure TFormChangeInvoice.EditSalesCustomerIdKeyPress(Sender: TObject;
+  var Key: Char);
 const
   backspace = #8; { key code for backspace character }
 begin
@@ -42,13 +44,18 @@ begin
   Key := #0;
 end;
 
-procedure TFormChangeInvoice.EditSalesCustomerIdKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TFormChangeInvoice.EditSalesCustomerIdKeyUp(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
 begin
-  if (EditSalesCustomerId.Text > '0') and (EditSalesCustomerId.Text < '99999999') then
+  if (EditSalesCustomerId.Text > '0') and (EditSalesCustomerId.Text < '99999999')
+  then
   begin
-    if not RemoteDB.Customers.Locate('Customers_nbr', EditSalesCustomerId.Text, [loCaseInsensitive]) then
+    if not RemoteDB.Customers.Locate('Customers_nbr', EditSalesCustomerId.Text,
+      [loCaseInsensitive]) then
       RemoteDB.Customers.First;
-  end else begin
+  end
+  else
+  begin
     messagedlg('Entrez un N° de client valide', mtwarning, [mbok], 0);
     EditSalesCustomerId.Text := IntToStr(CONNECTEDSHOP);
   end;

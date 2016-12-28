@@ -9,11 +9,11 @@ uses Windows, Sysutils, Types, Graphics, Classes, Strutils, Printers, Dialogs,
   DCPdes, DCPsha1, DCPBase64, EncdDecd;
 
 type
-  LabelStyle       = (lsNew, lsSh, lsDp, lsAddress, lsrent);
-  LabelModel       = (LmContinuous, LmFinished);
+  LabelStyle = (lsNew, lsSh, lsDp, lsAddress, lsrent);
+  LabelModel = (LmContinuous, LmFinished);
   TTransactionType = (TtIn, TtOut);
-  BoxStyle         = (bsFin, bsCust, bsProd);
-  TGridLine        = array of string;
+  BoxStyle = (bsFin, bsCust, bsProd);
+  TGridLine = array of string;
 
   TInTVA = record
     Rate: Real;
@@ -21,7 +21,8 @@ type
     Tax: Real;
   end;
 
-  TicketStyle = set of (tsHeader, tsFooter, tsBody, tsFinancial, tsCustomer, tsTip, tsGrid);
+  TicketStyle = set of (tsHeader, tsFooter, tsBody, tsFinancial, tsCustomer,
+    tsTip, tsGrid);
   TicketModel = (TmContinuous, TmFinished);
 
   TLabelAddress = class
@@ -144,7 +145,8 @@ type
     property Owner: Integer read TJOwner write TJOwner;
     property DateTime: TDateTime read TJDateTime write TJDateTime;
     procedure AddBox(const Title: string; Sum: Boolean; Style: BoxStyle);
-    procedure AddLine(Q, Price, Title, box: string; DisplayOnly: Boolean); overload;
+    procedure AddLine(Q, Price, Title, box: string;
+      DisplayOnly: Boolean); overload;
     procedure AddLine(Q, Price, Title, box: string); overload;
     procedure AddHeader(GridLine: TGridLine; box: string);
     procedure AddFinancialLine(Title: string; Amount: Real);
@@ -164,7 +166,8 @@ function checkean(barcode: string): Boolean;
 function checkupc(barcode: string): Boolean;
 function ComputeEanCheck(barcode: string): Integer;
 function validatemodel(ProductModel: string): Boolean;
-function DynaLink_InternetGetConnectedState(lpdwFlags: LPDWORD; dwReserved: DWORD): BOOL;
+function DynaLink_InternetGetConnectedState(lpdwFlags: LPDWORD;
+  dwReserved: DWORD): BOOL;
 function ClearPhoneNbr(source: string): string;
 function InvertStr(source: string): string;
 function ConverttoPoint(source: string): string;
@@ -175,7 +178,8 @@ function StreamToStr(const aStream: TMemoryStream): string;
 function ExTractFromHtml(BPsource, StartStr, EndStr: string): string;
 function GetBrowserHtml(const webBrowser: TEWBCore): string;
 function IsStrIntNum(S: string): Boolean;
-function scShellMoveFile(FormHandle: THandle; StrFrom, StrTo: string; BlnSilent: Boolean = False): Boolean;
+function scShellMoveFile(FormHandle: THandle; StrFrom, StrTo: string;
+  BlnSilent: Boolean = False): Boolean;
 function ExtractTextInsideGivenTagEx(const Tag, Text: string): string;
 function InvFormatDatetime(Cadena: string; Formato: string): TDateTime;
 function IsStrANumber(const S: string): Boolean;
@@ -196,8 +200,8 @@ function StrSplit(chaine: string; delimiteur: string): TStringList;
 var
   L: TStringList;
 begin
-  L        := TStringList.Create;
-  L.Text   := StringReplace(chaine, delimiteur, #13#10, [rfReplaceAll]);
+  L := TStringList.Create;
+  L.Text := StringReplace(chaine, delimiteur, #13#10, [rfReplaceAll]);
   StrSplit := L;
 end;
 
@@ -226,9 +230,9 @@ begin
   if Length(Cadena) = Length(Formato) then
   begin
     Formato := UpperCase(Formato);
-    PosD    := Pos('D', Formato);
-    PosM    := Pos('M', Formato);
-    PosY    := Pos('Y', Formato);
+    PosD := Pos('D', Formato);
+    PosM := Pos('M', Formato);
+    PosY := Pos('Y', Formato);
 
     sD := Copy(Cadena, PosD, 2);
     sM := Copy(Cadena, PosM, 2);
@@ -252,11 +256,11 @@ var
   StartPos1, StartPos2, EndPos: Integer;
   i: Integer;
 begin
-  Result    := '';
+  Result := '';
   StartPos1 := Pos('<' + Tag, Text);
-  EndPos    := Pos('</' + Tag + '>', Text);
+  EndPos := Pos('</' + Tag + '>', Text);
   StartPos2 := 0;
-  for i     := StartPos1 + Length(Tag) + 1 to EndPos do
+  for i := StartPos1 + Length(Tag) + 1 to EndPos do
     if Text[i] = '>' then
     begin
       StartPos2 := i + 1;
@@ -270,14 +274,15 @@ end;
 // ----------------------------------------------------------------
 // Move files
 // ----------------------------------------------------------------
-function scShellMoveFile(FormHandle: THandle; StrFrom, StrTo: string; BlnSilent: Boolean = False): Boolean;
+function scShellMoveFile(FormHandle: THandle; StrFrom, StrTo: string;
+  BlnSilent: Boolean = False): Boolean;
 var
   F: TShFileOpStruct;
 begin
-  F.Wnd    := FormHandle;
-  F.wFunc  := FO_MOVE;
-  F.pFrom  := PChar(StrFrom + #0);
-  F.pTo    := PChar(StrTo + #0);
+  F.Wnd := FormHandle;
+  F.wFunc := FO_MOVE;
+  F.pFrom := PChar(StrFrom + #0);
+  F.pTo := PChar(StrTo + #0);
   F.fFlags := FOF_ALLOWUNDO or FOF_RENAMEONCOLLISION;
   if BlnSilent then
     F.fFlags := F.fFlags or FOF_SILENT;
@@ -306,7 +311,7 @@ begin
   strStream := TStringStream.Create('');
   try
     browserStream := webBrowser.Document as IPersistStreamInit;
-    adapter       := TStreamAdapter.Create(strStream, soReference);
+    adapter := TStreamAdapter.Create(strStream, soReference);
     browserStream.Save(adapter, True);
     Result := strStream.DataString;
   finally
@@ -322,7 +327,7 @@ begin
 
   while (TagBegin > 0) do
   begin // while there is a < in S
-    TagEnd    := Pos('>', S); // find the matching >
+    TagEnd := Pos('>', S); // find the matching >
     TagLength := TagEnd - TagBegin + 1;
     Delete(S, TagBegin, TagLength); // delete the tag
     TagBegin := Pos('<', S); // search for next <
@@ -341,7 +346,7 @@ var
   i: Integer;
 begin
   Result := '';
-  for i  := 1 to Length(source) do
+  for i := 1 to Length(source) do
   begin
     if source[i] = ',' then
       Result := Result + '.'
@@ -355,9 +360,9 @@ var
   i: Integer;
   suspend: Boolean;
 begin
-  Result  := '';
+  Result := '';
   suspend := False;
-  for i   := 1 to Length(source) do
+  for i := 1 to Length(source) do
   begin
     if source[i] = '(' then
       suspend := True;
@@ -372,20 +377,24 @@ function Detection_Connexion: Boolean;
 var
   dwFlags: DWORD;
 begin
-  dwFlags := INTERNET_CONNECTION_MODEM + INTERNET_CONNECTION_LAN + INTERNET_CONNECTION_PROXY;
-  Result  := InternetGetConnectedState(@dwFlags, 0);
+  dwFlags := INTERNET_CONNECTION_MODEM + INTERNET_CONNECTION_LAN +
+    INTERNET_CONNECTION_PROXY;
+  Result := InternetGetConnectedState(@dwFlags, 0);
 end;
 
-function DynaLink_InternetGetConnectedState(lpdwFlags: LPDWORD; dwReserved: DWORD): BOOL;
+function DynaLink_InternetGetConnectedState(lpdwFlags: LPDWORD;
+  dwReserved: DWORD): BOOL;
 var
   WininetDLL: THandle;
-  Wininet_InternetGetConnectedState: function(lpdwFlags: LPDWORD; dwReserved: DWORD): BOOL; stdcall;
+  Wininet_InternetGetConnectedState: function(lpdwFlags: LPDWORD;
+    dwReserved: DWORD): BOOL; stdcall;
 begin
-  Result     := True;
+  Result := True;
   WininetDLL := LoadLibrary('WININET.DLL');
   if WininetDLL > 0 then
   begin
-    @Wininet_InternetGetConnectedState := GetProcAddress(WininetDLL, 'InternetGetConnectedState');
+    @Wininet_InternetGetConnectedState := GetProcAddress(WininetDLL,
+      'InternetGetConnectedState');
     if Assigned(Wininet_InternetGetConnectedState) then
     begin
       Result := Wininet_InternetGetConnectedState(lpdwFlags, dwReserved);
@@ -398,9 +407,9 @@ function OSCToVCLDate(OSCDate: string): TDateTime;
 var
   Day, Month, Year: Integer;
 begin
-  Year   := StrToInt(LeftStr(OSCDate, 4));
-  Month  := StrToInt(MidStr(OSCDate, 5, 2));
-  Day    := StrToInt(RightStr(OSCDate, 2));
+  Year := StrToInt(LeftStr(OSCDate, 4));
+  Month := StrToInt(MidStr(OSCDate, 5, 2));
+  Day := StrToInt(RightStr(OSCDate, 2));
   Result := EncodeDate(Year, Month, Day);
 end;
 
@@ -413,9 +422,9 @@ function BankToVCLDate(Date: string): TDateTime;
 var
   Day, Month, Year: Integer;
 begin
-  Day    := StrToInt(LeftStr(Date, 2));
-  Month  := StrToInt(MidStr(Date, 3, 2));
-  Year   := 2000 + StrToInt(RightStr(Date, 2));
+  Day := StrToInt(LeftStr(Date, 2));
+  Month := StrToInt(MidStr(Date, 3, 2));
+  Year := 2000 + StrToInt(RightStr(Date, 2));
   Result := EncodeDate(Year, Month, Day);
 end;
 
@@ -423,9 +432,9 @@ function BankToVCLShortDate(ShortDate: string): TDateTime;
 var
   Day, Month, Year: Integer;
 begin
-  Day   := StrToInt(LeftStr(ShortDate, 2));
+  Day := StrToInt(LeftStr(ShortDate, 2));
   Month := StrToInt(RightStr(ShortDate, 2));
-  Year  := Yearof(Now);
+  Year := Yearof(Now);
   if (Month > 9) and (Monthof(Now) < 3) then
     Year := Year - 1;
   Result := EncodeDate(Year, Month, Day);
@@ -445,7 +454,7 @@ begin
       exit;
   end;
 
-  Sum         := 0;
+  Sum := 0;
   for counter := (Length(barcode) - 1) downto 1 do
   begin
     if (Length(barcode) - counter + 1) mod 2 = 0 then
@@ -469,8 +478,10 @@ begin
   if checkean(ProductModel) then
   begin
     Result := True;
-  end else begin
-    charcount   := 0;
+  end
+  else
+  begin
+    charcount := 0;
     for counter := 1 to Length(ProductModel) do
     begin
       if (ProductModel[counter] >= 'A') and (ProductModel[counter] <= 'z') then
@@ -495,7 +506,7 @@ begin
       exit;
   end;
 
-  Sum         := 0;
+  Sum := 0;
   for counter := 1 to 11 do
   begin
     if counter mod 2 = 0 then
@@ -517,7 +528,7 @@ function ComputeEanCheck(barcode: string): Integer;
 var
   counter, Sum, checksum: Integer;
 begin
-  Sum         := 0;
+  Sum := 0;
   for counter := (Length(barcode) - 1) downto 1 do
   begin
     if (Length(barcode) - counter + 1) mod 2 = 0 then
@@ -529,7 +540,7 @@ begin
     checksum := 10 - (Sum mod 10)
   else
     checksum := 0;
-  Result     := checksum;
+  Result := checksum;
 end;
 
 function AddLeadingZeroes(const aNumber, Length: Integer): string;
@@ -544,13 +555,14 @@ begin
   Self.LJLabelsCount := Self.LJLabelsCount + 1;
   Setlength(Self.LJLabels, Self.LJLabelsCount);
   Self.LJLabels[Self.LJLabelsCount - 1, 1] := Title;
-  Self.LJLabels[Self.LJLabelsCount - 1, 2] := FloatToStrf(Price, fffixed, 7, 2) + ' €';
+  Self.LJLabels[Self.LJLabelsCount - 1, 2] := FloatToStrf(Price, fffixed, 7,
+    2) + ' €';
 end;
 
 constructor TLabelJob.Create;
 begin
-  LJTitle      := 'Manager Label';
-  LJModel      := LmFinished;
+  LJTitle := 'Manager Label';
+  LJModel := LmFinished;
   aPrintDialog := TprintDlg.Create(nil);
 end;
 
@@ -586,7 +598,7 @@ begin
   end;
 
   Printers.Printer.Copies := 1;
-  StartJob                := True;
+  StartJob := True;
   if ShowDialog then
   begin
     if aPrintDialog.Execute then
@@ -601,10 +613,10 @@ begin
       begin
         with Printers.Printer do
         begin { impression Etiquette }
-          Title             := Self.LJTitle;
-          Copies            := 1;
-          Canvas.Font.Name  := 'Arial';
-          Canvas.Font.Size  := 8;
+          Title := Self.LJTitle;
+          Copies := 1;
+          Canvas.Font.Name := 'Arial';
+          Canvas.Font.Size := 8;
           Canvas.Font.Style := [];
           BeginDoc;
           for labelcounter := 1 to Self.LJLabelsCount do
@@ -615,9 +627,9 @@ begin
               Logorect := rect(155 - 50, 55 - 25, 155 + 50, 55 + 25);
               Canvas.StretchDraw(Logorect, Self.LJLogo);
 
-              Canvas.Font.Size  := 8;
+              Canvas.Font.Size := 8;
               Canvas.Font.Style := [fsBold];
-              Xpos              := Round(155 - Canvas.Textwidth(Self.LJUrl) / 2);
+              Xpos := Round(155 - Canvas.Textwidth(Self.LJUrl) / 2);
               Canvas.Textout(Xpos, 0, Self.LJUrl);
 
               { Xpos:=Xpos+Round(PageHeight*2/3)*2; }
@@ -629,83 +641,101 @@ begin
               Xpos := 0;
               { Impression Titre du Jeu }
               if Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) < 290 then
-                Canvas.Textout(Xpos + 155 - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) / 2), 90, Self.LJLabels[labelcounter - 1, 1])
+                Canvas.Textout(Xpos + 155 -
+                  Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) /
+                  2), 90, Self.LJLabels[labelcounter - 1, 1])
               else
               begin
-                Split1  := '';
-                Split2  := '';
+                Split1 := '';
+                Split2 := '';
                 NewLine := False;
-                for i   := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
+                for i := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
                 begin
                   if Self.LJLabels[labelcounter - 1, 1][i] = ' ' then
                     LastCharisSpace := True
                   else
                     LastCharisSpace := False;
-                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2)) and LastCharisSpace then
+                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2))
+                    and LastCharisSpace then
                     NewLine := True;
                   if NewLine then
                     Split2 := Split2 + Self.LJLabels[labelcounter - 1, 1][i]
                   else
                     Split1 := Split1 + Self.LJLabels[labelcounter - 1, 1][i];
                 end;
-                Canvas.Textout(Xpos + 155 - Round(Canvas.Textwidth(Split1) / 2), 85, Split1);
-                Canvas.Textout(Xpos + 155 - Round(Canvas.Textwidth(Split2) / 2), 105, Split2);
+                Canvas.Textout(Xpos + 155 - Round(Canvas.Textwidth(Split1) / 2),
+                  85, Split1);
+                Canvas.Textout(Xpos + 155 - Round(Canvas.Textwidth(Split2) / 2),
+                  105, Split2);
               end;
 
               { Impression Prix }
               Canvas.Font.Size := 20;
-              Ypos             := PageHeight - Canvas.TextHeight(Self.LJLabels[labelcounter - 1, 2]);
-              Xpos             := Xpos + 160 - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
+              Ypos := PageHeight - Canvas.TextHeight
+                (Self.LJLabels[labelcounter - 1, 2]);
+              Xpos := Xpos + 160 -
+                Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
               Canvas.Textout(Xpos, Ypos, Self.LJLabels[labelcounter - 1, 2]);
             end;
 
             if (Self.LJStyle = lsSh) or (Self.LJStyle = lsDp) then
             begin
-              Ypos              := 0;
-              Xpos              := 0;
-              Canvas.Font.Size  := 8;
+              Ypos := 0;
+              Xpos := 0;
+              Canvas.Font.Size := 8;
               Canvas.Font.Style := [fsBold];
 
               // Canvas.Brush.Color := clBlack;
               // Canvas.FrameRect(Rect(Xpos,0,XPos+300,PageHeight));
               // Canvas.Brush.Color := clWhite;
 
-              Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth('OCCASION') / 2), Ypos, 'OCCASION');
+              Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth('OCCASION') /
+                2), Ypos, 'OCCASION');
               Ypos := Ypos + Round(Canvas.TextHeight('OCCASION') * 1.2);
-              if Self.LJStyle = lsSh then begin
+              if Self.LJStyle = lsSh then
+              begin
                 Logorect := rect(50 - 25, 55 - 25, 50 + 25, 55 + 25);
                 Canvas.StretchDraw(Logorect, Self.LJLogo);
               end;
-              Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth(inttoStr(Self.LJOwner)) / 2), Ypos, inttoStr(Self.LJOwner));
+              Canvas.Textout(Xpos + 100 -
+                Round(Canvas.Textwidth(inttoStr(Self.LJOwner)) / 2), Ypos,
+                inttoStr(Self.LJOwner));
               { Impression Titre du Jeu }
               if Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) < 200 then
-                Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) / 2), 70, Self.LJLabels[labelcounter - 1, 1])
+                Canvas.Textout(Xpos + 100 -
+                  Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) /
+                  2), 70, Self.LJLabels[labelcounter - 1, 1])
               else
               begin
-                Split1  := '';
-                Split2  := '';
+                Split1 := '';
+                Split2 := '';
                 NewLine := False;
-                for i   := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
+                for i := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
                 begin
                   if Self.LJLabels[labelcounter - 1, 1][i] = ' ' then
                     LastCharisSpace := True
                   else
                     LastCharisSpace := False;
-                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2)) and LastCharisSpace then
+                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2))
+                    and LastCharisSpace then
                     NewLine := True;
                   if NewLine then
                     Split2 := Split2 + Self.LJLabels[labelcounter - 1, 1][i]
                   else
                     Split1 := Split1 + Self.LJLabels[labelcounter - 1, 1][i];
                 end;
-                Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth(Split1) / 2), 60, Split1);
-                Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth(Split2) / 2), 80, Split2);
+                Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth(Split1) / 2),
+                  60, Split1);
+                Canvas.Textout(Xpos + 100 - Round(Canvas.Textwidth(Split2) / 2),
+                  80, Split2);
               end;
 
               { Impression Prix }
               Canvas.Font.Size := 20;
-              Ypos             := PageHeight - Canvas.TextHeight(Self.LJLabels[labelcounter - 1, 2]);
-              Xpos             := Xpos + 100 - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
+              Ypos := PageHeight - Canvas.TextHeight
+                (Self.LJLabels[labelcounter - 1, 2]);
+              Xpos := Xpos + 100 -
+                Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
               Canvas.Textout(Xpos, Ypos, Self.LJLabels[labelcounter - 1, 2]);
             end;
             if labelcounter < Self.LJLabelsCount then
@@ -725,112 +755,141 @@ begin
           begin
             if Self.LJStyle = lsNew then
             begin
-              Canvas.Font.Name  := 'Arial';
-              Canvas.Font.Size  := 8;
+              Canvas.Font.Name := 'Arial';
+              Canvas.Font.Size := 8;
               Canvas.Font.Style := [];
-              Ypos              := 0;
-              Ypos              := Round(Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 1.2);
+              Ypos := 0;
+              Ypos := Round(Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 1.2);
 
               LogoHeight := 40;
-              Ypos       := Ypos + LogoHeight;
-              Logorect   := rect(Round(PageWidth / 2) - (LogoHeight * 2), Ypos - (LogoHeight), Round(PageWidth / 2) + (LogoHeight * 2), Ypos + (LogoHeight));
+              Ypos := Ypos + LogoHeight;
+              Logorect := rect(Round(PageWidth / 2) - (LogoHeight * 2),
+                Ypos - (LogoHeight), Round(PageWidth / 2) + (LogoHeight * 2),
+                Ypos + (LogoHeight));
               Canvas.StretchDraw(Logorect, Self.LJLogo);
 
-              Canvas.Font.Size  := 8;
+              Canvas.Font.Size := 8;
               Canvas.Font.Style := [fsBold];
-              Xpos              := Round(Round(PageWidth / 2) - Canvas.Textwidth(AnsiUpperCase(Self.LJUrl)) / 2);
+              Xpos := Round(Round(PageWidth / 2) -
+                Canvas.Textwidth(AnsiUpperCase(Self.LJUrl)) / 2);
               Canvas.Textout(Xpos, 0, AnsiUpperCase(Self.LJUrl));
 
               Xpos := 0;
               Ypos := Ypos + LogoHeight;
-              Ypos := Round(Ypos + Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 0.2);
+              Ypos := Round
+                (Ypos + Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 0.2);
               { Impression Titre du Jeu }
-              if Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) < Round(PageWidth * 0.80) then
-                Canvas.Textout(Xpos + Round(PageWidth / 2) - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) / 2), Ypos,
-                  Self.LJLabels[labelcounter - 1, 1])
+              if Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) <
+                Round(PageWidth * 0.80) then
+                Canvas.Textout(Xpos + Round(PageWidth / 2) -
+                  Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) /
+                  2), Ypos, Self.LJLabels[labelcounter - 1, 1])
               else
               begin
-                Split1  := '';
-                Split2  := '';
+                Split1 := '';
+                Split2 := '';
                 NewLine := False;
-                for i   := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
+                for i := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
                 begin
                   if Self.LJLabels[labelcounter - 1, 1][i] = ' ' then
                     LastCharisSpace := True
                   else
                     LastCharisSpace := False;
-                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2)) and LastCharisSpace then
+                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2))
+                    and LastCharisSpace then
                     NewLine := True;
                   if NewLine then
                     Split2 := Split2 + Self.LJLabels[labelcounter - 1, 1][i]
                   else
                     Split1 := Split1 + Self.LJLabels[labelcounter - 1, 1][i];
                 end;
-                Canvas.Textout(Xpos + Round(PageWidth / 2) - Round(Canvas.Textwidth(Split1) / 2), Ypos, Split1);
-                Ypos := Round(Ypos + Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 1.2);
-                Canvas.Textout(Xpos + Round(PageWidth / 2) - Round(Canvas.Textwidth(Split2) / 2), Ypos, Split2);
+                Canvas.Textout(Xpos + Round(PageWidth / 2) -
+                  Round(Canvas.Textwidth(Split1) / 2), Ypos, Split1);
+                Ypos := Round
+                  (Ypos + Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 1.2);
+                Canvas.Textout(Xpos + Round(PageWidth / 2) -
+                  Round(Canvas.Textwidth(Split2) / 2), Ypos, Split2);
               end;
 
               { Impression Prix }
               Canvas.Font.Size := 20;
-              Ypos             := PageHeight - Round(Canvas.TextHeight(Self.LJLabels[labelcounter - 1, 2]) * 1.2);
-              Xpos             := Xpos + Round(PageWidth / 2) - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
+              Ypos := PageHeight -
+                Round(Canvas.TextHeight(Self.LJLabels[labelcounter - 1,
+                2]) * 1.2);
+              Xpos := Xpos + Round(PageWidth / 2) -
+                Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
               Canvas.Textout(Xpos, Ypos, Self.LJLabels[labelcounter - 1, 2]);
             end;
 
             if (Self.LJStyle = lsSh) or (Self.LJStyle = lsDp) then
             begin
-              Canvas.Font.Size  := 8;
+              Canvas.Font.Size := 8;
               Canvas.Font.Style := [fsBold];
 
               // Canvas.Brush.Color := clBlack;
               // Canvas.FrameRect(Rect(Xpos,0,XPos+300,PageHeight));
               // Canvas.Brush.Color := clWhite;
 
-              if Self.LJStyle = lsSh then begin
+              if Self.LJStyle = lsSh then
+              begin
                 LogoHeight := 40;
-                Ypos       := Ypos + LogoHeight;
-                Logorect   := rect(Round(PageWidth / 4) - (LogoHeight), Ypos - (LogoHeight), Round(PageWidth / 4) + (LogoHeight), Ypos + (LogoHeight));
+                Ypos := Ypos + LogoHeight;
+                Logorect := rect(Round(PageWidth / 4) - (LogoHeight),
+                  Ypos - (LogoHeight), Round(PageWidth / 4) + (LogoHeight),
+                  Ypos + (LogoHeight));
                 Canvas.StretchDraw(Logorect, Self.LJLogo);
               end;
 
-              Ypos              := 0;
-              Xpos              := 0;
+              Ypos := 0;
+              Xpos := 0;
 
-              Canvas.Textout(Round(PageWidth / 2) - Round(Canvas.Textwidth('OCCASION') / 2), Ypos, 'OCCASION');
+              Canvas.Textout(Round(PageWidth / 2) -
+                Round(Canvas.Textwidth('OCCASION') / 2), Ypos, 'OCCASION');
               Ypos := Ypos + Round(Canvas.TextHeight('OCCASION') * 1.2);
-              Canvas.Textout(Round(PageWidth / 2) - Round(Canvas.Textwidth(inttoStr(Self.LJOwner)) / 2), Ypos, inttoStr(Self.LJOwner));
+              Canvas.Textout(Round(PageWidth / 2) -
+                Round(Canvas.Textwidth(inttoStr(Self.LJOwner)) / 2), Ypos,
+                inttoStr(Self.LJOwner));
               Ypos := Ypos + Round(Canvas.TextHeight('OCCASION') * 2);
               { Impression Titre du Jeu }
-              if Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) < Round(PageWidth * 0.80) then
-                Canvas.Textout(Round(PageWidth / 2) - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) / 2), Ypos, Self.LJLabels[labelcounter - 1, 1])
+              if Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) <
+                Round(PageWidth * 0.80) then
+                Canvas.Textout(Round(PageWidth / 2) -
+                  Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 1]) /
+                  2), Ypos, Self.LJLabels[labelcounter - 1, 1])
               else
               begin
-                Split1  := '';
-                Split2  := '';
+                Split1 := '';
+                Split2 := '';
                 NewLine := False;
-                for i   := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
+                for i := 1 to Length(Self.LJLabels[labelcounter - 1, 1]) do
                 begin
                   if Self.LJLabels[labelcounter - 1, 1][i] = ' ' then
                     LastCharisSpace := True
                   else
                     LastCharisSpace := False;
-                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2)) and LastCharisSpace then
+                  if (i > Round(Length(Self.LJLabels[labelcounter - 1, 1]) / 2))
+                    and LastCharisSpace then
                     NewLine := True;
                   if NewLine then
                     Split2 := Split2 + Self.LJLabels[labelcounter - 1, 1][i]
                   else
                     Split1 := Split1 + Self.LJLabels[labelcounter - 1, 1][i];
                 end;
-                Canvas.Textout(Round(PageWidth / 2) - Round(Canvas.Textwidth(Split1) / 2), Ypos, Split1);
-                Ypos := Round(Ypos + Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 1.2);
-                Canvas.Textout(Round(PageWidth / 2) - Round(Canvas.Textwidth(Split2) / 2), Ypos, Split2);
+                Canvas.Textout(Round(PageWidth / 2) -
+                  Round(Canvas.Textwidth(Split1) / 2), Ypos, Split1);
+                Ypos := Round
+                  (Ypos + Canvas.TextHeight(AnsiUpperCase(Self.LJUrl)) * 1.2);
+                Canvas.Textout(Round(PageWidth / 2) -
+                  Round(Canvas.Textwidth(Split2) / 2), Ypos, Split2);
               end;
 
               { Impression Prix }
               Canvas.Font.Size := 20;
-              Ypos             := PageHeight - Round(Canvas.TextHeight(Self.LJLabels[labelcounter - 1, 2]) * 1.2);
-              Xpos             := Round(PageWidth / 2) - Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
+              Ypos := PageHeight -
+                Round(Canvas.TextHeight(Self.LJLabels[labelcounter - 1,
+                2]) * 1.2);
+              Xpos := Round(PageWidth / 2) -
+                Round(Canvas.Textwidth(Self.LJLabels[labelcounter - 1, 2]) / 2);
               Canvas.Textout(Xpos, Ypos, Self.LJLabels[labelcounter - 1, 2]);
             end;
             if labelcounter < Self.LJLabelsCount then
@@ -877,7 +936,8 @@ procedure TTicketJob.AddFinancialLine(Title: string; Amount: Real);
 begin
   Setlength(Self.TJFinancials, Length(Self.TJFinancials) + 1);
   Self.TJFinancials[high(Self.TJFinancials), 1] := Title;
-  Self.TJFinancials[high(Self.TJFinancials), 2] := FloatToStrf(Amount, fffixed, 7, 2) + ' €';
+  Self.TJFinancials[high(Self.TJFinancials), 2] :=
+    FloatToStrf(Amount, fffixed, 7, 2) + ' €';
 end;
 
 procedure TTicketJob.AddHeader(GridLine: TGridLine; box: string);
@@ -889,10 +949,11 @@ begin
   Setlength(Self.TJInTVA, Length(Self.TJInTVA) + 1);
   Self.TJInTVA[high(Self.TJInTVA)].Rate := Rate;
   Self.TJInTVA[high(Self.TJInTVA)].Base := Base;
-  Self.TJInTVA[high(Self.TJInTVA)].Tax  := Tax;
+  Self.TJInTVA[high(Self.TJInTVA)].Tax := Tax;
 end;
 
-procedure TTicketJob.AddLine(Q, Price, Title, box: string; DisplayOnly: Boolean);
+procedure TTicketJob.AddLine(Q, Price, Title, box: string;
+  DisplayOnly: Boolean);
 var
   currentbox: Integer;
 begin
@@ -923,11 +984,11 @@ constructor TTicketJob.Create(Owner: Tcomponent);
 begin
   inherited Create(Owner);
   TJDateTime := Now;
-  TJTitle    := 'Manager Ticket';
-  TJID       := '';
-  TJUrl      := '';
-  TJComment  := '';
-  TJModel    := TmFinished;
+  TJTitle := 'Manager Ticket';
+  TJID := '';
+  TJUrl := '';
+  TJComment := '';
+  TJModel := TmFinished;
 end;
 
 procedure TTicketJob.InternalPrint;
@@ -937,7 +998,8 @@ const
   leftborder = 0.05;
 
 var
-  Width, AvailableWidth, AvailableHeight, Xpos, Ypos, Left, Middle, TipRectTop: Integer;
+  Width, AvailableWidth, AvailableHeight, Xpos, Ypos, Left, Middle,
+    TipRectTop: Integer;
   BoxCounter, BoxlineCounter: Integer;
   aRect: Trect;
   TempStr: string;
@@ -950,8 +1012,6 @@ var
   DeviceHandle: THandle;
   DevMode: PDeviceMode;
   BoxHeight: Integer;
-
-
 
 begin
   APrinter := Printers.Printer;
@@ -974,7 +1034,7 @@ begin
       DevMode := GlobalLock(DeviceHandle);
     with DevMode^ do
     begin
-      dmFields       := dmFields or DM_PRINTQUALITY;
+      dmFields := dmFields or DM_PRINTQUALITY;
       dmPrintQuality := -4;
     end;
 
@@ -985,15 +1045,15 @@ begin
 
     with APrinter do
     begin { impression Etiquette }
-      Title             := Self.TJTitle;
-      Orientation       := TPrinterOrientation(poportrait);
-      Copies            := 1;
-      Canvas.Font.Name  := 'Arial';
-      Canvas.Font.Size  := 8;
+      Title := Self.TJTitle;
+      Orientation := TPrinterOrientation(poportrait);
+      Copies := 1;
+      Canvas.Font.Name := 'Arial';
+      Canvas.Font.Size := 8;
       Canvas.Font.Style := [];
       BeginDoc;
 
-      Left   := Round(PageWidth * leftborder);
+      Left := Round(PageWidth * leftborder);
       Middle := Round(PageWidth / 2);
       if TJModel = TmContinuous then
         Ypos := 0
@@ -1005,37 +1065,54 @@ begin
       ///
       if tsHeader in Self.TJStyle then
       begin
-        AvailableWidth  := Round(Middle - 2 * Left);
-        AvailableHeight := Round(((Canvas.TextHeight('C') * 1.2) * 4) + Canvas.TextHeight('C'));
+        AvailableWidth := Round(Middle - 2 * Left);
+        AvailableHeight := Round(((Canvas.TextHeight('C') * 1.2) * 4) +
+          Canvas.TextHeight('C'));
         if (Self.TJLogo.Width > 0) and (Self.TJLogo.Height > 0) then
-          if Self.TJLogo.Width / Self.TJLogo.Height > AvailableWidth / AvailableHeight then
+          if Self.TJLogo.Width / Self.TJLogo.Height > AvailableWidth / AvailableHeight
+          then
           begin { Maximise Width }
-            aRect := rect(Left, Ypos + Round((AvailableHeight - (Self.TJLogo.Height / Self.TJLogo.Width * AvailableWidth)) / 2), Middle - Left,
-              Ypos + Round(AvailableWidth - ((AvailableHeight - (Self.TJLogo.Height / Self.TJLogo.Width * AvailableWidth)) / 2)));
+            aRect := rect(Left,
+              Ypos + Round((AvailableHeight - (Self.TJLogo.Height /
+              Self.TJLogo.Width * AvailableWidth)) / 2), Middle - Left,
+              Ypos + Round(AvailableWidth -
+              ((AvailableHeight - (Self.TJLogo.Height / Self.TJLogo.Width *
+              AvailableWidth)) / 2)));
             Canvas.StretchDraw(aRect, Self.TJLogo);
-          end else begin
-            aRect := rect(Left + Round((AvailableWidth - (Self.TJLogo.Width / Self.TJLogo.Height * AvailableHeight)) / 2), Ypos,
-              Left + AvailableWidth - Round((AvailableWidth - (Self.TJLogo.Width / Self.TJLogo.Height * AvailableHeight)) / 2), Ypos + AvailableHeight);
+          end
+          else
+          begin
+            aRect := rect
+              (Left + Round((AvailableWidth - (Self.TJLogo.Width /
+              Self.TJLogo.Height * AvailableHeight)) / 2), Ypos,
+              Left + AvailableWidth -
+              Round((AvailableWidth - (Self.TJLogo.Width / Self.TJLogo.Height *
+              AvailableHeight)) / 2), Ypos + AvailableHeight);
             Canvas.StretchDraw(aRect, Self.TJLogo);
           end;
         Width := Canvas.Textwidth(Self.TJShopData[0]);
-        Xpos  := Round(((PageWidth * right) / 2 - Width) / 2 + (PageWidth * right) / 2);
+        Xpos := Round(((PageWidth * right) / 2 - Width) / 2 +
+          (PageWidth * right) / 2);
         Canvas.Textout(Xpos, Ypos, Self.TJShopData[0]);
-        Ypos  := Ypos + Round(Canvas.TextHeight(Self.TJShopData[0]) * 1.2);
+        Ypos := Ypos + Round(Canvas.TextHeight(Self.TJShopData[0]) * 1.2);
         Width := Canvas.Textwidth(Self.TJShopData[1]);
-        Xpos  := Round(((PageWidth * right) / 2 - Width) / 2 + (PageWidth * right) / 2);
+        Xpos := Round(((PageWidth * right) / 2 - Width) / 2 +
+          (PageWidth * right) / 2);
         Canvas.Textout(Xpos, Ypos, Self.TJShopData[1]);
-        Ypos  := Ypos + Round(Canvas.TextHeight(Self.TJShopData[2]) * 1.2);
+        Ypos := Ypos + Round(Canvas.TextHeight(Self.TJShopData[2]) * 1.2);
         Width := Canvas.Textwidth(Self.TJShopData[2]);
-        Xpos  := Round(((PageWidth * right) / 2 - Width) / 2 + (PageWidth * right) / 2);
+        Xpos := Round(((PageWidth * right) / 2 - Width) / 2 +
+          (PageWidth * right) / 2);
         Canvas.Textout(Xpos, Ypos, Self.TJShopData[2]);
-        Ypos  := Ypos + Round(Canvas.TextHeight(Self.TJShopData[2]) * 1.2);
+        Ypos := Ypos + Round(Canvas.TextHeight(Self.TJShopData[2]) * 1.2);
         Width := Canvas.Textwidth(Self.TJShopData[3]);
-        Xpos  := Round(((PageWidth * right) / 2 - Width) / 2 + (PageWidth * right) / 2);
+        Xpos := Round(((PageWidth * right) / 2 - Width) / 2 +
+          (PageWidth * right) / 2);
         Canvas.Textout(Xpos, Ypos, Self.TJShopData[3]);
-        Ypos  := Ypos + Round(Canvas.TextHeight(Self.TJShopData[3]) * 1.2);
+        Ypos := Ypos + Round(Canvas.TextHeight(Self.TJShopData[3]) * 1.2);
         Width := Canvas.Textwidth(Self.TJShopData[4]);
-        Xpos  := Round(((PageWidth * right) / 2 - Width) / 2 + (PageWidth * right) / 2);
+        Xpos := Round(((PageWidth * right) / 2 - Width) / 2 +
+          (PageWidth * right) / 2);
         Canvas.Textout(Xpos, Ypos, Self.TJShopData[4]);
         Ypos := Ypos + Round(Canvas.TextHeight(Self.TJShopData[4]) * 1.2);
         Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 1);
@@ -1054,26 +1131,29 @@ begin
             //
             // Titre
             //
-            Canvas.Font.Size  := 20;
+            Canvas.Font.Size := 20;
             Canvas.Font.Style := [fsBold];
 
-            Ypos := Ypos + Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
+            Ypos := Ypos +
+              Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
             Xpos := Round(PageWidth * leftborder);
             Canvas.Textout(Xpos, Ypos, Self.TJBoxesNames[BoxCounter]);
             Ypos := Ypos + Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]);
-            Ypos := Ypos + Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
+            Ypos := Ypos +
+              Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
 
             Canvas.Penpos := (Point(Round(PageWidth * leftborder), Ypos));
             Canvas.LineTo(Round(PageWidth * right), Ypos);
             //
             // Boite
             //
-            Canvas.Font.Size   := 8;
-            Canvas.Font.Style  := [];
-            Ypos               := Ypos + Round(Canvas.TextHeight('CCC') * 0.5);
+            Canvas.Font.Size := 8;
+            Canvas.Font.Style := [];
+            Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 0.5);
             for BoxlineCounter := 0 to high(Self.TJBoxes[BoxCounter]) do
             begin
-              Canvas.Textout(Round(PageWidth * leftborder), Ypos, Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) + ' ' +
+              Canvas.Textout(Round(PageWidth * leftborder), Ypos,
+                Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) + ' ' +
                 Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2]));
               Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 1.5);
             end; // FinLignes Ds La Boite
@@ -1086,43 +1166,53 @@ begin
           if TJBoxesStyles[BoxCounter] = bsProd then
           begin
             TotalArticle := 0;
-            TotalValeur  := 0;
+            TotalValeur := 0;
             //
             // Titre
             //
-            Canvas.Font.Size  := 20;
+            Canvas.Font.Size := 20;
             Canvas.Font.Style := [fsBold];
 
-            Ypos := Ypos + Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
-            Xpos := Round((PageWidth - Canvas.Textwidth(Self.TJBoxesNames[BoxCounter])) / 2);
+            Ypos := Ypos +
+              Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
+            Xpos := Round
+              ((PageWidth - Canvas.Textwidth(Self.TJBoxesNames
+              [BoxCounter])) / 2);
             Canvas.Textout(Xpos, Ypos, Self.TJBoxesNames[BoxCounter]);
             Ypos := Ypos + Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]);
-            Ypos := Ypos + Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
+            Ypos := Ypos +
+              Round(Canvas.TextHeight(Self.TJBoxesNames[BoxCounter]) / 4);
 
             Canvas.Penpos := (Point(Round(PageWidth * leftborder), Ypos));
             Canvas.LineTo(Round(PageWidth * right), Ypos);
             //
             // Boite
             //
-            Canvas.Font.Size  := 8;
+            Canvas.Font.Size := 8;
             Canvas.Font.Style := [];
-            Ypos              := Ypos + Round(Canvas.TextHeight('CCC') * 0.5);
+            Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 0.5);
 
             for BoxlineCounter := 0 to high(Self.TJBoxes[BoxCounter]) do
             begin
               if Self.TJBoxes[BoxCounter, BoxlineCounter, 4] = 'False' then
               begin
-                Canvas.Textout(Round(PageWidth * leftborder), Ypos, Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) + ' ' +
+                Canvas.Textout(Round(PageWidth * leftborder), Ypos,
+                  Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) + ' ' +
                   Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2]));
-                SStotal := StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) * strtofloat(Self.TJBoxes[BoxCounter, BoxlineCounter, 3]);
+                SStotal := StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1])
+                  * strtofloat(Self.TJBoxes[BoxCounter, BoxlineCounter, 3]);
                 TempStr := FloatToStrf(SStotal, fffixed, 7, 2) + ' €';
-                Xpos    := Round(PageWidth * right) - Canvas.Textwidth(TempStr);
+                Xpos := Round(PageWidth * right) - Canvas.Textwidth(TempStr);
                 Canvas.Textout(Xpos, Ypos, Trim(TempStr));
-                Ypos         := Ypos + Round(Canvas.TextHeight('CCC') * 1.5);
-                TotalArticle := TotalArticle + StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]);
-                TotalValeur  := TotalValeur + SStotal;
-              end else begin
-                Canvas.Textout(Round(PageWidth * leftborder), Ypos, Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2]));
+                Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 1.5);
+                TotalArticle := TotalArticle +
+                  StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]);
+                TotalValeur := TotalValeur + SStotal;
+              end
+              else
+              begin
+                Canvas.Textout(Round(PageWidth * leftborder), Ypos,
+                  Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2]));
                 Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 1.5);
               end;
             end; // FinLignes Ds La Boite
@@ -1134,9 +1224,13 @@ begin
             if Self.TJBoxesSum[BoxCounter] then
             begin
               Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 0.5);
-              Canvas.Textout(Round(PageWidth * leftborder), Ypos, inttoStr(TotalArticle) + ' article(s), valeur totale :');
-              Xpos := Round(PageWidth * right) - Canvas.Textwidth(FloatToStrf(TotalValeur, fffixed, 7, 2) + ' €');
-              Canvas.Textout(Xpos, Ypos, FloatToStrf(TotalValeur, fffixed, 7, 2) + ' €');
+              Canvas.Textout(Round(PageWidth * leftborder), Ypos,
+                inttoStr(TotalArticle) + ' article(s), valeur totale :');
+              Xpos := Round(PageWidth * right) -
+                Canvas.Textwidth(FloatToStrf(TotalValeur, fffixed, 7,
+                2) + ' €');
+              Canvas.Textout(Xpos, Ypos, FloatToStrf(TotalValeur, fffixed, 7,
+                2) + ' €');
               Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 2);
             end;
           end
@@ -1147,8 +1241,10 @@ begin
       begin
         for BoxCounter := 0 to high(Self.TJFinancials) do
         begin
-          Canvas.Textout(Round(PageWidth * leftborder), Ypos, Self.TJFinancials[BoxCounter, 1]);
-          Xpos := Round(PageWidth * right) - Canvas.Textwidth(Self.TJFinancials[BoxCounter, 2]);
+          Canvas.Textout(Round(PageWidth * leftborder), Ypos,
+            Self.TJFinancials[BoxCounter, 1]);
+          Xpos := Round(PageWidth * right) -
+            Canvas.Textwidth(Self.TJFinancials[BoxCounter, 2]);
           Canvas.Textout(Xpos, Ypos, Self.TJFinancials[BoxCounter, 2]);
           Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 1.2);
         end;
@@ -1159,8 +1255,10 @@ begin
       begin
         for BoxCounter := 0 to high(Self.TJCustomer) do
         begin
-          Canvas.Textout(Round(PageWidth * leftborder), Ypos, Self.TJCustomer[BoxCounter, 1]);
-          Xpos := Round(PageWidth * right) - Canvas.Textwidth(Self.TJCustomer[BoxCounter, 2]);
+          Canvas.Textout(Round(PageWidth * leftborder), Ypos,
+            Self.TJCustomer[BoxCounter, 1]);
+          Xpos := Round(PageWidth * right) -
+            Canvas.Textwidth(Self.TJCustomer[BoxCounter, 2]);
           Canvas.Textout(Xpos, Ypos, Self.TJCustomer[BoxCounter, 2]);
           Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 1.2);
         end;
@@ -1175,21 +1273,23 @@ begin
         if tsFooter in Self.TJStyle then
         begin
           TempStr := FormatDateTime('"Le" DD MMMM YYYY "à" hh:mm', TJDateTime);
-          Xpos    := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
+          Xpos := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
           Canvas.Textout(Xpos, Ypos, TempStr);
           if TJID <> '' then
           begin
-            Ypos    := Ypos + Round(Canvas.TextHeight('CCC') * 1);
+            Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 1);
             TempStr := TJID;
-            Xpos    := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
+            Xpos := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
             Canvas.Textout(Xpos, Ypos, TempStr);
             Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 2);
-          end else begin
+          end
+          else
+          begin
             Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 2);
           end;
-          Canvas.Font.Size  := 14;
+          Canvas.Font.Size := 14;
           Canvas.Font.Style := [fsBold];
-          Xpos              := Round((PageWidth - Canvas.Textwidth(Self.TJUrl)) / 2);
+          Xpos := Round((PageWidth - Canvas.Textwidth(Self.TJUrl)) / 2);
           Canvas.Textout(Xpos, Ypos, Self.TJUrl);
         end;
         ///
@@ -1207,42 +1307,55 @@ begin
               RemoteDB.Tips.Next;
               i := i - 1;
             end;
-            Canvas.Font.Name  := 'Arial';
-            Canvas.Font.Size  := 8;
+            Canvas.Font.Name := 'Arial';
+            Canvas.Font.Size := 8;
             Canvas.Font.Style := [];
-            Ypos              := Ypos + Round(Canvas.TextHeight('CCC') * 2);
-            if Canvas.Textwidth(RemoteDB.Tips.Fieldbyname('tipstext').AsString) > PageWidth * rightinner then
+            Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 2);
+            if Canvas.Textwidth(RemoteDB.Tips.Fieldbyname('tipstext').AsString)
+              > PageWidth * rightinner then
             begin
               // Calcul des lignes
               LastSpaceIndex := 0;
               Setlength(Tiplines, 1);
-              for i := 1 to Length(RemoteDB.Tips.Fieldbyname('tipstext').AsString) do
+              for i := 1 to Length(RemoteDB.Tips.Fieldbyname('tipstext')
+                .AsString) do
               begin
-                Tiplines[high(Tiplines)] := Tiplines[high(Tiplines)] + RemoteDB.Tips.Fieldbyname('tipstext').AsString[i];
+                Tiplines[high(Tiplines)] := Tiplines[high(Tiplines)] +
+                  RemoteDB.Tips.Fieldbyname('tipstext').AsString[i];
                 if RemoteDB.Tips.Fieldbyname('tipstext').AsString[i] = ' ' then
                   LastSpaceIndex := i;
-                if Canvas.Textwidth(Tiplines[high(Tiplines)]) > PageWidth * rightinner then
+                if Canvas.Textwidth(Tiplines[high(Tiplines)]) > PageWidth * rightinner
+                then
                 begin
-                  TempStr                  := RightStr(Tiplines[high(Tiplines)], (i - LastSpaceIndex));
-                  Tiplines[high(Tiplines)] := LeftStr(Tiplines[high(Tiplines)], (Length(Tiplines[high(Tiplines)]) - (i - LastSpaceIndex)));
+                  TempStr := RightStr(Tiplines[high(Tiplines)],
+                    (i - LastSpaceIndex));
+                  Tiplines[high(Tiplines)] := LeftStr(Tiplines[high(Tiplines)],
+                    (Length(Tiplines[high(Tiplines)]) - (i - LastSpaceIndex)));
                   Setlength(Tiplines, Length(Tiplines) + 1);
                   Tiplines[high(Tiplines)] := TempStr;
                 end;
               end;
               // Impression des lignes
-              Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos, Round(PageWidth * right),
-                Ypos + Round(Canvas.TextHeight('C') * 1.2 * (Length(Tiplines) + 2))));
+              Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos,
+                Round(PageWidth * right), Ypos + Round(Canvas.TextHeight('C') *
+                1.2 * (Length(Tiplines) + 2))));
               for i := 0 to high(Tiplines) do
               begin
                 Ypos := Ypos + Round(Canvas.TextHeight('C') * 1.2);
                 Xpos := Round((PageWidth - Canvas.Textwidth(Tiplines[i])) / 2);
                 Canvas.Textout(Xpos, Ypos, Tiplines[i]);
               end;
-            end else begin
-              Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos, Round(PageWidth * right), Ypos + Canvas.TextHeight('C') * 3));
+            end
+            else
+            begin
+              Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos,
+                Round(PageWidth * right), Ypos + Canvas.TextHeight('C') * 3));
               Ypos := Ypos + Round(Canvas.TextHeight('C') * 2 / 2);
-              Xpos := Round((PageWidth - Canvas.Textwidth(RemoteDB.Tips.Fieldbyname('tipstext').AsString)) / 2);
-              Canvas.Textout(Xpos, Ypos, RemoteDB.Tips.Fieldbyname('tipstext').AsString);
+              Xpos := Round
+                ((PageWidth - Canvas.Textwidth(RemoteDB.Tips.Fieldbyname
+                ('tipstext').AsString)) / 2);
+              Canvas.Textout(Xpos, Ypos, RemoteDB.Tips.Fieldbyname('tipstext')
+                .AsString);
             end;
           end;
         end;
@@ -1252,34 +1365,42 @@ begin
 
         if Self.TJComment <> '' then
         begin
-          Canvas.Font.Name  := 'Arial';
-          Canvas.Font.Size  := 8;
+          Canvas.Font.Name := 'Arial';
+          Canvas.Font.Size := 8;
           Canvas.Font.Style := [];
-          Ypos              := Ypos + Round(Canvas.TextHeight('CCC') * 2);
-          if Canvas.Textwidth(Self.TJComment) > PageWidth * 0.9 then begin
+          Ypos := Ypos + Round(Canvas.TextHeight('CCC') * 2);
+          if Canvas.Textwidth(Self.TJComment) > PageWidth * 0.9 then
+          begin
             // Calcul des lignes
             LastSpaceIndex := 0;
             Setlength(Commentlines, 1);
             for i := 1 to Length(Self.TJComment) do
             begin
-              if Self.TJComment[i] = Chr(13) then  Setlength(Commentlines, Length(Commentlines) + 1)
-              else begin
-                Commentlines[high(Commentlines)] := Commentlines[high(Commentlines)] + Self.TJComment[i];
+              if Self.TJComment[i] = Chr(13) then
+                Setlength(Commentlines, Length(Commentlines) + 1)
+              else
+              begin
+                Commentlines[high(Commentlines)] :=
+                  Commentlines[high(Commentlines)] + Self.TJComment[i];
                 if Self.TJComment[i] = ' ' then
                   LastSpaceIndex := i;
-                if Canvas.Textwidth(Commentlines[high(Commentlines)]) > PageWidth * rightinner then
+                if Canvas.Textwidth(Commentlines[high(Commentlines)]) >
+                  PageWidth * rightinner then
                 begin
-                  TempStr                          := RightStr(Commentlines[high(Commentlines)], (i - LastSpaceIndex));
-                  Commentlines[high(Commentlines)] := LeftStr(Commentlines[high(Commentlines)],
-                    (Length(Commentlines[high(Commentlines)]) - (i - LastSpaceIndex)));
+                  TempStr := RightStr(Commentlines[high(Commentlines)],
+                    (i - LastSpaceIndex));
+                  Commentlines[high(Commentlines)] :=
+                    LeftStr(Commentlines[high(Commentlines)],
+                    (Length(Commentlines[high(Commentlines)]) -
+                    (i - LastSpaceIndex)));
                   Setlength(Commentlines, Length(Commentlines) + 1);
                   Commentlines[high(Commentlines)] := TempStr;
                 end;
               end;
             end;
             // Impression des lignes
-            //Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos, Round(PageWidth * right),
-            //  Ypos + Round(Canvas.TextHeight('C') * 1.2 * (Length(Commentlines) + 2))));
+            // Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos, Round(PageWidth * right),
+            // Ypos + Round(Canvas.TextHeight('C') * 1.2 * (Length(Commentlines) + 2))));
             for i := 0 to high(Commentlines) do
             begin
               Ypos := Ypos + Round(Canvas.TextHeight('C') * 1.2);
@@ -1287,8 +1408,11 @@ begin
               Xpos := 30;
               Canvas.Textout(Xpos, Ypos, Commentlines[i]);
             end;
-          end else begin
-            Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos, Round(PageWidth * right), Ypos + Canvas.TextHeight('C') * 3));
+          end
+          else
+          begin
+            Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos,
+              Round(PageWidth * right), Ypos + Canvas.TextHeight('C') * 3));
             Ypos := Ypos + Round(Canvas.TextHeight('C') * 2 / 2);
             // Xpos := Round((PageWidth - Canvas.Textwidth(Self.TJComment)) / 2);
             Xpos := 30;
@@ -1317,40 +1441,57 @@ begin
                 RemoteDB.Tips.Next;
                 i := i - 1;
               end;
-              Canvas.Font.Name  := 'Arial';
-              Canvas.Font.Size  := 8;
+              Canvas.Font.Name := 'Arial';
+              Canvas.Font.Size := 8;
               Canvas.Font.Style := [];
-              Ypos              := Ypos - Round(Canvas.TextHeight('CCC') * 2);
+              Ypos := Ypos - Round(Canvas.TextHeight('CCC') * 2);
               begin
                 // Calcul des lignes
                 LastSpaceIndex := 0;
                 Setlength(Tiplines, 1);
-                for i := 1 to Length(RemoteDB.Tips.Fieldbyname('tipstext').AsString) do
+                for i := 1 to Length(RemoteDB.Tips.Fieldbyname('tipstext')
+                  .AsString) do
                 begin
-                  if (RemoteDB.Tips.Fieldbyname('tipstext').AsString[i] = chr(13)) or (RemoteDB.Tips.Fieldbyname('tipstext').AsString[i] = chr(10)) then
+                  if (RemoteDB.Tips.Fieldbyname('tipstext').AsString[i]
+                    = Chr(13)) or
+                    (RemoteDB.Tips.Fieldbyname('tipstext').AsString[i] = Chr(10))
+                  then
                   begin
                     Setlength(Tiplines, Length(Tiplines) + 1)
-                  end else begin
-                    Tiplines[high(Tiplines)] := Tiplines[high(Tiplines)] + RemoteDB.Tips.Fieldbyname('tipstext').AsString[i];
-                    if RemoteDB.Tips.Fieldbyname('tipstext').AsString[i] = ' ' then
+                  end
+                  else
+                  begin
+                    Tiplines[high(Tiplines)] := Tiplines[high(Tiplines)] +
+                      RemoteDB.Tips.Fieldbyname('tipstext').AsString[i];
+                    if RemoteDB.Tips.Fieldbyname('tipstext').AsString[i] = ' '
+                    then
                       LastSpaceIndex := i;
-                    if Canvas.Textwidth(Tiplines[high(Tiplines)]) > PageWidth * rightinner then
+                    if Canvas.Textwidth(Tiplines[high(Tiplines)]) > PageWidth * rightinner
+                    then
                     begin
-                      TempStr                  := RightStr(Tiplines[high(Tiplines)], (i - LastSpaceIndex));
-                      Tiplines[high(Tiplines)] := LeftStr(Tiplines[high(Tiplines)], (Length(Tiplines[high(Tiplines)]) - (i - LastSpaceIndex)));
+                      TempStr := RightStr(Tiplines[high(Tiplines)],
+                        (i - LastSpaceIndex));
+                      Tiplines[high(Tiplines)] :=
+                        LeftStr(Tiplines[high(Tiplines)],
+                        (Length(Tiplines[high(Tiplines)]) -
+                        (i - LastSpaceIndex)));
                       Setlength(Tiplines, Length(Tiplines) + 1);
                       Tiplines[high(Tiplines)] := TempStr;
                     end;
                   end;
                 end;
                 // Impression des lignes
-                TipRectTop := Ypos - Round(Canvas.TextHeight('C') * 1.2 * (Length(Tiplines) + 2));
-                Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos, Round(PageWidth * right), TipRectTop));
-                Ypos  := Ypos - Round(Canvas.TextHeight('C') * 1);
+                TipRectTop := Ypos - Round(Canvas.TextHeight('C') * 1.2 *
+                  (Length(Tiplines) + 2));
+                Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos,
+                  Round(PageWidth * right), TipRectTop));
+                Ypos := Ypos - Round(Canvas.TextHeight('C') * 1);
                 for i := 0 to high(Tiplines) do
                 begin
                   Ypos := Ypos - Round(Canvas.TextHeight('C') * 1.2);
-                  Xpos := Round((PageWidth - Canvas.Textwidth(Tiplines[high(Tiplines) - i])) / 2);
+                  Xpos := Round
+                    ((PageWidth - Canvas.Textwidth(Tiplines[high(Tiplines) -
+                    i])) / 2);
                   Canvas.Textout(Xpos, Ypos, Tiplines[high(Tiplines) - i]);
                 end;
               end;
@@ -1364,40 +1505,51 @@ begin
         ///
         if TJComment <> '' then
         begin
-          Canvas.Font.Name  := 'Arial';
-          Canvas.Font.Size  := 8;
+          Canvas.Font.Name := 'Arial';
+          Canvas.Font.Size := 8;
           Canvas.Font.Style := [];
-          Ypos              := Ypos - Round(Canvas.TextHeight('CCC') * 2);
+          Ypos := Ypos - Round(Canvas.TextHeight('CCC') * 2);
           // Calcul des lignes
           LastSpaceIndex := 0;
           Setlength(Commentlines, 1);
           for i := 1 to Length(TJComment) do
           begin
-            if (TJComment[i] = chr(13)) or (TJComment[i] = chr(10)) then
+            if (TJComment[i] = Chr(13)) or (TJComment[i] = Chr(10)) then
             begin
               Setlength(Commentlines, Length(Commentlines) + 1)
-            end else begin
-              Commentlines[high(Commentlines)] := Commentlines[high(Commentlines)] + TJComment[i];
+            end
+            else
+            begin
+              Commentlines[high(Commentlines)] :=
+                Commentlines[high(Commentlines)] + TJComment[i];
               if TJComment[i] = ' ' then
                 LastSpaceIndex := i;
-              if Canvas.Textwidth(Commentlines[high(Commentlines)]) > PageWidth * rightinner then
+              if Canvas.Textwidth(Commentlines[high(Commentlines)]) > PageWidth
+                * rightinner then
               begin
-                TempStr                          := RightStr(Commentlines[high(Commentlines)], (i - LastSpaceIndex));
-                Commentlines[high(Commentlines)] := LeftStr(Commentlines[high(Commentlines)],
-                  (Length(Commentlines[high(Commentlines)]) - (i - LastSpaceIndex)));
+                TempStr := RightStr(Commentlines[high(Commentlines)],
+                  (i - LastSpaceIndex));
+                Commentlines[high(Commentlines)] :=
+                  LeftStr(Commentlines[high(Commentlines)],
+                  (Length(Commentlines[high(Commentlines)]) -
+                  (i - LastSpaceIndex)));
                 Setlength(Commentlines, Length(Commentlines) + 1);
                 Commentlines[high(Commentlines)] := TempStr;
               end;
             end;
           end;
           // Impression des lignes
-          TipRectTop := Ypos - Round(Canvas.TextHeight('C') * 1.2 * (Length(Commentlines) + 2));
-          Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos, Round(PageWidth * right), TipRectTop));
-          Ypos  := Ypos - Round(Canvas.TextHeight('C') * 1);
+          TipRectTop := Ypos - Round(Canvas.TextHeight('C') * 1.2 *
+            (Length(Commentlines) + 2));
+          Canvas.Rectangle(rect(Round(PageWidth * leftborder), Ypos,
+            Round(PageWidth * right), TipRectTop));
+          Ypos := Ypos - Round(Canvas.TextHeight('C') * 1);
           for i := 0 to high(Commentlines) do
           begin
             Ypos := Ypos - Round(Canvas.TextHeight('C') * 1.2);
-            Xpos := Round((PageWidth - Canvas.Textwidth(Commentlines[high(Commentlines) - i])) / 2);
+            Xpos := Round
+              ((PageWidth - Canvas.Textwidth(Commentlines[high(Commentlines) -
+              i])) / 2);
             Canvas.Textout(Xpos, Ypos, Commentlines[high(Commentlines) - i]);
           end;
         end;
@@ -1410,31 +1562,33 @@ begin
         begin
 
           /// URL
-          Ypos              := Ypos - Round(Canvas.TextHeight('CCC') * 1);
-          Canvas.Font.Size  := 14;
+          Ypos := Ypos - Round(Canvas.TextHeight('CCC') * 1);
+          Canvas.Font.Size := 14;
           Canvas.Font.Style := [fsBold];
-          Ypos              := Ypos - Canvas.TextHeight('CCC') * 1;
-          Xpos              := Round((PageWidth - Canvas.Textwidth(Self.TJUrl)) / 2);
+          Ypos := Ypos - Canvas.TextHeight('CCC') * 1;
+          Xpos := Round((PageWidth - Canvas.Textwidth(Self.TJUrl)) / 2);
           Canvas.Textout(Xpos, Ypos, Self.TJUrl);
-          Canvas.Font.Name  := 'Arial';
-          Canvas.Font.Size  := 8;
+          Canvas.Font.Name := 'Arial';
+          Canvas.Font.Size := 8;
           Canvas.Font.Style := [];
 
           /// TJID
           if TJID <> '' then
           begin
-            Ypos    := Ypos - Round(Canvas.TextHeight('CCC') * 1);
+            Ypos := Ypos - Round(Canvas.TextHeight('CCC') * 1);
             TempStr := TJID;
-            Xpos    := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
+            Xpos := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
             Canvas.Textout(Xpos, Ypos, TempStr);
             Ypos := Ypos - Round(Canvas.TextHeight('CCC') * 1);
-          end else begin
+          end
+          else
+          begin
             Ypos := Ypos - Round(Canvas.TextHeight('CCC') * 1);
           end;
 
           // TIME
           TempStr := FormatDateTime('"Le" DD MMMM YYYY "à" hh:mm', TJDateTime);
-          Xpos    := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
+          Xpos := Round((PageWidth - Canvas.Textwidth(TempStr)) / 2);
           Canvas.Textout(Xpos, Ypos, TempStr);
 
         end; // Tsfooter
@@ -1450,7 +1604,8 @@ end;
 
 procedure TTicketJob.InternalPrintOpos;
 var
-  Width, AvailableWidth, AvailableHeight, Xpos, Ypos, Left, Middle, TipRectTop: Integer;
+  Width, AvailableWidth, AvailableHeight, Xpos, Ypos, Left, Middle,
+    TipRectTop: Integer;
   BoxCounter, BoxlineCounter: Integer;
   TempStr: string;
   Num, TotalArticle, i, LastSpaceIndex: Integer;
@@ -1469,10 +1624,10 @@ begin
   try
     PosPrinter.Open(WideString('ticket'));
     PosPrinter.Claim(200);
-    PosPrinter.DeviceEnabled    := True;
+    PosPrinter.DeviceEnabled := True;
     PosPrinter.RecLetterQuality := True;
-    PosPrinter.CharacterSet     := 2;
-    PosPrinter.AsyncMode        := False;
+    PosPrinter.CharacterSet := 2;
+    PosPrinter.AsyncMode := False;
 
     ///
     /// Header
@@ -1480,7 +1635,7 @@ begin
     if tsHeader in Self.TJStyle then
     begin
       Data := '-2';
-      Num  := 3;
+      Num := 3;
       PosPrinter.DirectIO(111, Num, Data);
       PosPrinter.RecLineHeight := 14;
     end;
@@ -1499,19 +1654,24 @@ begin
           // Titre
           //
 
-          PosPrinter.PrintNormal(2, chr(10) + chr(13));
-          PosPrinter.PrintNormal(2, chr(27) + '!' + chr(57) + chr(27) + '|cA' + WideString(Self.TJBoxesNames[BoxCounter]) + chr(13));
-          PosPrinter.PrintNormal(2, '__________________________________________' + chr(10) + chr(13));
+          PosPrinter.PrintNormal(2, Chr(10) + Chr(13));
+          PosPrinter.PrintNormal(2, Chr(27) + '!' + Chr(57) + Chr(27) + '|cA' +
+            WideString(Self.TJBoxesNames[BoxCounter]) + Chr(13));
+          PosPrinter.PrintNormal(2, '__________________________________________'
+            + Chr(10) + Chr(13));
 
           //
           // Boite
           //
           for BoxlineCounter := 0 to high(Self.TJBoxes[BoxCounter]) do
           begin
-            PosPrinter.PrintNormal(2, chr(27) + 'a' + chr(0) + WideString(Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) + ' ' +
-              Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2])) + chr(10) + chr(13));
+            PosPrinter.PrintNormal(2, Chr(27) + 'a' + Chr(0) +
+              WideString(Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) + ' '
+              + Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2])) + Chr(10)
+              + Chr(13));
           end; // FinLignes Ds La Boite
-          PosPrinter.PrintNormal(2, '__________________________________________' + chr(10) + chr(13));
+          PosPrinter.PrintNormal(2, '__________________________________________'
+            + Chr(10) + Chr(13));
           //
           //
         end;
@@ -1519,14 +1679,16 @@ begin
         if TJBoxesStyles[BoxCounter] = bsProd then
         begin
           TotalArticle := 0;
-          TotalValeur  := 0;
+          TotalValeur := 0;
           //
           // Titre
           //
 
-          PosPrinter.PrintNormal(2, chr(10) + chr(13));
-          PosPrinter.PrintNormal(2, chr(27) + '!' + chr(57) + chr(27) + '|cA' + Self.TJBoxesNames[BoxCounter] + chr(13));
-          PosPrinter.PrintNormal(2, '__________________________________________' + chr(10) + chr(13));
+          PosPrinter.PrintNormal(2, Chr(10) + Chr(13));
+          PosPrinter.PrintNormal(2, Chr(27) + '!' + Chr(57) + Chr(27) + '|cA' +
+            Self.TJBoxesNames[BoxCounter] + Chr(13));
+          PosPrinter.PrintNormal(2, '__________________________________________'
+            + Chr(10) + Chr(13));
 
 
           //
@@ -1537,26 +1699,37 @@ begin
           begin
             if Self.TJBoxes[BoxCounter, BoxlineCounter, 4] = 'False' then
             begin
-              PosPrinter.PrintNormal(2, chr(27) + 'a' + chr(0) + Self.TJBoxes[BoxCounter, BoxlineCounter, 1] + ' ' + Self.TJBoxes[BoxCounter, BoxlineCounter, 2]
-                + chr(10) + chr(13));
-              SStotal := StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) * strtofloat(Self.TJBoxes[BoxCounter, BoxlineCounter, 3]);
+              PosPrinter.PrintNormal(2, Chr(27) + 'a' + Chr(0) + Self.TJBoxes
+                [BoxCounter, BoxlineCounter, 1] + ' ' + Self.TJBoxes[BoxCounter,
+                BoxlineCounter, 2] + Chr(10) + Chr(13));
+              SStotal := StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]) *
+                strtofloat(Self.TJBoxes[BoxCounter, BoxlineCounter, 3]);
               TempStr := FloatToStrf(SStotal, fffixed, 7, 2) + ' EUR';
-              PosPrinter.PrintNormal(2, chr(27) + 'a' + chr(50) + TempStr + chr(10) + chr(13));
-              TotalArticle := TotalArticle + StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]);
-              TotalValeur  := TotalValeur + SStotal;
-            end else begin
-              PosPrinter.PrintNormal(2, chr(27) + 'a' + chr(0) + Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2]) + chr(10) + chr(13));
+              PosPrinter.PrintNormal(2, Chr(27) + 'a' + Chr(50) + TempStr +
+                Chr(10) + Chr(13));
+              TotalArticle := TotalArticle +
+                StrToInt(Self.TJBoxes[BoxCounter, BoxlineCounter, 1]);
+              TotalValeur := TotalValeur + SStotal;
+            end
+            else
+            begin
+              PosPrinter.PrintNormal(2, Chr(27) + 'a' + Chr(0) +
+                Trim(Self.TJBoxes[BoxCounter, BoxlineCounter, 2]) + Chr(10)
+                + Chr(13));
             end;
           end; // FinLignes Ds La Boite
 
-          PosPrinter.PrintNormal(2, '__________________________________________' + chr(10) + chr(13));
+          PosPrinter.PrintNormal(2, '__________________________________________'
+            + Chr(10) + Chr(13));
 
           //
           //
           if Self.TJBoxesSum[BoxCounter] then
           begin
-            PosPrinter.PrintNormal(2, chr(27) + 'a' + chr(0) + inttoStr(TotalArticle) + ' article(s), valeur totale :' + ' ' + FloatToStrf(TotalValeur, fffixed,
-              7, 2) + ' EUR' + chr(10) + chr(13));
+            PosPrinter.PrintNormal(2, Chr(27) + 'a' + Chr(0) +
+              inttoStr(TotalArticle) + ' article(s), valeur totale :' + ' ' +
+              FloatToStrf(TotalValeur, fffixed, 7, 2) + ' EUR' + Chr(10)
+              + Chr(13));
           end;
         end
       end; // Fin Boite
@@ -1566,7 +1739,9 @@ begin
     begin
       for BoxCounter := 0 to high(Self.TJFinancials) do
       begin
-        PosPrinter.PrintNormal(2, chr(27) + 'a' + chr(0) + Self.TJFinancials[BoxCounter, 1] + ' ' + Self.TJFinancials[BoxCounter, 2] + chr(10) + chr(13));
+        PosPrinter.PrintNormal(2, Chr(27) + 'a' + Chr(0) + Self.TJFinancials
+          [BoxCounter, 1] + ' ' + Self.TJFinancials[BoxCounter, 2] + Chr(10)
+          + Chr(13));
       end;
     end;
 
@@ -1574,7 +1749,9 @@ begin
     begin
       for BoxCounter := 0 to high(Self.TJCustomer) do
       begin
-        PosPrinter.PrintNormal(2, chr(27) + 'a' + chr(0) + Self.TJCustomer[BoxCounter, 1] + ' ' + Self.TJCustomer[BoxCounter, 2] + chr(10) + chr(13));
+        PosPrinter.PrintNormal(2, Chr(27) + 'a' + Chr(0) + Self.TJCustomer
+          [BoxCounter, 1] + ' ' + Self.TJCustomer[BoxCounter, 2] + Chr(10)
+          + Chr(13));
       end;
     end;
 
@@ -1584,18 +1761,23 @@ begin
     if tsFooter in Self.TJStyle then
     begin
       TempStr := FormatDateTime('"Le" DD MMMM YYYY "à" hh:mm', TJDateTime);
-      PosPrinter.PrintNormal(2, chr(13) + chr(10));
-      PosPrinter.PrintNormal(2, chr(27) + '|cA' + TempStr + '' + chr(10) + chr(13));
+      PosPrinter.PrintNormal(2, Chr(13) + Chr(10));
+      PosPrinter.PrintNormal(2, Chr(27) + '|cA' + TempStr + '' + Chr(10)
+        + Chr(13));
 
       if TJID <> '' then
       begin
 
         TempStr := TJID;
-        PosPrinter.PrintNormal(2, chr(27) + '|cA' + TempStr + '' + chr(10) + chr(13));
-      end else begin
+        PosPrinter.PrintNormal(2, Chr(27) + '|cA' + TempStr + '' + Chr(10)
+          + Chr(13));
+      end
+      else
+      begin
       end;
 
-      PosPrinter.PrintNormal(2, chr(27) + '!' + chr(57) + chr(27) + '|cA' + TJUrl + chr(13));
+      PosPrinter.PrintNormal(2, Chr(27) + '!' + Chr(57) + Chr(27) + '|cA' +
+        TJUrl + Chr(13));
     end;
     ///
     /// TIPBOX
@@ -1612,9 +1794,10 @@ begin
           RemoteDB.Tips.Next;
           i := i - 1;
         end;
-        PosPrinter.PrintNormal(2, chr(13) + chr(10)
+        PosPrinter.PrintNormal(2, Chr(13) + Chr(10)
           { +chr(13)+chr(10)+chr(13)+chr(10) } );
-        PosPrinter.PrintNormal(2, chr(27) + '|cA' + RemoteDB.TipsTipsText.AsString + chr(10) + chr(13));
+        PosPrinter.PrintNormal(2, Chr(27) + '|cA' +
+          RemoteDB.TipsTipsText.AsString + Chr(10) + Chr(13));
       end; // If tips EOF
     end; // If Tips in TJSTYLE
 
@@ -1623,17 +1806,20 @@ begin
     ///
     if TJComment <> '' then
     begin
-      PosPrinter.PrintNormal(2, chr(13) + chr(10)
+      PosPrinter.PrintNormal(2, Chr(13) + Chr(10)
         { +chr(13)+chr(10)+chr(13)+chr(10) } );
-      PosPrinter.PrintNormal(2, chr(27) + '|cA' + TJComment + chr(10) + chr(13));
+      PosPrinter.PrintNormal(2, Chr(27) + '|cA' + TJComment + Chr(10) +
+        Chr(13));
 
     end; // If Comment not empty
 
     if tsFinancial in Self.TJStyle then
     begin
     end;
-    PosPrinter.PrintNormal(2, chr(13) + chr(10) + chr(13) + chr(10) + chr(13) + chr(10));
-    PosPrinter.PrintNormal(2, chr(13) + chr(10) + chr(13) + chr(10) + chr(13) + chr(10));
+    PosPrinter.PrintNormal(2, Chr(13) + Chr(10) + Chr(13) + Chr(10) + Chr(13)
+      + Chr(10));
+    PosPrinter.PrintNormal(2, Chr(13) + Chr(10) + Chr(13) + Chr(10) + Chr(13)
+      + Chr(10));
     PosPrinter.CutPaper(70);
   finally
     PosPrinter.Free;
@@ -1673,7 +1859,7 @@ var
 begin
   try
     Result := True;
-    test   := StrToInt(totest);
+    test := StrToInt(totest);
   except
     on E: EConvertError do
     begin
@@ -1687,7 +1873,7 @@ end;
 constructor TLabelAddress.Create;
 begin
   PrintDialog := TprintDlg.Create(nil);
-  LAFontSize  := 0;
+  LAFontSize := 0;
   inherited Create;
 end;
 
@@ -1721,9 +1907,9 @@ begin
       GlobalUnlock(hDMode);
     end;
   end;
-  Printer.PrinterIndex    := Printer.PrinterIndex;
+  Printer.PrinterIndex := Printer.PrinterIndex;
   Printers.Printer.Copies := 1;
-  StartJob                := True;
+  StartJob := True;
   if ShowDialog then
   begin
     if PrintDialog.Execute then
@@ -1736,13 +1922,15 @@ begin
     try
       with Printers.Printer do
       begin { impression Etiquette }
-        Title            := 'Address';
-        Copies           := 1;
+        Title := 'Address';
+        Copies := 1;
         Canvas.Font.Name := 'Arial';
         if LAFontSize = 0 then
         begin
           Canvas.Font.Size := 20;
-        end else begin
+        end
+        else
+        begin
           Canvas.Font.Size := LAFontSize;
         end;
         Canvas.Font.Style := [];
@@ -1750,15 +1938,17 @@ begin
         //
         // Calcul Font Size
         //
-        while Round(Canvas.TextHeight('CCC') * 1.2 * Address.Count) > Round(Printer.PageHeight * 0.90) do
+        while Round(Canvas.TextHeight('CCC') * 1.2 * Address.Count) >
+          Round(Printer.PageHeight * 0.90) do
         begin
           Canvas.Font.Size := Canvas.Font.Size - 1;
         end;
-        Ypos  := 0;
-        Ypos  := Ypos + Round(Canvas.TextHeight('OCCASION') * 0.2);
+        Ypos := 0;
+        Ypos := Ypos + Round(Canvas.TextHeight('OCCASION') * 0.2);
         for i := 0 to Address.Count - 1 do
         begin
-          Xpos := Round(Round(PageWidth / 2) - Canvas.Textwidth(Address.Strings[i]) / 2);
+          Xpos := Round(Round(PageWidth / 2) -
+            Canvas.Textwidth(Address.Strings[i]) / 2);
           Canvas.Textout(Xpos, Ypos, Address.Strings[i]);
           Ypos := Ypos + Round(Canvas.TextHeight('OCCASION') * 1.2);
         end;
@@ -1778,7 +1968,8 @@ begin
   inherited Create;
 end;
 
-procedure TLabelRent.Print(Model, Name: string; ID: Integer; ShowDialog: Boolean);
+procedure TLabelRent.Print(Model, Name: string; ID: Integer;
+  ShowDialog: Boolean);
 var
   barcode: TASBarCode;
   Ypos, Xpos, i: Integer;
@@ -1803,9 +1994,9 @@ begin
       GlobalUnlock(hDMode);
     end;
   end;
-  Printer.PrinterIndex    := Printer.PrinterIndex;
+  Printer.PrinterIndex := Printer.PrinterIndex;
   Printers.Printer.Copies := 1;
-  StartJob                := True;
+  StartJob := True;
   if ShowDialog then
   begin
     if PrintDialog.Execute then
@@ -1820,22 +2011,22 @@ begin
     try
       with Printers.Printer do
       begin { impression Etiquette }
-        Title             := 'RentSticker';
-        Copies            := 1;
-        Orientation       := TPrinterOrientation(POLandscape);
-        Canvas.Font.Name  := 'Arial';
-        Canvas.Font.Size  := 8;
+        Title := 'RentSticker';
+        Copies := 1;
+        Orientation := TPrinterOrientation(POLandscape);
+        Canvas.Font.Name := 'Arial';
+        Canvas.Font.Size := 8;
         Canvas.Font.Style := [];
         BeginDoc;
         if checkean(Model) then
         begin
-          barcode.Typ    := bcCodeEAN13;
-          barcode.Text   := Model;
-          barcode.Top    := Round(PageHeight * 0.05);
-          barcode.Left   := Round(PageWidth * 0.05);
+          barcode.Typ := bcCodeEAN13;
+          barcode.Text := Model;
+          barcode.Top := Round(PageHeight * 0.05);
+          barcode.Left := Round(PageWidth * 0.05);
           barcode.Height := Round(PageHeight / 3 * 0.90);
-          barcode.Width  := Round(PageWidth * 0.90);
-          barcode.Angle  := 0;
+          barcode.Width := Round(PageWidth * 0.90);
+          barcode.Angle := 0;
           barcode.DrawBarcode(Canvas);
         end;
         //
@@ -1843,7 +2034,8 @@ begin
         //
 
         Ypos := Round(PageHeight / 2);
-        Xpos := Round(Round(PageWidth / 2) - Canvas.Textwidth(inttoStr(ID)) / 2);
+        Xpos := Round(Round(PageWidth / 2) -
+          Canvas.Textwidth(inttoStr(ID)) / 2);
         Canvas.Textout(Xpos, Ypos, inttoStr(ID));
 
         Ypos := Round(PageHeight / 4 * 3);
@@ -1883,13 +2075,16 @@ var
   StartPos, EndPos, i: Integer;
   EndSubStr: string;
 begin
-  StartPos  := Pos(StartStr, BPsource);
-  EndSubStr := RightStr(BPsource, Length(BPsource) - (StartPos + Length(StartStr)));
-  EndPos    := Pos(EndStr, EndSubStr);
-  EndPos    := StartPos + EndPos;
+  StartPos := Pos(StartStr, BPsource);
+  EndSubStr := RightStr(BPsource, Length(BPsource) -
+    (StartPos + Length(StartStr)));
+  EndPos := Pos(EndStr, EndSubStr);
+  EndPos := StartPos + EndPos;
   if ((StartPos = 0) or (EndPos = 0)) then
   begin
-  end else begin
+  end
+  else
+  begin
     for i := StartPos + Length(StartStr) to EndPos + Length(StartStr) - 1 do
     begin
       Result := Result + BPsource[i];
@@ -1902,7 +2097,7 @@ var
   i: Integer;
 begin
   Result := '';
-  for i  := Length(source) downto 1 do
+  for i := Length(source) downto 1 do
   begin
     Result := Result + source[i];
   end;
@@ -1913,9 +2108,10 @@ var
   i: Integer;
 begin
   Result := '';
-  for i  := 1 to Length(source) do
+  for i := 1 to Length(source) do
   begin
-    if (source[i] <> ',') and (source[i] <> '.') and (source[i] <> ';') and (source[i] <> ':') then
+    if (source[i] <> ',') and (source[i] <> '.') and (source[i] <> ';') and
+      (source[i] <> ':') then
       Result := Result + source[i]
     else
       Result := Result + ' ';
@@ -1930,7 +2126,8 @@ begin
   inherited Create;
 end;
 
-procedure TLabelCODE39.Print(Model, Name: string; ID: Integer; ShowDialog: Boolean);
+procedure TLabelCODE39.Print(Model, Name: string; ID: Integer;
+  ShowDialog: Boolean);
 var
   barcode: TASBarCode;
   Ypos, Xpos, i: Integer;
@@ -1955,9 +2152,9 @@ begin
       GlobalUnlock(hDMode);
     end;
   end;
-  Printer.PrinterIndex    := Printer.PrinterIndex;
+  Printer.PrinterIndex := Printer.PrinterIndex;
   Printers.Printer.Copies := 1;
-  StartJob                := True;
+  StartJob := True;
   if ShowDialog then
   begin
     if PrintDialog.Execute then
@@ -1972,22 +2169,22 @@ begin
     try
       with Printers.Printer do
       begin { impression Etiquette }
-        Title             := 'RentSticker';
-        Copies            := 1;
-        Orientation       := TPrinterOrientation(POLandscape);
-        Canvas.Font.Name  := 'Arial';
-        Canvas.Font.Size  := 8;
+        Title := 'RentSticker';
+        Copies := 1;
+        Orientation := TPrinterOrientation(POLandscape);
+        Canvas.Font.Name := 'Arial';
+        Canvas.Font.Size := 8;
         Canvas.Font.Style := [];
         BeginDoc;
         if checkean(Model) then
         begin
-          barcode.Typ    := bcCode39;
-          barcode.Text   := Model;
-          barcode.Top    := Round(PageHeight * 0.05);
-          barcode.Left   := Round(PageWidth * 0.05);
+          barcode.Typ := bcCode39;
+          barcode.Text := Model;
+          barcode.Top := Round(PageHeight * 0.05);
+          barcode.Left := Round(PageWidth * 0.05);
           barcode.Height := Round(PageHeight / 3 * 0.90);
-          barcode.Width  := Round(PageWidth * 0.90);
-          barcode.Angle  := 0;
+          barcode.Width := Round(PageWidth * 0.90);
+          barcode.Angle := 0;
           barcode.DrawBarcode(Canvas);
         end;
         //
@@ -1995,7 +2192,8 @@ begin
         //
 
         Ypos := Round(PageHeight / 2);
-        Xpos := Round(Round(PageWidth / 2) - Canvas.Textwidth(inttoStr(ID)) / 2);
+        Xpos := Round(Round(PageWidth / 2) -
+          Canvas.Textwidth(inttoStr(ID)) / 2);
         Canvas.Textout(Xpos, Ypos, inttoStr(ID));
 
         Ypos := Round(PageHeight / 4 * 3);
@@ -2049,10 +2247,10 @@ begin
   try
     des.InitStr(AnsiString('PEp7XustuPawreF8'), tdcp_sha1);
 
-    src  := TEncoding.UTF8.GetBytes(source);
+    src := TEncoding.UTF8.GetBytes(source);
     slen := Length(src);
     // Add padding
-    bsize   := des.BlockSize div 8;
+    bsize := des.BlockSize div 8;
     padsize := bsize - (slen mod bsize);
     Inc(slen, padsize);
     Setlength(src, slen);
@@ -2079,7 +2277,7 @@ begin
   try
     des.InitStr(AnsiString('PEp7XustuPawreF8'), tdcp_sha1);
 
-    src  := EncdDecd.DecodeBase64(AnsiString(ASource));
+    src := EncdDecd.DecodeBase64(AnsiString(ASource));
     slen := Length(src);
     Setlength(dec, slen);
     des.DecryptCBC(src[0], dec[0], slen);

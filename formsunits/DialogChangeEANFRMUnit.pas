@@ -40,7 +40,9 @@ begin
   if Checkean(EditNewModel.Text) then
   begin
     RemoteDB.ChangeEAN(EditOldModel.Text, EditNewModel.Text);
-  end else begin
+  end
+  else
+  begin
     ShowMessage('Nouveau code barre non valide');
   end;
 end;

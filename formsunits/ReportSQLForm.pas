@@ -12,8 +12,6 @@ uses
   cxClasses, cxControls, cxGridCustomView, cxGrid, ClientDMUnit, FMTBcd,
   Provider, DBClient, SqlExpr, cxGridExportLink, dxBarExtItems, ComCtrls,
 
-
-
   Menus,
   dxBarExtDBItems, Grids, DBGrids, dxPScxGridLnk, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, cxStyles, cxCustomData, cxFilter, cxData,
@@ -82,7 +80,7 @@ procedure TReportSQL.dxBarButton2Click(Sender: TObject);
 var
   Filename: string;
 begin
-  Filename                 := 'Report' + '.xls';
+  Filename := 'Report' + '.xls';
   Self.SaveDialog.Filename := Filename;
   if Self.SaveDialog.Execute then
   begin
@@ -103,7 +101,9 @@ end;
 
 procedure TReportSQL.StockSummedCalcFields(DataSet: TDataSet);
 begin
-  DataSet.FieldByName('product_quantity_total').Value := DataSet.FieldByName('product_quantity_new').Value + DataSet.FieldByName('product_quantity_used').Value;
+  DataSet.FieldByName('product_quantity_total').Value :=
+    DataSet.FieldByName('product_quantity_new').Value +
+    DataSet.FieldByName('product_quantity_used').Value;
 end;
 
 end.

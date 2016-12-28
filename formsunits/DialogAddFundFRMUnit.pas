@@ -63,15 +63,17 @@ begin
     /// Ticket
     ///
     if not(Mainform.Parameter['PrintersTicketEnabled'] = 'TRUE') then
-      if Messagedlg('Imprimante à tickets non activée ! Voulez-vous continuer ?', mtwarning, [mbyes, mbno], 0) = mrNo then
+      if Messagedlg
+        ('Imprimante à tickets non activée ! Voulez-vous continuer ?',
+        mtwarning, [mbyes, mbno], 0) = mrNo then
         Exit;
     if (Mainform.Parameter['PrintersTicketEnabled'] = 'TRUE') then
     begin
       TicketToPrint := TTicketJob.Create(self);
       try
-        TicketToPrint.Printer  := (Mainform.Parameter['PrintersTicketPrinter']);
-        TicketToPrint.Logo     := PrintLogo;
-        TicketToPrint.Url      := WEBURL;
+        TicketToPrint.Printer := (Mainform.Parameter['PrintersTicketPrinter']);
+        TicketToPrint.Logo := PrintLogo;
+        TicketToPrint.Url := WEBURL;
         TicketToPrint.ShopData := ShopDataList;
 
         if (Mainform.Parameter['PrintersTicketContinuous'] = 'TRUE') then
@@ -79,10 +81,14 @@ begin
 
         TicketToPrint.AddFinancialLine('Ajout :', FnpAmount.Value);
 
-        TicketToPrint.AddCustomerLine('Client # :', RemoteDB.CustomersCustomers_nbr.Text);
-        TicketToPrint.AddCustomerLine('Nom :', RemoteDB.CustomersCustomers_firstname.Text);
-        TicketToPrint.AddCustomerLine('Ancien bon :', RemoteDB.CustomersCustomers_credit.Text);
-        TicketToPrint.AddCustomerLine('Nouveau bon :', floattostrf((FnpAmount.Value), fffixed, 7, 2));
+        TicketToPrint.AddCustomerLine('Client # :',
+          RemoteDB.CustomersCustomers_nbr.Text);
+        TicketToPrint.AddCustomerLine('Nom :',
+          RemoteDB.CustomersCustomers_firstname.Text);
+        TicketToPrint.AddCustomerLine('Ancien bon :',
+          RemoteDB.CustomersCustomers_credit.Text);
+        TicketToPrint.AddCustomerLine('Nouveau bon :',
+          floattostrf((FnpAmount.Value), fffixed, 7, 2));
 
         if Mainform.Parameter['PrintersTicketOpos'] = 'TRUE' then
           TicketToPrint.PrintOpos
@@ -102,8 +108,9 @@ begin
     RemoteDB.netshop_refunds.Append;
 
     RemoteDB.CDSActions.Append;
-    RemoteDB.CDSActions.FieldByName('action').AsString := 'Bon ' + RemoteDB.CustomersCustomers_nbr.Text + ' de ' + cxCurrencyEditOldAmount.Text + ' à ' +
-      FnpAmount.Text;
+    RemoteDB.CDSActions.FieldByName('action').AsString := 'Bon ' +
+      RemoteDB.CustomersCustomers_nbr.Text + ' de ' +
+      cxCurrencyEditOldAmount.Text + ' à ' + FnpAmount.Text;
     RemoteDB.CDSActions.Post;
 
 

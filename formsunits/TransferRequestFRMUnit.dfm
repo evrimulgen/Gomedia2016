@@ -501,6 +501,7 @@ object TransferRequestForm: TTransferRequestForm
     object dxComponentPrinterLink1: TdxGridReportLink
       Active = True
       Component = cxGridSuggest
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -512,7 +513,8 @@ object TransferRequestForm: TTransferRequestForm
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 42359.988997314820000000
+      ReportDocument.CreationDate = 42732.389753912040000000
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
       OptionsView.Footers = False

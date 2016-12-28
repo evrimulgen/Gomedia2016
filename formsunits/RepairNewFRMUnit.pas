@@ -49,48 +49,60 @@ begin
   if DBEditRepairModel.Text <> '' then
   begin
     DBEditRepairModel.Text := uppercase(DBEditRepairModel.Text);
-    if not remoteDB.Products.Locate('products_model', remoteDB.netshop_repair.FieldbyName('repair_products_model').Value, []) then
+    if not remoteDB.Products.Locate('products_model',
+      remoteDB.netshop_repair.FieldbyName('repair_products_model').Value, [])
+    then
     begin
       remoteDB.netshop_repair.FieldbyName('repair_products_model').Value := '';
       messagedlg('Veuillez entrer un modèle valable', mtwarning, [mbok], 0);
-    end else begin
-      remoteDB.netshop_repair.FieldbyName('repair_products_name').Value := remoteDB.CDSProDescFR.FieldbyName('products_name').Value;
+    end
+    else
+    begin
+      remoteDB.netshop_repair.FieldbyName('repair_products_name').Value :=
+        remoteDB.CDSProDescFR.FieldbyName('products_name').Value;
     end;
   end;
 end;
 
 procedure TRepairNewForm.FormShow(Sender: TObject);
 begin
-  remoteDB.Products.Filter   := 'products_promo=' + quotedstr('True');
+  remoteDB.Products.Filter := 'products_promo=' + quotedstr('True');
   remoteDB.Products.Filtered := True;
   remoteDB.Products.First;
   DBEditRepairProductName.Properties.Items.Clear;
   while not remoteDB.Products.Eof do
   begin
-    DBEditRepairProductName.Properties.Items.Add(remoteDB.CDSProDescFR.FieldbyName('products_name').AsString);
+    DBEditRepairProductName.Properties.Items.Add
+      (remoteDB.CDSProDescFR.FieldbyName('products_name').AsString);
     remoteDB.Products.Next;
   end;
-  remoteDB.Products.Filter   := '';
+  remoteDB.Products.Filter := '';
   remoteDB.Products.Filtered := False;
 end;
 
 procedure TRepairNewForm.BitBtnOKClick(Sender: TObject);
 begin
   begin
-    if not remoteDB.Products.Locate('products_model', remoteDB.netshop_repair.FieldbyName('repair_products_model').Value, []) then
+    if not remoteDB.Products.Locate('products_model',
+      remoteDB.netshop_repair.FieldbyName('repair_products_model').Value, [])
+    then
     begin
       remoteDB.netshop_repair.FieldbyName('repair_products_model').Value := '';
       messagedlg('Veuillez entrer un modèle valable', mtwarning, [mbok], 0);
       Abort;
     end;
-    if length(remoteDB.netshop_repair.FieldbyName('repair_products_problem').AsString) < 5 then
+    if length(remoteDB.netshop_repair.FieldbyName('repair_products_problem')
+      .AsString) < 5 then
     begin
-      messagedlg('Veuillez entrer un description du problème valable', mtwarning, [mbok], 0);
+      messagedlg('Veuillez entrer un description du problème valable',
+        mtwarning, [mbok], 0);
       Abort;
     end;
-    if length(remoteDB.netshop_repair.FieldbyName('repair_products_serial').AsString) < 5 then
+    if length(remoteDB.netshop_repair.FieldbyName('repair_products_serial')
+      .AsString) < 5 then
     begin
-      messagedlg('Veuillez entrer un N° de série valable', mtwarning, [mbok], 0);
+      messagedlg('Veuillez entrer un N° de série valable', mtwarning,
+        [mbok], 0);
       Abort;
     end;
   end;
@@ -100,12 +112,17 @@ end;
 procedure TRepairNewForm.DBEditRepairProductNameExit(Sender: TObject);
 begin
   if DBEditRepairProductName.Text <> '' then
-    if not remoteDB.CDSProDescFR.Locate('products_name', remoteDB.netshop_repair.FieldbyName('repair_products_name').Value, []) then
+    if not remoteDB.CDSProDescFR.Locate('products_name',
+      remoteDB.netshop_repair.FieldbyName('repair_products_name').Value, [])
+    then
     begin
       remoteDB.netshop_repair.FieldbyName('repair_products_name').Value := '';
       messagedlg('Veuillez entrer un nom valable', mtwarning, [mbok], 0);
-    end else begin
-      remoteDB.netshop_repair.FieldbyName('repair_products_model').Value := remoteDB.Products.FieldbyName('products_model').Value;
+    end
+    else
+    begin
+      remoteDB.netshop_repair.FieldbyName('repair_products_model').Value :=
+        remoteDB.Products.FieldbyName('products_model').Value;
     end;
 end;
 

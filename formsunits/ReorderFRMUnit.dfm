@@ -375,7 +375,6 @@ object ReorderForm: TReorderForm
     Top = 72
     object dxComponentPrinterLink1: TdxGridReportLink
       Component = Grid
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 1
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -388,7 +387,6 @@ object ReorderForm: TReorderForm
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
       ReportDocument.CreationDate = 39282.706050717590000000
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsOnEveryPage.Footers = False
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
@@ -418,7 +416,6 @@ object ReorderForm: TReorderForm
     Top = 96
   end
   object dxPSEngineController: TdxPSEngineController
-    Active = True
     PreviewDialogStyle = 'Ribbon'
     Left = 576
     Top = 136

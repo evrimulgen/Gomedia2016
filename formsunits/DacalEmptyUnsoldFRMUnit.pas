@@ -66,7 +66,8 @@ end;
 
 procedure TFormDacalEmptyUnsold.Button1Click(Sender: TObject);
 begin
-  CloneDS.Locate('machine_id;slot_id', Vararrayof([EditMachine.Text, EditSlot.Text]), [locaseinsensitive]);
+  CloneDS.Locate('machine_id;slot_id',
+    Vararrayof([EditMachine.Text, EditSlot.Text]), [locaseinsensitive]);
 end;
 
 procedure TFormDacalEmptyUnsold.Button2Click(Sender: TObject);
@@ -85,33 +86,42 @@ var
 begin
   if not CloneDS.Eof then
   begin
-    RemoteDB.Products.Locate('products_model', CloneDS.FieldByName('model').AsString, [locaseinsensitive]);
-    if CloneStockDS.Locate('product_model;product_owner_id', Vararrayof([CloneDS.FieldByName('model').AsString, CloneDS.FieldByName('customer_nbr').AsString]
-      ), []) then
+    RemoteDB.Products.Locate('products_model', CloneDS.FieldByName('model')
+      .AsString, [locaseinsensitive]);
+    if CloneStockDS.Locate('product_model;product_owner_id',
+      Vararrayof([CloneDS.FieldByName('model').AsString,
+      CloneDS.FieldByName('customer_nbr').AsString]), []) then
     begin
       DateIn := OSCToVCLDate(CloneStockDS.FieldByName('Product_Date_In').Value);
       if DateIn < Now - 180 then
       begin
         // Vieux Produit
         ProductIsGood := false;
-        DlgMsg := 'Le CD ' + RemoteDB.CDSProDescFR.FieldByName('products_name').AsString + ' entré le ' + CloneStockDS.FieldByName('Product_Date_In').Value +
-          ' doit il rester dans le caroussel ?';
-      end else begin
+        DlgMsg := 'Le CD ' + RemoteDB.CDSProDescFR.FieldByName('products_name')
+          .AsString + ' entré le ' + CloneStockDS.FieldByName('Product_Date_In')
+          .Value + ' doit il rester dans le caroussel ?';
+      end
+      else
+      begin
         // Produit récent
         ProductIsGood := true;
       end;
-    end else begin
+    end
+    else
+    begin
       // Pas trouvé dans le stock
-      DlgMsg := 'Le CD ' + RemoteDB.CDSProDescFR.FieldByName('products_name').AsString + ' entré le ' + CloneStockDS.FieldByName('Product_Date_In').Value +
-        ' ne semble pus être dans le stock doit il rester dans le caroussel ?';
+      DlgMsg := 'Le CD ' + RemoteDB.CDSProDescFR.FieldByName('products_name')
+        .AsString + ' entré le ' + CloneStockDS.FieldByName('Product_Date_In')
+        .Value + ' ne semble pus être dans le stock doit il rester dans le caroussel ?';
       ProductIsGood := false;
     end;
 
     if not ProductIsGood then
     begin
-      USBCDMoveOpen        := TUSBCDMoveOpen.Create(CloneDS.FieldByName('machine_id').Value, CloneDS.FieldByName('slot_id').Value);
+      USBCDMoveOpen := TUSBCDMoveOpen.Create(CloneDS.FieldByName('machine_id')
+        .Value, CloneDS.FieldByName('slot_id').Value);
       MessageLabel.Caption := DlgMsg;
-      Slot                 := CloneDS.FieldByName('slot_id').Value;
+      Slot := CloneDS.FieldByName('slot_id').Value;
       if length(floattostr(Slot)) = 1 then
       begin
         LedSlot.Text := '00' + floattostr(Slot);
@@ -124,11 +134,15 @@ begin
       begin
         LedSlot.Text := floattostr(Slot);
       end;
-    end else begin
+    end
+    else
+    begin
       CloneDS.Next;
       Self.Cycle;
     end;
-  end else begin
+  end
+  else
+  begin
     // EOF
     Application.ProcessMessages;
     Self.Close;
@@ -146,8 +160,9 @@ begin
   CloneStockDS := TClientDataSet.Create(Self);
   CloneStockDS.CloneCursor(RemoteDB.netshop_stock, true);
   CloneStockDS.IndexFieldNames := 'product_model;product_owner_id';
-  CloneStockDS.Filter          := '(product_owner_id>99999) or ( (product_owner_id<100000) and (product_supplier_id>99999) )';
-  CloneStockDS.Filtered        := true;
+  CloneStockDS.Filter :=
+    '(product_owner_id>99999) or ( (product_owner_id<100000) and (product_supplier_id>99999) )';
+  CloneStockDS.Filtered := true;
   CloneStockDS.First;
 
 end;

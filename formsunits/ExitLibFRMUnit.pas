@@ -47,7 +47,7 @@ begin
   inherited CreateParams(Params);
   with Params do
   begin
-    ExStyle   := ExStyle or WS_EX_APPWINDOW;
+    ExStyle := ExStyle or WS_EX_APPWINDOW;
     WndParent := GetDesktopwindow;
   end;
 end;
@@ -60,19 +60,19 @@ var
 
 begin
   MessageLabel.Caption := '';
-  BtMain.Enabled       := True;
-  Next_id              := -1;
+  BtMain.Enabled := True;
+  Next_id := -1;
 
   Machine := RemoteDB.Caroussel.fieldbyName('machine_id').Value;
-  slot    := RemoteDB.Caroussel.fieldbyName('slot_id').Value;
+  slot := RemoteDB.Caroussel.fieldbyName('slot_id').Value;
   if RemoteDB.Caroussel.fieldbyName('nextid').Value <> -1 then
   begin
-    Next_id        := RemoteDB.Caroussel.fieldbyName('nextid').Value;
+    Next_id := RemoteDB.Caroussel.fieldbyName('nextid').Value;
     BtMain.Caption := 'CD Suivant';
   end;
 
   Machinetext := '';
-  for i       := 7 downto length(inttostr(Machine)) do
+  for i := 7 downto length(inttostr(Machine)) do
   begin
     Machinetext := Machinetext + '0';
   end;
@@ -97,9 +97,11 @@ begin
   begin
     USBCDMoveOpen := TUSBCDMoveOpen.Create(Machine, slot);
     USBCDMoveOpen.Execute;
-  end else begin
+  end
+  else
+  begin
     MessageLabel.Caption := 'CD Library pleines ou indisponibles';
-    BtMain.Enabled       := False;
+    BtMain.Enabled := False;
   end;
 end;
 
@@ -114,7 +116,9 @@ begin
   begin
     USBCDGetCDDown(Machine);
     ModalResult := Mrok;
-  end else begin
+  end
+  else
+  begin
     ModalResult := MRnone;
     USBCDGetCDDown(Machine);
 
@@ -122,23 +126,27 @@ begin
     begin
 
       Machine := RemoteDB.Caroussel.fieldbyName('machine_id').Value;
-      slot    := RemoteDB.Caroussel.fieldbyName('slot_id').Value;
+      slot := RemoteDB.Caroussel.fieldbyName('slot_id').Value;
 
       if RemoteDB.Caroussel.fieldbyName('nextid').Value <> -1 then
       begin
-        Next_id        := RemoteDB.Caroussel.fieldbyName('nextid').Value;
+        Next_id := RemoteDB.Caroussel.fieldbyName('nextid').Value;
         BtMain.Caption := 'CD Suivant';
-      end else begin
-        Next_id        := -1;
+      end
+      else
+      begin
+        Next_id := -1;
         BtMain.Caption := 'OK';
       end;
 
       if USBCDGetStatus(Machine) <> DEVICE_COMMANDOK then
       begin
         MessageLabel.Caption := 'CD Library pleines ou indisponibles';
-        BtMain.Enabled       := False;
+        BtMain.Enabled := False;
         exit;
-      end else begin
+      end
+      else
+      begin
         USBCDMoveOpen := TUSBCDMoveOpen.Create(Machine, slot);
         if length(floattostr(slot)) = 1 then
         begin
@@ -155,7 +163,9 @@ begin
         USBCDMoveOpen.Execute;
       end;
 
-    end else begin
+    end
+    else
+    begin
       messagedlg('Produit non trouvé', mtwarning, [mbok], 0);
     end;
   end;
@@ -170,10 +180,11 @@ function TFormExitLibrary.Enter(owner, model: string): TModalResult;
 begin
   FEOwner := owner;
   FEModel := model;
-  Result  := Self.ShowModal;
+  Result := Self.ShowModal;
 end;
 
-procedure TFormExitLibrary.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+procedure TFormExitLibrary.FormCloseQuery(Sender: TObject;
+  var CanClose: Boolean);
 begin
   // if ((Sender<>btmain) or (sender<>bitbtncancel)) then CanClose:=False;
 end;

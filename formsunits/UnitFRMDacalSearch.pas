@@ -52,7 +52,8 @@ implementation
 
 procedure TFormDacalSearch.dxBarButtonSearchClick(Sender: TObject);
 begin
-  RemoteDB.Caroussel.Locate('model', dxBarEditSearchText.Text, [locaseinsensitive]);
+  RemoteDB.Caroussel.Locate('model', dxBarEditSearchText.Text,
+    [locaseinsensitive]);
 end;
 
 end.

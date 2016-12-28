@@ -113,7 +113,8 @@ type
 
     property PageNum: integer read FPageNum write FPageNum;
     property OnGenerate: TNotifyEvent read FOnGenerate write FOnGenerate;
-    property OnAfterPreviewPrint: TNotifyEvent read FOnAfterPreviewPrint write FOnAfterPreviewPrint;
+    property OnAfterPreviewPrint: TNotifyEvent read FOnAfterPreviewPrint
+      write FOnAfterPreviewPrint;
     property InputFileName: string read FInputFileName write FInputFileName;
     property InputStream: TStream read FInputStream write FInputStream;
   end;
@@ -140,7 +141,8 @@ begin
     PageEdit.Text := IntToStr(CurrentPage);
     // PageLabel.Caption := Trans('of') + ' ' + IntToStr(Pages);
     // PageLabel.Width := self.canvas.TextWidth(PageLabel.Caption) + 8;
-    sbarMain.SimpleText := Trans('Page') + ' ' + IntToStr(CurrentPage) + ' ' + Trans('of') + ' ' + IntToStr(Pages);
+    sbarMain.SimpleText := Trans('Page') + ' ' + IntToStr(CurrentPage) + ' ' +
+      Trans('of') + ' ' + IntToStr(Pages);
   end; { with }
 end;
 
@@ -156,7 +158,8 @@ begin
   end; { if }
 end;
 
-procedure TDavPreviewForm.FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+procedure TDavPreviewForm.FormKeyDown(Sender: TObject; var Key: word;
+  Shift: TShiftState);
 var
   I1: integer;
 begin
@@ -174,12 +177,14 @@ begin
               begin
                 RvRenderPreview.PrevPage;
                 I1 := Range;
-              end else begin
+              end
+              else
+              begin
                 I1 := 0;
               end; { else }
             end; { if }
             Position := I1;
-            Key      := 0;
+            Key := 0;
           end; { with }
         end; { if }
       end;
@@ -195,7 +200,8 @@ begin
               I1 := Range - 1;
             end; { if }
             Position := I1;
-            if (I1 > Position) and (RvRenderPreview.CurrentPage < RvRenderPreview.Pages) then
+            if (I1 > Position) and
+              (RvRenderPreview.CurrentPage < RvRenderPreview.Pages) then
             begin
               RvRenderPreview.NextPage;
               Position := 0;
@@ -211,7 +217,7 @@ begin
           with ScrollBox1.VertScrollBar do
           begin
             Position := 0;
-            Key      := 0;
+            Key := 0;
           end; { with }
         end; { if }
       end;
@@ -222,7 +228,7 @@ begin
           with ScrollBox1.VertScrollBar do
           begin
             Position := Range - 1;
-            Key      := 0;
+            Key := 0;
           end; { with }
         end; { if }
       end;
@@ -237,7 +243,9 @@ begin
               RvRenderPreview.PrevPage;
               SetButtonState;
               I1 := Range - 1;
-            end else begin
+            end
+            else
+            begin
               I1 := Position - ScrollBox1.Height;
               if I1 < 0 then
               begin
@@ -245,7 +253,7 @@ begin
               end; { if }
             end; { else }
             Position := I1;
-            Key      := 0;
+            Key := 0;
           end; { with }
         end; { if }
       end;
@@ -263,12 +271,14 @@ begin
                 RvRenderPreview.NextPage;
                 SetButtonState;
                 I1 := 0;
-              end else begin
+              end
+              else
+              begin
                 I1 := Range - 1;
               end; { else }
             end; { if }
             Position := I1;
-            Key      := 0;
+            Key := 0;
           end; { with }
         end; { if }
       end;
@@ -284,8 +294,9 @@ begin
               I1 := 0;
             end; { if }
             Position := I1;
-            Key      := 0;
-          end else if Shift = [ssCtrl, ssShift] then
+            Key := 0;
+          end
+          else if Shift = [ssCtrl, ssShift] then
           begin
             I1 := Position - ScrollBox1.Width;
             if I1 < 0 then
@@ -293,7 +304,7 @@ begin
               I1 := 0;
             end; { if }
             Position := I1;
-            Key      := 0;
+            Key := 0;
           end; { else }
         end; { with }
       end;
@@ -309,8 +320,9 @@ begin
               I1 := Range - 1;
             end; { if }
             Position := I1;
-            Key      := 0;
-          end else if Shift = [ssCtrl, ssShift] then
+            Key := 0;
+          end
+          else if Shift = [ssCtrl, ssShift] then
           begin
             I1 := Position + ScrollBox1.Width;
             if I1 >= Range then
@@ -318,7 +330,7 @@ begin
               I1 := Range - 1;
             end; { if }
             Position := I1;
-            Key      := 0;
+            Key := 0;
           end; { else }
         end; { with }
       end;
@@ -333,7 +345,9 @@ begin
   begin
     actnFile_Exit.Execute;
     Key := #0;
-  end else begin
+  end
+  else
+  begin
     ValidKeys := { Trans- } 'eEbBwWfFnNpP+-01234567890.'#13#8;
     if Pos(Key, ValidKeys) > 0 then
     begin
@@ -393,7 +407,9 @@ begin
             Key := #0;
           end;
       end; { case }
-    end else begin
+    end
+    else
+    begin
       Key := #0;
     end; { else }
   end; { else }
@@ -415,7 +431,9 @@ procedure TDavPreviewForm.actnPage_GotoPageExecute(Sender: TObject);
 var
   I1: integer;
 begin
-  I1 := StrToIntDef(Inputbox(Trans('Go to Page'), Trans('Enter page to move to:'), IntToStr(RvRenderPreview.CurrentPage)), -1);
+  I1 := StrToIntDef(Inputbox(Trans('Go to Page'),
+    Trans('Enter page to move to:'),
+    IntToStr(RvRenderPreview.CurrentPage)), -1);
   if (I1 > -1) and (RvRenderPreview.CurrentPage <> I1) then
   begin
     RvRenderPreview.RenderPage(I1);
@@ -468,20 +486,22 @@ begin
   if soAllowPrintFromPreview in ReportSystem.SystemOptions then
   begin
     RvRenderPrinter.NDRStream := RvRenderPreview.NDRStream;
-    RvRenderPrinter.Pages     := RvRenderPreview.Pages;
+    RvRenderPrinter.Pages := RvRenderPreview.Pages;
     if ssAllowPreviewSetup in ReportSystem.SystemSetups then
     begin
       with TRpSetupForm.Create(self) do
         try
-          PreviewSetup                       := true;
-          ReportSystem                       := self.ReportSystem;
-          FilePrinter                        := RvRenderPrinter;
-          DoPrint                            := (ShowModal = mrOK);
+          PreviewSetup := true;
+          ReportSystem := self.ReportSystem;
+          FilePrinter := RvRenderPrinter;
+          DoPrint := (ShowModal = mrOK);
           RvRenderPrinter.IgnoreFileSettings := true;
         finally
           Free;
         end; { with }
-    end else begin
+    end
+    else
+    begin
       DoPrint := true;
     end; { else }
 
@@ -489,9 +509,11 @@ begin
     begin
       if (RvRenderPrinter.MaxCopies <= 1) and (RvRenderPrinter.Copies > 1) then
       begin
-        ForceCopies            := RvRenderPrinter.Copies;
+        ForceCopies := RvRenderPrinter.Copies;
         RvRenderPrinter.Copies := 1;
-      end else begin
+      end
+      else
+      begin
         ForceCopies := 1;
       end; { else }
       for I1 := 1 to ForceCopies do
@@ -499,7 +521,9 @@ begin
         if Assigned(RvRenderPrinter.NDRStream) then
         begin
           RvRenderPrinter.Render(RvRenderPrinter.NDRStream);
-        end else begin
+        end
+        else
+        begin
           RvRenderPrinter.Render(InputStream);
         end; { else }
       end; { for }
@@ -549,12 +573,12 @@ begin
   RvRenderPreview := TRvRenderPreview.Create(self);
   with RvRenderPreview do
   begin
-    OnZoomChange  := NDRPreviewZoomChange;
-    OnPageChange  := NDRPreviewPageChange;
-    ShadowDepth   := 2;
+    OnZoomChange := NDRPreviewZoomChange;
+    OnPageChange := NDRPreviewPageChange;
+    ShadowDepth := 2;
     MarginPercent := 5;
-    ZoomFactor    := 100;
-    ScrollBox     := ScrollBox1;
+    ZoomFactor := 100;
+    ScrollBox := ScrollBox1;
   end; { with }
 
   RvRenderPrinter := TRvRenderPrinter.Create(self);
@@ -570,7 +594,8 @@ begin
     InputFileName := AFileName;
     NDRStream.Free;
     Render(InputFileName);
-    Caption := Application.Title + { Trans- } ' - [ ' + ExtractFileName(InputFileName) + { Trans- } ' ]';
+    Caption := Application.Title + { Trans- } ' - [ ' +
+      ExtractFileName(InputFileName) + { Trans- } ' ]';
   end; { with }
 end;
 
@@ -597,16 +622,20 @@ begin
           LRenderList := TStringList.Create;
           try
             RpRender.GetRenderList(LRenderList);
-            LRender                := TRpRenderStream(LRenderList.Objects[dlogSave.FilterIndex - 2]);
+            LRender := TRpRenderStream
+              (LRenderList.Objects[dlogSave.FilterIndex - 2]);
             LRender.OutputFileName := dlogSave.FileName;
             LRender.Render(RvRenderPreview.NDRStream);
           finally
             LRenderList.Free;
           end; { tryf }
-        end else begin // Do NDR
+        end
+        else
+        begin // Do NDR
           LDestStream := TFileStream.Create(dlogSave.FileName, fmCreate);
           try
-            LDestStream.CopyFrom(RvRenderPreview.NDRStream, RvRenderPreview.NDRStream.Size);
+            LDestStream.CopyFrom(RvRenderPreview.NDRStream,
+              RvRenderPreview.NDRStream.Size);
           finally
             FreeAndNil(LDestStream);
           end; { tryf }
@@ -664,8 +693,11 @@ procedure TDavPreviewForm.InitFromRPSystem;
 begin
   if InputFileName <> '' then
   begin
-    RvRenderPreview.NDRStream := TFileStream.Create(InputFileName, fmOpenRead or fmShareDenyWrite);
-  end else begin
+    RvRenderPreview.NDRStream := TFileStream.Create(InputFileName,
+      fmOpenRead or fmShareDenyWrite);
+  end
+  else
+  begin
     RvRenderPreview.NDRStream := InputStream;
   end; { else }
   RvRenderPreview.Render;
@@ -687,17 +719,19 @@ begin
   begin
     with Sender as TEdit do
     begin
-      if (SelLength = 0) and (Pos('.', Text) > 0) and (Length(Text) > Pos('.', Text)) then
+      if (SelLength = 0) and (Pos('.', Text) > 0) and
+        (Length(Text) > Pos('.', Text)) then
       begin
         Key := #0;
       end; { if }
     end; { with }
-  end else if Key = #13 then
+  end
+  else if Key = #13 then
   begin
     ZoomEditExit(Sender);
     with Sender as TEdit do
     begin
-      SelStart  := 0;
+      SelStart := 0;
       SelLength := Length(Text);
     end; { with }
     Key := #0;
@@ -733,12 +767,13 @@ begin
   if Key = '.' then
   begin
     Key := #0;
-  end else if Key = #13 then
+  end
+  else if Key = #13 then
   begin
     PageEditExit(Sender);
     with Sender as TEdit do
     begin
-      SelStart  := 0;
+      SelStart := 0;
       SelLength := Length(Text);
     end; { with }
     Key := #0;
@@ -799,16 +834,18 @@ begin
   // actions don't update correctly with modeless dialogs
   if not(fsModal in FormState) then
   begin
-    actnPage_First.Enabled     := RvRenderPreview.CurrentPage > 1;
-    actnPage_Previous.Enabled  := RvRenderPreview.CurrentPage > 1;
-    actnPage_Next.Enabled      := RvRenderPreview.CurrentPage < RvRenderPreview.Pages;
-    actnPage_Last.Enabled      := RvRenderPreview.CurrentPage < RvRenderPreview.Pages;
-    actnFile_Print.Enabled     := true; // RvRenderPreview.Rendering;
-    actnFile_Save.Enabled      := true; // RvRenderPreview.Rendering;
-    actnZoom_In.Enabled        := true; // RvRenderPreview.Rendering;
-    actnZoom_Out.Enabled       := true; // RvRenderPreview.Rendering;
+    actnPage_First.Enabled := RvRenderPreview.CurrentPage > 1;
+    actnPage_Previous.Enabled := RvRenderPreview.CurrentPage > 1;
+    actnPage_Next.Enabled := RvRenderPreview.CurrentPage <
+      RvRenderPreview.Pages;
+    actnPage_Last.Enabled := RvRenderPreview.CurrentPage <
+      RvRenderPreview.Pages;
+    actnFile_Print.Enabled := true; // RvRenderPreview.Rendering;
+    actnFile_Save.Enabled := true; // RvRenderPreview.Rendering;
+    actnZoom_In.Enabled := true; // RvRenderPreview.Rendering;
+    actnZoom_Out.Enabled := true; // RvRenderPreview.Rendering;
     actnZoom_PageWidth.Enabled := true; // RvRenderPreview.Rendering;
-    actnZoom_Page.Enabled      := true; // RvRenderPreview.Rendering;
+    actnZoom_Page.Enabled := true; // RvRenderPreview.Rendering;
   end;
 end;
 

@@ -676,14 +676,20 @@ type
     procedure netshop_customers_alertsNewRecord(DataSet: TDataSet);
     procedure netshop_customers_alertsCalcFields(DataSet: TDataSet);
     procedure ProductsAfterEdit(DataSet: TDataSet);
-    procedure DPItemsSoldBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPItemsSoldBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
     procedure netshop_items_soldCalcFields(DataSet: TDataSet);
     procedure ProgressUpdateShow(Sender: TObject);
     procedure netshop_expensesCalcFields(DataSet: TDataSet);
     procedure customersBeforePost(DataSet: TDataSet);
     procedure Address_BookBeforePost(DataSet: TDataSet);
-    procedure DPCustomersBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
-    procedure DPSalesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPCustomersBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
+    procedure DPSalesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
     procedure netshop_salesAfterOpen(DataSet: TDataSet);
     procedure netshop_rent_stockNewRecord(DataSet: TDataSet);
     procedure netshop_rent_transactionNewRecord(DataSet: TDataSet);
@@ -694,24 +700,40 @@ type
     procedure netshop_rent_stockCalcFields(DataSet: TDataSet);
     procedure netshop_invoicesAfterOpen(DataSet: TDataSet);
     procedure netshop_invoicesNewRecord(DataSet: TDataSet);
-    procedure DPInvoicesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPInvoicesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
     procedure netshop_invoices_itemsNewRecord(DataSet: TDataSet);
     procedure netshop_invoicesCalcFields(DataSet: TDataSet);
     procedure netshop_invoices_itemsCalcFields(DataSet: TDataSet);
-    procedure DPExpensesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPExpensesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
     procedure netshop_expensesNewRecord(DataSet: TDataSet);
     procedure Productscategories_idChange(Sender: TField);
-    procedure DPRefundsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
-    procedure DPAlertsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
-    procedure DPSuppliersStockBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+    procedure DPRefundsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
       var Applied: Boolean);
-    procedure DPstockBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPAlertsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
+    procedure DPSuppliersStockBeforeUpdateRecord(Sender: TObject;
+      SourceDS: TDataSet; DeltaDS: TCustomClientDataSet;
+      UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPstockBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
     procedure netshop_cashcloseNewRecord(DataSet: TDataSet);
-    procedure customerscustomers_email_addressSetText(Sender: TField; const Text: string);
-    procedure Productsproducts_activeSetText(Sender: TField; const Text: string);
-    procedure DPAddress_bookBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+    procedure customerscustomers_email_addressSetText(Sender: TField;
+      const Text: string);
+    procedure Productsproducts_activeSetText(Sender: TField;
+      const Text: string);
+    procedure DPAddress_bookBeforeUpdateRecord(Sender: TObject;
+      SourceDS: TDataSet; DeltaDS: TCustomClientDataSet;
+      UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPWebOrdersBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
       var Applied: Boolean);
-    procedure DPWebOrdersBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
     procedure ProgressMidSyncShow(Sender: TObject);
     procedure CDSProDescFRNewRecord(DataSet: TDataSet);
     procedure CDSProDescNLNewRecord(DataSet: TDataSet);
@@ -720,12 +742,19 @@ type
     procedure CDSProDescNLAfterPost(DataSet: TDataSet);
     procedure CDSProDescFRAfterPost(DataSet: TDataSet);
     procedure GenericAfterPost(DataSet: TDataSet);
-    procedure DPProDescFRBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
-    procedure DPProDescNLBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
-    procedure DPCouponsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
-    procedure ProgressCloseShow(Sender: TObject);
-    procedure DPStockReturnedBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+    procedure DPProDescFRBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
       var Applied: Boolean);
+    procedure DPProDescNLBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
+    procedure DPCouponsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
+    procedure ProgressCloseShow(Sender: TObject);
+    procedure DPStockReturnedBeforeUpdateRecord(Sender: TObject;
+      SourceDS: TDataSet; DeltaDS: TCustomClientDataSet;
+      UpdateKind: TUpdateKind; var Applied: Boolean);
     procedure netshop_stock_returnedCalcFields(DataSet: TDataSet);
     procedure ProductsAfterPost(DataSet: TDataSet);
     procedure CDSActionsNewRecord(DataSet: TDataSet);
@@ -751,11 +780,16 @@ type
     function GetDBIsOnDisk: Boolean;
     function GetTodaysDate: string;
     function GetCurrentSalesDate: string;
-    function GetNextEan(DataSet: TCustomClientDataSet; const PrimaryKey: string): tbcd;
-    function GetNextId(DataSet: TCustomClientDataSet; const PrimaryKey: string): integer;
-    function GetNextSubIdDouble(DataSet: TCustomClientDataSet; const MasterKey, PrimaryKey: string): integer;
-    function GetNextCustomersId(DataSet: TCustomClientDataSet; const PrimaryKey: string): integer;
-    function GetNextSubIdSimple(DataSet: TCustomClientDataSet; const PrimaryKey: string): integer;
+    function GetNextEan(DataSet: TCustomClientDataSet;
+      const PrimaryKey: string): tbcd;
+    function GetNextId(DataSet: TCustomClientDataSet;
+      const PrimaryKey: string): integer;
+    function GetNextSubIdDouble(DataSet: TCustomClientDataSet;
+      const MasterKey, PrimaryKey: string): integer;
+    function GetNextCustomersId(DataSet: TCustomClientDataSet;
+      const PrimaryKey: string): integer;
+    function GetNextSubIdSimple(DataSet: TCustomClientDataSet;
+      const PrimaryKey: string): integer;
     procedure keepconnect;
     function SaveDataset(DataSet: TClientDataSet; backup: Boolean): Boolean;
     function GetDatasetsCount: integer;
@@ -766,12 +800,9 @@ type
     function GetLoging(key: string): Boolean;
     function GetRootCategoryName(Category_id: integer): string;
 
-
-
-
   public
     { Public declarations }
-    function ChangeCount: Integer;
+    function ChangeCount: integer;
     function GetRootCategory(Category_id: integer): integer;
     property IsUpdating: Boolean read DBIsUpdating write DBIsUpdating;
     property DatasetsCount: integer read GetDatasetsCount;
@@ -790,20 +821,25 @@ type
     function CheckField(DbName, FieldName: string; Value: Variant): Boolean;
     function GetPriceHT(Model: string; PriceTTC: double): double;
     function GetPriceTTC(Model: string; PriceHT: double): double;
-    function CalcDayCahsierSummary(startdate, enddate: integer): TDayCashierSummary;
+    function CalcDayCahsierSummary(startdate, enddate: integer)
+      : TDayCashierSummary;
     function CalcInvoiceTVA(TaxClassRate: integer): double;
     function CalcInvoiceTVABase(TaxClassRate: integer): double;
     procedure CheckExtStock(Model: string; var Ingroup, outgroup: integer);
     procedure UpdateSmsMessage(aSmsMessage: TSmsMessage);
-    function SetItemSoldAsRefunded(items_sold_id:string;quantity :integer;credit:boolean):Boolean;
+    function SetItemSoldAsRefunded(items_sold_id: string; quantity: integer;
+      credit: Boolean): Boolean;
     function GetSmsMessage: TSmsMessage;
     procedure LoadDB;
     procedure Synchronise;
     procedure SynchroniseMin;
     procedure ApplyUpdates;
-    procedure DeleteFromStock(product_model: string; product_owner_id, product_supplier_id, quantity: integer);
-    procedure DeleteFromTransfer(product_model: string; product_owner_id, product_supplier_id, quantity: integer);
-    procedure AddToStock(product_model: string; product_owner_id, product_supplier_id, quantity: integer);
+    procedure DeleteFromStock(product_model: string;
+      product_owner_id, product_supplier_id, quantity: integer);
+    procedure DeleteFromTransfer(product_model: string;
+      product_owner_id, product_supplier_id, quantity: integer);
+    procedure AddToStock(product_model: string;
+      product_owner_id, product_supplier_id, quantity: integer);
     procedure CheckCategories;
     procedure CheckProductsEan;
     procedure BuildProductsId;
@@ -841,7 +877,7 @@ type
     function SetAlert(customers_nbr, quantity: integer; Model: string): Boolean;
     function CalcPriceVATIN(Price: double; tax_class_id: integer): double;
     procedure UpdateSyncYears();
-    procedure StoreSignBlob(filename,table:string);
+    procedure StoreSignBlob(filename, table: string);
 
   published
     CloneDSCustomers: TClientDataSet;
@@ -1018,7 +1054,9 @@ type
     procedure netshop_items_soldNewRecord(DataSet: TDataSet);
     procedure netshop_salesNewRecord(DataSet: TDataSet);
     procedure ProductsRebuildRootCatNames;
-    procedure GeneralReconcileError(DataSet: TCustomClientDataSet; E: EReconcileError; UpdateKind: TUpdateKind; var Action: TReconcileAction);
+    procedure GeneralReconcileError(DataSet: TCustomClientDataSet;
+      E: EReconcileError; UpdateKind: TUpdateKind;
+      var Action: TReconcileAction);
     procedure ProgressCreateModulebShow(Sender: TObject);
     procedure ProgressSynchronisebShow(Sender: TObject);
     procedure netshop_transferNewRecord(DataSet: TDataSet);
@@ -1039,7 +1077,9 @@ type
     procedure ProgressCheckPIDShow(Sender: TObject);
     procedure ProgressSaveModuleShow(Sender: TObject);
     procedure Productsproducts_modelChange(Sender: TField);
-    procedure DPProductsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind; var Applied: Boolean);
+    procedure DPProductsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet;
+      DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+      var Applied: Boolean);
     procedure netshop_items_refundedNewRecord(DataSet: TDataSet);
     procedure Address_BookNewRecord(DataSet: TDataSet);
     property Todaysdate: string read GetTodaysDate;
@@ -1069,7 +1109,7 @@ type
 
 type
   TShopNumber = 1 .. 100;
-  TInShopSet  = set of TShopNumber;
+  TInShopSet = set of TShopNumber;
   TOutShopSet = set of TShopNumber;
 
 var
@@ -1081,23 +1121,25 @@ const
   SOFTCONFIG = 'SMART';
 
 const
-  CR                                            = #13;
-  LF                                            = #10;
-  EOL                                           = CR + LF;
-  xmlEOL                                        = EOL;
-  ActionStr: array [TReconcileAction] of string = ('Skip', 'Abort', 'Merge', 'Correct', 'Cancel', 'Refresh');
-  UpdateKindStr: array [TUpdateKind] of string  = ('Modified', 'Inserted', 'Deleted');
-  SCaption                                      = 'Update Error - %s';
-  SUnchanged                                    = '<Unchanged>';
-  SBinary                                       = '(Binary)';
-  SAdt                                          = '(ADT)';
-  SArray                                        = '(Array)';
-  SFieldName                                    = 'Field Name';
-  SOriginal                                     = 'Original Value';
-  SConflict                                     = 'Conflicting Value';
-  SValue                                        = ' Value';
-  SNoData                                       = '<No Records>';
-  SNew                                          = 'New';
+  CR = #13;
+  LF = #10;
+  EOL = CR + LF;
+  xmlEOL = EOL;
+  ActionStr: array [TReconcileAction] of string = ('Skip', 'Abort', 'Merge',
+    'Correct', 'Cancel', 'Refresh');
+  UpdateKindStr: array [TUpdateKind] of string = ('Modified', 'Inserted',
+    'Deleted');
+  SCaption = 'Update Error - %s';
+  SUnchanged = '<Unchanged>';
+  SBinary = '(Binary)';
+  SAdt = '(ADT)';
+  SArray = '(Array)';
+  SFieldName = 'Field Name';
+  SOriginal = 'Original Value';
+  SConflict = 'Conflicting Value';
+  SValue = ' Value';
+  SNoData = '<No Records>';
+  SNew = 'New';
 
 implementation
 
@@ -1112,22 +1154,34 @@ const
     // 'customers_gender',
     'customers_firstname', 'customers_lastname',
     // 'customers_dob',
-    'customers_email_address', 'customers_default_address_id', 'customers_telephone', 'customers_fax', 'customers_password', 'customers_credit',
-    'customers_points', 'customers_nbr', 'customers_newsletter', 'customers_TVA', 'customers_identity', 'customers_bank_account', 'customers_isTVA',
-    'customers_issupplier', 'customers_defltpost', 'customers_paycode', 'customers_language_id', 'customers_rfid', 'customers_shop_id', 'customers_date_added');
+    'customers_email_address', 'customers_default_address_id',
+    'customers_telephone', 'customers_fax', 'customers_password',
+    'customers_credit', 'customers_points', 'customers_nbr',
+    'customers_newsletter', 'customers_TVA', 'customers_identity',
+    'customers_bank_account', 'customers_isTVA', 'customers_issupplier',
+    'customers_defltpost', 'customers_paycode', 'customers_language_id',
+    'customers_rfid', 'customers_shop_id', 'customers_date_added');
 
-  address_book_fields: array [0 .. 10] of string = ('address_book_id', 'customers_id',
+  address_book_fields: array [0 .. 10] of string = ('address_book_id',
+    'customers_id',
     // 'entry_gender',
-    'entry_company', 'entry_firstname', 'entry_lastname', 'entry_street_address',
+    'entry_company', 'entry_firstname', 'entry_lastname',
+    'entry_street_address',
     // 'entry_suburb',
-    'entry_postcode', 'entry_city', 'entry_state', 'entry_country_id', 'entry_zone_id');
+    'entry_postcode', 'entry_city', 'entry_state', 'entry_country_id',
+    'entry_zone_id');
 
-  products_fields: array [0 .. 27] of string = ('products_model', 'products_id', 'products_quantity', 'products_image', 'products_price', 'products_date_added',
-    'products_weight', 'products_status', 'products_tax_class_id', 'manufacturers_id', 'products_promo', 'products_stock_managed', 'products_date_available',
-    'products_last_modified', 'products_ordered', 'products_ispreview', 'products_root_category_name', 'products_isobsolete', 'products_warranty_id',
-    'products_street_block', 'products_cldprice', 'products_cld_id', 'products_price_old', 'products_price_changed', 'products_used_price', 'products_intername',
-    'products_esd', 'products_posa'
-    );
+  products_fields: array [0 .. 27] of string = ('products_model', 'products_id',
+    'products_quantity', 'products_image', 'products_price',
+    'products_date_added', 'products_weight', 'products_status',
+    'products_tax_class_id', 'manufacturers_id', 'products_promo',
+    'products_stock_managed', 'products_date_available',
+    'products_last_modified', 'products_ordered', 'products_ispreview',
+    'products_root_category_name', 'products_isobsolete',
+    'products_warranty_id', 'products_street_block', 'products_cldprice',
+    'products_cld_id', 'products_price_old', 'products_price_changed',
+    'products_used_price', 'products_intername', 'products_esd',
+    'products_posa');
 
   // products_description_fields: array [0..4] of string = (
   // 'products_id',
@@ -1139,11 +1193,13 @@ const
   // 'products_viewed'
   // );
 
-  products_to_categories_fields: array [0 .. 1] of string = ('products_id', 'categories_id');
+  products_to_categories_fields: array [0 .. 1] of string = ('products_id',
+    'categories_id');
 
 {$R *.DFM}
 
-function FloatToStrWithDecimalPoint(const Value: Extended; const Format: String = '0.###'): String;
+function FloatToStrWithDecimalPoint(const Value: Extended;
+  const Format: String = '0.###'): String;
 var
   myFormatSettings: TFormatSettings;
 begin
@@ -1152,7 +1208,8 @@ begin
   Result := FormatFloat(Format, Value, myFormatSettings);
 end;
 
-function TRemoteDB.GetNextCustomersId(DataSet: TCustomClientDataSet; const PrimaryKey: string): integer;
+function TRemoteDB.GetNextCustomersId(DataSet: TCustomClientDataSet;
+  const PrimaryKey: string): integer;
 var
   CloneDS: TClientDataSet;
 begin
@@ -1160,8 +1217,9 @@ begin
   try
     CloneDS.CloneCursor(DataSet, True);
     CloneDS.IndexFieldNames := PrimaryKey;
-    CloneDS.Filter := FloatToStrF(CONNECTEDSHOP, fffixed, 3, 0) + '00000 < customers_nbr and customers_nbr < ' + FloatToStrF(CONNECTEDSHOP, fffixed, 3, 0)
-      + '99999';
+    CloneDS.Filter := FloatToStrF(CONNECTEDSHOP, fffixed, 3, 0) +
+      '00000 < customers_nbr and customers_nbr < ' + FloatToStrF(CONNECTEDSHOP,
+      fffixed, 3, 0) + '99999';
     CloneDS.Filtered := True;
     CloneDS.Last;
     if CloneDS.Eof and CloneDS.Bof then
@@ -1173,7 +1231,8 @@ begin
   end;
 end;
 
-function TRemoteDB.GetNextSubIdDouble(DataSet: TCustomClientDataSet; const MasterKey, PrimaryKey: string): integer;
+function TRemoteDB.GetNextSubIdDouble(DataSet: TCustomClientDataSet;
+  const MasterKey, PrimaryKey: string): integer;
 var
   CloneDS: TClientDataSet;
 begin
@@ -1181,8 +1240,8 @@ begin
   try
     CloneDS.CloneCursor(DataSet, True);
     CloneDS.IndexFieldNames := PrimaryKey;
-    CloneDS.Filter          := MasterKey + ' = ' + inttostr(CONNECTEDSHOP);
-    CloneDS.Filtered        := True;
+    CloneDS.Filter := MasterKey + ' = ' + inttostr(CONNECTEDSHOP);
+    CloneDS.Filtered := True;
     CloneDS.Last;
     if CloneDS.Eof and CloneDS.Bof then
       Result := 1
@@ -1193,7 +1252,8 @@ begin
   end;
 end;
 
-function TRemoteDB.GetNextSubIdSimple(DataSet: TCustomClientDataSet; const PrimaryKey: string): integer;
+function TRemoteDB.GetNextSubIdSimple(DataSet: TCustomClientDataSet;
+  const PrimaryKey: string): integer;
 var
   CloneDS: TClientDataSet;
 begin
@@ -1201,8 +1261,9 @@ begin
   try
     CloneDS.CloneCursor(DataSet, True);
     CloneDS.IndexFieldNames := PrimaryKey;
-    CloneDS.Filter          := FloatToStrF(CONNECTEDSHOP, fffixed, 3, 0) + '0000000 < ' + PrimaryKey + ' and ' + PrimaryKey + '< ' +
-      FloatToStrF(CONNECTEDSHOP, fffixed, 3, 0) + '9999999';
+    CloneDS.Filter := FloatToStrF(CONNECTEDSHOP, fffixed, 3, 0) + '0000000 < ' +
+      PrimaryKey + ' and ' + PrimaryKey + '< ' + FloatToStrF(CONNECTEDSHOP,
+      fffixed, 3, 0) + '9999999';
     CloneDS.Filtered := True;
     CloneDS.Last;
     if CloneDS.Eof and CloneDS.Bof then
@@ -1214,7 +1275,8 @@ begin
   end;
 end;
 
-function TRemoteDB.GetNextId(DataSet: TCustomClientDataSet; const PrimaryKey: string): integer;
+function TRemoteDB.GetNextId(DataSet: TCustomClientDataSet;
+  const PrimaryKey: string): integer;
 var
   CloneDS: TClientDataSet;
 begin
@@ -1232,7 +1294,8 @@ begin
   end;
 end;
 
-function TRemoteDB.GetNextEan(DataSet: TCustomClientDataSet; const PrimaryKey: string): tbcd;
+function TRemoteDB.GetNextEan(DataSet: TCustomClientDataSet;
+  const PrimaryKey: string): tbcd;
 var
   CloneDS: TClientDataSet;
   filterlow, filterhigh, LastValue, PID, PRE: string;
@@ -1243,16 +1306,17 @@ begin
   try
     CloneDS.CloneCursor(DataSet, True);
     CloneDS.IndexFieldNames := PrimaryKey;
-    filterlow               := '200';
-    for i                   := 1 to 3 - Length(inttostr(CONNECTEDSHOP)) do
-      filterlow             := filterlow + '0';
-    filterlow               := filterlow + inttostr(CONNECTEDSHOP);
-    filterhigh              := filterlow + '9999999';
-    filterlow               := filterlow + '0000000';
+    filterlow := '200';
+    for i := 1 to 3 - Length(inttostr(CONNECTEDSHOP)) do
+      filterlow := filterlow + '0';
+    filterlow := filterlow + inttostr(CONNECTEDSHOP);
+    filterhigh := filterlow + '9999999';
+    filterlow := filterlow + '0000000';
     // Filterhigh:='5425025599999';
     // Filterlow:='5425025590000';
 
-    CloneDS.Filter   := filterlow + ' <  ' + PrimaryKey + ' and ' + PrimaryKey + ' < ' + filterhigh;
+    CloneDS.Filter := filterlow + ' <  ' + PrimaryKey + ' and ' + PrimaryKey +
+      ' < ' + filterhigh;
     CloneDS.Filtered := True;
     CloneDS.Last;
     if CloneDS.Eof and CloneDS.Bof then
@@ -1260,18 +1324,20 @@ begin
       CheckSum := ComputeEanCheck(filterlow);
       delete(filterlow, Length(filterlow), 1);
       filterlow := filterlow + inttostr(CheckSum);
-      Result    := strtobcd(filterlow);
-    end else begin
-      LastValue   := BcdtoStr(CloneDS.fieldbyname(PrimaryKey).AsBcd);
-      PRE         := MidStr(LastValue, 1, 6);
-      PID         := MidStr(LastValue, 7, 6);
-      InterValue  := StrToInt(PID) + 1;
-      LastValue   := PRE;
-      for i       := 1 to 6 - Length(inttostr(InterValue)) do
+      Result := strtobcd(filterlow);
+    end
+    else
+    begin
+      LastValue := BcdtoStr(CloneDS.fieldbyname(PrimaryKey).AsBcd);
+      PRE := MidStr(LastValue, 1, 6);
+      PID := MidStr(LastValue, 7, 6);
+      InterValue := StrToInt(PID) + 1;
+      LastValue := PRE;
+      for i := 1 to 6 - Length(inttostr(InterValue)) do
         LastValue := LastValue + '0';
-      LastValue   := LastValue + inttostr(InterValue);
-      CheckSum    := ComputeEanCheck(LastValue + '0');
-      Result      := strtobcd(LastValue + inttostr(CheckSum));
+      LastValue := LastValue + inttostr(InterValue);
+      CheckSum := ComputeEanCheck(LastValue + '0');
+      Result := strtobcd(LastValue + inttostr(CheckSum));
     end;
   finally
     CloneDS.Free;
@@ -1287,9 +1353,9 @@ begin
   try
     CloneDS.CloneCursor(netshop_customers_alerts, True);
     CloneDS.IndexFieldNames := 'customers_alerts_products_model';
-    CloneDS.Filter          := '(' + QuotedStr(Model) +
-      ' = customers_alerts_products_model) and (customers_alerts_status>0) and (customers_alerts_status<3) and ( customers_alerts_date_notified > ' +
-      FloatToStr(round(now) - 7) + ')';
+    CloneDS.Filter := '(' + QuotedStr(Model) +
+      ' = customers_alerts_products_model) and (customers_alerts_status>0) and (customers_alerts_status<3) and ( customers_alerts_date_notified > '
+      + FloatToStr(round(now) - 7) + ')';
     CloneDS.Filtered := True;
     CloneDS.First;
     if CloneDS.Eof and CloneDS.Bof then
@@ -1320,8 +1386,6 @@ begin
   // Setting up local DB paths & filenames
   ChDir(ExtractFilePath(ParamStr(0)));
 
-
-
   Error := False;
   if not(DirectoryExists('database')) then
   begin
@@ -1351,7 +1415,9 @@ begin
   if not(DirectoryExists('posbank')) then
   begin
     CreateDir('posbank');
-  end else begin
+  end
+  else
+  begin
     RemoveDir('posbank');
     CreateDir('posbank');
   end;
@@ -1399,7 +1465,8 @@ begin
   end;
 
   if Error then
-    messagedlg('Certains répertoires étaient manquants : structure recréée', mtwarning, [mbok], 0);
+    messagedlg('Certains répertoires étaient manquants : structure recréée',
+      mtwarning, [mbok], 0);
 
   LocalCache := True;
 
@@ -1419,21 +1486,24 @@ end;
 
 procedure TRemoteDB.CustomersoldNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('Customers_Nbr').Value             := GetNextCustomersId(DataSet as TCustomClientDataSet, 'Customers_nbr');
-  DataSet.fieldbyname('Customers_Id').Value              := DataSet.fieldbyname('Customers_Nbr').Value;
-  DataSet.fieldbyname('Customers_Gender').AsString       := 'M';
+  DataSet.fieldbyname('Customers_Nbr').Value :=
+    GetNextCustomersId(DataSet as TCustomClientDataSet, 'Customers_nbr');
+  DataSet.fieldbyname('Customers_Id').Value :=
+    DataSet.fieldbyname('Customers_Nbr').Value;
+  DataSet.fieldbyname('Customers_Gender').AsString := 'M';
   DataSet.fieldbyname('Customers_Date_added').AsDateTime := now;
   // Dataset.FieldByName('Customers_dob').AsDateTime:=Now;
   // Dataset.FieldByName('Customers_Zone_Id').AsInteger:=CONNECTEDSHOP;
-  DataSet.fieldbyname('Customers_Points').AsInteger      := 0;
-  DataSet.fieldbyname('Customers_Credit').AsInteger      := 0;
-  DataSet.fieldbyname('Customers_isTVA').AsString        := 'False';
-  DataSet.fieldbyname('Customers_htprice').AsString      := 'False';
+  DataSet.fieldbyname('Customers_Points').AsInteger := 0;
+  DataSet.fieldbyname('Customers_Credit').AsInteger := 0;
+  DataSet.fieldbyname('Customers_isTVA').AsString := 'False';
+  DataSet.fieldbyname('Customers_htprice').AsString := 'False';
   DataSet.fieldbyname('Customers_rent_enabled').AsString := 'False';
   DataSet.fieldbyname('Customers_Language_id').AsInteger := 1;
-  DataSet.fieldbyname('Customers_shop_id').AsInteger     := CONNECTEDSHOP;
+  DataSet.fieldbyname('Customers_shop_id').AsInteger := CONNECTEDSHOP;
   Address_Book.Append;
-  DataSet.fieldbyname('Customers_default_address_id').AsInteger := Address_Book.fieldbyname('address_book_id').AsInteger;
+  DataSet.fieldbyname('Customers_default_address_id').AsInteger :=
+    Address_Book.fieldbyname('address_book_id').AsInteger;
   DataSet.fieldbyname('customers_newsletter_undeliverable').AsInteger := 0;
   DataSet.fieldbyname('customers_loyalty').AsInteger := 0;
   // Address_book.FieldByName('entry_Country_Id').AsInteger:=21;
@@ -1444,8 +1514,10 @@ procedure TRemoteDB.netshop_customers_alertsCalcFields(DataSet: TDataSet);
 var
   date, notified, test: Variant;
 begin
-  date     := round(DataSet.fieldbyname('customers_alerts_date').AsFloat * 10000) / 10000;
-  notified := round(DataSet.fieldbyname('customers_alerts_date_notified').AsFloat * 10000) / 10000;
+  date := round(DataSet.fieldbyname('customers_alerts_date').AsFloat *
+    10000) / 10000;
+  notified := round(DataSet.fieldbyname('customers_alerts_date_notified')
+    .AsFloat * 10000) / 10000;
   try
     DataSet.fieldbyname('alerts_date_notified_disp').AsFloat := notified;
     DataSet.fieldbyname('customers_alerts_date_disp').AsFloat := date;
@@ -1456,29 +1528,29 @@ end;
 
 procedure TRemoteDB.netshop_customers_alertsNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('customers_alerts_date').AsFloat     := now;
-  DataSet.fieldbyname('customers_alerts_used').AsFloat     := 0;
+  DataSet.fieldbyname('customers_alerts_date').AsFloat := now;
+  DataSet.fieldbyname('customers_alerts_used').AsFloat := 0;
   DataSet.fieldbyname('customers_alerts_quantity').AsFloat := 1;
   DataSet.fieldbyname('customers_alerts_attempts').AsFloat := 0;
-  DataSet.fieldbyname('customers_alerts_status').AsFloat   := 0;
+  DataSet.fieldbyname('customers_alerts_status').AsFloat := 0;
   DataSet.fieldbyname('customers_alerts_date_notified').AsFloat := 0;
   DataSet.fieldbyname('customers_alerts_dwnpay').AsFloat := 0;
 end;
 
 procedure TRemoteDB.Synchronise;
 begin
-  Categories.Filtered         := False;
-  customers.Filtered          := False;
-  Products.Filtered           := False;
+  Categories.Filtered := False;
+  customers.Filtered := False;
+  Products.Filtered := False;
   netshop_items_sold.Filtered := False;
-  Manufacturers.Filtered      := False;
-  netshop_sales.Filtered      := False;
-  Shops.Filtered              := False;
-  netshop_stock.Filtered      := False;
-  netshop_suppliers.Filtered  := False;
-  Tax_Class.Filtered          := False;
-  Countries.Filtered          := False;
-  netshop_transfer.Filtered   := False;
+  Manufacturers.Filtered := False;
+  netshop_sales.Filtered := False;
+  Shops.Filtered := False;
+  netshop_stock.Filtered := False;
+  netshop_suppliers.Filtered := False;
+  Tax_Class.Filtered := False;
+  Countries.Filtered := False;
+  netshop_transfer.Filtered := False;
   FreeDescTo;
   ProgressSync.Execute;
   SetDescToProducts;
@@ -1486,41 +1558,40 @@ end;
 
 procedure TRemoteDB.SynchroniseMin;
 begin
-  Categories.Filtered         := False;
-  customers.Filtered          := False;
-  Products.Filtered           := False;
+  Categories.Filtered := False;
+  customers.Filtered := False;
+  Products.Filtered := False;
   netshop_items_sold.Filtered := False;
-  Manufacturers.Filtered      := False;
-  netshop_sales.Filtered      := False;
-  Shops.Filtered              := False;
-  netshop_stock.Filtered      := False;
-  netshop_suppliers.Filtered  := False;
-  Tax_Class.Filtered          := False;
-  Countries.Filtered          := False;
-  netshop_transfer.Filtered   := False;
+  Manufacturers.Filtered := False;
+  netshop_sales.Filtered := False;
+  Shops.Filtered := False;
+  netshop_stock.Filtered := False;
+  netshop_suppliers.Filtered := False;
+  Tax_Class.Filtered := False;
+  Countries.Filtered := False;
+  netshop_transfer.Filtered := False;
   FreeDescTo;
   ProgressMidSync.Execute;
   SetDescToProducts;
 end;
-
 
 procedure TRemoteDB.ApplyUpdates;
 var
   i: integer;
   updatestatus: Boolean;
 begin
-  Categories.Filtered         := False;
-  customers.Filtered          := False;
-  Products.Filtered           := False;
+  Categories.Filtered := False;
+  customers.Filtered := False;
+  Products.Filtered := False;
   netshop_items_sold.Filtered := False;
-  Manufacturers.Filtered      := False;
-  netshop_sales.Filtered      := False;
-  Shops.Filtered              := False;
-  netshop_stock.Filtered      := False;
-  netshop_suppliers.Filtered  := False;
-  Tax_Class.Filtered          := False;
-  Countries.Filtered          := False;
-  netshop_transfer.Filtered   := False;
+  Manufacturers.Filtered := False;
+  netshop_sales.Filtered := False;
+  Shops.Filtered := False;
+  netshop_stock.Filtered := False;
+  netshop_suppliers.Filtered := False;
+  Tax_Class.Filtered := False;
+  Countries.Filtered := False;
+  netshop_transfer.Filtered := False;
 
   {
     AllowUpdate:=True;
@@ -1550,9 +1621,11 @@ begin
     begin
       if self.ProgressSync.Cancel then
         exit;
-      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+      if ((self.Components[i].ClassType = TClientDataSet) and
+        (self.Components[i].Tag <> -1)) then
       begin
-        if TClientDataSet(self.Components[i]).ChangeCount>0 then begin
+        if TClientDataSet(self.Components[i]).ChangeCount > 0 then
+        begin
 
           SaveDataset(TClientDataSet(self.Components[i]), True);
           with TClientDataSet(self.Components[i]) do
@@ -1583,26 +1656,29 @@ begin
   end;
 end;
 
-function TRemoteDB.ChangeCount:Integer;
+function TRemoteDB.ChangeCount: integer;
 var
   i: integer;
 
 begin
-  Result:=0;
-    for i := 0 to self.ComponentCount - 1 do begin
-      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+  Result := 0;
+  for i := 0 to self.ComponentCount - 1 do
+  begin
+    if ((self.Components[i].ClassType = TClientDataSet) and
+      (self.Components[i].Tag <> -1)) then
+    begin
+      if TClientDataSet(self.Components[i]).ChangeCount > 0 then
       begin
-        if TClientDataSet(self.Components[i]).ChangeCount>0 then begin
-             Result := Result +  TClientDataSet(self.Components[i]).ChangeCount;
-        end;
+        Result := Result + TClientDataSet(self.Components[i]).ChangeCount;
       end;
     end;
+  end;
 
 end;
 
 procedure TRemoteDB.ProductsNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('Products_date_added').AsDateTime    := trunc(now);
+  DataSet.fieldbyname('Products_date_added').AsDateTime := trunc(now);
   DataSet.fieldbyname('Products_last_modified').AsDateTime := trunc(now);
   if (userlevel = 1) or (userlevel = 0) then
   begin
@@ -1612,25 +1688,25 @@ begin
   begin
     DataSet.fieldbyname('Products_Status').AsInteger := -CONNECTEDSHOP;
   end;
-  DataSet.fieldbyname('Products_Weight').AsInteger       := 150;
+  DataSet.fieldbyname('Products_Weight').AsInteger := 150;
   DataSet.fieldbyname('Products_Tax_class_id').AsInteger := 1;
-  DataSet.fieldbyname('Products_Quantity').AsInteger     := 1;
-  DataSet.fieldbyname('Products_Model').AsInteger        := 1;
-  DataSet.fieldbyname('Products_Image').AsString         := 'products/default.gif';
+  DataSet.fieldbyname('Products_Quantity').AsInteger := 1;
+  DataSet.fieldbyname('Products_Model').AsInteger := 1;
+  DataSet.fieldbyname('Products_Image').AsString := 'products/default.gif';
   DataSet.fieldbyname('Products_Stock_Managed').AsString := 'True';
-  DataSet.fieldbyname('Products_Promo').AsString         := 'False';
-  DataSet.fieldbyname('Products_ordered').AsInteger      := 0;
-  DataSet.fieldbyname('Products_ispreview').AsString     := 'False';
-  DataSet.fieldbyname('Products_isobsolete').AsString    := 'False';
-  DataSet.fieldbyname('Products_street_block').AsString  := 'True';
-  DataSet.fieldbyname('Products_warranty_id').AsInteger  := 1;
-  DataSet.fieldbyname('Products_cldprice').AsInteger     := 0;
-  DataSet.fieldbyname('products_used_price').AsInteger   := 0;
-  DataSet.fieldbyname('products_price_old').AsInteger    := 0;
-  DataSet.fieldbyname('products_intername').AsString     := 'empty';
-  DataSet.fieldbyname('products_cld_stock').AsInteger    := 0;
-  DataSet.fieldbyname('products_esd').AsInteger          := 0;
-  DataSet.fieldbyname('products_posa').AsInteger          := 0;
+  DataSet.fieldbyname('Products_Promo').AsString := 'False';
+  DataSet.fieldbyname('Products_ordered').AsInteger := 0;
+  DataSet.fieldbyname('Products_ispreview').AsString := 'False';
+  DataSet.fieldbyname('Products_isobsolete').AsString := 'False';
+  DataSet.fieldbyname('Products_street_block').AsString := 'True';
+  DataSet.fieldbyname('Products_warranty_id').AsInteger := 1;
+  DataSet.fieldbyname('Products_cldprice').AsInteger := 0;
+  DataSet.fieldbyname('products_used_price').AsInteger := 0;
+  DataSet.fieldbyname('products_price_old').AsInteger := 0;
+  DataSet.fieldbyname('products_intername').AsString := 'empty';
+  DataSet.fieldbyname('products_cld_stock').AsInteger := 0;
+  DataSet.fieldbyname('products_esd').AsInteger := 0;
+  DataSet.fieldbyname('products_posa').AsInteger := 0;
 
 end;
 
@@ -1658,25 +1734,28 @@ end;
 
 procedure TRemoteDB.netshop_rent_stockNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('rent_stock_id').AsInteger        := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'rent_stock_id');
-  DataSet.fieldbyname('rent_stock_location').AsInteger  := CONNECTEDSHOP;
-  DataSet.fieldbyname('rent_stock_date_added').AsFloat  := now;
-  DataSet.fieldbyname('rent_stock_last_rent').AsFloat   := 0;
-  DataSet.fieldbyname('rent_stock_count').AsInteger     := 0;
-  DataSet.fieldbyname('rent_stock_state').AsInteger     := 1;
+  DataSet.fieldbyname('rent_stock_id').AsInteger :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'rent_stock_id');
+  DataSet.fieldbyname('rent_stock_location').AsInteger := CONNECTEDSHOP;
+  DataSet.fieldbyname('rent_stock_date_added').AsFloat := now;
+  DataSet.fieldbyname('rent_stock_last_rent').AsFloat := 0;
+  DataSet.fieldbyname('rent_stock_count').AsInteger := 0;
+  DataSet.fieldbyname('rent_stock_state').AsInteger := 1;
   DataSet.fieldbyname('rent_stock_condition').AsInteger := 5;
 end;
 
 procedure TRemoteDB.netshop_rent_schemesNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('rent_scheme_id').AsInteger       := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'rent_scheme_id');
-  DataSet.fieldbyname('rent_scheme_default').AsInteger  := 0;
+  DataSet.fieldbyname('rent_scheme_id').AsInteger :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'rent_scheme_id');
+  DataSet.fieldbyname('rent_scheme_default').AsInteger := 0;
   DataSet.fieldbyname('rent_scheme_location').AsInteger := CONNECTEDSHOP;
 end;
 
 procedure TRemoteDB.netshop_rent_transactionNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('rent_transaction_id').AsInteger := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'rent_transaction_id');
+  DataSet.fieldbyname('rent_transaction_id').AsInteger :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'rent_transaction_id');
   DataSet.fieldbyname('rent_transaction_location').AsInteger := CONNECTEDSHOP;
   DataSet.fieldbyname('rent_transaction_start_date').AsFloat := now;
   DataSet.fieldbyname('rent_transaction_returned').AsInteger := 0;
@@ -1684,25 +1763,32 @@ end;
 
 procedure TRemoteDB.netshop_stockNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('id').AsInteger                  := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'id');
-  DataSet.fieldbyname('Product_Location').AsInteger    := CONNECTEDSHOP;
+  DataSet.fieldbyname('id').AsInteger :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'id');
+  DataSet.fieldbyname('Product_Location').AsInteger := CONNECTEDSHOP;
   DataSet.fieldbyname('Product_price_gross').AsInteger := 0;
   DataSet.fieldbyname('Product_price_stock').AsInteger := 0;
-  DataSet.fieldbyname('Product_isdefect').AsInteger    := 0;
-  DataSet.fieldbyname('Product_Date_In').AsString      := Formatdatetime('yyyymmdd', now);
+  DataSet.fieldbyname('Product_isdefect').AsInteger := 0;
+  DataSet.fieldbyname('Product_Date_In').AsString :=
+    Formatdatetime('yyyymmdd', now);
 end;
 
 procedure TRemoteDB.netshop_stock_returnedCalcFields(DataSet: TDataSet);
 begin
   if DataSet.fieldbyname('product_date_in').Value <> null then
-    DataSet.fieldbyname('product_date_in_display').Value := OSCToVCLDate(DataSet.fieldbyname('product_date_in').Value);
-  DataSet.fieldbyname('date_returned_display').Value     := DataSet.fieldbyname('date_returned').Value;
-  if ((DataSet.fieldbyname('product_price_stock').Value <> null) and (DataSet.fieldbyname('product_price_gross').Value <> null) and
+    DataSet.fieldbyname('product_date_in_display').Value :=
+      OSCToVCLDate(DataSet.fieldbyname('product_date_in').Value);
+  DataSet.fieldbyname('date_returned_display').Value :=
+    DataSet.fieldbyname('date_returned').Value;
+  if ((DataSet.fieldbyname('product_price_stock').Value <> null) and
+    (DataSet.fieldbyname('product_price_gross').Value <> null) and
     (DataSet.fieldbyname('product_quantity').Value <> null)) then
   begin
-    DataSet.fieldbyname('product_price_stock_total').AsFloat := DataSet.fieldbyname('product_quantity').Value *
+    DataSet.fieldbyname('product_price_stock_total').AsFloat :=
+      DataSet.fieldbyname('product_quantity').Value *
       DataSet.fieldbyname('product_price_stock').AsFloat;
-    DataSet.fieldbyname('product_price_gross_total').AsFloat := DataSet.fieldbyname('product_quantity').Value *
+    DataSet.fieldbyname('product_price_gross_total').AsFloat :=
+      DataSet.fieldbyname('product_quantity').Value *
       DataSet.fieldbyname('product_price_gross').AsFloat;
   end;
 end;
@@ -1711,7 +1797,8 @@ procedure TRemoteDB.CDSProDescNLproducts_nameChange(Sender: TField);
 begin
   if CDSProDescNLproducts_name.AsString = '' then
   begin
-    if messagedlg('Voulez vous supprimer la référence NL pour ce produit ?', mtwarning, [mbYes, mbNo], 0) = mrYes then
+    if messagedlg('Voulez vous supprimer la référence NL pour ce produit ?',
+      mtwarning, [mbYes, mbNo], 0) = mrYes then
       CDSProDescNL.delete;
   end;
 end;
@@ -1723,60 +1810,75 @@ end;
 
 procedure TRemoteDB.netshop_items_soldCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('items_sold_price_stock_tot').Value := DataSet.fieldbyname('items_sold_price_stock').Value *
+  DataSet.fieldbyname('items_sold_price_stock_tot').Value :=
+    DataSet.fieldbyname('items_sold_price_stock').Value *
     DataSet.fieldbyname('items_sold_quantity').Value;
 end;
 
 procedure TRemoteDB.netshop_items_soldNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('items_sold_id').AsInteger         := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'items_sold_id');
-  DataSet.fieldbyname('items_sold_sales_location').Value := netshop_sales.fieldbyname('sales_location').Value;
-  DataSet.fieldbyname('items_sold_sales_id').Value       := netshop_sales.fieldbyname('sales_id').Value;
-  DataSet.fieldbyname('items_refunded').Value            := 0;
-  DataSet.fieldbyname('items_sold_esd').AsString         := '';
-  DataSet.FieldByName('items_sold_loyalty').AsInteger    := 0;
+  DataSet.fieldbyname('items_sold_id').AsInteger :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'items_sold_id');
+  DataSet.fieldbyname('items_sold_sales_location').Value :=
+    netshop_sales.fieldbyname('sales_location').Value;
+  DataSet.fieldbyname('items_sold_sales_id').Value :=
+    netshop_sales.fieldbyname('sales_id').Value;
+  DataSet.fieldbyname('items_refunded').Value := 0;
+  DataSet.fieldbyname('items_sold_esd').AsString := '';
+  DataSet.fieldbyname('items_sold_loyalty').AsInteger := 0;
 end;
 
 procedure TRemoteDB.netshop_items_refundedNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('items_refunded_id').AsInteger := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'items_refunded_id');
-  DataSet.fieldbyname('items_refunded_refunds_shop_id').Value := netshop_refunds.fieldbyname('refunds_shop_id').Value;
-  DataSet.fieldbyname('items_refunded_refunds_id').Value := netshop_refunds.fieldbyname('refunds_id').Value;
+  DataSet.fieldbyname('items_refunded_id').AsInteger :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'items_refunded_id');
+  DataSet.fieldbyname('items_refunded_refunds_shop_id').Value :=
+    netshop_refunds.fieldbyname('refunds_shop_id').Value;
+  DataSet.fieldbyname('items_refunded_refunds_id').Value :=
+    netshop_refunds.fieldbyname('refunds_id').Value;
 end;
 
 procedure TRemoteDB.netshop_refundsNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('refunds_shop_id').Value   := CONNECTEDSHOP;
-  DataSet.fieldbyname('refunds_id').AsInteger    := GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'refunds_shop_id', 'refunds_id');
+  DataSet.fieldbyname('refunds_shop_id').Value := CONNECTEDSHOP;
+  DataSet.fieldbyname('refunds_id').AsInteger :=
+    GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'refunds_shop_id',
+    'refunds_id');
   DataSet.fieldbyname('refunds_date_time').Value := now;
 end;
 
 procedure TRemoteDB.netshop_salesNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('sales_id').Value        := GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'sales_location', 'sales_id');
-  DataSet.fieldbyname('sales_location').Value  := CONNECTEDSHOP;
+  DataSet.fieldbyname('sales_id').Value :=
+    GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'sales_location',
+    'sales_id');
+  DataSet.fieldbyname('sales_location').Value := CONNECTEDSHOP;
   DataSet.fieldbyname('sales_date_time').Value := now;
-  DataSet.fieldbyname('sql_date_time').Value   := now;
-  DataSet.fieldbyname('sales_invoiced').Value  := 0;
+  DataSet.fieldbyname('sql_date_time').Value := now;
+  DataSet.fieldbyname('sales_invoiced').Value := 0;
 end;
 
 procedure TRemoteDB.netshop_repairNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('repair_id').Value       := GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'repair_shop_id', 'repair_id');
-  DataSet.fieldbyname('repair_shop_id').Value  := CONNECTEDSHOP;
-  DataSet.fieldbyname('repair_date_in').Value  := now;
+  DataSet.fieldbyname('repair_id').Value :=
+    GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'repair_shop_id',
+    'repair_id');
+  DataSet.fieldbyname('repair_shop_id').Value := CONNECTEDSHOP;
+  DataSet.fieldbyname('repair_date_in').Value := now;
   DataSet.fieldbyname('repair_returned').Value := 'false';
-  DataSet.fieldbyname('repair_fixed').Value    := 'false';
-  DataSet.fieldbyname('repair_price').Value    := 0;
+  DataSet.fieldbyname('repair_fixed').Value := 'false';
+  DataSet.fieldbyname('repair_price').Value := 0;
 end;
 
 procedure TRemoteDB.netshop_transferNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('id').AsInteger      := GetNextId(DataSet as TCustomClientDataSet, 'id');
+  DataSet.fieldbyname('id').AsInteger :=
+    GetNextId(DataSet as TCustomClientDataSet, 'id');
   DataSet.fieldbyname('Date_Time').AsFloat := now;
 end;
 
-procedure TRemoteDB.Productsproducts_activeSetText(Sender: TField; const Text: string);
+procedure TRemoteDB.Productsproducts_activeSetText(Sender: TField;
+  const Text: string);
 begin
   if Text = 'true' then
     Products.fieldbyname('products_status').Value := True
@@ -1789,9 +1891,13 @@ begin
   if CheckEan(Products.fieldbyname('Products_Model').AsString) then
   begin
     // if not CheckEan(products.FieldByName('Products_id').AsString) then
-    Products.fieldbyname('Products_id').AsBcd := Products.fieldbyname('Products_Model').AsBcd;
-  end else begin
-    Products.fieldbyname('Products_id').AsBcd := GetNextEan(Products as TCustomClientDataSet, 'Products_Id');
+    Products.fieldbyname('Products_id').AsBcd :=
+      Products.fieldbyname('Products_Model').AsBcd;
+  end
+  else
+  begin
+    Products.fieldbyname('Products_id').AsBcd :=
+      GetNextEan(Products as TCustomClientDataSet, 'Products_Id');
   end;
 end;
 
@@ -1801,7 +1907,8 @@ end;
 
 function VarToString(V: Variant; DataType: TFieldType): string;
 const
-  BinaryDataTypes: set of TFieldType = [ftBytes, ftVarBytes, ftBlob, ftGraphic .. ftCursor];
+  BinaryDataTypes: set of TFieldType = [ftBytes, ftVarBytes, ftBlob,
+    ftGraphic .. ftCursor];
 begin
   try
     if VarIsClear(V) then
@@ -1820,7 +1927,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.GeneralReconcileError(DataSet: TCustomClientDataSet; E: EReconcileError; UpdateKind: TUpdateKind; var Action: TReconcileAction);
+procedure TRemoteDB.GeneralReconcileError(DataSet: TCustomClientDataSet;
+  E: EReconcileError; UpdateKind: TUpdateKind; var Action: TReconcileAction);
 
 var
   SQL, WHERESTR, GOOD: string;
@@ -1830,29 +1938,35 @@ begin
 
   if (UpdateKind = ukinsert) and (E.ErrorCode = 1) then
   begin
-    SQL      := 'SELECT COUNT(*) AS GOOD FROM ' + DataSet.Name + ' WHERE ';
+    SQL := 'SELECT COUNT(*) AS GOOD FROM ' + DataSet.Name + ' WHERE ';
     WHERESTR := '';
-    for i    := 0 to DataSet.FieldCount - 2 do
+    for i := 0 to DataSet.FieldCount - 2 do
     begin
-      j        := i;
-      WHERESTR := WHERESTR + DataSet.Fields[i].FieldName + '=' + QuotedStr(VarToString(DataSet.Fields[i].Value, DataSet.Fields[i].DataType)) + ' AND ';
+      j := i;
+      WHERESTR := WHERESTR + DataSet.Fields[i].FieldName + '=' +
+        QuotedStr(VarToString(DataSet.Fields[i].Value,
+        DataSet.Fields[i].DataType)) + ' AND ';
     end;
-    j                    := j + 1;
-    WHERESTR             := WHERESTR + DataSet.Fields[i].FieldName + '=' + QuotedStr(VarToString(DataSet.Fields[i].Value, DataSet.Fields[i].DataType)) + '';
-    SQL                  := SQL + WHERESTR;
+    j := j + 1;
+    WHERESTR := WHERESTR + DataSet.Fields[i].FieldName + '=' +
+      QuotedStr(VarToString(DataSet.Fields[i].Value,
+      DataSet.Fields[i].DataType)) + '';
+    SQL := SQL + WHERESTR;
     SQLQuery.CommandText := SQL;
     CDSQuery.Open;
     GOOD := CDSQuery.fieldbyname('GOOD').AsString;
     CDSQuery.Close;
     if GOOD = '1' then
     begin
-      SQL                  := 'DELETE FROM ' + DataSet.Name + ' WHERE ' + WHERESTR;
+      SQL := 'DELETE FROM ' + DataSet.Name + ' WHERE ' + WHERESTR;
       SQLQuery.CommandText := SQL;
       SQLQuery.ExecSQL;
       ShowMessage('Erreur insertion corrigée automatiquement');
       Action := raRefresh;
     end;
-  end else begin
+  end
+  else
+  begin
     Action := HandleReconcileError(DataSet, UpdateKind, E);
   end;
 
@@ -1875,13 +1989,13 @@ begin
 
   IsUpdating := True;
 
-  DBOKTOLAUNCH                              := True;
-  SQLConnection.Params.Values['user_name']  := DBUSER;
-  SQLConnection.Params.Values['PassWord']   := DBPWD;
-  SQLConnection.Params.Values['HostName']   := DBHOSTNAME;
-  SQLConnection.Params.Values['Database']   := DbName;
+  DBOKTOLAUNCH := True;
+  SQLConnection.Params.Values['user_name'] := DBUSER;
+  SQLConnection.Params.Values['PassWord'] := DBPWD;
+  SQLConnection.Params.Values['HostName'] := DBHOSTNAME;
+  SQLConnection.Params.Values['Database'] := DbName;
 
-  SQLConnection.Params.Values['UseUnicode']  := 'False';
+  SQLConnection.Params.Values['UseUnicode'] := 'False';
 
   SQLConnection.Params.Values['Custom String'] := 'Protocol=SSL;Compress=True';
 
@@ -1893,59 +2007,61 @@ begin
 
   SQLConnection.Params.Values['SSLCipherList'] := 'ALL';
 
-  IsUpdating                                := False;
+  IsUpdating := False;
 
   ProgressCreate.Execute;
 
   //
   // Build Shop Lists
   //
-  self.AllShops.Filter   := 'shops_group_id = ' + inttostr(SHOPGROUPID);
+  self.AllShops.Filter := 'shops_group_id = ' + inttostr(SHOPGROUPID);
   self.AllShops.Filtered := True;
-  ShopsInGroup           := [];
+  ShopsInGroup := [];
   self.AllShops.First;
   while not AllShops.Eof do
   begin
-    ShopsInGroup := ShopsInGroup + [self.AllShops.fieldbyname('shops_id').AsInteger];
+    ShopsInGroup := ShopsInGroup + [self.AllShops.fieldbyname('shops_id')
+      .AsInteger];
     AllShops.Next;
   end;
   ShopsInGroup := ShopsInGroup + [0];
 
-  self.AllShops.Filter   := 'shops_group_id <> ' + inttostr(SHOPGROUPID);
+  self.AllShops.Filter := 'shops_group_id <> ' + inttostr(SHOPGROUPID);
   self.AllShops.Filtered := True;
-  ShopsOutGroup          := [];
+  ShopsOutGroup := [];
   self.AllShops.First;
   while not AllShops.Eof do
   begin
-    ShopsOutGroup := ShopsOutGroup + [self.AllShops.fieldbyname('shops_id').AsInteger];
+    ShopsOutGroup := ShopsOutGroup + [self.AllShops.fieldbyname('shops_id')
+      .AsInteger];
     AllShops.Next;
   end;
   ShopsOutGroup := ShopsOutGroup + [0];
 
   self.AllShops.Filtered := False;
-  self.AllShops.Filter   := '';
+  self.AllShops.Filter := '';
 
   if DBOKTOLAUNCH then
   begin
     // Creating Cloned DS for RFID Handling
-    CloneDSCustomers     := TClientDataSet.Create(self);
+    CloneDSCustomers := TClientDataSet.Create(self);
     CloneDSCustomers.Tag := -1; // Prevent Saving the clone
     CloneDSCustomers.CloneCursor(customers, True);
-    CloneDSItems_Sold     := TClientDataSet.Create(self);
+    CloneDSItems_Sold := TClientDataSet.Create(self);
     CloneDSItems_Sold.Tag := -1; // Prevent saving the clone
     CloneDSItems_Sold.CloneCursor(netshop_items_sold, True);
-    CloneDSAlerts     := TClientDataSet.Create(self);
+    CloneDSAlerts := TClientDataSet.Create(self);
     CloneDSAlerts.Tag := -1; // Prevent saving the clone
     CloneDSAlerts.CloneCursor(netshop_customers_alerts, True);
 
     // Creating Cloned DS for SmsThread
-    CloneDSAlertsSMS     := TClientDataSet.Create(self);
+    CloneDSAlertsSMS := TClientDataSet.Create(self);
     CloneDSAlertsSMS.Tag := -1; // Prevent Saving the clone
     CloneDSAlertsSMS.CloneCursor(netshop_customers_alerts, True, False);
     with CloneDSAlertsSMS.IndexDefs.AddIndexDef do
     begin
-      name    := 'AttempsIdx';
-      Fields  := 'customers_alerts_attempts';
+      name := 'AttempsIdx';
+      Fields := 'customers_alerts_attempts';
       Options := [ixCaseInsensitive];
     end;
     CloneDSAlertsSMS.IndexName := 'AttempsIdx';
@@ -1955,7 +2071,8 @@ begin
   IsUpdating := False;
 end;
 
-function TRemoteDB.SetAlert(customers_nbr, quantity: integer; Model: string): Boolean;
+function TRemoteDB.SetAlert(customers_nbr, quantity: integer;
+  Model: string): Boolean;
 var
   SetAlertError: Boolean;
   ANotifyServer: TNotifyServer;
@@ -1971,17 +2088,24 @@ begin
   if not SetAlertError then
   begin
 
-    if self.netshop_customers_alerts.locate('customers_alerts_customers_nbr;customers_alerts_products_model',
-      Vararrayof([self.customerscustomers_nbr.AsString, self.Productsproducts_model.AsString]), [locaseinsensitive]) then
+    if self.netshop_customers_alerts.locate
+      ('customers_alerts_customers_nbr;customers_alerts_products_model',
+      Vararrayof([self.customerscustomers_nbr.AsString,
+      self.Productsproducts_model.AsString]), [locaseinsensitive]) then
     begin
-      if messagedlg('Client déjà inscrit ? Voulez-vous rajouter la quantité supplémentaire ?', mtwarning, [mbYes, mbNo], 0, mbNo) = mrYes then
+      if messagedlg
+        ('Client déjà inscrit ? Voulez-vous rajouter la quantité supplémentaire ?',
+        mtwarning, [mbYes, mbNo], 0, mbNo) = mrYes then
       begin
         netshop_customers_alerts.Edit;
-        netshop_customers_alerts.fieldbyname('customers_alerts_quantity').Value := netshop_customers_alerts.fieldbyname('customers_alerts_quantity').Value
-          + quantity;
+        netshop_customers_alerts.fieldbyname('customers_alerts_quantity').Value
+          := netshop_customers_alerts.fieldbyname('customers_alerts_quantity')
+          .Value + quantity;
         netshop_customers_alerts.Post;
         goto endproc;
-      end else begin
+      end
+      else
+      begin
         SetAlertError := True;
         goto endproc;
       end;
@@ -1989,16 +2113,23 @@ begin
     end;
 
     netshop_customers_alerts.Append;
-    netshop_customers_alerts.fieldbyname('customers_alerts_customers_nbr').AsString := self.customerscustomers_nbr.AsString;
-    netshop_customers_alerts.fieldbyname('customers_alerts_products_model').AsString := self.Productsproducts_model.AsString;
-    netshop_customers_alerts.fieldbyname('customers_alerts_products_name').AsString := self.CDSProDescFR.fieldbyname('products_name').AsString;
-    netshop_customers_alerts.fieldbyname('customers_alerts_products_cat').AsString := self.Products.FieldByName('products_root_category_name').AsString;
-    netshop_customers_alerts.fieldbyname('customers_alerts_quantity').Value := quantity;
+    netshop_customers_alerts.fieldbyname('customers_alerts_customers_nbr')
+      .AsString := self.customerscustomers_nbr.AsString;
+    netshop_customers_alerts.fieldbyname('customers_alerts_products_model')
+      .AsString := self.Productsproducts_model.AsString;
+    netshop_customers_alerts.fieldbyname('customers_alerts_products_name')
+      .AsString := self.CDSProDescFR.fieldbyname('products_name').AsString;
+    netshop_customers_alerts.fieldbyname('customers_alerts_products_cat')
+      .AsString := self.Products.fieldbyname
+      ('products_root_category_name').AsString;
+    netshop_customers_alerts.fieldbyname('customers_alerts_quantity').Value
+      := quantity;
     netshop_customers_alerts.Post;
 
     if UserType = 1 then
     begin
-      ANotifyServer := TNotifyServer.Create('smsalert', self.customerscustomers_email_address.AsString, '', NOTIFYURL);
+      ANotifyServer := TNotifyServer.Create('smsalert',
+        self.customerscustomers_email_address.AsString, '', NOTIFYURL);
     end;
 
   end;
@@ -2010,14 +2141,15 @@ procedure TRemoteDB.SetAlertstoCustomers;
 begin
   with netshop_customers_alerts do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'AlertsIXCustomers') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'AlertsIXCustomers')
+      and (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'AlertsIXCustomers';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'AlertsIXCustomers';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
@@ -2025,16 +2157,17 @@ end;
 
 procedure TRemoteDB.SetCouponsToCustomers;
 begin
-with CDSCoupons do
+  with CDSCoupons do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'CouponsIXCustomers') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'CouponsIXCustomers')
+      and (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'CouponsIXCustomers';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'CouponsIXCustomers';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
@@ -2049,14 +2182,15 @@ procedure TRemoteDB.setsalestoCustomers;
 begin
   with netshop_sales do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'SalesIXCustomers') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'SalesIXCustomers')
+      and (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'SalesIXCustomers';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'SalesIXCustomers';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
@@ -2066,14 +2200,15 @@ procedure TRemoteDB.SetItemsToCustomers;
 begin
   with netshop_items_sold do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'ItemsIXOwnerId') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'ItemsIXOwnerId') and
+      (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'ItemsIXOwnerId';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'ItemsIXOwnerId';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
@@ -2083,56 +2218,62 @@ procedure TRemoteDB.SetItemstoSales;
 begin
   with netshop_items_sold do
   begin
-    if not((MasterSource = SalesSRC) and (IndexName = 'ItemsIXLocationId') and (MasterFields = 'sales_location;sales_id')) then
+    if not((MasterSource = SalesSRC) and (IndexName = 'ItemsIXLocationId') and
+      (MasterFields = 'sales_location;sales_id')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := SalesSRC;
-      IndexName       := 'ItemsIXLocationId';
-      MasterFields    := 'sales_location;sales_id';
+      MasterSource := SalesSRC;
+      IndexName := 'ItemsIXLocationId';
+      MasterFields := 'sales_location;sales_id';
       EnableControls;
     end;
   end;
 end;
 
-function TRemoteDB.SetItemSoldAsRefunded(items_sold_id: string; quantity : integer; credit : boolean):Boolean;
+function TRemoteDB.SetItemSoldAsRefunded(items_sold_id: string;
+  quantity: integer; credit: Boolean): Boolean;
 var
   CloneDS: TClientDataSet;
 begin
   CloneDS := TClientDataSet.Create(nil);
   try
     Result := False;
-    CloneDS.CloneCursor(Self.netshop_items_sold, True);
-    if  CloneDS.Locate('items_sold_id',items_sold_id,[loCaseInsensitive]) then begin
-     if (CloneDS.FieldByName('items_sold_quantity').Value - CloneDS.FieldByName('items_refunded').Value) > 0 then begin
-      if credit then begin
-        CloneDS.Edit;
-        CloneDS.FieldByName('items_refunded').Value := CloneDS.FieldByName('items_refunded').Value + quantity ;
-        CloneDS.Post;
+    CloneDS.CloneCursor(self.netshop_items_sold, True);
+    if CloneDS.locate('items_sold_id', items_sold_id, [locaseinsensitive]) then
+    begin
+      if (CloneDS.fieldbyname('items_sold_quantity').Value -
+        CloneDS.fieldbyname('items_refunded').Value) > 0 then
+      begin
+        if credit then
+        begin
+          CloneDS.Edit;
+          CloneDS.fieldbyname('items_refunded').Value :=
+            CloneDS.fieldbyname('items_refunded').Value + quantity;
+          CloneDS.Post;
+        end;
+        Result := True;
       end;
-      Result := true;
-     end;
     end;
   finally
     CloneDS.Free;
   end;
 end;
 
-
-
 procedure TRemoteDB.SetItemsRefundedtoRefunds;
 begin
   with netshop_items_refunded do
   begin
-    if not((MasterSource = RefundsSRC) and (IndexName = 'ItemsRefundedIXShopId') and (MasterFields = 'refunds_shop_id;refunds_id')) then
+    if not((MasterSource = RefundsSRC) and (IndexName = 'ItemsRefundedIXShopId')
+      and (MasterFields = 'refunds_shop_id;refunds_id')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := RefundsSRC;
-      IndexName       := 'ItemsRefundedIXShopId';
-      MasterFields    := 'refunds_shop_id;refunds_id';
+      MasterSource := RefundsSRC;
+      IndexName := 'ItemsRefundedIXShopId';
+      MasterFields := 'refunds_shop_id;refunds_id';
       EnableControls;
     end;
   end;
@@ -2147,20 +2288,22 @@ procedure TRemoteDB.SetStockToCustomers;
 begin
   with netshop_stock do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'StockIXOwner') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'StockIXOwner') and
+      (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'StockIXOwner';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'StockIXOwner';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
 end;
 
-procedure TRemoteDB.SetSupplierPrice(Price: double; SupplierName, Model: string);
+procedure TRemoteDB.SetSupplierPrice(Price: double;
+  SupplierName, Model: string);
 begin
 end;
 
@@ -2170,22 +2313,24 @@ var
 begin
 end;
 
-procedure TRemoteDB.StoreSignBlob(filename,table: string);
+procedure TRemoteDB.StoreSignBlob(filename, table: string);
 var
-  blob, myFileStream : TStream;
+  blob, myFileStream: TStream;
 begin
-  if table='refunds' then blob :=  Self.netshop_refunds.CreateBlobStream(Self.netshop_refunds.FieldByName('refunds_signature'), bmWrite);
+  if table = 'refunds' then
+    blob := self.netshop_refunds.CreateBlobStream
+      (self.netshop_refunds.fieldbyname('refunds_signature'), bmWrite);
 
   try
     blob.Seek(0, soFromBeginning);
-    myFileStream := TFileStream.Create(FileName, fmShareDenyWrite);
+    myFileStream := TFileStream.Create(filename, fmShareDenyWrite);
     try
-      blob.CopyFrom(myFileStream, myFileStream.Size) ;
+      blob.CopyFrom(myFileStream, myFileStream.Size);
     finally
-       myFileStream.Free ;
+      myFileStream.Free;
     end;
   finally
-    blob.Free ;
+    blob.Free;
   end;
 end;
 
@@ -2196,47 +2341,59 @@ var
   Error: Boolean;
   PhoneNumber: string;
 begin
-  Error                     := False;
-  CloneDSAlertsSMS.Filter   := '(customers_alerts_status=1) and (customers_alerts_attempts<5) and (customers_alerts_message<>' + QuotedStr('') + ')';
+  Error := False;
+  CloneDSAlertsSMS.Filter :=
+    '(customers_alerts_status=1) and (customers_alerts_attempts<5) and (customers_alerts_message<>'
+    + QuotedStr('') + ')';
   CloneDSAlertsSMS.Filtered := True;
   CloneDSAlertsSMS.First;
   if not CloneDSAlertsSMS.Eof and CloneDSAlertsSMS.Bof then
   begin
-    if not CloneDSCustomers.locate('customers_nbr', CloneDSAlertsSMS.fieldbyname('customers_alerts_customers_nbr').AsString, [locaseinsensitive]) then
-      Error     := True;
-    PhoneNumber := CleanPhoneNumber(CloneDSCustomers.fieldbyname('customers_fax').AsString);
+    if not CloneDSCustomers.locate('customers_nbr',
+      CloneDSAlertsSMS.fieldbyname('customers_alerts_customers_nbr').AsString,
+      [locaseinsensitive]) then
+      Error := True;
+    PhoneNumber := CleanPhoneNumber
+      (CloneDSCustomers.fieldbyname('customers_fax').AsString);
     if Length(PhoneNumber) < 11 then
       Error := True;
 
     if not Error then
     begin
-      aSmsMessage.Phone       := PhoneNumber;
-      aSmsMessage.Model       := CloneDSAlertsSMS.fieldbyname('customers_alerts_products_model').AsString;
-      aSmsMessage.Customer    := CloneDSAlertsSMS.fieldbyname('customers_alerts_customers_nbr').AsString;
-      aSmsMessage.Status      := 0;
-      aSmsMessage.TextMessage := CloneDSAlertsSMS.fieldbyname('customers_alerts_message').AsString
-    end else begin
+      aSmsMessage.Phone := PhoneNumber;
+      aSmsMessage.Model := CloneDSAlertsSMS.fieldbyname
+        ('customers_alerts_products_model').AsString;
+      aSmsMessage.Customer := CloneDSAlertsSMS.fieldbyname
+        ('customers_alerts_customers_nbr').AsString;
+      aSmsMessage.Status := 0;
+      aSmsMessage.TextMessage := CloneDSAlertsSMS.fieldbyname
+        ('customers_alerts_message').AsString
+    end
+    else
+    begin
       CloneDSAlertsSMS.Edit;
       CloneDSAlertsSMS.fieldbyname('customers_alerts_attempts').Value := 99;
       CloneDSAlertsSMS.Post;
-      aSmsMessage.Phone       := '';
-      aSmsMessage.Model       := '';
-      aSmsMessage.Customer    := '';
-      aSmsMessage.Status      := -1;
+      aSmsMessage.Phone := '';
+      aSmsMessage.Model := '';
+      aSmsMessage.Customer := '';
+      aSmsMessage.Status := -1;
       aSmsMessage.TextMessage := '';
     end;
-  end else begin
-    aSmsMessage.Phone       := '+32477562636';
-    aSmsMessage.Model       := 'MICRO';
-    aSmsMessage.Customer    := '101056';
-    aSmsMessage.Status      := -1;
+  end
+  else
+  begin
+    aSmsMessage.Phone := '+32477562636';
+    aSmsMessage.Model := 'MICRO';
+    aSmsMessage.Customer := '101056';
+    aSmsMessage.Status := -1;
     aSmsMessage.TextMessage := 'Vive david Sonnet';
   end;
 
   RecCount := CloneDSAlertsSMS.RecordCount;
 
   CloneDSAlertsSMS.Filtered := False;
-  CloneDSAlertsSMS.Filter   := '';
+  CloneDSAlertsSMS.Filter := '';
 
   Result := aSmsMessage;
 end;
@@ -2248,8 +2405,10 @@ var
 
 begin
 
-  if CloneDSAlertsSMS.locate('customers_alerts_products_model;customers_alerts_customers_nbr;customers_alerts_status',
-    Vararrayof([aSmsMessage.Model, aSmsMessage.Customer, '1']), [locaseinsensitive]) then
+  if CloneDSAlertsSMS.locate
+    ('customers_alerts_products_model;customers_alerts_customers_nbr;customers_alerts_status',
+    Vararrayof([aSmsMessage.Model, aSmsMessage.Customer, '1']),
+    [locaseinsensitive]) then
   begin
 
     if aSmsMessage.Status = 1 then
@@ -2259,14 +2418,19 @@ begin
       CloneDSAlertsSMS.fieldbyname('customers_alerts_attempts').Value := 0;
       CloneDSAlertsSMS.Post;
 
-    end else begin
+    end
+    else
+    begin
       CloneDSAlertsSMS.Edit;
-      CloneDSAlertsSMS.fieldbyname('customers_alerts_attempts').Value := CloneDSAlerts.fieldbyname('customers_alerts_attempts').Value + 1;
+      CloneDSAlertsSMS.fieldbyname('customers_alerts_attempts').Value :=
+        CloneDSAlerts.fieldbyname('customers_alerts_attempts').Value + 1;
       CloneDSAlertsSMS.Post;
 
     end;
 
-  end else begin
+  end
+  else
+  begin
     ShowMessage('Alerte non reconciliée');
 
     // Mainform.MemoLog.lines.Add('Alerte non reconciliée : '+aSmsMessage.model + ' - ' + aSmsMessage.customer);
@@ -2279,7 +2443,7 @@ var
   ParamReg: TRegistry;
   datareg: string;
 begin
-  ParamReg         := TRegistry.Create;
+  ParamReg := TRegistry.Create;
   ParamReg.RootKey := HKEY_CURRENT_USER;
   ParamReg.OpenKey(ParamRegPath, True);
 
@@ -2291,7 +2455,9 @@ begin
   if datareg = 'Oui' then
   begin
     Result := True;
-  end else begin
+  end
+  else
+  begin
     Result := False;
   end;
 
@@ -2302,7 +2468,7 @@ var
   ParamReg: TRegistry;
   datareg: string;
 begin
-  ParamReg         := TRegistry.Create;
+  ParamReg := TRegistry.Create;
   ParamReg.RootKey := HKEY_CURRENT_USER;
   ParamReg.OpenKey(ParamRegPath, True);
 
@@ -2313,11 +2479,17 @@ begin
     if IsStrANumber(trim(datareg)) then
     begin
       SyncYears := StrToInt(trim(datareg))
-    end else begin
+    end
+    else
+    begin
       SyncYears := 0;
     end;
-  end else begin
-    messagedlg('Historique de synchronisation non paramétré, veuillez corriger !', mtwarning, [mbok], 0);
+  end
+  else
+  begin
+    messagedlg
+      ('Historique de synchronisation non paramétré, veuillez corriger !',
+      mtwarning, [mbok], 0);
     SyncYears := 0;
   end;
   if (SyncYears < 1) or (SyncYears > 5) then
@@ -2331,27 +2503,29 @@ procedure TRemoteDB.SetDescToProducts;
 begin
   with CDSProDescFR do
   begin
-    if not((MasterSource = ProductsSRC) and (IndexFieldNames = 'products_id') and (MasterFields = 'products_id')) then
+    if not((MasterSource = ProductsSRC) and (IndexFieldNames = 'products_id')
+      and (MasterFields = 'products_id')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := ProductsSRC;
+      MasterSource := ProductsSRC;
       IndexFieldNames := 'products_id';
-      MasterFields    := 'products_id';
+      MasterFields := 'products_id';
       EnableControls;
     end;
   end;
   with CDSProDescNL do
   begin
-    if not((MasterSource = ProductsSRC) and (IndexFieldNames = 'products_id') and (MasterFields = 'products_id')) then
+    if not((MasterSource = ProductsSRC) and (IndexFieldNames = 'products_id')
+      and (MasterFields = 'products_id')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := ProductsSRC;
+      MasterSource := ProductsSRC;
       IndexFieldNames := 'products_id';
-      MasterFields    := 'products_id';
+      MasterFields := 'products_id';
       EnableControls;
     end;
   end;
@@ -2361,14 +2535,15 @@ procedure TRemoteDB.SetRepairToCustomers;
 begin
   with netshop_repair do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'RepairIXCustomer') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'RepairIXCustomer')
+      and (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'RepairIXCustomer';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'RepairIXCustomer';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
@@ -2378,14 +2553,15 @@ procedure TRemoteDB.SetRefundsToCustomers;
 begin
   with netshop_refunds do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'RefundsIXCustomer') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'RefundsIXCustomer')
+      and (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'RefundsIXCustomer';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'RefundsIXCustomer';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
@@ -2395,14 +2571,16 @@ procedure TRemoteDB.SetAddress_bookToCustomers;
 begin
   with Address_Book do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'Address_bookIXCustomer') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and
+      (IndexName = 'Address_bookIXCustomer') and
+      (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
-      MasterFields    := '';
+      MasterFields := '';
       IndexFieldNames := '';
-      MasterSource    := CustomersSRC;
-      IndexName       := 'Address_bookIXCustomer';
-      MasterFields    := 'customers_nbr';
+      MasterSource := CustomersSRC;
+      IndexName := 'Address_bookIXCustomer';
+      MasterFields := 'customers_nbr';
       EnableControls;
     end;
   end;
@@ -2412,13 +2590,15 @@ procedure TRemoteDB.SetRentToCustomers;
 begin
   with netshop_rent_transaction do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'RentTransactionIXCustomer') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and
+      (IndexName = 'RentTransactionIXCustomer') and
+      (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
       MasterFields := '';
-      IndexName    := '';
+      IndexName := '';
       MasterSource := CustomersSRC;
-      IndexName    := 'RentTransactionIXCustomer';
+      IndexName := 'RentTransactionIXCustomer';
       MasterFields := 'customers_nbr';
       EnableControls;
     end;
@@ -2429,13 +2609,14 @@ procedure TRemoteDB.SetInvoicesItemsToInvoices;
 begin
   with netshop_invoices_items do
   begin
-    if not((MasterSource = InvoicesSrc) and (IndexName = 'ItemsIXLocationId') and (MasterFields = 'invoices_location;invoices_id')) then
+    if not((MasterSource = InvoicesSrc) and (IndexName = 'ItemsIXLocationId')
+      and (MasterFields = 'invoices_location;invoices_id')) then
     begin
       DisableControls;
       MasterFields := '';
-      IndexName    := '';
+      IndexName := '';
       MasterSource := InvoicesSrc;
-      IndexName    := 'ItemsIXLocationId';
+      IndexName := 'ItemsIXLocationId';
       MasterFields := 'invoices_location;invoices_id';
       EnableControls;
     end;
@@ -2446,13 +2627,14 @@ procedure TRemoteDB.SetInvoicesToCustomers;
 begin
   with netshop_invoices do
   begin
-    if not((MasterSource = CustomersSRC) and (IndexName = 'InvoicesIXCustomers') and (MasterFields = 'customers_nbr')) then
+    if not((MasterSource = CustomersSRC) and (IndexName = 'InvoicesIXCustomers')
+      and (MasterFields = 'customers_nbr')) then
     begin
       DisableControls;
       MasterFields := '';
-      IndexName    := '';
+      IndexName := '';
       MasterSource := CustomersSRC;
-      IndexName    := 'InvoicesIXCustomers';
+      IndexName := 'InvoicesIXCustomers';
       MasterFields := 'customers_nbr';
       EnableControls;
     end;
@@ -2461,29 +2643,31 @@ end;
 
 procedure TRemoteDB.FreeItemsRefundedTo;
 begin
-  if not((netshop_items_refunded.MasterSource = nil) and (netshop_items_refunded.MasterFields = '') and
+  if not((netshop_items_refunded.MasterSource = nil) and
+    (netshop_items_refunded.MasterFields = '') and
     (netshop_items_refunded.IndexName = 'ItemsRefundedIXShopId')) then
   begin
     netshop_items_refunded.DisableControls;
     netshop_items_refunded.MasterSource := nil;
     netshop_items_refunded.MasterFields := '';
-    netshop_items_refunded.IndexName    := 'ItemsRefundedIXShopId';
+    netshop_items_refunded.IndexName := 'ItemsRefundedIXShopId';
     netshop_items_refunded.EnableControls;
   end;
 end;
 
 procedure TRemoteDB.FreeItemsTo;
 begin
-  if not((netshop_items_sold.MasterSource = nil) and (netshop_items_sold.MasterFields = '') and (netshop_items_sold.IndexName = 'ItemsIXId')) then
+  if not((netshop_items_sold.MasterSource = nil) and
+    (netshop_items_sold.MasterFields = '') and
+    (netshop_items_sold.IndexName = 'ItemsIXId')) then
   begin
     netshop_items_sold.DisableControls;
     netshop_items_sold.MasterSource := nil;
     netshop_items_sold.MasterFields := '';
-    netshop_items_sold.IndexName    := 'ItemsIXId';
+    netshop_items_sold.IndexName := 'ItemsIXId';
     netshop_items_sold.EnableControls;
   end;
 end;
-
 
 procedure TRemoteDB.FreeDescTo;
 begin
@@ -2511,7 +2695,8 @@ end;
 
 procedure TRemoteDB.FreeAlertsTo;
 begin
-  if not((netshop_customers_alerts.MasterSource = nil) and (netshop_customers_alerts.MasterFields = '')) then
+  if not((netshop_customers_alerts.MasterSource = nil) and
+    (netshop_customers_alerts.MasterFields = '')) then
   begin
     netshop_customers_alerts.DisableControls;
     netshop_customers_alerts.MasterSource := nil;
@@ -2522,60 +2707,69 @@ end;
 
 procedure TRemoteDB.FreeCouponsToCustomers;
 begin
- if not((CDSCoupons.MasterSource = nil) and (CDSCoupons.MasterFields = '') and (CDSCoupons.IndexName = '')) then
+  if not((CDSCoupons.MasterSource = nil) and (CDSCoupons.MasterFields = '') and
+    (CDSCoupons.IndexName = '')) then
   begin
     CDSCoupons.DisableControls;
     CDSCoupons.MasterSource := nil;
     CDSCoupons.MasterFields := '';
-    CDSCoupons.IndexName    := '';
+    CDSCoupons.IndexName := '';
     CDSCoupons.EnableControls;
   end;
 end;
 
 procedure TRemoteDB.FreeStockto;
 begin
-  if not((netshop_stock.MasterSource = nil) and (netshop_stock.MasterFields = '') and (netshop_stock.IndexName = 'StockIXId')) then
+  if not((netshop_stock.MasterSource = nil) and
+    (netshop_stock.MasterFields = '') and
+    (netshop_stock.IndexName = 'StockIXId')) then
   begin
     netshop_stock.DisableControls;
     netshop_stock.MasterSource := nil;
     netshop_stock.MasterFields := '';
-    netshop_stock.IndexName    := 'StockIXId';
+    netshop_stock.IndexName := 'StockIXId';
     netshop_stock.EnableControls;
   end;
 end;
 
 procedure TRemoteDB.FreeSalesTo;
 begin
-  if not((netshop_sales.MasterSource = nil) and (netshop_sales.MasterFields = '') and (netshop_sales.IndexName = 'SalesIXLocationId')) then
+  if not((netshop_sales.MasterSource = nil) and
+    (netshop_sales.MasterFields = '') and
+    (netshop_sales.IndexName = 'SalesIXLocationId')) then
   begin
     netshop_sales.DisableControls;
     netshop_sales.MasterSource := nil;
     netshop_sales.MasterFields := '';
-    netshop_sales.IndexName    := 'SalesIXLocationId';
+    netshop_sales.IndexName := 'SalesIXLocationId';
     netshop_sales.EnableControls;
   end;
 end;
 
 procedure TRemoteDB.FreeRepairTo;
 begin
-  if not((netshop_repair.MasterSource = nil) and (netshop_repair.MasterFields = '') and (netshop_repair.IndexName = 'RepairIXId')) then
+  if not((netshop_repair.MasterSource = nil) and
+    (netshop_repair.MasterFields = '') and
+    (netshop_repair.IndexName = 'RepairIXId')) then
   begin
     netshop_repair.DisableControls;
     netshop_repair.MasterSource := nil;
     netshop_repair.MasterFields := '';
-    netshop_repair.IndexName    := 'RepairIXId';
+    netshop_repair.IndexName := 'RepairIXId';
     netshop_repair.EnableControls;
   end;
 end;
 
 procedure TRemoteDB.FreeRefundsTo;
 begin
-  if not((netshop_refunds.MasterSource = nil) and (netshop_refunds.MasterFields = '') and (netshop_refunds.IndexName = 'RefundsIXShopId')) then
+  if not((netshop_refunds.MasterSource = nil) and
+    (netshop_refunds.MasterFields = '') and
+    (netshop_refunds.IndexName = 'RefundsIXShopId')) then
   begin
     netshop_refunds.DisableControls;
     netshop_refunds.MasterSource := nil;
     netshop_refunds.MasterFields := '';
-    netshop_refunds.IndexName    := 'RefundsIXShopId';
+    netshop_refunds.IndexName := 'RefundsIXShopId';
     netshop_refunds.EnableControls;
   end;
 end;
@@ -2583,84 +2777,89 @@ end;
 procedure TRemoteDB.FilterAlertsAll;
 begin
   RemoteDB.netshop_customers_alerts.Filtered := False;
-  RemoteDB.netshop_customers_alerts.Filter   := '';
+  RemoteDB.netshop_customers_alerts.Filter := '';
 end;
 
 procedure TRemoteDB.AlertsMarkAsNotified;
-var oldfilter : string;
-    oldfilterstatus : Boolean;
+var
+  oldfilter: string;
+  oldfilterstatus: Boolean;
 begin
   oldfilter := RemoteDB.netshop_customers_alerts.Filter;
-  oldfilterstatus :=  RemoteDB.netshop_customers_alerts.Filtered;
-  RemoteDB.netshop_customers_alerts.Filter   := '(customers_alerts_status=1)';
+  oldfilterstatus := RemoteDB.netshop_customers_alerts.Filtered;
+  RemoteDB.netshop_customers_alerts.Filter := '(customers_alerts_status=1)';
   RemoteDB.netshop_customers_alerts.Filtered := True;
 
   RemoteDB.netshop_customers_alerts.First;
-  while not RemoteDB.netshop_customers_alerts.eof do begin
+  while not RemoteDB.netshop_customers_alerts.Eof do
+  begin
     RemoteDB.netshop_customers_alerts.Edit;
-    RemoteDB.netshop_customers_alerts.FieldByName('customers_alerts_status').AsInteger := 2;
+    RemoteDB.netshop_customers_alerts.fieldbyname('customers_alerts_status')
+      .AsInteger := 2;
     RemoteDB.netshop_customers_alerts.Post;
   end;
 
-  RemoteDB.netshop_customers_alerts.Filter   := oldfilter;
+  RemoteDB.netshop_customers_alerts.Filter := oldfilter;
   RemoteDB.netshop_customers_alerts.Filtered := oldfilterstatus;
 end;
+
 procedure TRemoteDB.FilterAlertsArrived;
 begin
-  RemoteDB.netshop_customers_alerts.Filter   := '(customers_alerts_status=1)';
+  RemoteDB.netshop_customers_alerts.Filter := '(customers_alerts_status=1)';
   RemoteDB.netshop_customers_alerts.Filtered := True;
 end;
 
 procedure TRemoteDB.FilterAlertsBought;
 begin
-  RemoteDB.netshop_customers_alerts.Filter   := '(customers_alerts_status=3)';
+  RemoteDB.netshop_customers_alerts.Filter := '(customers_alerts_status=3)';
   RemoteDB.netshop_customers_alerts.Filtered := True;
 end;
 
 procedure TRemoteDB.FilterAlertsNotBought;
 begin
-  RemoteDB.netshop_customers_alerts.Filter   := '(customers_alerts_status<3)';
+  RemoteDB.netshop_customers_alerts.Filter := '(customers_alerts_status<3)';
   RemoteDB.netshop_customers_alerts.Filtered := True;
 end;
 
 procedure TRemoteDB.FilterAlertsNotified;
 begin
-  RemoteDB.netshop_customers_alerts.Filter   := '(customers_alerts_status=2)';
+  RemoteDB.netshop_customers_alerts.Filter := '(customers_alerts_status=2)';
   RemoteDB.netshop_customers_alerts.Filtered := True;
 end;
 
 procedure TRemoteDB.FilterAlertsReserved;
 begin
-  RemoteDB.netshop_customers_alerts.Filter   := '(customers_alerts_status=0)';
+  RemoteDB.netshop_customers_alerts.Filter := '(customers_alerts_status=0)';
   RemoteDB.netshop_customers_alerts.Filtered := True;
 end;
 
 procedure TRemoteDB.FilterProductsAll;
 begin
   Products.Filtered := False;
-  Products.Filter   := '';
+  Products.Filter := '';
 end;
 
 procedure TRemoteDB.FilterProductsBackCatalogue;
 begin
-  Products.Filter   := 'products_ispreview=' + QuotedStr('False');
+  Products.Filter := 'products_ispreview=' + QuotedStr('False');
   Products.Filtered := True;
 end;
 
 procedure TRemoteDB.FilterProductsPreorder;
 begin
-  Products.Filter   := 'products_ispreview=' + QuotedStr('True');
+  Products.Filter := 'products_ispreview=' + QuotedStr('True');
   Products.Filtered := True;
 end;
 
 procedure TRemoteDB.FreeAddress_booktoCustomers;
 begin
-  if not((Address_Book.MasterSource = nil) and (Address_Book.MasterFields = '') and (Address_Book.IndexName = 'Address_bookIXId')) then
+  if not((Address_Book.MasterSource = nil) and (Address_Book.MasterFields = '')
+    and (Address_Book.IndexName = 'Address_bookIXId')) then
   begin
     Address_Book.DisableControls;
     Address_Book.MasterSource := nil;
     Address_Book.MasterFields := '';
-    Address_Book.IndexName    := 'Address_bookIXId';
+    Address_Book.IndexName := 'Address_bookIXId';
     Address_Book.EnableControls;
   end;
 end;
@@ -2672,7 +2871,7 @@ begin
     DisableControls;
     MasterSource := nil;
     MasterFields := '';
-    IndexName    := 'RentTransactionIXId';
+    IndexName := 'RentTransactionIXId';
     EnableControls;
   end;
 end;
@@ -2681,12 +2880,13 @@ procedure TRemoteDB.FreeInvoicesItems;
 begin
   with netshop_invoices_items do
   begin
-    if not((MasterSource = nil) and (MasterFields = '') and (IndexName = 'ItemsIXId')) then
+    if not((MasterSource = nil) and (MasterFields = '') and
+      (IndexName = 'ItemsIXId')) then
     begin
       DisableControls;
       MasterSource := nil;
       MasterFields := '';
-      IndexName    := 'ItemsIXId';
+      IndexName := 'ItemsIXId';
       EnableControls;
     end;
   end;
@@ -2696,12 +2896,13 @@ procedure TRemoteDB.FreeInvoicesToCustomers;
 begin
   with netshop_invoices do
   begin
-    if not((MasterSource = nil) and (MasterFields = '') and (IndexName = 'InvoicesIXLocationId')) then
+    if not((MasterSource = nil) and (MasterFields = '') and
+      (IndexName = 'InvoicesIXLocationId')) then
     begin
       DisableControls;
       MasterSource := nil;
       MasterFields := '';
-      IndexName    := 'InvoicesIXLocationId';
+      IndexName := 'InvoicesIXLocationId';
       EnableControls;
     end;
   end;
@@ -2714,19 +2915,27 @@ begin
     DisableControls;
     MasterSource := nil;
     MasterFields := '';
-    IndexName    := 'ProductsIXModel';
+    IndexName := 'ProductsIXModel';
     EnableControls;
   end;
 end;
 
 procedure TRemoteDB.netshop_salesCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('Sales_Paid_Total').AsFloat := DataSet.fieldbyname('Sales_paid_cash').AsFloat + DataSet.fieldbyname('Sales_paid_bct').AsFloat +
-    DataSet.fieldbyname('Sales_paid_Proton').AsFloat + DataSet.fieldbyname('Sales_paid_Visa').AsFloat + DataSet.fieldbyname('Sales_paid_Voucher').AsFloat;
-  DataSet.fieldbyname('Sales_Paid_Htva').AsFloat := round(DataSet.fieldbyname('Sales_Paid_total').AsFloat / 1.21 * 100) / 100;
-  DataSet.fieldbyname('Sales_Paid_tva').AsFloat  := DataSet.fieldbyname('Sales_Paid_Total').AsFloat - DataSet.fieldbyname('Sales_Paid_Htva').AsFloat;
+  DataSet.fieldbyname('Sales_Paid_Total').AsFloat :=
+    DataSet.fieldbyname('Sales_paid_cash').AsFloat +
+    DataSet.fieldbyname('Sales_paid_bct').AsFloat +
+    DataSet.fieldbyname('Sales_paid_Proton').AsFloat +
+    DataSet.fieldbyname('Sales_paid_Visa').AsFloat +
+    DataSet.fieldbyname('Sales_paid_Voucher').AsFloat;
+  DataSet.fieldbyname('Sales_Paid_Htva').AsFloat :=
+    round(DataSet.fieldbyname('Sales_Paid_total').AsFloat / 1.21 * 100) / 100;
+  DataSet.fieldbyname('Sales_Paid_tva').AsFloat :=
+    DataSet.fieldbyname('Sales_Paid_Total').AsFloat -
+    DataSet.fieldbyname('Sales_Paid_Htva').AsFloat;
   if DataSet.fieldbyname('Sales_Date_time').Value < 1000000 then
-    DataSet.fieldbyname('Sales_Date_time_Value').Value := DataSet.fieldbyname('Sales_Date_time').Value;
+    DataSet.fieldbyname('Sales_Date_time_Value').Value :=
+      DataSet.fieldbyname('Sales_Date_time').Value;
 end;
 
 procedure TRemoteDB.ChangeEAN(OldModel, NewModel: string);
@@ -2734,14 +2943,15 @@ var
   OldID: Variant;
 begin
 
-if not CheckEan(NewModel) then begin
- ShowMessage('Nouvel EAN non valide mise à jour annulée');
- Exit;
-end;
-
+  if not CheckEan(NewModel) then
+  begin
+    ShowMessage('Nouvel EAN non valide mise à jour annulée');
+    exit;
+  end;
 
   try
-    if ((self.CDSProDescFR.fieldbyname('Products_id').Value <> null) and (CheckEan(NewModel))) then
+    if ((self.CDSProDescFR.fieldbyname('Products_id').Value <> null) and
+      (CheckEan(NewModel))) then
     begin
       CDSProDescFR.Edit;
       self.CDSProDescFR.fieldbyname('Products_id').Value := NewModel;
@@ -2752,7 +2962,8 @@ end;
   end;
 
   try
-    if ((self.CDSProDescNL.fieldbyname('Products_id').Value <> null) and (CheckEan(NewModel))) then
+    if ((self.CDSProDescNL.fieldbyname('Products_id').Value <> null) and
+      (CheckEan(NewModel))) then
     begin
       CDSProDescNL.Edit;
       self.CDSProDescNL.fieldbyname('Products_id').Value := NewModel;
@@ -2762,44 +2973,48 @@ end;
     CDSProDescFR.delete;
   end;
 
-
   OldID := self.Products.fieldbyname('products_id').Value;
 
   self.Products.Edit;
   self.Products.fieldbyname('Products_Model').Value := NewModel;
   self.Products.Post;
 
-  Self.netshop_customers_alerts.ApplyUpdates(-1);
-  Self.netshop_stock.ApplyUpdates(-1);
+  self.netshop_customers_alerts.ApplyUpdates(-1);
+  self.netshop_stock.ApplyUpdates(-1);
 
-  SQLUpdateProductsVelocity.CommandText := 'UPDATE netshop_customers_alerts SET customers_alerts_products_model=' + QuotedStr(NewModel) +
-    ' WHERE customers_alerts_products_model=' + QuotedStr(OldModel);
+  SQLUpdateProductsVelocity.CommandText :=
+    'UPDATE netshop_customers_alerts SET customers_alerts_products_model=' +
+    QuotedStr(NewModel) + ' WHERE customers_alerts_products_model=' +
+    QuotedStr(OldModel);
   SQLUpdateProductsVelocity.ExecSQL(False);
 
-  SQLUpdateProductsVelocity.CommandText := 'UPDATE orders_products SET products_id=' + self.Products.fieldbyname('products_id').AsString + ' WHERE products_id='
-    + VarToStr(OldID);
+  SQLUpdateProductsVelocity.CommandText :=
+    'UPDATE orders_products SET products_id=' + self.Products.fieldbyname
+    ('products_id').AsString + ' WHERE products_id=' + VarToStr(OldID);
   SQLUpdateProductsVelocity.ExecSQL(False);
 
-  SQLUpdateProductsVelocity.CommandText := 'UPDATE netshop_stock SET product_model=' + QuotedStr(NewModel) + ' WHERE product_model='
-    + QuotedStr(OldModel);
+  SQLUpdateProductsVelocity.CommandText :=
+    'UPDATE netshop_stock SET product_model=' + QuotedStr(NewModel) +
+    ' WHERE product_model=' + QuotedStr(OldModel);
 
   SQLUpdateProductsVelocity.ExecSQL(False);
 
-  Self.netshop_customers_alerts.refresh();
-  Self.netshop_stock.refresh();
+  self.netshop_customers_alerts.refresh();
+  self.netshop_stock.refresh();
 
-  end;
+end;
 
 procedure TRemoteDB.CheckCategories;
 begin
 end;
 
-procedure TRemoteDB.CheckExtStock(Model: string; var Ingroup, outgroup: integer);
+procedure TRemoteDB.CheckExtStock(Model: string;
+  var Ingroup, outgroup: integer);
 begin
-  self.CDSExtStock.Filter   := 'product_model=' + QuotedStr(Model);
+  self.CDSExtStock.Filter := 'product_model=' + QuotedStr(Model);
   self.CDSExtStock.Filtered := True;
-  Ingroup                   := 0;
-  outgroup                  := 0;
+  Ingroup := 0;
+  outgroup := 0;
   self.CDSExtStock.First;
 
   while not self.CDSExtStock.Eof do
@@ -2830,29 +3045,38 @@ end;
 procedure TRemoteDB.netshop_stockCalcFields(DataSet: TDataSet);
 begin
   if DataSet.fieldbyname('product_date_in').Value <> null then
-    DataSet.fieldbyname('product_date_in_display').Value := OSCToVCLDate(DataSet.fieldbyname('product_date_in').Value);
-  if ((DataSet.fieldbyname('product_price_stock').Value <> null) and (DataSet.fieldbyname('product_price_gross').Value <> null) and
+    DataSet.fieldbyname('product_date_in_display').Value :=
+      OSCToVCLDate(DataSet.fieldbyname('product_date_in').Value);
+  if ((DataSet.fieldbyname('product_price_stock').Value <> null) and
+    (DataSet.fieldbyname('product_price_gross').Value <> null) and
     (DataSet.fieldbyname('product_quantity').Value <> null)) then
   begin
-    DataSet.fieldbyname('product_price_stock_total').AsFloat := DataSet.fieldbyname('product_quantity').Value *
+    DataSet.fieldbyname('product_price_stock_total').AsFloat :=
+      DataSet.fieldbyname('product_quantity').Value *
       DataSet.fieldbyname('product_price_stock').AsFloat;
-    DataSet.fieldbyname('product_price_gross_total').AsFloat := DataSet.fieldbyname('product_quantity').Value *
+    DataSet.fieldbyname('product_price_gross_total').AsFloat :=
+      DataSet.fieldbyname('product_quantity').Value *
       DataSet.fieldbyname('product_price_gross').AsFloat;
   end;
 end;
 
 procedure TRemoteDB.netshop_rent_transactionCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('rent_transaction_due_display').Value := DataSet.fieldbyname('rent_transaction_due_date').Value;
-  DataSet.fieldbyname('rent_transaction_start_display').Value := DataSet.fieldbyname('rent_transaction_start_date').Value;
+  DataSet.fieldbyname('rent_transaction_due_display').Value :=
+    DataSet.fieldbyname('rent_transaction_due_date').Value;
+  DataSet.fieldbyname('rent_transaction_start_display').Value :=
+    DataSet.fieldbyname('rent_transaction_start_date').Value;
   if DataSet.fieldbyname('rent_transaction_returned_date').Value <> null then
-    DataSet.fieldbyname('rent_transaction_in_display').Value := DataSet.fieldbyname('rent_transaction_returned_date').Value;
+    DataSet.fieldbyname('rent_transaction_in_display').Value :=
+      DataSet.fieldbyname('rent_transaction_returned_date').Value;
 end;
 
 procedure TRemoteDB.netshop_rent_stockCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('rent_stock_date_added_disp').Value := DataSet.fieldbyname('rent_stock_date_added').Value;
-  DataSet.fieldbyname('rent_stock_last_rent_disp').Value  := DataSet.fieldbyname('rent_stock_last_rent').Value;
+  DataSet.fieldbyname('rent_stock_date_added_disp').Value :=
+    DataSet.fieldbyname('rent_stock_date_added').Value;
+  DataSet.fieldbyname('rent_stock_last_rent_disp').Value :=
+    DataSet.fieldbyname('rent_stock_last_rent').Value;
 end;
 
 procedure TRemoteDB.SuppliersStockNewRecord(DataSet: TDataSet);
@@ -2862,24 +3086,32 @@ end;
 
 procedure TRemoteDB.InventoryCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('product_price_gross_total').Value := DataSet.fieldbyname('product_quantity').Value * DataSet.fieldbyname('product_price_gross').Value;
+  DataSet.fieldbyname('product_price_gross_total').Value :=
+    DataSet.fieldbyname('product_quantity').Value *
+    DataSet.fieldbyname('product_price_gross').Value;
 end;
 
 procedure TRemoteDB.InventoryErrorsCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('product_price_gross_total').Value := DataSet.fieldbyname('product_quantity').Value * DataSet.fieldbyname('product_price_gross').Value;
+  DataSet.fieldbyname('product_price_gross_total').Value :=
+    DataSet.fieldbyname('product_quantity').Value *
+    DataSet.fieldbyname('product_price_gross').Value;
 end;
 
 procedure TRemoteDB.netshop_repairCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('repair_date_in_display').Value    := DataSet.fieldbyname('repair_date_in').Value;
-  DataSet.fieldbyname('repair_date_out_display').Value   := DataSet.fieldbyname('repair_date_out').Value;
-  DataSet.fieldbyname('repair_date_fixed_display').Value := DataSet.fieldbyname('repair_date_fixed').Value;
+  DataSet.fieldbyname('repair_date_in_display').Value :=
+    DataSet.fieldbyname('repair_date_in').Value;
+  DataSet.fieldbyname('repair_date_out_display').Value :=
+    DataSet.fieldbyname('repair_date_out').Value;
+  DataSet.fieldbyname('repair_date_fixed_display').Value :=
+    DataSet.fieldbyname('repair_date_fixed').Value;
 end;
 
 procedure TRemoteDB.netshop_refundsCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('refunds_date_time_display').Value := DataSet.fieldbyname('refunds_date_time').Value;
+  DataSet.fieldbyname('refunds_date_time_display').Value :=
+    DataSet.fieldbyname('refunds_date_time').Value;
 end;
 
 function TRemoteDB.CalcPriceVATIN(Price: double; tax_class_id: integer): double;
@@ -2889,9 +3121,12 @@ begin
   if Tax_Zones.Active and Tax_Class.Active and Tax_Rates.Active then
   begin
     Tax_Zones.FindKey([18]);
-    Tax_Class.FindKey([self.Products.FieldByName('products_tax_class_id').Value]);
-    Tax_Rates.FindKey([Tax_Zones.fieldbyname('Geo_Zone_id').Value, Tax_Class.fieldbyname('Tax_Class_Id').Value]);
-    pricein := round(Price * (1 + Tax_Rates.fieldbyname('Tax_Rate').AsFloat / 100) * 100) / 100;
+    Tax_Class.FindKey
+      ([self.Products.fieldbyname('products_tax_class_id').Value]);
+    Tax_Rates.FindKey([Tax_Zones.fieldbyname('Geo_Zone_id').Value,
+      Tax_Class.fieldbyname('Tax_Class_Id').Value]);
+    pricein := round(Price * (1 + Tax_Rates.fieldbyname('Tax_Rate').AsFloat /
+      100) * 100) / 100;
   end;
 end;
 
@@ -2901,10 +3136,13 @@ begin
   if Tax_Zones.Active and Tax_Class.Active and Tax_Rates.Active then
   begin
     Tax_Zones.FindKey([18]);
-    Tax_Class.FindKey([self.Products.FieldByName('products_tax_class_id').Value]);
-    Tax_Rates.FindKey([Tax_Zones.fieldbyname('Geo_Zone_id').Value, Tax_Class.fieldbyname('Tax_Class_Id').Value]);
+    Tax_Class.FindKey
+      ([self.Products.fieldbyname('products_tax_class_id').Value]);
+    Tax_Rates.FindKey([Tax_Zones.fieldbyname('Geo_Zone_id').Value,
+      Tax_Class.fieldbyname('Tax_Class_Id').Value]);
     DataSet.fieldbyname('products_price_allin').Value :=
-      round(DataSet.fieldbyname('products_price').AsFloat * (1 + Tax_Rates.fieldbyname('Tax_Rate').AsFloat / 100) * 100) / 100;
+      round(DataSet.fieldbyname('products_price').AsFloat *
+      (1 + Tax_Rates.fieldbyname('Tax_Rate').AsFloat / 100) * 100) / 100;
     if DataSet.fieldbyname('products_status').Value = True then
       DataSet.fieldbyname('products_active').Value := True
     else
@@ -2927,7 +3165,8 @@ begin
       modelstring := Products.fieldbyname('products_model').AsString;
       if not ValidateModel(modelstring) then
       begin
-        messagedlg('Erreur dans produit :' + CDSProDescFR.fieldbyname('products_name').AsString, mtwarning, [mbok], 0);
+        messagedlg('Erreur dans produit :' + CDSProDescFR.fieldbyname
+          ('products_name').AsString, mtwarning, [mbok], 0);
       end;
       Products.Next;
       modelstring := '';
@@ -2984,9 +3223,9 @@ var
   ProductModel: string;
   counter: integer;
 begin
-  ProgressCheckPID.InfoLabel        := 'Préparation de la base de données';
+  ProgressCheckPID.InfoLabel := 'Préparation de la base de données';
   ProgressCheckPID.ProgressPosition := 1;
-  ProgressCheckPID.ProgressMax      := Products.RecordCount;
+  ProgressCheckPID.ProgressMax := Products.RecordCount;
   Application.ProcessMessages;
   Products.IndexName := 'ProductsIXModel';
   Products.DisableConstraints;
@@ -2995,9 +3234,9 @@ begin
     Products.First;
     while not Products.Eof do
     begin
-      isnumber     := True;
+      isnumber := True;
       ProductModel := Products.fieldbyname('Products_Model').AsString;
-      for counter  := 1 to Length(ProductModel) do
+      for counter := 1 to Length(ProductModel) do
       begin
         if (ProductModel[counter] < '0') or (ProductModel[counter] > '9') then
           isnumber := False;
@@ -3005,16 +3244,22 @@ begin
       if isnumber and CheckEan(ProductModel) then
       begin
         Products.Edit;
-        Products.fieldbyname('Products_id').AsBcd := Products.fieldbyname('Products_Model').AsBcd;
+        Products.fieldbyname('Products_id').AsBcd :=
+          Products.fieldbyname('Products_Model').AsBcd;
         Products.Post;
-      end else begin
+      end
+      else
+      begin
         Products.Edit;
-        Products.fieldbyname('Products_id').AsBcd := GetNextEan(Products as TCustomClientDataSet, 'Products_Id');
+        Products.fieldbyname('Products_id').AsBcd :=
+          GetNextEan(Products as TCustomClientDataSet, 'Products_Id');
         Products.Post;
       end;
       Products.Next;
-      ProgressCheckPID.ProgressPosition := ProgressCheckPID.ProgressPosition + 1;
-      ProgressCheckPID.InfoLabel        := 'Enregistrement N°: ' + Products.fieldbyname('Products_Model').AsString;
+      ProgressCheckPID.ProgressPosition :=
+        ProgressCheckPID.ProgressPosition + 1;
+      ProgressCheckPID.InfoLabel := 'Enregistrement N°: ' +
+        Products.fieldbyname('Products_Model').AsString;
       Application.ProcessMessages;
       ProductModel := '';
     end;
@@ -3029,9 +3274,10 @@ var
   i: integer;
 begin
   Result := 0;
-  for i  := 0 to self.ComponentCount - 1 do
+  for i := 0 to self.ComponentCount - 1 do
   begin
-    if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+    if ((self.Components[i].ClassType = TClientDataSet) and
+      (self.Components[i].Tag <> -1)) then
     begin
       with TClientDataSet(self.Components[i]) do
       begin
@@ -3041,7 +3287,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DeleteFromStock(product_model: string; product_owner_id, product_supplier_id, quantity: integer);
+procedure TRemoteDB.DeleteFromStock(product_model: string;
+  product_owner_id, product_supplier_id, quantity: integer);
 var
   stocklocated: Boolean;
   internalq: integer;
@@ -3053,35 +3300,44 @@ begin
       repeat
         if product_supplier_id >= 100000 then
         begin
-          netshop_stock.Filter   := 'product_supplier_id = ' + inttostr(product_supplier_id);
+          netshop_stock.Filter := 'product_supplier_id = ' +
+            inttostr(product_supplier_id);
           netshop_stock.Filtered := True;
-        end else begin
-          netshop_stock.Filter   := 'product_supplier_id < 100000';
+        end
+        else
+        begin
+          netshop_stock.Filter := 'product_supplier_id < 100000';
           netshop_stock.Filtered := True;
         end;
 
         netshop_stock.IndexName := 'StockIXModelOwner';
         netshop_stock.SetKey;
         netshop_stock.fieldbyname('product_model').AsString := product_model;
-        netshop_stock.fieldbyname('product_owner_id').AsInteger := product_owner_id;
+        netshop_stock.fieldbyname('product_owner_id').AsInteger :=
+          product_owner_id;
         if netshop_stock.GotoKey then
         begin
-          if netshop_stock.fieldbyname('Product_Quantity').Value > internalq then
+          if netshop_stock.fieldbyname('Product_Quantity').Value > internalq
+          then
           begin
             netshop_stock.Edit;
-            netshop_stock.fieldbyname('Product_Quantity').Value := netshop_stock.fieldbyname('Product_Quantity').Value - internalq;
+            netshop_stock.fieldbyname('Product_Quantity').Value :=
+              netshop_stock.fieldbyname('Product_Quantity').Value - internalq;
             internalq := 0;
             netshop_stock.Post;
           end;
-          if netshop_stock.fieldbyname('Product_Quantity').Value = internalq then
+          if netshop_stock.fieldbyname('Product_Quantity').Value = internalq
+          then
           begin
             netshop_stock.delete;
 
             internalq := 0;
           end;
-          if (netshop_stock.fieldbyname('Product_Quantity').Value < internalq) and (internalq <> 0) then
+          if (netshop_stock.fieldbyname('Product_Quantity').Value < internalq)
+            and (internalq <> 0) then
           begin
-            internalq := internalq - netshop_stock.fieldbyname('Product_Quantity').Value;
+            internalq := internalq - netshop_stock.fieldbyname
+              ('Product_Quantity').Value;
             netshop_stock.delete;
           end;
           stocklocated := True;
@@ -3090,14 +3346,17 @@ begin
           stocklocated := False;
 
       until (internalq = 0) or (not stocklocated);
-  end else begin
+  end
+  else
+  begin
     ShowMessage('Produit Inexistant');
   end;
   netshop_stock.Filtered := False;
-  netshop_stock.Filter   := '';
+  netshop_stock.Filter := '';
 end;
 
-procedure TRemoteDB.DeleteFromTransfer(product_model: string; product_owner_id, product_supplier_id, quantity: integer);
+procedure TRemoteDB.DeleteFromTransfer(product_model: string;
+  product_owner_id, product_supplier_id, quantity: integer);
 var
   stocklocated: Boolean;
   internalq: integer;
@@ -3109,35 +3368,45 @@ begin
       repeat
         if product_supplier_id >= 100000 then
         begin
-          netshop_transfer.Filter   := 'product_supplier_id = ' + inttostr(product_supplier_id);
+          netshop_transfer.Filter := 'product_supplier_id = ' +
+            inttostr(product_supplier_id);
           netshop_transfer.Filtered := True;
-        end else begin
-          netshop_transfer.Filter   := 'product_supplier_id < 100000';
+        end
+        else
+        begin
+          netshop_transfer.Filter := 'product_supplier_id < 100000';
           netshop_transfer.Filtered := True;
         end;
 
         netshop_transfer.IndexName := 'TransferIXModelOwner';
         netshop_transfer.SetKey;
         netshop_transfer.fieldbyname('product_model').AsString := product_model;
-        netshop_transfer.fieldbyname('product_owner_id').AsInteger := product_owner_id;
+        netshop_transfer.fieldbyname('product_owner_id').AsInteger :=
+          product_owner_id;
         if netshop_transfer.GotoKey then
         begin
-          if netshop_transfer.fieldbyname('Product_Quantity').Value > internalq then
+          if netshop_transfer.fieldbyname('Product_Quantity').Value > internalq
+          then
           begin
             netshop_transfer.Edit;
-            netshop_transfer.fieldbyname('Product_Quantity').Value := netshop_transfer.fieldbyname('Product_Quantity').Value - internalq;
+            netshop_transfer.fieldbyname('Product_Quantity').Value :=
+              netshop_transfer.fieldbyname('Product_Quantity').Value -
+              internalq;
             internalq := 0;
             netshop_transfer.Post;
           end;
-          if netshop_transfer.fieldbyname('Product_Quantity').Value = internalq then
+          if netshop_transfer.fieldbyname('Product_Quantity').Value = internalq
+          then
           begin
             netshop_transfer.delete;
 
             internalq := 0;
           end;
-          if (netshop_transfer.fieldbyname('Product_Quantity').Value < internalq) and (internalq <> 0) then
+          if (netshop_transfer.fieldbyname('Product_Quantity').Value <
+            internalq) and (internalq <> 0) then
           begin
-            internalq := internalq - netshop_transfer.fieldbyname('Product_Quantity').Value;
+            internalq := internalq - netshop_transfer.fieldbyname
+              ('Product_Quantity').Value;
             netshop_transfer.delete;
           end;
           stocklocated := True;
@@ -3146,11 +3415,13 @@ begin
           stocklocated := False;
 
       until (internalq = 0) or (not stocklocated);
-  end else begin
+  end
+  else
+  begin
     ShowMessage('Produit Inexistant');
   end;
   netshop_transfer.Filtered := False;
-  netshop_transfer.Filter   := '';
+  netshop_transfer.Filter := '';
 end;
 
 procedure TRemoteDB.ProgressSynchronisebShow(Sender: TObject);
@@ -3179,8 +3450,8 @@ begin
   // SQLConnection.CloseDataSets;
   SQLConnection.Open;
 
-  ProgressSync.Caption          := 'Synchronisation de la base de données';
-  ProgressSync.ProgressMax      := DatasetsCount + 1;
+  ProgressSync.Caption := 'Synchronisation de la base de données';
+  ProgressSync.ProgressMax := DatasetsCount + 1;
   ProgressSync.ProgressPosition := ProgressSync.Progressmin;
 
   // messagedlg(' '+SQLConnection.Params.Values['user_name']+' '+SQLConnection.Params.Values['database']+' '+SQLConnection.Params.Values['hostname']+' '+SQLConnection.Params.Values['password'],mtwarning,[mbok],0);
@@ -3194,9 +3465,11 @@ begin
     begin
       if self.ProgressSync.Cancel then
         exit;
-      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+      if ((self.Components[i].ClassType = TClientDataSet) and
+        (self.Components[i].Tag <> -1)) then
       begin
-        ProgressSync.InfoLabel        := 'Mise à jour de la table : ' + self.Components[i].Name;
+        ProgressSync.InfoLabel := 'Mise à jour de la table : ' +
+          self.Components[i].Name;
         ProgressSync.ProgressPosition := ProgressSync.ProgressPosition + 1;
         Application.ProcessMessages;
         SaveDataset(TClientDataSet(self.Components[i]), True);
@@ -3209,11 +3482,15 @@ begin
             begin
               if ApplyUpdates(-1) = 0 then
               begin
-                Refresh;
-              end else begin
+                refresh;
+              end
+              else
+              begin
                 // Forcer le refresh même avec erreurs sur les tables products
-                if (self.Components[i].Name = 'Products') or (self.Components[i].Name = 'CDSProDescFR') or (self.Components[i].Name = 'CDSProDescNL') then
-                  Refresh;
+                if (self.Components[i].Name = 'Products') or
+                  (self.Components[i].Name = 'CDSProDescFR') or
+                  (self.Components[i].Name = 'CDSProDescNL') then
+                  refresh;
               end;
             end;
             // except
@@ -3239,21 +3516,23 @@ var
   i: integer;
   updatestatus: Boolean;
 begin
-  ProgressSync.Caption          := 'Update de la base de données';
-  ProgressSync.ProgressMax      := DatasetsCount + 1;
+  ProgressSync.Caption := 'Update de la base de données';
+  ProgressSync.ProgressMax := DatasetsCount + 1;
   ProgressSync.ProgressPosition := ProgressSync.Progressmin;
 
   try
     updatestatus := IsUpdating;
     if not IsUpdating then
       IsUpdating := True;
-    for i        := 0 to self.ComponentCount - 1 do
+    for i := 0 to self.ComponentCount - 1 do
     begin
       if self.ProgressSync.Cancel then
         exit;
-      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+      if ((self.Components[i].ClassType = TClientDataSet) and
+        (self.Components[i].Tag <> -1)) then
       begin
-        ProgressSync.InfoLabel        := 'Mise à jour de la table : ' + self.Components[i].Name;
+        ProgressSync.InfoLabel := 'Mise à jour de la table : ' +
+          self.Components[i].Name;
         ProgressSync.ProgressPosition := ProgressSync.ProgressPosition + 1;
         Application.ProcessMessages;
 
@@ -3294,29 +3573,31 @@ begin
   //
   // Setting Parameters
   //
-  SQLDSActions.Params.ParamByName('shopid').Value         := CONNECTEDSHOP;
-  SQLDSWebOrders.Params.ParamByName('shopid').Value       := CONNECTEDSHOP;
-  SQLDSRentStock.Params.ParamByName('shopid').Value       := CONNECTEDSHOP;
+  SQLDSActions.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSWebOrders.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSRentStock.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
   SQLDSRentTransaction.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
-  SQLDSRentSchemes.Params.ParamByName('shopid').Value     := CONNECTEDSHOP;
+  SQLDSRentSchemes.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
 
   SQLDSItemsSold.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
 
-  SQLDSSales.Params.ParamByName('shopid').Value    := CONNECTEDSHOP;
-  SQLDSSales.Params.ParamByName('datelimit').Value := trunc(now - ((1 + SyncYears) * 365));
+  SQLDSSales.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSSales.Params.ParamByName('datelimit').Value :=
+    trunc(now - ((1 + SyncYears) * 365));
 
   SQLDSInvoices_Items.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
   // where (invoices_items_location = :shopid) and (((invoices_items_invoice_id >= :invoices_id_min))or(invoices_items_invoice_id = 0))
-  SQLDSInvoices.Params.ParamByName('shopid').Value    := CONNECTEDSHOP;
-  SQLDSInvoices.Params.ParamByName('datelimit').Value := trunc(now - ((1 + SyncYears) * 365));
+  SQLDSInvoices.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSInvoices.Params.ParamByName('datelimit').Value :=
+    trunc(now - ((1 + SyncYears) * 365));
 
-  SQLDSStock.Params.ParamByName('shopid').Value         := CONNECTEDSHOP;
+  SQLDSStock.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
   SQLDSStockReturned.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
-  SQLDSExtStock.Params.ParamByName('shopid').Value      := CONNECTEDSHOP;
-  SQLDSRepair.Params.ParamByName('shopid').Value        := CONNECTEDSHOP;
-  SQLDSTransfer.Params.ParamByName('shopid').Value      := CONNECTEDSHOP;
-  SQLDSRefunds.Params.ParamByName('shopid').Value       := CONNECTEDSHOP;
-  SQLDSExpenses.Params.ParamByName('shopid').Value      := CONNECTEDSHOP;
+  SQLDSExtStock.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSRepair.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSTransfer.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSRefunds.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
+  SQLDSExpenses.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
   SQLDSItemsRefunded.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
 
   SQLDSShops.Params.ParamByName('shopgroupid').Value := SHOPGROUPID;
@@ -3324,24 +3605,29 @@ begin
   SQLDSCustomers.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
   SQLDSCashClose.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
 
-  SQLDataSetIN.Params.ParamByName('shopid').Value  := CONNECTEDSHOP;
+  SQLDataSetIN.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
   SQLDataSetOUT.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
 
-  SQLDSCustomers.Params.ParamByName('maxid').Value := (CONNECTEDSHOP + 1) * 100000;
+  SQLDSCustomers.Params.ParamByName('maxid').Value :=
+    (CONNECTEDSHOP + 1) * 100000;
   SQLDSCustomers.Params.ParamByName('minid').Value := (CONNECTEDSHOP) * 100000;
 
-  SQLDSCoupons.Params.ParamByName('maxid').Value := ((CONNECTEDSHOP + 1) * 100000) - 1;
+  SQLDSCoupons.Params.ParamByName('maxid').Value :=
+    ((CONNECTEDSHOP + 1) * 100000) - 1;
   SQLDSCoupons.Params.ParamByName('minid').Value := ((CONNECTEDSHOP) * 100000);
 
   SQLDSAlerts.Params.ParamByName('maxid').Value := (CONNECTEDSHOP + 1) * 100000;
   SQLDSAlerts.Params.ParamByName('minid').Value := (CONNECTEDSHOP) * 100000;
 
-  SQLDSAlertsExt.Params.ParamByName('maxid').Value := (CONNECTEDSHOP + 1) * 100000;
+  SQLDSAlertsExt.Params.ParamByName('maxid').Value :=
+    (CONNECTEDSHOP + 1) * 100000;
   SQLDSAlertsExt.Params.ParamByName('minid').Value := (CONNECTEDSHOP) * 100000;
 
   SQLDSAddress_book.Params.ParamByName('shopid').Value := CONNECTEDSHOP;
-  SQLDSAddress_book.Params.ParamByName('maxid').Value  := (CONNECTEDSHOP + 1) * 100000;
-  SQLDSAddress_book.Params.ParamByName('minid').Value  := (CONNECTEDSHOP) * 100000;
+  SQLDSAddress_book.Params.ParamByName('maxid').Value :=
+    (CONNECTEDSHOP + 1) * 100000;
+  SQLDSAddress_book.Params.ParamByName('minid').Value :=
+    (CONNECTEDSHOP) * 100000;
 
   //
   // Building queries
@@ -3357,8 +3643,10 @@ begin
   // SQL:=SQL+' FROM products p, products_to_categories p2c WHERE (p.products_id=p2c.products_id) ';
   // RemoteDB.SQLDSProducts.CommandText:=SQL;
 
-  SQL := 'SELECT * FROM netshop_customers_alerts WHERE ((customers_alerts_customers_nbr>' + inttostr((CONNECTEDSHOP) * 100000) +
-    ') AND (customers_alerts_customers_nbr<' + inttostr((CONNECTEDSHOP + 1) * 100000) + '))';
+  SQL := 'SELECT * FROM netshop_customers_alerts WHERE ((customers_alerts_customers_nbr>'
+    + inttostr((CONNECTEDSHOP) * 100000) +
+    ') AND (customers_alerts_customers_nbr<' +
+    inttostr((CONNECTEDSHOP + 1) * 100000) + '))';
   self.SQLDSAlerts.CommandText := SQL;
 
   {
@@ -3371,10 +3659,10 @@ begin
     RemoteDB.SQLDSProducts.CommandText:=SQL;
   }
 
-  ProgressCreate.Caption          := 'Chargement de la base de données';
-  ProgressCreate.InfoLabel        := 'Connection au serveur';
+  ProgressCreate.Caption := 'Chargement de la base de données';
+  ProgressCreate.InfoLabel := 'Connection au serveur';
   ProgressCreate.ProgressPosition := ProgressCreate.Progressmin;
-  ProgressCreate.ProgressMax      := DatasetsCount + 1;
+  ProgressCreate.ProgressMax := DatasetsCount + 1;
   Application.ProcessMessages;
 
   if DBIsOnDisk = False then
@@ -3401,31 +3689,37 @@ begin
     updatestatus := IsUpdating;
     if not IsUpdating then
       IsUpdating := True;
-    for i        := 0 to self.ComponentCount - 1 do
+    for i := 0 to self.ComponentCount - 1 do
     begin
-      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+      if ((self.Components[i].ClassType = TClientDataSet) and
+        (self.Components[i].Tag <> -1)) then
       begin
-        ProgressCreate.InfoLabel        := 'Chargement de la table : ' + self.Components[i].Name;
+        ProgressCreate.InfoLabel := 'Chargement de la table : ' +
+          self.Components[i].Name;
         ProgressCreate.ProgressPosition := ProgressCreate.ProgressPosition + 1;
         Application.ProcessMessages;
         with TClientDataSet(self.Components[i]) do
         begin
           ChDir(ExtractFilePath(ParamStr(0)));
           if not LocalCache then
-            FileName := '';
-          if (FileExists(FileName)) then
+            filename := '';
+          if (FileExists(filename)) then
           begin
-            WriteLn(myFile, 'Loading :' + FileName);
+            WriteLn(myFile, 'Loading :' + filename);
             LoadfromFile;
             Open;
-          end else begin
+          end
+          else
+          begin
             if ProviderName = '' then
             begin
               if DatasetField = nil then
               begin
                 CreateDataset;
               end;
-            end else begin
+            end
+            else
+            begin
               Open;
             end;
           end;
@@ -3468,8 +3762,8 @@ begin
   // SQLConnection.CloseDataSets;
   SQLConnection.Open;
 
-  ProgressSync.Caption          := 'Synchronisation de la base de données';
-  ProgressSync.ProgressMax      := DatasetsCount + 1;
+  ProgressSync.Caption := 'Synchronisation de la base de données';
+  ProgressSync.ProgressMax := DatasetsCount + 1;
   ProgressSync.ProgressPosition := ProgressSync.Progressmin;
 
   // messagedlg(' '+SQLConnection.Params.Values['user_name']+' '+SQLConnection.Params.Values['database']+' '+SQLConnection.Params.Values['hostname']+' '+SQLConnection.Params.Values['password'],mtwarning,[mbok],0);
@@ -3483,9 +3777,11 @@ begin
     begin
       if self.ProgressSync.Cancel then
         exit;
-      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+      if ((self.Components[i].ClassType = TClientDataSet) and
+        (self.Components[i].Tag <> -1)) then
       begin
-        ProgressSync.InfoLabel        := 'Mise à jour de la table : ' + self.Components[i].Name;
+        ProgressSync.InfoLabel := 'Mise à jour de la table : ' +
+          self.Components[i].Name;
         ProgressSync.ProgressPosition := ProgressSync.ProgressPosition + 1;
         Application.ProcessMessages;
         SaveDataset(TClientDataSet(self.Components[i]), True);
@@ -3498,12 +3794,16 @@ begin
             begin
               if ApplyUpdates(-1) = 0 then
               begin
-                if (TClientDataSet(self.Components[i]).Name = 'WebOrders') or (TClientDataSet(self.Components[i]).Name = 'Products') or
-                  (TClientDataSet(self.Components[i]).Name = 'Transfer') or (TClientDataSet(self.Components[i]).Name = 'Transferout') or
-                  (TClientDataSet(self.Components[i]).Name = 'CDSExtStock') or (TClientDataSet(self.Components[i]).Name = 'CDSOut') or
-                  (TClientDataSet(self.Components[i]).Name = 'CDSIn') or (TClientDataSet(self.Components[i]).Name = 'AlertsExt') then
+                if (TClientDataSet(self.Components[i]).Name = 'WebOrders') or
+                  (TClientDataSet(self.Components[i]).Name = 'Products') or
+                  (TClientDataSet(self.Components[i]).Name = 'Transfer') or
+                  (TClientDataSet(self.Components[i]).Name = 'Transferout') or
+                  (TClientDataSet(self.Components[i]).Name = 'CDSExtStock') or
+                  (TClientDataSet(self.Components[i]).Name = 'CDSOut') or
+                  (TClientDataSet(self.Components[i]).Name = 'CDSIn') or
+                  (TClientDataSet(self.Components[i]).Name = 'AlertsExt') then
                 begin
-                  Refresh;
+                  refresh;
                 end;
               end;
             end;
@@ -3530,7 +3830,9 @@ begin
       ProgressSaveModuleShow(nil);
     finally
     end;
-  end else begin
+  end
+  else
+  begin
     // messagedlg('DB non sauvée car dsEdit',mtwarning,[mbok],0)
   end;
 end;
@@ -3546,18 +3848,20 @@ begin
     if not IsUpdating then
       IsUpdating := True;
 
-    ProgressSave.Caption          := 'Sauvegarde de la base de données';
+    ProgressSave.Caption := 'Sauvegarde de la base de données';
     ProgressSave.ProgressPosition := ProgressSave.Progressmin;
-    ProgressSave.ProgressMax      := DatasetsCount + 1;
+    ProgressSave.ProgressMax := DatasetsCount + 1;
     Application.ProcessMessages;
 
     for i := 0 to self.ComponentCount - 1 do
     begin
-      if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+      if ((self.Components[i].ClassType = TClientDataSet) and
+        (self.Components[i].Tag <> -1)) then
       begin
         // TClientDataset(Self.Components[i]).MasterSource:=nil;
         // TClientDataset(Self.Components[i]).MasterFields:='';
-        ProgressSave.InfoLabel        := 'Enregistrement de la table : ' + self.Components[i].Name;
+        ProgressSave.InfoLabel := 'Enregistrement de la table : ' +
+          self.Components[i].Name;
         ProgressSave.ProgressPosition := ProgressSave.ProgressPosition + 1;
         Application.ProcessMessages;
         if (TClientDataSet(self.Components[i]).ChangeCount) > 0 then
@@ -3576,16 +3880,18 @@ var
   i: integer;
 begin
 
-  ProgressClose.Caption          := 'Fermeture de la base de données';
+  ProgressClose.Caption := 'Fermeture de la base de données';
   ProgressClose.ProgressPosition := ProgressSave.Progressmin;
-  ProgressClose.ProgressMax      := DatasetsCount + 1;
+  ProgressClose.ProgressMax := DatasetsCount + 1;
   Application.ProcessMessages;
 
   for i := 0 to self.ComponentCount - 1 do
   begin
-    if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+    if ((self.Components[i].ClassType = TClientDataSet) and
+      (self.Components[i].Tag <> -1)) then
     begin
-      ProgressClose.InfoLabel        := 'Fermeture de la table : ' + self.Components[i].Name;
+      ProgressClose.InfoLabel := 'Fermeture de la table : ' +
+        self.Components[i].Name;
       ProgressClose.ProgressPosition := ProgressSave.ProgressPosition + 1;
       Application.ProcessMessages;
       TClientDataSet(self.Components[i]).Close;
@@ -3594,7 +3900,8 @@ begin
 
 end;
 
-function TRemoteDB.SaveDataset(DataSet: TClientDataSet; backup: Boolean): Boolean;
+function TRemoteDB.SaveDataset(DataSet: TClientDataSet;
+  backup: Boolean): Boolean;
 var
   DatasetDeleted: Boolean;
   DatasetSaved: Boolean;
@@ -3605,12 +3912,13 @@ begin
     DataSet.DisableConstraints;
     DataSet.DisableControls;
     try
-      Originalfilename := ExtractFileName(DataSet.FileName);
-      Backupfilename   := 'database/backup/' + ChangeFileExt(Originalfilename, '.bak');
+      Originalfilename := ExtractFileName(DataSet.filename);
+      Backupfilename := 'database/backup/' +
+        ChangeFileExt(Originalfilename, '.bak');
       Originalfilename := 'database/' + Originalfilename;
 
       DatasetDeleted := True;
-      DatasetSaved   := True;
+      DatasetSaved := True;
 
       // if (dataset.state=dsEdit) or (dataset.state=dsinsert) then Dataset.Post;
 
@@ -3641,10 +3949,15 @@ begin
               if not(RenameFile(Originalfilename, Backupfilename)) then
               begin
                 DatasetDeleted := False;
-                messagedlg('Erreur durant la création du backup de : ' + Originalfilename + '. Impossible de renommer', mtwarning, [mbok], 0);
+                messagedlg('Erreur durant la création du backup de : ' +
+                  Originalfilename + '. Impossible de renommer', mtwarning,
+                  [mbok], 0);
               end;
-            end else begin
-              messagedlg('Erreur durant la création du backup de : ' + Originalfilename + '. Fichier existant', mtwarning, [mbok], 0);
+            end
+            else
+            begin
+              messagedlg('Erreur durant la création du backup de : ' +
+                Originalfilename + '. Fichier existant', mtwarning, [mbok], 0);
             end;
         end;
         // Saving New File
@@ -3653,10 +3966,12 @@ begin
         if not(FileExists(Originalfilename)) then
         begin
           DatasetSaved := False;
-          messagedlg('Erreur durant la sauvegarde de : ' + Originalfilename, mtwarning, [mbok], 0);
+          messagedlg('Erreur durant la sauvegarde de : ' + Originalfilename,
+            mtwarning, [mbok], 0);
         end;
       except
-        messagedlg('Erreur durant la sauvegarde de : ' + Originalfilename, mtwarning, [mbok], 0);
+        messagedlg('Erreur durant la sauvegarde de : ' + Originalfilename,
+          mtwarning, [mbok], 0);
       end;
 
     finally
@@ -3664,12 +3979,15 @@ begin
       DataSet.EnableConstraints;
     end;
     Result := DatasetSaved and DatasetDeleted;
-  end else begin
+  end
+  else
+  begin
     Result := True;
   end;
 end;
 
-procedure TRemoteDB.DPProDescFRBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPProDescFRBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -3681,18 +3999,21 @@ begin
   case UpdateKind of
     ukinsert:
       begin
-        ID  := DeltaDS.fieldbyname('products_id').AsString;
+        ID := DeltaDS.fieldbyname('products_id').AsString;
         LID := DeltaDS.fieldbyname('language_id').AsString;
 
         // Delete from prodesc
-        SQL := Format('DELETE FROM products_description WHERE products_id = %s and language_id = %s', [ID, LID]);
+        SQL := Format
+          ('DELETE FROM products_description WHERE products_id = %s and language_id = %s',
+          [ID, LID]);
         Connection.Execute(SQL, nil, nil);
       end;
 
   end;
 end;
 
-procedure TRemoteDB.DPProDescNLBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPProDescNLBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -3704,18 +4025,21 @@ begin
   case UpdateKind of
     ukinsert:
       begin
-        ID  := DeltaDS.fieldbyname('products_id').AsString;
+        ID := DeltaDS.fieldbyname('products_id').AsString;
         LID := DeltaDS.fieldbyname('language_id').AsString;
 
         // Delete from prodesc
-        SQL := Format('DELETE FROM products_description WHERE products_id = %s and language_id = %s', [ID, LID]);
+        SQL := Format
+          ('DELETE FROM products_description WHERE products_id = %s and language_id = %s',
+          [ID, LID]);
         Connection.Execute(SQL, nil, nil);
       end;
 
   end;
 end;
 
-procedure TRemoteDB.DPProductsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPProductsBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -3735,7 +4059,8 @@ begin
         ID := DeltaDS.fieldbyname('products_id').NewValue;
 
         // Delete from products_description
-        SQL := Format('DELETE FROM products_description WHERE products_id = %s', [ID]);
+        SQL := Format
+          ('DELETE FROM products_description WHERE products_id = %s', [ID]);
         Connection.Execute(SQL, nil, nil);
 
         // Delete from products
@@ -3743,19 +4068,22 @@ begin
         Connection.Execute(SQL, nil, nil);
 
         // Delete from products
-        SQL := Format('DELETE p,pd FROM products p inner join products_description pd on pd.products_id=p.products_id where p.products_model = %s', [QuotedStr(DeltaDS.fieldbyname('products_model').AsString)]);
+        SQL := Format
+          ('DELETE p,pd FROM products p inner join products_description pd on pd.products_id=p.products_id where p.products_model = %s',
+          [QuotedStr(DeltaDS.fieldbyname('products_model').AsString)]);
         Connection.Execute(SQL, nil, nil);
 
         // Delete from products_to_categories
-        SQL := Format('DELETE FROM products_to_categories WHERE products_id = %s', [ID]);
+        SQL := Format
+          ('DELETE FROM products_to_categories WHERE products_id = %s', [ID]);
         Connection.Execute(SQL, nil, nil);
 
         // Insertion des valeurs dans la table produits
-        SQL   := 'INSERT INTO products (';
+        SQL := 'INSERT INTO products (';
         for i := 0 to high(products_fields) do
           SQL := SQL + products_fields[i] + ',';
-        SQL   := LeftStr(SQL, Length(SQL) - 1);
-        SQL   := SQL + ') VALUES (';
+        SQL := LeftStr(SQL, Length(SQL) - 1);
+        SQL := SQL + ') VALUES (';
         for i := 0 to high(products_fields) do
         begin
           if DeltaDS.fieldbyname(products_fields[i]).DataType = ftBoolean then
@@ -3763,15 +4091,25 @@ begin
             if DeltaDS.fieldbyname(products_fields[i]).NewValue then
             begin
               SQL := SQL + '1' + ',';;
-            end else begin
+            end
+            else
+            begin
               SQL := SQL + '0' + ',';;
             end;
-          end else begin
-            if DeltaDS.fieldbyname(products_fields[i]).DataType = ftTimeStamp then
+          end
+          else
+          begin
+            if DeltaDS.fieldbyname(products_fields[i]).DataType = ftTimeStamp
+            then
             begin
-              SQL := SQL + QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS', (DeltaDS.fieldbyname(products_fields[i]).AsDateTime))) + ',';
-            end else begin
-              SQL := SQL + QuotedStr(VarToStr(DeltaDS.fieldbyname(products_fields[i]).NewValue)) + ',';
+              SQL := SQL + QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS',
+                (DeltaDS.fieldbyname(products_fields[i]).AsDateTime))) + ',';
+            end
+            else
+            begin
+              SQL := SQL +
+                QuotedStr(VarToStr(DeltaDS.fieldbyname(products_fields[i])
+                .NewValue)) + ',';
             end;
           end;
         end;
@@ -3804,18 +4142,25 @@ begin
         //
         // Insertion dans le table poducts_to_categories
         //
-        SQL   := 'INSERT INTO products_to_categories (';
+        SQL := 'INSERT INTO products_to_categories (';
         for i := 0 to high(products_to_categories_fields) do
           SQL := SQL + products_to_categories_fields[i] + ',';
-        SQL   := LeftStr(SQL, Length(SQL) - 1);
-        SQL   := SQL + ') VALUES (';
+        SQL := LeftStr(SQL, Length(SQL) - 1);
+        SQL := SQL + ') VALUES (';
         for i := 0 to high(products_to_categories_fields) do
         begin
-          if DeltaDS.fieldbyname(products_to_categories_fields[i]).DataType = ftTimeStamp then
+          if DeltaDS.fieldbyname(products_to_categories_fields[i]).DataType = ftTimeStamp
+          then
           begin
-            SQL := SQL + QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS', (DeltaDS.fieldbyname(products_to_categories_fields[i]).AsDateTime))) + ',';
-          end else begin
-            SQL := SQL + QuotedStr(VarToStr(DeltaDS.fieldbyname(products_to_categories_fields[i]).NewValue)) + ',';
+            SQL := SQL + QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS',
+              (DeltaDS.fieldbyname(products_to_categories_fields[i])
+              .AsDateTime))) + ',';
+          end
+          else
+          begin
+            SQL := SQL + QuotedStr
+              (VarToStr(DeltaDS.fieldbyname(products_to_categories_fields[i])
+              .NewValue)) + ',';
           end;
         end;
         SQL := LeftStr(SQL, Length(SQL) - 1);
@@ -3833,7 +4178,8 @@ begin
         // Update table products,
         for i := 0 to high(products_fields) do
         begin
-          if not VarIsEmpty(DeltaDS.fieldbyname(products_fields[i]).NewValue) then
+          if not VarIsEmpty(DeltaDS.fieldbyname(products_fields[i]).NewValue)
+          then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
@@ -3842,16 +4188,26 @@ begin
               if DeltaDS.fieldbyname(products_fields[i]).NewValue then
               begin
                 SQL := SQL + products_fields[i] + ' = 1';
-              end else begin
+              end
+              else
+              begin
                 SQL := SQL + products_fields[i] + ' = 0';
               end;
-            end else begin
-              if DeltaDS.fieldbyname(products_fields[i]).DataType = ftTimeStamp then
+            end
+            else
+            begin
+              if DeltaDS.fieldbyname(products_fields[i]).DataType = ftTimeStamp
+              then
               begin
                 SQL := SQL + Format(products_fields[i] + ' = %s',
-                  [QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS', (DeltaDS.fieldbyname(products_fields[i]).AsDateTime)))]);
-              end else begin
-                SQL := SQL + Format(products_fields[i] + ' = %s', [QuotedStr(VarToStr(DeltaDS.fieldbyname(products_fields[i]).NewValue))]);
+                  [QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS',
+                  (DeltaDS.fieldbyname(products_fields[i]).AsDateTime)))]);
+              end
+              else
+              begin
+                SQL := SQL + Format(products_fields[i] + ' = %s',
+                  [QuotedStr(VarToStr(DeltaDS.fieldbyname(products_fields[i])
+                  .NewValue))]);
               end;
             end;
           end;
@@ -3859,8 +4215,9 @@ begin
 
         if SQL <> '' then
         begin
-          ID  := VarToStr(DeltaDS.fieldbyname('products_id').OldValue);
-          SQL := Format('UPDATE products SET %s ' + 'WHERE products_id = %s', [SQL, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('products_id').OldValue);
+          SQL := Format('UPDATE products SET %s ' + 'WHERE products_id = %s',
+            [SQL, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
 
@@ -3894,28 +4251,36 @@ begin
         //
         // Update Products_to_categories
         //
-        SQL   := '';
+        SQL := '';
         for i := 0 to high(products_to_categories_fields) do
         begin
-          if not VarIsEmpty(DeltaDS.fieldbyname(products_to_categories_fields[i]).NewValue) then
+          if not VarIsEmpty(DeltaDS.fieldbyname(products_to_categories_fields[i]
+            ).NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            if DeltaDS.fieldbyname(products_to_categories_fields[i]).DataType = ftTimeStamp then
+            if DeltaDS.fieldbyname(products_to_categories_fields[i]).DataType = ftTimeStamp
+            then
             begin
               SQL := SQL + Format(products_to_categories_fields[i] + ' = %s',
-                [QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS', (DeltaDS.fieldbyname(products_to_categories_fields[i]).AsDateTime)))]);
-            end else begin
+                [QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS',
+                (DeltaDS.fieldbyname(products_to_categories_fields[i])
+                .AsDateTime)))]);
+            end
+            else
+            begin
               SQL := SQL + Format(products_to_categories_fields[i] + ' = %s',
-                [QuotedStr(VarToStr(DeltaDS.fieldbyname(products_to_categories_fields[i]).NewValue))]);
+                [QuotedStr(VarToStr(DeltaDS.fieldbyname
+                (products_to_categories_fields[i]).NewValue))]);
             end;
           end;
         end;
 
         if SQL <> '' then
         begin
-          ID  := VarToStr(DeltaDS.fieldbyname('products_id').OldValue);
-          SQL := Format('UPDATE products_to_categories SET %s ' + 'WHERE products_id = %s', [SQL, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('products_id').OldValue);
+          SQL := Format('UPDATE products_to_categories SET %s ' +
+            'WHERE products_id = %s', [SQL, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
       end;
@@ -3925,7 +4290,8 @@ begin
         ID := DeltaDS.fieldbyname('products_id').AsString;
 
         // Delete from products_description
-        SQL := Format('DELETE FROM products_description WHERE products_id = %s', [ID]);
+        SQL := Format
+          ('DELETE FROM products_description WHERE products_id = %s', [ID]);
         Connection.Execute(SQL, nil, nil);
 
         // Delete from products
@@ -3933,7 +4299,8 @@ begin
         Connection.Execute(SQL, nil, nil);
 
         // delete from products_to_categories
-        SQL := Format('DELETE FROM products_to_categories WHERE products_id = %s', [ID]);
+        SQL := Format
+          ('DELETE FROM products_to_categories WHERE products_id = %s', [ID]);
         Connection.Execute(SQL, nil, nil);
 
       end;
@@ -3942,7 +4309,8 @@ begin
   Applied := True;
 end;
 
-procedure TRemoteDB.DPRefundsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPRefundsBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -3956,29 +4324,33 @@ begin
     ukDelete:
       begin
         LOC := VarToStr(DeltaDS.fieldbyname('refunds_shop_id').OldValue);
-        ID  := VarToStr(DeltaDS.fieldbyname('refunds_id').OldValue);
-        SQL := Format('DELETE FROM netshop_refunds ' + 'WHERE (refunds_shop_id = %s) and (refunds_id = %s)', [LOC, ID]);
+        ID := VarToStr(DeltaDS.fieldbyname('refunds_id').OldValue);
+        SQL := Format('DELETE FROM netshop_refunds ' +
+          'WHERE (refunds_shop_id = %s) and (refunds_id = %s)', [LOC, ID]);
         Connection.Execute(SQL, nil, nil);
         Applied := True;
       end;
 
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
           LOC := VarToStr(DeltaDS.fieldbyname('refunds_shop_id').OldValue);
-          ID  := VarToStr(DeltaDS.fieldbyname('refunds_id').OldValue);
-          SQL := Format('UPDATE netshop_refunds SET %s ' + 'WHERE (refunds_shop_id = %s) and (refunds_id = %s)', [SQL, LOC, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('refunds_id').OldValue);
+          SQL := Format('UPDATE netshop_refunds SET %s ' +
+            'WHERE (refunds_shop_id = %s) and (refunds_id = %s)',
+            [SQL, LOC, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -3991,9 +4363,10 @@ var
   i: integer;
 begin
   Result := 0;
-  for i  := 0 to self.ComponentCount - 1 do
+  for i := 0 to self.ComponentCount - 1 do
   begin
-    if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+    if ((self.Components[i].ClassType = TClientDataSet) and
+      (self.Components[i].Tag <> -1)) then
     begin
       Result := Result + 1;
     end;
@@ -4005,9 +4378,10 @@ var
   i: integer;
 begin
   Result := True;
-  for i  := 0 to self.ComponentCount - 1 do
+  for i := 0 to self.ComponentCount - 1 do
   begin
-    if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+    if ((self.Components[i].ClassType = TClientDataSet) and
+      (self.Components[i].Tag <> -1)) then
     begin
       if TClientDataSet(self.Components[i]).State <> dsBrowse then
         Result := False;
@@ -4030,16 +4404,17 @@ var
   i: integer;
 begin
   Result := True;
-  for i  := 0 to self.ComponentCount - 1 do
+  for i := 0 to self.ComponentCount - 1 do
   begin
-    if ((self.Components[i].ClassType = TClientDataSet) and (self.Components[i].Tag <> -1)) then
+    if ((self.Components[i].ClassType = TClientDataSet) and
+      (self.Components[i].Tag <> -1)) then
     begin
       with TClientDataSet(self.Components[i]) do
       begin
         if TClientDataSet(self.Components[i]).ProviderName <> '' then
         begin
           ChDir(ExtractFilePath(ParamStr(0)));
-          if not(FileExists(FileName)) then
+          if not(FileExists(filename)) then
           begin
             // ShowMessage(FileName);
             Result := False;
@@ -4060,9 +4435,9 @@ label procend;
 begin
   if self.Products.locate('products_model', Model, [locaseinsensitive]) then
   begin
-    if self.Products.FieldByName('products_cldprice').AsFloat > 0 then
+    if self.Products.fieldbyname('products_cldprice').AsFloat > 0 then
     begin
-      Result := self.Products.FieldByName('products_cldprice').AsFloat;
+      Result := self.Products.fieldbyname('products_cldprice').AsFloat;
       goto procend;
     end;
 
@@ -4073,7 +4448,8 @@ end;
 function TRemoteDB.GetCurrentSalesDate: string;
 begin
   if netshop_sales.fieldbyname('sales_date_time').Value <> null then
-    Result := Formatdatetime('dddd dd/mm/yy', netshop_sales.fieldbyname('sales_date_time').Value);
+    Result := Formatdatetime('dddd dd/mm/yy',
+      netshop_sales.fieldbyname('sales_date_time').Value);
 end;
 
 procedure TRemoteDB.GenericAfterPost(DataSet: TDataSet);
@@ -4087,7 +4463,8 @@ begin
     Address_Book.Post;
 end;
 
-procedure TRemoteDB.customerscustomers_email_addressSetText(Sender: TField; const Text: string);
+procedure TRemoteDB.customerscustomers_email_addressSetText(Sender: TField;
+  const Text: string);
 var
   ANotifyServer: TNotifyServer;
 begin
@@ -4103,21 +4480,27 @@ end;
 
 procedure TRemoteDB.Address_BookNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('Address_book_id').Value     := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'address_book_id');
-  DataSet.fieldbyname('Customers_Id').Value        := customers.fieldbyname('Customers_Nbr').Value;
+  DataSet.fieldbyname('Address_book_id').Value :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'address_book_id');
+  DataSet.fieldbyname('Customers_Id').Value :=
+    customers.fieldbyname('Customers_Nbr').Value;
   DataSet.fieldbyname('entry_country_id').AsString := '21';
 end;
 
-procedure TRemoteDB.AddToStock(product_model: string; product_owner_id, product_supplier_id, quantity: integer);
+procedure TRemoteDB.AddToStock(product_model: string;
+  product_owner_id, product_supplier_id, quantity: integer);
 begin
 
 end;
 
 procedure TRemoteDB.Address_BookBeforePost(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('Entry_gender').Value    := customers.fieldbyname('Customers_gender').Value;
-  DataSet.fieldbyname('Entry_firstname').Value := customers.fieldbyname('Customers_firstname').Value;
-  DataSet.fieldbyname('Entry_lastname').Value  := customers.fieldbyname('Customers_lastname').Value;
+  DataSet.fieldbyname('Entry_gender').Value :=
+    customers.fieldbyname('Customers_gender').Value;
+  DataSet.fieldbyname('Entry_firstname').Value :=
+    customers.fieldbyname('Customers_firstname').Value;
+  DataSet.fieldbyname('Entry_lastname').Value :=
+    customers.fieldbyname('Customers_lastname').Value;
 end;
 
 function TRemoteDB.MoveToArchives(Model: string): Boolean;
@@ -4135,39 +4518,48 @@ begin
   SetLength(catpath, 20);
   Products.locate('products_model', Model, []);
 
-  if Categories.locate('categories_id', Products.fieldbyname('categories_id').AsInteger, []) then
+  if Categories.locate('categories_id', Products.fieldbyname('categories_id')
+    .AsInteger, []) then
   begin
     while Categories.fieldbyname('parent_id').AsInteger <> 0 do
     begin
       catpath[i] := Categories.fieldbyname('categories_name').AsString;
-      Categories.locate('categories_id', Categories.fieldbyname('parent_id').AsInteger, []);
+      Categories.locate('categories_id', Categories.fieldbyname('parent_id')
+        .AsInteger, []);
       i := i + 1;
     end;
     catpath[i] := Categories.fieldbyname('categories_name').AsString;
-  end else begin
+  end
+  else
+  begin
     Result := False;
     exit;
     // Catégorie Inexistante produit mal configuré
   end;
 
   Categories.locate('categories_name', 'archives', [locaseinsensitive]);
-  ArchiveId           := Categories.fieldbyname('categories_id').AsInteger;
+  ArchiveId := Categories.fieldbyname('categories_id').AsInteger;
   Categories.Filtered := True;
-  PathName            := '';
-  for j               := i downto 1 do
+  PathName := '';
+  for j := i downto 1 do
   begin
     Categories.Filter := 'parent_id=' + inttostr(ArchiveId);
-    if Categories.locate('categories_name', catpath[j], [locaseinsensitive]) then
+    if Categories.locate('categories_name', catpath[j], [locaseinsensitive])
+    then
     begin
-      PathName          := PathName + ' - ' + self.Categoriescategories_name.Value;
-      ArchiveId         := Categories.fieldbyname('categories_id').AsInteger;
+      PathName := PathName + ' - ' + self.Categoriescategories_name.Value;
+      ArchiveId := Categories.fieldbyname('categories_id').AsInteger;
       Categories.Filter := 'parent_id=' + inttostr(ArchiveId);
-    end else begin
-      if ((Uppercase(catpath[j]) <> 'MANGA') or (Uppercase(catpath[j]) <> 'DVD') or (Uppercase(catpath[j]) <> 'LIVRES')) then
+    end
+    else
+    begin
+      if ((Uppercase(catpath[j]) <> 'MANGA') or (Uppercase(catpath[j]) <> 'DVD')
+        or (Uppercase(catpath[j]) <> 'LIVRES')) then
       begin
-        ShowMessage('Categorie inexistante dans les archives : ' + PathName + catpath[j]);
+        ShowMessage('Categorie inexistante dans les archives : ' + PathName +
+          catpath[j]);
         Categories.Filtered := False;
-        Result              := False;
+        Result := False;
         exit;
       end;
     end
@@ -4190,13 +4582,16 @@ begin
     Result := False;
     if CloneDS.locate('products_model', Model, []) then
     begin
-      if Categories.locate('categories_id', Products.fieldbyname('categories_id').AsInteger, []) then
+      if Categories.locate('categories_id',
+        Products.fieldbyname('categories_id').AsInteger, []) then
       begin
         while Categories.fieldbyname('parent_id').AsInteger <> 0 do
         begin
-          Categories.locate('categories_id', Categories.fieldbyname('parent_id').AsInteger, []);
+          Categories.locate('categories_id', Categories.fieldbyname('parent_id')
+            .AsInteger, []);
         end;
-        if Uppercase(Categories.fieldbyname('categories_name').AsString) = 'ARCHIVES' then
+        if Uppercase(Categories.fieldbyname('categories_name').AsString) = 'ARCHIVES'
+        then
           Result := True;
       end;
     end;
@@ -4218,32 +4613,39 @@ begin
   i := 1;
   SetLength(catpath, 20);
   Products.locate('products_model', Model, []);
-  if Categories.locate('categories_id', Products.fieldbyname('categories_id').AsInteger, []) then
+  if Categories.locate('categories_id', Products.fieldbyname('categories_id')
+    .AsInteger, []) then
   begin
     while Categories.fieldbyname('parent_id').AsInteger <> 0 do
     begin
       catpath[i] := Categories.fieldbyname('categories_name').AsString;
-      Categories.locate('categories_id', Categories.fieldbyname('parent_id').AsInteger, []);
+      Categories.locate('categories_id', Categories.fieldbyname('parent_id')
+        .AsInteger, []);
       i := i + 1;
     end;
     catpath[i] := Categories.fieldbyname('categories_name').AsString;
-  end else begin
+  end
+  else
+  begin
     // Catégorie Inexistante
     Result := False;
     exit;
   end;
-  ArchiveId           := 0;
+  ArchiveId := 0;
   Categories.Filtered := True;
-  for j               := i - 1 downto 1 do
+  for j := i - 1 downto 1 do
   begin
     Categories.Filter := 'parent_id=' + inttostr(ArchiveId);
-    if Categories.locate('categories_name', catpath[j], [locaseinsensitive]) then
+    if Categories.locate('categories_name', catpath[j], [locaseinsensitive])
+    then
     begin
-      ArchiveId         := Categories.fieldbyname('categories_id').AsInteger;
+      ArchiveId := Categories.fieldbyname('categories_id').AsInteger;
       Categories.Filter := 'parent_id=' + inttostr(ArchiveId);
-    end else begin
+    end
+    else
+    begin
       Categories.Filtered := False;
-      Result              := False;
+      Result := False;
       exit;
     end;
   end;
@@ -4254,7 +4656,8 @@ begin
   Result := True;
 end;
 
-procedure TRemoteDB.DPAddress_bookBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPAddress_bookBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 begin
   case UpdateKind of
@@ -4265,7 +4668,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DPAlertsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPAlertsBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4278,9 +4682,12 @@ begin
 
     ukDelete:
       begin
-        Model := VarToStr(DeltaDS.fieldbyname('customers_alerts_products_model').OldValue);
-        NBR   := VarToStr(DeltaDS.fieldbyname('customers_alerts_customers_nbr').OldValue);
-        SQL   := Format('DELETE FROM netshop_customers_alerts ' + 'WHERE (customers_alerts_products_model = %s) and (customers_alerts_customers_nbr = %s)',
+        Model := VarToStr(DeltaDS.fieldbyname('customers_alerts_products_model')
+          .OldValue);
+        NBR := VarToStr(DeltaDS.fieldbyname('customers_alerts_customers_nbr')
+          .OldValue);
+        SQL := Format('DELETE FROM netshop_customers_alerts ' +
+          'WHERE (customers_alerts_products_model = %s) and (customers_alerts_customers_nbr = %s)',
           [QuotedStr(Model), NBR]);
         Connection.Execute(SQL, nil, nil);
         Applied := True;
@@ -4288,21 +4695,25 @@ begin
 
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
-          Model := VarToStr(DeltaDS.fieldbyname('customers_alerts_products_model').OldValue);
-          NBR   := VarToStr(DeltaDS.fieldbyname('customers_alerts_customers_nbr').OldValue);
-          SQL   := Format('UPDATE netshop_customers_alerts SET %s ' + 'WHERE (customers_alerts_products_model = %s) and (customers_alerts_customers_nbr = %s)',
+          Model := VarToStr
+            (DeltaDS.fieldbyname('customers_alerts_products_model').OldValue);
+          NBR := VarToStr(DeltaDS.fieldbyname('customers_alerts_customers_nbr')
+            .OldValue);
+          SQL := Format('UPDATE netshop_customers_alerts SET %s ' +
+            'WHERE (customers_alerts_products_model = %s) and (customers_alerts_customers_nbr = %s)',
             [SQL, QuotedStr(Model), NBR]);
           Connection.Execute(SQL, nil, nil);
         end;
@@ -4311,7 +4722,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DPCouponsBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPCouponsBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4324,20 +4736,23 @@ begin
 
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
-          if (not VarIsEmpty(DeltaDS.Fields[i].NewValue)) and (DeltaDS.Fields[i].Name <> 'coupon_description') then
+          if (not VarIsEmpty(DeltaDS.Fields[i].NewValue)) and
+            (DeltaDS.Fields[i].Name <> 'coupon_description') then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
-          ID  := VarToStr(DeltaDS.fieldbyname('coupon_id').OldValue);
-          SQL := Format('UPDATE coupons SET %s ' + 'WHERE (coupon_id = %s)', [SQL, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('coupon_id').OldValue);
+          SQL := Format('UPDATE coupons SET %s ' + 'WHERE (coupon_id = %s)',
+            [SQL, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -4345,7 +4760,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DPCustomersBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPCustomersBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4359,11 +4775,11 @@ begin
       begin
         Connection := (SourceDS as TCustomSQLDataSet).SQLConnection;
         // Update table customers
-        SQL   := 'INSERT INTO customers (';
+        SQL := 'INSERT INTO customers (';
         for i := 0 to DeltaDS.FieldCount - 1 do
           SQL := SQL + DeltaDS.Fields[i].FieldName + ',';
-        SQL   := LeftStr(SQL, Length(SQL) - 1);
-        SQL   := SQL + ') VALUES (';
+        SQL := LeftStr(SQL, Length(SQL) - 1);
+        SQL := SQL + ') VALUES (';
 
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
@@ -4372,15 +4788,25 @@ begin
             if DeltaDS.Fields[i].NewValue then
             begin
               SQL := SQL + DeltaDS.Fields[i].FieldName + ' = 1';
-            end else begin
+            end
+            else
+            begin
               SQL := SQL + DeltaDS.Fields[i].FieldName + ' = 0';
             end;
-          end else begin
-            if ((DeltaDS.Fields[i].DataType = ftTimeStamp) or (DeltaDS.Fields[i].DataType = ftDate) or (DeltaDS.Fields[i].DataType = ftDateTime)) then
+          end
+          else
+          begin
+            if ((DeltaDS.Fields[i].DataType = ftTimeStamp) or
+              (DeltaDS.Fields[i].DataType = ftDate) or
+              (DeltaDS.Fields[i].DataType = ftDateTime)) then
             begin
-              SQL := SQL + QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS', (DeltaDS.Fields[i].AsDateTime))) + ',';
-            end else begin
-              SQL := SQL + QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue)) + ',';
+              SQL := SQL + QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS',
+                (DeltaDS.Fields[i].AsDateTime))) + ',';
+            end
+            else
+            begin
+              SQL := SQL +
+                QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue)) + ',';
             end;
           end;
         end;
@@ -4394,25 +4820,33 @@ begin
       begin
         Connection := (SourceDS as TCustomSQLDataSet).SQLConnection;
         // Update table customers
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            if ((DeltaDS.Fields[i].DataType = ftTimeStamp) or (DeltaDS.Fields[i].DataType = ftDate) or (DeltaDS.Fields[i].DataType = ftDateTime)) then
+            if ((DeltaDS.Fields[i].DataType = ftTimeStamp) or
+              (DeltaDS.Fields[i].DataType = ftDate) or
+              (DeltaDS.Fields[i].DataType = ftDateTime)) then
             begin
-              SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS', (DeltaDS.Fields[i].AsDateTime)))]);
-            end else begin
-              SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+              SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+                [QuotedStr(Formatdatetime('YYYY-MM-DD HH:MM:SS',
+                (DeltaDS.Fields[i].AsDateTime)))]);
+            end
+            else
+            begin
+              SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+                [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
             end;
           end;
         end;
         if SQL <> '' then
         begin
-          ID  := VarToStr(DeltaDS.fieldbyname('customers_nbr').OldValue);
-          SQL := Format('UPDATE customers SET %s ' + 'WHERE customers_nbr = %s', [SQL, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('customers_nbr').OldValue);
+          SQL := Format('UPDATE customers SET %s ' + 'WHERE customers_nbr = %s',
+            [SQL, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -4421,7 +4855,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DPSalesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPSalesBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4439,21 +4874,23 @@ begin
       end;
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
           LOC := VarToStr(DeltaDS.fieldbyname('sales_location').OldValue);
-          ID  := VarToStr(DeltaDS.fieldbyname('sales_id').OldValue);
-          SQL := Format('UPDATE netshop_sales SET %s ' + 'WHERE (sales_location = %s) and (sales_id = %s)', [SQL, LOC, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('sales_id').OldValue);
+          SQL := Format('UPDATE netshop_sales SET %s ' +
+            'WHERE (sales_location = %s) and (sales_id = %s)', [SQL, LOC, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -4461,7 +4898,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DPstockBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPstockBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4479,21 +4917,23 @@ begin
 
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
           LOC := VarToStr(DeltaDS.fieldbyname('product_location').OldValue);
-          ID  := VarToStr(DeltaDS.fieldbyname('id').OldValue);
-          SQL := Format('UPDATE netshop_stock SET %s ' + 'WHERE (product_location = %s) and (id = %s)', [SQL, LOC, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('id').OldValue);
+          SQL := Format('UPDATE netshop_stock SET %s ' +
+            'WHERE (product_location = %s) and (id = %s)', [SQL, LOC, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -4502,15 +4942,17 @@ begin
     ukDelete:
       begin
         LOC := VarToStr(DeltaDS.fieldbyname('product_location').OldValue);
-        ID  := VarToStr(DeltaDS.fieldbyname('id').OldValue);
-        SQL := Format('DELETE FROM netshop_stock ' + 'WHERE (product_location = %s) and (id = %s)', [LOC, ID]);
+        ID := VarToStr(DeltaDS.fieldbyname('id').OldValue);
+        SQL := Format('DELETE FROM netshop_stock ' +
+          'WHERE (product_location = %s) and (id = %s)', [LOC, ID]);
         Connection.Execute(SQL, nil, nil);
         Applied := True;
       end;
   end;
 end;
 
-procedure TRemoteDB.DPStockReturnedBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPStockReturnedBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4528,21 +4970,23 @@ begin
 
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
           LOC := VarToStr(DeltaDS.fieldbyname('product_location').OldValue);
-          ID  := VarToStr(DeltaDS.fieldbyname('id').OldValue);
-          SQL := Format('UPDATE netshop_stock_returned SET %s ' + 'WHERE (product_location = %s) and (id = %s)', [SQL, LOC, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('id').OldValue);
+          SQL := Format('UPDATE netshop_stock_returned SET %s ' +
+            'WHERE (product_location = %s) and (id = %s)', [SQL, LOC, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -4551,15 +4995,17 @@ begin
     ukDelete:
       begin
         LOC := VarToStr(DeltaDS.fieldbyname('product_location').OldValue);
-        ID  := VarToStr(DeltaDS.fieldbyname('id').OldValue);
-        SQL := Format('DELETE FROM netshop_stock_returned ' + 'WHERE (product_location = %s) and (id = %s)', [LOC, ID]);
+        ID := VarToStr(DeltaDS.fieldbyname('id').OldValue);
+        SQL := Format('DELETE FROM netshop_stock_returned ' +
+          'WHERE (product_location = %s) and (id = %s)', [LOC, ID]);
         Connection.Execute(SQL, nil, nil);
         Applied := True;
       end;
   end;
 end;
 
-procedure TRemoteDB.DPSuppliersStockBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPSuppliersStockBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4574,30 +5020,34 @@ begin
 
     ukinsert:
       begin
-        SQL := Format('DELETE FROM netshop_suppliers_stock WHERE suppliers_id = %s AND shop_group_id = %s AND products_model = %s',
-          [DeltaDS.fieldbyname('suppliers_id').NewValue, DeltaDS.fieldbyname('shop_group_id').NewValue,
+        SQL := Format
+          ('DELETE FROM netshop_suppliers_stock WHERE suppliers_id = %s AND shop_group_id = %s AND products_model = %s',
+          [DeltaDS.fieldbyname('suppliers_id').NewValue,
+          DeltaDS.fieldbyname('shop_group_id').NewValue,
           QuotedStr(DeltaDS.fieldbyname('products_model').NewValue)]);
         Connection.Execute(SQL, nil, nil);
       end;
 
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
-          GID   := VarToStr(DeltaDS.fieldbyname('shop_group_id').OldValue);
-          SID   := VarToStr(DeltaDS.fieldbyname('suppliers_id').OldValue);
+          GID := VarToStr(DeltaDS.fieldbyname('shop_group_id').OldValue);
+          SID := VarToStr(DeltaDS.fieldbyname('suppliers_id').OldValue);
           Model := VarToStr(DeltaDS.fieldbyname('products_model').OldValue);
-          SQL   := Format('UPDATE netshop_suppliers_stock SET %s ' + 'WHERE (shop_group_id = %s) AND (suppliers_id = %s) AND (products_model= %s)',
+          SQL := Format('UPDATE netshop_suppliers_stock SET %s ' +
+            'WHERE (shop_group_id = %s) AND (suppliers_id = %s) AND (products_model= %s)',
             [SQL, GID, SID, Model]);
           Connection.Execute(SQL, nil, nil);
         end;
@@ -4606,7 +5056,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DPWebOrdersBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPWebOrdersBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4626,13 +5077,19 @@ begin
       begin
         if not VarIsEmpty(DeltaDS.fieldbyname('orders_status_id').NewValue) then
         begin
-          SQL := 'UPDATE orders SET orders_status = ' + QuotedStr(VarToStr(DeltaDS.fieldbyname('orders_status_id').NewValue)) + ' WHERE orders_id = ' +
+          SQL := 'UPDATE orders SET orders_status = ' +
+            QuotedStr(VarToStr(DeltaDS.fieldbyname('orders_status_id').NewValue)
+            ) + ' WHERE orders_id = ' +
             QuotedStr(VarToStr(DeltaDS.fieldbyname('orders_id').OldValue));
           Connection.Execute(SQL, nil, nil);
 
-          SQL := 'INSERT INTO orders_status_history (orders_id, orders_status_id, date_added, customer_notified, comments) ' + ' VALUES (' +
-            QuotedStr(VarToStr(DeltaDS.fieldbyname('orders_id').OldValue)) + ', ' + QuotedStr('11') + ', now(), ' + QuotedStr('0') + ', ' +
-            QuotedStr('Le magasin a bien pris connaissance et traite votre commande') + ')';
+          SQL := 'INSERT INTO orders_status_history (orders_id, orders_status_id, date_added, customer_notified, comments) '
+            + ' VALUES (' +
+            QuotedStr(VarToStr(DeltaDS.fieldbyname('orders_id').OldValue)) +
+            ', ' + QuotedStr('11') + ', now(), ' + QuotedStr('0') + ', ' +
+            QuotedStr(
+            'Le magasin a bien pris connaissance et traite votre commande') +
+            ')';
           Connection.Execute(SQL, nil, nil);
         end;
 
@@ -4661,9 +5118,9 @@ var
   OldIndex: string;
   OldFiltered: Boolean;
 begin
-  OldIndex                          := TClientDataSet(DataSet).IndexName;
-  OldFiltered                       := DataSet.Filtered;
-  DataSet.Filtered                  := False;
+  OldIndex := TClientDataSet(DataSet).IndexName;
+  OldFiltered := DataSet.Filtered;
+  DataSet.Filtered := False;
   TClientDataSet(DataSet).IndexName := 'SalesIXLocationId';
   DataSet.First;
   FirstVal := DataSet.fieldbyname('sales_id').AsInteger;
@@ -4672,35 +5129,38 @@ begin
     DataSet.First;
 
   if DataSet.fieldbyname('sales_id').Value <> null then
-    SQLDSItemsSold.Params.ParamByName('sales_id_min').Value := DataSet.fieldbyname('sales_id').Value
+    SQLDSItemsSold.Params.ParamByName('sales_id_min').Value :=
+      DataSet.fieldbyname('sales_id').Value
   else
     SQLDSItemsSold.Params.ParamByName('sales_id_min').Value := 0;
   if OldFiltered then
-    DataSet.Filtered                := True;
+    DataSet.Filtered := True;
   TClientDataSet(DataSet).IndexName := OldIndex;
 end;
 
 procedure TRemoteDB.CarousselNewRecord(DataSet: TDataSet);
 begin
-  self.Caroussel.fieldbyname('id').Value      := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'id');
+  self.Caroussel.fieldbyname('id').Value :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'id');
   self.Caroussel.fieldbyname('shop_id').Value := CONNECTEDSHOP;
 end;
 
 procedure TRemoteDB.netshop_cashcloseCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('cashclose_datedisp').Value := DataSet.fieldbyname('cashclose_datetime').Value;
+  DataSet.fieldbyname('cashclose_datedisp').Value :=
+    DataSet.fieldbyname('cashclose_datetime').Value;
 end;
 
 procedure TRemoteDB.netshop_cashcloseNewRecord(DataSet: TDataSet);
 begin
   DataSet.fieldbyname('cashclose_datetime').Value := now;
-  DataSet.fieldbyname('cashclose_shopid').Value   := CONNECTEDSHOP;
+  DataSet.fieldbyname('cashclose_shopid').Value := CONNECTEDSHOP;
   DataSet.fieldbyname('cashclose_daytasks').Value := 'Aucune';
 end;
 
 procedure TRemoteDB.CDSActionsNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('shops_id').AsInteger  := CONNECTEDSHOP;
+  DataSet.fieldbyname('shops_id').AsInteger := CONNECTEDSHOP;
   DataSet.fieldbyname('datetime').AsDateTime := now();
 end;
 
@@ -4709,7 +5169,9 @@ var
   doPost: Boolean;
 begin
   doPost := False;
-  if self.Products.fieldbyname('products_intername').AsString <> CDSProDescFRproducts_name.AsString + ' ' + CDSProDescNLproducts_name.AsString then
+  if self.Products.fieldbyname('products_intername').AsString <>
+    CDSProDescFRproducts_name.AsString + ' ' + CDSProDescNLproducts_name.AsString
+  then
   begin
     if self.Products.State = dsBrowse then
     begin
@@ -4717,11 +5179,17 @@ begin
       self.Products.Edit;
       doPost := True;
     end;
-    if CDSProDescFRproducts_name.AsString <> CDSProDescNLproducts_name.AsString then
+    if CDSProDescFRproducts_name.AsString <> CDSProDescNLproducts_name.AsString
+    then
     begin
-      self.Products.fieldbyname('products_intername').AsString := CDSProDescFRproducts_name.AsString + ' ' + CDSProDescNLproducts_name.AsString;
-    end else begin
-      self.Products.fieldbyname('products_intername').AsString := CDSProDescFR.fieldbyname('products_name').AsString;
+      self.Products.fieldbyname('products_intername').AsString :=
+        CDSProDescFRproducts_name.AsString + ' ' +
+        CDSProDescNLproducts_name.AsString;
+    end
+    else
+    begin
+      self.Products.fieldbyname('products_intername').AsString :=
+        CDSProDescFR.fieldbyname('products_name').AsString;
     end;
     if doPost then
     begin
@@ -4740,7 +5208,8 @@ procedure TRemoteDB.CDSProDescFRproducts_nameChange(Sender: TField);
 begin
   if CDSProDescFRproducts_name.AsString = '' then
   begin
-    if messagedlg('Voulez vous supprimer la référence FR pour ce produit ?', mtwarning, [mbYes, mbNo], 0) = mrYes then
+    if messagedlg('Voulez vous supprimer la référence FR pour ce produit ?',
+      mtwarning, [mbYes, mbNo], 0) = mrYes then
       CDSProDescFR.delete;
   end;
 end;
@@ -4750,7 +5219,9 @@ var
   doPost: Boolean;
 begin
   doPost := False;
-  if self.Products.fieldbyname('products_intername').AsString <> CDSProDescFRproducts_name.AsString + ' ' + CDSProDescNLproducts_name.AsString then
+  if self.Products.fieldbyname('products_intername').AsString <>
+    CDSProDescFRproducts_name.AsString + ' ' + CDSProDescNLproducts_name.AsString
+  then
   begin
     if self.Products.State = dsBrowse then
     begin
@@ -4758,11 +5229,17 @@ begin
       self.Products.Edit;
       doPost := True;
     end;
-    if CDSProDescFRproducts_name.AsString <> CDSProDescNLproducts_name.AsString then
+    if CDSProDescFRproducts_name.AsString <> CDSProDescNLproducts_name.AsString
+    then
     begin
-      self.Products.fieldbyname('products_intername').AsString := CDSProDescFRproducts_name.AsString + ' ' + CDSProDescNLproducts_name.AsString;
-    end else begin
-      self.Products.fieldbyname('products_intername').AsString := CDSProDescFR.fieldbyname('products_name').AsString;
+      self.Products.fieldbyname('products_intername').AsString :=
+        CDSProDescFRproducts_name.AsString + ' ' +
+        CDSProDescNLproducts_name.AsString;
+    end
+    else
+    begin
+      self.Products.fieldbyname('products_intername').AsString :=
+        CDSProDescFR.fieldbyname('products_name').AsString;
     end;
     if doPost then
     begin
@@ -4790,19 +5267,25 @@ begin
     CloneDS2.CloneCursor(netshop_items_sold, True);
     CloneDS1.IndexFieldNames := 'sales_date_time';
     CloneDS2.IndexFieldNames := 'items_sold_sales_id';
-    CloneDS1.Filter          := 'sales_date_time > ' + FloatToStr(trunc(now - days));
-    CloneDS1.Filtered        := True;
+    CloneDS1.Filter := 'sales_date_time > ' + FloatToStr(trunc(now - days));
+    CloneDS1.Filtered := True;
     CloneDS1.First;
-    CloneDS2.Filter   := '(items_sold_sales_id > ' + CloneDS1.fieldbyname('sales_id').AsString + ') and (items_sold_model = ' + QuotedStr(Model) + ')';
+    CloneDS2.Filter := '(items_sold_sales_id > ' + CloneDS1.fieldbyname
+      ('sales_id').AsString + ') and (items_sold_model = ' +
+      QuotedStr(Model) + ')';
     CloneDS2.Filtered := True;
     CloneDS2.First;
     while not CloneDS2.Eof do
     begin
       if CloneDS2.fieldbyname('items_sold_owner_id').Value = CONNECTEDSHOP then
       begin
-        Result.X := Result.Y + CloneDS2.fieldbyname('items_sold_quantity').Value;
-      end else begin
-        Result.Y := Result.Y + CloneDS2.fieldbyname('items_sold_quantity').Value;
+        Result.X := Result.Y + CloneDS2.fieldbyname
+          ('items_sold_quantity').Value;
+      end
+      else
+      begin
+        Result.Y := Result.Y + CloneDS2.fieldbyname
+          ('items_sold_quantity').Value;
       end;
       CloneDS2.Next;
     end;
@@ -4822,7 +5305,9 @@ begin
     CloneDS.CloneCursor(netshop_stock, True);
     CloneDS.IndexFieldNames := 'product_model;product_owner_id';
     if CloneDS.FindKey([Model, CONNECTEDSHOP]) then
-      while ((not CloneDS.Eof) and (CloneDS.fieldbyname('product_model').Value = Model) and (CloneDS.fieldbyname('product_owner_id').Value = CONNECTEDSHOP)) do
+      while ((not CloneDS.Eof) and (CloneDS.fieldbyname('product_model')
+        .Value = Model) and (CloneDS.fieldbyname('product_owner_id')
+        .Value = CONNECTEDSHOP)) do
       begin
         Result := Result + CloneDS.fieldbyname('product_quantity').Value;
         CloneDS.Next;
@@ -4842,7 +5327,8 @@ begin
     CloneDS.CloneCursor(netshop_stock, True);
     CloneDS.IndexFieldNames := 'product_model;product_owner_id';
     if CloneDS.FindKey([Model]) then
-      while ((not CloneDS.Eof) and (CloneDS.fieldbyname('product_model').Value = Model)) do
+      while ((not CloneDS.Eof) and (CloneDS.fieldbyname('product_model')
+        .Value = Model)) do
       begin
         if CloneDS.fieldbyname('product_owner_id').Value <> CONNECTEDSHOP then
           Result := Result + CloneDS.fieldbyname('product_quantity').Value;
@@ -4853,7 +5339,8 @@ begin
   end;
 end;
 
-function TRemoteDB.CheckField(DbName, FieldName: string; Value: Variant): Boolean;
+function TRemoteDB.CheckField(DbName, FieldName: string;
+  Value: Variant): Boolean;
 var
   CloneDS: TClientDataSet;
 begin
@@ -4873,25 +5360,29 @@ procedure TRemoteDB.netshop_invoicesAfterOpen(DataSet: TDataSet);
 begin
   DataSet.First;
   if DataSet.fieldbyname('invoices_id').Value <> null then
-    SQLDSInvoices_Items.Params.ParamByName('invoices_id_min').Value := DataSet.fieldbyname('invoices_id').Value
+    SQLDSInvoices_Items.Params.ParamByName('invoices_id_min').Value :=
+      DataSet.fieldbyname('invoices_id').Value
   else
     SQLDSInvoices_Items.Params.ParamByName('invoices_id_min').Value := 0;
 end;
 
 procedure TRemoteDB.netshop_invoicesNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('invoices_id').Value               := GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'invoices_location', 'invoices_id');
-  DataSet.fieldbyname('invoices_location').Value         := CONNECTEDSHOP;
-  DataSet.fieldbyname('invoices_date_time').Value        := now;
-  DataSet.fieldbyname('invoices_closed').Value           := 0;
-  DataSet.fieldbyname('invoices_paid_cash').AsInteger    := 0;
-  DataSet.fieldbyname('invoices_paid_bct').AsInteger     := 0;
-  DataSet.fieldbyname('invoices_paid_proton').AsInteger  := 0;
-  DataSet.fieldbyname('invoices_paid_visa').AsInteger    := 0;
+  DataSet.fieldbyname('invoices_id').Value :=
+    GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'invoices_location',
+    'invoices_id');
+  DataSet.fieldbyname('invoices_location').Value := CONNECTEDSHOP;
+  DataSet.fieldbyname('invoices_date_time').Value := now;
+  DataSet.fieldbyname('invoices_closed').Value := 0;
+  DataSet.fieldbyname('invoices_paid_cash').AsInteger := 0;
+  DataSet.fieldbyname('invoices_paid_bct').AsInteger := 0;
+  DataSet.fieldbyname('invoices_paid_proton').AsInteger := 0;
+  DataSet.fieldbyname('invoices_paid_visa').AsInteger := 0;
   DataSet.fieldbyname('invoices_paid_voucher').AsInteger := 0;
 end;
 
-procedure TRemoteDB.DPInvoicesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPInvoicesBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4903,21 +5394,24 @@ begin
     ukModify:
       begin
         Connection := (SourceDS as TCustomSQLDataSet).SQLConnection;
-        SQL        := '';
-        for i      := 0 to DeltaDS.FieldCount - 1 do
+        SQL := '';
+        for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
           LOC := VarToStr(DeltaDS.fieldbyname('invoices_location').OldValue);
-          ID  := VarToStr(DeltaDS.fieldbyname('invoices_id').OldValue);
-          SQL := Format('UPDATE netshop_invoices SET %s ' + 'WHERE (invoices_location = %s) and (invoices_id = %s)', [SQL, LOC, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('invoices_id').OldValue);
+          SQL := Format('UPDATE netshop_invoices SET %s ' +
+            'WHERE (invoices_location = %s) and (invoices_id = %s)',
+            [SQL, LOC, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -4926,17 +5420,20 @@ begin
     ukDelete:
       begin
         Connection := (SourceDS as TCustomSQLDataSet).SQLConnection;
-        SQL        := '';
-        LOC        := VarToStr(DeltaDS.fieldbyname('invoices_location').OldValue);
-        ID         := VarToStr(DeltaDS.fieldbyname('invoices_id').OldValue);
-        SQL        := Format('DELETE from netshop_invoices WHERE (invoices_location = %s) and (invoices_id = %s)', [LOC, ID]);
+        SQL := '';
+        LOC := VarToStr(DeltaDS.fieldbyname('invoices_location').OldValue);
+        ID := VarToStr(DeltaDS.fieldbyname('invoices_id').OldValue);
+        SQL := Format
+          ('DELETE from netshop_invoices WHERE (invoices_location = %s) and (invoices_id = %s)',
+          [LOC, ID]);
         Connection.Execute(SQL, nil, nil);
         Applied := True;
       end;
   end;
 end;
 
-procedure TRemoteDB.DPItemsSoldBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPItemsSoldBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -4954,20 +5451,22 @@ begin
       end;
     ukModify:
       begin
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
-          ID  := VarToStr(DeltaDS.fieldbyname('items_sold_id').OldValue);
-          SQL := Format('UPDATE netshop_items_sold SET %s ' + 'WHERE (items_sold_id = %s)', [SQL, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('items_sold_id').OldValue);
+          SQL := Format('UPDATE netshop_items_sold SET %s ' +
+            'WHERE (items_sold_id = %s)', [SQL, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -4978,10 +5477,13 @@ end;
 
 procedure TRemoteDB.netshop_invoices_itemsNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('invoices_items_id').AsInteger     := GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'invoices_items_id');
-  DataSet.fieldbyname('invoices_items_location').Value   := netshop_invoices.fieldbyname('invoices_location').Value;
-  DataSet.fieldbyname('invoices_items_invoice_id').Value := netshop_invoices.fieldbyname('invoices_id').Value;
-  DataSet.fieldbyname('invoices_items_refunded').Value   := 0;
+  DataSet.fieldbyname('invoices_items_id').AsInteger :=
+    GetNextSubIdSimple(DataSet as TCustomClientDataSet, 'invoices_items_id');
+  DataSet.fieldbyname('invoices_items_location').Value :=
+    netshop_invoices.fieldbyname('invoices_location').Value;
+  DataSet.fieldbyname('invoices_items_invoice_id').Value :=
+    netshop_invoices.fieldbyname('invoices_id').Value;
+  DataSet.fieldbyname('invoices_items_refunded').Value := 0;
 end;
 
 procedure TRemoteDB.SetProductPrice(Price: double);
@@ -4989,12 +5491,13 @@ var
   DBState: TdatasetState;
 begin
   DBState := Products.State;
-  if self.Products.FieldByName('products_price_old').AsFloat <> Price then
+  if self.Products.fieldbyname('products_price_old').AsFloat <> Price then
   begin
     if DBState = dsBrowse then
       Products.Edit;
-    self.Products.fieldbyname('products_price_old').Value := Products.fieldbyname('products_price').Value;
-    self.Products.FieldByName('products_price_changed').AsDateTime        := now;
+    self.Products.fieldbyname('products_price_old').Value :=
+      Products.fieldbyname('products_price').Value;
+    self.Products.fieldbyname('products_price_changed').AsDateTime := now;
     if DBState = dsBrowse then
       Products.Post;
   end;
@@ -5002,24 +5505,34 @@ begin
   if Tax_Zones.Active and Tax_Class.Active and Tax_Rates.Active then
   begin
     Tax_Zones.FindKey([18]);
-    Tax_Class.FindKey([self.Products.FieldByName('products_tax_class_id').Value]);
-    Tax_Rates.FindKey([Tax_Zones.fieldbyname('Geo_Zone_id').Value, Tax_Class.fieldbyname('Tax_Class_Id').Value]);
+    Tax_Class.FindKey
+      ([self.Products.fieldbyname('products_tax_class_id').Value]);
+    Tax_Rates.FindKey([Tax_Zones.fieldbyname('Geo_Zone_id').Value,
+      Tax_Class.fieldbyname('Tax_Class_Id').Value]);
     if DBState = dsBrowse then
       Products.Edit;
-    Products.fieldbyname('products_price').Value := round(Price / (1 + Tax_Rates.fieldbyname('Tax_Rate').AsFloat / 100) * 1000) / 1000;
+    Products.fieldbyname('products_price').Value :=
+      round(Price / (1 + Tax_Rates.fieldbyname('Tax_Rate').AsFloat / 100) *
+      1000) / 1000;
     if DBState = dsBrowse then
       Products.Post;
   end;
-  self.SQLQuery.CommandText := 'CALL `update_product_price`(' + QuotedStr(self.Products.fieldbyname('products_CLD_id').AsString) + ',' +
-    QuotedStr(self.Products.fieldbyname('products_model').Value) + ',' + FloatToStrWithDecimalPoint(Price) + ',0)';
+  self.SQLQuery.CommandText := 'CALL `update_product_price`(' +
+    QuotedStr(self.Products.fieldbyname('products_CLD_id').AsString) + ',' +
+    QuotedStr(self.Products.fieldbyname('products_model').Value) + ',' +
+    FloatToStrWithDecimalPoint(Price) + ',0)';
   self.SQLQuery.ExecSQL;
 end;
 
 procedure TRemoteDB.netshop_invoicesCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('invoices_date_disp').Value       := DataSet.fieldbyname('invoices_date_time').Value;
-  DataSet.fieldbyname('Invoices_paid_TotalTTC').AsFloat := DataSet.fieldbyname('invoices_paid_Cash').AsFloat + DataSet.fieldbyname('invoices_paid_bct').AsFloat
-    + DataSet.fieldbyname('invoices_paid_proton').AsFloat + DataSet.fieldbyname('invoices_paid_visa').AsFloat +
+  DataSet.fieldbyname('invoices_date_disp').Value :=
+    DataSet.fieldbyname('invoices_date_time').Value;
+  DataSet.fieldbyname('Invoices_paid_TotalTTC').AsFloat :=
+    DataSet.fieldbyname('invoices_paid_Cash').AsFloat +
+    DataSet.fieldbyname('invoices_paid_bct').AsFloat +
+    DataSet.fieldbyname('invoices_paid_proton').AsFloat +
+    DataSet.fieldbyname('invoices_paid_visa').AsFloat +
     DataSet.fieldbyname('invoices_paid_voucher').AsFloat;
 end;
 
@@ -5027,7 +5540,7 @@ function TRemoteDB.GetPriceHT(Model: string; PriceTTC: double): double;
 var
   Cproducts, Ctax_class, Ctax_rates: TClientDataSet;
 begin
-  Cproducts  := TClientDataSet.Create(nil);
+  Cproducts := TClientDataSet.Create(nil);
   Ctax_class := TClientDataSet.Create(nil);
   Ctax_rates := TClientDataSet.Create(nil);
   try
@@ -5036,11 +5549,15 @@ begin
     Ctax_rates.CloneCursor(Tax_Rates, True);
     if Cproducts.locate('products_model', Model, []) then
     begin
-      if Ctax_class.locate('tax_class_id', Cproducts.FieldValues['products_tax_class_id'], []) then
+      if Ctax_class.locate('tax_class_id',
+        Cproducts.FieldValues['products_tax_class_id'], []) then
       begin
-        if Ctax_rates.locate('tax_class_id;tax_zone_id', Vararrayof([Cproducts.FieldValues['products_tax_class_id'], GeoZoneTaxId]), []) then
+        if Ctax_rates.locate('tax_class_id;tax_zone_id',
+          Vararrayof([Cproducts.FieldValues['products_tax_class_id'],
+          GeoZoneTaxId]), []) then
         begin
-          Result := round(PriceTTC / (1 + (Ctax_rates.FieldValues['tax_rate'] / 100)) * 1000) / 1000;
+          Result := round(PriceTTC / (1 + (Ctax_rates.FieldValues['tax_rate'] /
+            100)) * 1000) / 1000;
         end
         else
           messagedlg('Configuration TVA non Valide', mtwarning, [mbok], 0);
@@ -5059,7 +5576,7 @@ function TRemoteDB.GetPriceTTC(Model: string; PriceHT: double): double;
 var
   Cproducts, Ctax_class, Ctax_rates: TClientDataSet;
 begin
-  Cproducts  := TClientDataSet.Create(nil);
+  Cproducts := TClientDataSet.Create(nil);
   Ctax_class := TClientDataSet.Create(nil);
   Ctax_rates := TClientDataSet.Create(nil);
   try
@@ -5068,11 +5585,15 @@ begin
     Ctax_rates.CloneCursor(Tax_Rates, True);
     if Cproducts.locate('products_model', Model, []) then
     begin
-      if Ctax_class.locate('tax_class_id', Cproducts.FieldValues['products_tax_class_id'], []) then
+      if Ctax_class.locate('tax_class_id',
+        Cproducts.FieldValues['products_tax_class_id'], []) then
       begin
-        if Ctax_rates.locate('tax_class_id;tax_zone_id', Vararrayof([Cproducts.FieldValues['products_tax_class_id'], GeoZoneTaxId]), []) then
+        if Ctax_rates.locate('tax_class_id;tax_zone_id',
+          Vararrayof([Cproducts.FieldValues['products_tax_class_id'],
+          GeoZoneTaxId]), []) then
         begin
-          Result := round(PriceHT * (1 + (Ctax_rates.FieldValues['tax_rate'] / 100)) * 1000) / 1000;
+          Result := round(PriceHT * (1 + (Ctax_rates.FieldValues['tax_rate'] /
+            100)) * 1000) / 1000;
         end
         else
           messagedlg('Configuration TVA non Valide', mtwarning, [mbok], 0);
@@ -5089,11 +5610,14 @@ end;
 
 procedure TRemoteDB.netshop_invoices_itemsCalcFields(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('invoices_items_PTOTHT').Value := DataSet.fieldbyname('invoices_items_quantity').Value *
+  DataSet.fieldbyname('invoices_items_PTOTHT').Value :=
+    DataSet.fieldbyname('invoices_items_quantity').Value *
     DataSet.fieldbyname('invoices_items_price_catalog').Value;
-  DataSet.fieldbyname('invoices_items_PTOTTVA').Value := DataSet.fieldbyname('invoices_items_quantity').Value *
+  DataSet.fieldbyname('invoices_items_PTOTTVA').Value :=
+    DataSet.fieldbyname('invoices_items_quantity').Value *
     DataSet.fieldbyname('invoices_items_price_TVA').Value;
-  DataSet.fieldbyname('invoices_items_PTOTTTC').Value := DataSet.fieldbyname('invoices_items_PTOTHT').Value +
+  DataSet.fieldbyname('invoices_items_PTOTTTC').Value :=
+    DataSet.fieldbyname('invoices_items_PTOTHT').Value +
     DataSet.fieldbyname('invoices_items_PTOTTVA').Value;
 end;
 
@@ -5109,7 +5633,7 @@ begin
     SetLength(Result, i);
     Result[high(Result)] := Category_id;
     Cat.CloneCursor(Categories, True);
-    Cat.Filter   := 'parent_id = ' + inttostr(Category_id);
+    Cat.Filter := 'parent_id = ' + inttostr(Category_id);
     Cat.Filtered := True;
     Cat.First;
     while not Cat.Eof do
@@ -5117,8 +5641,8 @@ begin
       i := (Length(Result)) + 1;
       SetLength(Result, i);
       Result[high(Result)] := Cat.fieldbyname('categories_id').AsInteger;
-      Child                := GetChildCategories(Cat.fieldbyname('categories_id').AsInteger);
-      for i                := low(Child) to high(Child) do
+      Child := GetChildCategories(Cat.fieldbyname('categories_id').AsInteger);
+      for i := low(Child) to high(Child) do
       begin
         SetLength(Result, high(Result) + 1);
         Result[high(Result)] := Child[i];
@@ -5130,7 +5654,8 @@ begin
   end;
 end;
 
-procedure TRemoteDB.DPExpensesBeforeUpdateRecord(Sender: TObject; SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
+procedure TRemoteDB.DPExpensesBeforeUpdateRecord(Sender: TObject;
+  SourceDS: TDataSet; DeltaDS: TCustomClientDataSet; UpdateKind: TUpdateKind;
   var Applied: Boolean);
 var
   Connection: TSQLConnection;
@@ -5143,21 +5668,24 @@ begin
     ukModify:
       begin
         // Update table customers
-        SQL   := '';
+        SQL := '';
         for i := 0 to DeltaDS.FieldCount - 1 do
         begin
           if not VarIsEmpty(DeltaDS.Fields[i].NewValue) then
           begin
             if SQL <> '' then
               SQL := SQL + ', ';
-            SQL   := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s', [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
+            SQL := SQL + Format(DeltaDS.Fields[i].FieldName + ' = %s',
+              [QuotedStr(VarToStr(DeltaDS.Fields[i].NewValue))]);
           end;
         end;
         if SQL <> '' then
         begin
           LOC := VarToStr(DeltaDS.fieldbyname('expenses_shop_id').OldValue);
-          ID  := VarToStr(DeltaDS.fieldbyname('expenses_id').OldValue);
-          SQL := Format('UPDATE netshop_expenses SET %s ' + 'WHERE (expenses_shop_id = %s) and (expenses_id = %s)', [SQL, LOC, ID]);
+          ID := VarToStr(DeltaDS.fieldbyname('expenses_id').OldValue);
+          SQL := Format('UPDATE netshop_expenses SET %s ' +
+            'WHERE (expenses_shop_id = %s) and (expenses_id = %s)',
+            [SQL, LOC, ID]);
           Connection.Execute(SQL, nil, nil);
         end;
         Applied := True;
@@ -5165,9 +5693,11 @@ begin
     ukDelete:
       begin
         LOC := VarToStr(DeltaDS.fieldbyname('expenses_shop_id').OldValue);
-        ID  := VarToStr(DeltaDS.fieldbyname('expenses_id').OldValue);
+        ID := VarToStr(DeltaDS.fieldbyname('expenses_id').OldValue);
         // Delete from the first table
-        SQL := Format('DELETE FROM netshop_expenses WHERE (expenses_shop_id = %s) and (expenses_id = %s)', [LOC, ID]);
+        SQL := Format
+          ('DELETE FROM netshop_expenses WHERE (expenses_shop_id = %s) and (expenses_id = %s)',
+          [LOC, ID]);
         Connection.Execute(SQL, nil, nil);
         Applied := True
       end;
@@ -5180,7 +5710,9 @@ begin
   begin
     SQLQuery.CommandText := CDSQueries.fieldbyname('sql_query').AsString;
 
-  end else begin
+  end
+  else
+  begin
     Result := False;
   end;
 end;
@@ -5192,13 +5724,16 @@ end;
 
 procedure TRemoteDB.netshop_expensesNewRecord(DataSet: TDataSet);
 begin
-  DataSet.fieldbyname('expenses_id').Value        := GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'expenses_shop_id', 'expenses_id');
-  DataSet.fieldbyname('expenses_shop_id').Value   := CONNECTEDSHOP;
+  DataSet.fieldbyname('expenses_id').Value :=
+    GetNextSubIdDouble(DataSet as TCustomClientDataSet, 'expenses_shop_id',
+    'expenses_id');
+  DataSet.fieldbyname('expenses_shop_id').Value := CONNECTEDSHOP;
   DataSet.fieldbyname('expenses_date_time').Value := now;
-  DataSet.fieldbyname('expenses_amount').Value    := 0;
+  DataSet.fieldbyname('expenses_amount').Value := 0;
 end;
 
-function TRemoteDB.CalcDayCahsierSummary(startdate, enddate: integer): TDayCashierSummary;
+function TRemoteDB.CalcDayCahsierSummary(startdate, enddate: integer)
+  : TDayCashierSummary;
 var
   CurrentSaleSubTot, ActualSaleSubTot: Currency;
   VatProcessed, LowMargin: Boolean;
@@ -5206,9 +5741,9 @@ var
 
 begin
 
-  StempIndex                        := self.netshop_sales.IndexName;
-  ITempIndex                        := self.netshop_items_sold.IndexName;
-  self.netshop_sales.IndexName      := 'SalesIXLocationId';
+  StempIndex := self.netshop_sales.IndexName;
+  ITempIndex := self.netshop_items_sold.IndexName;
+  self.netshop_sales.IndexName := 'SalesIXLocationId';
   self.netshop_items_sold.IndexName := 'ItemsIXLocationId';
   self.netshop_items_sold.DisableControls;
   self.Products.IndexName := 'ProductsIXModel';
@@ -5218,40 +5753,42 @@ begin
   with Result do
   begin
 
-    Open           := False;
-    New            := 0;
-    New0           := 0;
-    New6           := 0;
-    New21          := 0;
-    Invoice0       := 0;
-    Invoice6       := 0;
-    Invoice21      := 0;
-    Return21       := 0;
-    Return6        := 0;
-    Return0        := 0;
-    SH             := 0;
-    SHDeposit      := 0;
-    SHBought       := 0;
+    Open := False;
+    New := 0;
+    New0 := 0;
+    New6 := 0;
+    New21 := 0;
+    Invoice0 := 0;
+    Invoice6 := 0;
+    Invoice21 := 0;
+    Return21 := 0;
+    Return6 := 0;
+    Return0 := 0;
+    SH := 0;
+    SHDeposit := 0;
+    SHBought := 0;
     SHCostOfBought := 0;
-    NoMargin       := 0;
-    Service        := 0;
-    TotalNature    := 0;
-    Cash           := 0;
-    BCT            := 0;
-    Voucher        := 0;
-    Visa           := 0;
-    Proton         := 0;
-    TotalPay       := 0;
-    Refunds        := 0;
-    Purchased      := 0;
-    Returns        := 0;
-    Expenses       := 0;
-    ExpensesDesc   := '';
+    NoMargin := 0;
+    Service := 0;
+    TotalNature := 0;
+    Cash := 0;
+    BCT := 0;
+    Voucher := 0;
+    Visa := 0;
+    Proton := 0;
+    TotalPay := 0;
+    Refunds := 0;
+    Purchased := 0;
+    Returns := 0;
+    Expenses := 0;
+    ExpensesDesc := '';
 
     ///
     /// Analyse des Factures
     ///
-    self.netshop_invoices.Filter   := '(' + FloatToStr(startdate) + '< invoices_date_time and invoices_date_time < ' + FloatToStr(enddate + 1) + ')';
+    self.netshop_invoices.Filter := '(' + FloatToStr(startdate) +
+      '< invoices_date_time and invoices_date_time < ' +
+      FloatToStr(enddate + 1) + ')';
     self.netshop_invoices.Filtered := True;
     self.netshop_invoices.First;
     self.SetInvoicesItemsToInvoices;
@@ -5260,30 +5797,40 @@ begin
       self.netshop_invoices_items.First;
       while not self.netshop_invoices_items.Eof do
       begin
-        if self.netshop_invoices_items.fieldbyname('invoices_items_tva_rate').Value = 21 then
+        if self.netshop_invoices_items.fieldbyname('invoices_items_tva_rate')
+          .Value = 21 then
         begin
-          Result.Invoice21 := Result.Invoice21 + self.netshop_invoices_items.fieldbyname('invoices_items_PTOTTTC').AsFloat;
+          Result.Invoice21 := Result.Invoice21 +
+            self.netshop_invoices_items.fieldbyname
+            ('invoices_items_PTOTTTC').AsFloat;
         end;
-        if self.netshop_invoices_items.fieldbyname('invoices_items_tva_rate').Value = 6 then
+        if self.netshop_invoices_items.fieldbyname('invoices_items_tva_rate')
+          .Value = 6 then
         begin
-          Result.Invoice6 := Result.Invoice6 + self.netshop_invoices_items.fieldbyname('invoices_items_PTOTTTC').AsFloat;
+          Result.Invoice6 := Result.Invoice6 +
+            self.netshop_invoices_items.fieldbyname
+            ('invoices_items_PTOTTTC').AsFloat;
         end;
-        if self.netshop_invoices_items.fieldbyname('invoices_items_tva_rate').Value = 0 then
+        if self.netshop_invoices_items.fieldbyname('invoices_items_tva_rate')
+          .Value = 0 then
         begin
-          Result.Invoice0 := Result.Invoice0 + self.netshop_invoices_items.fieldbyname('invoices_items_PTOTTTC').AsFloat;
+          Result.Invoice0 := Result.Invoice0 +
+            self.netshop_invoices_items.fieldbyname
+            ('invoices_items_PTOTTTC').AsFloat;
         end;
         self.netshop_invoices_items.Next;
       end;
       self.netshop_invoices.Next;
     end;
     self.netshop_invoices.Filtered := False;
-    self.netshop_invoices.Filter   := '';
+    self.netshop_invoices.Filter := '';
 
     ///
     /// Analyse Ventes
     ///
-    self.netshop_sales.Filter := '(' + FloatToStr(startdate) + '< sales_date_time and sales_date_time < ' + FloatToStr(enddate + 1) + ') and (sales_location = '
-      + inttostr(CONNECTEDSHOP) + ')';
+    self.netshop_sales.Filter := '(' + FloatToStr(startdate) +
+      '< sales_date_time and sales_date_time < ' + FloatToStr(enddate + 1) +
+      ') and (sales_location = ' + inttostr(CONNECTEDSHOP) + ')';
     self.netshop_sales.Filtered := True;
     self.netshop_sales.First;
     while not self.netshop_sales.Eof do
@@ -5294,11 +5841,13 @@ begin
         ///
         /// Analyse des moyens de payment
         ///
-        Cash    := Cash + netshop_sales.fieldbyname('sales_paid_cash').AsFloat;
-        Proton  := Proton + netshop_sales.fieldbyname('sales_paid_Proton').AsFloat;
-        BCT     := BCT + netshop_sales.fieldbyname('sales_paid_BCT').AsFloat;
-        Visa    := Visa + netshop_sales.fieldbyname('sales_paid_Visa').AsFloat;
-        Voucher := Voucher + netshop_sales.fieldbyname('sales_paid_Voucher').AsFloat;
+        Cash := Cash + netshop_sales.fieldbyname('sales_paid_cash').AsFloat;
+        Proton := Proton + netshop_sales.fieldbyname
+          ('sales_paid_Proton').AsFloat;
+        BCT := BCT + netshop_sales.fieldbyname('sales_paid_BCT').AsFloat;
+        Visa := Visa + netshop_sales.fieldbyname('sales_paid_Visa').AsFloat;
+        Voucher := Voucher + netshop_sales.fieldbyname
+          ('sales_paid_Voucher').AsFloat;
         self.netshop_items_sold.First;
         CurrentSaleSubTot := 0;
         while not self.netshop_items_sold.Eof do
@@ -5306,35 +5855,49 @@ begin
           ///
           /// Analyse de la nature des produits
           ///
-          if (self.netshop_items_sold.fieldbyname('items_sold_owner_id').Value < 100000) and
-            (self.netshop_items_sold.fieldbyname('items_sold_supplier_id').Value < 100000) then
+          if (self.netshop_items_sold.fieldbyname('items_sold_owner_id').Value <
+            100000) and
+            (self.netshop_items_sold.fieldbyname('items_sold_supplier_id').Value
+            < 100000) then
           begin
             VatProcessed := False;
-            if self.Products.FindKey([self.netshop_items_sold.fieldbyname('items_sold_model').Value]) then
+            if self.Products.FindKey
+              ([self.netshop_items_sold.fieldbyname('items_sold_model').Value])
+            then
             begin
 
-              if self.Products.fieldbyname('products_promo').AsString <> 'True' then
+              if self.Products.fieldbyname('products_promo').AsString <> 'True'
+              then
                 LowMargin := False
               else
                 LowMargin := True;
 
               // Ventilation par TVA
-              if self.Products.FieldByName('products_tax_class_id').Value = 1 then
+              if self.Products.fieldbyname('products_tax_class_id').Value = 1
+              then
               begin
-                New21 := New21 + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                  self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+                New21 := New21 + self.netshop_items_sold.fieldbyname
+                  ('items_sold_price_Stock').Value *
+                  self.netshop_items_sold.fieldbyname
+                  ('items_sold_quantity').Value;
                 VatProcessed := True;
               end;
-              if self.Products.FieldByName('products_tax_class_id').Value = 2 then
+              if self.Products.fieldbyname('products_tax_class_id').Value = 2
+              then
               begin
-                New6 := New6 + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                  self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+                New6 := New6 + self.netshop_items_sold.fieldbyname
+                  ('items_sold_price_Stock').Value *
+                  self.netshop_items_sold.fieldbyname
+                  ('items_sold_quantity').Value;
                 VatProcessed := True;
               end;
-              if self.Products.FieldByName('products_tax_class_id').Value = 3 then
+              if self.Products.fieldbyname('products_tax_class_id').Value = 3
+              then
               begin
-                New0 := New0 + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                  self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+                New0 := New0 + self.netshop_items_sold.fieldbyname
+                  ('items_sold_price_Stock').Value *
+                  self.netshop_items_sold.fieldbyname
+                  ('items_sold_quantity').Value;
                 VatProcessed := True;
               end;
 
@@ -5342,39 +5905,61 @@ begin
             if not VatProcessed then
             begin
               // Showmessage('Produit supprimé '+Self.Products.FieldByName('products_model').asstring+ ' ' +Self.CDSProDescFR.FieldByName('products_name').asstring);
-              New21 := New21 + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+              New21 := New21 + self.netshop_items_sold.fieldbyname
+                ('items_sold_price_Stock').Value *
+                self.netshop_items_sold.fieldbyname
+                ('items_sold_quantity').Value;
             end;
 
             if not LowMargin then
             begin
-              New := New + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
-            end else begin
-              NoMargin := NoMargin + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+              New := New + self.netshop_items_sold.fieldbyname
+                ('items_sold_price_Stock').Value *
+                self.netshop_items_sold.fieldbyname
+                ('items_sold_quantity').Value;
+            end
+            else
+            begin
+              NoMargin := NoMargin + self.netshop_items_sold.fieldbyname
+                ('items_sold_price_Stock').Value *
+                self.netshop_items_sold.fieldbyname
+                ('items_sold_quantity').Value;
             end;
 
-          end else begin
-            SH := SH + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value * self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
-            if (self.netshop_items_sold.fieldbyname('items_sold_owner_id').Value >= 100000) then
-              SHDeposit := SHDeposit + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
-            if (self.netshop_items_sold.fieldbyname('items_sold_owner_id').Value < 100000) and
-              (self.netshop_items_sold.fieldbyname('items_sold_supplier_id').Value >= 100000) then
+          end
+          else
+          begin
+            SH := SH + self.netshop_items_sold.fieldbyname
+              ('items_sold_price_Stock').Value *
+              self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+            if (self.netshop_items_sold.fieldbyname('items_sold_owner_id').Value
+              >= 100000) then
+              SHDeposit := SHDeposit + self.netshop_items_sold.fieldbyname
+                ('items_sold_price_Stock').Value *
+                self.netshop_items_sold.fieldbyname
+                ('items_sold_quantity').Value;
+            if (self.netshop_items_sold.fieldbyname('items_sold_owner_id').Value
+              < 100000) and
+              (self.netshop_items_sold.fieldbyname('items_sold_supplier_id')
+              .Value >= 100000) then
             begin
-              SHBought := SHBought + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-                self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
-              SHCostOfBought := SHCostOfBought + self.netshop_items_sold.fieldbyname('items_sold_price_gross').Value *
-                self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+              SHBought := SHBought + self.netshop_items_sold.fieldbyname
+                ('items_sold_price_Stock').Value *
+                self.netshop_items_sold.fieldbyname
+                ('items_sold_quantity').Value;
+              SHCostOfBought := SHCostOfBought +
+                self.netshop_items_sold.fieldbyname('items_sold_price_gross')
+                .Value * self.netshop_items_sold.fieldbyname
+                ('items_sold_quantity').Value;
             end;
           end;
 
           ///
           /// Analyse concordance Montants Items et Sales
           ///
-          CurrentSaleSubTot := CurrentSaleSubTot + self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value *
-            self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
+          CurrentSaleSubTot := CurrentSaleSubTot +
+            self.netshop_items_sold.fieldbyname('items_sold_price_Stock').Value
+            * self.netshop_items_sold.fieldbyname('items_sold_quantity').Value;
           Application.ProcessMessages;
           self.netshop_items_sold.Next;
         end;
@@ -5382,8 +5967,11 @@ begin
       ActualSaleSubTot := netshop_sales.fieldbyname('sales_paid_total').AsFloat;
       if not(CurrentSaleSubTot = ActualSaleSubTot) then
       begin
-        messagedlg('La Vente ' + netshop_sales.fieldbyname('sales_id').AsString + ' pose problème. Sous total produits = ' + FloatToStr(CurrentSaleSubTot) +
-          ' <> Total Vente = ' + netshop_sales.fieldbyname('sales_paid_total').AsString, mtwarning, [mbYes, mbNo], 0)
+        messagedlg('La Vente ' + netshop_sales.fieldbyname('sales_id').AsString
+          + ' pose problème. Sous total produits = ' +
+          FloatToStr(CurrentSaleSubTot) + ' <> Total Vente = ' +
+          netshop_sales.fieldbyname('sales_paid_total').AsString, mtwarning,
+          [mbYes, mbNo], 0)
       end;
       self.netshop_sales.Next;
     end;
@@ -5391,100 +5979,116 @@ begin
     ///
     /// Analyse Retours
     ///
-    self.netshop_refunds.Filter := '(' + FloatToStr(startdate) + '< refunds_date_time and refunds_date_time < ' + FloatToStr(enddate + 1) +
-      ') and (refunds_shop_id = ' + inttostr(CONNECTEDSHOP) + ') and (refunds_nature = ' + QuotedStr('Retour') + ')';
+    self.netshop_refunds.Filter := '(' + FloatToStr(startdate) +
+      '< refunds_date_time and refunds_date_time < ' + FloatToStr(enddate + 1) +
+      ') and (refunds_shop_id = ' + inttostr(CONNECTEDSHOP) +
+      ') and (refunds_nature = ' + QuotedStr('Retour') + ')';
     self.netshop_refunds.Filtered := True;
     self.netshop_refunds.First;
     VatProcessed := False;
     while not self.netshop_refunds.Eof do
     begin
       Open := True;
-      if self.Products.FindKey([self.netshop_refunds.fieldbyname('refunds_items_id').Value]) then
+      if self.Products.FindKey
+        ([self.netshop_refunds.fieldbyname('refunds_items_id').Value]) then
       begin
         // Ventilation par TVA
         if self.Products.fieldbyname('products_tax_class_id').Value = 1 then
         begin
-          Return21     := Return21 + self.netshop_refunds.fieldbyname('refunds_amount').Value;
+          Return21 := Return21 + self.netshop_refunds.fieldbyname
+            ('refunds_amount').Value;
           VatProcessed := True;
         end;
         if self.Products.fieldbyname('products_tax_class_id').Value = 2 then
         begin
-          Return6      := Return6 + self.netshop_refunds.fieldbyname('refunds_amount').Value;
+          Return6 := Return6 + self.netshop_refunds.fieldbyname
+            ('refunds_amount').Value;
           VatProcessed := True;
         end;
 
       end;
       if not VatProcessed then
       begin
-        Return21 := Return21 + self.netshop_refunds.fieldbyname('refunds_amount').Value;
+        Return21 := Return21 + self.netshop_refunds.fieldbyname
+          ('refunds_amount').Value;
       end;
 
-      Returns := Returns + self.netshop_refunds.fieldbyname('refunds_amount').Value;
+      Returns := Returns + self.netshop_refunds.fieldbyname
+        ('refunds_amount').Value;
       self.netshop_refunds.Next;
     end;
-    self.netshop_refunds.Filter   := '';
+    self.netshop_refunds.Filter := '';
     self.netshop_refunds.Filtered := False;
 
     ///
     /// Analyse Rembours
     ///
-    self.netshop_refunds.Filter := '(' + FloatToStr(startdate) + '< refunds_date_time and refunds_date_time < ' + FloatToStr(enddate + 1) +
-      ') and (refunds_shop_id = ' + inttostr(CONNECTEDSHOP) + ') and (refunds_nature = ' + QuotedStr('Retrait') + ')';
+    self.netshop_refunds.Filter := '(' + FloatToStr(startdate) +
+      '< refunds_date_time and refunds_date_time < ' + FloatToStr(enddate + 1) +
+      ') and (refunds_shop_id = ' + inttostr(CONNECTEDSHOP) +
+      ') and (refunds_nature = ' + QuotedStr('Retrait') + ')';
     self.netshop_refunds.Filtered := True;
     self.netshop_refunds.First;
     while not self.netshop_refunds.Eof do
     begin
-      Open    := True;
-      Refunds := Refunds - self.netshop_refunds.fieldbyname('refunds_amount').Value;
+      Open := True;
+      Refunds := Refunds - self.netshop_refunds.fieldbyname
+        ('refunds_amount').Value;
       self.netshop_refunds.Next;
     end;
 
     ///
     /// Analyse Achats
     ///
-    self.netshop_refunds.Filter := '(' + FloatToStr(startdate) + '< refunds_date_time and refunds_date_time < ' + FloatToStr(enddate + 1) +
-      ') and (refunds_shop_id = ' + inttostr(CONNECTEDSHOP) + ') and (refunds_nature = ' + QuotedStr('Achat') + ')';
+    self.netshop_refunds.Filter := '(' + FloatToStr(startdate) +
+      '< refunds_date_time and refunds_date_time < ' + FloatToStr(enddate + 1) +
+      ') and (refunds_shop_id = ' + inttostr(CONNECTEDSHOP) +
+      ') and (refunds_nature = ' + QuotedStr('Achat') + ')';
     self.netshop_refunds.Filtered := True;
     self.netshop_refunds.First;
     while not self.netshop_refunds.Eof do
     begin
-      Open      := True;
-      Purchased := Purchased + self.netshop_refunds.fieldbyname('refunds_amount').Value;
+      Open := True;
+      Purchased := Purchased + self.netshop_refunds.fieldbyname
+        ('refunds_amount').Value;
       self.netshop_refunds.Next;
     end;
 
     ///
     /// Anayse Dépenses
     ///
-    self.netshop_expenses.Filter := '(' + FloatToStr(startdate) + '< expenses_date_time and expenses_date_time < ' + FloatToStr(enddate + 1) +
-      ') and (expenses_shop_id = ' + inttostr(CONNECTEDSHOP) + ')';
+    self.netshop_expenses.Filter := '(' + FloatToStr(startdate) +
+      '< expenses_date_time and expenses_date_time < ' + FloatToStr(enddate + 1)
+      + ') and (expenses_shop_id = ' + inttostr(CONNECTEDSHOP) + ')';
     self.netshop_expenses.Filtered := True;
     self.netshop_expenses.First;
     while not self.netshop_expenses.Eof do
     begin
-      Open     := True;
-      Expenses := Expenses + netshop_expenses.fieldbyname('expenses_amount').AsFloat;
+      Open := True;
+      Expenses := Expenses + netshop_expenses.fieldbyname
+        ('expenses_amount').AsFloat;
       if ExpensesDesc <> '' then
         ExpensesDesc := ExpensesDesc + ' - ';
-      ExpensesDesc   := ExpensesDesc + self.netshop_expenses.fieldbyname('expenses_description').AsString;
+      ExpensesDesc := ExpensesDesc + self.netshop_expenses.fieldbyname
+        ('expenses_description').AsString;
       self.netshop_expenses.Next;
     end;
 
     TotalNature := New + NoMargin + SH + Service + Returns;
-    TotalPay    := Cash - Refunds + Returns - Expenses - Purchased;
+    TotalPay := Cash - Refunds + Returns - Expenses - Purchased;
   end;
 
-  netshop_items_sold.Filter    := '';
-  netshop_items_sold.Filtered  := False;
+  netshop_items_sold.Filter := '';
+  netshop_items_sold.Filtered := False;
   netshop_items_sold.IndexName := ITempIndex;
   netshop_items_sold.EnableControls;
 
-  netshop_sales.Filter    := '';
-  netshop_sales.Filtered  := False;
+  netshop_sales.Filter := '';
+  netshop_sales.Filtered := False;
   netshop_sales.IndexName := StempIndex;
   self.netshop_sales.EnableControls;
 
-  self.netshop_refunds.Filter   := '';
+  self.netshop_refunds.Filter := '';
   self.netshop_refunds.Filtered := False;
 
   self.Products.EnableControls;
@@ -5500,7 +6104,8 @@ begin
     begin
       if fieldbyname('invoices_items_tva_rate').Value = TaxClassRate then
       begin
-        Result := Result + (fieldbyname('invoices_items_price_tva').Value * fieldbyname('invoices_items_quantity').Value);
+        Result := Result + (fieldbyname('invoices_items_price_tva').Value *
+          fieldbyname('invoices_items_quantity').Value);
       end;
       Next;
     end;
@@ -5517,7 +6122,8 @@ begin
     begin
       if fieldbyname('invoices_items_tva_rate').Value = TaxClassRate then
       begin
-        Result := Result + (fieldbyname('invoices_items_price_catalog').Value * fieldbyname('invoices_items_quantity').Value);
+        Result := Result + (fieldbyname('invoices_items_price_catalog').Value *
+          fieldbyname('invoices_items_quantity').Value);
       end;
       Next;
     end;
@@ -5533,7 +6139,8 @@ begin
     CloneDS.CloneCursor(Categories, True);
     CloneDS.IndexFieldNames := 'categories_id';
     CloneDS.FindKey([Category_id]);
-    while not((CloneDS.fieldbyname('parent_id').Value = 0) or (CloneDS.fieldbyname('parent_id').Value = 116)) do
+    while not((CloneDS.fieldbyname('parent_id').Value = 0) or
+      (CloneDS.fieldbyname('parent_id').Value = 116)) do
     begin
       CloneDS.FindKey([CloneDS.fieldbyname('parent_id').Value]);
     end;
@@ -5549,21 +6156,28 @@ var
 begin
   CloneDS := TClientDataSet.Create(nil);
   try
-    Result:='';
+    Result := '';
     CloneDS.CloneCursor(Categories, True);
     CloneDS.IndexFieldNames := 'categories_id';
     CloneDS.FindKey([Category_id]);
-    while not((CloneDS.fieldbyname('parent_id').Value = 0) or (CloneDS.fieldbyname('parent_id').Value = 116)) do
+    while not((CloneDS.fieldbyname('parent_id').Value = 0) or
+      (CloneDS.fieldbyname('parent_id').Value = 116)) do
     begin
-      if CloneDS.FindKey([CloneDS.fieldbyname('parent_id').Value]) then begin
-       if self.Categories.locate('categories_id', CloneDS.fieldbyname('categories_id').Value, []) then begin
-         if Result='' then
-         Result :=  self.Categories.FieldByName('categories_name').asString
-         else
-         Result :=  self.Categories.FieldByName('categories_name').asString + ' - '  + Result;
-       end;
-      end else begin
-       Exit;
+      if CloneDS.FindKey([CloneDS.fieldbyname('parent_id').Value]) then
+      begin
+        if self.Categories.locate('categories_id',
+          CloneDS.fieldbyname('categories_id').Value, []) then
+        begin
+          if Result = '' then
+            Result := self.Categories.fieldbyname('categories_name').AsString
+          else
+            Result := self.Categories.fieldbyname('categories_name').AsString +
+              ' - ' + Result;
+        end;
+      end
+      else
+      begin
+        exit;
       end;
     end;
   finally
@@ -5623,7 +6237,9 @@ begin
     while not Products.Eof do
     begin
       CatName := '';
-      if self.Categories.locate('categories_id', self.GetMotherCategory(Products.fieldbyname('categories_id').Value), []) then
+      if self.Categories.locate('categories_id',
+        self.GetMotherCategory(Products.fieldbyname('categories_id').Value), [])
+      then
       begin
         CatName := self.Categoriescategories_name.AsString;
         Products.Edit;
@@ -5646,12 +6262,13 @@ procedure TRemoteDB.Productscategories_idChange(Sender: TField);
 var
   CatName: string;
 begin
-  //if self.Categories.locate('categories_id', self.GetMotherCategory(Products.fieldbyname('categories_id').Value), []) then
+  // if self.Categories.locate('categories_id', self.GetMotherCategory(Products.fieldbyname('categories_id').Value), []) then
   begin
-    //CatName := self.Categories.FieldByName('categories_name').AsString;
+    // CatName := self.Categories.FieldByName('categories_name').AsString;
     // Products.Edit;
-    //Products.fieldbyname('products_root_category_name').AsString := CatName;
-     Products.fieldbyname('products_root_category_name').AsString := Self.GetRootCategoryName(Products.fieldbyname('categories_id').Value);
+    // Products.fieldbyname('products_root_category_name').AsString := CatName;
+    Products.fieldbyname('products_root_category_name').AsString :=
+      self.GetRootCategoryName(Products.fieldbyname('categories_id').Value);
     if IsArchive(Products.fieldbyname('categories_id').Value) then
       Products.fieldbyname('products_isobsolete').AsString := 'True'
     else
@@ -5660,7 +6277,8 @@ begin
   end;
 end;
 
-function TRemoteDB.GetPurchasePrice(ProductModel: string; Margin: integer): double;
+function TRemoteDB.GetPurchasePrice(ProductModel: string;
+  Margin: integer): double;
 begin
 
 end;

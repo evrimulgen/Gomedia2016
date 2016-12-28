@@ -56,7 +56,7 @@ begin
   if lowercase(SearchString.Text) = LastSearchString then
     followup := True
   else
-    followup       := False;
+    followup := False;
   LastSearchString := lowercase(SearchString.Text);
   try
     if not followup then
@@ -65,19 +65,26 @@ begin
       self.CustSel.Next;
     while (not Found) and (not self.CustSel.Eof) do
     begin
-      if Pos(lowercase(SearchString.Text), lowercase(self.CustSel.Fieldbyname('customers_nbr').AsString)) <> 0 then
+      if Pos(lowercase(SearchString.Text),
+        lowercase(self.CustSel.Fieldbyname('customers_nbr').AsString)) <> 0 then
       begin
         Found := True;
       end;
-      if Pos(lowercase(SearchString.Text), lowercase(self.CustSel.Fieldbyname('customers_firstname').AsString)) <> 0 then
+      if Pos(lowercase(SearchString.Text),
+        lowercase(self.CustSel.Fieldbyname('customers_firstname').AsString)) <> 0
+      then
       begin
         Found := True;
       end;
-      if Pos(lowercase(SearchString.Text), lowercase(self.CustSel.Fieldbyname('customers_lastname').AsString)) <> 0 then
+      if Pos(lowercase(SearchString.Text),
+        lowercase(self.CustSel.Fieldbyname('customers_lastname').AsString)) <> 0
+      then
       begin
         Found := True;
       end;
-      if Pos(lowercase(SearchString.Text), lowercase(self.CustSel.Fieldbyname('customers_email_address').AsString)) <> 0 then
+      if Pos(lowercase(SearchString.Text),
+        lowercase(self.CustSel.Fieldbyname('customers_email_address').AsString)
+        ) <> 0 then
       begin
         Found := True;
       end;

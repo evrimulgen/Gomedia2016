@@ -79,8 +79,10 @@ type
     cxCurrencyEditPurchased: TcxCurrencyEdit;
     Label19: TLabel;
     cxDBTextEditTasks: TcxDBTextEdit;
-    procedure cxSpinEdit50000KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure cxSpinEdit50000MouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure cxSpinEdit50000KeyUp(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure cxSpinEdit50000MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
     procedure cxCurrencyEditToTakePropertiesChange(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure BitBtnOkClick(Sender: TObject);
@@ -116,15 +118,17 @@ begin
   if (MainForm.Parameter['PrintersLabelEnabled'] = 'TRUE') then
   begin
     Labelstoprint := TLabelAddress.Create;
-    Address       := TStringList.Create;
+    Address := TStringList.Create;
     try
       Address.Add(MainFRMUnit.ShopdataList[0]);
       Address.Add(LabelStatDate.Caption + ' - ' + LabelEndDate.Caption);
       Address.Add('Caisse : ' + cxCurrencyEditTotalCash.Text);
       Address.Add('Sortie : ' + cxCurrencyEditToTake.Text);
       Address.Add('Solde : ' + cxCurrencyEditCashLeft.Text);
-      Labelstoprint.LabelPrinter := (MainForm.Parameter['PrintersLabelPrinter']);
-      Labelstoprint.Print(Address, (StrToBool(MainForm.Parameter['PrintersLabelDialog'])));
+      Labelstoprint.LabelPrinter :=
+        (MainForm.Parameter['PrintersLabelPrinter']);
+      Labelstoprint.Print(Address,
+        (StrToBool(MainForm.Parameter['PrintersLabelDialog'])));
     finally
       Labelstoprint.Free;
       Address.Free;
@@ -139,23 +143,27 @@ begin
   inherited CreateParams(Params);
   with Params do
   begin
-    ExStyle   := ExStyle or WS_EX_APPWINDOW;
+    ExStyle := ExStyle or WS_EX_APPWINDOW;
     WndParent := GetDesktopwindow;
   end;
 end;
 
 procedure TFormCashClose.cxCurrencyEditToTakePropertiesChange(Sender: TObject);
 begin
-  cxCurrencyEditCashLeft.Value := Self.PreviousAmount + cxCurrencyEditTotalIn.Value - cxCurrencyEditTotalOut.Value - cxCurrencyEditToTake.Value;
+  cxCurrencyEditCashLeft.Value := Self.PreviousAmount +
+    cxCurrencyEditTotalIn.Value - cxCurrencyEditTotalOut.Value -
+    cxCurrencyEditToTake.Value;
   Self.UpdateCounter;
 end;
 
-procedure TFormCashClose.cxSpinEdit50000KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TFormCashClose.cxSpinEdit50000KeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
   Self.UpdateCounter;
 end;
 
-procedure TFormCashClose.cxSpinEdit50000MouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+procedure TFormCashClose.cxSpinEdit50000MouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   Self.UpdateCounter;
 end;
@@ -166,16 +174,21 @@ begin
   begin
     ShowMessage('Veuillez remlir votre nom');
     CanClose := False;
-  end else begin
+  end
+  else
+  begin
     CanClose := True;
   end;
 end;
 
 procedure TFormCashClose.UpdateCounter;
 begin
-  cxCurrencyEditCompteur.Value := cxSpinEdit50000.Value * 500 + cxSpinEdit20000.Value * 200 + cxSpinEdit10000.Value * 100 + cxSpinEdit5000.Value * 50 +
-    cxSpinEdit2000.Value * 20 + cxSpinEdit1000.Value * 10 + cxSpinEdit500.Value * 5 + cxSpinEdit200.Value * 2 + cxSpinEdit100.Value * 1 + cxSpinEdit50.Value *
-    0.5 + cxSpinEdit20.Value * 0.20 + cxSpinEdit10.Value * 0.10 + cxSpinEdit5.Value * 0.05;
+  cxCurrencyEditCompteur.Value := cxSpinEdit50000.Value * 500 +
+    cxSpinEdit20000.Value * 200 + cxSpinEdit10000.Value * 100 +
+    cxSpinEdit5000.Value * 50 + cxSpinEdit2000.Value * 20 + cxSpinEdit1000.Value
+    * 10 + cxSpinEdit500.Value * 5 + cxSpinEdit200.Value * 2 +
+    cxSpinEdit100.Value * 1 + cxSpinEdit50.Value * 0.5 + cxSpinEdit20.Value *
+    0.20 + cxSpinEdit10.Value * 0.10 + cxSpinEdit5.Value * 0.05;
 end;
 
 end.

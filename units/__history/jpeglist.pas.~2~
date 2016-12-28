@@ -1,0 +1,140 @@
+unit jpeglist;
+
+interface
+
+uses
+  Classes, SysUtils, Windows, Contnrs, jpeg;
+
+type
+  TJPEGImageList = class(TObjectList)
+  protected
+    function Get(Index: Integer): TJPEGImage;
+    procedure Put(Index: Integer; AImage: TJPEGImage);
+  public
+    function Add(AImage: TJPEGImage): Integer;
+    function Remove(AImage: TJPEGImage): Integer;
+    function IndexOf(AImage: TJPEGImage): Integer;
+    procedure Insert(Index: Integer; AImage: TJPEGImage);
+    procedure LoadFromFile(const FileName: TFileName);
+    procedure LoadFromStream(Stream: TStream);
+    procedure SaveToFile(const FileName: TFileName);
+    procedure SaveToStream(Stream: TStream);
+
+    property Items[index: Integer]: TJPEGImage read Get write Put; default;
+  end;
+
+implementation
+
+{ TJPEGImageList private }
+
+function TJPEGImageList.Get(Index: Integer): TJPEGImage;
+begin
+  Result := TJPEGImage(inherited Get(index));
+end;
+
+procedure TJPEGImageList.Put(Index: Integer; AImage: TJPEGImage);
+begin
+  inherited Put(index, AImage);
+end;
+
+{ TJPEGImageList public }
+
+function TJPEGImageList.Add(AImage: TJPEGImage): Integer;
+begin
+  Result := inherited Add(AImage);
+end;
+
+function TJPEGImageList.IndexOf(AImage: TJPEGImage): Integer;
+begin
+  Result := inherited IndexOf(AImage);
+end;
+
+procedure TJPEGImageList.Insert(Index: Integer; AImage: TJPEGImage);
+begin
+  inherited Insert(index, AImage);
+end;
+
+function TJPEGImageList.Remove(AImage: TJPEGImage): Integer;
+begin
+  Result := inherited Remove(AImage);
+end;
+
+procedure TJPEGImageList.LoadFromFile(const FileName: TFileName);
+var
+  Stream: TStream;
+begin
+  Stream := TFileStream.Create(FileName, fmOpenRead);
+  try
+    LoadFromStream(Stream);
+  finally
+    Stream.Free;
+  end;
+end;
+
+procedure TJPEGImageList.LoadFromStream(Stream: TStream);
+var
+  Offsets: array of Integer;
+  i, ItemCount: Integer;
+  Item: TJPEGImage;
+begin
+  { read number of images }
+  Stream.Read(ItemCount, SizeOf(Integer));
+  { read and initialize offsets }
+  SetLength(Offsets, ItemCount);
+  FillChar(Offsets[0], ItemCount * SizeOf(Integer), -1);
+  { read offsets }
+  Stream.Read(Offsets[0], ItemCount * SizeOf(Integer));
+  for i := 0 to ItemCount - 1 do
+  begin
+    { seek to offset }
+    Stream.Seek(Offsets[i], soFromBeginning);
+    { read image }
+    Item := TJPEGImage.Create;
+    try
+      Item.LoadFromStream(Stream);
+      Add(Item);
+    except
+      Item.Free;
+      raise;
+    end;
+  end;
+end;
+
+procedure TJPEGImageList.SaveToFile(const FileName: TFileName);
+var
+  Stream: TStream;
+begin
+  Stream := TFileStream.Create(FileName, fmCreate);
+  try
+    SaveToStream(Stream);
+  finally
+    Stream.Free;
+  end;
+end;
+
+procedure TJPEGImageList.SaveToStream(Stream: TStream);
+var
+  Offsets: array of Integer;
+  i: Integer;
+begin
+  { initialize offsets array }
+  SetLength(Offsets, Count);
+  FillChar(Offsets[0], Count * SizeOf(Integer), -1);
+  { write number of images }
+  Stream.Write(Count, SizeOf(Integer));
+  { write offsets (meaningless values yet) }
+  Stream.Write(Offsets[0], Count * SizeOf(Integer));
+  { write images }
+  for i := 0 to Count - 1 do
+  begin
+    { remember offset }
+    Offsets[i] := Stream.Position;
+    { write image }
+    Items[i].SaveToStream(Stream);
+  end;
+  { write offsets }
+  Stream.Seek(SizeOf(Integer), soFromBeginning);
+  Stream.Write(Offsets[0], Count * SizeOf(Integer));
+end;
+
+end.

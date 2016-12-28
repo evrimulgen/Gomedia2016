@@ -448,6 +448,7 @@ object FormCashRegister: TFormCashRegister
     object dxComponentPrinterLink1: TdxGridReportLink
       Active = True
       Component = Grid
+      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 1
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -459,7 +460,8 @@ object FormCashRegister: TFormCashRegister
       PrinterPage.PageSize.Y = 279400
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 42123.428651134260000000
+      ReportDocument.CreationDate = 42732.389634351850000000
+      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
       OptionsOnEveryPage.Footers = False
       OptionsOnEveryPage.FilterBar = False
       OptionsView.Footers = False

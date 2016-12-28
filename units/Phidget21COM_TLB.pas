@@ -81,64 +81,75 @@ const
 
   LIBID_Phidget21COM: TGUID = '{50484945-4745-5453-0000-000000000000}';
 
-  IID_IPhidget: TGUID                          = '{50484945-4745-5453-1000-000000000001}';
-  IID_IPhidgetManager: TGUID                   = '{50484945-4745-5453-1000-000000000002}';
-  DIID__IPhidgetManagerEvents: TGUID           = '{50484945-4745-5453-2000-000000000002}';
-  CLASS_PhidgetManager: TGUID                  = '{50484945-4745-5453-3000-000000000002}';
-  IID_IPhidgetAccelerometer: TGUID             = '{50484945-4745-5453-1000-000000000011}';
-  DIID__IPhidgetAccelerometerEvents: TGUID     = '{50484945-4745-5453-2000-000000000011}';
-  CLASS_PhidgetAccelerometer: TGUID            = '{50484945-4745-5453-3000-000000000011}';
-  IID_IPhidgetAdvancedServo: TGUID             = '{50484945-4745-5453-1000-00000000000C}';
-  DIID__IPhidgetAdvancedServoEvents: TGUID     = '{50484945-4745-5453-2000-00000000000C}';
-  CLASS_PhidgetAdvancedServo: TGUID            = '{50484945-4745-5453-3000-00000000000C}';
-  IID_IPhidgetDictionary: TGUID                = '{50484945-4745-5453-1000-000000000013}';
-  DIID__IPhidgetDictionaryEvents: TGUID        = '{50484945-4745-5453-2000-000000000013}';
-  CLASS_PhidgetDictionary: TGUID               = '{50484945-4745-5453-3000-000000000013}';
-  IID_IPhidgetEncoder: TGUID                   = '{50484945-4745-5453-1000-00000000000E}';
-  DIID__IPhidgetEncoderEvents: TGUID           = '{50484945-4745-5453-2000-00000000000E}';
-  CLASS_PhidgetEncoder: TGUID                  = '{50484945-4745-5453-3000-00000000000E}';
-  IID_IPhidgetInterfaceKit: TGUID              = '{50484945-4745-5453-1000-000000000003}';
-  DIID__IPhidgetInterfaceKitEvents: TGUID      = '{50484945-4745-5453-2000-000000000003}';
-  CLASS_PhidgetInterfaceKit: TGUID             = '{50484945-4745-5453-3000-000000000003}';
-  IID_IPhidgetIR: TGUID                        = '{50484945-4745-5453-1000-000000000016}';
-  DIID__IPhidgetIREvents: TGUID                = '{50484945-4745-5453-2000-000000000016}';
-  CLASS_PhidgetIR: TGUID                       = '{50484945-4745-5453-3000-000000000016}';
-  IID_IPhidgetKeyListener: TGUID               = '{50484945-4745-5453-1000-000000000014}';
-  DIID__IPhidgetKeyListenerEvents: TGUID       = '{50484945-4745-5453-2000-000000000014}';
-  CLASS_PhidgetKeyListener: TGUID              = '{50484945-4745-5453-3000-000000000014}';
-  IID_IPhidgetLED: TGUID                       = '{50484945-4745-5453-1000-00000000000D}';
-  DIID__IPhidgetLEDEvents: TGUID               = '{50484945-4745-5453-2000-00000000000D}';
-  CLASS_PhidgetLED: TGUID                      = '{50484945-4745-5453-3000-00000000000D}';
-  IID_IPhidgetMotorControl: TGUID              = '{50484945-4745-5453-1000-00000000000B}';
-  DIID__IPhidgetMotorControlEvents: TGUID      = '{50484945-4745-5453-2000-00000000000B}';
-  CLASS_PhidgetMotorControl: TGUID             = '{50484945-4745-5453-3000-00000000000B}';
-  IID_IPhidgetPHSensor: TGUID                  = '{50484945-4745-5453-1000-000000000015}';
-  DIID__IPhidgetPHSensorEvents: TGUID          = '{50484945-4745-5453-2000-000000000015}';
-  CLASS_PhidgetPHSensor: TGUID                 = '{50484945-4745-5453-3000-000000000015}';
-  IID_IPhidgetRFID: TGUID                      = '{50484945-4745-5453-1000-000000000007}';
-  DIID__IPhidgetRFIDEvents: TGUID              = '{50484945-4745-5453-2000-000000000007}';
-  CLASS_PhidgetRFID: TGUID                     = '{50484945-4745-5453-3000-000000000007}';
-  IID_IPhidgetServo: TGUID                     = '{50484945-4745-5453-1000-000000000004}';
-  DIID__IPhidgetServoEvents: TGUID             = '{50484945-4745-5453-2000-000000000004}';
-  CLASS_PhidgetServo: TGUID                    = '{50484945-4745-5453-3000-000000000004}';
-  IID_IPhidgetSpatial: TGUID                   = '{50484945-4745-5453-1000-000000000017}';
-  DIID__IPhidgetSpatialEvents: TGUID           = '{50484945-4745-5453-2000-000000000017}';
-  CLASS_PhidgetSpatial: TGUID                  = '{50484945-4745-5453-3000-000000000017}';
-  IID_IPhidgetStepper: TGUID                   = '{50484945-4745-5453-1000-00000000000F}';
-  DIID__IPhidgetStepperEvents: TGUID           = '{50484945-4745-5453-2000-00000000000F}';
-  CLASS_PhidgetStepper: TGUID                  = '{50484945-4745-5453-3000-00000000000F}';
-  IID_IPhidgetTemperatureSensor: TGUID         = '{50484945-4745-5453-1000-000000000010}';
-  DIID__IPhidgetTemperatureSensorEvents: TGUID = '{50484945-4745-5453-2000-000000000010}';
-  CLASS_PhidgetTemperatureSensor: TGUID        = '{50484945-4745-5453-3000-000000000010}';
-  IID_IPhidgetTextLCD: TGUID                   = '{50484945-4745-5453-1000-00000000000A}';
-  DIID__IPhidgetTextLCDEvents: TGUID           = '{50484945-4745-5453-2000-00000000000A}';
-  CLASS_PhidgetTextLCD: TGUID                  = '{50484945-4745-5453-3000-00000000000A}';
-  IID_IPhidgetTextLED: TGUID                   = '{50484945-4745-5453-1000-000000000012}';
-  DIID__IPhidgetTextLEDEvents: TGUID           = '{50484945-4745-5453-2000-000000000012}';
-  CLASS_PhidgetTextLED: TGUID                  = '{50484945-4745-5453-3000-000000000012}';
-  IID_IPhidgetWeightSensor: TGUID              = '{50484945-4745-5453-1000-000000000008}';
-  DIID__IPhidgetWeightSensorEvents: TGUID      = '{50484945-4745-5453-2000-000000000008}';
-  CLASS_PhidgetWeightSensor: TGUID             = '{50484945-4745-5453-3000-000000000008}';
+  IID_IPhidget: TGUID = '{50484945-4745-5453-1000-000000000001}';
+  IID_IPhidgetManager: TGUID = '{50484945-4745-5453-1000-000000000002}';
+  DIID__IPhidgetManagerEvents: TGUID = '{50484945-4745-5453-2000-000000000002}';
+  CLASS_PhidgetManager: TGUID = '{50484945-4745-5453-3000-000000000002}';
+  IID_IPhidgetAccelerometer: TGUID = '{50484945-4745-5453-1000-000000000011}';
+  DIID__IPhidgetAccelerometerEvents
+    : TGUID = '{50484945-4745-5453-2000-000000000011}';
+  CLASS_PhidgetAccelerometer: TGUID = '{50484945-4745-5453-3000-000000000011}';
+  IID_IPhidgetAdvancedServo: TGUID = '{50484945-4745-5453-1000-00000000000C}';
+  DIID__IPhidgetAdvancedServoEvents
+    : TGUID = '{50484945-4745-5453-2000-00000000000C}';
+  CLASS_PhidgetAdvancedServo: TGUID = '{50484945-4745-5453-3000-00000000000C}';
+  IID_IPhidgetDictionary: TGUID = '{50484945-4745-5453-1000-000000000013}';
+  DIID__IPhidgetDictionaryEvents
+    : TGUID = '{50484945-4745-5453-2000-000000000013}';
+  CLASS_PhidgetDictionary: TGUID = '{50484945-4745-5453-3000-000000000013}';
+  IID_IPhidgetEncoder: TGUID = '{50484945-4745-5453-1000-00000000000E}';
+  DIID__IPhidgetEncoderEvents: TGUID = '{50484945-4745-5453-2000-00000000000E}';
+  CLASS_PhidgetEncoder: TGUID = '{50484945-4745-5453-3000-00000000000E}';
+  IID_IPhidgetInterfaceKit: TGUID = '{50484945-4745-5453-1000-000000000003}';
+  DIID__IPhidgetInterfaceKitEvents
+    : TGUID = '{50484945-4745-5453-2000-000000000003}';
+  CLASS_PhidgetInterfaceKit: TGUID = '{50484945-4745-5453-3000-000000000003}';
+  IID_IPhidgetIR: TGUID = '{50484945-4745-5453-1000-000000000016}';
+  DIID__IPhidgetIREvents: TGUID = '{50484945-4745-5453-2000-000000000016}';
+  CLASS_PhidgetIR: TGUID = '{50484945-4745-5453-3000-000000000016}';
+  IID_IPhidgetKeyListener: TGUID = '{50484945-4745-5453-1000-000000000014}';
+  DIID__IPhidgetKeyListenerEvents
+    : TGUID = '{50484945-4745-5453-2000-000000000014}';
+  CLASS_PhidgetKeyListener: TGUID = '{50484945-4745-5453-3000-000000000014}';
+  IID_IPhidgetLED: TGUID = '{50484945-4745-5453-1000-00000000000D}';
+  DIID__IPhidgetLEDEvents: TGUID = '{50484945-4745-5453-2000-00000000000D}';
+  CLASS_PhidgetLED: TGUID = '{50484945-4745-5453-3000-00000000000D}';
+  IID_IPhidgetMotorControl: TGUID = '{50484945-4745-5453-1000-00000000000B}';
+  DIID__IPhidgetMotorControlEvents
+    : TGUID = '{50484945-4745-5453-2000-00000000000B}';
+  CLASS_PhidgetMotorControl: TGUID = '{50484945-4745-5453-3000-00000000000B}';
+  IID_IPhidgetPHSensor: TGUID = '{50484945-4745-5453-1000-000000000015}';
+  DIID__IPhidgetPHSensorEvents
+    : TGUID = '{50484945-4745-5453-2000-000000000015}';
+  CLASS_PhidgetPHSensor: TGUID = '{50484945-4745-5453-3000-000000000015}';
+  IID_IPhidgetRFID: TGUID = '{50484945-4745-5453-1000-000000000007}';
+  DIID__IPhidgetRFIDEvents: TGUID = '{50484945-4745-5453-2000-000000000007}';
+  CLASS_PhidgetRFID: TGUID = '{50484945-4745-5453-3000-000000000007}';
+  IID_IPhidgetServo: TGUID = '{50484945-4745-5453-1000-000000000004}';
+  DIID__IPhidgetServoEvents: TGUID = '{50484945-4745-5453-2000-000000000004}';
+  CLASS_PhidgetServo: TGUID = '{50484945-4745-5453-3000-000000000004}';
+  IID_IPhidgetSpatial: TGUID = '{50484945-4745-5453-1000-000000000017}';
+  DIID__IPhidgetSpatialEvents: TGUID = '{50484945-4745-5453-2000-000000000017}';
+  CLASS_PhidgetSpatial: TGUID = '{50484945-4745-5453-3000-000000000017}';
+  IID_IPhidgetStepper: TGUID = '{50484945-4745-5453-1000-00000000000F}';
+  DIID__IPhidgetStepperEvents: TGUID = '{50484945-4745-5453-2000-00000000000F}';
+  CLASS_PhidgetStepper: TGUID = '{50484945-4745-5453-3000-00000000000F}';
+  IID_IPhidgetTemperatureSensor
+    : TGUID = '{50484945-4745-5453-1000-000000000010}';
+  DIID__IPhidgetTemperatureSensorEvents
+    : TGUID = '{50484945-4745-5453-2000-000000000010}';
+  CLASS_PhidgetTemperatureSensor
+    : TGUID = '{50484945-4745-5453-3000-000000000010}';
+  IID_IPhidgetTextLCD: TGUID = '{50484945-4745-5453-1000-00000000000A}';
+  DIID__IPhidgetTextLCDEvents: TGUID = '{50484945-4745-5453-2000-00000000000A}';
+  CLASS_PhidgetTextLCD: TGUID = '{50484945-4745-5453-3000-00000000000A}';
+  IID_IPhidgetTextLED: TGUID = '{50484945-4745-5453-1000-000000000012}';
+  DIID__IPhidgetTextLEDEvents: TGUID = '{50484945-4745-5453-2000-000000000012}';
+  CLASS_PhidgetTextLED: TGUID = '{50484945-4745-5453-3000-000000000012}';
+  IID_IPhidgetWeightSensor: TGUID = '{50484945-4745-5453-1000-000000000008}';
+  DIID__IPhidgetWeightSensorEvents
+    : TGUID = '{50484945-4745-5453-2000-000000000008}';
+  CLASS_PhidgetWeightSensor: TGUID = '{50484945-4745-5453-3000-000000000008}';
 
   // *********************************************************************//
   // Declaration of Enumerations defined in Type Library
@@ -148,60 +159,60 @@ type
   __MIDL___MIDL_itf_Phidget21COM_0000_0001 = TOleEnum;
 
 const
-  E_PHIDGETCOM_OK                   = $00000000;
-  E_PHIDGETCOM_NOTFOUND             = $00000200;
-  E_PHIDGETCOM_NOMEMORY             = $00000201;
-  E_PHIDGETCOM_UNEXPECTED           = $00000202;
-  E_PHIDGETCOM_INVALIDARG           = $00000203;
-  E_PHIDGETCOM_NOTATTACHED          = $00000204;
-  E_PHIDGETCOM_INTERRUPTED          = $00000205;
-  E_PHIDGETCOM_INVALID              = $00000206;
-  E_PHIDGETCOM_NETWORK              = $00000207;
-  E_PHIDGETCOM_UNKNOWNVAL           = $00000208;
-  E_PHIDGETCOM_BADPASSWORD          = $00000209;
-  E_PHIDGETCOM_UNSUPPORTED          = $0000020A;
-  E_PHIDGETCOM_DUPLICATE            = $0000020B;
-  E_PHIDGETCOM_TIMEOUT              = $0000020C;
-  E_PHIDGETCOM_OUTOFBOUNDS          = $0000020D;
-  E_PHIDGETCOM_EVENT                = $0000020E;
+  E_PHIDGETCOM_OK = $00000000;
+  E_PHIDGETCOM_NOTFOUND = $00000200;
+  E_PHIDGETCOM_NOMEMORY = $00000201;
+  E_PHIDGETCOM_UNEXPECTED = $00000202;
+  E_PHIDGETCOM_INVALIDARG = $00000203;
+  E_PHIDGETCOM_NOTATTACHED = $00000204;
+  E_PHIDGETCOM_INTERRUPTED = $00000205;
+  E_PHIDGETCOM_INVALID = $00000206;
+  E_PHIDGETCOM_NETWORK = $00000207;
+  E_PHIDGETCOM_UNKNOWNVAL = $00000208;
+  E_PHIDGETCOM_BADPASSWORD = $00000209;
+  E_PHIDGETCOM_UNSUPPORTED = $0000020A;
+  E_PHIDGETCOM_DUPLICATE = $0000020B;
+  E_PHIDGETCOM_TIMEOUT = $0000020C;
+  E_PHIDGETCOM_OUTOFBOUNDS = $0000020D;
+  E_PHIDGETCOM_EVENT = $0000020E;
   E_PHIDGETCOM_NETWORK_NOTCONNECTED = $0000020F;
-  E_PHIDGETCOM_WRONGDEVICE          = $00000210;
-  E_PHIDGETCOM_CLOSED               = $00000211;
-  E_PHIDGETCOM_BADVERSION           = $00000212;
-  EE_PHIDGETCOM_NETWORK             = $00008001;
-  EE_PHIDGETCOM_BADPASSWORD         = $00008002;
-  EE_PHIDGETCOM_BADVERSION          = $00008003;
-  EE_PHIDGETCOM_OVERRUN             = $00009002;
-  EE_PHIDGETCOM_PACKETLOST          = $00009003;
-  EE_PHIDGETCOM_WRAP                = $00009004;
-  EE_PHIDGETCOM_OVERTEMP            = $00009005;
-  EE_PHIDGETCOM_OVERCURRENT         = $00009006;
-  EE_PHIDGETCOM_OUTOFRANGE          = $00009007;
-  EE_PHIDGETCOM_BADPOWER            = $00009008;
+  E_PHIDGETCOM_WRONGDEVICE = $00000210;
+  E_PHIDGETCOM_CLOSED = $00000211;
+  E_PHIDGETCOM_BADVERSION = $00000212;
+  EE_PHIDGETCOM_NETWORK = $00008001;
+  EE_PHIDGETCOM_BADPASSWORD = $00008002;
+  EE_PHIDGETCOM_BADVERSION = $00008003;
+  EE_PHIDGETCOM_OVERRUN = $00009002;
+  EE_PHIDGETCOM_PACKETLOST = $00009003;
+  EE_PHIDGETCOM_WRAP = $00009004;
+  EE_PHIDGETCOM_OVERTEMP = $00009005;
+  EE_PHIDGETCOM_OVERCURRENT = $00009006;
+  EE_PHIDGETCOM_OUTOFRANGE = $00009007;
+  EE_PHIDGETCOM_BADPOWER = $00009008;
 
   // Constants for enum __MIDL___MIDL_itf_Phidget21COM_0120_0001
 type
   __MIDL___MIDL_itf_Phidget21COM_0120_0001 = TOleEnum;
 
 const
-  PHIDGETCOM_SERVO_DEFAULT                   = $00000001;
-  PHIDGETCOM_SERVO_RAW_us_MODE               = $00000002;
-  PHIDGETCOM_SERVO_HITEC_HS322HD             = $00000003;
-  PHIDGETCOM_SERVO_HITEC_HS5245MG            = $00000004;
-  PHIDGETCOM_SERVO_HITEC_805BB               = $00000005;
-  PHIDGETCOM_SERVO_HITEC_HS422               = $00000006;
-  PHIDGETCOM_SERVO_TOWERPRO_MG90             = $00000007;
-  PHIDGETCOM_SERVO_HITEC_HSR1425CR           = $00000008;
-  PHIDGETCOM_SERVO_HITEC_HS785HB             = $00000009;
-  PHIDGETCOM_SERVO_HITEC_HS485HB             = $0000000A;
-  PHIDGETCOM_SERVO_HITEC_HS645MG             = $0000000B;
-  PHIDGETCOM_SERVO_HITEC_815BB               = $0000000C;
-  PHIDGETCOM_SERVO_FIRGELLI_L12_30_50_06_R   = $0000000D;
-  PHIDGETCOM_SERVO_FIRGELLI_L12_50_100_06_R  = $0000000E;
-  PHIDGETCOM_SERVO_FIRGELLI_L12_50_210_06_R  = $0000000F;
-  PHIDGETCOM_SERVO_FIRGELLI_L12_100_50_06_R  = $00000010;
+  PHIDGETCOM_SERVO_DEFAULT = $00000001;
+  PHIDGETCOM_SERVO_RAW_us_MODE = $00000002;
+  PHIDGETCOM_SERVO_HITEC_HS322HD = $00000003;
+  PHIDGETCOM_SERVO_HITEC_HS5245MG = $00000004;
+  PHIDGETCOM_SERVO_HITEC_805BB = $00000005;
+  PHIDGETCOM_SERVO_HITEC_HS422 = $00000006;
+  PHIDGETCOM_SERVO_TOWERPRO_MG90 = $00000007;
+  PHIDGETCOM_SERVO_HITEC_HSR1425CR = $00000008;
+  PHIDGETCOM_SERVO_HITEC_HS785HB = $00000009;
+  PHIDGETCOM_SERVO_HITEC_HS485HB = $0000000A;
+  PHIDGETCOM_SERVO_HITEC_HS645MG = $0000000B;
+  PHIDGETCOM_SERVO_HITEC_815BB = $0000000C;
+  PHIDGETCOM_SERVO_FIRGELLI_L12_30_50_06_R = $0000000D;
+  PHIDGETCOM_SERVO_FIRGELLI_L12_50_100_06_R = $0000000E;
+  PHIDGETCOM_SERVO_FIRGELLI_L12_50_210_06_R = $0000000F;
+  PHIDGETCOM_SERVO_FIRGELLI_L12_100_50_06_R = $00000010;
   PHIDGETCOM_SERVO_FIRGELLI_L12_100_100_06_R = $00000011;
-  PHIDGETCOM_SERVO_USER_DEFINED              = $00000012;
+  PHIDGETCOM_SERVO_USER_DEFINED = $00000012;
 
   // Constants for enum __MIDL___MIDL_itf_Phidget21COM_0128_0001
 type
@@ -209,18 +220,18 @@ type
 
 const
   PHIDGETCOM_IR_ENCODING_UNKNOWN = $00000001;
-  PHIDGETCOM_IR_ENCODING_SPACE   = $00000002;
-  PHIDGETCOM_IR_ENCODING_PULSE   = $00000003;
+  PHIDGETCOM_IR_ENCODING_SPACE = $00000002;
+  PHIDGETCOM_IR_ENCODING_PULSE = $00000003;
   PHIDGETCOM_IR_ENCODING_BIPHASE = $00000004;
-  PHIDGETCOM_IR_ENCODING_RC5     = $00000005;
-  PHIDGETCOM_IR_ENCODING_RC6     = $00000006;
+  PHIDGETCOM_IR_ENCODING_RC5 = $00000005;
+  PHIDGETCOM_IR_ENCODING_RC6 = $00000006;
 
   // Constants for enum __MIDL___MIDL_itf_Phidget21COM_0128_0002
 type
   __MIDL___MIDL_itf_Phidget21COM_0128_0002 = TOleEnum;
 
 const
-  PHIDGETCOM_IR_LENGTH_UNKNOWN  = $00000001;
+  PHIDGETCOM_IR_LENGTH_UNKNOWN = $00000001;
   PHIDGETCOM_IR_LENGTH_CONSTANT = $00000002;
   PHIDGETCOM_IR_LENGTH_VARIABLE = $00000003;
 
@@ -229,10 +240,10 @@ type
   __MIDL___MIDL_itf_Phidget21COM_0132_0001 = TOleEnum;
 
 const
-  PHIDGETCOM_LED_VOLTAGE_1_7V  = $00000001;
+  PHIDGETCOM_LED_VOLTAGE_1_7V = $00000001;
   PHIDGETCOM_LED_VOLTAGE_2_75V = $00000002;
-  PHIDGETCOM_LED_VOLTAGE_3_9V  = $00000003;
-  PHIDGETCOM_LED_VOLTAGE_5_0V  = $00000004;
+  PHIDGETCOM_LED_VOLTAGE_3_9V = $00000003;
+  PHIDGETCOM_LED_VOLTAGE_5_0V = $00000004;
 
   // Constants for enum __MIDL___MIDL_itf_Phidget21COM_0132_0002
 type
@@ -249,102 +260,102 @@ type
   // *********************************************************************//
   // Forward declaration of types defined in TypeLibrary
   // *********************************************************************//
-  IPhidget                         = interface;
-  IPhidgetDisp                     = dispinterface;
-  IPhidgetManager                  = interface;
-  IPhidgetManagerDisp              = dispinterface;
-  _IPhidgetManagerEvents           = dispinterface;
-  IPhidgetAccelerometer            = interface;
-  IPhidgetAccelerometerDisp        = dispinterface;
-  _IPhidgetAccelerometerEvents     = dispinterface;
-  IPhidgetAdvancedServo            = interface;
-  IPhidgetAdvancedServoDisp        = dispinterface;
-  _IPhidgetAdvancedServoEvents     = dispinterface;
-  IPhidgetDictionary               = interface;
-  IPhidgetDictionaryDisp           = dispinterface;
-  _IPhidgetDictionaryEvents        = dispinterface;
-  IPhidgetEncoder                  = interface;
-  IPhidgetEncoderDisp              = dispinterface;
-  _IPhidgetEncoderEvents           = dispinterface;
-  IPhidgetInterfaceKit             = interface;
-  IPhidgetInterfaceKitDisp         = dispinterface;
-  _IPhidgetInterfaceKitEvents      = dispinterface;
-  IPhidgetIR                       = interface;
-  IPhidgetIRDisp                   = dispinterface;
-  _IPhidgetIREvents                = dispinterface;
-  IPhidgetKeyListener              = interface;
-  IPhidgetKeyListenerDisp          = dispinterface;
-  _IPhidgetKeyListenerEvents       = dispinterface;
-  IPhidgetLED                      = interface;
-  IPhidgetLEDDisp                  = dispinterface;
-  _IPhidgetLEDEvents               = dispinterface;
-  IPhidgetMotorControl             = interface;
-  IPhidgetMotorControlDisp         = dispinterface;
-  _IPhidgetMotorControlEvents      = dispinterface;
-  IPhidgetPHSensor                 = interface;
-  IPhidgetPHSensorDisp             = dispinterface;
-  _IPhidgetPHSensorEvents          = dispinterface;
-  IPhidgetRFID                     = interface;
-  IPhidgetRFIDDisp                 = dispinterface;
-  _IPhidgetRFIDEvents              = dispinterface;
-  IPhidgetServo                    = interface;
-  IPhidgetServoDisp                = dispinterface;
-  _IPhidgetServoEvents             = dispinterface;
-  IPhidgetSpatial                  = interface;
-  IPhidgetSpatialDisp              = dispinterface;
-  _IPhidgetSpatialEvents           = dispinterface;
-  IPhidgetStepper                  = interface;
-  IPhidgetStepperDisp              = dispinterface;
-  _IPhidgetStepperEvents           = dispinterface;
-  IPhidgetTemperatureSensor        = interface;
-  IPhidgetTemperatureSensorDisp    = dispinterface;
+  IPhidget = interface;
+  IPhidgetDisp = dispinterface;
+  IPhidgetManager = interface;
+  IPhidgetManagerDisp = dispinterface;
+  _IPhidgetManagerEvents = dispinterface;
+  IPhidgetAccelerometer = interface;
+  IPhidgetAccelerometerDisp = dispinterface;
+  _IPhidgetAccelerometerEvents = dispinterface;
+  IPhidgetAdvancedServo = interface;
+  IPhidgetAdvancedServoDisp = dispinterface;
+  _IPhidgetAdvancedServoEvents = dispinterface;
+  IPhidgetDictionary = interface;
+  IPhidgetDictionaryDisp = dispinterface;
+  _IPhidgetDictionaryEvents = dispinterface;
+  IPhidgetEncoder = interface;
+  IPhidgetEncoderDisp = dispinterface;
+  _IPhidgetEncoderEvents = dispinterface;
+  IPhidgetInterfaceKit = interface;
+  IPhidgetInterfaceKitDisp = dispinterface;
+  _IPhidgetInterfaceKitEvents = dispinterface;
+  IPhidgetIR = interface;
+  IPhidgetIRDisp = dispinterface;
+  _IPhidgetIREvents = dispinterface;
+  IPhidgetKeyListener = interface;
+  IPhidgetKeyListenerDisp = dispinterface;
+  _IPhidgetKeyListenerEvents = dispinterface;
+  IPhidgetLED = interface;
+  IPhidgetLEDDisp = dispinterface;
+  _IPhidgetLEDEvents = dispinterface;
+  IPhidgetMotorControl = interface;
+  IPhidgetMotorControlDisp = dispinterface;
+  _IPhidgetMotorControlEvents = dispinterface;
+  IPhidgetPHSensor = interface;
+  IPhidgetPHSensorDisp = dispinterface;
+  _IPhidgetPHSensorEvents = dispinterface;
+  IPhidgetRFID = interface;
+  IPhidgetRFIDDisp = dispinterface;
+  _IPhidgetRFIDEvents = dispinterface;
+  IPhidgetServo = interface;
+  IPhidgetServoDisp = dispinterface;
+  _IPhidgetServoEvents = dispinterface;
+  IPhidgetSpatial = interface;
+  IPhidgetSpatialDisp = dispinterface;
+  _IPhidgetSpatialEvents = dispinterface;
+  IPhidgetStepper = interface;
+  IPhidgetStepperDisp = dispinterface;
+  _IPhidgetStepperEvents = dispinterface;
+  IPhidgetTemperatureSensor = interface;
+  IPhidgetTemperatureSensorDisp = dispinterface;
   _IPhidgetTemperatureSensorEvents = dispinterface;
-  IPhidgetTextLCD                  = interface;
-  IPhidgetTextLCDDisp              = dispinterface;
-  _IPhidgetTextLCDEvents           = dispinterface;
-  IPhidgetTextLED                  = interface;
-  IPhidgetTextLEDDisp              = dispinterface;
-  _IPhidgetTextLEDEvents           = dispinterface;
-  IPhidgetWeightSensor             = interface;
-  IPhidgetWeightSensorDisp         = dispinterface;
-  _IPhidgetWeightSensorEvents      = dispinterface;
+  IPhidgetTextLCD = interface;
+  IPhidgetTextLCDDisp = dispinterface;
+  _IPhidgetTextLCDEvents = dispinterface;
+  IPhidgetTextLED = interface;
+  IPhidgetTextLEDDisp = dispinterface;
+  _IPhidgetTextLEDEvents = dispinterface;
+  IPhidgetWeightSensor = interface;
+  IPhidgetWeightSensorDisp = dispinterface;
+  _IPhidgetWeightSensorEvents = dispinterface;
 
   // *********************************************************************//
   // Declaration of CoClasses defined in Type Library
   // (NOTE: Here we map each CoClass to its Default Interface)
   // *********************************************************************//
-  PhidgetManager           = IPhidgetManager;
-  PhidgetAccelerometer     = IPhidgetAccelerometer;
-  PhidgetAdvancedServo     = IPhidgetAdvancedServo;
-  PhidgetDictionary        = IPhidgetDictionary;
-  PhidgetEncoder           = IPhidgetEncoder;
-  PhidgetInterfaceKit      = IPhidgetInterfaceKit;
-  PhidgetIR                = IPhidgetIR;
-  PhidgetKeyListener       = IPhidgetKeyListener;
-  PhidgetLED               = IPhidgetLED;
-  PhidgetMotorControl      = IPhidgetMotorControl;
-  PhidgetPHSensor          = IPhidgetPHSensor;
-  PhidgetRFID              = IPhidgetRFID;
-  PhidgetServo             = IPhidgetServo;
-  PhidgetSpatial           = IPhidgetSpatial;
-  PhidgetStepper           = IPhidgetStepper;
+  PhidgetManager = IPhidgetManager;
+  PhidgetAccelerometer = IPhidgetAccelerometer;
+  PhidgetAdvancedServo = IPhidgetAdvancedServo;
+  PhidgetDictionary = IPhidgetDictionary;
+  PhidgetEncoder = IPhidgetEncoder;
+  PhidgetInterfaceKit = IPhidgetInterfaceKit;
+  PhidgetIR = IPhidgetIR;
+  PhidgetKeyListener = IPhidgetKeyListener;
+  PhidgetLED = IPhidgetLED;
+  PhidgetMotorControl = IPhidgetMotorControl;
+  PhidgetPHSensor = IPhidgetPHSensor;
+  PhidgetRFID = IPhidgetRFID;
+  PhidgetServo = IPhidgetServo;
+  PhidgetSpatial = IPhidgetSpatial;
+  PhidgetStepper = IPhidgetStepper;
   PhidgetTemperatureSensor = IPhidgetTemperatureSensor;
-  PhidgetTextLCD           = IPhidgetTextLCD;
-  PhidgetTextLED           = IPhidgetTextLED;
-  PhidgetWeightSensor      = IPhidgetWeightSensor;
+  PhidgetTextLCD = IPhidgetTextLCD;
+  PhidgetTextLED = IPhidgetTextLED;
+  PhidgetWeightSensor = IPhidgetWeightSensor;
 
   // *********************************************************************//
   // Declaration of structures, unions and aliases.
   // *********************************************************************//
   PPSafeArray1 = ^PSafeArray; { * }
-  PUserType1   = ^PhidgetIR_CodeInfo; { * }
+  PUserType1 = ^PhidgetIR_CodeInfo; { * }
   PPSafeArray2 = ^PSafeArray; { * }
   PPSafeArray3 = ^PSafeArray; { * }
 
-  PhidgetCOM_Error     = __MIDL___MIDL_itf_Phidget21COM_0000_0001;
+  PhidgetCOM_Error = __MIDL___MIDL_itf_Phidget21COM_0000_0001;
   PhidgetCOM_ServoType = __MIDL___MIDL_itf_Phidget21COM_0120_0001;
-  PhidgetIR_Encoding   = __MIDL___MIDL_itf_Phidget21COM_0128_0001;
-  PhidgetIR_Length     = __MIDL___MIDL_itf_Phidget21COM_0128_0002;
+  PhidgetIR_Encoding = __MIDL___MIDL_itf_Phidget21COM_0128_0001;
+  PhidgetIR_Length = __MIDL___MIDL_itf_Phidget21COM_0128_0002;
 
   PhidgetIR_CodeInfo = record
     bitCount: Integer;
@@ -362,7 +373,7 @@ type
     dutyCycle: Integer;
   end;
 
-  PhidgetCOM_LEDVoltage      = __MIDL___MIDL_itf_Phidget21COM_0132_0001;
+  PhidgetCOM_LEDVoltage = __MIDL___MIDL_itf_Phidget21COM_0132_0001;
   PhidgetCOM_LEDCurrentLimit = __MIDL___MIDL_itf_Phidget21COM_0132_0002;
 
 {$ALIGN 8}
@@ -391,8 +402,10 @@ type
     function Get_DeviceVersion: SYSINT; safecall;
     function Get_LibraryVersion: WideString; safecall;
     procedure Open(SerialNumber: SYSINT); safecall;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); safecall;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); safecall;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); safecall;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); safecall;
     procedure Close; safecall;
     function Get_port: SYSINT; safecall;
     function Get_Address: WideString; safecall;
@@ -400,7 +413,8 @@ type
     function Get_IsAttachedToServer: WordBool; safecall;
     procedure EnableLogging(level: SYSINT; const file_: WideString); safecall;
     procedure DisableLogging; safecall;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); safecall;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); safecall;
     procedure WaitForAttachment(milliseconds: SYSINT); safecall;
     procedure EnableVerboseErrors(state: WordBool); safecall;
     property DeviceType: WideString read Get_DeviceType;
@@ -431,8 +445,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -440,7 +456,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -460,8 +477,10 @@ type
     function Get_DeviceLabel(Index: Integer): WideString; safecall;
     function Get_DeviceSerial(Index: Integer): SYSINT; safecall;
     function Get_DeviceVersion(Index: Integer): SYSINT; safecall;
-    procedure OpenRemote(const ServerID: WideString; const Password: WideString); safecall;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString); safecall;
+    procedure OpenRemote(const ServerID: WideString;
+      const Password: WideString); safecall;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      const Password: WideString); safecall;
     function Get_port: SYSINT; safecall;
     function Get_Address: WideString; safecall;
     function Get_ServerID: WideString; safecall;
@@ -493,8 +512,10 @@ type
     property DeviceLabel[index: Integer]: WideString readonly dispid 261;
     property DeviceSerial[index: Integer]: SYSINT readonly dispid 262;
     property DeviceVersion[index: Integer]: SYSINT readonly dispid 263;
-    procedure OpenRemote(const ServerID: WideString; const Password: WideString); dispid 264;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString); dispid 265;
+    procedure OpenRemote(const ServerID: WideString;
+      const Password: WideString); dispid 264;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      const Password: WideString); dispid 265;
     property port: SYSINT readonly dispid 267;
     property Address: WideString readonly dispid 268;
     property ServerID: WideString readonly dispid 269;
@@ -508,11 +529,14 @@ type
   // *********************************************************************//
   _IPhidgetManagerEvents = dispinterface
     ['{50484945-4745-5453-2000-000000000002}']
-    procedure OnAttach(const DeviceType: WideString; const DeviceName: WideString; SerialNumber: Integer; DeviceVersion: Integer;
-      const DeviceLabel: WideString); dispid 1;
-    procedure OnDetach(const DeviceType: WideString; const DeviceName: WideString; SerialNumber: Integer; DeviceVersion: Integer;
-      const DeviceLabel: WideString); dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnAttach(const DeviceType: WideString;
+      const DeviceName: WideString; SerialNumber: Integer;
+      DeviceVersion: Integer; const DeviceLabel: WideString); dispid 1;
+    procedure OnDetach(const DeviceType: WideString;
+      const DeviceName: WideString; SerialNumber: Integer;
+      DeviceVersion: Integer; const DeviceLabel: WideString); dispid 2;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
   end;
@@ -525,13 +549,15 @@ type
   IPhidgetAccelerometer = interface(IPhidget)
     ['{50484945-4745-5453-1000-000000000011}']
     function Get_AccelerationChangeTrigger(Index: Integer): Double; safecall;
-    procedure Set_AccelerationChangeTrigger(Index: Integer; pVal: Double); safecall;
+    procedure Set_AccelerationChangeTrigger(Index: Integer;
+      pVal: Double); safecall;
     function Get_Acceleration(Index: Integer): Double; safecall;
     function Get_AccelerationMax(Index: Integer): Double; safecall;
     function Get_AccelerationMin(Index: Integer): Double; safecall;
     function Get_AxisCount: Integer; safecall;
     function Get_NumAxis: Integer; safecall;
-    property AccelerationChangeTrigger[index: Integer]: Double read Get_AccelerationChangeTrigger write Set_AccelerationChangeTrigger;
+    property AccelerationChangeTrigger[index: Integer]: Double
+      read Get_AccelerationChangeTrigger write Set_AccelerationChangeTrigger;
     property Acceleration[index: Integer]: Double read Get_Acceleration;
     property AccelerationMax[index: Integer]: Double read Get_AccelerationMax;
     property AccelerationMin[index: Integer]: Double read Get_AccelerationMin;
@@ -560,8 +586,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -569,7 +597,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -583,10 +612,12 @@ type
     ['{50484945-4745-5453-2000-000000000011}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
-    procedure OnAccelerationChange(Index: Integer; Acceleration: Double); dispid 6;
+    procedure OnAccelerationChange(Index: Integer;
+      Acceleration: Double); dispid 6;
   end;
 
   // *********************************************************************//
@@ -619,24 +650,34 @@ type
     function Get_VelocityMax(Index: Integer): Double; safecall;
     function Get_Stopped(Index: Integer): WordBool; safecall;
     function Get_ServoType(Index: Integer): PhidgetCOM_ServoType; safecall;
-    procedure Set_ServoType(Index: Integer; pVal: PhidgetCOM_ServoType); safecall;
-    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double; VelocityMax: Double); safecall;
-    property Position[index: Integer]: Double read Get_Position write Set_Position;
-    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit write Set_VelocityLimit;
-    property Acceleration[index: Integer]: Double read Get_Acceleration write Set_Acceleration;
-    property Engaged[index: Integer]: WordBool read Get_Engaged write Set_Engaged;
+    procedure Set_ServoType(Index: Integer;
+      pVal: PhidgetCOM_ServoType); safecall;
+    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double;
+      Degrees: Double; VelocityMax: Double); safecall;
+    property Position[index: Integer]: Double read Get_Position
+      write Set_Position;
+    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit
+      write Set_VelocityLimit;
+    property Acceleration[index: Integer]: Double read Get_Acceleration
+      write Set_Acceleration;
+    property Engaged[index: Integer]: WordBool read Get_Engaged
+      write Set_Engaged;
     property MotorCount: Integer read Get_MotorCount;
     property Velocity[index: Integer]: Double read Get_Velocity;
     property Current[index: Integer]: Double read Get_Current;
-    property SpeedRampingOn[index: Integer]: WordBool read Get_SpeedRampingOn write Set_SpeedRampingOn;
+    property SpeedRampingOn[index: Integer]: WordBool read Get_SpeedRampingOn
+      write Set_SpeedRampingOn;
     property AccelerationMin[index: Integer]: Double read Get_AccelerationMin;
     property AccelerationMax[index: Integer]: Double read Get_AccelerationMax;
-    property PositionMin[index: Integer]: Double read Get_PositionMin write Set_PositionMin;
-    property PositionMax[index: Integer]: Double read Get_PositionMax write Set_PositionMax;
+    property PositionMin[index: Integer]: Double read Get_PositionMin
+      write Set_PositionMin;
+    property PositionMax[index: Integer]: Double read Get_PositionMax
+      write Set_PositionMax;
     property VelocityMin[index: Integer]: Double read Get_VelocityMin;
     property VelocityMax[index: Integer]: Double read Get_VelocityMax;
     property Stopped[index: Integer]: WordBool read Get_Stopped;
-    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType write Set_ServoType;
+    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType
+      write Set_ServoType;
   end;
 
   // *********************************************************************//
@@ -662,7 +703,8 @@ type
     property VelocityMax[index: Integer]: Double readonly dispid 269;
     property Stopped[index: Integer]: WordBool readonly dispid 270;
     property ServoType[index: Integer]: PhidgetCOM_ServoType dispid 271;
-    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double; VelocityMax: Double); dispid 272;
+    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double;
+      Degrees: Double; VelocityMax: Double); dispid 272;
     property DeviceType: WideString readonly dispid 512;
     property SerialNumber: SYSINT readonly dispid 513;
     property name: WideString readonly dispid 514;
@@ -671,8 +713,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -680,7 +724,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -694,7 +739,8 @@ type
     ['{50484945-4745-5453-2000-00000000000C}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnPositionChange(Index: Integer; Position: Double); dispid 6;
@@ -709,10 +755,13 @@ type
   // *********************************************************************//
   IPhidgetDictionary = interface(IDispatch)
     ['{50484945-4745-5453-1000-000000000013}']
-    procedure OpenRemote(const ServerID: WideString; const Password: WideString); safecall;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString); safecall;
+    procedure OpenRemote(const ServerID: WideString;
+      const Password: WideString); safecall;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      const Password: WideString); safecall;
     procedure Close; safecall;
-    procedure Add(const Key: WideString; const Value: WideString; Persistent: WordBool); safecall;
+    procedure Add(const Key: WideString; const Value: WideString;
+      Persistent: WordBool); safecall;
     procedure Remove(const Pattern: WideString); safecall;
     function Get(const Key: WideString): WideString; safecall;
     function Get_Handle: SYSINT; safecall;
@@ -734,10 +783,13 @@ type
   // *********************************************************************//
   IPhidgetDictionaryDisp = dispinterface
     ['{50484945-4745-5453-1000-000000000013}']
-    procedure OpenRemote(const ServerID: WideString; const Password: WideString); dispid 256;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString); dispid 257;
+    procedure OpenRemote(const ServerID: WideString;
+      const Password: WideString); dispid 256;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      const Password: WideString); dispid 257;
     procedure Close; dispid 258;
-    procedure Add(const Key: WideString; const Value: WideString; Persistent: WordBool); dispid 259;
+    procedure Add(const Key: WideString; const Value: WideString;
+      Persistent: WordBool); dispid 259;
     procedure Remove(const Pattern: WideString); dispid 260;
     function Get(const Key: WideString): WideString; dispid 261;
     property Handle: SYSINT readonly dispid 262;
@@ -754,7 +806,8 @@ type
   // *********************************************************************//
   _IPhidgetDictionaryEvents = dispinterface
     ['{50484945-4745-5453-2000-000000000013}']
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 1;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 1;
     procedure OnServerConnect; dispid 2;
     procedure OnServerDisconnect; dispid 3;
   end;
@@ -778,13 +831,16 @@ type
     procedure Set_EncoderPosition(Index: Integer; pVal: Integer); safecall;
     function Get_NumEncoders: Integer; safecall;
     function Get_NumInputs: Integer; safecall;
-    property Position[index: Integer]: Integer read Get_Position write Set_Position;
+    property Position[index: Integer]: Integer read Get_Position
+      write Set_Position;
     property InputState[index: Integer]: WordBool read Get_InputState;
     property EncoderCount: Integer read Get_EncoderCount;
     property InputCount: Integer read Get_InputCount;
     property IndexPosition[index: Integer]: Integer read Get_IndexPosition;
-    property Enabled[index: Integer]: WordBool read Get_Enabled write Set_Enabled;
-    property EncoderPosition[index: Integer]: Integer read Get_EncoderPosition write Set_EncoderPosition;
+    property Enabled[index: Integer]: WordBool read Get_Enabled
+      write Set_Enabled;
+    property EncoderPosition[index: Integer]: Integer read Get_EncoderPosition
+      write Set_EncoderPosition;
     property NumEncoders: Integer read Get_NumEncoders;
     property NumInputs: Integer read Get_NumInputs;
   end;
@@ -813,8 +869,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -822,7 +880,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -836,11 +895,13 @@ type
     ['{50484945-4745-5453-2000-00000000000E}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnInputChange(Index: Integer; NewState: WordBool); dispid 6;
-    procedure OnPositionChange(Index: Integer; Time: Integer; EncoderDisplacement: Integer); dispid 7;
+    procedure OnPositionChange(Index: Integer; Time: Integer;
+      EncoderDisplacement: Integer); dispid 7;
   end;
 
   // *********************************************************************//
@@ -869,19 +930,22 @@ type
     procedure Set_DataRate(Index: Integer; pVal: Integer); safecall;
     function Get_DataRateMin(Index: Integer): Integer; safecall;
     function Get_DataRateMax(Index: Integer): Integer; safecall;
-    property OutputState[index: Integer]: WordBool read Get_OutputState write Set_OutputState;
+    property OutputState[index: Integer]: WordBool read Get_OutputState
+      write Set_OutputState;
     property OutputCount: Integer read Get_OutputCount;
     property InputCount: Integer read Get_InputCount;
     property InputState[index: Integer]: WordBool read Get_InputState;
     property SensorCount: Integer read Get_SensorCount;
     property SensorRawValue[index: Integer]: Integer read Get_SensorRawValue;
-    property SensorChangeTrigger[index: Integer]: Integer read Get_SensorChangeTrigger write Set_SensorChangeTrigger;
+    property SensorChangeTrigger[index: Integer]: Integer
+      read Get_SensorChangeTrigger write Set_SensorChangeTrigger;
     property SensorValue[index: Integer]: Integer read Get_SensorValue;
     property Ratiometric: WordBool read Get_Ratiometric write Set_Ratiometric;
     property NumOutputs: Integer read Get_NumOutputs;
     property NumInputs: Integer read Get_NumInputs;
     property NumSensors: Integer read Get_NumSensors;
-    property DataRate[index: Integer]: Integer read Get_DataRate write Set_DataRate;
+    property DataRate[index: Integer]: Integer read Get_DataRate
+      write Set_DataRate;
     property DataRateMin[index: Integer]: Integer read Get_DataRateMin;
     property DataRateMax[index: Integer]: Integer read Get_DataRateMax;
   end;
@@ -916,8 +980,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -925,7 +991,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -939,7 +1006,8 @@ type
     ['{50484945-4745-5453-2000-000000000003}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnInputChange(Index: Integer; NewState: WordBool); dispid 6;
@@ -954,12 +1022,17 @@ type
   // *********************************************************************//
   IPhidgetIR = interface(IPhidget)
     ['{50484945-4745-5453-1000-000000000016}']
-    procedure Transmit(var data: PSafeArray; var codeInfo: PhidgetIR_CodeInfo); safecall;
+    procedure Transmit(var data: PSafeArray;
+      var codeInfo: PhidgetIR_CodeInfo); safecall;
     procedure TransmitRepeat; safecall;
-    procedure TransmitRaw(var data: PSafeArray; length: Integer; carrierFrequency: Integer; dutyCyle: Integer; gap: Integer); safecall;
-    procedure getRawData(var data: PSafeArray; var dataLength: Integer); safecall;
-    procedure getLastCode(var data: PSafeArray; var dataLength: Integer; var bitCount: Integer); safecall;
-    procedure getLastLearnedCode(var data: PSafeArray; var dataLength: Integer; var codeInfo: PhidgetIR_CodeInfo); safecall;
+    procedure TransmitRaw(var data: PSafeArray; length: Integer;
+      carrierFrequency: Integer; dutyCyle: Integer; gap: Integer); safecall;
+    procedure getRawData(var data: PSafeArray;
+      var dataLength: Integer); safecall;
+    procedure getLastCode(var data: PSafeArray; var dataLength: Integer;
+      var bitCount: Integer); safecall;
+    procedure getLastLearnedCode(var data: PSafeArray; var dataLength: Integer;
+      var codeInfo: PhidgetIR_CodeInfo); safecall;
   end;
 
   // *********************************************************************//
@@ -969,12 +1042,19 @@ type
   // *********************************************************************//
   IPhidgetIRDisp = dispinterface
     ['{50484945-4745-5453-1000-000000000016}']
-    procedure Transmit(var data: { ??PSafeArray } OleVariant; var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant); dispid 256;
+    procedure Transmit(var data: { ??PSafeArray } OleVariant;
+      var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant); dispid 256;
     procedure TransmitRepeat; dispid 257;
-    procedure TransmitRaw(var data: { ??PSafeArray } OleVariant; length: Integer; carrierFrequency: Integer; dutyCyle: Integer; gap: Integer); dispid 258;
-    procedure getRawData(var data: { ??PSafeArray } OleVariant; var dataLength: Integer); dispid 259;
-    procedure getLastCode(var data: { ??PSafeArray } OleVariant; var dataLength: Integer; var bitCount: Integer); dispid 260;
-    procedure getLastLearnedCode(var data: { ??PSafeArray } OleVariant; var dataLength: Integer; var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant); dispid 261;
+    procedure TransmitRaw(var data: { ??PSafeArray } OleVariant;
+      length: Integer; carrierFrequency: Integer; dutyCyle: Integer;
+      gap: Integer); dispid 258;
+    procedure getRawData(var data: { ??PSafeArray } OleVariant;
+      var dataLength: Integer); dispid 259;
+    procedure getLastCode(var data: { ??PSafeArray } OleVariant;
+      var dataLength: Integer; var bitCount: Integer); dispid 260;
+    procedure getLastLearnedCode(var data: { ??PSafeArray } OleVariant;
+      var dataLength: Integer;
+      var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant); dispid 261;
     property DeviceType: WideString readonly dispid 512;
     property SerialNumber: SYSINT readonly dispid 513;
     property name: WideString readonly dispid 514;
@@ -983,8 +1063,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -992,7 +1074,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1006,12 +1089,17 @@ type
     ['{50484945-4745-5453-2000-000000000016}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
-    procedure OnCode(var data: { ??PSafeArray } OleVariant; dataLength: Integer; bitCount: Integer; repeat_: WordBool); dispid 6;
-    procedure OnLearn(var data: { ??PSafeArray } OleVariant; dataLength: Integer; var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant); dispid 7;
-    procedure OnRawData(var data: { ??PSafeArray } OleVariant; dataLength: Integer); dispid 8;
+    procedure OnCode(var data: { ??PSafeArray } OleVariant; dataLength: Integer;
+      bitCount: Integer; repeat_: WordBool); dispid 6;
+    procedure OnLearn(var data: { ??PSafeArray } OleVariant;
+      dataLength: Integer;
+      var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant); dispid 7;
+    procedure OnRawData(var data: { ??PSafeArray } OleVariant;
+      dataLength: Integer); dispid 8;
   end;
 
   // *********************************************************************//
@@ -1022,7 +1110,8 @@ type
   IPhidgetKeyListener = interface(IDispatch)
     ['{50484945-4745-5453-1000-000000000014}']
     function Get_Pattern: WideString; safecall;
-    procedure Start(const Dict: IPhidgetDictionary; const Pattern: WideString); safecall;
+    procedure Start(const Dict: IPhidgetDictionary;
+      const Pattern: WideString); safecall;
     procedure Stop; safecall;
     property Pattern: WideString read Get_Pattern;
   end;
@@ -1035,7 +1124,8 @@ type
   IPhidgetKeyListenerDisp = dispinterface
     ['{50484945-4745-5453-1000-000000000014}']
     property Pattern: WideString readonly dispid 256;
-    procedure Start(const Dict: IPhidgetDictionary; const Pattern: WideString); dispid 257;
+    procedure Start(const Dict: IPhidgetDictionary; const Pattern: WideString);
+      dispid 257;
     procedure Stop; dispid 258;
   end;
 
@@ -1046,8 +1136,10 @@ type
   // *********************************************************************//
   _IPhidgetKeyListenerEvents = dispinterface
     ['{50484945-4745-5453-2000-000000000014}']
-    procedure OnKeyChange(const Key: WideString; const Value: WideString); dispid 1;
-    procedure OnKeyRemoval(const Key: WideString; const Value: WideString); dispid 2;
+    procedure OnKeyChange(const Key: WideString;
+      const Value: WideString); dispid 1;
+    procedure OnKeyRemoval(const Key: WideString;
+      const Value: WideString); dispid 2;
   end;
 
   // *********************************************************************//
@@ -1065,10 +1157,12 @@ type
     function Get_CurrentLimit: PhidgetCOM_LEDCurrentLimit; safecall;
     procedure Set_CurrentLimit(pVal: PhidgetCOM_LEDCurrentLimit); safecall;
     function Get_NumLEDs: Integer; safecall;
-    property DiscreteLED[index: Integer]: Integer read Get_DiscreteLED write Set_DiscreteLED;
+    property DiscreteLED[index: Integer]: Integer read Get_DiscreteLED
+      write Set_DiscreteLED;
     property LEDCount: Integer read Get_LEDCount;
     property Voltage: PhidgetCOM_LEDVoltage read Get_Voltage write Set_Voltage;
-    property CurrentLimit: PhidgetCOM_LEDCurrentLimit read Get_CurrentLimit write Set_CurrentLimit;
+    property CurrentLimit: PhidgetCOM_LEDCurrentLimit read Get_CurrentLimit
+      write Set_CurrentLimit;
     property NumLEDs: Integer read Get_NumLEDs;
   end;
 
@@ -1092,8 +1186,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1101,7 +1197,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1115,7 +1212,8 @@ type
     ['{50484945-4745-5453-2000-00000000000D}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
   end;
@@ -1141,15 +1239,18 @@ type
     procedure Set_MotorSpeed(Index: Integer; pVal: Double); safecall;
     function Get_NumMotors: Integer; safecall;
     function Get_NumInputs: Integer; safecall;
-    property Velocity[index: Integer]: Double read Get_Velocity write Set_Velocity;
-    property Acceleration[index: Integer]: Double read Get_Acceleration write Set_Acceleration;
+    property Velocity[index: Integer]: Double read Get_Velocity
+      write Set_Velocity;
+    property Acceleration[index: Integer]: Double read Get_Acceleration
+      write Set_Acceleration;
     property MotorCount: Integer read Get_MotorCount;
     property InputCount: Integer read Get_InputCount;
     property InputState[index: Integer]: WordBool read Get_InputState;
     property Current[index: Integer]: Double read Get_Current;
     property AccelerationMin[index: Integer]: Double read Get_AccelerationMin;
     property AccelerationMax[index: Integer]: Double read Get_AccelerationMax;
-    property MotorSpeed[index: Integer]: Double read Get_MotorSpeed write Set_MotorSpeed;
+    property MotorSpeed[index: Integer]: Double read Get_MotorSpeed
+      write Set_MotorSpeed;
     property NumMotors: Integer read Get_NumMotors;
     property NumInputs: Integer read Get_NumInputs;
   end;
@@ -1180,8 +1281,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1189,7 +1292,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1203,7 +1307,8 @@ type
     ['{50484945-4745-5453-2000-00000000000B}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnInputChange(Index: Integer; NewState: WordBool); dispid 6;
@@ -1227,7 +1332,8 @@ type
     function Get_PHMax: Double; safecall;
     function Get_PotentialMin: Double; safecall;
     function Get_PotentialMax: Double; safecall;
-    property PHChangeTrigger: Double read Get_PHChangeTrigger write Set_PHChangeTrigger;
+    property PHChangeTrigger: Double read Get_PHChangeTrigger
+      write Set_PHChangeTrigger;
     property PH: Double read Get_PH;
     property Potential: Double read Get_Potential;
     property Temperature: Double write Set_Temperature;
@@ -1260,8 +1366,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1269,7 +1377,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1283,7 +1392,8 @@ type
     ['{50484945-4745-5453-2000-000000000015}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnPHChange(PH: Double); dispid 6;
@@ -1306,7 +1416,8 @@ type
     function Get_LastTag: WideString; safecall;
     function Get_TagStatus: WordBool; safecall;
     function Get_NumOutputs: Integer; safecall;
-    property OutputState[index: Integer]: WordBool read Get_OutputState write Set_OutputState;
+    property OutputState[index: Integer]: WordBool read Get_OutputState
+      write Set_OutputState;
     property OutputCount: Integer read Get_OutputCount;
     property AntennaOn: WordBool read Get_AntennaOn write Set_AntennaOn;
     property LEDOn: WordBool read Get_LEDOn write Set_LEDOn;
@@ -1337,8 +1448,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1346,7 +1459,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1360,7 +1474,8 @@ type
     ['{50484945-4745-5453-2000-000000000007}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnTag(const TagNumber: WideString); dispid 6;
@@ -1383,8 +1498,10 @@ type
     function Get_PositionMin(Index: Integer): Double; safecall;
     function Get_PositionMax(Index: Integer): Double; safecall;
     function Get_ServoType(Index: Integer): PhidgetCOM_ServoType; safecall;
-    procedure Set_ServoType(Index: Integer; pVal: PhidgetCOM_ServoType); safecall;
-    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double); safecall;
+    procedure Set_ServoType(Index: Integer;
+      pVal: PhidgetCOM_ServoType); safecall;
+    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double;
+      Degrees: Double); safecall;
     function Get_MotorPosition(Index: Integer): Double; safecall;
     procedure Set_MotorPosition(Index: Integer; pVal: Double); safecall;
     function Get_NumMotors: Integer; safecall;
@@ -1392,15 +1509,20 @@ type
     procedure Set_MotorOn(Index: Integer; pVal: WordBool); safecall;
     function Get_MotorPositionMin(Index: Integer): Double; safecall;
     function Get_MotorPositionMax(Index: Integer): Double; safecall;
-    property Position[index: Integer]: Double read Get_Position write Set_Position;
+    property Position[index: Integer]: Double read Get_Position
+      write Set_Position;
     property MotorCount: Integer read Get_MotorCount;
-    property Engaged[index: Integer]: WordBool read Get_Engaged write Set_Engaged;
+    property Engaged[index: Integer]: WordBool read Get_Engaged
+      write Set_Engaged;
     property PositionMin[index: Integer]: Double read Get_PositionMin;
     property PositionMax[index: Integer]: Double read Get_PositionMax;
-    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType write Set_ServoType;
-    property MotorPosition[index: Integer]: Double read Get_MotorPosition write Set_MotorPosition;
+    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType
+      write Set_ServoType;
+    property MotorPosition[index: Integer]: Double read Get_MotorPosition
+      write Set_MotorPosition;
     property NumMotors: Integer read Get_NumMotors;
-    property MotorOn[index: Integer]: WordBool read Get_MotorOn write Set_MotorOn;
+    property MotorOn[index: Integer]: WordBool read Get_MotorOn
+      write Set_MotorOn;
     property MotorPositionMin[index: Integer]: Double read Get_MotorPositionMin;
     property MotorPositionMax[index: Integer]: Double read Get_MotorPositionMax;
   end;
@@ -1418,7 +1540,8 @@ type
     property PositionMin[index: Integer]: Double readonly dispid 259;
     property PositionMax[index: Integer]: Double readonly dispid 260;
     property ServoType[index: Integer]: PhidgetCOM_ServoType dispid 266;
-    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double); dispid 267;
+    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double;
+      Degrees: Double); dispid 267;
     property MotorPosition[index: Integer]: Double dispid 261;
     property NumMotors: Integer readonly dispid 262;
     property MotorOn[index: Integer]: WordBool dispid 263;
@@ -1432,8 +1555,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1441,7 +1566,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1455,7 +1581,8 @@ type
     ['{50484945-4745-5453-2000-000000000004}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnPositionChange(Index: Integer; NewState: Double); dispid 6;
@@ -1485,8 +1612,10 @@ type
     procedure Set_DataRate(pVal: Integer); safecall;
     function Get_DataRateMin: Integer; safecall;
     function Get_DataRateMax: Integer; safecall;
-    procedure Set_CompassCorrectionParameters(magField: Double; offset0: Double; offset1: Double; offset2: Double; gain0: Double; gain1: Double; gain2: Double;
-      T0: Double; T1: Double; T2: Double; T3: Double; T4: Double; Param13: Double); safecall;
+    procedure Set_CompassCorrectionParameters(magField: Double; offset0: Double;
+      offset1: Double; offset2: Double; gain0: Double; gain1: Double;
+      gain2: Double; T0: Double; T1: Double; T2: Double; T3: Double; T4: Double;
+      Param13: Double); safecall;
     procedure zeroGyro; safecall;
     procedure resetCompassCorrectionParameters; safecall;
     property AccelerationAxisCount: Integer read Get_AccelerationAxisCount;
@@ -1504,8 +1633,10 @@ type
     property DataRate: Integer read Get_DataRate write Set_DataRate;
     property DataRateMin: Integer read Get_DataRateMin;
     property DataRateMax: Integer read Get_DataRateMax;
-    property CompassCorrectionParameters[magField: Double; offset0: Double; offset1: Double; offset2: Double; gain0: Double; gain1: Double; gain2: Double;
-      T0: Double; T1: Double; T2: Double; T3: Double; T4: Double]: Double write Set_CompassCorrectionParameters;
+    property CompassCorrectionParameters[magField: Double; offset0: Double;
+      offset1: Double; offset2: Double; gain0: Double; gain1: Double;
+      gain2: Double; T0: Double; T1: Double; T2: Double; T3: Double; T4: Double]
+      : Double write Set_CompassCorrectionParameters;
   end;
 
   // *********************************************************************//
@@ -1530,8 +1661,10 @@ type
     property DataRate: Integer dispid 268;
     property DataRateMin: Integer readonly dispid 269;
     property DataRateMax: Integer readonly dispid 270;
-    property CompassCorrectionParameters[magField: Double; offset0: Double; offset1: Double; offset2: Double; gain0: Double; gain1: Double; gain2: Double;
-      T0: Double; T1: Double; T2: Double; T3: Double; T4: Double]: Double writeonly dispid 271;
+    property CompassCorrectionParameters[magField: Double; offset0: Double;
+      offset1: Double; offset2: Double; gain0: Double; gain1: Double;
+      gain2: Double; T0: Double; T1: Double; T2: Double; T3: Double; T4: Double]
+      : Double writeonly dispid 271;
     procedure zeroGyro; dispid 272;
     procedure resetCompassCorrectionParameters; dispid 273;
     property DeviceType: WideString readonly dispid 512;
@@ -1542,8 +1675,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1551,7 +1686,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1565,10 +1701,12 @@ type
     ['{50484945-4745-5453-2000-000000000017}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
-    procedure OnSpatialData(var data: { ??PSafeArray } OleVariant; dataCount: Integer); dispid 6;
+    procedure OnSpatialData(var data: { ??PSafeArray } OleVariant;
+      dataCount: Integer); dispid 6;
   end;
 
   // *********************************************************************//
@@ -1604,11 +1742,16 @@ type
     function Get_Stopped(Index: Integer): WordBool; safecall;
     function Get_CurrentMin(Index: Integer): Double; safecall;
     function Get_CurrentMax(Index: Integer): Double; safecall;
-    property CurrentPosition[index: Integer]: Integer read Get_CurrentPosition write Set_CurrentPosition;
-    property TargetPosition[index: Integer]: Integer read Get_TargetPosition write Set_TargetPosition;
-    property Acceleration[index: Integer]: Double read Get_Acceleration write Set_Acceleration;
-    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit write Set_VelocityLimit;
-    property CurrentLimit[index: Integer]: Double read Get_CurrentLimit write Set_CurrentLimit;
+    property CurrentPosition[index: Integer]: Integer read Get_CurrentPosition
+      write Set_CurrentPosition;
+    property TargetPosition[index: Integer]: Integer read Get_TargetPosition
+      write Set_TargetPosition;
+    property Acceleration[index: Integer]: Double read Get_Acceleration
+      write Set_Acceleration;
+    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit
+      write Set_VelocityLimit;
+    property CurrentLimit[index: Integer]: Double read Get_CurrentLimit
+      write Set_CurrentLimit;
     property Current[index: Integer]: Double read Get_Current;
     property MotorCount: Integer read Get_MotorCount;
     property InputCount: Integer read Get_InputCount;
@@ -1620,7 +1763,8 @@ type
     property VelocityMin[index: Integer]: Double read Get_VelocityMin;
     property VelocityMax[index: Integer]: Double read Get_VelocityMax;
     property Velocity[index: Integer]: Double read Get_Velocity;
-    property Engaged[index: Integer]: WordBool read Get_Engaged write Set_Engaged;
+    property Engaged[index: Integer]: WordBool read Get_Engaged
+      write Set_Engaged;
     property Stopped[index: Integer]: WordBool read Get_Stopped;
     property CurrentMin[index: Integer]: Double read Get_CurrentMin;
     property CurrentMax[index: Integer]: Double read Get_CurrentMax;
@@ -1661,8 +1805,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1670,7 +1816,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1684,7 +1831,8 @@ type
     ['{50484945-4745-5453-2000-00000000000F}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnInputChange(Index: Integer; NewState: WordBool); dispid 6;
@@ -1701,7 +1849,8 @@ type
   IPhidgetTemperatureSensor = interface(IPhidget)
     ['{50484945-4745-5453-1000-000000000010}']
     function Get_TemperatureChangeTrigger(Index: Integer): Double; safecall;
-    procedure Set_TemperatureChangeTrigger(Index: Integer; pVal: Double); safecall;
+    procedure Set_TemperatureChangeTrigger(Index: Integer;
+      pVal: Double); safecall;
     function Get_Temperature(Index: Integer): Double; safecall;
     function Get_AmbientTemperature: Double; safecall;
     function Get_TemperatureInputCount: Integer; safecall;
@@ -1715,12 +1864,14 @@ type
     function Get_PotentialMin(Index: Integer): Double; safecall;
     function Get_PotentialMax(Index: Integer): Double; safecall;
     function Get_NumTemperatureInputs: Integer; safecall;
-    property TemperatureChangeTrigger[index: Integer]: Double read Get_TemperatureChangeTrigger write Set_TemperatureChangeTrigger;
+    property TemperatureChangeTrigger[index: Integer]: Double
+      read Get_TemperatureChangeTrigger write Set_TemperatureChangeTrigger;
     property Temperature[index: Integer]: Double read Get_Temperature;
     property AmbientTemperature: Double read Get_AmbientTemperature;
     property TemperatureInputCount: Integer read Get_TemperatureInputCount;
     property Potential[index: Integer]: Double read Get_Potential;
-    property ThermocoupleType[index: Integer]: Integer read Get_ThermocoupleType write Set_ThermocoupleType;
+    property ThermocoupleType[index: Integer]: Integer read Get_ThermocoupleType
+      write Set_ThermocoupleType;
     property TemperatureMin[index: Integer]: Double read Get_TemperatureMin;
     property TemperatureMax[index: Integer]: Double read Get_TemperatureMax;
     property AmbientTemperatureMin: Double read Get_AmbientTemperatureMin;
@@ -1758,8 +1909,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1767,7 +1920,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1781,10 +1935,12 @@ type
     ['{50484945-4745-5453-2000-000000000010}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
-    procedure OnTemperatureChange(Index: Integer; Temperature: Double); dispid 6;
+    procedure OnTemperatureChange(Index: Integer; Temperature: Double);
+      dispid 6;
   end;
 
   // *********************************************************************//
@@ -1794,7 +1950,8 @@ type
   // *********************************************************************//
   IPhidgetTextLCD = interface(IPhidget)
     ['{50484945-4745-5453-1000-00000000000A}']
-    procedure Set_DisplayString(Row: Integer; const Param2: WideString); safecall;
+    procedure Set_DisplayString(Row: Integer;
+      const Param2: WideString); safecall;
     function Get_RowCount: Integer; safecall;
     function Get_ColumnCount: Integer; safecall;
     function Get_Backlight: WordBool; safecall;
@@ -1805,8 +1962,10 @@ type
     procedure Set_CursorBlink(pVal: WordBool); safecall;
     function Get_Contrast: Integer; safecall;
     procedure Set_Contrast(pVal: Integer); safecall;
-    procedure Set_CustomCharacter(Index: Integer; Val1: Integer; Param3: Integer); safecall;
-    procedure Set_DisplayCharacter(Row: Integer; Column: Integer; const Param3: WideString); safecall;
+    procedure Set_CustomCharacter(Index: Integer; Val1: Integer;
+      Param3: Integer); safecall;
+    procedure Set_DisplayCharacter(Row: Integer; Column: Integer;
+      const Param3: WideString); safecall;
     function Get_Brightness: Integer; safecall;
     procedure Set_Brightness(pVal: Integer); safecall;
     function Get_NumRows: Integer; safecall;
@@ -1818,8 +1977,10 @@ type
     property CursorOn: WordBool read Get_CursorOn write Set_CursorOn;
     property CursorBlink: WordBool read Get_CursorBlink write Set_CursorBlink;
     property Contrast: Integer read Get_Contrast write Set_Contrast;
-    property CustomCharacter[index: Integer; Val1: Integer]: Integer write Set_CustomCharacter;
-    property DisplayCharacter[Row: Integer; Column: Integer]: WideString write Set_DisplayCharacter;
+    property CustomCharacter[index: Integer; Val1: Integer]: Integer
+      write Set_CustomCharacter;
+    property DisplayCharacter[Row: Integer; Column: Integer]: WideString
+      write Set_DisplayCharacter;
     property Brightness: Integer read Get_Brightness write Set_Brightness;
     property NumRows: Integer read Get_NumRows;
     property NumColumns: Integer read Get_NumColumns;
@@ -1839,8 +2000,10 @@ type
     property CursorOn: WordBool dispid 260;
     property CursorBlink: WordBool dispid 261;
     property Contrast: Integer dispid 262;
-    property CustomCharacter[index: Integer; Val1: Integer]: Integer writeonly dispid 263;
-    property DisplayCharacter[Row: Integer; Column: Integer]: WideString writeonly dispid 266;
+    property CustomCharacter[index: Integer; Val1: Integer]
+      : Integer writeonly dispid 263;
+    property DisplayCharacter[Row: Integer; Column: Integer]
+      : WideString writeonly dispid 266;
     property Brightness: Integer dispid 267;
     property NumRows: Integer readonly dispid 264;
     property NumColumns: Integer readonly dispid 265;
@@ -1852,8 +2015,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1861,7 +2026,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1875,7 +2041,8 @@ type
     ['{50484945-4745-5453-2000-00000000000A}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
   end;
@@ -1887,7 +2054,8 @@ type
   // *********************************************************************//
   IPhidgetTextLED = interface(IPhidget)
     ['{50484945-4745-5453-1000-000000000012}']
-    procedure Set_DisplayString(Row: Integer; const Param2: WideString); safecall;
+    procedure Set_DisplayString(Row: Integer;
+      const Param2: WideString); safecall;
     function Get_RowCount: Integer; safecall;
     function Get_ColumnCount: Integer; safecall;
     function Get_Brightness: Integer; safecall;
@@ -1923,8 +2091,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1932,7 +2102,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -1946,7 +2117,8 @@ type
     ['{50484945-4745-5453-2000-000000000012}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
   end;
@@ -1961,7 +2133,8 @@ type
     function Get_WeightChangeTrigger: Double; safecall;
     procedure Set_WeightChangeTrigger(pVal: Double); safecall;
     function Get_Weight: Double; safecall;
-    property WeightChangeTrigger: Double read Get_WeightChangeTrigger write Set_WeightChangeTrigger;
+    property WeightChangeTrigger: Double read Get_WeightChangeTrigger
+      write Set_WeightChangeTrigger;
     property Weight: Double read Get_Weight;
   end;
 
@@ -1982,8 +2155,10 @@ type
     property DeviceVersion: SYSINT readonly dispid 517;
     property LibraryVersion: WideString readonly dispid 518;
     procedure Open(SerialNumber: SYSINT); dispid 519;
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString); dispid 520;
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString); dispid 521;
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString); dispid 520;
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString); dispid 521;
     procedure Close; dispid 522;
     property port: SYSINT readonly dispid 523;
     property Address: WideString readonly dispid 524;
@@ -1991,7 +2166,8 @@ type
     property IsAttachedToServer: WordBool readonly dispid 526;
     procedure EnableLogging(level: SYSINT; const file_: WideString); dispid 527;
     procedure DisableLogging; dispid 528;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString); dispid 529;
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString); dispid 529;
     procedure WaitForAttachment(milliseconds: SYSINT); dispid 530;
     procedure EnableVerboseErrors(state: WordBool); dispid 531;
   end;
@@ -2005,7 +2181,8 @@ type
     ['{50484945-4745-5453-2000-000000000008}']
     procedure OnAttach; dispid 1;
     procedure OnDetach; dispid 2;
-    procedure OnError(const Description: WideString; SCODE: PhidgetCOM_Error); dispid 3;
+    procedure OnError(const Description: WideString;
+      SCODE: PhidgetCOM_Error); dispid 3;
     procedure OnServerConnect; dispid 4;
     procedure OnServerDisconnect; dispid 5;
     procedure OnWeightChange(Weight: Double); dispid 6;
@@ -2020,11 +2197,16 @@ type
   // Event   Interface: _IPhidgetManagerEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetManagerOnAttach = procedure(ASender: TObject; const DeviceType: WideString; const DeviceName: WideString; SerialNumber: Integer;
-    DeviceVersion: Integer; const DeviceLabel: WideString) of object;
-  TPhidgetManagerOnDetach = procedure(ASender: TObject; const DeviceType: WideString; const DeviceName: WideString; SerialNumber: Integer;
-    DeviceVersion: Integer; const DeviceLabel: WideString) of object;
-  TPhidgetManagerOnError = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetManagerOnAttach = procedure(ASender: TObject;
+    const DeviceType: WideString; const DeviceName: WideString;
+    SerialNumber: Integer; DeviceVersion: Integer;
+    const DeviceLabel: WideString) of object;
+  TPhidgetManagerOnDetach = procedure(ASender: TObject;
+    const DeviceType: WideString; const DeviceName: WideString;
+    SerialNumber: Integer; DeviceVersion: Integer;
+    const DeviceLabel: WideString) of object;
+  TPhidgetManagerOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
 
   TPhidgetManager = class(TOleControl)
   private
@@ -2046,8 +2228,10 @@ type
   public
     procedure Open;
     procedure Close;
-    procedure OpenRemote(const ServerID: WideString; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      const Password: WideString);
     property ControlInterface: IPhidgetManager read GetControlInterface;
     property DefaultInterface: IPhidgetManager read GetControlInterface;
     property Count: Integer index 256 read GetIntegerProp;
@@ -2065,8 +2249,10 @@ type
     property OnAttach: TPhidgetManagerOnAttach read FOnAttach write FOnAttach;
     property OnDetach: TPhidgetManagerOnDetach read FOnDetach write FOnDetach;
     property OnError: TPhidgetManagerOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
   end;
 
   // *********************************************************************//
@@ -2078,8 +2264,10 @@ type
   // Event   Interface: _IPhidgetAccelerometerEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetAccelerometerOnError              = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetAccelerometerOnAccelerationChange = procedure(ASender: TObject; Index: Integer; Acceleration: Double) of object;
+  TPhidgetAccelerometerOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetAccelerometerOnAccelerationChange = procedure(ASender: TObject;
+    Index: Integer; Acceleration: Double) of object;
 
   TPhidgetAccelerometer = class(TOleControl)
   private
@@ -2101,12 +2289,15 @@ type
     function Get_AccelerationMin(Index: Integer): Double;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetAccelerometer read GetControlInterface;
@@ -2121,7 +2312,8 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property AccelerationChangeTrigger[index: Integer]: Double read Get_AccelerationChangeTrigger write Set_AccelerationChangeTrigger;
+    property AccelerationChangeTrigger[index: Integer]: Double
+      read Get_AccelerationChangeTrigger write Set_AccelerationChangeTrigger;
     property Acceleration[index: Integer]: Double read Get_Acceleration;
     property AccelerationMax[index: Integer]: Double read Get_AccelerationMax;
     property AccelerationMin[index: Integer]: Double read Get_AccelerationMin;
@@ -2129,13 +2321,17 @@ type
     property NumAxis: Integer index 261 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetAccelerometerOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnAccelerationChange: TPhidgetAccelerometerOnAccelerationChange read FOnAccelerationChange write FOnAccelerationChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnAccelerationChange: TPhidgetAccelerometerOnAccelerationChange
+      read FOnAccelerationChange write FOnAccelerationChange;
   end;
 
   // *********************************************************************//
@@ -2147,10 +2343,14 @@ type
   // Event   Interface: _IPhidgetAdvancedServoEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetAdvancedServoOnError          = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetAdvancedServoOnPositionChange = procedure(ASender: TObject; Index: Integer; Position: Double) of object;
-  TPhidgetAdvancedServoOnCurrentChange  = procedure(ASender: TObject; Index: Integer; Current: Double) of object;
-  TPhidgetAdvancedServoOnVelocityChange = procedure(ASender: TObject; Index: Integer; Velocity: Double) of object;
+  TPhidgetAdvancedServoOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetAdvancedServoOnPositionChange = procedure(ASender: TObject;
+    Index: Integer; Position: Double) of object;
+  TPhidgetAdvancedServoOnCurrentChange = procedure(ASender: TObject;
+    Index: Integer; Current: Double) of object;
+  TPhidgetAdvancedServoOnVelocityChange = procedure(ASender: TObject;
+    Index: Integer; Velocity: Double) of object;
 
   TPhidgetAdvancedServo = class(TOleControl)
   private
@@ -2192,15 +2392,19 @@ type
     procedure Set_ServoType(Index: Integer; pVal: PhidgetCOM_ServoType);
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
-    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double; VelocityMax: Double);
+    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double;
+      Degrees: Double; VelocityMax: Double);
     property ControlInterface: IPhidgetAdvancedServo read GetControlInterface;
     property DefaultInterface: IPhidgetAdvancedServo read GetControlInterface;
     property DeviceType: WideString index 512 read GetWideStringProp;
@@ -2213,33 +2417,47 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property Position[index: Integer]: Double read Get_Position write Set_Position;
-    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit write Set_VelocityLimit;
-    property Acceleration[index: Integer]: Double read Get_Acceleration write Set_Acceleration;
-    property Engaged[index: Integer]: WordBool read Get_Engaged write Set_Engaged;
+    property Position[index: Integer]: Double read Get_Position
+      write Set_Position;
+    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit
+      write Set_VelocityLimit;
+    property Acceleration[index: Integer]: Double read Get_Acceleration
+      write Set_Acceleration;
+    property Engaged[index: Integer]: WordBool read Get_Engaged
+      write Set_Engaged;
     property MotorCount: Integer index 260 read GetIntegerProp;
     property Velocity[index: Integer]: Double read Get_Velocity;
     property Current[index: Integer]: Double read Get_Current;
-    property SpeedRampingOn[index: Integer]: WordBool read Get_SpeedRampingOn write Set_SpeedRampingOn;
+    property SpeedRampingOn[index: Integer]: WordBool read Get_SpeedRampingOn
+      write Set_SpeedRampingOn;
     property AccelerationMin[index: Integer]: Double read Get_AccelerationMin;
     property AccelerationMax[index: Integer]: Double read Get_AccelerationMax;
-    property PositionMin[index: Integer]: Double read Get_PositionMin write Set_PositionMin;
-    property PositionMax[index: Integer]: Double read Get_PositionMax write Set_PositionMax;
+    property PositionMin[index: Integer]: Double read Get_PositionMin
+      write Set_PositionMin;
+    property PositionMax[index: Integer]: Double read Get_PositionMax
+      write Set_PositionMax;
     property VelocityMin[index: Integer]: Double read Get_VelocityMin;
     property VelocityMax[index: Integer]: Double read Get_VelocityMax;
     property Stopped[index: Integer]: WordBool read Get_Stopped;
-    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType write Set_ServoType;
+    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType
+      write Set_ServoType;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetAdvancedServoOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnPositionChange: TPhidgetAdvancedServoOnPositionChange read FOnPositionChange write FOnPositionChange;
-    property OnCurrentChange: TPhidgetAdvancedServoOnCurrentChange read FOnCurrentChange write FOnCurrentChange;
-    property OnVelocityChange: TPhidgetAdvancedServoOnVelocityChange read FOnVelocityChange write FOnVelocityChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnPositionChange: TPhidgetAdvancedServoOnPositionChange
+      read FOnPositionChange write FOnPositionChange;
+    property OnCurrentChange: TPhidgetAdvancedServoOnCurrentChange
+      read FOnCurrentChange write FOnCurrentChange;
+    property OnVelocityChange: TPhidgetAdvancedServoOnVelocityChange
+      read FOnVelocityChange write FOnVelocityChange;
   end;
 
   // *********************************************************************//
@@ -2251,7 +2469,8 @@ type
   // Event   Interface: _IPhidgetDictionaryEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetDictionaryOnError = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetDictionaryOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
 
   TPhidgetDictionary = class(TOleControl)
   private
@@ -2264,10 +2483,13 @@ type
     procedure CreateControl;
     procedure InitControlData; override;
   public
-    procedure OpenRemote(const ServerID: WideString; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      const Password: WideString);
     procedure Close;
-    procedure Add(const Key: WideString; const Value: WideString; Persistent: WordBool);
+    procedure Add(const Key: WideString; const Value: WideString;
+      Persistent: WordBool);
     procedure Remove(const Pattern: WideString);
     function Get(const Key: WideString): WideString;
     property ControlInterface: IPhidgetDictionary read GetControlInterface;
@@ -2280,8 +2502,10 @@ type
   published
     property Anchors;
     property OnError: TPhidgetDictionaryOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
   end;
 
   // *********************************************************************//
@@ -2293,9 +2517,12 @@ type
   // Event   Interface: _IPhidgetEncoderEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetEncoderOnError          = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetEncoderOnInputChange    = procedure(ASender: TObject; Index: Integer; NewState: WordBool) of object;
-  TPhidgetEncoderOnPositionChange = procedure(ASender: TObject; Index: Integer; Time: Integer; EncoderDisplacement: Integer) of object;
+  TPhidgetEncoderOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetEncoderOnInputChange = procedure(ASender: TObject; Index: Integer;
+    NewState: WordBool) of object;
+  TPhidgetEncoderOnPositionChange = procedure(ASender: TObject; Index: Integer;
+    Time: Integer; EncoderDisplacement: Integer) of object;
 
   TPhidgetEncoder = class(TOleControl)
   private
@@ -2321,12 +2548,15 @@ type
     procedure Set_EncoderPosition(Index: Integer; pVal: Integer);
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetEncoder read GetControlInterface;
@@ -2341,25 +2571,33 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property Position[index: Integer]: Integer read Get_Position write Set_Position;
+    property Position[index: Integer]: Integer read Get_Position
+      write Set_Position;
     property InputState[index: Integer]: WordBool read Get_InputState;
     property EncoderCount: Integer index 258 read GetIntegerProp;
     property InputCount: Integer index 259 read GetIntegerProp;
     property IndexPosition[index: Integer]: Integer read Get_IndexPosition;
-    property Enabled[index: Integer]: WordBool read Get_Enabled write Set_Enabled;
-    property EncoderPosition[index: Integer]: Integer read Get_EncoderPosition write Set_EncoderPosition;
+    property Enabled[index: Integer]: WordBool read Get_Enabled
+      write Set_Enabled;
+    property EncoderPosition[index: Integer]: Integer read Get_EncoderPosition
+      write Set_EncoderPosition;
     property NumEncoders: Integer index 261 read GetIntegerProp;
     property NumInputs: Integer index 262 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetEncoderOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnInputChange: TPhidgetEncoderOnInputChange read FOnInputChange write FOnInputChange;
-    property OnPositionChange: TPhidgetEncoderOnPositionChange read FOnPositionChange write FOnPositionChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnInputChange: TPhidgetEncoderOnInputChange read FOnInputChange
+      write FOnInputChange;
+    property OnPositionChange: TPhidgetEncoderOnPositionChange
+      read FOnPositionChange write FOnPositionChange;
   end;
 
   // *********************************************************************//
@@ -2371,10 +2609,14 @@ type
   // Event   Interface: _IPhidgetInterfaceKitEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetInterfaceKitOnError        = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetInterfaceKitOnInputChange  = procedure(ASender: TObject; Index: Integer; NewState: WordBool) of object;
-  TPhidgetInterfaceKitOnSensorChange = procedure(ASender: TObject; Index: Integer; SensorValue: Integer) of object;
-  TPhidgetInterfaceKitOnOutputChange = procedure(ASender: TObject; Index: Integer; NewState: WordBool) of object;
+  TPhidgetInterfaceKitOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetInterfaceKitOnInputChange = procedure(ASender: TObject;
+    Index: Integer; NewState: WordBool) of object;
+  TPhidgetInterfaceKitOnSensorChange = procedure(ASender: TObject;
+    Index: Integer; SensorValue: Integer) of object;
+  TPhidgetInterfaceKitOnOutputChange = procedure(ASender: TObject;
+    Index: Integer; NewState: WordBool) of object;
 
   TPhidgetInterfaceKit = class(TOleControl)
   private
@@ -2404,12 +2646,15 @@ type
     function Get_DataRateMax(Index: Integer): Integer;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetInterfaceKit read GetControlInterface;
@@ -2424,32 +2669,42 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property OutputState[index: Integer]: WordBool read Get_OutputState write Set_OutputState;
+    property OutputState[index: Integer]: WordBool read Get_OutputState
+      write Set_OutputState;
     property OutputCount: Integer index 257 read GetIntegerProp;
     property InputCount: Integer index 258 read GetIntegerProp;
     property InputState[index: Integer]: WordBool read Get_InputState;
     property SensorCount: Integer index 260 read GetIntegerProp;
     property SensorRawValue[index: Integer]: Integer read Get_SensorRawValue;
-    property SensorChangeTrigger[index: Integer]: Integer read Get_SensorChangeTrigger write Set_SensorChangeTrigger;
+    property SensorChangeTrigger[index: Integer]: Integer
+      read Get_SensorChangeTrigger write Set_SensorChangeTrigger;
     property SensorValue[index: Integer]: Integer read Get_SensorValue;
     property NumOutputs: Integer index 265 read GetIntegerProp;
     property NumInputs: Integer index 266 read GetIntegerProp;
     property NumSensors: Integer index 267 read GetIntegerProp;
-    property DataRate[index: Integer]: Integer read Get_DataRate write Set_DataRate;
+    property DataRate[index: Integer]: Integer read Get_DataRate
+      write Set_DataRate;
     property DataRateMin[index: Integer]: Integer read Get_DataRateMin;
     property DataRateMax[index: Integer]: Integer read Get_DataRateMax;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property Ratiometric: WordBool index 264 read GetWordBoolProp write SetWordBoolProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property Ratiometric: WordBool index 264 read GetWordBoolProp
+      write SetWordBoolProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetInterfaceKitOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnInputChange: TPhidgetInterfaceKitOnInputChange read FOnInputChange write FOnInputChange;
-    property OnSensorChange: TPhidgetInterfaceKitOnSensorChange read FOnSensorChange write FOnSensorChange;
-    property OnOutputChange: TPhidgetInterfaceKitOnOutputChange read FOnOutputChange write FOnOutputChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnInputChange: TPhidgetInterfaceKitOnInputChange
+      read FOnInputChange write FOnInputChange;
+    property OnSensorChange: TPhidgetInterfaceKitOnSensorChange
+      read FOnSensorChange write FOnSensorChange;
+    property OnOutputChange: TPhidgetInterfaceKitOnOutputChange
+      read FOnOutputChange write FOnOutputChange;
   end;
 
   // *********************************************************************//
@@ -2461,11 +2716,16 @@ type
   // Event   Interface: _IPhidgetIREvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetIROnError = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetIROnCode  = procedure(ASender: TObject; var data: { ??PSafeArray } OleVariant; dataLength: Integer; bitCount: Integer; repeat_: WordBool) of object;
-  TPhidgetIROnLearn = procedure(ASender: TObject; var data: { ??PSafeArray } OleVariant; dataLength: Integer; var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant)
-    of object;
-  TPhidgetIROnRawData = procedure(ASender: TObject; var data: { ??PSafeArray } OleVariant; dataLength: Integer) of object;
+  TPhidgetIROnError = procedure(ASender: TObject; const Description: WideString;
+    SCODE: PhidgetCOM_Error) of object;
+  TPhidgetIROnCode = procedure(ASender: TObject;
+    var data: { ??PSafeArray } OleVariant; dataLength: Integer;
+    bitCount: Integer; repeat_: WordBool) of object;
+  TPhidgetIROnLearn = procedure(ASender: TObject;
+    var data: { ??PSafeArray } OleVariant; dataLength: Integer;
+    var codeInfo: { ??PhidgetIR_CodeInfo } OleVariant) of object;
+  TPhidgetIROnRawData = procedure(ASender: TObject;
+    var data: { ??PSafeArray } OleVariant; dataLength: Integer) of object;
 
   TPhidgetIR = class(TOleControl)
   private
@@ -2484,20 +2744,26 @@ type
     procedure InitControlData; override;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     procedure Transmit(var data: PSafeArray; var codeInfo: PhidgetIR_CodeInfo);
     procedure TransmitRepeat;
-    procedure TransmitRaw(var data: PSafeArray; length: Integer; carrierFrequency: Integer; dutyCyle: Integer; gap: Integer);
+    procedure TransmitRaw(var data: PSafeArray; length: Integer;
+      carrierFrequency: Integer; dutyCyle: Integer; gap: Integer);
     procedure getRawData(var data: PSafeArray; var dataLength: Integer);
-    procedure getLastCode(var data: PSafeArray; var dataLength: Integer; var bitCount: Integer);
-    procedure getLastLearnedCode(var data: PSafeArray; var dataLength: Integer; var codeInfo: PhidgetIR_CodeInfo);
+    procedure getLastCode(var data: PSafeArray; var dataLength: Integer;
+      var bitCount: Integer);
+    procedure getLastLearnedCode(var data: PSafeArray; var dataLength: Integer;
+      var codeInfo: PhidgetIR_CodeInfo);
     property ControlInterface: IPhidgetIR read GetControlInterface;
     property DefaultInterface: IPhidgetIR read GetControlInterface;
     property DeviceType: WideString index 512 read GetWideStringProp;
@@ -2512,12 +2778,15 @@ type
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetIROnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
     property OnCode: TPhidgetIROnCode read FOnCode write FOnCode;
     property OnLearn: TPhidgetIROnLearn read FOnLearn write FOnLearn;
     property OnRawData: TPhidgetIROnRawData read FOnRawData write FOnRawData;
@@ -2532,8 +2801,10 @@ type
   // Event   Interface: _IPhidgetKeyListenerEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetKeyListenerOnKeyChange  = procedure(ASender: TObject; const Key: WideString; const Value: WideString) of object;
-  TPhidgetKeyListenerOnKeyRemoval = procedure(ASender: TObject; const Key: WideString; const Value: WideString) of object;
+  TPhidgetKeyListenerOnKeyChange = procedure(ASender: TObject;
+    const Key: WideString; const Value: WideString) of object;
+  TPhidgetKeyListenerOnKeyRemoval = procedure(ASender: TObject;
+    const Key: WideString; const Value: WideString) of object;
 
   TPhidgetKeyListener = class(TOleControl)
   private
@@ -2552,8 +2823,10 @@ type
     property Pattern: WideString index 256 read GetWideStringProp;
   published
     property Anchors;
-    property OnKeyChange: TPhidgetKeyListenerOnKeyChange read FOnKeyChange write FOnKeyChange;
-    property OnKeyRemoval: TPhidgetKeyListenerOnKeyRemoval read FOnKeyRemoval write FOnKeyRemoval;
+    property OnKeyChange: TPhidgetKeyListenerOnKeyChange read FOnKeyChange
+      write FOnKeyChange;
+    property OnKeyRemoval: TPhidgetKeyListenerOnKeyRemoval read FOnKeyRemoval
+      write FOnKeyRemoval;
   end;
 
   // *********************************************************************//
@@ -2565,7 +2838,8 @@ type
   // Event   Interface: _IPhidgetLEDEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetLEDOnError = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetLEDOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
 
   TPhidgetLED = class(TOleControl)
   private
@@ -2583,12 +2857,15 @@ type
     function Get_DiscreteLED(Index: Integer): Integer;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetLED read GetControlInterface;
@@ -2603,19 +2880,25 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property DiscreteLED[index: Integer]: Integer read Get_DiscreteLED write Set_DiscreteLED;
+    property DiscreteLED[index: Integer]: Integer read Get_DiscreteLED
+      write Set_DiscreteLED;
     property LEDCount: Integer index 257 read GetIntegerProp;
     property NumLEDs: Integer index 260 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property Voltage: TOleEnum index 258 read GetTOleEnumProp write SetTOleEnumProp stored False;
-    property CurrentLimit: TOleEnum index 259 read GetTOleEnumProp write SetTOleEnumProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property Voltage: TOleEnum index 258 read GetTOleEnumProp
+      write SetTOleEnumProp stored False;
+    property CurrentLimit: TOleEnum index 259 read GetTOleEnumProp
+      write SetTOleEnumProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetLEDOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
   end;
 
   // *********************************************************************//
@@ -2627,10 +2910,14 @@ type
   // Event   Interface: _IPhidgetMotorControlEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetMotorControlOnError          = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetMotorControlOnInputChange    = procedure(ASender: TObject; Index: Integer; NewState: WordBool) of object;
-  TPhidgetMotorControlOnVelocityChange = procedure(ASender: TObject; Index: Integer; newVal: Double) of object;
-  TPhidgetMotorControlOnMotorChange    = procedure(ASender: TObject; Index: Integer; newVal: Double) of object;
+  TPhidgetMotorControlOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetMotorControlOnInputChange = procedure(ASender: TObject;
+    Index: Integer; NewState: WordBool) of object;
+  TPhidgetMotorControlOnVelocityChange = procedure(ASender: TObject;
+    Index: Integer; newVal: Double) of object;
+  TPhidgetMotorControlOnMotorChange = procedure(ASender: TObject;
+    Index: Integer; newVal: Double) of object;
 
   TPhidgetMotorControl = class(TOleControl)
   private
@@ -2659,12 +2946,15 @@ type
     procedure Set_MotorSpeed(Index: Integer; pVal: Double);
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetMotorControl read GetControlInterface;
@@ -2679,28 +2969,37 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property Velocity[index: Integer]: Double read Get_Velocity write Set_Velocity;
-    property Acceleration[index: Integer]: Double read Get_Acceleration write Set_Acceleration;
+    property Velocity[index: Integer]: Double read Get_Velocity
+      write Set_Velocity;
+    property Acceleration[index: Integer]: Double read Get_Acceleration
+      write Set_Acceleration;
     property MotorCount: Integer index 258 read GetIntegerProp;
     property InputCount: Integer index 259 read GetIntegerProp;
     property InputState[index: Integer]: WordBool read Get_InputState;
     property Current[index: Integer]: Double read Get_Current;
     property AccelerationMin[index: Integer]: Double read Get_AccelerationMin;
     property AccelerationMax[index: Integer]: Double read Get_AccelerationMax;
-    property MotorSpeed[index: Integer]: Double read Get_MotorSpeed write Set_MotorSpeed;
+    property MotorSpeed[index: Integer]: Double read Get_MotorSpeed
+      write Set_MotorSpeed;
     property NumMotors: Integer index 265 read GetIntegerProp;
     property NumInputs: Integer index 266 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetMotorControlOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnInputChange: TPhidgetMotorControlOnInputChange read FOnInputChange write FOnInputChange;
-    property OnVelocityChange: TPhidgetMotorControlOnVelocityChange read FOnVelocityChange write FOnVelocityChange;
-    property OnMotorChange: TPhidgetMotorControlOnMotorChange read FOnMotorChange write FOnMotorChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnInputChange: TPhidgetMotorControlOnInputChange
+      read FOnInputChange write FOnInputChange;
+    property OnVelocityChange: TPhidgetMotorControlOnVelocityChange
+      read FOnVelocityChange write FOnVelocityChange;
+    property OnMotorChange: TPhidgetMotorControlOnMotorChange
+      read FOnMotorChange write FOnMotorChange;
   end;
 
   // *********************************************************************//
@@ -2712,8 +3011,10 @@ type
   // Event   Interface: _IPhidgetPHSensorEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetPHSensorOnError    = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetPHSensorOnPHChange = procedure(ASender: TObject; PH: Double) of object;
+  TPhidgetPHSensorOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetPHSensorOnPHChange = procedure(ASender: TObject; PH: Double)
+    of object;
 
   TPhidgetPHSensor = class(TOleControl)
   private
@@ -2730,12 +3031,15 @@ type
     procedure InitControlData; override;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetPHSensor read GetControlInterface;
@@ -2759,14 +3063,19 @@ type
     property PotentialMax: Double index 263 read GetDoubleProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property PHChangeTrigger: Double index 256 read GetDoubleProp write SetDoubleProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property PHChangeTrigger: Double index 256 read GetDoubleProp
+      write SetDoubleProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetPHSensorOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnPHChange: TPhidgetPHSensorOnPHChange read FOnPHChange write FOnPHChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnPHChange: TPhidgetPHSensorOnPHChange read FOnPHChange
+      write FOnPHChange;
   end;
 
   // *********************************************************************//
@@ -2778,10 +3087,14 @@ type
   // Event   Interface: _IPhidgetRFIDEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetRFIDOnError        = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetRFIDOnTag          = procedure(ASender: TObject; const TagNumber: WideString) of object;
-  TPhidgetRFIDOnTagLost      = procedure(ASender: TObject; const TagNumber: WideString) of object;
-  TPhidgetRFIDOnOutputChange = procedure(ASender: TObject; Index: Integer; NewState: WordBool) of object;
+  TPhidgetRFIDOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetRFIDOnTag = procedure(ASender: TObject; const TagNumber: WideString)
+    of object;
+  TPhidgetRFIDOnTagLost = procedure(ASender: TObject;
+    const TagNumber: WideString) of object;
+  TPhidgetRFIDOnOutputChange = procedure(ASender: TObject; Index: Integer;
+    NewState: WordBool) of object;
 
   TPhidgetRFID = class(TOleControl)
   private
@@ -2802,12 +3115,15 @@ type
     procedure Set_OutputState(Index: Integer; pVal: WordBool);
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetRFID read GetControlInterface;
@@ -2822,24 +3138,31 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property OutputState[index: Integer]: WordBool read Get_OutputState write Set_OutputState;
+    property OutputState[index: Integer]: WordBool read Get_OutputState
+      write Set_OutputState;
     property OutputCount: Integer index 257 read GetIntegerProp;
     property LastTag: WideString index 260 read GetWideStringProp;
     property TagStatus: WordBool index 261 read GetWordBoolProp;
     property NumOutputs: Integer index 262 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property AntennaOn: WordBool index 258 read GetWordBoolProp write SetWordBoolProp stored False;
-    property LEDOn: WordBool index 259 read GetWordBoolProp write SetWordBoolProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property AntennaOn: WordBool index 258 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property LEDOn: WordBool index 259 read GetWordBoolProp
+      write SetWordBoolProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetRFIDOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
     property OnTag: TPhidgetRFIDOnTag read FOnTag write FOnTag;
     property OnTagLost: TPhidgetRFIDOnTagLost read FOnTagLost write FOnTagLost;
-    property OnOutputChange: TPhidgetRFIDOnOutputChange read FOnOutputChange write FOnOutputChange;
+    property OnOutputChange: TPhidgetRFIDOnOutputChange read FOnOutputChange
+      write FOnOutputChange;
   end;
 
   // *********************************************************************//
@@ -2851,9 +3174,12 @@ type
   // Event   Interface: _IPhidgetServoEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetServoOnError               = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetServoOnPositionChange      = procedure(ASender: TObject; Index: Integer; NewState: Double) of object;
-  TPhidgetServoOnMotorPositionChange = procedure(ASender: TObject; Index: Integer; NewState: Double) of object;
+  TPhidgetServoOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetServoOnPositionChange = procedure(ASender: TObject; Index: Integer;
+    NewState: Double) of object;
+  TPhidgetServoOnMotorPositionChange = procedure(ASender: TObject;
+    Index: Integer; NewState: Double) of object;
 
   TPhidgetServo = class(TOleControl)
   private
@@ -2885,15 +3211,19 @@ type
     function Get_MotorPositionMax(Index: Integer): Double;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
-    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double);
+    procedure SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double;
+      Degrees: Double);
     property ControlInterface: IPhidgetServo read GetControlInterface;
     property DefaultInterface: IPhidgetServo read GetControlInterface;
     property DeviceType: WideString index 512 read GetWideStringProp;
@@ -2906,27 +3236,37 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property Position[index: Integer]: Double read Get_Position write Set_Position;
+    property Position[index: Integer]: Double read Get_Position
+      write Set_Position;
     property MotorCount: Integer index 257 read GetIntegerProp;
-    property Engaged[index: Integer]: WordBool read Get_Engaged write Set_Engaged;
+    property Engaged[index: Integer]: WordBool read Get_Engaged
+      write Set_Engaged;
     property PositionMin[index: Integer]: Double read Get_PositionMin;
     property PositionMax[index: Integer]: Double read Get_PositionMax;
-    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType write Set_ServoType;
-    property MotorPosition[index: Integer]: Double read Get_MotorPosition write Set_MotorPosition;
+    property ServoType[index: Integer]: PhidgetCOM_ServoType read Get_ServoType
+      write Set_ServoType;
+    property MotorPosition[index: Integer]: Double read Get_MotorPosition
+      write Set_MotorPosition;
     property NumMotors: Integer index 262 read GetIntegerProp;
-    property MotorOn[index: Integer]: WordBool read Get_MotorOn write Set_MotorOn;
+    property MotorOn[index: Integer]: WordBool read Get_MotorOn
+      write Set_MotorOn;
     property MotorPositionMin[index: Integer]: Double read Get_MotorPositionMin;
     property MotorPositionMax[index: Integer]: Double read Get_MotorPositionMax;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetServoOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnPositionChange: TPhidgetServoOnPositionChange read FOnPositionChange write FOnPositionChange;
-    property OnMotorPositionChange: TPhidgetServoOnMotorPositionChange read FOnMotorPositionChange write FOnMotorPositionChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnPositionChange: TPhidgetServoOnPositionChange
+      read FOnPositionChange write FOnPositionChange;
+    property OnMotorPositionChange: TPhidgetServoOnMotorPositionChange
+      read FOnMotorPositionChange write FOnMotorPositionChange;
   end;
 
   // *********************************************************************//
@@ -2938,8 +3278,10 @@ type
   // Event   Interface: _IPhidgetSpatialEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetSpatialOnError       = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetSpatialOnSpatialData = procedure(ASender: TObject; var data: { ??PSafeArray } OleVariant; dataCount: Integer) of object;
+  TPhidgetSpatialOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetSpatialOnSpatialData = procedure(ASender: TObject;
+    var data: { ??PSafeArray } OleVariant; dataCount: Integer) of object;
 
   TPhidgetSpatial = class(TOleControl)
   private
@@ -2963,16 +3305,21 @@ type
     function Get_magneticField(Index: Integer): Double;
     function Get_MagneticFieldMin(Index: Integer): Double;
     function Get_MagneticFieldMax(Index: Integer): Double;
-    procedure Set_CompassCorrectionParameters(magField: Double; offset0: Double; offset1: Double; offset2: Double; gain0: Double; gain1: Double; gain2: Double;
-      T0: Double; T1: Double; T2: Double; T3: Double; T4: Double; Param13: Double);
+    procedure Set_CompassCorrectionParameters(magField: Double; offset0: Double;
+      offset1: Double; offset2: Double; gain0: Double; gain1: Double;
+      gain2: Double; T0: Double; T1: Double; T2: Double; T3: Double; T4: Double;
+      Param13: Double);
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     procedure zeroGyro;
@@ -3003,18 +3350,25 @@ type
     property MagneticFieldMax[index: Integer]: Double read Get_MagneticFieldMax;
     property DataRateMin: Integer index 269 read GetIntegerProp;
     property DataRateMax: Integer index 270 read GetIntegerProp;
-    property CompassCorrectionParameters[magField: Double; offset0: Double; offset1: Double; offset2: Double; gain0: Double; gain1: Double; gain2: Double;
-      T0: Double; T1: Double; T2: Double; T3: Double; T4: Double]: Double write Set_CompassCorrectionParameters;
+    property CompassCorrectionParameters[magField: Double; offset0: Double;
+      offset1: Double; offset2: Double; gain0: Double; gain1: Double;
+      gain2: Double; T0: Double; T1: Double; T2: Double; T3: Double; T4: Double]
+      : Double write Set_CompassCorrectionParameters;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property DataRate: Integer index 268 read GetIntegerProp write SetIntegerProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property DataRate: Integer index 268 read GetIntegerProp
+      write SetIntegerProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetSpatialOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnSpatialData: TPhidgetSpatialOnSpatialData read FOnSpatialData write FOnSpatialData;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnSpatialData: TPhidgetSpatialOnSpatialData read FOnSpatialData
+      write FOnSpatialData;
   end;
 
   // *********************************************************************//
@@ -3026,11 +3380,16 @@ type
   // Event   Interface: _IPhidgetStepperEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetStepperOnError          = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetStepperOnInputChange    = procedure(ASender: TObject; Index: Integer; NewState: WordBool) of object;
-  TPhidgetStepperOnPositionChange = procedure(ASender: TObject; Index: Integer; newVal: Integer) of object;
-  TPhidgetStepperOnCurrentChange  = procedure(ASender: TObject; Index: Integer; newVal: Double) of object;
-  TPhidgetStepperOnVelocityChange = procedure(ASender: TObject; Index: Integer; newVal: Double) of object;
+  TPhidgetStepperOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetStepperOnInputChange = procedure(ASender: TObject; Index: Integer;
+    NewState: WordBool) of object;
+  TPhidgetStepperOnPositionChange = procedure(ASender: TObject; Index: Integer;
+    newVal: Integer) of object;
+  TPhidgetStepperOnCurrentChange = procedure(ASender: TObject; Index: Integer;
+    newVal: Double) of object;
+  TPhidgetStepperOnVelocityChange = procedure(ASender: TObject; Index: Integer;
+    newVal: Double) of object;
 
   TPhidgetStepper = class(TOleControl)
   private
@@ -3074,12 +3433,15 @@ type
     function Get_CurrentMax(Index: Integer): Double;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetStepper read GetControlInterface;
@@ -3094,11 +3456,16 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property CurrentPosition[index: Integer]: Integer read Get_CurrentPosition write Set_CurrentPosition;
-    property TargetPosition[index: Integer]: Integer read Get_TargetPosition write Set_TargetPosition;
-    property Acceleration[index: Integer]: Double read Get_Acceleration write Set_Acceleration;
-    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit write Set_VelocityLimit;
-    property CurrentLimit[index: Integer]: Double read Get_CurrentLimit write Set_CurrentLimit;
+    property CurrentPosition[index: Integer]: Integer read Get_CurrentPosition
+      write Set_CurrentPosition;
+    property TargetPosition[index: Integer]: Integer read Get_TargetPosition
+      write Set_TargetPosition;
+    property Acceleration[index: Integer]: Double read Get_Acceleration
+      write Set_Acceleration;
+    property VelocityLimit[index: Integer]: Double read Get_VelocityLimit
+      write Set_VelocityLimit;
+    property CurrentLimit[index: Integer]: Double read Get_CurrentLimit
+      write Set_CurrentLimit;
     property Current[index: Integer]: Double read Get_Current;
     property MotorCount: Integer index 262 read GetIntegerProp;
     property InputCount: Integer index 263 read GetIntegerProp;
@@ -3110,22 +3477,30 @@ type
     property VelocityMin[index: Integer]: Double read Get_VelocityMin;
     property VelocityMax[index: Integer]: Double read Get_VelocityMax;
     property Velocity[index: Integer]: Double read Get_Velocity;
-    property Engaged[index: Integer]: WordBool read Get_Engaged write Set_Engaged;
+    property Engaged[index: Integer]: WordBool read Get_Engaged
+      write Set_Engaged;
     property Stopped[index: Integer]: WordBool read Get_Stopped;
     property CurrentMin[index: Integer]: Double read Get_CurrentMin;
     property CurrentMax[index: Integer]: Double read Get_CurrentMax;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetStepperOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnInputChange: TPhidgetStepperOnInputChange read FOnInputChange write FOnInputChange;
-    property OnPositionChange: TPhidgetStepperOnPositionChange read FOnPositionChange write FOnPositionChange;
-    property OnCurrentChange: TPhidgetStepperOnCurrentChange read FOnCurrentChange write FOnCurrentChange;
-    property OnVelocityChange: TPhidgetStepperOnVelocityChange read FOnVelocityChange write FOnVelocityChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnInputChange: TPhidgetStepperOnInputChange read FOnInputChange
+      write FOnInputChange;
+    property OnPositionChange: TPhidgetStepperOnPositionChange
+      read FOnPositionChange write FOnPositionChange;
+    property OnCurrentChange: TPhidgetStepperOnCurrentChange
+      read FOnCurrentChange write FOnCurrentChange;
+    property OnVelocityChange: TPhidgetStepperOnVelocityChange
+      read FOnVelocityChange write FOnVelocityChange;
   end;
 
   // *********************************************************************//
@@ -3137,8 +3512,10 @@ type
   // Event   Interface: _IPhidgetTemperatureSensorEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetTemperatureSensorOnError             = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetTemperatureSensorOnTemperatureChange = procedure(ASender: TObject; Index: Integer; Temperature: Double) of object;
+  TPhidgetTemperatureSensorOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetTemperatureSensorOnTemperatureChange = procedure(ASender: TObject;
+    Index: Integer; Temperature: Double) of object;
 
   TPhidgetTemperatureSensor = class(TOleControl)
   private
@@ -3165,16 +3542,21 @@ type
     function Get_PotentialMax(Index: Integer): Double;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
-    property ControlInterface: IPhidgetTemperatureSensor read GetControlInterface;
-    property DefaultInterface: IPhidgetTemperatureSensor read GetControlInterface;
+    property ControlInterface: IPhidgetTemperatureSensor
+      read GetControlInterface;
+    property DefaultInterface: IPhidgetTemperatureSensor
+      read GetControlInterface;
     property DeviceType: WideString index 512 read GetWideStringProp;
     property SerialNumber: Integer index 513 read GetIntegerProp;
     property name: WideString index 514 read GetWideStringProp;
@@ -3185,12 +3567,14 @@ type
     property Address: WideString index 524 read GetWideStringProp;
     property ServerID: WideString index 525 read GetWideStringProp;
     property IsAttachedToServer: WordBool index 526 read GetWordBoolProp;
-    property TemperatureChangeTrigger[index: Integer]: Double read Get_TemperatureChangeTrigger write Set_TemperatureChangeTrigger;
+    property TemperatureChangeTrigger[index: Integer]: Double
+      read Get_TemperatureChangeTrigger write Set_TemperatureChangeTrigger;
     property Temperature[index: Integer]: Double read Get_Temperature;
     property AmbientTemperature: Double index 258 read GetDoubleProp;
     property TemperatureInputCount: Integer index 259 read GetIntegerProp;
     property Potential[index: Integer]: Double read Get_Potential;
-    property ThermocoupleType[index: Integer]: Integer read Get_ThermocoupleType write Set_ThermocoupleType;
+    property ThermocoupleType[index: Integer]: Integer read Get_ThermocoupleType
+      write Set_ThermocoupleType;
     property TemperatureMin[index: Integer]: Double read Get_TemperatureMin;
     property TemperatureMax[index: Integer]: Double read Get_TemperatureMax;
     property AmbientTemperatureMin: Double index 264 read GetDoubleProp;
@@ -3200,13 +3584,18 @@ type
     property NumTemperatureInputs: Integer index 268 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
-    property OnError: TPhidgetTemperatureSensorOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnTemperatureChange: TPhidgetTemperatureSensorOnTemperatureChange read FOnTemperatureChange write FOnTemperatureChange;
+    property OnError: TPhidgetTemperatureSensorOnError read FOnError
+      write FOnError;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnTemperatureChange: TPhidgetTemperatureSensorOnTemperatureChange
+      read FOnTemperatureChange write FOnTemperatureChange;
   end;
 
   // *********************************************************************//
@@ -3218,7 +3607,8 @@ type
   // Event   Interface: _IPhidgetTextLCDEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetTextLCDOnError = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetTextLCDOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
 
   TPhidgetTextLCD = class(TOleControl)
   private
@@ -3233,16 +3623,21 @@ type
     procedure CreateControl;
     procedure InitControlData; override;
     procedure Set_DisplayString(Row: Integer; const Param2: WideString);
-    procedure Set_CustomCharacter(Index: Integer; Val1: Integer; Param3: Integer);
-    procedure Set_DisplayCharacter(Row: Integer; Column: Integer; const Param3: WideString);
+    procedure Set_CustomCharacter(Index: Integer; Val1: Integer;
+      Param3: Integer);
+    procedure Set_DisplayCharacter(Row: Integer; Column: Integer;
+      const Param3: WideString);
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetTextLCD read GetControlInterface;
@@ -3260,23 +3655,33 @@ type
     property DisplayString[Row: Integer]: WideString write Set_DisplayString;
     property RowCount: Integer index 257 read GetIntegerProp;
     property ColumnCount: Integer index 258 read GetIntegerProp;
-    property CustomCharacter[index: Integer; Val1: Integer]: Integer write Set_CustomCharacter;
-    property DisplayCharacter[Row: Integer; Column: Integer]: WideString write Set_DisplayCharacter;
+    property CustomCharacter[index: Integer; Val1: Integer]: Integer
+      write Set_CustomCharacter;
+    property DisplayCharacter[Row: Integer; Column: Integer]: WideString
+      write Set_DisplayCharacter;
     property NumRows: Integer index 264 read GetIntegerProp;
     property NumColumns: Integer index 265 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property Backlight: WordBool index 259 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CursorOn: WordBool index 260 read GetWordBoolProp write SetWordBoolProp stored False;
-    property CursorBlink: WordBool index 261 read GetWordBoolProp write SetWordBoolProp stored False;
-    property Contrast: Integer index 262 read GetIntegerProp write SetIntegerProp stored False;
-    property Brightness: Integer index 267 read GetIntegerProp write SetIntegerProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property Backlight: WordBool index 259 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CursorOn: WordBool index 260 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property CursorBlink: WordBool index 261 read GetWordBoolProp
+      write SetWordBoolProp stored False;
+    property Contrast: Integer index 262 read GetIntegerProp
+      write SetIntegerProp stored False;
+    property Brightness: Integer index 267 read GetIntegerProp
+      write SetIntegerProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetTextLCDOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
   end;
 
   // *********************************************************************//
@@ -3288,7 +3693,8 @@ type
   // Event   Interface: _IPhidgetTextLEDEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetTextLEDOnError = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetTextLEDOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
 
   TPhidgetTextLED = class(TOleControl)
   private
@@ -3305,12 +3711,15 @@ type
     procedure Set_DisplayString(Row: Integer; const Param2: WideString);
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetTextLED read GetControlInterface;
@@ -3332,13 +3741,17 @@ type
     property NumColumns: Integer index 261 read GetIntegerProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property Brightness: Integer index 259 read GetIntegerProp write SetIntegerProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property Brightness: Integer index 259 read GetIntegerProp
+      write SetIntegerProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetTextLEDOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
   end;
 
   // *********************************************************************//
@@ -3350,8 +3763,10 @@ type
   // Event   Interface: _IPhidgetWeightSensorEvents
   // TypeFlags        : (2) CanCreate
   // *********************************************************************//
-  TPhidgetWeightSensorOnError        = procedure(ASender: TObject; const Description: WideString; SCODE: PhidgetCOM_Error) of object;
-  TPhidgetWeightSensorOnWeightChange = procedure(ASender: TObject; Weight: Double) of object;
+  TPhidgetWeightSensorOnError = procedure(ASender: TObject;
+    const Description: WideString; SCODE: PhidgetCOM_Error) of object;
+  TPhidgetWeightSensorOnWeightChange = procedure(ASender: TObject;
+    Weight: Double) of object;
 
   TPhidgetWeightSensor = class(TOleControl)
   private
@@ -3368,12 +3783,15 @@ type
     procedure InitControlData; override;
   public
     procedure Open(SerialNumber: SYSINT);
-    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
-    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+    procedure OpenRemote(const ServerID: WideString; SerialNumber: SYSINT;
+      const Password: WideString);
+    procedure OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+      SerialNumber: SYSINT; const Password: WideString);
     procedure Close;
     procedure EnableLogging(level: SYSINT; const file_: WideString);
     procedure DisableLogging;
-    procedure Log(level: SYSINT; const ident: WideString; const Log: WideString);
+    procedure Log(level: SYSINT; const ident: WideString;
+      const Log: WideString);
     procedure WaitForAttachment(milliseconds: SYSINT);
     procedure EnableVerboseErrors(state: WordBool);
     property ControlInterface: IPhidgetWeightSensor read GetControlInterface;
@@ -3391,14 +3809,19 @@ type
     property Weight: Double index 257 read GetDoubleProp;
   published
     property Anchors;
-    property Label_: WideString index 515 read GetWideStringProp write SetWideStringProp stored False;
-    property WeightChangeTrigger: Double index 256 read GetDoubleProp write SetDoubleProp stored False;
+    property Label_: WideString index 515 read GetWideStringProp
+      write SetWideStringProp stored False;
+    property WeightChangeTrigger: Double index 256 read GetDoubleProp
+      write SetDoubleProp stored False;
     property OnAttach: TNotifyEvent read FOnAttach write FOnAttach;
     property OnDetach: TNotifyEvent read FOnDetach write FOnDetach;
     property OnError: TPhidgetWeightSensorOnError read FOnError write FOnError;
-    property OnServerConnect: TNotifyEvent read FOnServerConnect write FOnServerConnect;
-    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect write FOnServerDisconnect;
-    property OnWeightChange: TPhidgetWeightSensorOnWeightChange read FOnWeightChange write FOnWeightChange;
+    property OnServerConnect: TNotifyEvent read FOnServerConnect
+      write FOnServerConnect;
+    property OnServerDisconnect: TNotifyEvent read FOnServerDisconnect
+      write FOnServerDisconnect;
+    property OnWeightChange: TPhidgetWeightSensorOnWeightChange
+      read FOnWeightChange write FOnWeightChange;
   end;
 
 procedure Register;
@@ -3414,12 +3837,17 @@ uses ComObj;
 
 procedure TPhidgetManager.InitControlData;
 const
-  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000002}'; EventIID: '{50484945-4745-5453-2000-000000000002}'; EventCount: 5;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000002}';
+    EventIID: '{50484945-4745-5453-2000-000000000002}'; EventCount: 5;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetManager.CreateControl;
@@ -3475,24 +3903,31 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetManager.OpenRemote(const ServerID: WideString; const Password: WideString);
+procedure TPhidgetManager.OpenRemote(const ServerID: WideString;
+  const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, Password);
 end;
 
-procedure TPhidgetManager.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString);
+procedure TPhidgetManager.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, Password);
 end;
 
 procedure TPhidgetAccelerometer.InitControlData;
 const
-  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000011}'; EventIID: '{50484945-4745-5453-2000-000000000011}'; EventCount: 6;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000011}';
+    EventIID: '{50484945-4745-5453-2000-000000000011}'; EventCount: 6;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetAccelerometer.CreateControl;
@@ -3513,12 +3948,14 @@ begin
   Result := FIntf;
 end;
 
-function TPhidgetAccelerometer.Get_AccelerationChangeTrigger(Index: Integer): Double;
+function TPhidgetAccelerometer.Get_AccelerationChangeTrigger
+  (Index: Integer): Double;
 begin
   Result := DefaultInterface.AccelerationChangeTrigger[index];
 end;
 
-procedure TPhidgetAccelerometer.Set_AccelerationChangeTrigger(Index: Integer; pVal: Double);
+procedure TPhidgetAccelerometer.Set_AccelerationChangeTrigger(Index: Integer;
+  pVal: Double);
 begin
   DefaultInterface.AccelerationChangeTrigger[index] := pVal;
 end;
@@ -3543,12 +3980,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetAccelerometer.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetAccelerometer.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetAccelerometer.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetAccelerometer.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -3558,7 +3997,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetAccelerometer.EnableLogging(level: SYSINT; const file_: WideString);
+procedure TPhidgetAccelerometer.EnableLogging(level: SYSINT;
+  const file_: WideString);
 begin
   DefaultInterface.EnableLogging(level, file_);
 end;
@@ -3568,7 +4008,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetAccelerometer.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetAccelerometer.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -3585,12 +4026,17 @@ end;
 
 procedure TPhidgetAdvancedServo.InitControlData;
 const
-  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007, $00000008);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-00000000000C}'; EventIID: '{50484945-4745-5453-2000-00000000000C}'; EventCount: 8;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007, $00000008);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-00000000000C}';
+    EventIID: '{50484945-4745-5453-2000-00000000000C}'; EventCount: 8;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetAdvancedServo.CreateControl;
@@ -3666,7 +4112,8 @@ begin
   Result := DefaultInterface.SpeedRampingOn[index];
 end;
 
-procedure TPhidgetAdvancedServo.Set_SpeedRampingOn(Index: Integer; pVal: WordBool);
+procedure TPhidgetAdvancedServo.Set_SpeedRampingOn(Index: Integer;
+  pVal: WordBool);
 begin
   DefaultInterface.SpeedRampingOn[index] := pVal;
 end;
@@ -3716,12 +4163,14 @@ begin
   Result := DefaultInterface.Stopped[index];
 end;
 
-function TPhidgetAdvancedServo.Get_ServoType(Index: Integer): PhidgetCOM_ServoType;
+function TPhidgetAdvancedServo.Get_ServoType(Index: Integer)
+  : PhidgetCOM_ServoType;
 begin
   Result := DefaultInterface.ServoType[index];
 end;
 
-procedure TPhidgetAdvancedServo.Set_ServoType(Index: Integer; pVal: PhidgetCOM_ServoType);
+procedure TPhidgetAdvancedServo.Set_ServoType(Index: Integer;
+  pVal: PhidgetCOM_ServoType);
 begin
   DefaultInterface.ServoType[index] := pVal;
 end;
@@ -3731,12 +4180,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetAdvancedServo.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetAdvancedServo.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetAdvancedServo.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetAdvancedServo.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -3746,7 +4197,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetAdvancedServo.EnableLogging(level: SYSINT; const file_: WideString);
+procedure TPhidgetAdvancedServo.EnableLogging(level: SYSINT;
+  const file_: WideString);
 begin
   DefaultInterface.EnableLogging(level, file_);
 end;
@@ -3756,7 +4208,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetAdvancedServo.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetAdvancedServo.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -3771,19 +4224,25 @@ begin
   DefaultInterface.EnableVerboseErrors(state);
 end;
 
-procedure TPhidgetAdvancedServo.SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double; VelocityMax: Double);
+procedure TPhidgetAdvancedServo.SetServoParameters(Index: Integer;
+  MinUs: Double; MaxUs: Double; Degrees: Double; VelocityMax: Double);
 begin
-  DefaultInterface.SetServoParameters(index, MinUs, MaxUs, Degrees, VelocityMax);
+  DefaultInterface.SetServoParameters(index, MinUs, MaxUs, Degrees,
+    VelocityMax);
 end;
 
 procedure TPhidgetDictionary.InitControlData;
 const
   CEventDispIDs: array [0 .. 2] of DWORD = ($00000001, $00000002, $00000003);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000013}'; EventIID: '{50484945-4745-5453-2000-000000000013}'; EventCount: 3;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000013}';
+    EventIID: '{50484945-4745-5453-2000-000000000013}'; EventCount: 3;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnError) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnError) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetDictionary.CreateControl;
@@ -3804,12 +4263,14 @@ begin
   Result := FIntf;
 end;
 
-procedure TPhidgetDictionary.OpenRemote(const ServerID: WideString; const Password: WideString);
+procedure TPhidgetDictionary.OpenRemote(const ServerID: WideString;
+  const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, Password);
 end;
 
-procedure TPhidgetDictionary.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; const Password: WideString);
+procedure TPhidgetDictionary.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, Password);
 end;
@@ -3819,7 +4280,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetDictionary.Add(const Key: WideString; const Value: WideString; Persistent: WordBool);
+procedure TPhidgetDictionary.Add(const Key: WideString; const Value: WideString;
+  Persistent: WordBool);
 begin
   DefaultInterface.Add(Key, Value, Persistent);
 end;
@@ -3836,12 +4298,17 @@ end;
 
 procedure TPhidgetEncoder.InitControlData;
 const
-  CEventDispIDs: array [0 .. 6] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-00000000000E}'; EventIID: '{50484945-4745-5453-2000-00000000000E}'; EventCount: 7;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 6] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-00000000000E}';
+    EventIID: '{50484945-4745-5453-2000-00000000000E}'; EventCount: 7;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetEncoder.CreateControl;
@@ -3907,12 +4374,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetEncoder.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetEncoder.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetEncoder.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetEncoder.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -3932,7 +4401,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetEncoder.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetEncoder.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -3949,12 +4419,17 @@ end;
 
 procedure TPhidgetInterfaceKit.InitControlData;
 const
-  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007, $00000008);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000003}'; EventIID: '{50484945-4745-5453-2000-000000000003}'; EventCount: 8;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007, $00000008);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000003}';
+    EventIID: '{50484945-4745-5453-2000-000000000003}'; EventCount: 8;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetInterfaceKit.CreateControl;
@@ -4000,7 +4475,8 @@ begin
   Result := DefaultInterface.SensorChangeTrigger[index];
 end;
 
-procedure TPhidgetInterfaceKit.Set_SensorChangeTrigger(Index: Integer; pVal: Integer);
+procedure TPhidgetInterfaceKit.Set_SensorChangeTrigger(Index: Integer;
+  pVal: Integer);
 begin
   DefaultInterface.SensorChangeTrigger[index] := pVal;
 end;
@@ -4035,12 +4511,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetInterfaceKit.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetInterfaceKit.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetInterfaceKit.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetInterfaceKit.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4050,7 +4528,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetInterfaceKit.EnableLogging(level: SYSINT; const file_: WideString);
+procedure TPhidgetInterfaceKit.EnableLogging(level: SYSINT;
+  const file_: WideString);
 begin
   DefaultInterface.EnableLogging(level, file_);
 end;
@@ -4060,7 +4539,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetInterfaceKit.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetInterfaceKit.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4077,12 +4557,17 @@ end;
 
 procedure TPhidgetIR.InitControlData;
 const
-  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007, $00000008);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000016}'; EventIID: '{50484945-4745-5453-2000-000000000016}'; EventCount: 8;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007, $00000008);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000016}';
+    EventIID: '{50484945-4745-5453-2000-000000000016}'; EventCount: 8;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetIR.CreateControl;
@@ -4108,12 +4593,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetIR.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetIR.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetIR.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetIR.OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4133,7 +4620,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetIR.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetIR.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4148,7 +4636,8 @@ begin
   DefaultInterface.EnableVerboseErrors(state);
 end;
 
-procedure TPhidgetIR.Transmit(var data: PSafeArray; var codeInfo: PhidgetIR_CodeInfo);
+procedure TPhidgetIR.Transmit(var data: PSafeArray;
+  var codeInfo: PhidgetIR_CodeInfo);
 begin
   DefaultInterface.Transmit(data, codeInfo);
 end;
@@ -4158,7 +4647,8 @@ begin
   DefaultInterface.TransmitRepeat;
 end;
 
-procedure TPhidgetIR.TransmitRaw(var data: PSafeArray; length: Integer; carrierFrequency: Integer; dutyCyle: Integer; gap: Integer);
+procedure TPhidgetIR.TransmitRaw(var data: PSafeArray; length: Integer;
+  carrierFrequency: Integer; dutyCyle: Integer; gap: Integer);
 begin
   DefaultInterface.TransmitRaw(data, length, carrierFrequency, dutyCyle, gap);
 end;
@@ -4168,12 +4658,14 @@ begin
   DefaultInterface.getRawData(data, dataLength);
 end;
 
-procedure TPhidgetIR.getLastCode(var data: PSafeArray; var dataLength: Integer; var bitCount: Integer);
+procedure TPhidgetIR.getLastCode(var data: PSafeArray; var dataLength: Integer;
+  var bitCount: Integer);
 begin
   DefaultInterface.getLastCode(data, dataLength, bitCount);
 end;
 
-procedure TPhidgetIR.getLastLearnedCode(var data: PSafeArray; var dataLength: Integer; var codeInfo: PhidgetIR_CodeInfo);
+procedure TPhidgetIR.getLastLearnedCode(var data: PSafeArray;
+  var dataLength: Integer; var codeInfo: PhidgetIR_CodeInfo);
 begin
   DefaultInterface.getLastLearnedCode(data, dataLength, codeInfo);
 end;
@@ -4181,11 +4673,15 @@ end;
 procedure TPhidgetKeyListener.InitControlData;
 const
   CEventDispIDs: array [0 .. 1] of DWORD = ($00000001, $00000002);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000014}'; EventIID: '{50484945-4745-5453-2000-000000000014}'; EventCount: 2;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000014}';
+    EventIID: '{50484945-4745-5453-2000-000000000014}'; EventCount: 2;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnKeyChange) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnKeyChange) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetKeyListener.CreateControl;
@@ -4206,7 +4702,8 @@ begin
   Result := FIntf;
 end;
 
-procedure TPhidgetKeyListener.Start(const Dict: IPhidgetDictionary; const Pattern: WideString);
+procedure TPhidgetKeyListener.Start(const Dict: IPhidgetDictionary;
+  const Pattern: WideString);
 begin
   DefaultInterface.Start(Dict, Pattern);
 end;
@@ -4218,12 +4715,17 @@ end;
 
 procedure TPhidgetLED.InitControlData;
 const
-  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-00000000000D}'; EventIID: '{50484945-4745-5453-2000-00000000000D}'; EventCount: 5;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-00000000000D}';
+    EventIID: '{50484945-4745-5453-2000-00000000000D}'; EventCount: 5;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetLED.CreateControl;
@@ -4259,12 +4761,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetLED.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetLED.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetLED.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetLED.OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4284,7 +4788,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetLED.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetLED.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4301,12 +4806,17 @@ end;
 
 procedure TPhidgetMotorControl.InitControlData;
 const
-  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007, $00000008);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-00000000000B}'; EventIID: '{50484945-4745-5453-2000-00000000000B}'; EventCount: 8;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007, $00000008);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-00000000000B}';
+    EventIID: '{50484945-4745-5453-2000-00000000000B}'; EventCount: 8;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetMotorControl.CreateControl;
@@ -4382,12 +4892,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetMotorControl.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetMotorControl.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetMotorControl.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetMotorControl.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4397,7 +4909,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetMotorControl.EnableLogging(level: SYSINT; const file_: WideString);
+procedure TPhidgetMotorControl.EnableLogging(level: SYSINT;
+  const file_: WideString);
 begin
   DefaultInterface.EnableLogging(level, file_);
 end;
@@ -4407,7 +4920,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetMotorControl.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetMotorControl.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4424,12 +4938,17 @@ end;
 
 procedure TPhidgetPHSensor.InitControlData;
 const
-  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000015}'; EventIID: '{50484945-4745-5453-2000-000000000015}'; EventCount: 6;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000015}';
+    EventIID: '{50484945-4745-5453-2000-000000000015}'; EventCount: 6;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetPHSensor.CreateControl;
@@ -4455,12 +4974,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetPHSensor.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetPHSensor.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetPHSensor.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetPHSensor.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4470,7 +4991,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetPHSensor.EnableLogging(level: SYSINT; const file_: WideString);
+procedure TPhidgetPHSensor.EnableLogging(level: SYSINT;
+  const file_: WideString);
 begin
   DefaultInterface.EnableLogging(level, file_);
 end;
@@ -4480,7 +5002,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetPHSensor.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetPHSensor.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4497,12 +5020,17 @@ end;
 
 procedure TPhidgetRFID.InitControlData;
 const
-  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007, $00000008);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000007}'; EventIID: '{50484945-4745-5453-2000-000000000007}'; EventCount: 8;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 7] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007, $00000008);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000007}';
+    EventIID: '{50484945-4745-5453-2000-000000000007}'; EventCount: 8;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetRFID.CreateControl;
@@ -4538,12 +5066,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetRFID.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetRFID.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetRFID.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetRFID.OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4563,7 +5093,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetRFID.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetRFID.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4580,12 +5111,17 @@ end;
 
 procedure TPhidgetServo.InitControlData;
 const
-  CEventDispIDs: array [0 .. 6] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000004}'; EventIID: '{50484945-4745-5453-2000-000000000004}'; EventCount: 7;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 6] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000004}';
+    EventIID: '{50484945-4745-5453-2000-000000000004}'; EventCount: 7;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetServo.CreateControl;
@@ -4641,7 +5177,8 @@ begin
   Result := DefaultInterface.ServoType[index];
 end;
 
-procedure TPhidgetServo.Set_ServoType(Index: Integer; pVal: PhidgetCOM_ServoType);
+procedure TPhidgetServo.Set_ServoType(Index: Integer;
+  pVal: PhidgetCOM_ServoType);
 begin
   DefaultInterface.ServoType[index] := pVal;
 end;
@@ -4681,12 +5218,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetServo.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetServo.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetServo.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetServo.OpenRemoteIP(const IPAddress: WideString; port: SYSINT;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4706,7 +5245,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetServo.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetServo.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4721,19 +5261,25 @@ begin
   DefaultInterface.EnableVerboseErrors(state);
 end;
 
-procedure TPhidgetServo.SetServoParameters(Index: Integer; MinUs: Double; MaxUs: Double; Degrees: Double);
+procedure TPhidgetServo.SetServoParameters(Index: Integer; MinUs: Double;
+  MaxUs: Double; Degrees: Double);
 begin
   DefaultInterface.SetServoParameters(index, MinUs, MaxUs, Degrees);
 end;
 
 procedure TPhidgetSpatial.InitControlData;
 const
-  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000017}'; EventIID: '{50484945-4745-5453-2000-000000000017}'; EventCount: 6;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000017}';
+    EventIID: '{50484945-4745-5453-2000-000000000017}'; EventCount: 6;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetSpatial.CreateControl;
@@ -4799,10 +5345,13 @@ begin
   Result := DefaultInterface.MagneticFieldMax[index];
 end;
 
-procedure TPhidgetSpatial.Set_CompassCorrectionParameters(magField: Double; offset0: Double; offset1: Double; offset2: Double; gain0: Double; gain1: Double;
-  gain2: Double; T0: Double; T1: Double; T2: Double; T3: Double; T4: Double; Param13: Double);
+procedure TPhidgetSpatial.Set_CompassCorrectionParameters(magField: Double;
+  offset0: Double; offset1: Double; offset2: Double; gain0: Double;
+  gain1: Double; gain2: Double; T0: Double; T1: Double; T2: Double; T3: Double;
+  T4: Double; Param13: Double);
 begin
-  DefaultInterface.CompassCorrectionParameters[magField, offset0, offset1, offset2, gain0, gain1, gain2, T0, T1, T2, T3, T4] := Param13;
+  DefaultInterface.CompassCorrectionParameters[magField, offset0, offset1,
+    offset2, gain0, gain1, gain2, T0, T1, T2, T3, T4] := Param13;
 end;
 
 procedure TPhidgetSpatial.Open(SerialNumber: SYSINT);
@@ -4810,12 +5359,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetSpatial.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetSpatial.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetSpatial.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetSpatial.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -4835,7 +5386,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetSpatial.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetSpatial.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -4862,12 +5414,17 @@ end;
 
 procedure TPhidgetStepper.InitControlData;
 const
-  CEventDispIDs: array [0 .. 8] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006, $00000007, $00000008, $00000009);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-00000000000F}'; EventIID: '{50484945-4745-5453-2000-00000000000F}'; EventCount: 9;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 8] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006, $00000007, $00000008, $00000009);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-00000000000F}';
+    EventIID: '{50484945-4745-5453-2000-00000000000F}'; EventCount: 9;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetStepper.CreateControl;
@@ -5013,12 +5570,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetStepper.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetStepper.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetStepper.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetStepper.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -5038,7 +5597,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetStepper.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetStepper.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -5055,12 +5615,17 @@ end;
 
 procedure TPhidgetTemperatureSensor.InitControlData;
 const
-  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000010}'; EventIID: '{50484945-4745-5453-2000-000000000010}'; EventCount: 6;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000010}';
+    EventIID: '{50484945-4745-5453-2000-000000000010}'; EventCount: 6;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetTemperatureSensor.CreateControl;
@@ -5075,18 +5640,21 @@ begin
     DoCreate;
 end;
 
-function TPhidgetTemperatureSensor.GetControlInterface: IPhidgetTemperatureSensor;
+function TPhidgetTemperatureSensor.GetControlInterface
+  : IPhidgetTemperatureSensor;
 begin
   CreateControl;
   Result := FIntf;
 end;
 
-function TPhidgetTemperatureSensor.Get_TemperatureChangeTrigger(Index: Integer): Double;
+function TPhidgetTemperatureSensor.Get_TemperatureChangeTrigger
+  (Index: Integer): Double;
 begin
   Result := DefaultInterface.TemperatureChangeTrigger[index];
 end;
 
-procedure TPhidgetTemperatureSensor.Set_TemperatureChangeTrigger(Index: Integer; pVal: Double);
+procedure TPhidgetTemperatureSensor.Set_TemperatureChangeTrigger(Index: Integer;
+  pVal: Double);
 begin
   DefaultInterface.TemperatureChangeTrigger[index] := pVal;
 end;
@@ -5101,12 +5669,14 @@ begin
   Result := DefaultInterface.Potential[index];
 end;
 
-function TPhidgetTemperatureSensor.Get_ThermocoupleType(Index: Integer): Integer;
+function TPhidgetTemperatureSensor.Get_ThermocoupleType(Index: Integer)
+  : Integer;
 begin
   Result := DefaultInterface.ThermocoupleType[index];
 end;
 
-procedure TPhidgetTemperatureSensor.Set_ThermocoupleType(Index: Integer; pVal: Integer);
+procedure TPhidgetTemperatureSensor.Set_ThermocoupleType(Index: Integer;
+  pVal: Integer);
 begin
   DefaultInterface.ThermocoupleType[index] := pVal;
 end;
@@ -5136,12 +5706,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetTemperatureSensor.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetTemperatureSensor.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetTemperatureSensor.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetTemperatureSensor.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -5151,7 +5723,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetTemperatureSensor.EnableLogging(level: SYSINT; const file_: WideString);
+procedure TPhidgetTemperatureSensor.EnableLogging(level: SYSINT;
+  const file_: WideString);
 begin
   DefaultInterface.EnableLogging(level, file_);
 end;
@@ -5161,7 +5734,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetTemperatureSensor.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetTemperatureSensor.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -5178,12 +5752,17 @@ end;
 
 procedure TPhidgetTextLCD.InitControlData;
 const
-  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-00000000000A}'; EventIID: '{50484945-4745-5453-2000-00000000000A}'; EventCount: 5;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-00000000000A}';
+    EventIID: '{50484945-4745-5453-2000-00000000000A}'; EventCount: 5;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetTextLCD.CreateControl;
@@ -5204,30 +5783,33 @@ begin
   Result := FIntf;
 end;
 
-procedure TPhidgetTextLCD.Set_DisplayString(Row: Integer; const Param2: WideString);
+procedure TPhidgetTextLCD.Set_DisplayString(Row: Integer;
+  const Param2: WideString);
 { Warning: The property DisplayString has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.DisplayString := Param2;
 end;
 
-procedure TPhidgetTextLCD.Set_CustomCharacter(Index: Integer; Val1: Integer; Param3: Integer);
+procedure TPhidgetTextLCD.Set_CustomCharacter(Index: Integer; Val1: Integer;
+  Param3: Integer);
 begin
   DefaultInterface.CustomCharacter[index, Val1] := Param3;
 end;
 
-procedure TPhidgetTextLCD.Set_DisplayCharacter(Row: Integer; Column: Integer; const Param3: WideString);
+procedure TPhidgetTextLCD.Set_DisplayCharacter(Row: Integer; Column: Integer;
+  const Param3: WideString);
 { Warning: The property DisplayCharacter has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant                  := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.DisplayCharacter := Param3;
 end;
 
@@ -5236,12 +5818,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetTextLCD.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetTextLCD.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetTextLCD.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetTextLCD.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -5261,7 +5845,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetTextLCD.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetTextLCD.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -5278,12 +5863,17 @@ end;
 
 procedure TPhidgetTextLED.InitControlData;
 const
-  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000012}'; EventIID: '{50484945-4745-5453-2000-000000000012}'; EventCount: 5;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 4] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000012}';
+    EventIID: '{50484945-4745-5453-2000-000000000012}'; EventCount: 5;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetTextLED.CreateControl;
@@ -5304,14 +5894,15 @@ begin
   Result := FIntf;
 end;
 
-procedure TPhidgetTextLED.Set_DisplayString(Row: Integer; const Param2: WideString);
+procedure TPhidgetTextLED.Set_DisplayString(Row: Integer;
+  const Param2: WideString);
 { Warning: The property DisplayString has a setter and a getter whose
   types do not match. Delphi was unable to generate a property of
   this sort and so is using a Variant as a passthrough. }
 var
   InterfaceVariant: OleVariant;
 begin
-  InterfaceVariant               := DefaultInterface;
+  InterfaceVariant := DefaultInterface;
   InterfaceVariant.DisplayString := Param2;
 end;
 
@@ -5320,12 +5911,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetTextLED.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetTextLED.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetTextLED.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetTextLED.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -5345,7 +5938,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetTextLED.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetTextLED.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -5362,12 +5956,17 @@ end;
 
 procedure TPhidgetWeightSensor.InitControlData;
 const
-  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003, $00000004, $00000005, $00000006);
-  CControlData: TControlData2 = (ClassID: '{50484945-4745-5453-3000-000000000008}'; EventIID: '{50484945-4745-5453-2000-000000000008}'; EventCount: 6;
-    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *); Flags: $00000000; Version: 401);
+  CEventDispIDs: array [0 .. 5] of DWORD = ($00000001, $00000002, $00000003,
+    $00000004, $00000005, $00000006);
+  CControlData: TControlData2 = (ClassID
+    : '{50484945-4745-5453-3000-000000000008}';
+    EventIID: '{50484945-4745-5453-2000-000000000008}'; EventCount: 6;
+    EventDispIDs: @CEventDispIDs; LicenseKey: nil (* HR:$80004002 *);
+    Flags: $00000000; Version: 401);
 begin
-  ControlData                               := @CControlData;
-  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) - Cardinal(Self);
+  ControlData := @CControlData;
+  TControlData2(CControlData).FirstEventOfs := Cardinal(@@FOnAttach) -
+    Cardinal(Self);
 end;
 
 procedure TPhidgetWeightSensor.CreateControl;
@@ -5393,12 +5992,14 @@ begin
   DefaultInterface.Open(SerialNumber);
 end;
 
-procedure TPhidgetWeightSensor.OpenRemote(const ServerID: WideString; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetWeightSensor.OpenRemote(const ServerID: WideString;
+  SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemote(ServerID, SerialNumber, Password);
 end;
 
-procedure TPhidgetWeightSensor.OpenRemoteIP(const IPAddress: WideString; port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
+procedure TPhidgetWeightSensor.OpenRemoteIP(const IPAddress: WideString;
+  port: SYSINT; SerialNumber: SYSINT; const Password: WideString);
 begin
   DefaultInterface.OpenRemoteIP(IPAddress, port, SerialNumber, Password);
 end;
@@ -5408,7 +6009,8 @@ begin
   DefaultInterface.Close;
 end;
 
-procedure TPhidgetWeightSensor.EnableLogging(level: SYSINT; const file_: WideString);
+procedure TPhidgetWeightSensor.EnableLogging(level: SYSINT;
+  const file_: WideString);
 begin
   DefaultInterface.EnableLogging(level, file_);
 end;
@@ -5418,7 +6020,8 @@ begin
   DefaultInterface.DisableLogging;
 end;
 
-procedure TPhidgetWeightSensor.Log(level: SYSINT; const ident: WideString; const Log: WideString);
+procedure TPhidgetWeightSensor.Log(level: SYSINT; const ident: WideString;
+  const Log: WideString);
 begin
   DefaultInterface.Log(level, ident, Log);
 end;
@@ -5435,9 +6038,12 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents(dtlOcxPage, [TPhidgetManager, TPhidgetAccelerometer, TPhidgetAdvancedServo, TPhidgetDictionary, TPhidgetEncoder, TPhidgetInterfaceKit,
-    TPhidgetIR, TPhidgetKeyListener, TPhidgetLED, TPhidgetMotorControl, TPhidgetPHSensor, TPhidgetRFID, TPhidgetServo, TPhidgetSpatial, TPhidgetStepper,
-    TPhidgetTemperatureSensor, TPhidgetTextLCD, TPhidgetTextLED, TPhidgetWeightSensor]);
+  RegisterComponents(dtlOcxPage, [TPhidgetManager, TPhidgetAccelerometer,
+    TPhidgetAdvancedServo, TPhidgetDictionary, TPhidgetEncoder,
+    TPhidgetInterfaceKit, TPhidgetIR, TPhidgetKeyListener, TPhidgetLED,
+    TPhidgetMotorControl, TPhidgetPHSensor, TPhidgetRFID, TPhidgetServo,
+    TPhidgetSpatial, TPhidgetStepper, TPhidgetTemperatureSensor,
+    TPhidgetTextLCD, TPhidgetTextLED, TPhidgetWeightSensor]);
 end;
 
 end.

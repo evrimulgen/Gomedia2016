@@ -48,7 +48,8 @@ end;
 function TDSServerModuleRFIDPanel.echo(s: string): string;
 begin
   CDSCustomers.Locate('customers_firstname', s, [locaseinsensitive]);
-  Result := 'Returned data is ' + CDSCustomers.FieldByName('customers_lastname').AsString;
+  Result := 'Returned data is ' + CDSCustomers.FieldByName
+    ('customers_lastname').AsString;
 end;
 
 function TDSServerModuleRFIDPanel.getFTPConn(): TFTPConn;
@@ -62,7 +63,7 @@ var
   myFTPConn: TFTPConn;
 begin
   myFTPConn := getFTPConn;
-  Result    := FTPConnToJSON(myFTPConn);
+  Result := FTPConnToJSON(myFTPConn);
   myFTPConn.Free;
 end;
 
@@ -72,9 +73,12 @@ begin
   if CDSCustomers.Locate('customers_rfid', VIPID, [locaseinsensitive]) then
   begin
     if CDSCustomers.FieldByName('customers_nbr').Value > 99999 then
-      MainForm.dxBarMRUListItemCustomers.AddItem(CDSCustomers.FieldByName('customers_nbr').AsString + ' - ' + CDSCustomers.FieldByName('customers_firstname')
-        .AsString + ' ' + CDSCustomers.FieldByName('customers_lastname').AsString, nil);
-    Result := 'Nom : ' + CDSCustomers.FieldByName('customers_firstname').AsString + ' ' + CDSCustomers.FieldByName('customers_lastname').AsString;
+      MainForm.dxBarMRUListItemCustomers.AddItem
+        (CDSCustomers.FieldByName('customers_nbr').AsString + ' - ' +
+        CDSCustomers.FieldByName('customers_firstname').AsString + ' ' +
+        CDSCustomers.FieldByName('customers_lastname').AsString, nil);
+    Result := 'Nom : ' + CDSCustomers.FieldByName('customers_firstname')
+      .AsString + ' ' + CDSCustomers.FieldByName('customers_lastname').AsString;
   end;
 end;
 
@@ -83,7 +87,8 @@ begin
   Result := '';
   if CDSCustomers.Locate('customers_rfid', VIPID, [locaseinsensitive]) then
   begin
-    Result := 'Bon : ' + CDSCustomers.FieldByName('customers_credit').AsString + ' €';
+    Result := 'Bon : ' + CDSCustomers.FieldByName('customers_credit')
+      .AsString + ' €';
   end;
 end;
 
@@ -92,13 +97,15 @@ begin
   Result := '';
   if CDSCustomers.Locate('customers_rfid', VIPID, [locaseinsensitive]) then
   begin
-    Result             := 'Jeux commandés : ' + #13#10;
-    CDSAlerts.Filter   := 'customers_alerts_customers_nbr=' + CDSCustomers.FieldByName('customers_nbr').AsString;
+    Result := 'Jeux commandés : ' + #13#10;
+    CDSAlerts.Filter := 'customers_alerts_customers_nbr=' +
+      CDSCustomers.FieldByName('customers_nbr').AsString;
     CDSAlerts.Filtered := True;
     CDSAlerts.First;
     while not RemoteDB.CloneDSAlerts.eof do
     begin
-      Result := Result + #13#10 + CDSAlerts.FieldByName('customers_alerts_products_name').AsString;
+      Result := Result + #13#10 + CDSAlerts.FieldByName
+        ('customers_alerts_products_name').AsString;
       CDSAlerts.Next;
     end;
   end;
@@ -109,13 +116,15 @@ begin
   Result := '';
   if CDSCustomers.Locate('customers_rfid', VIPID, [locaseinsensitive]) then
   begin
-    Result                 := 'Dépôt vendus : ' + #13#10;
-    CDSItems_Sold.Filter   := 'items_sold_owner_id=' + CDSCustomers.FieldByName('customers_nbr').AsString + ' AND items_refunded=0';
+    Result := 'Dépôt vendus : ' + #13#10;
+    CDSItems_Sold.Filter := 'items_sold_owner_id=' + CDSCustomers.FieldByName
+      ('customers_nbr').AsString + ' AND items_refunded=0';
     CDSItems_Sold.Filtered := True;
     CDSItems_Sold.First;
     while not CDSItems_Sold.eof do
     begin
-      Result := Result + #13#10 + CDSItems_Sold.FieldByName('items_sold_name').AsString + ' à ' + CDSItems_Sold.FieldByName('items_sold_price_stock')
+      Result := Result + #13#10 + CDSItems_Sold.FieldByName('items_sold_name')
+        .AsString + ' à ' + CDSItems_Sold.FieldByName('items_sold_price_stock')
         .AsString + ' €';
       CDSItems_Sold.Next;
     end;
