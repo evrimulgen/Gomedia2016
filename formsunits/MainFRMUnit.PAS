@@ -25,7 +25,7 @@ uses
   cxCurrencyEdit, cxControls, cxCalendar, cxMemo, cxStyles,
   cxEdit, cxGrid, cxGridTableView,
   cxGridCustomTableView, cxGridDBTableView, cxGridLevel, cxClasses,
-  cxProgressBar,
+  cxProgressBar,   cxGridExportLink,
 
   dxBar, dxStatusBar,
   dxRibbon, dxBarExtItems, dxBarDBNav,
@@ -45,7 +45,7 @@ uses
   dxBarApplicationMenu, AdvObj, SHDocVw_EWB, EwbCore, EmbeddedWB,
   System.Actions, cxGraphics, cxLookAndFeelPainters, cxCustomData, cxFilter,
   cxData, cxDataStorage, cxNavigator, cxDBData, cxImage, dxRibbonSkins,
-  dxRibbonCustomizationForm, dxGDIPlusClasses, ClientDMunit;
+  dxRibbonCustomizationForm, dxGDIPlusClasses, ClientDMunit, tmsAdvGridExcel;
 
 type
 
@@ -709,7 +709,7 @@ type
     PanelCustomersDeposidGrids: TPanel;
     Splitter2: TSplitter;
     AdvPanelCustDepositStock: TAdvPanel;
-    cxGrid3: TcxGrid;
+    cxGridCustomerStock: TcxGrid;
     cxGridDBTableView3: TcxGridDBTableView;
     cxGridLevel3: TcxGridLevel;
     AdvPanel5: TAdvPanel;
@@ -989,6 +989,8 @@ type
     PopupMenuCoupons: TPopupMenu;
     CopierBon: TMenuItem;
     act1: TAction;
+    ExportExcelAdminSalesProducts: TMenuItem;
+    mniExporterExcelStock: TMenuItem;
 
     procedure MailingExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -1297,6 +1299,9 @@ type
       href: string; values: TStringList; var DoPopup: Boolean);
     procedure RaportCouponsClick(Sender: TObject);
     procedure CopierBonClick(Sender: TObject);
+    procedure CustomerAlertMaxPriceExit(Sender: TObject);
+    procedure ExportExcelAdminSalesProductsClick(Sender: TObject);
+    procedure mniExporterExcelStockClick(Sender: TObject);
 
   private
     Data: TManagerData;
@@ -4477,8 +4482,8 @@ begin
         end
         else
         begin
-          if (RemoteDB.Products.FieldByName('products_stock_managed')
-            .Text = 'True') then
+          if ((RemoteDB.Products.FieldByName('products_stock_managed')
+            .Text = 'True') and (CheckStock = True)) then
           begin
             messagedlg('Pas disponible en stock', mtwarning, [mbok], 0);
             SalesClearEdit;
@@ -4644,8 +4649,8 @@ begin
                     FloatToStrF
                     (Round(RemoteDB.GetPriceTTC(RemoteDB.Productsproducts_model.
                     Text, EditSalesPrice.Value) * 100) / 100, fffixed, 7, 2);
-                if (RemoteDB.Products.FieldByName('products_stock_managed')
-                  .Text = 'False') then
+                if ((RemoteDB.Products.FieldByName('products_stock_managed')
+                  .Text = 'False') or (CheckStock = False)) then
                 begin
                   Cells[5, Nowrow] := '0';
                   Cells[6, Nowrow] := VCLToOSCDate(Now);
@@ -4872,8 +4877,8 @@ begin
                     FloatToStrF
                     (Round(RemoteDB.GetPriceTTC(RemoteDB.Productsproducts_model.
                     Text, EditSalesPrice.Value) * 100) / 100, fffixed, 7, 2);
-                if (RemoteDB.Products.FieldByName('products_stock_managed')
-                  .Text = 'False') then
+                if ((RemoteDB.Products.FieldByName('products_stock_managed')
+                  .Text = 'False') or (CheckStock = False)) then
                 begin
                   Cells[5, Nowrow] := '0';
                   Cells[6, Nowrow] := VCLToOSCDate(Now);
@@ -4977,7 +4982,7 @@ begin
       inttostr(RemoteDB.GetReservedStock(EditSalesModel.Text));
 
     RemoteDB.Products.FindKey([EditSalesModel.Text]);
-    if (RemoteDB.Products.FieldByName('products_stock_managed').Text = 'True')
+    if ((RemoteDB.Products.FieldByName('products_stock_managed').Text = 'True' ) and (CheckStock=True))
     then
     begin
 
@@ -5194,8 +5199,8 @@ begin
               ('products_model').Text,
               RemoteDB.Products.FieldByName('products_price').AsFloat) * 100) /
               100, fffixed, 7, 2);
-            if (RemoteDB.Products.FieldByName('products_stock_managed')
-              .Text = 'False') then
+            if ((RemoteDB.Products.FieldByName('products_stock_managed')
+              .Text = 'False') or (CheckStock = False)) then
             begin
               Cells[5, Nowrow] := '0';
               Cells[6, Nowrow] := VCLToOSCDate(Now);
@@ -5673,6 +5678,11 @@ begin
       if not RemoteDB.CustomersCustomers_nbr.AsInteger >= 100000 then
       begin
         ShowMessage('Client non valide');
+        goto StockinProcessEnd;
+      end;
+      if (RemoteDB.customerscustomers_nationalnbr.AsString.Trim.Length<11) and (RemoteDB.customerscustomers_identity.AsString.Trim.Length<5)  then
+      begin
+        ShowMessage('Numéro de registre national ou numéro d''identité non valide');
         goto StockinProcessEnd;
       end;
 
@@ -9693,7 +9703,18 @@ begin
         CustomerAlertMaxPrice.SelectAll;
       end;
 
-      procedure TMainForm.CustomerAlertMaxPriceKeyDown(Sender: TObject;
+      procedure TMainForm.CustomerAlertMaxPriceExit(Sender: TObject);
+      var
+        myfloat: double;
+begin
+  if not TryStrToFloat(CustomerAlertMaxPrice.Text, myfloat) then begin
+
+    ShowMessage('Prix min incorrect.');
+    CustomerAlertMaxPrice.Text :='0';
+  end;
+end;
+
+procedure TMainForm.CustomerAlertMaxPriceKeyDown(Sender: TObject;
         var Key: Word; Shift: TShiftState);
       var
         ExactMatch: Boolean;
@@ -11924,7 +11945,25 @@ begin
         RemoteDB.Products.Filtered := True;
       end;
 
-      procedure TMainForm.model_comyClick(Sender: TObject);
+      procedure TMainForm.mniExporterExcelStockClick(Sender: TObject);
+      var AdvGridExcelIO:TAdvGridExcelIO;
+      aSaveDialog:TSaveDialog;
+      begin
+        aSaveDialog := TsaveDialog.Create(Self);
+
+        try
+          aSaveDialog.DefaultExt := 'xls';
+          aSaveDialog.FileName := 'stock.xls';
+          if aSaveDialog.Execute then
+          begin
+            ExportGridToExcel(aSaveDialog.Filename, cxGridCustomerStock, true, true, true);
+          end;
+        finally
+          aSaveDialog.Free;
+        end;
+      end;
+
+procedure TMainForm.model_comyClick(Sender: TObject);
       begin
         ClipBoard.AsText := StringGridAdmin.Cells[0, StringGridAdmin.Row];
       end;
@@ -13165,7 +13204,34 @@ begin
 
       end;
 
-      procedure TMainForm.EditRentCustomerIdOldEnter(Sender: TObject);
+      procedure TMainForm.ExportExcelAdminSalesProductsClick(Sender: TObject);
+      var AdvGridExcelIO:TAdvGridExcelIO;
+      aSaveDialog:TSaveDialog;
+      begin
+
+
+        AdvGridExcelIO := TAdvGridExcelIO.Create(Self);
+        aSaveDialog := TsaveDialog.Create(Self);
+
+        try
+          AdvGridExcelIO.AdvStringGrid := StringGridAdmin;
+          AdvGridExcelIO.GridStartRow:=0;
+          AdvGridExcelIO.GridStartCol:=0;
+          aSaveDialog.DefaultExt := 'xls';
+          aSaveDialog.FileName := 'ventes.xls';
+          if aSaveDialog.Execute then
+          begin
+            AdvGridExcelIO.XLSExport(aSaveDialog.FileName);
+          end;
+        finally
+          aSaveDialog.Free;
+          AdvGridExcelIO.Free;
+        end;
+
+
+      end;
+
+procedure TMainForm.EditRentCustomerIdOldEnter(Sender: TObject);
       begin
         EditRentCustomerId.SelectAll
       end;
@@ -14101,8 +14167,8 @@ begin
           else
           begin
 
-            if (RemoteDB.Products.FieldByName('products_stock_managed')
-              .Text = 'True') then
+            if ((RemoteDB.Products.FieldByName('products_stock_managed')
+              .Text = 'True') and (CheckStock = True)) then
             begin
 
             end
@@ -17372,8 +17438,8 @@ begin
         RemoteDB.Products.IndexName := 'ProductsIXModel';
         if RemoteDB.Products.FindKey([product_model]) then
         begin
-          if (RemoteDB.Products.FieldByName('products_stock_managed')
-            .Text = 'True') then
+          if ((RemoteDB.Products.FieldByName('products_stock_managed')
+            .Text = 'True') and (CheckStock = True))  then
           begin
             if UserType = 1 then
             begin

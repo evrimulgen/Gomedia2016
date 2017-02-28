@@ -86,7 +86,8 @@ const
   MarginDepositRefund = 70;
   MarginNew = 30;
   GeoZoneTaxId = 18;
-  Version = '2016-12-28 SSL';
+  Version = '2017-02-28 SSL NOSTOOOOCK !!!!!!!!!!!';
+  CheckStock = False;
 
 implementation
 
