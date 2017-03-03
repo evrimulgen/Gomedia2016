@@ -3108,6 +3108,22 @@ begin
             StrtoInt(Cells[8, Nowrow]), StrtoInt(Cells[2, Nowrow]));
         end;
 
+        //logging
+      with StringGridTransfer do
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          RemoteDB.WriteToLog('TFT OUT MODEL : '+Cells[0, Nowrow]);
+          RemoteDB.WriteToLog('TFT OUT NAME : '+Cells[1, Nowrow]);
+          RemoteDB.WriteToLog('TFT OUT OWNER : '+Cells[7, Nowrow]);
+          RemoteDB.WriteToLog('TFT OUT Q : '+Cells[2, Nowrow]);
+          RemoteDB.WriteToLog('TFT OUT SUPPLIER : '+Cells[8, Nowrow]);
+          RemoteDB.WriteToLog('TFT OUT DATE : '+Formatdatetime('yyyymmdd', Now));
+          RemoteDB.WriteToLog('TFT OUT COST : '+Cells[5, Nowrow]);
+          RemoteDB.WriteToLog('TFT OUT PRICE : '+Cells[4, Nowrow]);
+        end;
+        RemoteDB.WriteToLog('---------------------------');
+
+
       BitBtnTransferClear.OnClick(BitBtnTransferProcess);
     except
       on e: E_Outloop do
@@ -3197,6 +3213,20 @@ begin
           StrtoInt(Cells[7, Nowrow]), StrtoInt(Cells[8, Nowrow]),
           StrtoInt(Cells[2, Nowrow]));
       end;
+
+              //logging
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          RemoteDB.WriteToLog('TFT IN MODEL : '+Cells[0, Nowrow]);
+          RemoteDB.WriteToLog('TFT IN NAME : '+Cells[1, Nowrow]);
+          RemoteDB.WriteToLog('TFT IN OWNER : '+Cells[7, Nowrow]);
+          RemoteDB.WriteToLog('TFT IN Q : '+Cells[2, Nowrow]);
+          RemoteDB.WriteToLog('TFT IN SUPPLIER : '+Cells[8, Nowrow]);
+          RemoteDB.WriteToLog('TFT IN DATE : '+Formatdatetime('yyyymmdd', Now));
+          RemoteDB.WriteToLog('TFT IN COST : '+Cells[5, Nowrow]);
+          RemoteDB.WriteToLog('TFT IN PRICE : '+Cells[4, Nowrow]);
+        end;
+        RemoteDB.WriteToLog('---------------------------');
 
       BitBtnTransferClearClick(Self);
     end;
@@ -5579,7 +5609,12 @@ begin
             Cells[5, Nowrow];
           RemoteDB.netshop_stock.FieldByName('product_price_stock').Text :=
             Cells[4, Nowrow];
+
           RemoteDB.netshop_stock.Post;
+
+
+
+
         end;
       end; // End Entrée en Stock
 
@@ -5655,6 +5690,20 @@ begin
           PrintPriceTag(Cells[2, Nowrow], Cells[1, Nowrow], Cells[4, Nowrow],
             Cells[7, Nowrow], Cells[8, Nowrow]);
         end;
+
+        //logging
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          RemoteDB.WriteToLog('IN MODEL : '+Cells[0, Nowrow]);
+          RemoteDB.WriteToLog('IN NAME : '+Cells[1, Nowrow]);
+          RemoteDB.WriteToLog('IN OWNER : '+Cells[7, Nowrow]);
+          RemoteDB.WriteToLog('IN Q : '+Cells[2, Nowrow]);
+          RemoteDB.WriteToLog('IN SUPPLIER : '+Cells[8, Nowrow]);
+          RemoteDB.WriteToLog('IN DATE : '+Formatdatetime('yyyymmdd', Now));
+          RemoteDB.WriteToLog('IN COST : '+Cells[5, Nowrow]);
+          RemoteDB.WriteToLog('IN PRICE : '+Cells[4, Nowrow]);
+        end;
+        RemoteDB.WriteToLog('---------------------------');
 
       end; // End Impression Reçu
       // Fermeture Caddy
@@ -5946,6 +5995,22 @@ begin
 
         end; // End Impressions
 
+
+        with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+          .Controls[GridIndex]) do        //logging
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          RemoteDB.WriteToLog('IN MODEL : '+Cells[0, Nowrow]);
+          RemoteDB.WriteToLog('IN NAME : '+Cells[1, Nowrow]);
+          RemoteDB.WriteToLog('IN OWNER : '+Cells[7, Nowrow]);
+          RemoteDB.WriteToLog('IN Q : '+Cells[2, Nowrow]);
+          RemoteDB.WriteToLog('IN SUPPLIER : '+Cells[8, Nowrow]);
+          RemoteDB.WriteToLog('IN DATE : '+Formatdatetime('yyyymmdd', Now));
+          RemoteDB.WriteToLog('IN COST : '+Cells[5, Nowrow]);
+          RemoteDB.WriteToLog('IN PRICE : '+Cells[4, Nowrow]);
+        end;
+        RemoteDB.WriteToLog('---------------------------');
+
         // Fermeture Caddy
         with PageControlStockinCaddy.ActivePage do
         begin
@@ -6109,6 +6174,22 @@ begin
             Cells[7, Nowrow], Cells[8, Nowrow]);
         end;
       end; // End Impressions
+
+
+      with TAdvStringGrid(TAdvTabSheet(PageControlStockinCaddy.ActivePage)
+        .Controls[GridIndex]) do        //logging
+        for Nowrow := 1 to RowCount - 2 do
+        begin
+          RemoteDB.WriteToLog('IN MODEL : '+Cells[0, Nowrow]);
+          RemoteDB.WriteToLog('IN NAME : '+Cells[1, Nowrow]);
+          RemoteDB.WriteToLog('IN OWNER : '+Cells[7, Nowrow]);
+          RemoteDB.WriteToLog('IN Q : '+Cells[2, Nowrow]);
+          RemoteDB.WriteToLog('IN SUPPLIER : '+Cells[8, Nowrow]);
+          RemoteDB.WriteToLog('IN DATE : '+Formatdatetime('yyyymmdd', Now));
+          RemoteDB.WriteToLog('IN COST : '+Cells[5, Nowrow]);
+          RemoteDB.WriteToLog('IN PRICE : '+Cells[4, Nowrow]);
+        end;
+        RemoteDB.WriteToLog('---------------------------');
 
       // Fermeture Caddy
       with PageControlStockinCaddy.ActivePage do
@@ -16414,7 +16495,6 @@ procedure TMainForm.EditRentCustomerIdOldEnter(Sender: TObject);
       procedure ReturnStock();
       begin
         RemoteDB.netshop_stock_returned.Append;
-        RemoteDB.netshop_stock_returned.Append;
         RemoteDB.netshop_stock_returned.FieldByName('product_model').AsString :=
           RemoteDB.netshop_stock.FieldByName('product_model').AsString;
         RemoteDB.netshop_stock_returned.FieldByName('product_name').Value :=
@@ -16444,6 +16524,18 @@ procedure TMainForm.EditRentCustomerIdOldEnter(Sender: TObject);
         RemoteDB.netshop_stock_returned.FieldByName('date_returned')
           .Value := Now;
         RemoteDB.netshop_stock_returned.Post;
+
+        //logging
+        begin
+          RemoteDB.WriteToLog('DEP RET PRICE : '+RemoteDB.netshop_stock.FieldByName('product_price_stock').ASString);
+          RemoteDB.WriteToLog('DEP RET MODEL : '+RemoteDB.netshop_stock.FieldByName('product_model').AsString);
+          RemoteDB.WriteToLog('DEP RET PRODUCT : '+RemoteDB.netshop_stock.FieldByName('product_name').AsString);
+          RemoteDB.WriteToLog('DEP RET OWNER : '+RemoteDB.netshop_stock.FieldByName('product_owner_id').AsString);
+          RemoteDB.WriteToLog('DEP RET Q : '+ RemoteDB.netshop_stock.FieldByName('product_quantity').AsString);
+          RemoteDB.WriteToLog('DEP RET DEFECT: '+RemoteDB.netshop_stock.FieldByName('product_isdefect').AsString);
+        end;
+        RemoteDB.WriteToLog('---------------------------');
+
         RemoteDB.netshop_stock.delete;
       end;
 

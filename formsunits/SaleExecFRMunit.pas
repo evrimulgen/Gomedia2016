@@ -1000,6 +1000,33 @@ begin
         MainForm.BitBtnCustomerBuyTicketClick(self);
       end;
       dxStatusBar1.Panels[1].Text := 'Finalisation';
+
+      RemoteDB.WriteToLog('SALE ID : '+RemoteDB.netshop_sales.FieldByName('sales_id').AsString);
+      RemoteDB.WriteToLog('SALE Date : '+RemoteDB.netshop_sales.FieldByName('sql_date_time').AsString);
+      RemoteDB.WriteToLog('SALE CUST ID : '+RemoteDB.netshop_sales.FieldByName('sales_customer_id').AsString);
+      RemoteDB.WriteToLog('SALE Cash : '+RemoteDB.netshop_sales.FieldByName('sales_paid_cash').AsString);
+      RemoteDB.WriteToLog('SALE BCT : '+RemoteDB.netshop_sales.FieldByName('sales_paid_bct').AsString);
+      RemoteDB.WriteToLog('SALE Visa : '+RemoteDB.netshop_sales.FieldByName('sales_paid_visa').AsString);
+      RemoteDB.WriteToLog('SALE Voucher : '+RemoteDB.netshop_sales.FieldByName('sales_paid_voucher').AsString);
+      RemoteDB.WriteToLog('SALE Check : '+RemoteDB.netshop_sales.FieldByName('sales_paid_proton').AsString);
+
+      RemoteDB.WriteToLog('----------');
+
+      RemoteDB.netshop_items_sold.First;
+      while not RemoteDB.netshop_items_sold.eof  do  begin
+      RemoteDB.WriteToLog('ITEM ID : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_id').AsString);
+      RemoteDB.WriteToLog('ITEM Q : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_quantity').AsString);
+      RemoteDB.WriteToLog('ITEM MODEL : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_model').AsString);
+      RemoteDB.WriteToLog('ITEM PRODUCT : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_name').AsString);
+      RemoteDB.WriteToLog('ITEM OWNER : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_owner_id').AsString);
+      RemoteDB.WriteToLog('ITEM SUPPLIER : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_supplier_id').AsString);
+      RemoteDB.WriteToLog('ITEM PRICE : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_price_stock').AsString);
+      RemoteDB.WriteToLog('ITEM COST : '+RemoteDB.netshop_items_sold.FieldByName('items_sold_price_gross').AsString);
+      RemoteDB.netshop_items_sold.next;
+      end;
+
+      RemoteDB.WriteToLog('---------------------------');
+
       NumberEditCash.Value := 0;
       NumberEditBCT.Value := 0;
       NumberEditBank.Value := 0;

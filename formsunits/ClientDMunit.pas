@@ -799,6 +799,8 @@ type
     procedure SetLocalCache(const Value: Boolean);
     function GetLoging(key: string): Boolean;
     function GetRootCategoryName(Category_id: integer): string;
+    procedure CreateLogfile;
+
 
   public
     { Public declarations }
@@ -878,6 +880,7 @@ type
     function CalcPriceVATIN(Price: double; tax_class_id: integer): double;
     procedure UpdateSyncYears();
     procedure StoreSignBlob(filename, table: string);
+    procedure WriteToLog(aLogMessage: String);
 
   published
     CloneDSCustomers: TClientDataSet;
@@ -1140,6 +1143,8 @@ const
   SValue = ' Value';
   SNoData = '<No Records>';
   SNew = 'New';
+  BreakingLine = '//----------------------------------------------------------------------------//';
+
 
 implementation
 
@@ -1206,6 +1211,56 @@ begin
   GetLocaleFormatSettings(GetThreadLocale, myFormatSettings);
   myFormatSettings.DecimalSeparator := '.';
   Result := FormatFloat(Format, Value, myFormatSettings);
+end;
+
+
+//** This procedure just creates a new Logfile an appends when it was created **
+procedure TRemoteDB.CreateLogfile;
+var
+  F:TextFile;
+  FN:String;
+begin
+  // Getting the filename for the logfile (In this case the Filename is 'application-exename.log'
+  FN := ChangeFileExt(Application.Exename, '.log');
+  // Assigns Filename to variable F
+  AssignFile(F, FN);
+  // Rewrites the file F
+  Rewrite(F);
+  // Open file for appending
+  Append(F);
+  // Write text to Textfile F
+  WriteLn(F, BreakingLine);
+  WriteLn(F, 'This Logfile was created on ' + DateToStr(Now));
+  WriteLn(F, BreakingLine);
+  WriteLn(F, '');
+  // finally close the file
+  CloseFile(F);
+end;
+
+// Procedure for appending a Message to an existing logfile with current Date and Time **
+procedure TRemoteDB.WriteToLog(aLogMessage:String);
+var
+  F:TextFile;
+FN:String;
+begin
+  // Getting the filename for the logfile (In this case the Filename is 'application-exename.log'
+  FN := ChangeFileExt(Application.Exename, '.log');
+
+  //Checking for file
+  if (not FileExists(FN)) then
+  begin
+    // if file is not available then create a new file
+    CreateLogFile;
+  end;
+
+  // Assigns Filename to variable F
+  AssignFile(F, FN);
+  // start appending text
+  Append(F);
+  //Write a new line with current date and message to the file
+  WriteLn(F, DateTimeToStr(Now) + ' / ' + aLogMessage);
+  // Close file
+  CloseFile(F)
 end;
 
 function TRemoteDB.GetNextCustomersId(DataSet: TCustomClientDataSet;
