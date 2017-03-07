@@ -4860,7 +4860,7 @@ object RemoteDB: TRemoteDB
       '_zone_id`, '#13#10'`shops_country_id`, '#13#10'`shops_group_id`, '#13#10'`shops_TV' +
       'A`, '#13#10'`shops_registry`, '#13#10'`shops_bank`, '#13#10'`shops_visible`, '#13#10'`sh' +
       'ops_cld_id`, '#13#10'`shops_region`, '#13#10'`shops_language_id`'#13#10' from nets' +
-      'hop_shops'
+      'hop_shops'#13#10' where shops_visible=1'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = SQLConnection

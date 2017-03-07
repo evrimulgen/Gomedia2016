@@ -20,15 +20,11 @@ object TransferRequestForm: TTransferRequestForm
     Top = 26
     Width = 725
     Height = 488
-    ActivePage = TabSheetNew
+    ActivePage = TabSheetIn
     Align = alClient
     TabOrder = 4
     object TabSheetIn: TTabSheet
       Caption = 'A recevoir'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object cxGridSuggest: TcxGrid
         Left = 0
         Top = 0
@@ -103,10 +99,6 @@ object TransferRequestForm: TTransferRequestForm
     object TabSheetOut: TTabSheet
       Caption = 'A Envoyer'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object cxGridRequest: TcxGrid
         Left = 0
         Top = 0
@@ -184,10 +176,6 @@ object TransferRequestForm: TTransferRequestForm
       Caption = 'Nouvelle demande'
       Enabled = False
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PanelNewRequestTop: TPanel
         Left = 0
         Top = 0
@@ -501,7 +489,6 @@ object TransferRequestForm: TTransferRequestForm
     object dxComponentPrinterLink1: TdxGridReportLink
       Active = True
       Component = cxGridSuggest
-      PageNumberFormat = pnfNumeral
       PrinterPage.DMPaper = 9
       PrinterPage.Footer = 6350
       PrinterPage.Header = 6350
@@ -513,8 +500,7 @@ object TransferRequestForm: TTransferRequestForm
       PrinterPage.PageSize.Y = 297000
       PrinterPage._dxMeasurementUnits_ = 0
       PrinterPage._dxLastMU_ = 2
-      ReportDocument.CreationDate = 42732.389753912040000000
-      AssignedFormatValues = [fvDate, fvTime, fvPageNumber]
+      ReportDocument.CreationDate = 42801.692289826390000000
       OptionsOnEveryPage.FilterBar = False
       OptionsSize.AutoWidth = True
       OptionsView.Footers = False
@@ -539,6 +525,7 @@ object TransferRequestForm: TTransferRequestForm
     Top = 120
   end
   object dxPSEngineController: TdxPSEngineController
+    Active = True
     PreviewDialogStyle = 'Ribbon'
     Left = 616
     Top = 72
