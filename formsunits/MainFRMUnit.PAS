@@ -1371,7 +1371,7 @@ var
 implementation
 
 uses ReportModuleUnit, NewProdFRMunit, SaleExecFRMunit, StockCheckFrmUnit,
-  debugFrmUnit, UnitFrmDacalSearch,
+  debugFrmUnit, UnitFrmDacalSearch, Generics.Collections,
   ChangePriceFrmUnit, RepairNewFrmUnit, RepairReturnFrmUnit,
   WinbooksOfficeApi_TLB, ExportWinbooksFRMUnit, InvoiceBatchPrintFRMUnit,
   RepairFixFRMUnit, DialogRefundFrmUnit, DialogChangeEANFRMUnit,
@@ -2851,15 +2851,16 @@ end;
 procedure TMainForm.BitBtnTransferProcessClick(Sender: TObject);
 var
   SalesSavePoint, ItemsSavePoint, TransferSavePoint, StockSavePoint, ORIGINSHOP,
-    DESTSHOP, Nowrow, ToCLDLoop: Integer;
+    DESTSHOP, Nowrow, ToCLDLoop, tempQ: Integer;
   StockLocated, TransferLocated: Boolean;
   ConfirmTransfer: Boolean;
   MrResult: TModalResult;
   Art, Accu: double;
   TicketToPrint: TTicketJob;
-  Value, TransferPrice: string;
+  Value, TransferPrice, Key: string;
   SupplierId, OwnerId: Integer;
   QueryString: WideString;
+  dict : TDictionary<string, Integer>;
 label endoftransfer;
 begin
   if RadioButtonSend.Checked then
@@ -2887,27 +2888,26 @@ begin
         QueryString := '';
         ToCLDLoop := 1;
 
+        dict := TDictionary<string, integer>.Create;
+
         for Nowrow := 1 to StringGridTransfer.RowCount - 2 do
         begin
-
           if StrtoInt(StringGridTransfer.Cells[2, Nowrow]) > 0 then
           begin
-            if RemoteDB.Products.Locate('products_model',
+              if RemoteDB.Products.Locate('products_model',
               StringGridTransfer.Cells[0, Nowrow], [locaseinsensitive]) then
             begin
-
-              QueryString := QueryString + '&id_art' + inttostr(ToCLDLoop) + '='
-                + RemoteDB.Products.FieldByName('products_CLD_id').AsString;
-              QueryString := QueryString + '&q' + inttostr(ToCLDLoop) + '=' +
-                StringGridTransfer.Cells[2, Nowrow];
-              ToCLDLoop := ToCLDLoop + 1;
+                if NOT dict.ContainsKey(RemoteDB.Products.FieldByName('products_CLD_id').AsString) then
+                begin
+                  dict.Add(RemoteDB.Products.FieldByName('products_CLD_id').AsString, StrToInt(StringGridTransfer.Cells[2, Nowrow]));
+                end else begin
+                  dict.TryGetValue(RemoteDB.Products.FieldByName('products_CLD_id').AsString, tempQ);
+                  dict.AddOrSetValue(RemoteDB.Products.FieldByName('products_CLD_id').AsString, tempQ + StrToInt(StringGridTransfer.Cells[2, Nowrow]));
+                end;
             end;
           end;
-          if ToCLDLoop mod 15 = 0 then
-          begin
-            MainForm.WebbrowserCLDAddReturnItems(QueryString);
-            QueryString := '';
-          end;
+
+
 
           RemoteDB.Transferout.Append;
           RemoteDB.transferOutproduct_model.Text := StringGridTransfer.Cells
@@ -2929,8 +2929,27 @@ begin
           RemoteDB.Transferout.Post;
 
         end; // Fin des depacements en Transfer
-        MainForm.WebbrowserCLDAddReturnItems(QueryString);
+
       end;
+        for Key in dict.Keys do
+  begin
+
+
+              QueryString := QueryString + '&id_art' + inttostr(ToCLDLoop) + '='
+                + Key;
+              QueryString := QueryString + '&q' + inttostr(ToCLDLoop) + '=' +
+                (dict.Items[Key].ToString());
+              ToCLDLoop := ToCLDLoop + 1;
+
+          if ToCLDLoop mod 15 = 0 then
+          begin
+            MainForm.WebbrowserCLDAddReturnItems(QueryString);
+            QueryString := '';
+          end;
+
+  end;
+      MainForm.WebbrowserCLDAddReturnItems(QueryString);
+      dict.Free;
 
       RemoteDB.netshop_items_sold.Filtered := False;
       RemoteDB.netshop_stock.DisableControls;
