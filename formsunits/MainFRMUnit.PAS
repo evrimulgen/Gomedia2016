@@ -2930,9 +2930,9 @@ begin
 
         end; // Fin des depacements en Transfer
 
-      end;
+
         for Key in dict.Keys do
-  begin
+          begin
 
 
               QueryString := QueryString + '&id_art' + inttostr(ToCLDLoop) + '='
@@ -2947,9 +2947,10 @@ begin
             QueryString := '';
           end;
 
-  end;
+          end;
       MainForm.WebbrowserCLDAddReturnItems(QueryString);
       dict.Free;
+      end;
 
       RemoteDB.netshop_items_sold.Filtered := False;
       RemoteDB.netshop_stock.DisableControls;
